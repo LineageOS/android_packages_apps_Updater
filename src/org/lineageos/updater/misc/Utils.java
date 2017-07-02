@@ -73,11 +73,11 @@ public class Utils {
             Log.d(TAG, update.getName() + " has type " + update.getType());
             return false;
         }
-        if (!update.getVersion().equalsIgnoreCase(SystemProperties.get("ro.cm.build.version"))) {
-            Log.d(TAG, update.getName() + " has version " + update.getVersion());
-            return false;
-        }
         return true;
+    }
+
+    public static boolean canInstall(Update update) {
+        return update.getVersion().equalsIgnoreCase(SystemProperties.get("ro.cm.build.version"));
     }
 
     public static List<UpdateDownload> parseJson(File file, boolean compatibleOnly)

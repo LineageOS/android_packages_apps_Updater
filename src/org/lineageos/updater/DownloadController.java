@@ -178,6 +178,7 @@ public class DownloadController implements DownloadControllerInt {
                     mLastUpdate = now;
                     getUpdate(downloadId).setProgress(progress);
                     getUpdate(downloadId).setEta(eta);
+                    getUpdate(downloadId).setSpeed(speed);
                     notifyDownloadProgress(downloadId);
                 }
             }

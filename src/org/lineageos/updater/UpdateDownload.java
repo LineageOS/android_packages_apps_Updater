@@ -25,6 +25,7 @@ public class UpdateDownload extends Update {
     private long mFileSize;
     private int mProgress;
     private long mEta;
+    private long mSpeed;
 
     public UpdateStatus getStatus() {
         return mStatus;
@@ -72,5 +73,13 @@ public class UpdateDownload extends Update {
 
     public void setEta(long eta) {
         mEta = eta;
+    }
+
+    public long getSpeed() {
+        return mSpeed;
+    }
+
+    public void setSpeed(long speed) {
+        mSpeed = speed;
     }
 }

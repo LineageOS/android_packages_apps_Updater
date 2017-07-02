@@ -26,7 +26,11 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.NotificationCompat;
+import android.text.format.DateUtils;
+import android.text.format.Formatter;
 import android.util.Log;
+
+import java.text.NumberFormat;
 
 public class DownloadService extends Service {
 
@@ -40,6 +44,7 @@ public class DownloadService extends Service {
     private BroadcastReceiver mBroadcastReceiver;
     private NotificationCompat.Builder mNotificationBuilder;
     private NotificationManager mNotificationManager;
+    private NotificationCompat.BigTextStyle mNotificationStyle;;
 
     private DownloadControllerInt mDownloadController;
 
@@ -53,6 +58,8 @@ public class DownloadService extends Service {
         mNotificationBuilder = new NotificationCompat.Builder(this);
         mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
         mNotificationBuilder.setShowWhen(false);
+        mNotificationStyle = new NotificationCompat.BigTextStyle();
+        mNotificationBuilder.setStyle(mNotificationStyle);
 
         Intent notificationIntent = new Intent(this, UpdatesActivity.class);
         PendingIntent intent = PendingIntent.getActivity(this, 0, notificationIntent,
@@ -65,11 +72,24 @@ public class DownloadService extends Service {
                 String downloadId = intent.getStringExtra(DownloadController.DOWNLOAD_ID_EXTRA);
                 if (DownloadController.UPDATE_STATUS_ACTION.equals(intent.getAction())) {
                     UpdateDownload update = mDownloadController.getUpdate(downloadId);
+                    mNotificationBuilder.setContentTitle(update.getName());
                     handleDownloadStatusChange(update);
                 } else if (DownloadController.PROGRESS_ACTION.equals(intent.getAction())) {
                     UpdateDownload update = mDownloadController.getUpdate(downloadId);
                     int progress = update.getProgress();
                     mNotificationBuilder.setProgress(100, progress, false);
+
+                    String percent = NumberFormat.getPercentInstance().format(progress / 100.f);
+                    mNotificationStyle.setSummaryText(percent);
+
+                    mNotificationStyle.setBigContentTitle(update.getName());
+                    mNotificationBuilder.setContentTitle(update.getName());
+
+                    String speed = Formatter.formatFileSize(context, update.getSpeed());
+                    CharSequence eta = DateUtils.formatDuration(update.getEta() * 1000);
+                    mNotificationStyle.bigText(
+                            getString(R.string.text_download_speed, eta, speed));
+
                     mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 }
             }
@@ -143,11 +163,9 @@ public class DownloadService extends Service {
             case STARTING: {
                 mNotificationBuilder.mActions.clear();
                 mNotificationBuilder.setProgress(0, 0, true);
+                mNotificationStyle.setSummaryText(null);
                 String text = getString(R.string.download_starting_notification);
-                NotificationCompat.BigTextStyle style = new NotificationCompat.BigTextStyle()
-                        .setBigContentTitle(text).bigText(update.getName());
-                mNotificationBuilder.setStyle(style);
-                mNotificationBuilder.setContentTitle(text);
+                mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
                 startForeground(NOTIFICATION_ID, mNotificationBuilder.build());
@@ -156,13 +174,10 @@ public class DownloadService extends Service {
             }
             case DOWNLOADING: {
                 String text = getString(R.string.downloading_notification);
-                NotificationCompat.BigTextStyle style = new NotificationCompat.BigTextStyle()
-                        .setBigContentTitle(text).bigText(update.getName());
+                mNotificationStyle.bigText(text);
                 mNotificationBuilder.addAction(com.android.internal.R.drawable.ic_media_pause,
                         getString(R.string.pause_button),
                         getPausePendingIntent(update.getDownloadId()));
-                mNotificationBuilder.setStyle(style);
-                mNotificationBuilder.setContentTitle(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
@@ -170,16 +185,14 @@ public class DownloadService extends Service {
             }
             case PAUSED: {
                 stopForeground(STOP_FOREGROUND_DETACH);
+                // In case we pause before the first progress update
+                mNotificationBuilder.setProgress(100, update.getProgress(), false);
                 mNotificationBuilder.mActions.clear();
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 String text = getString(R.string.download_paused_notification);
-                NotificationCompat.BigTextStyle style = new NotificationCompat.BigTextStyle()
-                        .setBigContentTitle(text).bigText(update.getName());
+                mNotificationStyle.bigText(text);
                 mNotificationBuilder.addAction(com.android.internal.R.drawable.ic_media_play,
                         getString(R.string.resume_button),
                         getResumePendingIntent(update.getDownloadId()));
-                mNotificationBuilder.setStyle(style);
-                mNotificationBuilder.setContentTitle(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
@@ -188,15 +201,11 @@ public class DownloadService extends Service {
             case PAUSED_ERROR: {
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationBuilder.mActions.clear();
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 String text = getString(R.string.download_paused_error_notification);
-                NotificationCompat.BigTextStyle style = new NotificationCompat.BigTextStyle()
-                        .setBigContentTitle(text).bigText(update.getName());
+                mNotificationStyle.bigText(text);
                 mNotificationBuilder.addAction(com.android.internal.R.drawable.ic_media_play,
                         getString(R.string.resume_button),
                         getResumePendingIntent(update.getDownloadId()));
-                mNotificationBuilder.setStyle(style);
-                mNotificationBuilder.setContentTitle(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
@@ -204,12 +213,10 @@ public class DownloadService extends Service {
             }
             case VERIFYING: {
                 mNotificationBuilder.setProgress(0, 0, true);
+                mNotificationStyle.setSummaryText(null);
                 mNotificationBuilder.mActions.clear();
                 String text = getString(R.string.verifying_download_notification);
-                NotificationCompat.BigTextStyle style = new NotificationCompat.BigTextStyle()
-                        .setBigContentTitle(text).bigText(update.getName());
-                mNotificationBuilder.setStyle(style);
-                mNotificationBuilder.setContentTitle(text);
+                mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 break;
@@ -218,13 +225,10 @@ public class DownloadService extends Service {
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationBuilder.setProgress(100, 100, false);
                 String text = getString(R.string.download_completed_notification);
-                NotificationCompat.BigTextStyle style = new NotificationCompat.BigTextStyle()
-                        .setBigContentTitle(text).bigText(update.getName());
+                mNotificationStyle.bigText(text);
                 mNotificationBuilder.addAction(R.drawable.ic_tab_install,
                         getString(R.string.install_button),
-                        getResumePendingIntent(update.getDownloadId()));
-                mNotificationBuilder.setStyle(style);
-                mNotificationBuilder.setContentTitle(text);
+                        getInstallPendingIntent(update.getDownloadId()));
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
@@ -233,11 +237,9 @@ public class DownloadService extends Service {
             }
             case VERIFICATION_FAILED: {
                 stopForeground(STOP_FOREGROUND_DETACH);
+                mNotificationBuilder.setProgress(0, 0, false);
                 String text = getString(R.string.verification_failed_notification);
-                NotificationCompat.BigTextStyle style = new NotificationCompat.BigTextStyle()
-                        .setBigContentTitle(text).bigText(update.getName());
-                mNotificationBuilder.setStyle(style);
-                mNotificationBuilder.setContentTitle(text);
+                mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());

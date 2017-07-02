@@ -20,6 +20,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import org.lineageos.updater.misc.Utils;
+
+import java.io.IOException;
+
 public class UpdaterBroadcastReceiver extends BroadcastReceiver {
 
     public static final String ACTION_DOWNLOAD =
@@ -28,6 +32,8 @@ public class UpdaterBroadcastReceiver extends BroadcastReceiver {
             "org.lineageos.updater.extra.DOWNLOAD_ID";
     public static final String EXTRA_DOWNLOAD_ACTION =
             "org.lineageos.updater.extra.DOWNLOAD_CHANGE";
+    public static final String ACTION_INSTALL_UPDATE =
+            "org.lineageos.updater.action.INSTALL_UPDATE";
 
     public static final int PAUSE = 0;
     public static final int RESUME = 1;
@@ -38,13 +44,17 @@ public class UpdaterBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         final String action = intent.getAction();
         if (ACTION_DOWNLOAD.equals(action)) {
-            if (intent.hasExtra(EXTRA_DOWNLOAD_ACTION) && intent.hasExtra(EXTRA_DOWNLOAD_ID)) {
-                DownloadController downloadController = DownloadController.getInstance();
-                if (downloadController == null) {
-                    Log.e(TAG, "No download controller instance found");
-                    return;
-                }
-                String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
+            if (!intent.hasExtra(EXTRA_DOWNLOAD_ID)) {
+                Log.e(TAG, "Missing download ID");
+                return;
+            }
+            DownloadController downloadController = DownloadController.getInstance();
+            if (downloadController == null) {
+                Log.e(TAG, "No download controller instance found");
+                return;
+            }
+            String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
+            if (intent.hasExtra(EXTRA_DOWNLOAD_ACTION)) {
                 int requestedAction = intent.getIntExtra(EXTRA_DOWNLOAD_ACTION, -1);
                 if (requestedAction == PAUSE) {
                     downloadController.pauseDownload(downloadId);
@@ -55,6 +65,24 @@ public class UpdaterBroadcastReceiver extends BroadcastReceiver {
                 }
             } else {
                 Log.e(TAG, "Missing extra data");
+            }
+        } else if (ACTION_INSTALL_UPDATE.equals(action)) {
+            if (!intent.hasExtra(EXTRA_DOWNLOAD_ID)) {
+                Log.e(TAG, "Missing download ID");
+                return;
+            }
+            DownloadController downloadController = DownloadController.getInstance();
+            if (downloadController == null) {
+                Log.e(TAG, "No download controller instance found");
+                return;
+            }
+            String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
+            UpdateDownload update = downloadController.getUpdate(downloadId);
+            try {
+                Utils.triggerUpdate(context, update);
+            } catch (IOException e) {
+                Log.e(TAG, "Could not trigger update");
+                // TODO: show error
             }
         }
     }

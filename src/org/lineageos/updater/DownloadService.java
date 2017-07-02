@@ -220,6 +220,9 @@ public class DownloadService extends Service {
                 String text = getString(R.string.download_completed_notification);
                 NotificationCompat.BigTextStyle style = new NotificationCompat.BigTextStyle()
                         .setBigContentTitle(text).bigText(update.getName());
+                mNotificationBuilder.addAction(R.drawable.ic_tab_install,
+                        getString(R.string.install_button),
+                        getResumePendingIntent(update.getDownloadId()));
                 mNotificationBuilder.setStyle(style);
                 mNotificationBuilder.setContentTitle(text);
                 mNotificationBuilder.setTicker(text);
@@ -260,6 +263,14 @@ public class DownloadService extends Service {
         intent.putExtra(UpdaterBroadcastReceiver.EXTRA_DOWNLOAD_ID, downloadId);
         intent.putExtra(UpdaterBroadcastReceiver.EXTRA_DOWNLOAD_ACTION,
                 UpdaterBroadcastReceiver.PAUSE);
+        return PendingIntent.getBroadcast(this, 0, intent,
+                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+
+    private PendingIntent getInstallPendingIntent(String downloadId) {
+        final Intent intent = new Intent(this, UpdaterBroadcastReceiver.class);
+        intent.setAction(UpdaterBroadcastReceiver.ACTION_INSTALL_UPDATE);
+        intent.putExtra(UpdaterBroadcastReceiver.EXTRA_DOWNLOAD_ID, downloadId);
         return PendingIntent.getBroadcast(this, 0, intent,
                 PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
     }

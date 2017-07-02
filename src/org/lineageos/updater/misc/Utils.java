@@ -126,6 +126,8 @@ public class Utils {
     public static void triggerUpdate(Context context, UpdateDownload update) throws IOException {
         if (update.getStatus() == UpdateStatus.VERIFIED) {
             android.os.RecoverySystem.installPackage(context, update.getFile());
+        } else {
+            throw new IllegalStateException("Update must be verified");
         }
     }
 }

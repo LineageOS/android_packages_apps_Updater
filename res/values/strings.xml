@@ -30,6 +30,8 @@
     <string name="download_completed_notification">Download completed</string>
     <string name="download_starting_notification">Starting download</string>
 
+    <string name="new_updates_found_title">New updates</string>
+
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="download_remaining"><xliff:g id="duration" example="3 minutes">%s</xliff:g> left</string>
 

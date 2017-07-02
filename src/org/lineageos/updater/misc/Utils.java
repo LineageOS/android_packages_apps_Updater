@@ -16,6 +16,8 @@
 package org.lineageos.updater.misc;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.SystemProperties;
 import android.util.Log;
 
@@ -35,7 +37,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Utils {
 
@@ -129,5 +133,39 @@ public class Utils {
         } else {
             throw new IllegalStateException("Update must be verified");
         }
+    }
+
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(
+                Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = cm.getActiveNetworkInfo();
+        return !(info == null || !info.isConnected() || !info.isAvailable());
+    }
+
+    /**
+     * Compares two json formatted updates list files
+     *
+     * @param oldJson old update list
+     * @param newJson new update list
+     * @return true if newJson has at least a compatible update not available in oldJson
+     * @throws IOException
+     * @throws JSONException
+     */
+    public static boolean checkForNewUpdates(File oldJson, File newJson)
+            throws IOException, JSONException {
+        List<UpdateDownload> oldList = parseJson(oldJson, true);
+        List<UpdateDownload> newList = parseJson(newJson, true);
+        Set<String> oldIds = new HashSet<>();
+        for (Update update : oldList) {
+            oldIds.add(update.getDownloadId());
+        }
+        // In case of no new updates, the old list should
+        // have all (if not more) the updates
+        for (Update update : newList) {
+            if (!oldIds.contains(update.getDownloadId())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

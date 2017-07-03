@@ -349,7 +349,8 @@ public class DownloadController implements DownloadControllerInt {
 
     @Override
     public UpdateDownload getUpdate(String downloadId) {
-        return mDownloads.get(downloadId).mUpdate;
+        DownloadEntry entry = mDownloads.get(downloadId);
+        return entry != null ? entry.mUpdate : null;
     }
 
     @Override

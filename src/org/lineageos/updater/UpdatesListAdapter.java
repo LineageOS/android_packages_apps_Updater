@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import org.lineageos.updater.controller.DownloadControllerInt;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.IOException;

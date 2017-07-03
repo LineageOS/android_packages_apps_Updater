@@ -31,6 +31,9 @@ import android.support.v7.widget.SimpleItemAnimator;
 import android.util.Log;
 
 import org.json.JSONException;
+import org.lineageos.updater.controller.DownloadController;
+import org.lineageos.updater.controller.DownloadControllerInt;
+import org.lineageos.updater.controller.DownloadService;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.File;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.updater;
+package org.lineageos.updater.controller;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +23,10 @@ import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
+import org.lineageos.updater.DownloadClient;
+import org.lineageos.updater.UpdateDownload;
+import org.lineageos.updater.UpdateStatus;
+import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.File;
@@ -55,7 +59,7 @@ public class DownloadController implements DownloadControllerInt {
         return sDownloadController;
     }
 
-    public static synchronized DownloadController getInstance(Context context) {
+    protected static synchronized DownloadController getInstance(Context context) {
         if (sDownloadController == null) {
             sDownloadController = new DownloadController(context);
         }

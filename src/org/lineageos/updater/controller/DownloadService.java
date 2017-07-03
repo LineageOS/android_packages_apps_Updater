@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.updater;
+package org.lineageos.updater.controller;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -30,6 +30,9 @@ import android.text.format.DateUtils;
 import android.text.format.Formatter;
 import android.util.Log;
 
+import org.lineageos.updater.R;
+import org.lineageos.updater.UpdateDownload;
+import org.lineageos.updater.UpdatesActivity;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.IOException;

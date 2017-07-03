@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".DownloadService" />
+        <service android:name=".controller.DownloadService" />
 
         <receiver android:name=".UpdatesCheckReceiver">
             <intent-filter>

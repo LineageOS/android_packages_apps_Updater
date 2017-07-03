@@ -28,7 +28,6 @@
 
         <service android:name=".DownloadService" />
 
-        <receiver android:name=".UpdaterBroadcastReceiver" android:exported="false" />
         <receiver android:name=".UpdatesCheckReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>

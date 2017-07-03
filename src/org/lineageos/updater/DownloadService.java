@@ -30,6 +30,9 @@ import android.text.format.DateUtils;
 import android.text.format.Formatter;
 import android.util.Log;
 
+import org.lineageos.updater.misc.Utils;
+
+import java.io.IOException;
 import java.text.NumberFormat;
 
 public class DownloadService extends Service {
@@ -39,6 +42,7 @@ public class DownloadService extends Service {
     public static final String ACTION_DOWNLOAD_CONTROL = "action_download_control";
     public static final String EXTRA_DOWNLOAD_ID = "extra_download_id";
     public static final String EXTRA_DOWNLOAD_CONTROL = "extra_download_control";
+    public static final String ACTION_INSTALL_UPDATE = "action_install_update";
 
     public static final int DOWNLOAD_RESUME = 0;
     public static final int DOWNLOAD_PAUSE = 1;
@@ -151,6 +155,14 @@ public class DownloadService extends Service {
                 mDownloadController.pauseDownload(downloadId);
             } else {
                 Log.e(TAG, "Unknown download action");
+            }
+        } else if (ACTION_INSTALL_UPDATE.equals(intent.getAction())) {
+            String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
+            try {
+                Utils.triggerUpdate(this, mDownloadController.getUpdate(downloadId));
+            } catch (IOException e) {
+                Log.e(TAG, "Could not install update");
+                // TODO: user facing message
             }
         }
         Log.d(TAG, "Service started");
@@ -285,10 +297,10 @@ public class DownloadService extends Service {
     }
 
     private PendingIntent getInstallPendingIntent(String downloadId) {
-        final Intent intent = new Intent(this, UpdaterBroadcastReceiver.class);
-        intent.setAction(UpdaterBroadcastReceiver.ACTION_INSTALL_UPDATE);
-        intent.putExtra(UpdaterBroadcastReceiver.EXTRA_DOWNLOAD_ID, downloadId);
-        return PendingIntent.getBroadcast(this, 0, intent,
+        final Intent intent = new Intent(this, DownloadService.class);
+        intent.setAction(ACTION_INSTALL_UPDATE);
+        intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
+        return PendingIntent.getService(this, 0, intent,
                 PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
     }
 }

@@ -36,6 +36,13 @@ public class DownloadService extends Service {
 
     private static final String TAG = "DownloadService";
 
+    public static final String ACTION_DOWNLOAD_CONTROL = "action_download_control";
+    public static final String EXTRA_DOWNLOAD_ID = "extra_download_id";
+    public static final String EXTRA_DOWNLOAD_CONTROL = "extra_download_control";
+
+    public static final int DOWNLOAD_RESUME = 0;
+    public static final int DOWNLOAD_PAUSE = 1;
+
     private static final int NOTIFICATION_ID = 10;
 
     private final IBinder mBinder = new LocalBinder();
@@ -135,6 +142,16 @@ public class DownloadService extends Service {
             mNotificationBuilder.setOngoing(false);
             mNotificationManager.cancel(NOTIFICATION_ID);
             stopSelf();
+        } else if (ACTION_DOWNLOAD_CONTROL.equals(intent.getAction())) {
+            String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
+            int action = intent.getIntExtra(EXTRA_DOWNLOAD_CONTROL, -1);
+            if (action == DOWNLOAD_RESUME) {
+                mDownloadController.resumeDownload(downloadId);
+            } else if (action == DOWNLOAD_PAUSE) {
+                mDownloadController.pauseDownload(downloadId);
+            } else {
+                Log.e(TAG, "Unknown download action");
+            }
         }
         Log.d(TAG, "Service started");
         return START_STICKY;
@@ -250,22 +267,20 @@ public class DownloadService extends Service {
     }
 
     private PendingIntent getResumePendingIntent(String downloadId) {
-        final Intent intent = new Intent(this, UpdaterBroadcastReceiver.class);
-        intent.setAction(UpdaterBroadcastReceiver.ACTION_DOWNLOAD);
-        intent.putExtra(UpdaterBroadcastReceiver.EXTRA_DOWNLOAD_ID, downloadId);
-        intent.putExtra(UpdaterBroadcastReceiver.EXTRA_DOWNLOAD_ACTION,
-                UpdaterBroadcastReceiver.RESUME);
-        return PendingIntent.getBroadcast(this, 0, intent,
+        final Intent intent = new Intent(this, DownloadService.class);
+        intent.setAction(ACTION_DOWNLOAD_CONTROL);
+        intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
+        intent.putExtra(EXTRA_DOWNLOAD_CONTROL, DOWNLOAD_RESUME);
+        return PendingIntent.getService(this, 0, intent,
                 PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
     private PendingIntent getPausePendingIntent(String downloadId) {
-        final Intent intent = new Intent(this, UpdaterBroadcastReceiver.class);
-        intent.setAction(UpdaterBroadcastReceiver.ACTION_DOWNLOAD);
-        intent.putExtra(UpdaterBroadcastReceiver.EXTRA_DOWNLOAD_ID, downloadId);
-        intent.putExtra(UpdaterBroadcastReceiver.EXTRA_DOWNLOAD_ACTION,
-                UpdaterBroadcastReceiver.PAUSE);
-        return PendingIntent.getBroadcast(this, 0, intent,
+        final Intent intent = new Intent(this, DownloadService.class);
+        intent.setAction(ACTION_DOWNLOAD_CONTROL);
+        intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
+        intent.putExtra(EXTRA_DOWNLOAD_CONTROL, DOWNLOAD_PAUSE);
+        return PendingIntent.getService(this, 0, intent,
                 PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
     }
 

@@ -110,7 +110,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         Intent intent = new Intent(context, UpdatesCheckReceiver.class);
         intent.setAction(DAILY_CHECK_ACTION);
         PendingIntent updateCheckIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
-        alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+        alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
                 SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_DAY,
                 AlarmManager.INTERVAL_DAY, updateCheckIntent);
     }
@@ -121,7 +121,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         intent.setAction(ONESHOT_CHECK_ACTION);
         PendingIntent updateCheckIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
         alarmMgr.cancel(updateCheckIntent);
-        alarmMgr.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+        alarmMgr.set(AlarmManager.ELAPSED_REALTIME,
                 SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_HOUR * 2,
                 updateCheckIntent);
     }

@@ -51,11 +51,11 @@ public class DownloadController implements DownloadControllerInt {
 
     private final File mDownloadRoot;
 
-    public static DownloadController getInstance() {
+    public static synchronized DownloadController getInstance() {
         return sDownloadController;
     }
 
-    public static synchronized DownloadController newInstance(Context context) {
+    public static synchronized DownloadController getInstance(Context context) {
         if (sDownloadController == null) {
             sDownloadController = new DownloadController(context);
         }

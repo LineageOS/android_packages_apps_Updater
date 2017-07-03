@@ -52,7 +52,7 @@ public class DownloadService extends Service {
     public void onCreate() {
         super.onCreate();
 
-        mDownloadController = DownloadController.newInstance(this);
+        mDownloadController = DownloadController.getInstance(this);
 
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         mNotificationBuilder = new NotificationCompat.Builder(this);

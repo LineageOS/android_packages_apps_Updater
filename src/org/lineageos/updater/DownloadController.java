@@ -69,6 +69,10 @@ public class DownloadController implements DownloadControllerInt {
         PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Updater");
         mWakeLock.setReferenceCounted(false);
+
+        for (UpdateDownload update : mUpdatesDbHelper.getUpdates()) {
+            addUpdate(update, true);
+        }
     }
 
     private class DownloadEntry {
@@ -220,7 +224,11 @@ public class DownloadController implements DownloadControllerInt {
     }
 
     @Override
-    public boolean addUpdate(UpdateDownload update, boolean local) {
+    public boolean addUpdate(UpdateDownload update) {
+        return addUpdate(update, false);
+    }
+
+    private boolean addUpdate(UpdateDownload update, boolean local) {
         Log.d(TAG, "Adding download: " + update.getDownloadId());
         if (mDownloads.containsKey(update.getDownloadId())) {
             Log.e(TAG, "Download (" + update.getDownloadId() + ") already added");

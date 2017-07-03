@@ -117,22 +117,11 @@ public class UpdatesActivity extends AppCompatActivity {
     };
 
     private void loadUpdatesList() throws IOException, JSONException {
-        // Process local files first. If they aren't valid, the controller will delete
-        // them from the database. If they are valid, they should be prioritized.
-
-        Log.d(TAG, "Getting updates from internal database");
-
-        DownloadControllerInt controller = mDownloadService.getDownloadController();
-        UpdatesDbHelper dbHelper = new UpdatesDbHelper(this);
-        for (UpdateDownload update : dbHelper.getUpdates()) {
-            controller.addUpdate(update, true);
-        }
-
         Log.d(TAG, "Adding remote updates");
-
+        DownloadControllerInt controller = mDownloadService.getDownloadController();
         File jsonFile = Utils.getCachedUpdateList(this);
         for (UpdateDownload update : Utils.parseJson(jsonFile, true)) {
-            controller.addUpdate(update, true);
+            controller.addUpdate(update);
         }
 
         List<String> updateIds = new ArrayList<>();

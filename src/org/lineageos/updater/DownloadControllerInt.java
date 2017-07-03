@@ -20,7 +20,7 @@ import java.util.Set;
 
 public interface DownloadControllerInt {
 
-    boolean addUpdate(UpdateDownload update, boolean local);
+    boolean addUpdate(UpdateDownload update);
 
     List<UpdateDownload> getUpdates();
 

@@ -26,6 +26,7 @@ public class UpdateDownload extends Update {
     private int mProgress;
     private long mEta;
     private long mSpeed;
+    private int mInstallProgress;
 
     public UpdateStatus getStatus() {
         return mStatus;
@@ -81,5 +82,13 @@ public class UpdateDownload extends Update {
 
     public void setSpeed(long speed) {
         mSpeed = speed;
+    }
+
+    public int getInstallProgress() {
+        return mInstallProgress;
+    }
+
+    public void setInstallProgress(int progress) {
+        mInstallProgress = progress;
     }
 }

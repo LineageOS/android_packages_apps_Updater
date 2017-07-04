@@ -15,24 +15,21 @@
  */
 package org.lineageos.updater;
 
-public enum UpdateStatus {
-    UNKNOWN,
-    STARTING,
-    DOWNLOADING,
-    DOWNLOADED,
-    PAUSED,
-    PAUSED_ERROR,
-    DELETED,
-    VERIFYING,
-    VERIFIED,
-    VERIFICATION_FAILED,
-    INSTALLING,
-    INSTALLED,
-    INSTALLATION_FAILED;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.PowerManager;
 
-    public static final class Persistent {
-        public static final int UNKNOWN = 0;
-        public static final int INCOMPLETE = 1;
-        public static final int VERIFIED = 2;
+public class UpdaterReceiver extends BroadcastReceiver {
+
+    public static final String ACTION_INSTALL_REBOOT =
+            "org.lineageos.updater.action.INSTALL_REBOOT";
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if (ACTION_INSTALL_REBOOT.equals(intent.getAction())) {
+            PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            pm.reboot(null);
+        }
     }
 }

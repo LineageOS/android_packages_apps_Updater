@@ -99,6 +99,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         if (mUpdaterController.isDownloading(downloadId)) {
             setButtonAction(viewHolder.mButton1, Action.PAUSE, downloadId, true);
             viewHolder.mButton2.setEnabled(false);
+        } else if (mUpdaterController.isInstallingUpdate()) {
+            viewHolder.mButton1.setEnabled(false);
+            viewHolder.mButton2.setEnabled(false);
         } else {
             // Allow one active download
             boolean enabled = !mUpdaterController.hasActiveDownloads() &&

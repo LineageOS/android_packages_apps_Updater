@@ -40,4 +40,12 @@
     <string name="resume_button">Resume</string>
     <string name="cancel_button">Delete</string>
     <string name="install_button">Install</string>
+
+    <string name="installing_update">Installing update package</string>
+    <string name="installing_update_error">Install error</string>
+    <string name="installing_update_finished">Update installed</string>
+    <string name="finalizing_package">Finalizing package installation</string>
+    <string name="preparing_ota_first_boot">Preparing for first boot</string>
+
+    <string name="reboot">Reboot</string>
 </resources>

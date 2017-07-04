@@ -43,4 +43,6 @@ public interface UpdaterControllerInt {
     boolean hasActiveDownloads();
 
     boolean isVerifyingUpdate();
+
+    boolean isInstallingUpdate();
 }

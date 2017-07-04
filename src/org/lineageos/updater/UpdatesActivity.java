@@ -68,10 +68,10 @@ public class UpdatesActivity extends AppCompatActivity {
         mBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                if (UpdaterController.UPDATE_STATUS_ACTION.equals(intent.getAction())) {
+                if (UpdaterController.ACTION_UPDATE_STATUS.equals(intent.getAction())) {
                     mAdapter.notifyDataSetChanged();
-                } else if (UpdaterController.PROGRESS_ACTION.equals(intent.getAction())) {
-                    String downloadId = intent.getStringExtra(UpdaterController.DOWNLOAD_ID_EXTRA);
+                } else if (UpdaterController.ACTION_DOWNLOAD_PROGRESS.equals(intent.getAction())) {
+                    String downloadId = intent.getStringExtra(UpdaterController.EXTRA_DOWNLOAD_ID);
                     mAdapter.notifyItemChanged(downloadId);
                 }
             }
@@ -86,8 +86,8 @@ public class UpdatesActivity extends AppCompatActivity {
         bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(UpdaterController.UPDATE_STATUS_ACTION);
-        intentFilter.addAction(UpdaterController.PROGRESS_ACTION);
+        intentFilter.addAction(UpdaterController.ACTION_UPDATE_STATUS);
+        intentFilter.addAction(UpdaterController.ACTION_DOWNLOAD_PROGRESS);
         LocalBroadcastManager.getInstance(this).registerReceiver(mBroadcastReceiver, intentFilter);
     }
 

@@ -38,9 +38,9 @@ import java.util.Set;
 
 public class UpdaterController implements UpdaterControllerInt {
 
-    public static final String PROGRESS_ACTION = "progress_action";
-    public static final String UPDATE_STATUS_ACTION = "update_status_change_action";
-    public static final String DOWNLOAD_ID_EXTRA = "download_id_extra";
+    public static final String ACTION_DOWNLOAD_PROGRESS = "action_download_progress";
+    public static final String ACTION_UPDATE_STATUS = "action_update_status_change";
+    public static final String EXTRA_DOWNLOAD_ID = "extra_download_id";
 
     private final String TAG = "UpdaterController";
 
@@ -91,15 +91,15 @@ public class UpdaterController implements UpdaterControllerInt {
 
     private void notifyUpdateChange(String downloadId) {
         Intent intent = new Intent();
-        intent.setAction(UPDATE_STATUS_ACTION);
-        intent.putExtra(DOWNLOAD_ID_EXTRA, downloadId);
+        intent.setAction(ACTION_UPDATE_STATUS);
+        intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
         mBroadcastManager.sendBroadcast(intent);
     }
 
     private void notifyDownloadProgress(String downloadId) {
         Intent intent = new Intent();
-        intent.setAction(PROGRESS_ACTION);
-        intent.putExtra(DOWNLOAD_ID_EXTRA, downloadId);
+        intent.setAction(ACTION_DOWNLOAD_PROGRESS);
+        intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
         mBroadcastManager.sendBroadcast(intent);
     }
 

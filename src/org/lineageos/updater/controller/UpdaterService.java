@@ -83,12 +83,12 @@ public class UpdaterService extends Service {
         mBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                String downloadId = intent.getStringExtra(UpdaterController.DOWNLOAD_ID_EXTRA);
-                if (UpdaterController.UPDATE_STATUS_ACTION.equals(intent.getAction())) {
+                String downloadId = intent.getStringExtra(UpdaterController.EXTRA_DOWNLOAD_ID);
+                if (UpdaterController.ACTION_UPDATE_STATUS.equals(intent.getAction())) {
                     UpdateDownload update = mUpdaterController.getUpdate(downloadId);
                     mNotificationBuilder.setContentTitle(update.getName());
                     handleUpdateStatusChange(update);
-                } else if (UpdaterController.PROGRESS_ACTION.equals(intent.getAction())) {
+                } else if (UpdaterController.ACTION_DOWNLOAD_PROGRESS.equals(intent.getAction())) {
                     UpdateDownload update = mUpdaterController.getUpdate(downloadId);
                     int progress = update.getProgress();
                     mNotificationBuilder.setProgress(100, progress, false);
@@ -109,8 +109,8 @@ public class UpdaterService extends Service {
             }
         };
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(UpdaterController.PROGRESS_ACTION);
-        intentFilter.addAction(UpdaterController.UPDATE_STATUS_ACTION);
+        intentFilter.addAction(UpdaterController.ACTION_DOWNLOAD_PROGRESS);
+        intentFilter.addAction(UpdaterController.ACTION_UPDATE_STATUS);
         LocalBroadcastManager.getInstance(this).registerReceiver(mBroadcastReceiver, intentFilter);
 
     }

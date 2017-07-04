@@ -92,7 +92,7 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
         return db.insert(UpdateEntry.TABLE_NAME, null, values);
     }
 
-    public long addUpdateWithOnConflict(UpdateDownload update) {
+    public long addUpdateWithOnConflict(UpdateDownload update, int conflictAlgorithm) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(UpdateEntry.COLUMN_NAME_STATUS, update.getPersistentStatus());
@@ -104,8 +104,7 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
         values.put(UpdateEntry.COLUMN_NAME_TYPE, update.getType());
         values.put(UpdateEntry.COLUMN_NAME_VERSION, update.getVersion());
         values.put(UpdateEntry.COLUMN_NAME_SIZE, update.getFileSize());
-        return db.insertWithOnConflict(UpdateEntry.TABLE_NAME, null, values,
-                SQLiteDatabase.CONFLICT_IGNORE);
+        return db.insertWithOnConflict(UpdateEntry.TABLE_NAME, null, values, conflictAlgorithm);
     }
 
     public boolean removeUpdate(String downloadId) {

@@ -17,6 +17,7 @@ package org.lineageos.updater.controller;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
@@ -147,7 +148,8 @@ public class UpdaterController implements UpdaterControllerInt {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        mUpdatesDbHelper.addUpdateWithOnConflict(update);
+                        mUpdatesDbHelper.addUpdateWithOnConflict(update,
+                                SQLiteDatabase.CONFLICT_IGNORE);
                     }
                 }).start();
                 notifyUpdateChange(downloadId);

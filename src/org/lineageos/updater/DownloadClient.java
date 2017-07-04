@@ -154,6 +154,10 @@ public class DownloadClient {
         downloadFileInternalCommon(request, destination, callback, progressListener);
     }
 
+    private boolean isSuccessful(int statusCode) {
+        return (statusCode / 100) == 2;
+    }
+
     private void downloadFileInternalCommon(final Request request, final File destination,
             final DownloadCallback callback, final ProgressListener progressListener) {
 
@@ -185,6 +189,10 @@ public class DownloadClient {
                 if (resume) {
                     mResumeOffset = destination.length();
                     Log.d(TAG, "The server fulfilled the partial content request");
+                } else if (!isSuccessful(response.code())) {
+                    Log.e(TAG, "The server replied with code " + response.code());
+                    callback.onFailure();
+                    return;
                 }
 
                 callback.onResponse(response.code(), response.request().urlString(),

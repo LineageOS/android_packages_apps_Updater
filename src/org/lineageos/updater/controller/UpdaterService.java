@@ -142,14 +142,7 @@ public class UpdaterService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if (intent == null) {
-            Log.d(TAG, "The service is being restarted, exit");
-            // The service is being restarted, exit without doing anything
-            stopForeground(STOP_FOREGROUND_DETACH);
-            mNotificationBuilder.setOngoing(false);
-            mNotificationManager.cancel(NOTIFICATION_ID);
-            stopSelf();
-        } else if (ACTION_DOWNLOAD_CONTROL.equals(intent.getAction())) {
+        if (ACTION_DOWNLOAD_CONTROL.equals(intent.getAction())) {
             String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
             int action = intent.getIntExtra(EXTRA_DOWNLOAD_CONTROL, -1);
             if (action == DOWNLOAD_RESUME) {
@@ -169,7 +162,7 @@ public class UpdaterService extends Service {
             }
         }
         Log.d(TAG, "Service started");
-        return START_STICKY;
+        return START_NOT_STICKY;
     }
 
     public UpdaterControllerInt getUpdaterController() {

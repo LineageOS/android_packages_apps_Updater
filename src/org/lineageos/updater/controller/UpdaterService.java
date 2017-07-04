@@ -90,21 +90,7 @@ public class UpdaterService extends Service {
                     handleUpdateStatusChange(update);
                 } else if (UpdaterController.ACTION_DOWNLOAD_PROGRESS.equals(intent.getAction())) {
                     UpdateDownload update = mUpdaterController.getUpdate(downloadId);
-                    int progress = update.getProgress();
-                    mNotificationBuilder.setProgress(100, progress, false);
-
-                    String percent = NumberFormat.getPercentInstance().format(progress / 100.f);
-                    mNotificationStyle.setSummaryText(percent);
-
-                    mNotificationStyle.setBigContentTitle(update.getName());
-                    mNotificationBuilder.setContentTitle(update.getName());
-
-                    String speed = Formatter.formatFileSize(context, update.getSpeed());
-                    CharSequence eta = DateUtils.formatDuration(update.getEta() * 1000);
-                    mNotificationStyle.bigText(
-                            getString(R.string.text_download_speed, eta, speed));
-
-                    mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                    handleDownloadProgressChange(update);
                 }
             }
         };
@@ -272,6 +258,24 @@ public class UpdaterService extends Service {
                 break;
             }
         }
+    }
+
+    private void handleDownloadProgressChange(UpdateDownload update) {
+        int progress = update.getProgress();
+        mNotificationBuilder.setProgress(100, progress, false);
+
+        String percent = NumberFormat.getPercentInstance().format(progress / 100.f);
+        mNotificationStyle.setSummaryText(percent);
+
+        mNotificationStyle.setBigContentTitle(update.getName());
+        mNotificationBuilder.setContentTitle(update.getName());
+
+        String speed = Formatter.formatFileSize(this, update.getSpeed());
+        CharSequence eta = DateUtils.formatDuration(update.getEta() * 1000);
+        mNotificationStyle.bigText(
+                getString(R.string.text_download_speed, eta, speed));
+
+        mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
     }
 
     private PendingIntent getResumePendingIntent(String downloadId) {

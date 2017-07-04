@@ -131,21 +131,11 @@ public class UpdaterController implements UpdaterControllerInt {
 
             @Override
             public void onSuccess(String body) {
+                Log.d(TAG, "Download complete");
                 UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 update.setStatus(UpdateStatus.VERIFYING);
-                notifyUpdateChange(downloadId);
-                Log.d(TAG, "Download complete");
-                if (!verifyDownload(update.getFile())) {
-                    update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
-                    mUpdatesDbHelper.removeUpdate(downloadId);
-                    update.setProgress(0);
-                    update.setStatus(UpdateStatus.VERIFICATION_FAILED);
-                } else {
-                    update.setPersistentStatus(UpdateStatus.Persistent.VERIFIED);
-                    mUpdatesDbHelper.changeUpdateStatus(update);
-                    update.setStatus(UpdateStatus.VERIFIED);
-                }
                 mDownloads.get(downloadId).mDownloadClient = null;
+                verifyUpdateAsync(downloadId);
                 notifyUpdateChange(downloadId);
                 tryReleaseWakelock();
             }
@@ -192,7 +182,28 @@ public class UpdaterController implements UpdaterControllerInt {
         };
     }
 
-    private boolean verifyDownload(File file) {
+    private void verifyUpdateAsync(final String downloadId) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                UpdateDownload update = mDownloads.get(downloadId).mUpdate;
+                File file = update.getFile();
+                if (file.exists() && verifyPackage(file)) {
+                    update.setPersistentStatus(UpdateStatus.Persistent.VERIFIED);
+                    mUpdatesDbHelper.changeUpdateStatus(update);
+                    update.setStatus(UpdateStatus.VERIFIED);
+                } else {
+                    update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
+                    mUpdatesDbHelper.removeUpdate(downloadId);
+                    update.setProgress(0);
+                    update.setStatus(UpdateStatus.VERIFICATION_FAILED);
+                }
+                notifyUpdateChange(downloadId);
+            }
+        }).start();
+    }
+
+    private boolean verifyPackage(File file) {
         try {
             android.os.RecoverySystem.verifyPackage(file, null, null);
             Log.e(TAG, "Verification successful");

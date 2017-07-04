@@ -295,14 +295,22 @@ public class UpdaterController implements UpdaterControllerInt {
             return false;
         }
         UpdateDownload update = mDownloads.get(downloadId).mUpdate;
-        mDownloads.get(downloadId).mDownloadClient =
-                DownloadClient.downloadFileResume(update.getDownloadUrl(),
-                        update.getFile(),
-                        getDownloadCallback(downloadId),
-                        getProgressListener(downloadId));
-        update.setStatus(UpdateStatus.STARTING);
-        notifyUpdateChange(downloadId);
-        mWakeLock.acquire();
+        File file = update.getFile();
+        if (file.exists() && file.length() == update.getFileSize()) {
+            Log.d(TAG, "File already downloaded, starting verification");
+            update.setStatus(UpdateStatus.VERIFYING);
+            verifyUpdateAsync(downloadId);
+            notifyUpdateChange(downloadId);
+        } else {
+            mDownloads.get(downloadId).mDownloadClient =
+                    DownloadClient.downloadFileResume(update.getDownloadUrl(),
+                            update.getFile(),
+                            getDownloadCallback(downloadId),
+                            getProgressListener(downloadId));
+            update.setStatus(UpdateStatus.STARTING);
+            notifyUpdateChange(downloadId);
+            mWakeLock.acquire();
+        }
         return true;
     }
 

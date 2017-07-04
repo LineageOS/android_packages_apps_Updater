@@ -31,9 +31,9 @@ import android.support.v7.widget.SimpleItemAnimator;
 import android.util.Log;
 
 import org.json.JSONException;
-import org.lineageos.updater.controller.DownloadController;
-import org.lineageos.updater.controller.DownloadControllerInt;
-import org.lineageos.updater.controller.DownloadService;
+import org.lineageos.updater.controller.UpdaterController;
+import org.lineageos.updater.controller.UpdaterControllerInt;
+import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.File;
@@ -45,7 +45,7 @@ import java.util.List;
 public class UpdatesActivity extends AppCompatActivity {
 
     private static final String TAG = "UpdatesActivity";
-    private DownloadService mDownloadService;
+    private UpdaterService mUpdaterService;
     private BroadcastReceiver mBroadcastReceiver;
 
     private UpdatesListAdapter mAdapter;
@@ -68,10 +68,10 @@ public class UpdatesActivity extends AppCompatActivity {
         mBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                if (DownloadController.UPDATE_STATUS_ACTION.equals(intent.getAction())) {
+                if (UpdaterController.UPDATE_STATUS_ACTION.equals(intent.getAction())) {
                     mAdapter.notifyDataSetChanged();
-                } else if (DownloadController.PROGRESS_ACTION.equals(intent.getAction())) {
-                    String downloadId = intent.getStringExtra(DownloadController.DOWNLOAD_ID_EXTRA);
+                } else if (UpdaterController.PROGRESS_ACTION.equals(intent.getAction())) {
+                    String downloadId = intent.getStringExtra(UpdaterController.DOWNLOAD_ID_EXTRA);
                     mAdapter.notifyItemChanged(downloadId);
                 }
             }
@@ -81,20 +81,20 @@ public class UpdatesActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        Intent intent = new Intent(this, DownloadService.class);
+        Intent intent = new Intent(this, UpdaterService.class);
         startService(intent);
         bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(DownloadController.UPDATE_STATUS_ACTION);
-        intentFilter.addAction(DownloadController.PROGRESS_ACTION);
+        intentFilter.addAction(UpdaterController.UPDATE_STATUS_ACTION);
+        intentFilter.addAction(UpdaterController.PROGRESS_ACTION);
         LocalBroadcastManager.getInstance(this).registerReceiver(mBroadcastReceiver, intentFilter);
     }
 
     @Override
     public void onStop() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mBroadcastReceiver);
-        if (mDownloadService != null) {
+        if (mUpdaterService != null) {
             unbindService(mConnection);
         }
         super.onStop();
@@ -105,23 +105,23 @@ public class UpdatesActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName className,
                 IBinder service) {
-            DownloadService.LocalBinder binder = (DownloadService.LocalBinder) service;
-            mDownloadService = binder.getService();
-            mAdapter.setDownloadController(mDownloadService.getDownloadController());
+            UpdaterService.LocalBinder binder = (UpdaterService.LocalBinder) service;
+            mUpdaterService = binder.getService();
+            mAdapter.setUpdaterController(mUpdaterService.getUpdaterController());
             getUpdatesList();
         }
 
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
-            mAdapter.setDownloadController(null);
-            mDownloadService = null;
+            mAdapter.setUpdaterController(null);
+            mUpdaterService = null;
             mAdapter.notifyDataSetChanged();
         }
     };
 
     private void loadUpdatesList() throws IOException, JSONException {
         Log.d(TAG, "Adding remote updates");
-        DownloadControllerInt controller = mDownloadService.getDownloadController();
+        UpdaterControllerInt controller = mUpdaterService.getUpdaterController();
         File jsonFile = Utils.getCachedUpdateList(this);
         for (UpdateDownload update : Utils.parseJson(jsonFile, true)) {
             controller.addUpdate(update);

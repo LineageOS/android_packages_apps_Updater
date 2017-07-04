@@ -36,15 +36,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class DownloadController implements DownloadControllerInt {
+public class UpdaterController implements UpdaterControllerInt {
 
     public static final String PROGRESS_ACTION = "progress_action";
     public static final String UPDATE_STATUS_ACTION = "update_status_change_action";
     public static final String DOWNLOAD_ID_EXTRA = "download_id_extra";
 
-    private final String TAG = "DownloadController";
+    private final String TAG = "UpdaterController";
 
-    private static DownloadController sDownloadController;
+    private static UpdaterController sUpdaterController;
 
     private static final int MAX_REPORT_INTERVAL_MS = 1000;
 
@@ -55,18 +55,18 @@ public class DownloadController implements DownloadControllerInt {
 
     private final File mDownloadRoot;
 
-    public static synchronized DownloadController getInstance() {
-        return sDownloadController;
+    public static synchronized UpdaterController getInstance() {
+        return sUpdaterController;
     }
 
-    protected static synchronized DownloadController getInstance(Context context) {
-        if (sDownloadController == null) {
-            sDownloadController = new DownloadController(context);
+    protected static synchronized UpdaterController getInstance(Context context) {
+        if (sUpdaterController == null) {
+            sUpdaterController = new UpdaterController(context);
         }
-        return sDownloadController;
+        return sUpdaterController;
     }
 
-    private DownloadController(Context context) {
+    private UpdaterController(Context context) {
         mBroadcastManager = LocalBroadcastManager.getInstance(context);
         mUpdatesDbHelper = new UpdatesDbHelper(context);
         mDownloadRoot = Utils.getDownloadPath(context);

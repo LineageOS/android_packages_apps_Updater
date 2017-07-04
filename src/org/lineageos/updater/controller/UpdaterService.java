@@ -38,9 +38,9 @@ import org.lineageos.updater.misc.Utils;
 import java.io.IOException;
 import java.text.NumberFormat;
 
-public class DownloadService extends Service {
+public class UpdaterService extends Service {
 
-    private static final String TAG = "DownloadService";
+    private static final String TAG = "UpdaterService";
 
     public static final String ACTION_DOWNLOAD_CONTROL = "action_download_control";
     public static final String EXTRA_DOWNLOAD_ID = "extra_download_id";
@@ -60,13 +60,13 @@ public class DownloadService extends Service {
     private NotificationManager mNotificationManager;
     private NotificationCompat.BigTextStyle mNotificationStyle;;
 
-    private DownloadControllerInt mDownloadController;
+    private UpdaterControllerInt mUpdaterController;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        mDownloadController = DownloadController.getInstance(this);
+        mUpdaterController = UpdaterController.getInstance(this);
 
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         mNotificationBuilder = new NotificationCompat.Builder(this);
@@ -83,13 +83,13 @@ public class DownloadService extends Service {
         mBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                String downloadId = intent.getStringExtra(DownloadController.DOWNLOAD_ID_EXTRA);
-                if (DownloadController.UPDATE_STATUS_ACTION.equals(intent.getAction())) {
-                    UpdateDownload update = mDownloadController.getUpdate(downloadId);
+                String downloadId = intent.getStringExtra(UpdaterController.DOWNLOAD_ID_EXTRA);
+                if (UpdaterController.UPDATE_STATUS_ACTION.equals(intent.getAction())) {
+                    UpdateDownload update = mUpdaterController.getUpdate(downloadId);
                     mNotificationBuilder.setContentTitle(update.getName());
-                    handleDownloadStatusChange(update);
-                } else if (DownloadController.PROGRESS_ACTION.equals(intent.getAction())) {
-                    UpdateDownload update = mDownloadController.getUpdate(downloadId);
+                    handleUpdateStatusChange(update);
+                } else if (UpdaterController.PROGRESS_ACTION.equals(intent.getAction())) {
+                    UpdateDownload update = mUpdaterController.getUpdate(downloadId);
                     int progress = update.getProgress();
                     mNotificationBuilder.setProgress(100, progress, false);
 
@@ -109,8 +109,8 @@ public class DownloadService extends Service {
             }
         };
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(DownloadController.PROGRESS_ACTION);
-        intentFilter.addAction(DownloadController.UPDATE_STATUS_ACTION);
+        intentFilter.addAction(UpdaterController.PROGRESS_ACTION);
+        intentFilter.addAction(UpdaterController.UPDATE_STATUS_ACTION);
         LocalBroadcastManager.getInstance(this).registerReceiver(mBroadcastReceiver, intentFilter);
 
     }
@@ -122,8 +122,8 @@ public class DownloadService extends Service {
     }
 
     public class LocalBinder extends Binder {
-        public DownloadService getService() {
-            return DownloadService.this;
+        public UpdaterService getService() {
+            return UpdaterService.this;
         }
     }
 
@@ -153,16 +153,16 @@ public class DownloadService extends Service {
             String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
             int action = intent.getIntExtra(EXTRA_DOWNLOAD_CONTROL, -1);
             if (action == DOWNLOAD_RESUME) {
-                mDownloadController.resumeDownload(downloadId);
+                mUpdaterController.resumeDownload(downloadId);
             } else if (action == DOWNLOAD_PAUSE) {
-                mDownloadController.pauseDownload(downloadId);
+                mUpdaterController.pauseDownload(downloadId);
             } else {
                 Log.e(TAG, "Unknown download action");
             }
         } else if (ACTION_INSTALL_UPDATE.equals(intent.getAction())) {
             String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
             try {
-                Utils.triggerUpdate(this, mDownloadController.getUpdate(downloadId));
+                Utils.triggerUpdate(this, mUpdaterController.getUpdate(downloadId));
             } catch (IOException e) {
                 Log.e(TAG, "Could not install update");
                 // TODO: user facing message
@@ -172,18 +172,18 @@ public class DownloadService extends Service {
         return START_STICKY;
     }
 
-    public DownloadControllerInt getDownloadController() {
-        return mDownloadController;
+    public UpdaterControllerInt getUpdaterController() {
+        return mUpdaterController;
     }
 
     private void tryStopSelf() {
-        if (!mHasClients && !mDownloadController.hasActiveDownloads()) {
+        if (!mHasClients && !mUpdaterController.hasActiveDownloads()) {
             Log.d(TAG, "Service no longer needed, stopping");
             stopSelf();
         }
     }
 
-    private void handleDownloadStatusChange(UpdateDownload update) {
+    private void handleUpdateStatusChange(UpdateDownload update) {
         switch (update.getStatus()) {
             case DELETED: {
                 stopForeground(STOP_FOREGROUND_DETACH);
@@ -282,7 +282,7 @@ public class DownloadService extends Service {
     }
 
     private PendingIntent getResumePendingIntent(String downloadId) {
-        final Intent intent = new Intent(this, DownloadService.class);
+        final Intent intent = new Intent(this, UpdaterService.class);
         intent.setAction(ACTION_DOWNLOAD_CONTROL);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
         intent.putExtra(EXTRA_DOWNLOAD_CONTROL, DOWNLOAD_RESUME);
@@ -291,7 +291,7 @@ public class DownloadService extends Service {
     }
 
     private PendingIntent getPausePendingIntent(String downloadId) {
-        final Intent intent = new Intent(this, DownloadService.class);
+        final Intent intent = new Intent(this, UpdaterService.class);
         intent.setAction(ACTION_DOWNLOAD_CONTROL);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
         intent.putExtra(EXTRA_DOWNLOAD_CONTROL, DOWNLOAD_PAUSE);
@@ -300,7 +300,7 @@ public class DownloadService extends Service {
     }
 
     private PendingIntent getInstallPendingIntent(String downloadId) {
-        final Intent intent = new Intent(this, DownloadService.class);
+        final Intent intent = new Intent(this, UpdaterService.class);
         intent.setAction(ACTION_INSTALL_UPDATE);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
         return PendingIntent.getService(this, 0, intent,

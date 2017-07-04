@@ -25,7 +25,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.lineageos.updater.controller.DownloadControllerInt;
+import org.lineageos.updater.controller.UpdaterControllerInt;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.IOException;
@@ -36,7 +36,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private static final String TAG = "UpdateListAdapter";
 
     private List<String> mDownloadIds;
-    private DownloadControllerInt mDownloadController;
+    private UpdaterControllerInt mUpdaterController;
     private Context mContext;
 
     private enum Action {
@@ -73,21 +73,21 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         return new ViewHolder(view);
     }
 
-    public void setDownloadController(DownloadControllerInt downloadController) {
-        mDownloadController = downloadController;
+    public void setUpdaterController(UpdaterControllerInt updaterController) {
+        mUpdaterController = updaterController;
         notifyDataSetChanged();
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, int i) {
-        if (mDownloadController == null) {
+        if (mUpdaterController == null) {
             viewHolder.mButton1.setEnabled(false);
             viewHolder.mButton2.setEnabled(false);
             return;
         }
 
         final String downloadId = mDownloadIds.get(i);
-        UpdateDownload update = mDownloadController.getUpdate(downloadId);
+        UpdateDownload update = mUpdaterController.getUpdate(downloadId);
         viewHolder.mName.setText(update.getName());
 
         viewHolder.mProgressBar.setProgress(update.getProgress());
@@ -96,12 +96,12 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 update.getStatus() == UpdateStatus.INSTALLING;
         viewHolder.mProgressBar.setIndeterminate(indeterminate);
 
-        if (mDownloadController.isDownloading(downloadId)) {
+        if (mUpdaterController.isDownloading(downloadId)) {
             setButtonAction(viewHolder.mButton1, Action.PAUSE, downloadId, true);
             viewHolder.mButton2.setEnabled(false);
         } else {
             // Allow one active download
-            boolean enabled = !mDownloadController.hasActiveDownloads() && Utils.canInstall(update);
+            boolean enabled = !mUpdaterController.hasActiveDownloads() && Utils.canInstall(update);
             int persistentStatus = update.getPersistentStatus();
             if (persistentStatus == UpdateStatus.Persistent.INCOMPLETE) {
                 setButtonAction(viewHolder.mButton1, Action.RESUME, downloadId, enabled);
@@ -138,7 +138,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mDownloadController.startDownload(downloadId);
+                        mUpdaterController.startDownload(downloadId);
                     }
                 });
                 break;
@@ -148,7 +148,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mDownloadController.pauseDownload(downloadId);
+                        mUpdaterController.pauseDownload(downloadId);
                     }
                 });
                 break;
@@ -158,7 +158,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mDownloadController.resumeDownload(downloadId);
+                        mUpdaterController.resumeDownload(downloadId);
                     }
                 });
                 break;
@@ -168,7 +168,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mDownloadController.cancelDownload(downloadId);
+                        mUpdaterController.cancelDownload(downloadId);
                     }
                 });
                 break;
@@ -180,7 +180,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     public void onClick(View view) {
                         try {
                             Utils.triggerUpdate(mContext,
-                                    mDownloadController.getUpdate(downloadId));
+                                    mUpdaterController.getUpdate(downloadId));
                         } catch (IOException e) {
                             Log.e(TAG, "Could not trigger the update", e);
                             // TODO: show error message

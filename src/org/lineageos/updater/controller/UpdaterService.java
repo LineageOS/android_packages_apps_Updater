@@ -211,6 +211,9 @@ public class UpdaterService extends Service {
             }
             case PAUSED_ERROR: {
                 stopForeground(STOP_FOREGROUND_DETACH);
+                int progress = update.getProgress();
+                // In case we pause before the first progress update
+                mNotificationBuilder.setProgress(progress > 0 ? 100 : 0, progress, false);
                 mNotificationBuilder.mActions.clear();
                 String text = getString(R.string.download_paused_error_notification);
                 mNotificationStyle.bigText(text);

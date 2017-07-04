@@ -113,7 +113,7 @@ public class UpdaterController implements UpdaterControllerInt {
 
             @Override
             public void onResponse(int statusCode, String url, DownloadClient.Headers headers) {
-                UpdateDownload update = mDownloads.get(downloadId).mUpdate;
+                final UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 String contentLenght = headers.get("Content-Length");
                 if (contentLenght != null) {
                     try {
@@ -125,7 +125,12 @@ public class UpdaterController implements UpdaterControllerInt {
                 }
                 update.setStatus(UpdateStatus.DOWNLOADING);
                 update.setPersistentStatus(UpdateStatus.Persistent.INCOMPLETE);
-                mUpdatesDbHelper.addUpdateWithOnConflict(update);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mUpdatesDbHelper.addUpdateWithOnConflict(update);
+                    }
+                }).start();
                 notifyUpdateChange(downloadId);
             }
 
@@ -242,7 +247,7 @@ public class UpdaterController implements UpdaterControllerInt {
         return addUpdate(update, false);
     }
 
-    private boolean addUpdate(UpdateDownload update, boolean local) {
+    private boolean addUpdate(final UpdateDownload update, boolean local) {
         Log.d(TAG, "Adding download: " + update.getDownloadId());
         if (mDownloads.containsKey(update.getDownloadId())) {
             Log.e(TAG, "Download (" + update.getDownloadId() + ") already added");
@@ -250,7 +255,12 @@ public class UpdaterController implements UpdaterControllerInt {
         }
         if (!fixUpdateStatus(update) && local) {
             update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
-            mUpdatesDbHelper.removeUpdate(update.getDownloadId());
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    mUpdatesDbHelper.removeUpdate(update.getDownloadId());
+                }
+            }).start();
             Log.d(TAG, update.getDownloadId() + " had an invalid status and is local");
             return false;
         }

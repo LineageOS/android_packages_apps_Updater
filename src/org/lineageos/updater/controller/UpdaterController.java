@@ -54,6 +54,8 @@ public class UpdaterController implements UpdaterControllerInt {
 
     private final File mDownloadRoot;
 
+    private int mActiveDownloads = 0;
+
     public static synchronized UpdaterController getInstance() {
         return sUpdaterController;
     }
@@ -108,6 +110,22 @@ public class UpdaterController implements UpdaterControllerInt {
         }
     }
 
+    private void addDownloadClient(DownloadEntry entry, DownloadClient downloadClient) {
+        if (entry.mDownloadClient != null) {
+            return;
+        }
+        entry.mDownloadClient = downloadClient;
+        mActiveDownloads++;
+    }
+
+    private void removeDownloadClient(DownloadEntry entry) {
+        if (entry.mDownloadClient == null) {
+            return;
+        }
+        entry.mDownloadClient = null;
+        mActiveDownloads--;
+    }
+
     private DownloadClient.DownloadCallback getDownloadCallback(final String downloadId) {
         return new DownloadClient.DownloadCallback() {
 
@@ -139,7 +157,7 @@ public class UpdaterController implements UpdaterControllerInt {
                 Log.d(TAG, "Download complete");
                 UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 update.setStatus(UpdateStatus.VERIFYING);
-                mDownloads.get(downloadId).mDownloadClient = null;
+                removeDownloadClient(mDownloads.get(downloadId));
                 verifyUpdateAsync(downloadId);
                 notifyUpdateChange(downloadId);
                 tryReleaseWakelock();
@@ -156,7 +174,7 @@ public class UpdaterController implements UpdaterControllerInt {
                     // Already notified
                 } else {
                     Log.e(TAG, "Download failed");
-                    mDownloads.get(downloadId).mDownloadClient = null;
+                    removeDownloadClient(mDownloads.get(downloadId));
                     update.setStatus(UpdateStatus.PAUSED_ERROR);
                     notifyUpdateChange(downloadId);
                 }
@@ -277,11 +295,12 @@ public class UpdaterController implements UpdaterControllerInt {
         UpdateDownload update = mDownloads.get(downloadId).mUpdate;
         File destination = new File(mDownloadRoot, update.getName());
         update.setFile(destination);
-        mDownloads.get(downloadId).mDownloadClient =
+        DownloadClient downloadClient =
                 DownloadClient.downloadFile(update.getDownloadUrl(),
                         update.getFile(),
                         getDownloadCallback(downloadId),
                         getProgressListener(downloadId));
+        addDownloadClient(mDownloads.get(downloadId), downloadClient);
         update.setStatus(UpdateStatus.STARTING);
         notifyUpdateChange(downloadId);
         mWakeLock.acquire();
@@ -302,11 +321,12 @@ public class UpdaterController implements UpdaterControllerInt {
             verifyUpdateAsync(downloadId);
             notifyUpdateChange(downloadId);
         } else {
-            mDownloads.get(downloadId).mDownloadClient =
+            DownloadClient downloadClient =
                     DownloadClient.downloadFileResume(update.getDownloadUrl(),
                             update.getFile(),
                             getDownloadCallback(downloadId),
                             getProgressListener(downloadId));
+            addDownloadClient(mDownloads.get(downloadId), downloadClient);
             update.setStatus(UpdateStatus.STARTING);
             notifyUpdateChange(downloadId);
             mWakeLock.acquire();
@@ -324,7 +344,7 @@ public class UpdaterController implements UpdaterControllerInt {
         // First remove the client and then cancel the download so that when the download
         // fails, we know it was intentional
         DownloadClient downloadClient = mDownloads.get(downloadId).mDownloadClient;
-        mDownloads.get(downloadId).mDownloadClient = null;
+        removeDownloadClient(mDownloads.get(downloadId));
         downloadClient.cancel();
         UpdateDownload update = mDownloads.get(downloadId).mUpdate;
         update.setStatus(UpdateStatus.PAUSED);
@@ -389,11 +409,6 @@ public class UpdaterController implements UpdaterControllerInt {
 
     @Override
     public boolean hasActiveDownloads() {
-        for (DownloadEntry entry : mDownloads.values()) {
-            if (entry.mDownloadClient != null) {
-                return true;
-            }
-        }
-        return false;
+        return mActiveDownloads > 0;
     }
 }

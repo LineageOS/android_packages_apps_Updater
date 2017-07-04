@@ -192,6 +192,16 @@ public class UpdaterController implements UpdaterControllerInt {
             @Override
             public void update(long bytesRead, long contentLength, long speed, long eta,
                     boolean done) {
+                if (contentLength <= 0) {
+                    if (getUpdate(downloadId).getFileSize() <= 0) {
+                        return;
+                    } else {
+                        contentLength = getUpdate(downloadId).getFileSize();
+                    }
+                }
+                if (contentLength <= 0) {
+                    return;
+                }
                 final long now = SystemClock.elapsedRealtime();
                 int progress = Math.round(bytesRead * 100 / contentLength);
                 if (progress != mProgress || mLastUpdate - now > MAX_REPORT_INTERVAL_MS) {
@@ -253,7 +263,7 @@ public class UpdaterController implements UpdaterControllerInt {
                 if (update.getFile() == null || !update.getFile().exists()) {
                     update.setStatus(UpdateStatus.UNKNOWN);
                     return false;
-                } else {
+                } else if (update.getFileSize() > 0) {
                     int progress = Math.round(
                             update.getFile().length() * 100 / update.getFileSize());
                     update.setProgress(progress);
@@ -318,7 +328,7 @@ public class UpdaterController implements UpdaterControllerInt {
         }
         UpdateDownload update = mDownloads.get(downloadId).mUpdate;
         File file = update.getFile();
-        if (file.exists() && file.length() == update.getFileSize()) {
+        if (file.exists() && update.getFileSize() > 0 && file.length() >= update.getFileSize()) {
             Log.d(TAG, "File already downloaded, starting verification");
             update.setStatus(UpdateStatus.VERIFYING);
             verifyUpdateAsync(downloadId);

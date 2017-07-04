@@ -55,6 +55,7 @@ public class UpdaterController implements UpdaterControllerInt {
     private final File mDownloadRoot;
 
     private int mActiveDownloads = 0;
+    private int mVerifyingUpdates = 0;
 
     public static synchronized UpdaterController getInstance() {
         return sUpdaterController;
@@ -209,6 +210,7 @@ public class UpdaterController implements UpdaterControllerInt {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                mVerifyingUpdates++;
                 UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 File file = update.getFile();
                 if (file.exists() && verifyPackage(file)) {
@@ -221,6 +223,7 @@ public class UpdaterController implements UpdaterControllerInt {
                     update.setProgress(0);
                     update.setStatus(UpdateStatus.VERIFICATION_FAILED);
                 }
+                mVerifyingUpdates--;
                 notifyUpdateChange(downloadId);
             }
         }).start();
@@ -410,5 +413,10 @@ public class UpdaterController implements UpdaterControllerInt {
     @Override
     public boolean hasActiveDownloads() {
         return mActiveDownloads > 0;
+    }
+
+    @Override
+    public boolean isVerifyingUpdate() {
+        return mVerifyingUpdates > 0;
     }
 }

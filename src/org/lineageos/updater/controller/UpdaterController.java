@@ -138,7 +138,9 @@ public class UpdaterController implements UpdaterControllerInt {
                 if (contentLenght != null) {
                     try {
                         long size = Long.parseLong(contentLenght);
-                        update.setFileSize(size);
+                        if (size > 0) {
+                            update.setFileSize(size);
+                        }
                     } catch (NumberFormatException e) {
                         Log.e(TAG, "Could not get content-length");
                     }
@@ -149,7 +151,7 @@ public class UpdaterController implements UpdaterControllerInt {
                     @Override
                     public void run() {
                         mUpdatesDbHelper.addUpdateWithOnConflict(update,
-                                SQLiteDatabase.CONFLICT_IGNORE);
+                                SQLiteDatabase.CONFLICT_REPLACE);
                     }
                 }).start();
                 notifyUpdateChange(downloadId);

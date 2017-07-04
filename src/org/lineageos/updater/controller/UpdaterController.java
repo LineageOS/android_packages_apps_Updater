@@ -17,7 +17,6 @@ package org.lineageos.updater.controller;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
@@ -305,17 +304,17 @@ public class UpdaterController implements UpdaterControllerInt {
     }
 
     private void deleteUpdateAsync(final String downloadId) {
-        new AsyncTask<Void, Void, Void>() {
-            protected Void doInBackground(Void... voids) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
                 UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 File file = update.getFile();
                 if (file.exists() && !file.delete()) {
                     Log.e(TAG, "Could not delete " + file.getAbsolutePath());
                 }
                 mUpdatesDbHelper.removeUpdate(downloadId);
-                return null;
             }
-        }.execute();
+        }).start();
     }
 
     @Override

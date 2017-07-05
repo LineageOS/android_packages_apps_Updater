@@ -25,15 +25,19 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import org.json.JSONException;
 import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterControllerInt;
 import org.lineageos.updater.controller.UpdaterService;
+import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.File;
@@ -77,6 +81,8 @@ public class UpdatesActivity extends AppCompatActivity {
                 }
             }
         };
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -100,6 +106,28 @@ public class UpdatesActivity extends AppCompatActivity {
             unbindService(mConnection);
         }
         super.onStop();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_refresh:
+                downloadUpdatesList();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private ServiceConnection mConnection = new ServiceConnection() {
@@ -174,6 +202,11 @@ public class UpdatesActivity extends AppCompatActivity {
                         try {
                             Log.d(TAG, "List downloaded");
                             loadUpdatesList();
+                            long millis = System.currentTimeMillis();
+                            PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
+                                    .edit()
+                                    .putLong(Constants.PREF_LAST_UPDATE_CHECK, millis)
+                                    .apply();
                             jsonFileTmp.renameTo(jsonFile);
                         } catch (IOException | JSONException e) {
                             Log.e(TAG, "Could not read json", e);

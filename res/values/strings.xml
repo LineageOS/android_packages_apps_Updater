@@ -48,4 +48,6 @@
     <string name="preparing_ota_first_boot">Preparing for first boot</string>
 
     <string name="reboot">Reboot</string>
+
+    <string name="menu_refresh">Refresh</string>
 </resources>

@@ -151,10 +151,11 @@ public class UpdatesActivity extends AppCompatActivity {
     }
 
     private void downloadUpdatesList() {
-        File jsonFile = Utils.getCachedUpdateList(this);
+        final File jsonFile = Utils.getCachedUpdateList(this);
+        final File jsonFileTmp = new File(jsonFile.getAbsolutePath() + ".tmp");
         String url = Utils.getServerURL(this);
         Log.d(TAG, "Checking " + url);
-        DownloadClient.downloadFile(url, jsonFile, new DownloadClient.DownloadCallback() {
+        DownloadClient.downloadFile(url, jsonFileTmp, new DownloadClient.DownloadCallback() {
             @Override
             public void onFailure(boolean cancelled) {
                 Log.e(TAG, "Could not download updates list");
@@ -173,6 +174,7 @@ public class UpdatesActivity extends AppCompatActivity {
                         try {
                             Log.d(TAG, "List downloaded");
                             loadUpdatesList();
+                            jsonFileTmp.renameTo(jsonFile);
                         } catch (IOException | JSONException e) {
                             Log.e(TAG, "Could not read json", e);
                         }

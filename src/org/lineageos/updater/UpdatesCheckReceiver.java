@@ -28,6 +28,7 @@ import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 
 import org.json.JSONException;
+import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.File;
@@ -36,8 +37,6 @@ import java.io.IOException;
 public class UpdatesCheckReceiver extends BroadcastReceiver {
 
     private static final String TAG = "UpdatesCheckReceiver";
-
-    private static final String LAST_UPDATES_CHECK_PREF = "last_update_check";
 
     private static final String DAILY_CHECK_ACTION = "daily_check_action";
     private static final String ONESHOT_CHECK_ACTION = "oneshot_check_action";
@@ -51,7 +50,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
 
         final SharedPreferences preferences =
                 PreferenceManager.getDefaultSharedPreferences(context);
-        long lastCheck = preferences.getLong(LAST_UPDATES_CHECK_PREF, -1);
+        long lastCheck = preferences.getLong(Constants.PREF_LAST_UPDATE_CHECK, -1);
         final long currentMillis = System.currentTimeMillis();
         if (currentMillis > lastCheck + AlarmManager.INTERVAL_DAY) {
             if (!Utils.isNetworkAvailable(context)) {
@@ -82,7 +81,9 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
                             showNotification(context);
                         }
                         jsonNew.renameTo(json);
-                        preferences.edit().putLong(LAST_UPDATES_CHECK_PREF, currentMillis).apply();
+                        preferences.edit()
+                                .putLong(Constants.PREF_LAST_UPDATE_CHECK, currentMillis)
+                                .apply();
                     } catch (IOException | JSONException e) {
                         Log.e(TAG, "Could not parse list, scheduling new check", e);
                         scheduleUpdatesCheck(context);

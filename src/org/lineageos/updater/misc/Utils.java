@@ -31,11 +31,8 @@ import org.lineageos.updater.UpdateStatus;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashSet;
@@ -47,6 +44,9 @@ import java.util.zip.ZipFile;
 public class Utils {
 
     private static final String TAG = "Utils";
+
+    private Utils() {
+    }
 
     public static File getDownloadPath(Context context) {
         boolean useCache = context.getResources().getBoolean(R.bool.download_in_cache);
@@ -72,11 +72,11 @@ public class Utils {
     }
 
     public static boolean isCompatible(Update update) {
-        if (update.getTimestamp() < SystemProperties.getLong("ro.build.date.utc", 0)) {
+        if (update.getTimestamp() < SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) {
             Log.d(TAG, update.getName() + " is older than current build");
             return false;
         }
-        if (!update.getType().equalsIgnoreCase(SystemProperties.get("ro.cm.releasetype"))) {
+        if (!update.getType().equalsIgnoreCase(SystemProperties.get(Constants.PROP_RELEASE_TYPE))) {
             Log.d(TAG, update.getName() + " has type " + update.getType());
             return false;
         }
@@ -84,7 +84,7 @@ public class Utils {
     }
 
     public static boolean canInstall(Update update) {
-        return update.getVersion().equalsIgnoreCase(SystemProperties.get("ro.cm.build.version"));
+        return update.getVersion().equalsIgnoreCase(SystemProperties.get(Constants.PROP_BUILD_VERSION));
     }
 
     public static List<UpdateDownload> parseJson(File file, boolean compatibleOnly)
@@ -120,13 +120,13 @@ public class Utils {
     }
 
     public static String getServerURL(Context context) {
-        String serverUrl = SystemProperties.get("cm.updater.uri");
+        String serverUrl = SystemProperties.get(Constants.PROP_UPDATER_URI);
         if (serverUrl.trim().isEmpty()) {
             serverUrl = context.getString(R.string.conf_update_server_url_def);
         }
-        String incrementalVersion = SystemProperties.get("ro.build.version.incremental");
-        String device = SystemProperties.get("ro.cm.device").toLowerCase();
-        String type = SystemProperties.get("ro.cm.releasetype").toLowerCase();
+        String incrementalVersion = SystemProperties.get(Constants.PROP_BUILD_VERSION_INCREMENTAL);
+        String device = SystemProperties.get(Constants.PROP_DEVICE).toLowerCase();
+        String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).toLowerCase();
         return serverUrl + "/v1/" + device + "/" + type + "/" + incrementalVersion;
     }
 

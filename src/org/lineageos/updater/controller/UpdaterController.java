@@ -178,8 +178,6 @@ public class UpdaterController implements UpdaterControllerInt {
 
             @Override
             public void onFailure(boolean cancelled) {
-                // The client is null if we intentionally stopped the download
-                cancelled = mDownloads.get(downloadId).mDownloadClient == null;
                 UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 if (cancelled) {
                     Log.d(TAG, "Download cancelled");
@@ -366,13 +364,10 @@ public class UpdaterController implements UpdaterControllerInt {
             return false;
         }
 
-        // First remove the client and then cancel the download so that when the download
-        // fails, we know it was intentional
-        DownloadClient downloadClient = mDownloads.get(downloadId).mDownloadClient;
-        removeDownloadClient(mDownloads.get(downloadId));
-        downloadClient.cancel();
-        UpdateDownload update = mDownloads.get(downloadId).mUpdate;
-        update.setStatus(UpdateStatus.PAUSED);
+        DownloadEntry entry = mDownloads.get(downloadId);
+        entry.mDownloadClient.cancel();
+        removeDownloadClient(entry);
+        entry.mUpdate.setStatus(UpdateStatus.PAUSED);
         notifyUpdateChange(downloadId);
         return true;
     }

@@ -43,10 +43,12 @@ public class DownloadClient {
 
     private static final Object DOWNLOAD_TAG = new Object();
 
+    private boolean mCancelled = false;
+
     public interface DownloadCallback {
         void onResponse(int statusCode, String url, Headers headers);
         void onSuccess(String body);
-        void onFailure();
+        void onFailure(boolean cancelled);
     }
 
     public interface ProgressListener {
@@ -103,6 +105,7 @@ public class DownloadClient {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                mCancelled = true;
                 mClient.cancel(DOWNLOAD_TAG);
             }
         }).start();
@@ -116,8 +119,8 @@ public class DownloadClient {
         mClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {
-                Log.d(TAG, "Download failed", e);
-                callback.onFailure();
+                Log.d(TAG, "Download failed, cancelled=" + mCancelled, e);
+                callback.onFailure(mCancelled);
             }
 
             @Override
@@ -177,7 +180,7 @@ public class DownloadClient {
             @Override
             public void onFailure(Request request, IOException e) {
                 Log.d(TAG, "Download failed", e);
-                callback.onFailure();
+                callback.onFailure(mCancelled);
             }
 
             @Override
@@ -190,7 +193,7 @@ public class DownloadClient {
                     Log.d(TAG, "The server fulfilled the partial content request");
                 } else if (!isSuccessful(response.code())) {
                     Log.e(TAG, "The server replied with code " + response.code());
-                    callback.onFailure();
+                    callback.onFailure(mCancelled);
                     return;
                 }
 

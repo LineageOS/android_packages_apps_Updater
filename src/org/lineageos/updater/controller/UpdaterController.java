@@ -177,9 +177,9 @@ public class UpdaterController implements UpdaterControllerInt {
             }
 
             @Override
-            public void onFailure() {
+            public void onFailure(boolean cancelled) {
                 // The client is null if we intentionally stopped the download
-                boolean cancelled = mDownloads.get(downloadId).mDownloadClient == null;
+                cancelled = mDownloads.get(downloadId).mDownloadClient == null;
                 UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 if (cancelled) {
                     Log.d(TAG, "Download cancelled");

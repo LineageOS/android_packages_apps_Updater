@@ -156,7 +156,7 @@ public class UpdatesActivity extends AppCompatActivity {
         Log.d(TAG, "Checking " + url);
         DownloadClient.downloadFile(url, jsonFile, new DownloadClient.DownloadCallback() {
             @Override
-            public void onFailure() {
+            public void onFailure(boolean cancelled) {
                 Log.e(TAG, "Could not download updates list");
             }
 

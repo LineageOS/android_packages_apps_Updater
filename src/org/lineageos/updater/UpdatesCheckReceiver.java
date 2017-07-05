@@ -65,7 +65,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
             String url = Utils.getServerURL(context);
             DownloadClient.downloadFile(url, jsonNew, new DownloadClient.DownloadCallback() {
                 @Override
-                public void onFailure() {
+                public void onFailure(boolean cancelled) {
                     Log.e(TAG, "Could not download updates list, scheduling new check");
                     scheduleUpdatesCheck(context);
                 }

@@ -15,7 +15,6 @@
  */
 package org.lineageos.updater;
 
-import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.util.Log;
 
@@ -101,12 +100,12 @@ public class DownloadClient {
     }
 
     public void cancel() {
-        new AsyncTask<Void, Void, Void>() {
-            protected Void doInBackground(Void... unused) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
                 mClient.cancel(DOWNLOAD_TAG);
-                return null;
             }
-        }.execute();
+        }).start();
     }
 
     private void downloadInternal(String url, final DownloadCallback callback) {

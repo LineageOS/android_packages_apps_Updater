@@ -15,14 +15,17 @@
  */
 package org.lineageos.updater;
 
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.PreferenceManager;
@@ -118,7 +121,7 @@ public class UpdatesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_refresh:
-                downloadUpdatesList();
+                downloadUpdatesList(true);
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -149,12 +152,19 @@ public class UpdatesActivity extends AppCompatActivity {
         }
     };
 
-    private void loadUpdatesList() throws IOException, JSONException {
+    private void loadUpdatesList(boolean manualRefresh) throws IOException, JSONException {
         Log.d(TAG, "Adding remote updates");
         UpdaterControllerInt controller = mUpdaterService.getUpdaterController();
         File jsonFile = Utils.getCachedUpdateList(this);
+        boolean newUpdates = false;
         for (UpdateDownload update : Utils.parseJson(jsonFile, true)) {
-            controller.addUpdate(update);
+            newUpdates |= controller.addUpdate(update);
+        }
+
+        if (manualRefresh) {
+            showSnackBar(
+                    newUpdates ? R.string.snack_updates_found : R.string.snack_no_updates_found,
+                    Snackbar.LENGTH_SHORT);
         }
 
         List<String> updateIds = new ArrayList<>();
@@ -168,25 +178,41 @@ public class UpdatesActivity extends AppCompatActivity {
         File jsonFile = Utils.getCachedUpdateList(this);
         if (jsonFile.exists()) {
             try {
-                loadUpdatesList();
+                loadUpdatesList(false);
                 Log.d(TAG, "Cached list parsed");
             } catch (IOException | JSONException e) {
                 Log.e(TAG, "Error while parsing json list", e);
             }
         } else {
-            downloadUpdatesList();
+            downloadUpdatesList(false);
         }
     }
 
-    private void downloadUpdatesList() {
+    private void downloadUpdatesList(final boolean manualRefresh) {
         final File jsonFile = Utils.getCachedUpdateList(this);
         final File jsonFileTmp = new File(jsonFile.getAbsolutePath() + ".tmp");
         String url = Utils.getServerURL(this);
         Log.d(TAG, "Checking " + url);
-        DownloadClient.downloadFile(url, jsonFileTmp, new DownloadClient.DownloadCallback() {
+
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle(R.string.app_name);
+        progressDialog.setMessage(getString(R.string.dialog_checking_for_updates));
+        progressDialog.setIndeterminate(true);
+        progressDialog.setCancelable(true);
+
+        DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
             @Override
-            public void onFailure(boolean cancelled) {
+            public void onFailure(final boolean cancelled) {
                 Log.e(TAG, "Could not download updates list");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        if (!cancelled) {
+                            showSnackBar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
+                        }
+                    }
+                });
             }
 
             @Override
@@ -201,7 +227,7 @@ public class UpdatesActivity extends AppCompatActivity {
                     public void run() {
                         try {
                             Log.d(TAG, "List downloaded");
-                            loadUpdatesList();
+                            loadUpdatesList(manualRefresh);
                             long millis = System.currentTimeMillis();
                             PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
                                     .edit()
@@ -210,10 +236,27 @@ public class UpdatesActivity extends AppCompatActivity {
                             jsonFileTmp.renameTo(jsonFile);
                         } catch (IOException | JSONException e) {
                             Log.e(TAG, "Could not read json", e);
+                            showSnackBar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
                         }
+                        progressDialog.dismiss();
                     }
                 });
             }
+        };
+
+        final DownloadClient downloadClient =
+                DownloadClient.downloadFile(url, jsonFileTmp, callback);
+        progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                progressDialog.dismiss();
+                downloadClient.cancel();
+            }
         });
+        progressDialog.show();
+    }
+
+    private void showSnackBar(int stringId, int duration) {
+        Snackbar.make(findViewById(R.id.main_container), stringId, duration).show();
     }
 }

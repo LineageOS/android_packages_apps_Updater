@@ -152,10 +152,10 @@ public class UpdatesActivity extends AppCompatActivity {
         }
     };
 
-    private void loadUpdatesList(boolean manualRefresh) throws IOException, JSONException {
+    private void loadUpdatesList(File jsonFile, boolean manualRefresh)
+            throws IOException, JSONException {
         Log.d(TAG, "Adding remote updates");
         UpdaterControllerInt controller = mUpdaterService.getUpdaterController();
-        File jsonFile = Utils.getCachedUpdateList(this);
         boolean newUpdates = false;
         for (UpdateDownload update : Utils.parseJson(jsonFile, true)) {
             newUpdates |= controller.addUpdate(update);
@@ -178,7 +178,7 @@ public class UpdatesActivity extends AppCompatActivity {
         File jsonFile = Utils.getCachedUpdateList(this);
         if (jsonFile.exists()) {
             try {
-                loadUpdatesList(false);
+                loadUpdatesList(jsonFile, false);
                 Log.d(TAG, "Cached list parsed");
             } catch (IOException | JSONException e) {
                 Log.e(TAG, "Error while parsing json list", e);
@@ -227,7 +227,7 @@ public class UpdatesActivity extends AppCompatActivity {
                     public void run() {
                         try {
                             Log.d(TAG, "List downloaded");
-                            loadUpdatesList(manualRefresh);
+                            loadUpdatesList(jsonFileTmp, manualRefresh);
                             long millis = System.currentTimeMillis();
                             PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
                                     .edit()

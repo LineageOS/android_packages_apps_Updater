@@ -187,6 +187,7 @@ public class DownloadClient {
             public void onResponse(Response response) {
                 Log.d(TAG, "Downloading");
 
+                final ResponseBody body = response.body();
                 final boolean resume = response.code() == 206;
                 if (resume) {
                     mResumeOffset = destination.length();
@@ -194,6 +195,11 @@ public class DownloadClient {
                 } else if (!isSuccessful(response.code())) {
                     Log.e(TAG, "The server replied with code " + response.code());
                     callback.onFailure(mCancelled);
+                    try {
+                        body.close();
+                    } catch (IOException e) {
+                        Log.e(TAG, "Could not close reponse body", e);
+                    }
                     return;
                 }
 
@@ -201,12 +207,18 @@ public class DownloadClient {
                         new Headers(response.headers()));
                 try (BufferedSink sink = Okio.buffer(resume ?
                         Okio.appendingSink(destination) : Okio.sink(destination))) {
-                    sink.writeAll(response.body().source());
+                    sink.writeAll(body.source());
                     Log.d(TAG, "Download complete");
                     sink.flush();
                     callback.onSuccess(null);
                 } catch (IOException e) {
                     onFailure(request, e);
+                } finally {
+                    try {
+                        body.close();
+                    } catch (IOException e) {
+                        Log.e(TAG, "Could not close reponse body", e);
+                    }
                 }
             }
         });

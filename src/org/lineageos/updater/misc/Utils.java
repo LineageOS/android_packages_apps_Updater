@@ -49,9 +49,7 @@ public class Utils {
     }
 
     public static File getDownloadPath(Context context) {
-        boolean useCache = context.getResources().getBoolean(R.bool.download_in_cache);
-        int id = useCache ? R.string.download_path_cache : R.string.download_path_data;
-        return new File(context.getString(id));
+        return new File(context.getString(R.string.download_path));
     }
 
     public static File getCachedUpdateList(Context context) {

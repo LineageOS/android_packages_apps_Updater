@@ -16,9 +16,11 @@
 package org.lineageos.updater.misc;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.SystemProperties;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -28,6 +30,7 @@ import org.lineageos.updater.R;
 import org.lineageos.updater.Update;
 import org.lineageos.updater.UpdateDownload;
 import org.lineageos.updater.UpdateStatus;
+import org.lineageos.updater.UpdatesDbHelper;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -200,5 +203,46 @@ public class Utils {
         }
         Log.e(TAG, "Entry " + entryPath + " not found");
         throw new IllegalArgumentException("The given entry was not found");
+    }
+
+    /**
+     * Cleanup the download directory, which is assumed to be a privileged location
+     * the user can't access and that might have stale files. This can happen if
+     * the data of the application are wiped.
+     *
+     * @param context
+     */
+    public static void cleanupDownloadsDir(Context context) {
+        final String DOWNLOADS_CLEANUP_DONE = "cleanup_done";
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        if (preferences.getBoolean(DOWNLOADS_CLEANUP_DONE, false)) {
+            return;
+        }
+
+        File downloadPath = getDownloadPath(context);
+        Log.d(TAG, "Cleaning " + downloadPath);
+        if (!downloadPath.isDirectory()) {
+            return;
+        }
+        File[] files = downloadPath.listFiles();
+        if (files == null) {
+            return;
+        }
+
+        // Ideally the database is empty when we get here
+        UpdatesDbHelper dbHelper = new UpdatesDbHelper(context);
+        List<String> knownPaths = new ArrayList<>();
+        for (UpdateDownload update : dbHelper.getUpdates()) {
+            knownPaths.add(update.getFile().getAbsolutePath());
+        }
+        for (File file : files) {
+            if (!knownPaths.contains(file.getAbsolutePath())) {
+                Log.d(TAG, "Deleting " + file.getAbsolutePath());
+                file.delete();
+            }
+        }
+
+        preferences.edit().putBoolean(DOWNLOADS_CLEANUP_DONE, true).apply();
     }
 }

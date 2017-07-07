@@ -79,6 +79,8 @@ public class UpdaterController implements UpdaterControllerInt {
         mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Updater");
         mWakeLock.setReferenceCounted(false);
 
+        Utils.cleanupDownloadsDir(context);
+
         for (UpdateDownload update : mUpdatesDbHelper.getUpdates()) {
             addUpdate(update, false);
         }

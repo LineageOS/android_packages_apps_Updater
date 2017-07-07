@@ -79,7 +79,7 @@ public class UpdaterController implements UpdaterControllerInt {
         mWakeLock.setReferenceCounted(false);
 
         for (UpdateDownload update : mUpdatesDbHelper.getUpdates()) {
-            addUpdate(update, true);
+            addUpdate(update, false);
         }
     }
 
@@ -285,19 +285,19 @@ public class UpdaterController implements UpdaterControllerInt {
 
     @Override
     public boolean addUpdate(UpdateDownload update) {
-        return addUpdate(update, false);
+        return addUpdate(update, true);
     }
 
-    private boolean addUpdate(final UpdateDownload update, boolean local) {
+    private boolean addUpdate(final UpdateDownload update, boolean availableOnline) {
         Log.d(TAG, "Adding download: " + update.getDownloadId());
         if (mDownloads.containsKey(update.getDownloadId())) {
             Log.e(TAG, "Download (" + update.getDownloadId() + ") already added");
             return false;
         }
-        if (!fixUpdateStatus(update) && local) {
+        if (!fixUpdateStatus(update) && !availableOnline) {
             update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
             deleteUpdateAsync(update);
-            Log.d(TAG, update.getDownloadId() + " had an invalid status and is local");
+            Log.d(TAG, update.getDownloadId() + " had an invalid status and is not online");
             return false;
         }
         mDownloads.put(update.getDownloadId(), new DownloadEntry(update));

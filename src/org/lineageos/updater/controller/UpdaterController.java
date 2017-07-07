@@ -292,6 +292,24 @@ public class UpdaterController implements UpdaterControllerInt {
     }
 
     @Override
+    public void setUpdatesAvailableOnline(List<String> downloadIds, boolean purgeList) {
+        List<String> toRemove = new ArrayList<>();
+        for (DownloadEntry entry : mDownloads.values()) {
+            boolean online = downloadIds.contains(entry.mUpdate.getDownloadId());
+            entry.mUpdate.setAvailableOnline(online);
+            if (!online && purgeList &&
+                    entry.mUpdate.getPersistentStatus() == UpdateStatus.Persistent.UNKNOWN) {
+                toRemove.add(entry.mUpdate.getDownloadId());
+            }
+        }
+        for (String downloadId : toRemove) {
+            Log.d(TAG, downloadId + " no longer available online, removing");
+            mDownloads.remove(downloadId);
+            notifyUpdateDelete(downloadId);
+        }
+    }
+
+    @Override
     public boolean addUpdate(UpdateDownload update) {
         return addUpdate(update, true);
     }

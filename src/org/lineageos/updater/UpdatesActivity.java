@@ -161,9 +161,13 @@ public class UpdatesActivity extends AppCompatActivity {
         Log.d(TAG, "Adding remote updates");
         UpdaterControllerInt controller = mUpdaterService.getUpdaterController();
         boolean newUpdates = false;
+        List<String> updatesOnline = new ArrayList<>();
         for (UpdateDownload update : Utils.parseJson(jsonFile, true)) {
             newUpdates |= controller.addUpdate(update);
+            updatesOnline.add(update.getDownloadId());
         }
+
+        controller.setUpdatesAvailableOnline(updatesOnline, true);
 
         if (manualRefresh) {
             showSnackBar(

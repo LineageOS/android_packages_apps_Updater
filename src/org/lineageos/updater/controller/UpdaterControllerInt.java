@@ -30,6 +30,8 @@ public interface UpdaterControllerInt {
 
     UpdateDownload getUpdate(String downloadId);
 
+    void setUpdatesAvailableOnline(List<String> downloadIds, boolean purgeList);
+
     boolean startDownload(String downloadId);
 
     boolean pauseDownload(String downloadId);

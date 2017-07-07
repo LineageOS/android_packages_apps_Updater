@@ -320,6 +320,7 @@ public class UpdaterController implements UpdaterControllerInt {
             Log.d(TAG, "Download (" + update.getDownloadId() + ") already added");
             UpdateDownload updateAdded = mDownloads.get(update.getDownloadId()).mUpdate;
             updateAdded.setAvailableOnline(availableOnline && updateAdded.getAvailableOnline());
+            updateAdded.setDownloadUrl(update.getDownloadUrl());
             return false;
         }
         if (!fixUpdateStatus(update) && !availableOnline) {

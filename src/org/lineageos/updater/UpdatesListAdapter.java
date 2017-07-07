@@ -95,7 +95,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 update.getStatus() == UpdateStatus.INSTALLING;
         viewHolder.mProgressBar.setIndeterminate(indeterminate);
         if (!indeterminate) {
-            viewHolder.mProgressBar.setProgress(update.getProgress());
+            boolean installing = update.getStatus() == UpdateStatus.INSTALLING;
+            viewHolder.mProgressBar.setProgress(
+                    installing ? update.getInstallProgress() : update.getProgress());
         }
 
         if (mUpdaterController.isDownloading(downloadId)) {

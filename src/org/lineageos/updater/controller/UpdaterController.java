@@ -317,7 +317,7 @@ public class UpdaterController implements UpdaterControllerInt {
     private boolean addUpdate(final UpdateDownload update, boolean availableOnline) {
         Log.d(TAG, "Adding download: " + update.getDownloadId());
         if (mDownloads.containsKey(update.getDownloadId())) {
-            Log.e(TAG, "Download (" + update.getDownloadId() + ") already added");
+            Log.d(TAG, "Download (" + update.getDownloadId() + ") already added");
             UpdateDownload updateAdded = mDownloads.get(update.getDownloadId()).mUpdate;
             updateAdded.setAvailableOnline(availableOnline && updateAdded.getAvailableOnline());
             return false;

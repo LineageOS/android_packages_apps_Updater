@@ -35,7 +35,6 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
         public static final String TABLE_NAME = "updates";
         public static final String COLUMN_NAME_STATUS = "status";
         public static final String COLUMN_NAME_PATH = "path";
-        public static final String COLUMN_NAME_NAME = "name";
         public static final String COLUMN_NAME_DOWNLOAD_ID = "download_id";
         public static final String COLUMN_NAME_TIMESTAMP = "timestamp";
         public static final String COLUMN_NAME_TYPE = "type";
@@ -48,7 +47,6 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
                     UpdateEntry._ID + " INTEGER PRIMARY KEY," +
                     UpdateEntry.COLUMN_NAME_STATUS + " INTEGER," +
                     UpdateEntry.COLUMN_NAME_PATH + " TEXT," +
-                    UpdateEntry.COLUMN_NAME_NAME + " TEXT," +
                     UpdateEntry.COLUMN_NAME_DOWNLOAD_ID + " TEXT NOT NULL UNIQUE," +
                     UpdateEntry.COLUMN_NAME_TIMESTAMP + " INTEGER," +
                     UpdateEntry.COLUMN_NAME_TYPE + " TEXT," +
@@ -80,7 +78,6 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(UpdateEntry.COLUMN_NAME_STATUS, update.getPersistentStatus());
         values.put(UpdateEntry.COLUMN_NAME_PATH, update.getFile().getAbsolutePath());
-        values.put(UpdateEntry.COLUMN_NAME_NAME, update.getName());
         values.put(UpdateEntry.COLUMN_NAME_DOWNLOAD_ID, update.getDownloadId());
         values.put(UpdateEntry.COLUMN_NAME_TIMESTAMP, update.getTimestamp());
         values.put(UpdateEntry.COLUMN_NAME_TYPE, update.getType());
@@ -94,7 +91,6 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(UpdateEntry.COLUMN_NAME_STATUS, update.getPersistentStatus());
         values.put(UpdateEntry.COLUMN_NAME_PATH, update.getFile().getAbsolutePath());
-        values.put(UpdateEntry.COLUMN_NAME_NAME, update.getName());
         values.put(UpdateEntry.COLUMN_NAME_DOWNLOAD_ID, update.getDownloadId());
         values.put(UpdateEntry.COLUMN_NAME_TIMESTAMP, update.getTimestamp());
         values.put(UpdateEntry.COLUMN_NAME_TYPE, update.getType());
@@ -159,7 +155,6 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         String[] projection = {
                 UpdateEntry.COLUMN_NAME_PATH,
-                UpdateEntry.COLUMN_NAME_NAME,
                 UpdateEntry.COLUMN_NAME_DOWNLOAD_ID,
                 UpdateEntry.COLUMN_NAME_TIMESTAMP,
                 UpdateEntry.COLUMN_NAME_TYPE,
@@ -176,8 +171,7 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
                 UpdateDownload update = new UpdateDownload();
                 int index = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_PATH);
                 update.setFile(new File(cursor.getString(index)));
-                index = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_NAME);
-                update.setName(cursor.getString(index));
+                update.setName(update.getFile().getName());
                 index = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_DOWNLOAD_ID);
                 update.setDownloadId(cursor.getString(index));
                 index = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_TIMESTAMP);

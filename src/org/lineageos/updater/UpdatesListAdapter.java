@@ -88,6 +88,13 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         final String downloadId = mDownloadIds.get(i);
         UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+        if (update == null) {
+            // The update was deleted
+            viewHolder.mButton1.setEnabled(false);
+            viewHolder.mButton2.setEnabled(false);
+            return;
+        }
+
         viewHolder.mName.setText(update.getName());
 
         boolean indeterminate = update.getStatus() == UpdateStatus.STARTING ||
@@ -112,7 +119,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     Utils.canInstall(update) && !mUpdaterController.isVerifyingUpdate();
             int persistentStatus = update.getPersistentStatus();
             if (persistentStatus == UpdateStatus.Persistent.INCOMPLETE) {
-                setButtonAction(viewHolder.mButton1, Action.RESUME, downloadId, enabled);
+                setButtonAction(viewHolder.mButton1, Action.RESUME, downloadId,
+                        enabled && update.getAvailableOnline());
                 setButtonAction(viewHolder.mButton2, Action.CANCEL, downloadId, enabled);
             } else if (persistentStatus == UpdateStatus.Persistent.VERIFIED) {
                 setButtonAction(viewHolder.mButton1, Action.INSTALL, downloadId, enabled);
@@ -135,6 +143,13 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     public void notifyItemChanged(String downloadId) {
         notifyItemChanged(mDownloadIds.indexOf(downloadId));
+    }
+
+    public void removeItem(String downloadId) {
+        int position = mDownloadIds.indexOf(downloadId);
+        mDownloadIds.remove(downloadId);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, getItemCount());
     }
 
     private void setButtonAction(Button button, Action action, final String downloadId,

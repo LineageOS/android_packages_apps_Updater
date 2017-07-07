@@ -40,6 +40,7 @@ public class UpdaterController implements UpdaterControllerInt {
 
     public static final String ACTION_DOWNLOAD_PROGRESS = "action_download_progress";
     public static final String ACTION_INSTALL_PROGRESS = "action_install_progress";
+    public static final String ACTION_UPDATE_REMOVED = "action_update_removed";
     public static final String ACTION_UPDATE_STATUS = "action_update_status_change";
     public static final String EXTRA_DOWNLOAD_ID = "extra_download_id";
 
@@ -96,6 +97,13 @@ public class UpdaterController implements UpdaterControllerInt {
     void notifyUpdateChange(String downloadId) {
         Intent intent = new Intent();
         intent.setAction(ACTION_UPDATE_STATUS);
+        intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
+        mBroadcastManager.sendBroadcast(intent);
+    }
+
+    void notifyUpdateDelete(String downloadId) {
+        Intent intent = new Intent();
+        intent.setAction(ACTION_UPDATE_REMOVED);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
         mBroadcastManager.sendBroadcast(intent);
     }
@@ -292,6 +300,8 @@ public class UpdaterController implements UpdaterControllerInt {
         Log.d(TAG, "Adding download: " + update.getDownloadId());
         if (mDownloads.containsKey(update.getDownloadId())) {
             Log.e(TAG, "Download (" + update.getDownloadId() + ") already added");
+            UpdateDownload updateAdded = mDownloads.get(update.getDownloadId()).mUpdate;
+            updateAdded.setAvailableOnline(availableOnline && updateAdded.getAvailableOnline());
             return false;
         }
         if (!fixUpdateStatus(update) && !availableOnline) {
@@ -301,6 +311,7 @@ public class UpdaterController implements UpdaterControllerInt {
             return false;
         }
         mDownloads.put(update.getDownloadId(), new DownloadEntry(update));
+        mDownloads.get(update.getDownloadId()).mUpdate.setAvailableOnline(availableOnline);
         return true;
     }
 
@@ -367,16 +378,15 @@ public class UpdaterController implements UpdaterControllerInt {
         return true;
     }
 
-    private void deleteUpdateAsync(final String downloadId) {
+    private void deleteUpdateAsync(final UpdateDownload update) {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 File file = update.getFile();
                 if (file.exists() && !file.delete()) {
                     Log.e(TAG, "Could not delete " + file.getAbsolutePath());
                 }
-                mUpdatesDbHelper.removeUpdate(downloadId);
+                mUpdatesDbHelper.removeUpdate(update.getDownloadId());
             }
         }).start();
     }
@@ -391,8 +401,16 @@ public class UpdaterController implements UpdaterControllerInt {
         update.setStatus(UpdateStatus.DELETED);
         update.setProgress(0);
         update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
-        deleteUpdateAsync(downloadId);
-        notifyUpdateChange(downloadId);
+        deleteUpdateAsync(update);
+
+        if (!update.getAvailableOnline()) {
+            Log.d(TAG, "Download no longer available online, removing");
+            mDownloads.remove(downloadId);
+            notifyUpdateDelete(downloadId);
+        } else {
+            notifyUpdateChange(downloadId);
+        }
+
         return true;
     }
 

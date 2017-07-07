@@ -27,6 +27,7 @@ public class UpdateDownload extends Update {
     private long mEta;
     private long mSpeed;
     private int mInstallProgress;
+    private boolean mAvailableOnline;
 
     public UpdateStatus getStatus() {
         return mStatus;
@@ -90,5 +91,13 @@ public class UpdateDownload extends Update {
 
     public void setInstallProgress(int progress) {
         mInstallProgress = progress;
+    }
+
+    public boolean getAvailableOnline() {
+        return mAvailableOnline;
+    }
+
+    public void setAvailableOnline(boolean availableOnline) {
+        mAvailableOnline = availableOnline;
     }
 }

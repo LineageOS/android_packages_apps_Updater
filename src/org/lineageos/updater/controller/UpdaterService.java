@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Binder;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.NotificationCompat;
@@ -89,6 +90,10 @@ public class UpdaterService extends Service {
                 if (UpdaterController.ACTION_UPDATE_STATUS.equals(intent.getAction())) {
                     UpdateDownload update = mUpdaterController.getUpdate(downloadId);
                     mNotificationBuilder.setContentTitle(update.getName());
+                    mNotificationBuilder.setContentTitle(update.getName());
+                    Bundle extras = new Bundle();
+                    extras.putString(UpdaterController.EXTRA_DOWNLOAD_ID, downloadId);
+                    mNotificationBuilder.setExtras(extras);
                     handleUpdateStatusChange(update);
                 } else if (UpdaterController.ACTION_DOWNLOAD_PROGRESS.equals(intent.getAction())) {
                     UpdateDownload update = mUpdaterController.getUpdate(downloadId);
@@ -97,6 +102,13 @@ public class UpdaterService extends Service {
                     UpdateDownload update = mUpdaterController.getUpdate(downloadId);
                     mNotificationBuilder.setContentTitle(update.getName());
                     handleInstallProgress(update);
+                } else if (UpdaterController.ACTION_UPDATE_REMOVED.equals(intent.getAction())) {
+                    Bundle extras = mNotificationBuilder.getExtras();
+                    if (extras != null && downloadId.equals(
+                            extras.getString(UpdaterController.EXTRA_DOWNLOAD_ID))) {
+                        mNotificationBuilder.setExtras(null);
+                        mNotificationManager.cancel(NOTIFICATION_ID);
+                    }
                 }
             }
         };
@@ -104,6 +116,7 @@ public class UpdaterService extends Service {
         intentFilter.addAction(UpdaterController.ACTION_DOWNLOAD_PROGRESS);
         intentFilter.addAction(UpdaterController.ACTION_INSTALL_PROGRESS);
         intentFilter.addAction(UpdaterController.ACTION_UPDATE_STATUS);
+        intentFilter.addAction(UpdaterController.ACTION_UPDATE_REMOVED);
         LocalBroadcastManager.getInstance(this).registerReceiver(mBroadcastReceiver, intentFilter);
 
     }

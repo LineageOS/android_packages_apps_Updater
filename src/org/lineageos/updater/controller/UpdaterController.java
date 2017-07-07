@@ -296,12 +296,7 @@ public class UpdaterController implements UpdaterControllerInt {
         }
         if (!fixUpdateStatus(update) && local) {
             update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    mUpdatesDbHelper.removeUpdate(update.getDownloadId());
-                }
-            }).start();
+            deleteUpdateAsync(update);
             Log.d(TAG, update.getDownloadId() + " had an invalid status and is local");
             return false;
         }

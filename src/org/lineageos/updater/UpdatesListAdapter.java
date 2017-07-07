@@ -43,6 +43,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         DOWNLOAD,
         PAUSE,
         RESUME,
+        VERIFY,
         CANCEL,
         INSTALL
     }
@@ -119,8 +120,12 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     Utils.canInstall(update) && !mUpdaterController.isVerifyingUpdate();
             int persistentStatus = update.getPersistentStatus();
             if (persistentStatus == UpdateStatus.Persistent.INCOMPLETE) {
-                setButtonAction(viewHolder.mButton1, Action.RESUME, downloadId,
-                        enabled && update.getAvailableOnline());
+                if (update.getFile().length() == update.getFileSize()) {
+                    setButtonAction(viewHolder.mButton1, Action.VERIFY, downloadId, enabled);
+                } else {
+                    setButtonAction(viewHolder.mButton1, Action.RESUME, downloadId,
+                            enabled && update.getAvailableOnline());
+                }
                 setButtonAction(viewHolder.mButton2, Action.CANCEL, downloadId, enabled);
             } else if (persistentStatus == UpdateStatus.Persistent.VERIFIED) {
                 setButtonAction(viewHolder.mButton1, Action.INSTALL, downloadId, enabled);
@@ -177,6 +182,16 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 break;
             case RESUME:
                 button.setText(R.string.resume_button);
+                button.setEnabled(enabled);
+                button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mUpdaterController.resumeDownload(downloadId);
+                    }
+                });
+                break;
+            case VERIFY:
+                button.setText(R.string.verify_button);
                 button.setEnabled(enabled);
                 button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
                     @Override

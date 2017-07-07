@@ -37,6 +37,7 @@
     <string name="download_button">Download</string>
     <string name="pause_button">Pause</string>
     <string name="resume_button">Resume</string>
+    <string name="verify_button">Verify</string>
     <string name="cancel_button">Delete</string>
     <string name="install_button">Install</string>
 

@@ -41,6 +41,7 @@ import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterControllerInt;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.misc.Constants;
+import org.lineageos.updater.misc.LegacySupport;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.File;
@@ -161,10 +162,21 @@ public class UpdatesActivity extends AppCompatActivity {
         Log.d(TAG, "Adding remote updates");
         UpdaterControllerInt controller = mUpdaterService.getUpdaterController();
         boolean newUpdates = false;
+
+        List<UpdateDownload> updates = Utils.parseJson(jsonFile, true);
+
+        List<UpdateDownload> updatesNotAvailable = LegacySupport.importDownloads(this, updates);
+
         List<String> updatesOnline = new ArrayList<>();
-        for (UpdateDownload update : Utils.parseJson(jsonFile, true)) {
+        for (UpdateDownload update : updates) {
             newUpdates |= controller.addUpdate(update);
             updatesOnline.add(update.getDownloadId());
+        }
+
+        if (updatesNotAvailable != null) {
+            for (UpdateDownload update : updatesNotAvailable) {
+                update.setAvailableOnline(false);
+            }
         }
 
         controller.setUpdatesAvailableOnline(updatesOnline, true);

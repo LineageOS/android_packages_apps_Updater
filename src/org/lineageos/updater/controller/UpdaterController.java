@@ -212,11 +212,12 @@ public class UpdaterController implements UpdaterControllerInt {
             @Override
             public void update(long bytesRead, long contentLength, long speed, long eta,
                     boolean done) {
+                UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 if (contentLength <= 0) {
-                    if (getUpdate(downloadId).getFileSize() <= 0) {
+                    if (update.getFileSize() <= 0) {
                         return;
                     } else {
-                        contentLength = getUpdate(downloadId).getFileSize();
+                        contentLength = update.getFileSize();
                     }
                 }
                 if (contentLength <= 0) {
@@ -227,9 +228,9 @@ public class UpdaterController implements UpdaterControllerInt {
                 if (progress != mProgress || mLastUpdate - now > MAX_REPORT_INTERVAL_MS) {
                     mProgress = progress;
                     mLastUpdate = now;
-                    getUpdate(downloadId).setProgress(progress);
-                    getUpdate(downloadId).setEta(eta);
-                    getUpdate(downloadId).setSpeed(speed);
+                    update.setProgress(progress);
+                    update.setEta(eta);
+                    update.setSpeed(speed);
                     notifyDownloadProgress(downloadId);
                 }
             }
@@ -341,8 +342,9 @@ public class UpdaterController implements UpdaterControllerInt {
             Log.d(TAG, update.getDownloadId() + " had an invalid status and is not online");
             return false;
         }
-        mDownloads.put(update.getDownloadId(), new DownloadEntry(update));
-        mDownloads.get(update.getDownloadId()).mUpdate.setAvailableOnline(availableOnline);
+        update.setAvailableOnline(availableOnline);
+        UpdateDownload updateCopy = new UpdateDownload(update);
+        mDownloads.put(update.getDownloadId(), new DownloadEntry(updateCopy));
         return true;
     }
 
@@ -458,13 +460,18 @@ public class UpdaterController implements UpdaterControllerInt {
     public List<UpdateDownload> getUpdates() {
         List<UpdateDownload> updates = new ArrayList<>();
         for (DownloadEntry entry : mDownloads.values()) {
-            updates.add(entry.mUpdate);
+            updates.add(new UpdateDownload(entry.mUpdate));
         }
         return updates;
     }
 
     @Override
     public UpdateDownload getUpdate(String downloadId) {
+        DownloadEntry entry = mDownloads.get(downloadId);
+        return entry != null ? new UpdateDownload(entry.mUpdate) : null;
+    }
+
+    UpdateDownload getActualUpdate(String downloadId) {
         DownloadEntry entry = mDownloads.get(downloadId);
         return entry != null ? entry.mUpdate : null;
     }

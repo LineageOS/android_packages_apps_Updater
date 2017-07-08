@@ -53,13 +53,13 @@ class ABUpdateInstaller {
                 case UpdateEngine.UpdateStatusConstants.DOWNLOADING:
                 case UpdateEngine.UpdateStatusConstants.FINALIZING: {
                     int progress = Math.round(percent * 100);
-                    mUpdaterController.getUpdate(mDownloadId).setInstallProgress(progress);
+                    mUpdaterController.getActualUpdate(mDownloadId).setInstallProgress(progress);
                     mUpdaterController.notifyInstallProgress(mDownloadId);
                 }
                 break;
 
                 case UpdateEngine.UpdateStatusConstants.REPORTING_ERROR_EVENT: {
-                    UpdateDownload update = mUpdaterController.getUpdate(mDownloadId);
+                    UpdateDownload update = mUpdaterController.getActualUpdate(mDownloadId);
                     update.setInstallProgress(0);
                     update.setStatus(UpdateStatus.INSTALLATION_FAILED);
                     mUpdaterController.notifyUpdateChange(mDownloadId);;
@@ -73,7 +73,7 @@ class ABUpdateInstaller {
             sIsInstallingUpdate = false;
             switch (errorCode) {
                 case UpdateEngine.ErrorCodeConstants.SUCCESS: {
-                    UpdateDownload update = mUpdaterController.getUpdate(mDownloadId);
+                    UpdateDownload update = mUpdaterController.getActualUpdate(mDownloadId);
                     update.setInstallProgress(0);
                     update.setStatus(UpdateStatus.INSTALLED);
                     mUpdaterController.notifyUpdateChange(mDownloadId);
@@ -81,7 +81,7 @@ class ABUpdateInstaller {
                 break;
 
                 default: {
-                    UpdateDownload update = mUpdaterController.getUpdate(mDownloadId);
+                    UpdateDownload update = mUpdaterController.getActualUpdate(mDownloadId);
                     update.setInstallProgress(0);
                     update.setStatus(UpdateStatus.INSTALLATION_FAILED);
                     mUpdaterController.notifyUpdateChange(mDownloadId);
@@ -111,13 +111,13 @@ class ABUpdateInstaller {
     }
 
     private boolean startUpdate() {
-        File file = mUpdaterController.getUpdate(mDownloadId).getFile();
+        File file = mUpdaterController.getActualUpdate(mDownloadId).getFile();
         if (!file.exists()) {
             Log.e(TAG, "The given update doesn't exist");
             return false;
         }
 
-        mUpdaterController.getUpdate(mDownloadId).setStatus(UpdateStatus.INSTALLING);
+        mUpdaterController.getActualUpdate(mDownloadId).setStatus(UpdateStatus.INSTALLING);
         mUpdaterController.notifyUpdateChange(mDownloadId);
 
         long offset;
@@ -139,7 +139,8 @@ class ABUpdateInstaller {
             zipFile.close();
         } catch (IOException | IllegalArgumentException e) {
             Log.e(TAG, "Could not prepare " + file, e);
-            mUpdaterController.getUpdate(mDownloadId).setStatus(UpdateStatus.INSTALLATION_FAILED);
+            mUpdaterController.getActualUpdate(mDownloadId)
+                    .setStatus(UpdateStatus.INSTALLATION_FAILED);
             mUpdaterController.notifyUpdateChange(mDownloadId);
             return false;
         }

@@ -124,7 +124,7 @@ class OkHttpDownloadClient implements DownloadClient {
                 .url(mUrl)
                 .tag(DOWNLOAD_TAG)
                 .build();
-        downloadFileInternalCommon(request, callback, progressListener);
+        downloadFileInternalCommon(request, callback, progressListener, false);
     }
 
     private void downloadFileResumeInternal(final DownloadClient.DownloadCallback callback,
@@ -135,16 +135,21 @@ class OkHttpDownloadClient implements DownloadClient {
         long offset = mDestination.length();
         requestBuilder.addHeader("Range", "bytes=" + offset + "-");
         final Request request = requestBuilder.build();
-        downloadFileInternalCommon(request, callback, progressListener);
+        downloadFileInternalCommon(request, callback, progressListener, true);
     }
 
-    private boolean isSuccessful(int statusCode) {
+    private static boolean isSuccessCode(int statusCode) {
         return (statusCode / 100) == 2;
+    }
+
+    private static boolean isPartialContentCode(int statusCode) {
+        return statusCode == 206;
     }
 
     private void downloadFileInternalCommon(final Request request,
             final DownloadClient.DownloadCallback callback,
-            final DownloadClient.ProgressListener progressListener) {
+            final DownloadClient.ProgressListener progressListener,
+            final boolean resume) {
 
         mClient.networkInterceptors().add(new Interceptor() {
             @Override
@@ -171,17 +176,16 @@ class OkHttpDownloadClient implements DownloadClient {
                 Log.d(TAG, "Downloading");
 
                 final ResponseBody body = response.body();
-                final boolean resume = response.code() == 206;
-                if (resume) {
+                if (resume && isPartialContentCode(response.code())) {
                     mResumeOffset = mDestination.length();
                     Log.d(TAG, "The server fulfilled the partial content request");
-                } else if (!isSuccessful(response.code())) {
+                } else if (resume || !isSuccessCode(response.code())) {
                     Log.e(TAG, "The server replied with code " + response.code());
                     callback.onFailure(mCancelled);
                     try {
                         body.close();
                     } catch (IOException e) {
-                        Log.e(TAG, "Could not close reponse body", e);
+                        Log.e(TAG, "Could not close response body", e);
                     }
                     return;
                 }

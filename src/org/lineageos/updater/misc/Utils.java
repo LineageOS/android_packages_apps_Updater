@@ -85,7 +85,9 @@ public class Utils {
     }
 
     public static boolean canInstall(Update update) {
-        return update.getVersion().equalsIgnoreCase(SystemProperties.get(Constants.PROP_BUILD_VERSION));
+        return update.getTimestamp() > SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0) &&
+                update.getVersion().equalsIgnoreCase(
+                        SystemProperties.get(Constants.PROP_BUILD_VERSION));
     }
 
     public static List<UpdateDownload> parseJson(File file, boolean compatibleOnly)

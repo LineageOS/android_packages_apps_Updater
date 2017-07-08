@@ -116,20 +116,21 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mButton2.setEnabled(false);
         } else {
             // Allow one active download
-            boolean enabled = !mUpdaterController.hasActiveDownloads() &&
-                    Utils.canInstall(update) && !mUpdaterController.isVerifyingUpdate();
+            boolean busy = mUpdaterController.hasActiveDownloads() ||
+                    mUpdaterController.isVerifyingUpdate();
+            boolean enabled = !busy && Utils.canInstall(update);
             int persistentStatus = update.getPersistentStatus();
             if (persistentStatus == UpdateStatus.Persistent.INCOMPLETE) {
                 if (update.getFile().length() == update.getFileSize()) {
-                    setButtonAction(viewHolder.mButton1, Action.VERIFY, downloadId, enabled);
+                    setButtonAction(viewHolder.mButton1, Action.VERIFY, downloadId, !busy);
                 } else {
                     setButtonAction(viewHolder.mButton1, Action.RESUME, downloadId,
                             enabled && update.getAvailableOnline());
                 }
-                setButtonAction(viewHolder.mButton2, Action.CANCEL, downloadId, enabled);
+                setButtonAction(viewHolder.mButton2, Action.CANCEL, downloadId, !busy);
             } else if (persistentStatus == UpdateStatus.Persistent.VERIFIED) {
                 setButtonAction(viewHolder.mButton1, Action.INSTALL, downloadId, enabled);
-                setButtonAction(viewHolder.mButton2, Action.CANCEL, downloadId, enabled);
+                setButtonAction(viewHolder.mButton2, Action.CANCEL, downloadId, !busy);
             } else {
                 setButtonAction(viewHolder.mButton1, Action.DOWNLOAD, downloadId, enabled);
                 setButtonAction(viewHolder.mButton2, Action.CANCEL, downloadId, false);

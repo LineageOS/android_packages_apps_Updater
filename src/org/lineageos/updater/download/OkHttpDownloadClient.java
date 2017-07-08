@@ -89,7 +89,7 @@ class OkHttpDownloadClient implements DownloadClient {
         }
         mCancelled = false;
         mDownloading = true;
-        downloadFileInternal(mCallback, mProgressListener);
+        downloadFileInternal();
     }
 
     @Override
@@ -100,7 +100,7 @@ class OkHttpDownloadClient implements DownloadClient {
         }
         mCancelled = false;
         mDownloading = true;
-        downloadFileResumeInternal(mCallback, mProgressListener);
+        downloadFileResumeInternal();
     }
 
     public void cancel() {
@@ -118,17 +118,15 @@ class OkHttpDownloadClient implements DownloadClient {
         }).start();
     }
 
-    private void downloadFileInternal(final DownloadClient.DownloadCallback callback,
-            final DownloadClient.ProgressListener progressListener) {
+    private void downloadFileInternal() {
         final Request request = new Request.Builder()
                 .url(mUrl)
                 .tag(DOWNLOAD_TAG)
                 .build();
-        downloadFileInternalCommon(request, callback, progressListener, false);
+        downloadFileInternalCommon(request, false);
     }
 
-    private void downloadFileResumeInternal(final DownloadClient.DownloadCallback callback,
-            final DownloadClient.ProgressListener progressListener) {
+    private void downloadFileResumeInternal() {
         final Request.Builder requestBuilder = new Request.Builder()
                 .url(mUrl)
                 .tag(DOWNLOAD_TAG);
@@ -139,7 +137,7 @@ class OkHttpDownloadClient implements DownloadClient {
         long offset = mDestination.length();
         requestBuilder.addHeader("Range", "bytes=" + offset + "-");
         final Request request = requestBuilder.build();
-        downloadFileInternalCommon(request, callback, progressListener, true);
+        downloadFileInternalCommon(request, true);
     }
 
     private static boolean isSuccessCode(int statusCode) {
@@ -150,17 +148,14 @@ class OkHttpDownloadClient implements DownloadClient {
         return statusCode == 206;
     }
 
-    private void downloadFileInternalCommon(final Request request,
-            final DownloadClient.DownloadCallback callback,
-            final DownloadClient.ProgressListener progressListener,
-            final boolean resume) {
+    private void downloadFileInternalCommon(final Request request, final boolean resume) {
 
         mClient.networkInterceptors().add(new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
                 Response originalResponse = chain.proceed(chain.request());
                 ProgressResponseBody progressResponseBody =
-                        new ProgressResponseBody(originalResponse.body(), progressListener);
+                        new ProgressResponseBody(originalResponse.body(), mProgressListener);
                 return originalResponse.newBuilder()
                         .body(progressResponseBody)
                         .build();
@@ -172,7 +167,7 @@ class OkHttpDownloadClient implements DownloadClient {
             @Override
             public void onFailure(Request request, IOException e) {
                 Log.d(TAG, "Download failed", e);
-                callback.onFailure(mCancelled);
+                mCallback.onFailure(mCancelled);
             }
 
             @Override
@@ -185,7 +180,7 @@ class OkHttpDownloadClient implements DownloadClient {
                     Log.d(TAG, "The server fulfilled the partial content request");
                 } else if (resume || !isSuccessCode(response.code())) {
                     Log.e(TAG, "The server replied with code " + response.code());
-                    callback.onFailure(mCancelled);
+                    mCallback.onFailure(mCancelled);
                     try {
                         body.close();
                     } catch (IOException e) {
@@ -194,14 +189,14 @@ class OkHttpDownloadClient implements DownloadClient {
                     return;
                 }
 
-                callback.onResponse(response.code(), response.request().urlString(),
+                mCallback.onResponse(response.code(), response.request().urlString(),
                         new Headers(response.headers()));
                 try (BufferedSink sink = Okio.buffer(resume ?
                         Okio.appendingSink(mDestination) : Okio.sink(mDestination))) {
                     sink.writeAll(body.source());
                     Log.d(TAG, "Download complete");
                     sink.flush();
-                    callback.onSuccess(null);
+                    mCallback.onSuccess(null);
                 } catch (IOException e) {
                     onFailure(request, e);
                 } finally {

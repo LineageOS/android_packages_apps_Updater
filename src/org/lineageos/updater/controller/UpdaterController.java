@@ -238,10 +238,10 @@ public class UpdaterController implements UpdaterControllerInt {
     }
 
     private void verifyUpdateAsync(final String downloadId) {
+        mVerifyingUpdates++;
         new Thread(new Runnable() {
             @Override
             public void run() {
-                mVerifyingUpdates++;
                 UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 File file = update.getFile();
                 if (file.exists() && verifyPackage(file)) {

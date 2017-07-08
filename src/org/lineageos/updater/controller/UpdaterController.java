@@ -356,6 +356,10 @@ public class UpdaterController implements UpdaterControllerInt {
         }
         UpdateDownload update = mDownloads.get(downloadId).mUpdate;
         File destination = new File(mDownloadRoot, update.getName());
+        if (destination.exists()) {
+            destination = Utils.appendSequentialNumber(destination);
+            Log.d(TAG, "Changing name with " + destination.getName());
+        }
         update.setFile(destination);
         DownloadClient downloadClient = new DownloadClient.Builder()
                 .setUrl(update.getDownloadUrl())

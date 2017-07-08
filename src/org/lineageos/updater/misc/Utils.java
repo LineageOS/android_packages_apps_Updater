@@ -247,4 +247,25 @@ public class Utils {
 
         preferences.edit().putBoolean(DOWNLOADS_CLEANUP_DONE, true).apply();
     }
+
+    public static File appendSequentialNumber(final File file) {
+        String name;
+        String extension;
+        int extensionPosition = file.getName().lastIndexOf(".");
+        if (extensionPosition > 0) {
+            name = file.getName().substring(0, extensionPosition);
+            extension = file.getName().substring(extensionPosition);
+        } else {
+            name = file.getName();
+            extension = "";
+        }
+        final File parent = file.getParentFile();
+        for (int i = 1; i < Integer.MAX_VALUE; i++) {
+            File newFile = new File(parent, name + "-" + i + extension);
+            if (!newFile.exists()) {
+                return newFile;
+            }
+        }
+        throw new IllegalStateException();
+    }
 }

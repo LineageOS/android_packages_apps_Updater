@@ -39,10 +39,22 @@ public interface DownloadClient {
         Map<String, List<String>> getAll();
     }
 
+    /**
+     * Start the download. This method has no effect if the download already started.
+     */
     void start();
 
+    /**
+     * Resume the download. The download will fail if the server can't fulfil the
+     * partial content request and DownloadCallback.onFailure() will be called.
+     * This method has no effect if the download already started or the destination
+     * file doesn't exist.
+     */
     void resume();
 
+    /**
+     * Cancel the download. This method has no effect if the download isn't ongoing.
+     */
     void cancel();
 
     final class Builder {

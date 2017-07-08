@@ -66,7 +66,7 @@ public final class LegacySupport {
         Log.d(TAG, "Importing downloads");
 
         List<String> notReplacing = new ArrayList<>();
-        File updatesDir = new File(context.getDataDir(), "updates/");
+        File updatesDir = new File(context.getDataDir(), "app_updates/");
         if (updatesDir.isDirectory()) {
             UpdatesDbHelper dbHelper = new UpdatesDbHelper(context);
             File[] files = updatesDir.listFiles();

@@ -46,15 +46,17 @@ public final class LegacySupport {
     }
 
     /**
-     * This imports the updates downloaded with CMUpdater. It accepts in input a list of
-     * updates to be downloaded and updates its entries when it finds a matching imported
-     * update (i.e. same filename).
+     * This method imports the updates downloaded with CMUpdater and it adds them to the
+     * updates database. It accepts in input a list of updates which it updates with the
+     * data of matching imported updates (i.e. same filename). If for a given imported
+     * update this method can't find any matching update, it adds a new entry to the
+     * given list.
      *
      * @param context
      * @param updatesJson List of updates to be downloaded
-     * @return List of updates that weren't used to replace entries of updatesJson
+     * @return A list with the IDs of the imported updates with no matching updates
      */
-    public static List<UpdateDownload> importDownloads(Context context,
+    public static List<String> importDownloads(Context context,
             List<UpdateDownload> updatesJson) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         if (preferences.getBoolean(IMPORT_DONE, false)) {
@@ -63,7 +65,7 @@ public final class LegacySupport {
 
         Log.d(TAG, "Importing downloads");
 
-        List<UpdateDownload> notReplacing = new ArrayList<>();
+        List<String> notReplacing = new ArrayList<>();
         File updatesDir = new File(context.getDataDir(), "updates/");
         if (updatesDir.isDirectory()) {
             UpdatesDbHelper dbHelper = new UpdatesDbHelper(context);
@@ -93,7 +95,8 @@ public final class LegacySupport {
                         } else {
                             try {
                                 UpdateDownload update = createUpdateFromFile(file);
-                                notReplacing.add(update);
+                                notReplacing.add(update.getDownloadId());
+                                updatesJson.add(update);
                                 dbHelper.addUpdate(update);
                             } catch (IllegalFilenameException e) {
                                 Log.e(TAG, "Deleting " + file.getAbsolutePath(), e);

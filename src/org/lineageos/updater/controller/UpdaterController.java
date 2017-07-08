@@ -294,6 +294,16 @@ public class UpdaterController implements UpdaterControllerInt {
     }
 
     @Override
+    public void setUpdatesNotAvailableOnline(List<String> downloadIds) {
+        for (String downloadId : downloadIds) {
+            DownloadEntry update = mDownloads.get(downloadId);
+            if (update != null) {
+                update.mUpdate.setAvailableOnline(false);
+            }
+        }
+    }
+
+    @Override
     public void setUpdatesAvailableOnline(List<String> downloadIds, boolean purgeList) {
         List<String> toRemove = new ArrayList<>();
         for (DownloadEntry entry : mDownloads.values()) {

@@ -32,6 +32,8 @@ public interface UpdaterControllerInt {
 
     void setUpdatesAvailableOnline(List<String> downloadIds, boolean purgeList);
 
+    void setUpdatesNotAvailableOnline(List<String> downloadIds);
+
     boolean startDownload(String downloadId);
 
     boolean pauseDownload(String downloadId);

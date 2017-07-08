@@ -166,7 +166,7 @@ public class UpdatesActivity extends AppCompatActivity {
 
         List<UpdateDownload> updates = Utils.parseJson(jsonFile, true);
 
-        List<UpdateDownload> updatesNotAvailable = LegacySupport.importDownloads(this, updates);
+        List<String> importedNotAvailableOnline = LegacySupport.importDownloads(this, updates);
 
         List<String> updatesOnline = new ArrayList<>();
         for (UpdateDownload update : updates) {
@@ -174,10 +174,9 @@ public class UpdatesActivity extends AppCompatActivity {
             updatesOnline.add(update.getDownloadId());
         }
 
-        if (updatesNotAvailable != null) {
-            for (UpdateDownload update : updatesNotAvailable) {
-                update.setAvailableOnline(false);
-            }
+        if (importedNotAvailableOnline != null) {
+            updatesOnline.removeAll(importedNotAvailableOnline);
+            controller.setUpdatesNotAvailableOnline(importedNotAvailableOnline);
         }
 
         controller.setUpdatesAvailableOnline(updatesOnline, true);

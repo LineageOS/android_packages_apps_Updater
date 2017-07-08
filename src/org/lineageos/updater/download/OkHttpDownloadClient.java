@@ -132,6 +132,10 @@ class OkHttpDownloadClient implements DownloadClient {
         final Request.Builder requestBuilder = new Request.Builder()
                 .url(mUrl)
                 .tag(DOWNLOAD_TAG);
+        if (!mDestination.exists()) {
+            mCallback.onFailure(mCancelled);
+            return;
+        }
         long offset = mDestination.length();
         requestBuilder.addHeader("Range", "bytes=" + offset + "-");
         final Request request = requestBuilder.build();

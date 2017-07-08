@@ -27,6 +27,15 @@ public class Update implements Comparable<Update> {
     public Update() {
     }
 
+    public Update(Update update) {
+        mName = update.getName();
+        mDownloadUrl = update.getDownloadUrl();
+        mDownloadId = update.getDownloadId();
+        mTimestamp = update.getTimestamp();
+        mType = update.getType();
+        mVersion = update.getVersion();
+    }
+
     public String getName() {
         return mName;
     }

@@ -29,6 +29,26 @@ public class UpdateDownload extends Update {
     private int mInstallProgress;
     private boolean mAvailableOnline;
 
+    public UpdateDownload() {
+    }
+
+    public UpdateDownload(Update update) {
+        super(update);
+    }
+
+    public UpdateDownload(UpdateDownload update) {
+        super(update);
+        mStatus = update.getStatus();
+        mPersistentStatus = update.getPersistentStatus();
+        mFile = update.getFile();
+        mFileSize = update.getFileSize();
+        mProgress = update.getProgress();
+        mEta = update.getEta();
+        mSpeed = update.getSpeed();
+        mInstallProgress = update.getInstallProgress();
+        mAvailableOnline = update.getAvailableOnline();
+    }
+
     public UpdateStatus getStatus() {
         return mStatus;
     }

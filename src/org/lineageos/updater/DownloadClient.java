@@ -41,7 +41,7 @@ public class DownloadClient {
 
     private static final String TAG = "DownloadClient";
 
-    private static final Object DOWNLOAD_TAG = new Object();
+    private final Object DOWNLOAD_TAG = new Object();
 
     private boolean mCancelled = false;
 

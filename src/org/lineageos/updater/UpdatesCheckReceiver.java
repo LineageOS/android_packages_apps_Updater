@@ -28,6 +28,7 @@ import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 
 import org.json.JSONException;
+import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
 
@@ -64,7 +65,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
             final File json = Utils.getCachedUpdateList(context);
             final File jsonNew = new File(json.getAbsolutePath() + ".tmp");
             String url = Utils.getServerURL(context);
-            DownloadClient.downloadFile(url, jsonNew, new DownloadClient.DownloadCallback() {
+            DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
                 @Override
                 public void onFailure(boolean cancelled) {
                     Log.e(TAG, "Could not download updates list, scheduling new check");
@@ -91,7 +92,14 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
                         scheduleUpdatesCheck(context);
                     }
                 }
-            });
+            };
+
+            DownloadClient downloadClient = new DownloadClient.Builder()
+                    .setUrl(url)
+                    .setDestination(jsonNew)
+                    .setDownloadCallback(callback)
+                    .build();
+            downloadClient.start();
         }
     }
 

@@ -23,10 +23,10 @@ import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-import org.lineageos.updater.DownloadClient;
 import org.lineageos.updater.UpdateDownload;
 import org.lineageos.updater.UpdateStatus;
 import org.lineageos.updater.UpdatesDbHelper;
+import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.File;
@@ -345,11 +345,13 @@ public class UpdaterController implements UpdaterControllerInt {
         UpdateDownload update = mDownloads.get(downloadId).mUpdate;
         File destination = new File(mDownloadRoot, update.getName());
         update.setFile(destination);
-        DownloadClient downloadClient =
-                DownloadClient.downloadFile(update.getDownloadUrl(),
-                        update.getFile(),
-                        getDownloadCallback(downloadId),
-                        getProgressListener(downloadId));
+        DownloadClient downloadClient = new DownloadClient.Builder()
+                .setUrl(update.getDownloadUrl())
+                .setDestination(update.getFile())
+                .setDownloadCallback(getDownloadCallback(downloadId))
+                .setProgressListener(getProgressListener(downloadId))
+                .build();
+        downloadClient.start();
         addDownloadClient(mDownloads.get(downloadId), downloadClient);
         update.setStatus(UpdateStatus.STARTING);
         notifyUpdateChange(downloadId);
@@ -371,11 +373,13 @@ public class UpdaterController implements UpdaterControllerInt {
             verifyUpdateAsync(downloadId);
             notifyUpdateChange(downloadId);
         } else {
-            DownloadClient downloadClient =
-                    DownloadClient.downloadFileResume(update.getDownloadUrl(),
-                            update.getFile(),
-                            getDownloadCallback(downloadId),
-                            getProgressListener(downloadId));
+            DownloadClient downloadClient = new DownloadClient.Builder()
+                    .setUrl(update.getDownloadUrl())
+                    .setDestination(update.getFile())
+                    .setDownloadCallback(getDownloadCallback(downloadId))
+                    .setProgressListener(getProgressListener(downloadId))
+                    .build();
+            downloadClient.resume();
             addDownloadClient(mDownloads.get(downloadId), downloadClient);
             update.setStatus(UpdateStatus.STARTING);
             notifyUpdateChange(downloadId);

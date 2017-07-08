@@ -40,6 +40,7 @@ import org.json.JSONException;
 import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterControllerInt;
 import org.lineageos.updater.controller.UpdaterService;
+import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.LegacySupport;
 import org.lineageos.updater.misc.Utils;
@@ -264,8 +265,12 @@ public class UpdatesActivity extends AppCompatActivity {
             }
         };
 
-        final DownloadClient downloadClient =
-                DownloadClient.downloadFile(url, jsonFileTmp, callback);
+        final DownloadClient downloadClient = new DownloadClient.Builder()
+                .setUrl(url)
+                .setDestination(jsonFileTmp)
+                .setDownloadCallback(callback)
+                .build();
+
         progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
             public void onCancel(DialogInterface dialog) {
@@ -274,6 +279,7 @@ public class UpdatesActivity extends AppCompatActivity {
             }
         });
         progressDialog.show();
+        downloadClient.start();
     }
 
     private void showSnackBar(int stringId, int duration) {

@@ -15,7 +15,7 @@
  */
 package org.lineageos.updater;
 
-public class Update implements Comparable<Update> {
+public class Update {
 
     private String mName;
     private String mDownloadUrl;
@@ -82,10 +82,5 @@ public class Update implements Comparable<Update> {
 
     public void setDownloadUrl(String downloadUrl) {
         mDownloadUrl = downloadUrl;
-    }
-
-    @Override
-    public int compareTo(Update u) {
-        return mTimestamp < u.mTimestamp ? -1 : mTimestamp > u.mTimestamp ? 1 : 0;
     }
 }

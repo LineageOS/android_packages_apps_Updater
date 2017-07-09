@@ -49,6 +49,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class UpdatesActivity extends AppCompatActivity {
@@ -188,8 +189,16 @@ public class UpdatesActivity extends AppCompatActivity {
         }
 
         List<String> updateIds = new ArrayList<>();
-        updateIds.addAll(controller.getIds());
-        Collections.sort(updateIds);
+        List<UpdateDownload> sortedUpdates = controller.getUpdates();
+        Collections.sort(sortedUpdates, new Comparator<UpdateDownload>() {
+            @Override
+            public int compare(UpdateDownload u1, UpdateDownload u2) {
+                return Long.compare(u2.getTimestamp(), u1.getTimestamp());
+            }
+        });
+        for (Update update : sortedUpdates) {
+            updateIds.add(update.getDownloadId());
+        }
         mAdapter.setData(updateIds);
         mAdapter.notifyDataSetChanged();
     }

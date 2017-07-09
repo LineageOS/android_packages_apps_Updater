@@ -24,7 +24,7 @@ public interface DownloadClient {
     interface DownloadCallback {
         void onResponse(int statusCode, String url, Headers headers);
 
-        void onSuccess(String body);
+        void onSuccess(File destination);
 
         void onFailure(boolean cancelled);
     }

@@ -176,7 +176,7 @@ public class UpdaterController implements UpdaterControllerInt {
             }
 
             @Override
-            public void onSuccess(String body) {
+            public void onSuccess(File destination) {
                 Log.d(TAG, "Download complete");
                 UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 update.setStatus(UpdateStatus.VERIFYING);

@@ -241,7 +241,7 @@ public class UpdatesActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onSuccess(String response) {
+            public void onSuccess(File destination) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

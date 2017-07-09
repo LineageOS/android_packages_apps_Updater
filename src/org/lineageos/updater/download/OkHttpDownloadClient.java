@@ -196,7 +196,7 @@ class OkHttpDownloadClient implements DownloadClient {
                     sink.writeAll(body.source());
                     Log.d(TAG, "Download complete");
                     sink.flush();
-                    mCallback.onSuccess(null);
+                    mCallback.onSuccess(mDestination);
                 } catch (IOException e) {
                     onFailure(request, e);
                 } finally {

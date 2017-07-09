@@ -103,6 +103,7 @@ class OkHttpDownloadClient implements DownloadClient {
         downloadFileResumeInternal();
     }
 
+    @Override
     public void cancel() {
         if (!mDownloading) {
             Log.e(TAG, "Not downloading");

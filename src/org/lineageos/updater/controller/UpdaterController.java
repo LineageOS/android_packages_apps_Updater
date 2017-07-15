@@ -417,6 +417,8 @@ public class UpdaterController implements UpdaterControllerInt {
         entry.mDownloadClient.cancel();
         removeDownloadClient(entry);
         entry.mUpdate.setStatus(UpdateStatus.PAUSED);
+        entry.mUpdate.setEta(0);
+        entry.mUpdate.setSpeed(0);
         notifyUpdateChange(downloadId);
         return true;
     }

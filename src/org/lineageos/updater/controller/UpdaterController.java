@@ -152,15 +152,17 @@ public class UpdaterController implements UpdaterControllerInt {
             @Override
             public void onResponse(int statusCode, String url, DownloadClient.Headers headers) {
                 final UpdateDownload update = mDownloads.get(downloadId).mUpdate;
-                String contentLenght = headers.get("Content-Length");
-                if (contentLenght != null) {
-                    try {
-                        long size = Long.parseLong(contentLenght);
-                        if (size > 0) {
-                            update.setFileSize(size);
+                if (update.getFileSize() <= 0) {
+                    String contentLenght = headers.get("Content-Length");
+                    if (contentLenght != null) {
+                        try {
+                            long size = Long.parseLong(contentLenght);
+                            if (size > 0) {
+                                update.setFileSize(size);
+                            }
+                        } catch (NumberFormatException e) {
+                            Log.e(TAG, "Could not get content-length");
                         }
-                    } catch (NumberFormatException e) {
-                        Log.e(TAG, "Could not get content-length");
                     }
                 }
                 update.setStatus(UpdateStatus.DOWNLOADING);

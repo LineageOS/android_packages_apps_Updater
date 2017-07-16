@@ -130,6 +130,20 @@ public class UpdatesActivity extends AppCompatActivity {
             case R.id.menu_refresh:
                 downloadUpdatesList(true);
                 return true;
+            case R.id.menu_auto_updates_check:
+                boolean enable = !item.isChecked();
+                item.setChecked(enable);
+                PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
+                        .edit()
+                        .putBoolean(Constants.PREF_AUTO_UPDATES_CHECK, enable)
+                        .apply();
+                if (enable) {
+                    UpdatesCheckReceiver.scheduleRepeatingUpdatesCheck(this);
+                } else {
+                    UpdatesCheckReceiver.cancelRepeatingUpdatesCheck(this);
+                    UpdatesCheckReceiver.cancelUpdatesCheck(this);
+                }
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

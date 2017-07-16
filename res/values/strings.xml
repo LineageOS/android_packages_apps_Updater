@@ -53,6 +53,7 @@
     <string name="reboot">Reboot</string>
 
     <string name="menu_refresh">Refresh</string>
+    <string name="menu_auto_updates_check">Auto updates check</string>
 
     <string name="dialog_checking_for_updates">Checking for updates</string>
     <string name="snack_updates_found">New updates found</string>

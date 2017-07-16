@@ -6,4 +6,10 @@
         android:icon="@drawable/ic_menu_refresh"
         android:title="@string/menu_refresh"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_auto_updates_check"
+        android:checkable="true"
+        android:checked="true"
+        android:title="@string/menu_auto_updates_check"
+        app:showAsAction="never" />
 </menu>

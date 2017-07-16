@@ -44,6 +44,12 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
+        final SharedPreferences preferences =
+                PreferenceManager.getDefaultSharedPreferences(context);
+        if (!preferences.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, true)) {
+            return;
+        }
+
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             // Set a repeating alarm on boot to check for new updates once per day
             scheduleRepeatingUpdatesCheck(context);
@@ -51,8 +57,6 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
             Utils.cleanupDownloadsDir(context);
         }
 
-        final SharedPreferences preferences =
-                PreferenceManager.getDefaultSharedPreferences(context);
         long lastCheck = preferences.getLong(Constants.PREF_LAST_UPDATE_CHECK, -1);
         final long currentMillis = System.currentTimeMillis();
         if (currentMillis > lastCheck + AlarmManager.INTERVAL_DAY) {
@@ -116,24 +120,41 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         notificationManager.notify(0, notificationBuilder.build());
     }
 
-    private static void scheduleRepeatingUpdatesCheck(Context context) {
-        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+    private static PendingIntent getRepeatingUpdatesCheckIntent(Context context) {
         Intent intent = new Intent(context, UpdatesCheckReceiver.class);
         intent.setAction(DAILY_CHECK_ACTION);
-        PendingIntent updateCheckIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
+        return PendingIntent.getBroadcast(context, 0, intent, 0);
+    }
+
+    public static void scheduleRepeatingUpdatesCheck(Context context) {
+        PendingIntent updateCheckIntent = getRepeatingUpdatesCheckIntent(context);
+        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
                 SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_DAY,
                 AlarmManager.INTERVAL_DAY, updateCheckIntent);
     }
 
-    private static void scheduleUpdatesCheck(Context context) {
+    public static void cancelRepeatingUpdatesCheck(Context context) {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        alarmMgr.cancel(getRepeatingUpdatesCheckIntent(context));
+    }
+
+    private static PendingIntent getUpdatesCheckIntent(Context context) {
         Intent intent = new Intent(context, UpdatesCheckReceiver.class);
         intent.setAction(ONESHOT_CHECK_ACTION);
-        PendingIntent updateCheckIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
-        alarmMgr.cancel(updateCheckIntent);
+        return PendingIntent.getBroadcast(context, 0, intent, 0);
+    }
+
+    public static void scheduleUpdatesCheck(Context context) {
+        PendingIntent updateCheckIntent = getUpdatesCheckIntent(context);
+        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmMgr.set(AlarmManager.ELAPSED_REALTIME,
                 SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_HOUR * 2,
                 updateCheckIntent);
+    }
+
+    public static void cancelUpdatesCheck(Context context) {
+        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        alarmMgr.cancel(getUpdatesCheckIntent(context));
     }
 }

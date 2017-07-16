@@ -269,9 +269,6 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setProgress(100, 100, false);
                 String text = getString(R.string.download_completed_notification);
                 mNotificationStyle.bigText(text);
-                mNotificationBuilder.addAction(R.drawable.ic_tab_install,
-                        getString(R.string.install_button),
-                        getInstallPendingIntent(update.getDownloadId()));
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
@@ -380,14 +377,6 @@ public class UpdaterService extends Service {
         intent.setAction(ACTION_DOWNLOAD_CONTROL);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
         intent.putExtra(EXTRA_DOWNLOAD_CONTROL, DOWNLOAD_PAUSE);
-        return PendingIntent.getService(this, 0, intent,
-                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
-    }
-
-    private PendingIntent getInstallPendingIntent(String downloadId) {
-        final Intent intent = new Intent(this, UpdaterService.class);
-        intent.setAction(ACTION_INSTALL_UPDATE);
-        intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
         return PendingIntent.getService(this, 0, intent,
                 PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
     }

@@ -21,6 +21,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateUtils;
 import android.text.format.Formatter;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +35,7 @@ import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.util.List;
@@ -300,7 +302,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Utils.triggerUpdate(mContext, downloadId);
+                        getInstallDialog(downloadId).show();
                     }
                 });
                 break;
@@ -330,5 +332,37 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 return true;
             }
         };
+    }
+
+    private AlertDialog.Builder getInstallDialog(final String downloadId) {
+        UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+        int resId;
+        try {
+            if (Utils.isABUpdate(update.getFile())) {
+                resId = R.string.apply_update_dialog_message_ab;
+            } else {
+                resId = R.string.apply_update_dialog_message;
+            }
+        } catch (IOException e) {
+            Log.e(TAG, "Could not determine the type of the update");
+            return null;
+        }
+
+        String buildDate = StringGenerator.getDateLocalized(mContext,
+                DateFormat.MEDIUM, update.getTimestamp());
+        String buildInfoText = mContext.getString(R.string.list_build_version_date,
+                BuildInfoUtils.getBuildVersion(), buildDate);
+        return new AlertDialog.Builder(mContext)
+                .setTitle(R.string.apply_update_dialog_title)
+                .setMessage(mContext.getString(resId, buildInfoText,
+                        mContext.getString(android.R.string.ok)))
+                .setPositiveButton(android.R.string.ok,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Utils.triggerUpdate(mContext, downloadId);
+                            }
+                        })
+                .setNegativeButton(android.R.string.cancel, null);
     }
 }

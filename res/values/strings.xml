@@ -25,7 +25,7 @@
     <string name="conf_update_server_url_def" translatable="false">https://download.lineageos.org/api</string>
 
     <string name="verification_failed_notification">Verification failed</string>
-    <string name="verifying_download_notification">Verifying download</string>
+    <string name="verifying_download_notification">Verifying update</string>
     <string name="downloading_notification">Downloading</string>
     <string name="download_paused_notification">Download paused</string>
     <string name="download_paused_error_notification">Download error</string>
@@ -59,4 +59,24 @@
     <string name="snack_updates_found">New updates found</string>
     <string name="snack_no_updates_found">No new updates found</string>
     <string name="snack_updates_check_failed">The update check failed. Please check your internet connection and try again later.</string>
+
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Last checked: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> left</string>
+    <string name="list_installing_update">Installing update</string>
+    <string name="list_verifying_update">Verifying update</string>
+
+    <string name="action_description_download">Download</string>
+    <string name="action_description_pause">Pause download</string>
+    <string name="action_description_resume">Resume download</string>
+    <string name="action_description_install">Install update</string>
+    <string name="action_description_verify">Verify update</string>
+
+    <string name="confirm_delete_dialog_title">Delete file</string>
+    <string name="confirm_delete_dialog_message">Delete the selected update file?</string>
 </resources>

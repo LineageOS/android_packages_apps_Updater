@@ -23,8 +23,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
+import android.icu.text.DateFormat;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
@@ -32,17 +37,21 @@ import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import org.json.JSONException;
 import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterControllerInt;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.download.DownloadClient;
+import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.LegacySupport;
+import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.File;
@@ -91,7 +100,44 @@ public class UpdatesActivity extends AppCompatActivity {
             }
         };
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        TextView headerTitle = (TextView) findViewById(R.id.header_title);
+        headerTitle.setText(getString(R.string.header_title_text,
+                BuildInfoUtils.getBuildVersion()));
+
+        updateLastCheckedString();
+
+        TextView headerBuildVersion = (TextView) findViewById(R.id.header_build_version);
+        headerBuildVersion.setText(
+                getString(R.string.header_android_version, Build.VERSION.RELEASE));
+
+        TextView headerBuildDate = (TextView) findViewById(R.id.header_build_date);
+        headerBuildDate.setText(StringGenerator.getDateLocalized(this,
+                DateFormat.LONG, BuildInfoUtils.getBuildDateTimestamp()));
+
+        // Switch between header title and appbar title minimizing overlaps
+        final CollapsingToolbarLayout collapsingToolbar =
+                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        final AppBarLayout appBar = (AppBarLayout) findViewById(R.id.app_bar);
+        appBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean mIsShown = false;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                int scrollRange = appBarLayout.getTotalScrollRange();
+                if (!mIsShown && scrollRange + verticalOffset < 10) {
+                    collapsingToolbar.setTitle(getString(R.string.display_name));
+                    mIsShown = true;
+                } else if (mIsShown && scrollRange + verticalOffset > 100) {
+                    collapsingToolbar.setTitle(null);
+                    mIsShown = false;
+                }
+            }
+        });
     }
 
     @Override
@@ -277,6 +323,7 @@ public class UpdatesActivity extends AppCompatActivity {
                                     .putLong(Constants.PREF_LAST_UPDATE_CHECK, millis)
                                     .apply();
                             jsonFileTmp.renameTo(jsonFile);
+                            updateLastCheckedString();
                         } catch (IOException | JSONException e) {
                             Log.e(TAG, "Could not read json", e);
                             showSnackBar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
@@ -302,6 +349,17 @@ public class UpdatesActivity extends AppCompatActivity {
         });
         progressDialog.show();
         downloadClient.start();
+    }
+
+    private void updateLastCheckedString() {
+        final SharedPreferences preferences =
+                PreferenceManager.getDefaultSharedPreferences(this);
+        long lastCheck = preferences.getLong(Constants.PREF_LAST_UPDATE_CHECK, -1) / 1000;
+        String lastCheckString = getString(R.string.header_last_updates_check,
+                StringGenerator.getDateLocalized(this, DateFormat.LONG, lastCheck),
+                StringGenerator.getTimeLocalized(this, lastCheck));
+        TextView headerLastCheck = (TextView) findViewById(R.id.header_last_check);
+        headerLastCheck.setText(lastCheckString);
     }
 
     private void showSnackBar(int stringId, int duration) {

@@ -33,9 +33,9 @@ import android.util.Log;
 
 import org.lineageos.updater.R;
 import org.lineageos.updater.UpdateDownload;
+import org.lineageos.updater.UpdateStatus;
 import org.lineageos.updater.UpdaterReceiver;
 import org.lineageos.updater.UpdatesActivity;
-import org.lineageos.updater.misc.Utils;
 
 import java.io.IOException;
 import java.text.NumberFormat;
@@ -160,14 +160,18 @@ public class UpdaterService extends Service {
             }
         } else if (ACTION_INSTALL_UPDATE.equals(intent.getAction())) {
             String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
+            UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+            if (update.getPersistentStatus() != UpdateStatus.Persistent.VERIFIED) {
+                throw new IllegalArgumentException(update.getDownloadId() + " is not verified");
+            }
             try {
-                ZipFile zipFile = new ZipFile(mUpdaterController.getUpdate(downloadId).getFile());
+                ZipFile zipFile = new ZipFile(update.getFile());
                 boolean isABUpdate = ABUpdateInstaller.isABUpdate(zipFile);
                 zipFile.close();
                 if (isABUpdate) {
                     ABUpdateInstaller.start(mUpdaterController, downloadId);
                 } else {
-                    Utils.triggerUpdate(this, mUpdaterController.getUpdate(downloadId));
+                    android.os.RecoverySystem.installPackage(this, update.getFile());
                 }
             } catch (IOException e) {
                 Log.e(TAG, "Could not install update", e);

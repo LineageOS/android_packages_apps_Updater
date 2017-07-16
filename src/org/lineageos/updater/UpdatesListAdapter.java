@@ -17,7 +17,6 @@ package org.lineageos.updater;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +27,6 @@ import android.widget.TextView;
 import org.lineageos.updater.controller.UpdaterControllerInt;
 import org.lineageos.updater.misc.Utils;
 
-import java.io.IOException;
 import java.util.List;
 
 public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.ViewHolder> {
@@ -217,13 +215,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        try {
-                            Utils.triggerUpdate(mContext,
-                                    mUpdaterController.getUpdate(downloadId));
-                        } catch (IOException e) {
-                            Log.e(TAG, "Could not trigger the update", e);
-                            // TODO: show error message
-                        }
+                        Utils.triggerUpdate(mContext, downloadId);
                     }
                 });
                 break;

@@ -16,6 +16,7 @@
 package org.lineageos.updater.misc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -29,8 +30,8 @@ import org.json.JSONObject;
 import org.lineageos.updater.R;
 import org.lineageos.updater.Update;
 import org.lineageos.updater.UpdateDownload;
-import org.lineageos.updater.UpdateStatus;
 import org.lineageos.updater.UpdatesDbHelper;
+import org.lineageos.updater.controller.UpdaterService;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -133,12 +134,11 @@ public class Utils {
         return serverUrl + "/v1/" + device + "/" + type + "/" + incrementalVersion;
     }
 
-    public static void triggerUpdate(Context context, UpdateDownload update) throws IOException {
-        if (update.getStatus() == UpdateStatus.VERIFIED) {
-            android.os.RecoverySystem.installPackage(context, update.getFile());
-        } else {
-            throw new IllegalStateException("Update must be verified");
-        }
+    public static void triggerUpdate(Context context, String downloadId) {
+        final Intent intent = new Intent(context, UpdaterService.class);
+        intent.setAction(UpdaterService.ACTION_INSTALL_UPDATE);
+        intent.putExtra(UpdaterService.EXTRA_DOWNLOAD_ID, downloadId);
+        context.startService(intent);
     }
 
     public static boolean isNetworkAvailable(Context context) {

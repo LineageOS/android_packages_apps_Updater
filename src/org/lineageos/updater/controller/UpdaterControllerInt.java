@@ -46,6 +46,8 @@ public interface UpdaterControllerInt {
 
     boolean hasActiveDownloads();
 
+    boolean isVerifyingUpdate(String downloadId);
+
     boolean isVerifyingUpdate();
 
     boolean isInstallingUpdate();

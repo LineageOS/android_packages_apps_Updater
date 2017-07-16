@@ -32,6 +32,7 @@ import org.lineageos.updater.misc.Utils;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -58,7 +59,7 @@ public class UpdaterController implements UpdaterControllerInt {
     private final File mDownloadRoot;
 
     private int mActiveDownloads = 0;
-    private int mVerifyingUpdates = 0;
+    private Set<String> mVerifyingUpdates = new HashSet<>();
 
     public static synchronized UpdaterController getInstance() {
         return sUpdaterController;
@@ -244,7 +245,7 @@ public class UpdaterController implements UpdaterControllerInt {
     }
 
     private void verifyUpdateAsync(final String downloadId) {
-        mVerifyingUpdates++;
+        mVerifyingUpdates.add(downloadId);
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -260,7 +261,7 @@ public class UpdaterController implements UpdaterControllerInt {
                     update.setProgress(0);
                     update.setStatus(UpdateStatus.VERIFICATION_FAILED);
                 }
-                mVerifyingUpdates--;
+                mVerifyingUpdates.remove(downloadId);
                 notifyUpdateChange(downloadId);
             }
         }).start();
@@ -506,7 +507,12 @@ public class UpdaterController implements UpdaterControllerInt {
 
     @Override
     public boolean isVerifyingUpdate() {
-        return mVerifyingUpdates > 0;
+        return mVerifyingUpdates.size() > 0;
+    }
+
+    @Override
+    public boolean isVerifyingUpdate(String downloadId) {
+        return mVerifyingUpdates.contains(downloadId);
     }
 
     @Override

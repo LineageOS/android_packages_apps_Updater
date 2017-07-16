@@ -44,6 +44,10 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
+        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+            Utils.cleanupDownloadsDir(context);
+        }
+
         final SharedPreferences preferences =
                 PreferenceManager.getDefaultSharedPreferences(context);
         if (!preferences.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, true)) {
@@ -53,8 +57,6 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             // Set a repeating alarm on boot to check for new updates once per day
             scheduleRepeatingUpdatesCheck(context);
-
-            Utils.cleanupDownloadsDir(context);
         }
 
         long lastCheck = preferences.getLong(Constants.PREF_LAST_UPDATE_CHECK, -1);

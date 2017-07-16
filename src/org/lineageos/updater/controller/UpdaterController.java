@@ -193,7 +193,11 @@ public class UpdaterController implements UpdaterControllerInt {
                 UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 if (cancelled) {
                     Log.d(TAG, "Download cancelled");
-                    update.setStatus(UpdateStatus.PAUSED);
+                    if (update.getFile() != null && update.getFile().length() > 0) {
+                        update.setStatus(UpdateStatus.PAUSED);
+                    } else {
+                        update.setStatus(UpdateStatus.UNKNOWN);
+                    }
                     // Already notified
                 } else {
                     Log.e(TAG, "Download failed");
@@ -287,6 +291,7 @@ public class UpdaterController implements UpdaterControllerInt {
                     update.setStatus(UpdateStatus.UNKNOWN);
                     return false;
                 } else if (update.getFileSize() > 0) {
+                    update.setStatus(UpdateStatus.PAUSED);
                     int progress = Math.round(
                             update.getFile().length() * 100 / update.getFileSize());
                     update.setProgress(progress);
@@ -416,7 +421,11 @@ public class UpdaterController implements UpdaterControllerInt {
         DownloadEntry entry = mDownloads.get(downloadId);
         entry.mDownloadClient.cancel();
         removeDownloadClient(entry);
-        entry.mUpdate.setStatus(UpdateStatus.PAUSED);
+        if (entry.mUpdate.getFile() != null && entry.mUpdate.getFile().length() > 0) {
+            entry.mUpdate.setStatus(UpdateStatus.PAUSED);
+        } else {
+            entry.mUpdate.setStatus(UpdateStatus.UNKNOWN);
+        }
         entry.mUpdate.setEta(0);
         entry.mUpdate.setSpeed(0);
         notifyUpdateChange(downloadId);

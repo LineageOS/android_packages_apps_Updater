@@ -16,6 +16,8 @@
 package org.lineageos.updater;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateUtils;
 import android.text.format.Formatter;
@@ -114,6 +116,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 mUpdaterController.isVerifyingUpdate();
         boolean enabled = !busy && Utils.canInstall(update);
 
+        boolean canDelete = false;
+
         final String downloadId = update.getDownloadId();
         if (mUpdaterController.isDownloading(downloadId)) {
             String downloaded = Formatter.formatBytes(mContext.getResources(),
@@ -149,6 +153,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             } else {
                 setButtonAction(viewHolder.mAction, Action.RESUME, downloadId, enabled);
             }
+            canDelete = true;
             String downloaded = Formatter.formatBytes(mContext.getResources(),
                     update.getFile().length(), Formatter.FLAG_SHORTER).value;
             String total = Formatter.formatShortFileSize(mContext, update.getFileSize());
@@ -157,6 +162,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mProgressBar.setIndeterminate(false);
             viewHolder.mProgressBar.setProgress(update.getProgress());
         }
+
+        viewHolder.itemView.setOnLongClickListener(
+                canDelete ? getDeleteClickListener(update.getDownloadId()) : null);
     }
 
     private void handleNotActiveStatus(ViewHolder viewHolder, UpdateDownload update) {
@@ -172,8 +180,11 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         boolean enabled = !busy && Utils.canInstall(update);
 
         if (update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED) {
+            viewHolder.itemView.setOnLongClickListener(
+                    getDeleteClickListener(update.getDownloadId()));
             setButtonAction(viewHolder.mAction, Action.INSTALL, update.getDownloadId(), enabled);
         } else {
+            viewHolder.itemView.setOnLongClickListener(null);
             setButtonAction(viewHolder.mAction, Action.DOWNLOAD, update.getDownloadId(), enabled);
         }
     }
@@ -295,5 +306,29 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 break;
         }
         button.setAlpha(enabled ? 1.f : mAlphaDisabledValue);
+    }
+
+    private AlertDialog.Builder getDeleteDialog(final String downloadId) {
+        return new AlertDialog.Builder(mContext)
+                .setTitle(R.string.confirm_delete_dialog_title)
+                .setMessage(R.string.confirm_delete_dialog_message)
+                .setPositiveButton(android.R.string.ok,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                mUpdaterController.cancelDownload(downloadId);
+                            }
+                        })
+                .setNegativeButton(android.R.string.cancel, null);
+    }
+
+    private View.OnLongClickListener getDeleteClickListener(final String downloadId) {
+        return new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                getDeleteDialog(downloadId).show();
+                return true;
+            }
+        };
     }
 }

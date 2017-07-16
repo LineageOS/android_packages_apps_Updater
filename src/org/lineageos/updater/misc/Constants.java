@@ -20,6 +20,9 @@ public final class Constants {
     private Constants() {
     }
 
+    public static final String AB_PAYLOAD_BIN_PATH = "payload.bin";
+    public static final String AB_PAYLOAD_PROPERTIES_PATH = "payload_properties.txt";
+
     public static final String PREF_LAST_UPDATE_CHECK = "last_update_check";
     public static final String PREF_AUTO_UPDATES_CHECK = "auto_updates_check";
 

@@ -36,6 +36,7 @@ import org.lineageos.updater.UpdateDownload;
 import org.lineageos.updater.UpdateStatus;
 import org.lineageos.updater.UpdaterReceiver;
 import org.lineageos.updater.UpdatesActivity;
+import org.lineageos.updater.misc.Utils;
 
 import java.io.IOException;
 import java.text.NumberFormat;
@@ -165,10 +166,7 @@ public class UpdaterService extends Service {
                 throw new IllegalArgumentException(update.getDownloadId() + " is not verified");
             }
             try {
-                ZipFile zipFile = new ZipFile(update.getFile());
-                boolean isABUpdate = ABUpdateInstaller.isABUpdate(zipFile);
-                zipFile.close();
-                if (isABUpdate) {
+                if (Utils.isABUpdate(update.getFile())) {
                     ABUpdateInstaller.start(mUpdaterController, downloadId);
                 } else {
                     android.os.RecoverySystem.installPackage(this, update.getFile());

@@ -21,6 +21,7 @@ import android.util.Log;
 
 import org.lineageos.updater.UpdateDownload;
 import org.lineageos.updater.UpdateStatus;
+import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.BufferedReader;
@@ -38,9 +39,6 @@ class ABUpdateInstaller {
     private static final String TAG = "ABUpdateInstaller";
 
     private static String sDownloadId;
-
-    private static final String PAYLOAD_BIN_PATH = "payload.bin";
-    private static final String PAYLOAD_PROPERTIES_PATH = "payload_properties.txt";
 
     private final UpdaterController mUpdaterController;
     private final String mDownloadId;
@@ -131,8 +129,8 @@ class ABUpdateInstaller {
         String[] headerKeyValuePairs;
         try {
             ZipFile zipFile = new ZipFile(file);
-            offset = Utils.getZipEntryOffset(zipFile, PAYLOAD_BIN_PATH);
-            ZipEntry payloadPropEntry = zipFile.getEntry(PAYLOAD_PROPERTIES_PATH);
+            offset = Utils.getZipEntryOffset(zipFile, Constants.AB_PAYLOAD_BIN_PATH);
+            ZipEntry payloadPropEntry = zipFile.getEntry(Constants.AB_PAYLOAD_PROPERTIES_PATH);
             try (InputStream is = zipFile.getInputStream(payloadPropEntry);
                  InputStreamReader isr = new InputStreamReader(is);
                  BufferedReader br = new BufferedReader(isr)) {
@@ -158,10 +156,5 @@ class ABUpdateInstaller {
         updateEngine.applyPayload(zipFileUri, offset, 0, headerKeyValuePairs);
 
         return true;
-    }
-
-    static boolean isABUpdate(ZipFile zipFile) {
-        return zipFile.getEntry(PAYLOAD_BIN_PATH) != null &&
-                zipFile.getEntry(PAYLOAD_PROPERTIES_PATH) != null;
     }
 }

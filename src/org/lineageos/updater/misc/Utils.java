@@ -268,4 +268,16 @@ public class Utils {
         }
         throw new IllegalStateException();
     }
+
+    public static boolean isABUpdate(ZipFile zipFile) {
+        return zipFile.getEntry(Constants.AB_PAYLOAD_BIN_PATH) != null &&
+                zipFile.getEntry(Constants.AB_PAYLOAD_PROPERTIES_PATH) != null;
+    }
+
+    public static boolean isABUpdate(File file) throws IOException {
+        ZipFile zipFile = new ZipFile(file);
+        boolean isAB = isABUpdate(zipFile);
+        zipFile.close();
+        return isAB;
+    }
 }

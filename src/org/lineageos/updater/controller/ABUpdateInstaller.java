@@ -37,7 +37,7 @@ class ABUpdateInstaller {
 
     private static final String TAG = "ABUpdateInstaller";
 
-    private static boolean sIsInstallingUpdate;
+    private static String sDownloadId;
 
     private static final String PAYLOAD_BIN_PATH = "payload.bin";
     private static final String PAYLOAD_PROPERTIES_PATH = "payload_properties.txt";
@@ -70,7 +70,7 @@ class ABUpdateInstaller {
 
         @Override
         public void onPayloadApplicationComplete(int errorCode) {
-            sIsInstallingUpdate = false;
+            sDownloadId = null;
             switch (errorCode) {
                 case UpdateEngine.ErrorCodeConstants.SUCCESS: {
                     UpdateDownload update = mUpdaterController.getActualUpdate(mDownloadId);
@@ -93,16 +93,23 @@ class ABUpdateInstaller {
 
     static synchronized boolean start(UpdaterController updaterController,
             String downloadId) {
-        if (sIsInstallingUpdate) {
+        if (sDownloadId != null) {
             return false;
         }
         ABUpdateInstaller installer = new ABUpdateInstaller(updaterController, downloadId);
-        sIsInstallingUpdate = installer.startUpdate();
-        return sIsInstallingUpdate;
+        if (installer.startUpdate()) {
+            sDownloadId = downloadId;
+            return true;
+        }
+        return false;
     }
 
     static synchronized boolean isInstallingUpdate() {
-        return sIsInstallingUpdate;
+        return sDownloadId != null;
+    }
+
+    static synchronized boolean isInstallingUpdate(String downloadId) {
+        return sDownloadId != null && sDownloadId.equals(downloadId);
     }
 
     private ABUpdateInstaller(UpdaterController updaterController, String downloadId) {

@@ -519,4 +519,9 @@ public class UpdaterController implements UpdaterControllerInt {
     public boolean isInstallingUpdate() {
         return ABUpdateInstaller.isInstallingUpdate();
     }
+
+    @Override
+    public boolean isInstallingUpdate(String downloadId) {
+        return ABUpdateInstaller.isInstallingUpdate(downloadId);
+    }
 }

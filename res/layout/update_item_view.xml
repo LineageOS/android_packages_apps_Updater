@@ -98,7 +98,7 @@
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Download"
+                android:contentDescription="@string/action_description_download"
                 android:nextFocusLeft="@id/card_view"
                 android:src="@drawable/ic_download" />
         </RelativeLayout>

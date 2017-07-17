@@ -79,7 +79,6 @@
     <string name="action_description_pause">Pause download</string>
     <string name="action_description_resume">Resume download</string>
     <string name="action_description_install">Install update</string>
-    <string name="action_description_verify">Verify update</string>
 
     <string name="confirm_delete_dialog_title">Delete file</string>
     <string name="confirm_delete_dialog_message">Delete the selected update file?</string>

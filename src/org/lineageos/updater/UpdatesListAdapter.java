@@ -54,7 +54,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         DOWNLOAD,
         PAUSE,
         RESUME,
-        VERIFY,
         INSTALL
     }
 
@@ -150,12 +149,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mProgressBar.setIndeterminate(true);
             viewHolder.mProgressPercentage.setText(NumberFormat.getPercentInstance().format(1));
         } else {
-            if (update.getFile().length() == update.getFileSize()) {
-                setButtonAction(viewHolder.mAction, Action.VERIFY, downloadId, !busy);
-            } else {
-                setButtonAction(viewHolder.mAction, Action.RESUME, downloadId, enabled);
-            }
             canDelete = true;
+            setButtonAction(viewHolder.mAction, Action.RESUME, downloadId, enabled);
             String downloaded = Formatter.formatBytes(mContext.getResources(),
                     update.getFile().length(), Formatter.FLAG_SHORTER).value;
             String total = Formatter.formatShortFileSize(mContext, update.getFileSize());
@@ -281,11 +276,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 });
                 break;
             case RESUME:
-            case VERIFY:
                 button.setImageResource(R.drawable.ic_resume);
-                button.setContentDescription(action == Action.RESUME ?
-                        mContext.getString(R.string.action_description_resume) :
-                        mContext.getString(R.string.action_description_verify));
+                button.setContentDescription(
+                        mContext.getString(R.string.action_description_resume));
                 button.setEnabled(enabled);
                 button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
                     @Override

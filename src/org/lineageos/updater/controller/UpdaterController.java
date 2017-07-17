@@ -194,11 +194,7 @@ public class UpdaterController implements UpdaterControllerInt {
                 UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 if (cancelled) {
                     Log.d(TAG, "Download cancelled");
-                    if (update.getFile() != null && update.getFile().length() > 0) {
-                        update.setStatus(UpdateStatus.PAUSED);
-                    } else {
-                        update.setStatus(UpdateStatus.UNKNOWN);
-                    }
+                    update.setStatus(UpdateStatus.PAUSED);
                     // Already notified
                 } else {
                     Log.e(TAG, "Download failed");
@@ -391,6 +387,12 @@ public class UpdaterController implements UpdaterControllerInt {
         }
         UpdateDownload update = mDownloads.get(downloadId).mUpdate;
         File file = update.getFile();
+        if (file == null || !file.exists()) {
+            Log.e(TAG, "The destination file of " + downloadId + " doesn't exist, can't resume");
+            update.setStatus(UpdateStatus.PAUSED_ERROR);
+            notifyUpdateChange(downloadId);
+            return false;
+        }
         if (file.exists() && update.getFileSize() > 0 && file.length() >= update.getFileSize()) {
             Log.d(TAG, "File already downloaded, starting verification");
             update.setStatus(UpdateStatus.VERIFYING);
@@ -422,11 +424,7 @@ public class UpdaterController implements UpdaterControllerInt {
         DownloadEntry entry = mDownloads.get(downloadId);
         entry.mDownloadClient.cancel();
         removeDownloadClient(entry);
-        if (entry.mUpdate.getFile() != null && entry.mUpdate.getFile().length() > 0) {
-            entry.mUpdate.setStatus(UpdateStatus.PAUSED);
-        } else {
-            entry.mUpdate.setStatus(UpdateStatus.UNKNOWN);
-        }
+        entry.mUpdate.setStatus(UpdateStatus.PAUSED);
         entry.mUpdate.setEta(0);
         entry.mUpdate.setSpeed(0);
         notifyUpdateChange(downloadId);

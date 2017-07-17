@@ -208,20 +208,18 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         }
 
         boolean activeLayout;
-        switch (update.getStatus()) {
-            case DOWNLOADING:
-            case INSTALLING:
-            case VERIFYING:
-            case STARTING:
-            case DOWNLOADED:
-                activeLayout = update.getPersistentStatus() != UpdateStatus.Persistent.VERIFIED;
+        switch (update.getPersistentStatus()) {
+            case UpdateStatus.Persistent.UNKNOWN:
+                activeLayout = update.getStatus() == UpdateStatus.STARTING;
                 break;
-            case PAUSED:
-            case PAUSED_ERROR:
-                activeLayout = update.getFile() != null && update.getFile().exists();
+            case UpdateStatus.Persistent.VERIFIED:
+                activeLayout = false;
+                break;
+            case UpdateStatus.Persistent.INCOMPLETE:
+                activeLayout = true;
                 break;
             default:
-                activeLayout = false;
+                throw new RuntimeException("Unknown update status");
         }
 
         if (activeLayout) {

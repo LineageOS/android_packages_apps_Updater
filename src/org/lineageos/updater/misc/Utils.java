@@ -17,6 +17,7 @@ package org.lineageos.updater.misc;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -279,5 +280,9 @@ public class Utils {
         boolean isAB = isABUpdate(zipFile);
         zipFile.close();
         return isAB;
+    }
+
+    public static boolean hasTouchscreen(Context context) {
+        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN);
     }
 }

@@ -138,6 +138,11 @@ public class UpdatesActivity extends AppCompatActivity {
                 }
             }
         });
+
+        if (!Utils.hasTouchscreen(this)) {
+            // This can't be collapsed without a touchscreen
+            appBar.setExpanded(false);
+        }
     }
 
     @Override

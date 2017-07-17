@@ -17,6 +17,7 @@ package org.lineageos.updater;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateUtils;
@@ -49,6 +50,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private List<String> mDownloadIds;
     private UpdaterControllerInt mUpdaterController;
     private Context mContext;
+    private View mContainerView;
 
     private enum Action {
         DOWNLOAD,
@@ -86,8 +88,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         }
     }
 
-    public UpdatesListAdapter(Context context) {
+    public UpdatesListAdapter(Context context, View containerView) {
         mContext = context;
+        mContainerView = containerView;
 
         TypedValue tv = new TypedValue();
         context.getTheme().resolveAttribute(android.R.attr.disabledAlpha, tv, true);
@@ -115,7 +118,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         boolean busy = mUpdaterController.hasActiveDownloads() ||
                 mUpdaterController.isVerifyingUpdate();
-        boolean enabled = !busy && Utils.canInstall(update);
 
         boolean canDelete = false;
 
@@ -150,7 +152,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mProgressPercentage.setText(NumberFormat.getPercentInstance().format(1));
         } else {
             canDelete = true;
-            setButtonAction(viewHolder.mAction, Action.RESUME, downloadId, enabled);
+            setButtonAction(viewHolder.mAction, Action.RESUME, downloadId, !busy);
             String downloaded = Formatter.formatBytes(mContext.getResources(),
                     update.getFile().length(), Formatter.FLAG_SHORTER).value;
             String total = Formatter.formatShortFileSize(mContext, update.getFileSize());
@@ -174,15 +176,14 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         boolean busy = mUpdaterController.hasActiveDownloads() ||
                 mUpdaterController.isVerifyingUpdate();
-        boolean enabled = !busy && Utils.canInstall(update);
 
         if (update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED) {
             viewHolder.itemView.setOnLongClickListener(
                     getDeleteClickListener(update.getDownloadId()));
-            setButtonAction(viewHolder.mAction, Action.INSTALL, update.getDownloadId(), enabled);
+            setButtonAction(viewHolder.mAction, Action.INSTALL, update.getDownloadId(), !busy);
         } else {
             viewHolder.itemView.setOnLongClickListener(null);
-            setButtonAction(viewHolder.mAction, Action.DOWNLOAD, update.getDownloadId(), enabled);
+            setButtonAction(viewHolder.mAction, Action.DOWNLOAD, update.getDownloadId(), !busy);
         }
     }
 
@@ -275,30 +276,46 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     }
                 });
                 break;
-            case RESUME:
+            case RESUME: {
                 button.setImageResource(R.drawable.ic_resume);
                 button.setContentDescription(
                         mContext.getString(R.string.action_description_resume));
                 button.setEnabled(enabled);
+                UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+                final boolean canInstall = Utils.canInstall(update);
                 button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mUpdaterController.resumeDownload(downloadId);
+                        if (canInstall) {
+                            mUpdaterController.resumeDownload(downloadId);
+                        } else {
+                            showSnackbar(R.string.snack_update_not_installable,
+                                    Snackbar.LENGTH_LONG);
+                        }
                     }
                 });
-                break;
-            case INSTALL:
+            }
+            break;
+            case INSTALL: {
                 button.setImageResource(R.drawable.ic_system_update);
                 button.setContentDescription(
                         mContext.getString(R.string.action_description_install));
                 button.setEnabled(enabled);
+                UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+                final boolean canInstall = Utils.canInstall(update);
                 button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        getInstallDialog(downloadId).show();
+                        if (canInstall) {
+                            getInstallDialog(downloadId).show();
+                        } else {
+                            showSnackbar(R.string.snack_update_not_installable,
+                                    Snackbar.LENGTH_LONG);
+                        }
                     }
                 });
-                break;
+            }
+            break;
         }
         button.setAlpha(enabled ? 1.f : mAlphaDisabledValue);
     }
@@ -325,6 +342,10 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 return true;
             }
         };
+    }
+
+    private void showSnackbar(int stringId, int duration) {
+        Snackbar.make(mContainerView, stringId, duration).show();
     }
 
     private AlertDialog.Builder getInstallDialog(final String downloadId) {

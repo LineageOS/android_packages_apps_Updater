@@ -41,6 +41,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -75,7 +76,8 @@ public class UpdatesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_updates);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        mAdapter = new UpdatesListAdapter(this);
+        View containerView = findViewById(R.id.main_container);
+        mAdapter = new UpdatesListAdapter(this, containerView);
         recyclerView.setAdapter(mAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

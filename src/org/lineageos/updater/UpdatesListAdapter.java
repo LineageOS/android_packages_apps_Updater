@@ -213,10 +213,12 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             case INSTALLING:
             case VERIFYING:
             case STARTING:
-            case PAUSED:
             case DOWNLOADED:
-            case PAUSED_ERROR:
                 activeLayout = update.getPersistentStatus() != UpdateStatus.Persistent.VERIFIED;
+                break;
+            case PAUSED:
+            case PAUSED_ERROR:
+                activeLayout = update.getFile() != null && update.getFile().exists();
                 break;
             default:
                 activeLayout = false;

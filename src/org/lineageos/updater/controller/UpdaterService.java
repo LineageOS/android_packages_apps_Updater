@@ -36,9 +36,12 @@ import org.lineageos.updater.UpdateDownload;
 import org.lineageos.updater.UpdateStatus;
 import org.lineageos.updater.UpdaterReceiver;
 import org.lineageos.updater.UpdatesActivity;
+import org.lineageos.updater.misc.BuildInfoUtils;
+import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.util.zip.ZipFile;
 
@@ -90,8 +93,7 @@ public class UpdaterService extends Service {
                 String downloadId = intent.getStringExtra(UpdaterController.EXTRA_DOWNLOAD_ID);
                 if (UpdaterController.ACTION_UPDATE_STATUS.equals(intent.getAction())) {
                     UpdateDownload update = mUpdaterController.getUpdate(downloadId);
-                    mNotificationBuilder.setContentTitle(update.getName());
-                    mNotificationBuilder.setContentTitle(update.getName());
+                    setNotificationTitle(update);
                     Bundle extras = new Bundle();
                     extras.putString(UpdaterController.EXTRA_DOWNLOAD_ID, downloadId);
                     mNotificationBuilder.setExtras(extras);
@@ -101,7 +103,7 @@ public class UpdaterService extends Service {
                     handleDownloadProgressChange(update);
                 } else if (UpdaterController.ACTION_INSTALL_PROGRESS.equals(intent.getAction())) {
                     UpdateDownload update = mUpdaterController.getUpdate(downloadId);
-                    mNotificationBuilder.setContentTitle(update.getName());
+                    setNotificationTitle(update);
                     handleInstallProgress(update);
                 } else if (UpdaterController.ACTION_UPDATE_REMOVED.equals(intent.getAction())) {
                     Bundle extras = mNotificationBuilder.getExtras();
@@ -333,8 +335,7 @@ public class UpdaterService extends Service {
         String percent = NumberFormat.getPercentInstance().format(progress / 100.f);
         mNotificationStyle.setSummaryText(percent);
 
-        mNotificationStyle.setBigContentTitle(update.getName());
-        mNotificationBuilder.setContentTitle(update.getName());
+        setNotificationTitle(update);
 
         String speed = Formatter.formatFileSize(this, update.getSpeed());
         CharSequence eta = DateUtils.formatDuration(update.getEta() * 1000);
@@ -348,8 +349,7 @@ public class UpdaterService extends Service {
         int progress = update.getInstallProgress();
         mNotificationBuilder.setProgress(100, progress, false);
 
-        mNotificationStyle.setBigContentTitle(update.getName());
-        mNotificationBuilder.setContentTitle(update.getName());
+        setNotificationTitle(update);
 
         if (progress == 0) {
             mNotificationStyle.bigText(getString(R.string.finalizing_package));
@@ -361,6 +361,15 @@ public class UpdaterService extends Service {
         }
 
         mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+    }
+
+    private void setNotificationTitle(UpdateDownload update) {
+        String buildDate = StringGenerator.getDateLocalized(this,
+                DateFormat.MEDIUM, update.getTimestamp());
+        String buildInfo = getString(R.string.list_build_version_date,
+                BuildInfoUtils.getBuildVersion(), buildDate);
+        mNotificationStyle.setBigContentTitle(buildInfo);
+        mNotificationBuilder.setContentTitle(buildInfo);
     }
 
     private PendingIntent getResumePendingIntent(String downloadId) {

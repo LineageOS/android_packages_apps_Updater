@@ -15,10 +15,10 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="TextAppearanceWhite" parent="@android:style/TextAppearance">
+    <style name="TextAppearanceWhite" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/white</item>
     </style>
-    <style name="TextAppearanceTransparent" parent="@android:style/TextAppearance">
+    <style name="TextAppearanceTransparent" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@android:color/transparent</item>
     </style>
 </resources>

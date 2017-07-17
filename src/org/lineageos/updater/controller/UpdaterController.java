@@ -375,10 +375,10 @@ public class UpdaterController implements UpdaterControllerInt {
                 .setDownloadCallback(getDownloadCallback(downloadId))
                 .setProgressListener(getProgressListener(downloadId))
                 .build();
-        downloadClient.start();
         addDownloadClient(mDownloads.get(downloadId), downloadClient);
         update.setStatus(UpdateStatus.STARTING);
         notifyUpdateChange(downloadId);
+        downloadClient.start();
         mWakeLock.acquire();
         return true;
     }
@@ -403,10 +403,10 @@ public class UpdaterController implements UpdaterControllerInt {
                     .setDownloadCallback(getDownloadCallback(downloadId))
                     .setProgressListener(getProgressListener(downloadId))
                     .build();
-            downloadClient.resume();
             addDownloadClient(mDownloads.get(downloadId), downloadClient);
             update.setStatus(UpdateStatus.STARTING);
             notifyUpdateChange(downloadId);
+            downloadClient.resume();
             mWakeLock.acquire();
         }
         return true;

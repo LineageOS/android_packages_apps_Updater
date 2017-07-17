@@ -88,6 +88,8 @@ public class UpdatesActivity extends AppCompatActivity {
             @Override
             public void onReceive(Context context, Intent intent) {
                 if (UpdaterController.ACTION_UPDATE_STATUS.equals(intent.getAction())) {
+                    String downloadId = intent.getStringExtra(UpdaterController.EXTRA_DOWNLOAD_ID);
+                    handleDownloadStatusChange(downloadId);
                     mAdapter.notifyDataSetChanged();
                 } else if (UpdaterController.ACTION_DOWNLOAD_PROGRESS.equals(intent.getAction()) ||
                         UpdaterController.ACTION_INSTALL_PROGRESS.equals(intent.getAction())) {
@@ -365,6 +367,21 @@ public class UpdatesActivity extends AppCompatActivity {
                 StringGenerator.getTimeLocalized(this, lastCheck));
         TextView headerLastCheck = (TextView) findViewById(R.id.header_last_check);
         headerLastCheck.setText(lastCheckString);
+    }
+
+    private void handleDownloadStatusChange(String downloadId) {
+        UpdateDownload update = mUpdaterService.getUpdaterController().getUpdate(downloadId);
+        switch (update.getStatus()) {
+            case PAUSED_ERROR:
+                showSnackBar(R.string.snack_download_failed, Snackbar.LENGTH_LONG);
+                break;
+            case VERIFICATION_FAILED:
+                showSnackBar(R.string.snack_download_verification_failed, Snackbar.LENGTH_LONG);
+                break;
+            case VERIFIED:
+                showSnackBar(R.string.snack_download_verified, Snackbar.LENGTH_LONG);
+                break;
+        }
     }
 
     private void showSnackBar(int stringId, int duration) {

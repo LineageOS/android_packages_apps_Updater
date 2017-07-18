@@ -123,8 +123,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         final String downloadId = update.getDownloadId();
         if (mUpdaterController.isDownloading(downloadId)) {
-            String downloaded = Formatter.formatBytes(mContext.getResources(),
-                    update.getFile().length(), Formatter.FLAG_SHORTER).value;
+            String downloaded = StringGenerator.bytesToMegabytes(mContext,
+                    update.getFile().length());
             String total = Formatter.formatShortFileSize(mContext, update.getFileSize());
             long eta = update.getEta();
             if (eta > 0) {
@@ -153,8 +153,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         } else {
             canDelete = true;
             setButtonAction(viewHolder.mAction, Action.RESUME, downloadId, !busy);
-            String downloaded = Formatter.formatBytes(mContext.getResources(),
-                    update.getFile().length(), Formatter.FLAG_SHORTER).value;
+            String downloaded = StringGenerator.bytesToMegabytes(mContext,
+                    update.getFile().length());
             String total = Formatter.formatShortFileSize(mContext, update.getFileSize());
             viewHolder.mProgressText.setText(mContext.getString(R.string.list_download_progress,
                     downloaded, total));

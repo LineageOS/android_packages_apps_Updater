@@ -60,9 +60,12 @@ public final class StringGenerator {
         return f.format(date);
     }
 
+    public static String bytesToMegabytes(Context context, long bytes) {
+        return String.format(getCurrentLocale(context), "%.0f", bytes / 1024.f / 1024.f);
+    }
+
     public static Locale getCurrentLocale(Context context) {
         return context.getResources().getConfiguration().getLocales()
                 .getFirstMatch(context.getResources().getAssets().getLocales());
     }
-
 }

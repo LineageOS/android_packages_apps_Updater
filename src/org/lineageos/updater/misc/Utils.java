@@ -182,11 +182,9 @@ public class Utils {
      * @param zipFile input zip file
      * @param entryPath full path of the entry
      * @return the offset of the compressed, or -1 if not found
-     * @throws IOException
      * @throws IllegalArgumentException if the given entry is not found
      */
-    public static long getZipEntryOffset(ZipFile zipFile, String entryPath)
-            throws IOException {
+    public static long getZipEntryOffset(ZipFile zipFile, String entryPath) {
         // Each entry has an header of (30 + n + m) bytes
         // 'n' is the length of the file name
         // 'm' is the length of the extra field

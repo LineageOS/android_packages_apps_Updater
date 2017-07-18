@@ -31,7 +31,7 @@
 
         <service android:name=".controller.UpdaterService" />
 
-        <receiver android:name=".UpdaterReceiver" exported="false" />
+        <receiver android:name=".UpdaterReceiver" android:exported="false" />
 
         <receiver android:name=".UpdatesCheckReceiver">
             <intent-filter>

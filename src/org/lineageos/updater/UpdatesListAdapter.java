@@ -35,6 +35,8 @@ import org.lineageos.updater.controller.UpdaterControllerInt;
 import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.IOException;
 import java.text.DateFormat;

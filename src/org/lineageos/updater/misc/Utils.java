@@ -29,8 +29,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.lineageos.updater.R;
-import org.lineageos.updater.Update;
-import org.lineageos.updater.UpdateDownload;
+import org.lineageos.updater.model.Update;
+import org.lineageos.updater.model.UpdateDownload;
 import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.controller.UpdaterService;
 

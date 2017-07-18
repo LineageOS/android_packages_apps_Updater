@@ -32,8 +32,8 @@ import android.text.format.Formatter;
 import android.util.Log;
 
 import org.lineageos.updater.R;
-import org.lineageos.updater.UpdateDownload;
-import org.lineageos.updater.UpdateStatus;
+import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateStatus;
 import org.lineageos.updater.UpdaterReceiver;
 import org.lineageos.updater.UpdatesActivity;
 import org.lineageos.updater.misc.BuildInfoUtils;
@@ -43,7 +43,6 @@ import org.lineageos.updater.misc.Utils;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
-import java.util.zip.ZipFile;
 
 public class UpdaterService extends Service {
 

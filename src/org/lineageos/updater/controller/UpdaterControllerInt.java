@@ -15,7 +15,7 @@
  */
 package org.lineageos.updater.controller;
 
-import org.lineageos.updater.UpdateDownload;
+import org.lineageos.updater.model.UpdateDownload;
 
 import java.util.List;
 import java.util.Set;

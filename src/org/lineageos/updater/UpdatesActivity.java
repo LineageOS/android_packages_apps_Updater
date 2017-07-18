@@ -54,6 +54,8 @@ import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.LegacySupport;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.model.Update;
+import org.lineageos.updater.model.UpdateDownload;
 
 import java.io.File;
 import java.io.IOException;

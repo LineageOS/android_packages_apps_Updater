@@ -19,8 +19,8 @@ import android.os.UpdateEngine;
 import android.os.UpdateEngineCallback;
 import android.util.Log;
 
-import org.lineageos.updater.UpdateDownload;
-import org.lineageos.updater.UpdateStatus;
+import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateStatus;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
 

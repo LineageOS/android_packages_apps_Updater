@@ -110,7 +110,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private void handleActiveStatus(ViewHolder viewHolder, UpdateDownload update) {
-        String buildDate = StringGenerator.getDateLocalized(mContext,
+        String buildDate = StringGenerator.getDateLocalizedUTC(mContext,
                 DateFormat.MEDIUM, update.getTimestamp());
         String buildInfoText = mContext.getString(R.string.list_build_version_date,
                 BuildInfoUtils.getBuildVersion(), buildDate);
@@ -167,7 +167,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private void handleNotActiveStatus(ViewHolder viewHolder, UpdateDownload update) {
-        String buildDate = StringGenerator.getDateLocalized(mContext,
+        String buildDate = StringGenerator.getDateLocalizedUTC(mContext,
                 DateFormat.LONG, update.getTimestamp());
         String buildVersion = mContext.getString(R.string.list_build_version,
                 BuildInfoUtils.getBuildVersion());
@@ -362,7 +362,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             return null;
         }
 
-        String buildDate = StringGenerator.getDateLocalized(mContext,
+        String buildDate = StringGenerator.getDateLocalizedUTC(mContext,
                 DateFormat.MEDIUM, update.getTimestamp());
         String buildInfoText = mContext.getString(R.string.list_build_version_date,
                 BuildInfoUtils.getBuildVersion(), buildDate);

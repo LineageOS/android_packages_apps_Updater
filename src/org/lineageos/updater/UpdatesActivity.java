@@ -120,7 +120,7 @@ public class UpdatesActivity extends AppCompatActivity {
                 getString(R.string.header_android_version, Build.VERSION.RELEASE));
 
         TextView headerBuildDate = (TextView) findViewById(R.id.header_build_date);
-        headerBuildDate.setText(StringGenerator.getDateLocalized(this,
+        headerBuildDate.setText(StringGenerator.getDateLocalizedUTC(this,
                 DateFormat.LONG, BuildInfoUtils.getBuildDateTimestamp()));
 
         // Switch between header title and appbar title minimizing overlaps

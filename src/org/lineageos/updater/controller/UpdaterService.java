@@ -27,7 +27,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.NotificationCompat;
-import android.text.format.DateUtils;
 import android.text.format.Formatter;
 import android.util.Log;
 
@@ -337,7 +336,7 @@ public class UpdaterService extends Service {
         setNotificationTitle(update);
 
         String speed = Formatter.formatFileSize(this, update.getSpeed());
-        CharSequence eta = DateUtils.formatDuration(update.getEta() * 1000);
+        CharSequence eta = StringGenerator.formatDuration(this, update.getEta() * 1000);
         mNotificationStyle.bigText(
                 getString(R.string.text_download_speed, eta, speed));
 

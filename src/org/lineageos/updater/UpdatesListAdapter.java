@@ -20,7 +20,6 @@ import android.content.DialogInterface;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
-import android.text.format.DateUtils;
 import android.text.format.Formatter;
 import android.util.Log;
 import android.util.TypedValue;
@@ -130,7 +129,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             String total = Formatter.formatShortFileSize(mContext, update.getFileSize());
             long eta = update.getEta();
             if (eta > 0) {
-                CharSequence etaString = DateUtils.formatDuration(eta * 1000);
+                CharSequence etaString = StringGenerator.formatDuration(mContext, eta * 1000);
                 viewHolder.mProgressText.setText(mContext.getString(
                         R.string.list_download_progress_eta, downloaded, total, etaString));
             } else {

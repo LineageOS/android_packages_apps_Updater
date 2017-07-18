@@ -20,7 +20,7 @@ import org.lineageos.updater.model.UpdateDownload;
 import java.util.List;
 import java.util.Set;
 
-public interface UpdaterControllerInt {
+public interface Controller {
 
     boolean addUpdate(UpdateDownload update);
 

@@ -46,7 +46,7 @@ import android.widget.TextView;
 
 import org.json.JSONException;
 import org.lineageos.updater.controller.UpdaterController;
-import org.lineageos.updater.controller.UpdaterControllerInt;
+import org.lineageos.updater.controller.Controller;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.BuildInfoUtils;
@@ -233,7 +233,7 @@ public class UpdatesActivity extends AppCompatActivity {
     private void loadUpdatesList(File jsonFile, boolean manualRefresh)
             throws IOException, JSONException {
         Log.d(TAG, "Adding remote updates");
-        UpdaterControllerInt controller = mUpdaterService.getUpdaterController();
+        Controller controller = mUpdaterService.getUpdaterController();
         boolean newUpdates = false;
 
         List<UpdateDownload> updates = Utils.parseJson(jsonFile, true);

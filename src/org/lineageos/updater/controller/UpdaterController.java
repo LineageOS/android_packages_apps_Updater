@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class UpdaterController implements UpdaterControllerInt {
+public class UpdaterController implements Controller {
 
     public static final String ACTION_DOWNLOAD_PROGRESS = "action_download_progress";
     public static final String ACTION_INSTALL_PROGRESS = "action_install_progress";

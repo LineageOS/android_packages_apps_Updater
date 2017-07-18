@@ -30,7 +30,7 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.lineageos.updater.controller.UpdaterControllerInt;
+import org.lineageos.updater.controller.Controller;
 import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
@@ -49,7 +49,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private final float mAlphaDisabledValue;
 
     private List<String> mDownloadIds;
-    private UpdaterControllerInt mUpdaterController;
+    private Controller mUpdaterController;
     private Context mContext;
     private View mContainerView;
 
@@ -105,7 +105,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         return new ViewHolder(view);
     }
 
-    public void setUpdaterController(UpdaterControllerInt updaterController) {
+    public void setUpdaterController(Controller updaterController) {
         mUpdaterController = updaterController;
         notifyDataSetChanged();
     }

@@ -180,7 +180,7 @@ public class UpdaterService extends Service {
         return START_NOT_STICKY;
     }
 
-    public UpdaterControllerInt getUpdaterController() {
+    public Controller getUpdaterController() {
         return mUpdaterController;
     }
 

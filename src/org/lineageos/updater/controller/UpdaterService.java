@@ -63,7 +63,7 @@ public class UpdaterService extends Service {
     private BroadcastReceiver mBroadcastReceiver;
     private NotificationCompat.Builder mNotificationBuilder;
     private NotificationManager mNotificationManager;
-    private NotificationCompat.BigTextStyle mNotificationStyle;;
+    private NotificationCompat.BigTextStyle mNotificationStyle;
 
     private UpdaterController mUpdaterController;
 

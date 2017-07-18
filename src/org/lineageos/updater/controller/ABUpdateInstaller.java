@@ -60,7 +60,7 @@ class ABUpdateInstaller {
                     UpdateDownload update = mUpdaterController.getActualUpdate(mDownloadId);
                     update.setInstallProgress(0);
                     update.setStatus(UpdateStatus.INSTALLATION_FAILED);
-                    mUpdaterController.notifyUpdateChange(mDownloadId);;
+                    mUpdaterController.notifyUpdateChange(mDownloadId);
                 }
                 break;
             }

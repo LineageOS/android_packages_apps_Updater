@@ -35,14 +35,9 @@
     <string name="new_updates_found_title">New updates</string>
 
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="download_remaining"><xliff:g id="duration" example="3 minutes">%s</xliff:g> left</string>
 
-    <string name="download_button">Download</string>
     <string name="pause_button">Pause</string>
     <string name="resume_button">Resume</string>
-    <string name="verify_button">Verify</string>
-    <string name="cancel_button">Delete</string>
-    <string name="install_button">Install</string>
 
     <string name="installing_update">Installing update package</string>
     <string name="installing_update_error">Install error</string>

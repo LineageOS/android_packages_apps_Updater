@@ -154,10 +154,10 @@ public class UpdaterController implements UpdaterControllerInt {
             public void onResponse(int statusCode, String url, DownloadClient.Headers headers) {
                 final UpdateDownload update = mDownloads.get(downloadId).mUpdate;
                 if (update.getFileSize() <= 0) {
-                    String contentLenght = headers.get("Content-Length");
-                    if (contentLenght != null) {
+                    String contentLength = headers.get("Content-Length");
+                    if (contentLength != null) {
                         try {
-                            long size = Long.parseLong(contentLenght);
+                            long size = Long.parseLong(contentLength);
                             if (size > 0) {
                                 update.setFileSize(size);
                             }

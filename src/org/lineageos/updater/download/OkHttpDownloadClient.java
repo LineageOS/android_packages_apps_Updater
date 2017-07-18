@@ -204,7 +204,7 @@ class OkHttpDownloadClient implements DownloadClient {
                     try {
                         body.close();
                     } catch (IOException e) {
-                        Log.e(TAG, "Could not close reponse body", e);
+                        Log.e(TAG, "Could not close response body", e);
                     }
                 }
             }

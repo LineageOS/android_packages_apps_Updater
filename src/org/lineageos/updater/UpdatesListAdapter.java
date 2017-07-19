@@ -285,7 +285,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                         mActivity.getString(R.string.action_description_resume));
                 button.setEnabled(enabled);
                 UpdateDownload update = mUpdaterController.getUpdate(downloadId);
-                final boolean canInstall = Utils.canInstall(update);
+                final boolean canInstall = Utils.canInstall(update) ||
+                        update.getFile().length() == update.getFileSize();
                 clickListener = !enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -489,7 +490,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     private void exportUpdate(UpdateDownload update) {
         try {
-            File dest = new File(Utils.getExportPath(), update.getName());
+            File dest = new File(Utils.getExportPath(mActivity), update.getName());
             if (dest.exists()) {
                 dest = Utils.appendSequentialNumber(dest);
             }

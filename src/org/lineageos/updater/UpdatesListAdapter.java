@@ -114,9 +114,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 BuildInfoUtils.getBuildVersion(), buildDate);
         viewHolder.mBuildInfo.setText(buildInfoText);
 
-        boolean busy = mUpdaterController.hasActiveDownloads() ||
-                mUpdaterController.isVerifyingUpdate();
-
         boolean canDelete = false;
 
         final String downloadId = update.getDownloadId();
@@ -150,7 +147,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mProgressPercentage.setText(NumberFormat.getPercentInstance().format(1));
         } else {
             canDelete = true;
-            setButtonAction(viewHolder.mAction, Action.RESUME, downloadId, !busy);
+            setButtonAction(viewHolder.mAction, Action.RESUME, downloadId, !isBusy());
             String downloaded = StringGenerator.bytesToMegabytes(mActivity,
                     update.getFile().length());
             String total = Formatter.formatShortFileSize(mActivity, update.getFileSize());
@@ -172,16 +169,13 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         viewHolder.mBuildDate.setText(buildDate);
         viewHolder.mBuildVersion.setText(buildVersion);
 
-        boolean busy = mUpdaterController.hasActiveDownloads() ||
-                mUpdaterController.isVerifyingUpdate();
-
         if (update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED) {
             viewHolder.itemView.setOnLongClickListener(
                     getDeleteClickListener(update.getDownloadId()));
-            setButtonAction(viewHolder.mAction, Action.INSTALL, update.getDownloadId(), !busy);
+            setButtonAction(viewHolder.mAction, Action.INSTALL, update.getDownloadId(), !isBusy());
         } else {
             viewHolder.itemView.setOnLongClickListener(null);
-            setButtonAction(viewHolder.mAction, Action.DOWNLOAD, update.getDownloadId(), !busy);
+            setButtonAction(viewHolder.mAction, Action.DOWNLOAD, update.getDownloadId(), !isBusy());
         }
     }
 
@@ -316,6 +310,11 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             break;
         }
         button.setAlpha(enabled ? 1.f : mAlphaDisabledValue);
+    }
+
+    private boolean isBusy() {
+        return mUpdaterController.hasActiveDownloads() || mUpdaterController.isVerifyingUpdate()
+                || mUpdaterController.isInstallingUpdate();
     }
 
     private AlertDialog.Builder getDeleteDialog(final String downloadId) {

@@ -35,11 +35,14 @@ import android.widget.TextView;
 
 import org.lineageos.updater.controller.Controller;
 import org.lineageos.updater.misc.BuildInfoUtils;
+import org.lineageos.updater.misc.FileUtils;
+import org.lineageos.updater.misc.PermissionsUtils;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.UpdateDownload;
 import org.lineageos.updater.model.UpdateStatus;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
@@ -429,6 +432,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 inflater.inflate(R.menu.menu_action_mode, menu);
                 menu.findItem(R.id.menu_delete_action).setVisible(canDelete);
                 menu.findItem(R.id.menu_copy_url).setVisible(update.getAvailableOnline());
+                menu.findItem(R.id.menu_export_update).setVisible(
+                        update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED);
                 return true;
             }
 
@@ -457,6 +462,14 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                                 mActivity.getString(R.string.toast_download_url_copied));
                         mode.finish();
                         return true;
+                    case R.id.menu_export_update:
+                        // TODO: start exporting once the permission has been granted
+                        boolean hasPermission = PermissionsUtils.checkAndRequestStoragePermission(
+                                mActivity, 0);
+                        if (hasPermission) {
+                            exportUpdate(update);
+                        }
+                        return true;
                 }
                 return false;
             }
@@ -472,5 +485,20 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 }
             }
         });
+    }
+
+    private void exportUpdate(UpdateDownload update) {
+        try {
+            File dest = new File(Utils.getExportPath(), update.getName());
+            if (dest.exists()) {
+                dest = Utils.appendSequentialNumber(dest);
+            }
+            FileUtils.copyFileWithDialog(mActivity, update.getFile(), dest);
+        } catch (IOException e) {
+            Log.e(TAG, "Export failed", e);
+            mActivity.showSnackbar(R.string.snack_export_failed,
+                    Snackbar.LENGTH_LONG);
+        }
+        stopActionMode();
     }
 }

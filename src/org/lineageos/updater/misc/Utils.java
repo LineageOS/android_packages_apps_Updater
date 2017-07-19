@@ -23,6 +23,7 @@ import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Environment;
 import android.os.SystemProperties;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -58,6 +59,17 @@ public class Utils {
 
     public static File getDownloadPath(Context context) {
         return new File(context.getString(R.string.download_path));
+    }
+
+    public static File getExportPath(Context context) {
+        File dir = new File(Environment.getExternalStorageDirectory(),
+                context.getString(R.string.export_path));
+        if (!dir.isDirectory()) {
+            if (dir.exists() || !dir.mkdirs()) {
+                throw new RuntimeException("Could not create directory");
+            }
+        }
+        return dir;
     }
 
     public static File getCachedUpdateList(Context context) {

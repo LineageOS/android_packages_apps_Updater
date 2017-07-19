@@ -18,11 +18,15 @@ package org.lineageos.updater;
 import android.content.DialogInterface;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.view.ActionMode;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.Formatter;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -48,8 +52,10 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private final float mAlphaDisabledValue;
 
     private List<String> mDownloadIds;
+    private String mSelectedDownload;
     private Controller mUpdaterController;
     private UpdatesListActivity mActivity;
+    private ActionMode mActionMode;
 
     private enum Action {
         DOWNLOAD,
@@ -99,6 +105,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.update_item_view, viewGroup, false);
+        view.setBackground(mActivity.getDrawable(R.drawable.list_item_background));
         return new ViewHolder(view);
     }
 
@@ -157,8 +164,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mProgressBar.setProgress(update.getProgress());
         }
 
-        viewHolder.itemView.setOnLongClickListener(
-                canDelete ? getDeleteClickListener(update.getDownloadId()) : null);
+        viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, canDelete));
     }
 
     private void handleNotActiveStatus(ViewHolder viewHolder, UpdateDownload update) {
@@ -170,11 +176,10 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         viewHolder.mBuildVersion.setText(buildVersion);
 
         if (update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED) {
-            viewHolder.itemView.setOnLongClickListener(
-                    getDeleteClickListener(update.getDownloadId()));
+            viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, true));
             setButtonAction(viewHolder.mAction, Action.INSTALL, update.getDownloadId(), !isBusy());
         } else {
-            viewHolder.itemView.setOnLongClickListener(null);
+            viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, false));
             setButtonAction(viewHolder.mAction, Action.DOWNLOAD, update.getDownloadId(), !isBusy());
         }
     }
@@ -194,6 +199,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mAction.setImageResource(R.drawable.ic_download);
             return;
         }
+
+        viewHolder.itemView.setSelected(downloadId.equals(mSelectedDownload));
 
         boolean activeLayout;
         switch (update.getPersistentStatus()) {
@@ -243,30 +250,31 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     private void setButtonAction(ImageButton button, Action action, final String downloadId,
             boolean enabled) {
+        final View.OnClickListener clickListener;
         switch (action) {
             case DOWNLOAD:
                 button.setImageResource(R.drawable.ic_download);
                 button.setContentDescription(
                         mActivity.getString(R.string.action_description_download));
                 button.setEnabled(enabled);
-                button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
+                clickListener = !enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         mUpdaterController.startDownload(downloadId);
                     }
-                });
+                };
                 break;
             case PAUSE:
                 button.setImageResource(R.drawable.ic_pause);
                 button.setContentDescription(
                         mActivity.getString(R.string.action_description_pause));
                 button.setEnabled(enabled);
-                button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
+                clickListener = !enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         mUpdaterController.pauseDownload(downloadId);
                     }
-                });
+                };
                 break;
             case RESUME: {
                 button.setImageResource(R.drawable.ic_resume);
@@ -275,7 +283,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setEnabled(enabled);
                 UpdateDownload update = mUpdaterController.getUpdate(downloadId);
                 final boolean canInstall = Utils.canInstall(update);
-                button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
+                clickListener = !enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         if (canInstall) {
@@ -285,7 +293,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                                     Snackbar.LENGTH_LONG);
                         }
                     }
-                });
+                };
             }
             break;
             case INSTALL: {
@@ -295,7 +303,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setEnabled(enabled);
                 UpdateDownload update = mUpdaterController.getUpdate(downloadId);
                 final boolean canInstall = Utils.canInstall(update);
-                button.setOnClickListener(!enabled ? null : new View.OnClickListener() {
+                clickListener = !enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         if (canInstall) {
@@ -305,11 +313,24 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                                     Snackbar.LENGTH_LONG);
                         }
                     }
-                });
+                };
             }
             break;
+            default:
+                clickListener = null;
         }
         button.setAlpha(enabled ? 1.f : mAlphaDisabledValue);
+
+        // Disable action mode when a button is clicked
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (clickListener != null) {
+                    clickListener.onClick(v);
+                    stopActionMode();
+                }
+            }
+        });
     }
 
     private boolean isBusy() {
@@ -331,11 +352,14 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .setNegativeButton(android.R.string.cancel, null);
     }
 
-    private View.OnLongClickListener getDeleteClickListener(final String downloadId) {
+    private View.OnLongClickListener getLongClickListener(final UpdateDownload update,
+            final boolean canDelete) {
         return new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                getDeleteDialog(downloadId).show();
+                if (mActionMode == null) {
+                    startActionMode(update, canDelete);
+                }
                 return true;
             }
         };
@@ -371,5 +395,74 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                             }
                         })
                 .setNegativeButton(android.R.string.cancel, null);
+    }
+
+    private void stopActionMode() {
+        if (mActionMode != null) {
+            mActionMode.finish();
+        }
+    }
+
+    private void startActionMode(final UpdateDownload update, final boolean canDelete) {
+        if (mActionMode != null) {
+            Log.d(TAG, "Action mode already enabled");
+            return;
+        }
+
+        mSelectedDownload = update.getDownloadId();
+        notifyItemChanged(update.getDownloadId());
+
+        // Hide Action Bar not to steal the focus when using a D-pad
+        final boolean showActionBar;
+        if (mActivity.getSupportActionBar() != null &&
+                mActivity.getSupportActionBar().isShowing()) {
+            showActionBar = true;
+            mActivity.getSupportActionBar().hide();
+        } else {
+            showActionBar = false;
+        }
+
+        mActionMode = mActivity.startSupportActionMode(new ActionMode.Callback() {
+            @Override
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                MenuInflater inflater = mode.getMenuInflater();
+                inflater.inflate(R.menu.menu_action_mode, menu);
+                menu.findItem(R.id.menu_delete_action).setVisible(canDelete);
+                return true;
+            }
+
+            @Override
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.menu_delete_action:
+                        getDeleteDialog(update.getDownloadId())
+                                .setOnDismissListener(new DialogInterface.OnDismissListener() {
+                                    @Override
+                                    public void onDismiss(DialogInterface dialog) {
+                                        mode.finish();
+                                    }
+                                })
+                                .show();
+                        return true;
+                }
+                return false;
+            }
+
+            @Override
+            public void onDestroyActionMode(ActionMode mode) {
+                mSelectedDownload = null;
+                mActionMode = null;
+                notifyItemChanged(update.getDownloadId());
+
+                if (showActionBar) {
+                    mActivity.getSupportActionBar().show();
+                }
+            }
+        });
     }
 }

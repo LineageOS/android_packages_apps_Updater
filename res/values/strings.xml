@@ -20,7 +20,7 @@
 
     <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
-    <string name="download_path" translatable="false">/data/ota_package/</string>
+    <string name="download_path" translatable="false">/data/lineageos_updates/</string>
 
     <string name="conf_update_server_url_def" translatable="false">https://download.lineageos.org/api</string>
 

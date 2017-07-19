@@ -32,7 +32,6 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -41,7 +40,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -64,7 +62,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class UpdatesActivity extends AppCompatActivity {
+public class UpdatesActivity extends UpdatesListActivity {
 
     private static final String TAG = "UpdatesActivity";
     private UpdaterService mUpdaterService;
@@ -78,8 +76,7 @@ public class UpdatesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_updates);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        View containerView = findViewById(R.id.main_container);
-        mAdapter = new UpdatesListAdapter(this, containerView);
+        mAdapter = new UpdatesListAdapter(this);
         recyclerView.setAdapter(mAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -254,7 +251,7 @@ public class UpdatesActivity extends AppCompatActivity {
         controller.setUpdatesAvailableOnline(updatesOnline, true);
 
         if (manualRefresh) {
-            showSnackBar(
+            showSnackbar(
                     newUpdates ? R.string.snack_updates_found : R.string.snack_no_updates_found,
                     Snackbar.LENGTH_SHORT);
         }
@@ -309,7 +306,7 @@ public class UpdatesActivity extends AppCompatActivity {
                     public void run() {
                         progressDialog.dismiss();
                         if (!cancelled) {
-                            showSnackBar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
+                            showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
                         }
                     }
                 });
@@ -337,7 +334,7 @@ public class UpdatesActivity extends AppCompatActivity {
                             updateLastCheckedString();
                         } catch (IOException | JSONException e) {
                             Log.e(TAG, "Could not read json", e);
-                            showSnackBar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
+                            showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
                         }
                         progressDialog.dismiss();
                     }
@@ -377,18 +374,19 @@ public class UpdatesActivity extends AppCompatActivity {
         UpdateDownload update = mUpdaterService.getUpdaterController().getUpdate(downloadId);
         switch (update.getStatus()) {
             case PAUSED_ERROR:
-                showSnackBar(R.string.snack_download_failed, Snackbar.LENGTH_LONG);
+                showSnackbar(R.string.snack_download_failed, Snackbar.LENGTH_LONG);
                 break;
             case VERIFICATION_FAILED:
-                showSnackBar(R.string.snack_download_verification_failed, Snackbar.LENGTH_LONG);
+                showSnackbar(R.string.snack_download_verification_failed, Snackbar.LENGTH_LONG);
                 break;
             case VERIFIED:
-                showSnackBar(R.string.snack_download_verified, Snackbar.LENGTH_LONG);
+                showSnackbar(R.string.snack_download_verified, Snackbar.LENGTH_LONG);
                 break;
         }
     }
 
-    private void showSnackBar(int stringId, int duration) {
+    @Override
+    public void showSnackbar(int stringId, int duration) {
         Snackbar.make(findViewById(R.id.main_container), stringId, duration).show();
     }
 }

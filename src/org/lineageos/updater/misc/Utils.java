@@ -15,6 +15,8 @@
  */
 package org.lineageos.updater.misc;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -24,6 +26,7 @@ import android.net.NetworkInfo;
 import android.os.SystemProperties;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -282,5 +285,13 @@ public class Utils {
 
     public static boolean hasTouchscreen(Context context) {
         return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN);
+    }
+
+    public static void addToClipboard(Context context, String label, String text, String toastMessage) {
+        ClipboardManager clipboard = (ClipboardManager) context.getSystemService(
+                Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText(label, text);
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show();
     }
 }

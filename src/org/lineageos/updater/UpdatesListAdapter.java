@@ -428,6 +428,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 MenuInflater inflater = mode.getMenuInflater();
                 inflater.inflate(R.menu.menu_action_mode, menu);
                 menu.findItem(R.id.menu_delete_action).setVisible(canDelete);
+                menu.findItem(R.id.menu_copy_url).setVisible(update.getAvailableOnline());
                 return true;
             }
 
@@ -448,6 +449,13 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                                     }
                                 })
                                 .show();
+                        return true;
+                    case R.id.menu_copy_url:
+                        Utils.addToClipboard(mActivity,
+                                mActivity.getString(R.string.label_download_url),
+                                update.getDownloadUrl(),
+                                mActivity.getString(R.string.toast_download_url_copied));
+                        mode.finish();
                         return true;
                 }
                 return false;

@@ -36,7 +36,7 @@ import org.lineageos.updater.UpdatesActivity;
 import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
-import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.IOException;
@@ -90,17 +90,17 @@ public class UpdaterService extends Service {
             public void onReceive(Context context, Intent intent) {
                 String downloadId = intent.getStringExtra(UpdaterController.EXTRA_DOWNLOAD_ID);
                 if (UpdaterController.ACTION_UPDATE_STATUS.equals(intent.getAction())) {
-                    UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+                    UpdateInfo update = mUpdaterController.getUpdate(downloadId);
                     setNotificationTitle(update);
                     Bundle extras = new Bundle();
                     extras.putString(UpdaterController.EXTRA_DOWNLOAD_ID, downloadId);
                     mNotificationBuilder.setExtras(extras);
                     handleUpdateStatusChange(update);
                 } else if (UpdaterController.ACTION_DOWNLOAD_PROGRESS.equals(intent.getAction())) {
-                    UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+                    UpdateInfo update = mUpdaterController.getUpdate(downloadId);
                     handleDownloadProgressChange(update);
                 } else if (UpdaterController.ACTION_INSTALL_PROGRESS.equals(intent.getAction())) {
-                    UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+                    UpdateInfo update = mUpdaterController.getUpdate(downloadId);
                     setNotificationTitle(update);
                     handleInstallProgress(update);
                 } else if (UpdaterController.ACTION_UPDATE_REMOVED.equals(intent.getAction())) {
@@ -161,7 +161,7 @@ public class UpdaterService extends Service {
             }
         } else if (ACTION_INSTALL_UPDATE.equals(intent.getAction())) {
             String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
-            UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+            UpdateInfo update = mUpdaterController.getUpdate(downloadId);
             if (update.getPersistentStatus() != UpdateStatus.Persistent.VERIFIED) {
                 throw new IllegalArgumentException(update.getDownloadId() + " is not verified");
             }
@@ -191,7 +191,7 @@ public class UpdaterService extends Service {
         }
     }
 
-    private void handleUpdateStatusChange(UpdateDownload update) {
+    private void handleUpdateStatusChange(UpdateInfo update) {
         switch (update.getStatus()) {
             case DELETED: {
                 stopForeground(STOP_FOREGROUND_DETACH);
@@ -326,7 +326,7 @@ public class UpdaterService extends Service {
         }
     }
 
-    private void handleDownloadProgressChange(UpdateDownload update) {
+    private void handleDownloadProgressChange(UpdateInfo update) {
         int progress = update.getProgress();
         mNotificationBuilder.setProgress(100, progress, false);
 
@@ -343,7 +343,7 @@ public class UpdaterService extends Service {
         mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
     }
 
-    private void handleInstallProgress(UpdateDownload update) {
+    private void handleInstallProgress(UpdateInfo update) {
         int progress = update.getInstallProgress();
         mNotificationBuilder.setProgress(100, progress, false);
 
@@ -361,7 +361,7 @@ public class UpdaterService extends Service {
         mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
     }
 
-    private void setNotificationTitle(UpdateDownload update) {
+    private void setNotificationTitle(UpdateInfo update) {
         String buildDate = StringGenerator.getDateLocalizedUTC(this,
                 DateFormat.MEDIUM, update.getTimestamp());
         String buildInfo = getString(R.string.list_build_version_date,

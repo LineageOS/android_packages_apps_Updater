@@ -52,8 +52,7 @@ import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.LegacySupport;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
-import org.lineageos.updater.model.Update;
-import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateInfo;
 
 import java.io.File;
 import java.io.IOException;
@@ -233,12 +232,12 @@ public class UpdatesActivity extends UpdatesListActivity {
         Controller controller = mUpdaterService.getUpdaterController();
         boolean newUpdates = false;
 
-        List<UpdateDownload> updates = Utils.parseJson(jsonFile, true);
+        List<UpdateInfo> updates = Utils.parseJson(jsonFile, true);
 
         List<String> importedNotAvailableOnline = LegacySupport.importDownloads(this, updates);
 
         List<String> updatesOnline = new ArrayList<>();
-        for (UpdateDownload update : updates) {
+        for (UpdateInfo update : updates) {
             newUpdates |= controller.addUpdate(update);
             updatesOnline.add(update.getDownloadId());
         }
@@ -257,14 +256,14 @@ public class UpdatesActivity extends UpdatesListActivity {
         }
 
         List<String> updateIds = new ArrayList<>();
-        List<UpdateDownload> sortedUpdates = controller.getUpdates();
-        Collections.sort(sortedUpdates, new Comparator<UpdateDownload>() {
+        List<UpdateInfo> sortedUpdates = controller.getUpdates();
+        Collections.sort(sortedUpdates, new Comparator<UpdateInfo>() {
             @Override
-            public int compare(UpdateDownload u1, UpdateDownload u2) {
+            public int compare(UpdateInfo u1, UpdateInfo u2) {
                 return Long.compare(u2.getTimestamp(), u1.getTimestamp());
             }
         });
-        for (Update update : sortedUpdates) {
+        for (UpdateInfo update : sortedUpdates) {
             updateIds.add(update.getDownloadId());
         }
         mAdapter.setData(updateIds);
@@ -371,7 +370,7 @@ public class UpdatesActivity extends UpdatesListActivity {
     }
 
     private void handleDownloadStatusChange(String downloadId) {
-        UpdateDownload update = mUpdaterService.getUpdaterController().getUpdate(downloadId);
+        UpdateInfo update = mUpdaterService.getUpdaterController().getUpdate(downloadId);
         switch (update.getStatus()) {
             case PAUSED_ERROR:
                 showSnackbar(R.string.snack_download_failed, Snackbar.LENGTH_LONG);

@@ -15,20 +15,20 @@
  */
 package org.lineageos.updater.controller;
 
-import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateInfo;
 
 import java.util.List;
 import java.util.Set;
 
 public interface Controller {
 
-    boolean addUpdate(UpdateDownload update);
+    boolean addUpdate(UpdateInfo update);
 
-    List<UpdateDownload> getUpdates();
+    List<UpdateInfo> getUpdates();
 
     Set<String> getIds();
 
-    UpdateDownload getUpdate(String downloadId);
+    UpdateInfo getUpdate(String downloadId);
 
     void setUpdatesAvailableOnline(List<String> downloadIds, boolean purgeList);
 

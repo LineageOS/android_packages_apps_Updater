@@ -22,6 +22,7 @@ import android.util.Log;
 
 import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.File;
@@ -57,7 +58,7 @@ public final class LegacySupport {
      * @return A list with the IDs of the imported updates with no matching updates
      */
     public static List<String> importDownloads(Context context,
-            List<UpdateDownload> updatesJson) {
+            List<UpdateInfo> updatesJson) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         if (preferences.getBoolean(IMPORT_DONE, false)) {
             return null;
@@ -73,7 +74,7 @@ public final class LegacySupport {
             if (files != null) {
 
                 Map<String, Integer> updatesMap = new HashMap<>();
-                for (UpdateDownload update : updatesJson) {
+                for (UpdateInfo update : updatesJson) {
                     updatesMap.put(update.getName(), updatesJson.indexOf(update));
                 }
 
@@ -86,7 +87,7 @@ public final class LegacySupport {
                         Log.d(TAG, "Importing " + file.getAbsolutePath());
                         Integer index = updatesMap.get(file.getName());
                         if (index != null) {
-                            UpdateDownload update = updatesJson.get(index);
+                            UpdateDownload update = new UpdateDownload(updatesJson.get(index));
                             update.setFile(file);
                             update.setFileSize(file.length());
                             update.setStatus(UpdateStatus.DOWNLOADED);

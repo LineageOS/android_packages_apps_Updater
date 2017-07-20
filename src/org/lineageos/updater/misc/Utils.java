@@ -35,8 +35,9 @@ import org.json.JSONObject;
 import org.lineageos.updater.R;
 import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.controller.UpdaterService;
-import org.lineageos.updater.model.Update;
+import org.lineageos.updater.model.UpdateBaseInfo;
 import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateInfo;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -76,9 +77,9 @@ public class Utils {
         return new File(context.getCacheDir(), "updates.json");
     }
 
-    // This should really return an Update object, but currently this only
-    // used to initialize UpdateDownload objects
-    private static UpdateDownload parseJsonUpdate(JSONObject object) throws JSONException {
+    // This should really return an UpdateBaseInfo object, but currently this only
+    // used to initialize UpdateInfo objects
+    private static UpdateInfo parseJsonUpdate(JSONObject object) throws JSONException {
         UpdateDownload update = new UpdateDownload();
         update.setTimestamp(object.getLong("datetime"));
         update.setName(object.getString("filename"));
@@ -89,7 +90,7 @@ public class Utils {
         return update;
     }
 
-    public static boolean isCompatible(Update update) {
+    public static boolean isCompatible(UpdateBaseInfo update) {
         if (update.getTimestamp() < SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) {
             Log.d(TAG, update.getName() + " is older than current build");
             return false;
@@ -101,15 +102,15 @@ public class Utils {
         return true;
     }
 
-    public static boolean canInstall(Update update) {
+    public static boolean canInstall(UpdateBaseInfo update) {
         return update.getTimestamp() >= SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0) &&
                 update.getVersion().equalsIgnoreCase(
                         SystemProperties.get(Constants.PROP_BUILD_VERSION));
     }
 
-    public static List<UpdateDownload> parseJson(File file, boolean compatibleOnly)
+    public static List<UpdateInfo> parseJson(File file, boolean compatibleOnly)
             throws IOException, JSONException {
-        List<UpdateDownload> updates = new ArrayList<>();
+        List<UpdateInfo> updates = new ArrayList<>();
 
         String json = "";
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -125,7 +126,7 @@ public class Utils {
                 continue;
             }
             try {
-                UpdateDownload update = parseJsonUpdate(updatesList.getJSONObject(i));
+                UpdateInfo update = parseJsonUpdate(updatesList.getJSONObject(i));
                 if (compatibleOnly && isCompatible(update)) {
                     updates.add(update);
                 } else {
@@ -175,15 +176,15 @@ public class Utils {
      */
     public static boolean checkForNewUpdates(File oldJson, File newJson)
             throws IOException, JSONException {
-        List<UpdateDownload> oldList = parseJson(oldJson, true);
-        List<UpdateDownload> newList = parseJson(newJson, true);
+        List<UpdateInfo> oldList = parseJson(oldJson, true);
+        List<UpdateInfo> newList = parseJson(newJson, true);
         Set<String> oldIds = new HashSet<>();
-        for (Update update : oldList) {
+        for (UpdateInfo update : oldList) {
             oldIds.add(update.getDownloadId());
         }
         // In case of no new updates, the old list should
         // have all (if not more) the updates
-        for (Update update : newList) {
+        for (UpdateInfo update : newList) {
             if (!oldIds.contains(update.getDownloadId())) {
                 return true;
             }
@@ -249,7 +250,7 @@ public class Utils {
         // Ideally the database is empty when we get here
         UpdatesDbHelper dbHelper = new UpdatesDbHelper(context);
         List<String> knownPaths = new ArrayList<>();
-        for (UpdateDownload update : dbHelper.getUpdates()) {
+        for (UpdateInfo update : dbHelper.getUpdates()) {
             knownPaths.add(update.getFile().getAbsolutePath());
         }
         for (File file : files) {

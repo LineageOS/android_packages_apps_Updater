@@ -27,6 +27,7 @@ import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.File;
@@ -327,19 +328,20 @@ public class UpdaterController implements Controller {
     }
 
     @Override
-    public boolean addUpdate(UpdateDownload update) {
+    public boolean addUpdate(UpdateInfo update) {
         return addUpdate(update, true);
     }
 
-    private boolean addUpdate(final UpdateDownload update, boolean availableOnline) {
-        Log.d(TAG, "Adding download: " + update.getDownloadId());
-        if (mDownloads.containsKey(update.getDownloadId())) {
-            Log.d(TAG, "Download (" + update.getDownloadId() + ") already added");
-            UpdateDownload updateAdded = mDownloads.get(update.getDownloadId()).mUpdate;
+    private boolean addUpdate(final UpdateInfo updateInfo, boolean availableOnline) {
+        Log.d(TAG, "Adding download: " + updateInfo.getDownloadId());
+        if (mDownloads.containsKey(updateInfo.getDownloadId())) {
+            Log.d(TAG, "Download (" + updateInfo.getDownloadId() + ") already added");
+            UpdateDownload updateAdded = mDownloads.get(updateInfo.getDownloadId()).mUpdate;
             updateAdded.setAvailableOnline(availableOnline && updateAdded.getAvailableOnline());
-            updateAdded.setDownloadUrl(update.getDownloadUrl());
+            updateAdded.setDownloadUrl(updateInfo.getDownloadUrl());
             return false;
         }
+        UpdateDownload update = new UpdateDownload(updateInfo);
         if (!fixUpdateStatus(update) && !availableOnline) {
             update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
             deleteUpdateAsync(update);
@@ -347,8 +349,7 @@ public class UpdaterController implements Controller {
             return false;
         }
         update.setAvailableOnline(availableOnline);
-        UpdateDownload updateCopy = new UpdateDownload(update);
-        mDownloads.put(update.getDownloadId(), new DownloadEntry(updateCopy));
+        mDownloads.put(update.getDownloadId(), new DownloadEntry(update));
         return true;
     }
 
@@ -473,18 +474,18 @@ public class UpdaterController implements Controller {
     }
 
     @Override
-    public List<UpdateDownload> getUpdates() {
-        List<UpdateDownload> updates = new ArrayList<>();
+    public List<UpdateInfo> getUpdates() {
+        List<UpdateInfo> updates = new ArrayList<>();
         for (DownloadEntry entry : mDownloads.values()) {
-            updates.add(new UpdateDownload(entry.mUpdate));
+            updates.add(entry.mUpdate);
         }
         return updates;
     }
 
     @Override
-    public UpdateDownload getUpdate(String downloadId) {
+    public UpdateInfo getUpdate(String downloadId) {
         DownloadEntry entry = mDownloads.get(downloadId);
-        return entry != null ? new UpdateDownload(entry.mUpdate) : null;
+        return entry != null ? entry.mUpdate : null;
     }
 
     UpdateDownload getActualUpdate(String downloadId) {

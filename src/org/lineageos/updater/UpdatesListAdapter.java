@@ -39,7 +39,7 @@ import org.lineageos.updater.misc.FileUtils;
 import org.lineageos.updater.misc.PermissionsUtils;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
-import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.File;
@@ -117,7 +117,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         notifyDataSetChanged();
     }
 
-    private void handleActiveStatus(ViewHolder viewHolder, UpdateDownload update) {
+    private void handleActiveStatus(ViewHolder viewHolder, UpdateInfo update) {
         String buildDate = StringGenerator.getDateLocalizedUTC(mActivity,
                 DateFormat.MEDIUM, update.getTimestamp());
         String buildInfoText = mActivity.getString(R.string.list_build_version_date,
@@ -170,7 +170,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, canDelete));
     }
 
-    private void handleNotActiveStatus(ViewHolder viewHolder, UpdateDownload update) {
+    private void handleNotActiveStatus(ViewHolder viewHolder, UpdateInfo update) {
         String buildDate = StringGenerator.getDateLocalizedUTC(mActivity,
                 DateFormat.LONG, update.getTimestamp());
         String buildVersion = mActivity.getString(R.string.list_build_version,
@@ -195,7 +195,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         }
 
         final String downloadId = mDownloadIds.get(i);
-        UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+        UpdateInfo update = mUpdaterController.getUpdate(downloadId);
         if (update == null) {
             // The update was deleted
             viewHolder.mAction.setEnabled(false);
@@ -284,7 +284,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setContentDescription(
                         mActivity.getString(R.string.action_description_resume));
                 button.setEnabled(enabled);
-                UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+                UpdateInfo update = mUpdaterController.getUpdate(downloadId);
                 final boolean canInstall = Utils.canInstall(update) ||
                         update.getFile().length() == update.getFileSize();
                 clickListener = !enabled ? null : new View.OnClickListener() {
@@ -305,7 +305,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setContentDescription(
                         mActivity.getString(R.string.action_description_install));
                 button.setEnabled(enabled);
-                UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+                UpdateInfo update = mUpdaterController.getUpdate(downloadId);
                 final boolean canInstall = Utils.canInstall(update);
                 clickListener = !enabled ? null : new View.OnClickListener() {
                     @Override
@@ -356,7 +356,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .setNegativeButton(android.R.string.cancel, null);
     }
 
-    private View.OnLongClickListener getLongClickListener(final UpdateDownload update,
+    private View.OnLongClickListener getLongClickListener(final UpdateInfo update,
             final boolean canDelete) {
         return new View.OnLongClickListener() {
             @Override
@@ -370,7 +370,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private AlertDialog.Builder getInstallDialog(final String downloadId) {
-        UpdateDownload update = mUpdaterController.getUpdate(downloadId);
+        UpdateInfo update = mUpdaterController.getUpdate(downloadId);
         int resId;
         try {
             if (Utils.isABUpdate(update.getFile())) {
@@ -407,7 +407,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         }
     }
 
-    private void startActionMode(final UpdateDownload update, final boolean canDelete) {
+    private void startActionMode(final UpdateInfo update, final boolean canDelete) {
         if (mActionMode != null) {
             Log.d(TAG, "Action mode already enabled");
             return;
@@ -488,7 +488,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         });
     }
 
-    private void exportUpdate(UpdateDownload update) {
+    private void exportUpdate(UpdateInfo update) {
         try {
             File dest = new File(Utils.getExportPath(mActivity), update.getName());
             if (dest.exists()) {

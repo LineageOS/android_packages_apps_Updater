@@ -17,7 +17,7 @@ package org.lineageos.updater.model;
 
 import java.io.File;
 
-public class UpdateDownload extends Update {
+public class UpdateDownload extends Update implements UpdateInfo {
 
     private UpdateStatus mStatus = UpdateStatus.UNKNOWN;
     private int mPersistentStatus = UpdateStatus.Persistent.UNKNOWN;
@@ -32,11 +32,11 @@ public class UpdateDownload extends Update {
     public UpdateDownload() {
     }
 
-    public UpdateDownload(Update update) {
+    public UpdateDownload(UpdateBaseInfo update) {
         super(update);
     }
 
-    public UpdateDownload(UpdateDownload update) {
+    public UpdateDownload(UpdateInfo update) {
         super(update);
         mStatus = update.getStatus();
         mPersistentStatus = update.getPersistentStatus();
@@ -49,6 +49,7 @@ public class UpdateDownload extends Update {
         mAvailableOnline = update.getAvailableOnline();
     }
 
+    @Override
     public UpdateStatus getStatus() {
         return mStatus;
     }
@@ -57,6 +58,7 @@ public class UpdateDownload extends Update {
         mStatus = status;
     }
 
+    @Override
     public int getPersistentStatus() {
         return mPersistentStatus;
     }
@@ -65,6 +67,7 @@ public class UpdateDownload extends Update {
         mPersistentStatus = status;
     }
 
+    @Override
     public File getFile() {
         return mFile;
     }
@@ -73,6 +76,7 @@ public class UpdateDownload extends Update {
         mFile = file;
     }
 
+    @Override
     public long getFileSize() {
         return mFileSize;
     }
@@ -81,6 +85,7 @@ public class UpdateDownload extends Update {
         mFileSize = fileSize;
     }
 
+    @Override
     public int getProgress() {
         return mProgress;
     }
@@ -89,6 +94,7 @@ public class UpdateDownload extends Update {
         mProgress = progress;
     }
 
+    @Override
     public long getEta() {
         return mEta;
     }
@@ -97,6 +103,7 @@ public class UpdateDownload extends Update {
         mEta = eta;
     }
 
+    @Override
     public long getSpeed() {
         return mSpeed;
     }
@@ -105,6 +112,7 @@ public class UpdateDownload extends Update {
         mSpeed = speed;
     }
 
+    @Override
     public int getInstallProgress() {
         return mInstallProgress;
     }
@@ -113,6 +121,7 @@ public class UpdateDownload extends Update {
         mInstallProgress = progress;
     }
 
+    @Override
     public boolean getAvailableOnline() {
         return mAvailableOnline;
     }

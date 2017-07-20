@@ -15,7 +15,7 @@
  */
 package org.lineageos.updater.model;
 
-public class Update {
+public class Update implements UpdateBaseInfo {
 
     private String mName;
     private String mDownloadUrl;
@@ -27,7 +27,7 @@ public class Update {
     public Update() {
     }
 
-    public Update(Update update) {
+    public Update(UpdateBaseInfo update) {
         mName = update.getName();
         mDownloadUrl = update.getDownloadUrl();
         mDownloadId = update.getDownloadId();
@@ -36,6 +36,7 @@ public class Update {
         mVersion = update.getVersion();
     }
 
+    @Override
     public String getName() {
         return mName;
     }
@@ -44,6 +45,7 @@ public class Update {
         mName = name;
     }
 
+    @Override
     public String getDownloadId() {
         return mDownloadId;
     }
@@ -52,6 +54,7 @@ public class Update {
         mDownloadId = downloadId;
     }
 
+    @Override
     public long getTimestamp() {
         return mTimestamp;
     }
@@ -60,6 +63,7 @@ public class Update {
         mTimestamp = timestamp;
     }
 
+    @Override
     public String getType() {
         return mType;
     }
@@ -68,6 +72,7 @@ public class Update {
         mType = type;
     }
 
+    @Override
     public String getVersion() {
         return mVersion;
     }
@@ -76,6 +81,7 @@ public class Update {
         mVersion = version;
     }
 
+    @Override
     public String getDownloadUrl() {
         return mDownloadUrl;
     }

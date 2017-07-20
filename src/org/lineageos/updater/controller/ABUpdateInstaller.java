@@ -15,8 +15,10 @@
  */
 package org.lineageos.updater.controller;
 
+import android.content.Context;
 import android.os.UpdateEngine;
 import android.os.UpdateEngineCallback;
+import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
 
 import org.lineageos.updater.misc.Constants;
@@ -42,6 +44,7 @@ class ABUpdateInstaller {
 
     private final UpdaterController mUpdaterController;
     private final String mDownloadId;
+    private final Context mContext;
 
     private final UpdateEngineCallback mUpdateEngineCallback = new UpdateEngineCallback() {
 
@@ -86,15 +89,21 @@ class ABUpdateInstaller {
                 }
                 break;
             }
+
+            boolean deleteUpdate = PreferenceManager.getDefaultSharedPreferences(mContext)
+                    .getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, false);
+            if (deleteUpdate) {
+                mUpdaterController.deleteUpdate(mDownloadId);
+            }
         }
     };
 
-    static synchronized boolean start(UpdaterController updaterController,
+    static synchronized boolean start(Context context, UpdaterController updaterController,
             String downloadId) {
         if (sDownloadId != null) {
             return false;
         }
-        ABUpdateInstaller installer = new ABUpdateInstaller(updaterController, downloadId);
+        ABUpdateInstaller installer = new ABUpdateInstaller(context, updaterController, downloadId);
         if (installer.startUpdate()) {
             sDownloadId = downloadId;
             return true;
@@ -110,9 +119,11 @@ class ABUpdateInstaller {
         return sDownloadId != null && sDownloadId.equals(downloadId);
     }
 
-    private ABUpdateInstaller(UpdaterController updaterController, String downloadId) {
+    private ABUpdateInstaller(Context context, UpdaterController updaterController,
+            String downloadId) {
         mUpdaterController = updaterController;
         mDownloadId = downloadId;
+        mContext = context;
     }
 
     private boolean startUpdate() {

@@ -180,10 +180,11 @@ public class UpdatesActivity extends UpdatesListActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_refresh:
+            case R.id.menu_refresh: {
                 downloadUpdatesList(true);
                 return true;
-            case R.id.menu_auto_updates_check:
+            }
+            case R.id.menu_auto_updates_check: {
                 boolean enable = !item.isChecked();
                 item.setChecked(enable);
                 PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
@@ -197,6 +198,16 @@ public class UpdatesActivity extends UpdatesListActivity {
                     UpdatesCheckReceiver.cancelUpdatesCheck(this);
                 }
                 return true;
+            }
+            case R.id.menu_auto_delete_updates: {
+                boolean enable = !item.isChecked();
+                item.setChecked(enable);
+                PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
+                        .edit()
+                        .putBoolean(Constants.PREF_AUTO_DELETE_UPDATES, enable)
+                        .apply();
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

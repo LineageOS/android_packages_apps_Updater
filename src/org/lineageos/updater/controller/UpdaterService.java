@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.NotificationCompat;
+import android.support.v7.preference.PreferenceManager;
 import android.text.format.Formatter;
 import android.util.Log;
 
@@ -170,9 +171,17 @@ public class UpdaterService extends Service {
             }
             try {
                 if (Utils.isABUpdate(update.getFile())) {
-                    ABUpdateInstaller.start(mUpdaterController, downloadId);
+                    ABUpdateInstaller.start(this, mUpdaterController, downloadId);
                 } else {
-                    if (update.getFile().getAbsolutePath().startsWith("/data/") &&
+                    boolean deleteUpdate = PreferenceManager.getDefaultSharedPreferences(this)
+                            .getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, false);
+                    if (deleteUpdate) {
+                        // Renaming the file is enough to have it deleted automatically
+                        File uncrytpFile = new File(
+                                update.getFile().getAbsolutePath() + Constants.UNCRYPT_FILE_EXT);
+                        update.getFile().renameTo(uncrytpFile);
+                        installPackage(uncrytpFile);
+                    } else if (update.getFile().getAbsolutePath().startsWith("/data/") &&
                             Utils.isDeviceEncrypted(this)) {
                         // uncrypt rewrites the file so that it can be read without mounting
                         // the filesystem, so create a copy of it.

@@ -12,4 +12,9 @@
         android:checked="true"
         android:title="@string/menu_auto_updates_check"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_auto_delete_updates"
+        android:checkable="true"
+        android:title="@string/menu_auto_delete_updates"
+        app:showAsAction="never" />
 </menu>

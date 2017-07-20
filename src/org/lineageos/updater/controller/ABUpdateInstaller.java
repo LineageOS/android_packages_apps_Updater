@@ -21,7 +21,7 @@ import android.util.Log;
 
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
-import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.Update;
 import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.BufferedReader;
@@ -57,7 +57,7 @@ class ABUpdateInstaller {
                 break;
 
                 case UpdateEngine.UpdateStatusConstants.REPORTING_ERROR_EVENT: {
-                    UpdateDownload update = mUpdaterController.getActualUpdate(mDownloadId);
+                    Update update = mUpdaterController.getActualUpdate(mDownloadId);
                     update.setInstallProgress(0);
                     update.setStatus(UpdateStatus.INSTALLATION_FAILED);
                     mUpdaterController.notifyUpdateChange(mDownloadId);
@@ -71,7 +71,7 @@ class ABUpdateInstaller {
             sDownloadId = null;
             switch (errorCode) {
                 case UpdateEngine.ErrorCodeConstants.SUCCESS: {
-                    UpdateDownload update = mUpdaterController.getActualUpdate(mDownloadId);
+                    Update update = mUpdaterController.getActualUpdate(mDownloadId);
                     update.setInstallProgress(0);
                     update.setStatus(UpdateStatus.INSTALLED);
                     mUpdaterController.notifyUpdateChange(mDownloadId);
@@ -79,7 +79,7 @@ class ABUpdateInstaller {
                 break;
 
                 default: {
-                    UpdateDownload update = mUpdaterController.getActualUpdate(mDownloadId);
+                    Update update = mUpdaterController.getActualUpdate(mDownloadId);
                     update.setInstallProgress(0);
                     update.setStatus(UpdateStatus.INSTALLATION_FAILED);
                     mUpdaterController.notifyUpdateChange(mDownloadId);

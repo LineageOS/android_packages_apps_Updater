@@ -26,7 +26,7 @@ import android.util.Log;
 import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Utils;
-import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.Update;
 import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
@@ -83,15 +83,15 @@ public class UpdaterController implements Controller {
 
         Utils.cleanupDownloadsDir(context);
 
-        for (UpdateDownload update : mUpdatesDbHelper.getUpdates()) {
+        for (Update update : mUpdatesDbHelper.getUpdates()) {
             addUpdate(update, false);
         }
     }
 
     private class DownloadEntry {
-        final UpdateDownload mUpdate;
+        final Update mUpdate;
         DownloadClient mDownloadClient;
-        private DownloadEntry(UpdateDownload update) {
+        private DownloadEntry(Update update) {
             mUpdate = update;
         }
     }
@@ -153,7 +153,7 @@ public class UpdaterController implements Controller {
 
             @Override
             public void onResponse(int statusCode, String url, DownloadClient.Headers headers) {
-                final UpdateDownload update = mDownloads.get(downloadId).mUpdate;
+                final Update update = mDownloads.get(downloadId).mUpdate;
                 if (update.getFileSize() <= 0) {
                     String contentLength = headers.get("Content-Length");
                     if (contentLength != null) {
@@ -182,7 +182,7 @@ public class UpdaterController implements Controller {
             @Override
             public void onSuccess(File destination) {
                 Log.d(TAG, "Download complete");
-                UpdateDownload update = mDownloads.get(downloadId).mUpdate;
+                Update update = mDownloads.get(downloadId).mUpdate;
                 update.setStatus(UpdateStatus.VERIFYING);
                 removeDownloadClient(mDownloads.get(downloadId));
                 verifyUpdateAsync(downloadId);
@@ -192,7 +192,7 @@ public class UpdaterController implements Controller {
 
             @Override
             public void onFailure(boolean cancelled) {
-                UpdateDownload update = mDownloads.get(downloadId).mUpdate;
+                Update update = mDownloads.get(downloadId).mUpdate;
                 if (cancelled) {
                     Log.d(TAG, "Download cancelled");
                     update.setStatus(UpdateStatus.PAUSED);
@@ -216,7 +216,7 @@ public class UpdaterController implements Controller {
             @Override
             public void update(long bytesRead, long contentLength, long speed, long eta,
                     boolean done) {
-                UpdateDownload update = mDownloads.get(downloadId).mUpdate;
+                Update update = mDownloads.get(downloadId).mUpdate;
                 if (contentLength <= 0) {
                     if (update.getFileSize() <= 0) {
                         return;
@@ -246,7 +246,7 @@ public class UpdaterController implements Controller {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                UpdateDownload update = mDownloads.get(downloadId).mUpdate;
+                Update update = mDownloads.get(downloadId).mUpdate;
                 File file = update.getFile();
                 if (file.exists() && verifyPackage(file)) {
                     update.setPersistentStatus(UpdateStatus.Persistent.VERIFIED);
@@ -281,7 +281,7 @@ public class UpdaterController implements Controller {
         }
     }
 
-    private boolean fixUpdateStatus(UpdateDownload update) {
+    private boolean fixUpdateStatus(Update update) {
         switch (update.getPersistentStatus()) {
             case UpdateStatus.Persistent.VERIFIED:
             case UpdateStatus.Persistent.INCOMPLETE:
@@ -336,12 +336,12 @@ public class UpdaterController implements Controller {
         Log.d(TAG, "Adding download: " + updateInfo.getDownloadId());
         if (mDownloads.containsKey(updateInfo.getDownloadId())) {
             Log.d(TAG, "Download (" + updateInfo.getDownloadId() + ") already added");
-            UpdateDownload updateAdded = mDownloads.get(updateInfo.getDownloadId()).mUpdate;
+            Update updateAdded = mDownloads.get(updateInfo.getDownloadId()).mUpdate;
             updateAdded.setAvailableOnline(availableOnline && updateAdded.getAvailableOnline());
             updateAdded.setDownloadUrl(updateInfo.getDownloadUrl());
             return false;
         }
-        UpdateDownload update = new UpdateDownload(updateInfo);
+        Update update = new Update(updateInfo);
         if (!fixUpdateStatus(update) && !availableOnline) {
             update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
             deleteUpdateAsync(update);
@@ -359,7 +359,7 @@ public class UpdaterController implements Controller {
         if (!mDownloads.containsKey(downloadId) || isDownloading(downloadId)) {
             return false;
         }
-        UpdateDownload update = mDownloads.get(downloadId).mUpdate;
+        Update update = mDownloads.get(downloadId).mUpdate;
         File destination = new File(mDownloadRoot, update.getName());
         if (destination.exists()) {
             destination = Utils.appendSequentialNumber(destination);
@@ -386,7 +386,7 @@ public class UpdaterController implements Controller {
         if (!mDownloads.containsKey(downloadId) || isDownloading(downloadId)) {
             return false;
         }
-        UpdateDownload update = mDownloads.get(downloadId).mUpdate;
+        Update update = mDownloads.get(downloadId).mUpdate;
         File file = update.getFile();
         if (file == null || !file.exists()) {
             Log.e(TAG, "The destination file of " + downloadId + " doesn't exist, can't resume");
@@ -432,7 +432,7 @@ public class UpdaterController implements Controller {
         return true;
     }
 
-    private void deleteUpdateAsync(final UpdateDownload update) {
+    private void deleteUpdateAsync(final Update update) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -451,7 +451,7 @@ public class UpdaterController implements Controller {
         if (!mDownloads.containsKey(downloadId) || isDownloading(downloadId)) {
             return false;
         }
-        UpdateDownload update = mDownloads.get(downloadId).mUpdate;
+        Update update = mDownloads.get(downloadId).mUpdate;
         update.setStatus(UpdateStatus.DELETED);
         update.setProgress(0);
         update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
@@ -488,7 +488,7 @@ public class UpdaterController implements Controller {
         return entry != null ? entry.mUpdate : null;
     }
 
-    UpdateDownload getActualUpdate(String downloadId) {
+    Update getActualUpdate(String downloadId) {
         DownloadEntry entry = mDownloads.get(downloadId);
         return entry != null ? entry.mUpdate : null;
     }

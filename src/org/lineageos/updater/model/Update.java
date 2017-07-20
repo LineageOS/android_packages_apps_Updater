@@ -15,78 +15,118 @@
  */
 package org.lineageos.updater.model;
 
-public class Update implements UpdateBaseInfo {
+import java.io.File;
 
-    private String mName;
-    private String mDownloadUrl;
-    private String mDownloadId;
-    private long mTimestamp;
-    private String mType;
-    private String mVersion;
+public class Update extends UpdateBase implements UpdateInfo {
+
+    private UpdateStatus mStatus = UpdateStatus.UNKNOWN;
+    private int mPersistentStatus = UpdateStatus.Persistent.UNKNOWN;
+    private File mFile;
+    private long mFileSize;
+    private int mProgress;
+    private long mEta;
+    private long mSpeed;
+    private int mInstallProgress;
+    private boolean mAvailableOnline;
 
     public Update() {
     }
 
     public Update(UpdateBaseInfo update) {
-        mName = update.getName();
-        mDownloadUrl = update.getDownloadUrl();
-        mDownloadId = update.getDownloadId();
-        mTimestamp = update.getTimestamp();
-        mType = update.getType();
-        mVersion = update.getVersion();
+        super(update);
+    }
+
+    public Update(UpdateInfo update) {
+        super(update);
+        mStatus = update.getStatus();
+        mPersistentStatus = update.getPersistentStatus();
+        mFile = update.getFile();
+        mFileSize = update.getFileSize();
+        mProgress = update.getProgress();
+        mEta = update.getEta();
+        mSpeed = update.getSpeed();
+        mInstallProgress = update.getInstallProgress();
+        mAvailableOnline = update.getAvailableOnline();
     }
 
     @Override
-    public String getName() {
-        return mName;
+    public UpdateStatus getStatus() {
+        return mStatus;
     }
 
-    public void setName(String name) {
-        mName = name;
-    }
-
-    @Override
-    public String getDownloadId() {
-        return mDownloadId;
-    }
-
-    public void setDownloadId(String downloadId) {
-        mDownloadId = downloadId;
+    public void setStatus(UpdateStatus status) {
+        mStatus = status;
     }
 
     @Override
-    public long getTimestamp() {
-        return mTimestamp;
+    public int getPersistentStatus() {
+        return mPersistentStatus;
     }
 
-    public void setTimestamp(long timestamp) {
-        mTimestamp = timestamp;
-    }
-
-    @Override
-    public String getType() {
-        return mType;
-    }
-
-    public void setType(String type) {
-        mType = type;
+    public void setPersistentStatus(int status) {
+        mPersistentStatus = status;
     }
 
     @Override
-    public String getVersion() {
-        return mVersion;
+    public File getFile() {
+        return mFile;
     }
 
-    public void setVersion(String version) {
-        mVersion = version;
+    public void setFile(File file) {
+        mFile = file;
     }
 
     @Override
-    public String getDownloadUrl() {
-        return mDownloadUrl;
+    public long getFileSize() {
+        return mFileSize;
     }
 
-    public void setDownloadUrl(String downloadUrl) {
-        mDownloadUrl = downloadUrl;
+    public void setFileSize(long fileSize) {
+        mFileSize = fileSize;
+    }
+
+    @Override
+    public int getProgress() {
+        return mProgress;
+    }
+
+    public void setProgress(int progress) {
+        mProgress = progress;
+    }
+
+    @Override
+    public long getEta() {
+        return mEta;
+    }
+
+    public void setEta(long eta) {
+        mEta = eta;
+    }
+
+    @Override
+    public long getSpeed() {
+        return mSpeed;
+    }
+
+    public void setSpeed(long speed) {
+        mSpeed = speed;
+    }
+
+    @Override
+    public int getInstallProgress() {
+        return mInstallProgress;
+    }
+
+    public void setInstallProgress(int progress) {
+        mInstallProgress = progress;
+    }
+
+    @Override
+    public boolean getAvailableOnline() {
+        return mAvailableOnline;
+    }
+
+    public void setAvailableOnline(boolean availableOnline) {
+        mAvailableOnline = availableOnline;
     }
 }

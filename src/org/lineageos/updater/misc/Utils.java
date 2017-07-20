@@ -36,7 +36,7 @@ import org.lineageos.updater.R;
 import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.model.UpdateBaseInfo;
-import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.Update;
 import org.lineageos.updater.model.UpdateInfo;
 
 import java.io.BufferedReader;
@@ -80,7 +80,7 @@ public class Utils {
     // This should really return an UpdateBaseInfo object, but currently this only
     // used to initialize UpdateInfo objects
     private static UpdateInfo parseJsonUpdate(JSONObject object) throws JSONException {
-        UpdateDownload update = new UpdateDownload();
+        Update update = new Update();
         update.setTimestamp(object.getLong("datetime"));
         update.setName(object.getString("filename"));
         update.setDownloadId(object.getString("id"));

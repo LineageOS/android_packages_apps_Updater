@@ -21,7 +21,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 import org.lineageos.updater.UpdatesDbHelper;
-import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.Update;
 import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
@@ -87,7 +87,7 @@ public final class LegacySupport {
                         Log.d(TAG, "Importing " + file.getAbsolutePath());
                         Integer index = updatesMap.get(file.getName());
                         if (index != null) {
-                            UpdateDownload update = new UpdateDownload(updatesJson.get(index));
+                            Update update = new Update(updatesJson.get(index));
                             update.setFile(file);
                             update.setFileSize(file.length());
                             update.setStatus(UpdateStatus.DOWNLOADED);
@@ -95,7 +95,7 @@ public final class LegacySupport {
                             dbHelper.addUpdate(update);
                         } else {
                             try {
-                                UpdateDownload update = createUpdateFromFile(file);
+                                Update update = createUpdateFromFile(file);
                                 notReplacing.add(update.getDownloadId());
                                 updatesJson.add(update);
                                 dbHelper.addUpdate(update);
@@ -112,8 +112,8 @@ public final class LegacySupport {
         return notReplacing;
     }
 
-    private static UpdateDownload createUpdateFromFile(File file) throws IllegalFilenameException {
-        UpdateDownload update = new UpdateDownload();
+    private static Update createUpdateFromFile(File file) throws IllegalFilenameException {
+        Update update = new Update();
         update.setDownloadId(UUID.randomUUID().toString());
         update.setFile(file);
         update.setFileSize(file.length());

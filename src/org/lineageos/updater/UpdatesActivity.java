@@ -43,8 +43,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import org.json.JSONException;
-import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.Controller;
+import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.BuildInfoUtils;

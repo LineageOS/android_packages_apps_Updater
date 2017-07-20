@@ -23,11 +23,11 @@ import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-import org.lineageos.updater.model.UpdateDownload;
-import org.lineageos.updater.model.UpdateStatus;
 import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.File;
 import java.util.ArrayList;

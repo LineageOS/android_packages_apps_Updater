@@ -31,13 +31,13 @@ import android.text.format.Formatter;
 import android.util.Log;
 
 import org.lineageos.updater.R;
-import org.lineageos.updater.model.UpdateDownload;
-import org.lineageos.updater.model.UpdateStatus;
 import org.lineageos.updater.UpdaterReceiver;
 import org.lineageos.updater.UpdatesActivity;
 import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.IOException;
 import java.text.DateFormat;

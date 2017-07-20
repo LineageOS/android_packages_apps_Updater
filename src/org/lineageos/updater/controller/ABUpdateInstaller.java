@@ -19,10 +19,10 @@ import android.os.UpdateEngine;
 import android.os.UpdateEngineCallback;
 import android.util.Log;
 
-import org.lineageos.updater.model.UpdateDownload;
-import org.lineageos.updater.model.UpdateStatus;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.model.UpdateDownload;
+import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.BufferedReader;
 import java.io.File;

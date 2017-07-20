@@ -20,9 +20,9 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.model.UpdateDownload;
 import org.lineageos.updater.model.UpdateStatus;
-import org.lineageos.updater.UpdatesDbHelper;
 
 import java.io.File;
 import java.text.ParseException;

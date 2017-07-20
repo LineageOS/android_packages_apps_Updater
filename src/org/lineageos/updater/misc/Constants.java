@@ -26,6 +26,8 @@ public final class Constants {
     public static final String PREF_LAST_UPDATE_CHECK = "last_update_check";
     public static final String PREF_AUTO_UPDATES_CHECK = "auto_updates_check";
 
+    public static final String UNCRYPT_FILE_EXT = ".uncrypt";
+
     public static final String PROP_BUILD_DATE = "ro.build.date.utc";
     public static final String PROP_BUILD_VERSION = "ro.cm.build.version";
     public static final String PROP_BUILD_VERSION_INCREMENTAL = "ro.build.version.incremental";

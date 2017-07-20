@@ -34,11 +34,14 @@ import org.lineageos.updater.R;
 import org.lineageos.updater.UpdaterReceiver;
 import org.lineageos.updater.UpdatesActivity;
 import org.lineageos.updater.misc.BuildInfoUtils;
+import org.lineageos.updater.misc.Constants;
+import org.lineageos.updater.misc.FileUtils;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
@@ -169,7 +172,22 @@ public class UpdaterService extends Service {
                 if (Utils.isABUpdate(update.getFile())) {
                     ABUpdateInstaller.start(mUpdaterController, downloadId);
                 } else {
-                    android.os.RecoverySystem.installPackage(this, update.getFile());
+                    if (update.getFile().getAbsolutePath().startsWith("/data/") &&
+                            Utils.isDeviceEncrypted(this)) {
+                        // uncrypt rewrites the file so that it can be read without mounting
+                        // the filesystem, so create a copy of it.
+                        File uncrytpFile = new File(
+                                update.getFile().getAbsolutePath() + Constants.UNCRYPT_FILE_EXT);
+                        FileUtils.prepareForUncrypt(this, update.getFile(), uncrytpFile,
+                                new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        installPackage(uncrytpFile);
+                                    }
+                                });
+                    } else {
+                        installPackage(update.getFile());
+                    }
                 }
             } catch (IOException e) {
                 Log.e(TAG, "Could not install update", e);
@@ -178,6 +196,15 @@ public class UpdaterService extends Service {
         }
         Log.d(TAG, "Service started");
         return START_NOT_STICKY;
+    }
+
+    private void installPackage(File update) {
+        try {
+            android.os.RecoverySystem.installPackage(this, update);
+        } catch (IOException e) {
+            // TODO: show error message
+            Log.e(TAG, "Could not install update", e);
+        }
     }
 
     public Controller getUpdaterController() {

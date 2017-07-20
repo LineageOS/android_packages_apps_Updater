@@ -15,6 +15,7 @@
  */
 package org.lineageos.updater.misc;
 
+import android.app.admin.DevicePolicyManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -42,6 +43,7 @@ import org.lineageos.updater.model.UpdateInfo;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -222,6 +224,21 @@ public class Utils {
         throw new IllegalArgumentException("The given entry was not found");
     }
 
+    public static void removeUncryptFiles(File downloadPath) {
+        File[] uncryptFiles = downloadPath.listFiles(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return name.endsWith(Constants.UNCRYPT_FILE_EXT);
+            }
+        });
+        if (uncryptFiles == null) {
+            return;
+        }
+        for (File file : uncryptFiles) {
+            file.delete();
+        }
+    }
+
     /**
      * Cleanup the download directory, which is assumed to be a privileged location
      * the user can't access and that might have stale files. This can happen if
@@ -230,14 +247,16 @@ public class Utils {
      * @param context
      */
     public static void cleanupDownloadsDir(Context context) {
-        final String DOWNLOADS_CLEANUP_DONE = "cleanup_done";
+        File downloadPath = getDownloadPath(context);
 
+        removeUncryptFiles(downloadPath);
+
+        final String DOWNLOADS_CLEANUP_DONE = "cleanup_done";
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         if (preferences.getBoolean(DOWNLOADS_CLEANUP_DONE, false)) {
             return;
         }
 
-        File downloadPath = getDownloadPath(context);
         Log.d(TAG, "Cleaning " + downloadPath);
         if (!downloadPath.isDirectory()) {
             return;
@@ -306,5 +325,12 @@ public class Utils {
         ClipData clip = ClipData.newPlainText(label, text);
         clipboard.setPrimaryClip(clip);
         Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show();
+    }
+
+    public static boolean isDeviceEncrypted(Context context) {
+        DevicePolicyManager dpm =
+                (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
+        int status = dpm.getStorageEncryptionStatus();
+        return status == DevicePolicyManager.ENCRYPTION_STATUS_ACTIVE;
     }
 }

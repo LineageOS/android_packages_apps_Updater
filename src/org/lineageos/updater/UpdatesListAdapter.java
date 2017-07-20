@@ -350,7 +350,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                mUpdaterController.cancelDownload(downloadId);
+                                mUpdaterController.deleteUpdate(downloadId);
                             }
                         })
                 .setNegativeButton(android.R.string.cancel, null);

@@ -446,7 +446,7 @@ public class UpdaterController implements Controller {
     }
 
     @Override
-    public boolean cancelDownload(String downloadId) {
+    public boolean deleteUpdate(String downloadId) {
         Log.d(TAG, "Cancelling " + downloadId);
         if (!mDownloads.containsKey(downloadId) || isDownloading(downloadId)) {
             return false;

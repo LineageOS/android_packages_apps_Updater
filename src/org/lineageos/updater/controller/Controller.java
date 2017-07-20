@@ -38,7 +38,7 @@ public interface Controller {
 
     boolean pauseDownload(String downloadId);
 
-    boolean cancelDownload(String downloadId);
+    boolean deleteUpdate(String downloadId);
 
     boolean resumeDownload(String downloadId);
 

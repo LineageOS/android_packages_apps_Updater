@@ -128,6 +128,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         final String downloadId = update.getDownloadId();
         if (mUpdaterController.isDownloading(downloadId)) {
+            canDelete = true;
             String downloaded = StringGenerator.bytesToMegabytes(mActivity,
                     update.getFile().length());
             String total = Formatter.formatShortFileSize(mActivity, update.getFileSize());
@@ -350,6 +351,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                mUpdaterController.pauseDownload(downloadId);
                                 mUpdaterController.deleteUpdate(downloadId);
                             }
                         })

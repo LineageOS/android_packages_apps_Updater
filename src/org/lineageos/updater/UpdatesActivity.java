@@ -174,6 +174,12 @@ public class UpdatesActivity extends UpdatesListActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        SharedPreferences preferences =
+                PreferenceManager.getDefaultSharedPreferences(this);
+        menu.findItem(R.id.menu_auto_updates_check)
+                .setChecked(preferences.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, true));
+        menu.findItem(R.id.menu_auto_delete_updates)
+                .setChecked(preferences.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false));
         return super.onCreateOptionsMenu(menu);
     }
 

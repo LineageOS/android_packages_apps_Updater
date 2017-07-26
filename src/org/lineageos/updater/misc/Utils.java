@@ -15,7 +15,6 @@
  */
 package org.lineageos.updater.misc;
 
-import android.app.admin.DevicePolicyManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -26,6 +25,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
 import android.os.SystemProperties;
+import android.os.storage.StorageManager;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
@@ -327,10 +327,8 @@ public class Utils {
         Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show();
     }
 
-    public static boolean isDeviceEncrypted(Context context) {
-        DevicePolicyManager dpm =
-                (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
-        int status = dpm.getStorageEncryptionStatus();
-        return status == DevicePolicyManager.ENCRYPTION_STATUS_ACTIVE;
+    public static boolean isEncrypted(Context context, File file) {
+        StorageManager sm = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
+        return sm.isEncrypted(file);
     }
 }

@@ -181,8 +181,7 @@ public class UpdaterService extends Service {
                                 update.getFile().getAbsolutePath() + Constants.UNCRYPT_FILE_EXT);
                         update.getFile().renameTo(uncrytpFile);
                         installPackage(uncrytpFile);
-                    } else if (update.getFile().getAbsolutePath().startsWith("/data/") &&
-                            Utils.isDeviceEncrypted(this)) {
+                    } else if (Utils.isEncrypted(this, update.getFile())) {
                         // uncrypt rewrites the file so that it can be read without mounting
                         // the filesystem, so create a copy of it.
                         File uncrytpFile = new File(

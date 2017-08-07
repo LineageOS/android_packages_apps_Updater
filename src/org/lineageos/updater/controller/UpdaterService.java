@@ -243,6 +243,7 @@ public class UpdaterService extends Service {
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
+                mNotificationBuilder.setAutoCancel(false);
                 startForeground(NOTIFICATION_ID, mNotificationBuilder.build());
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 break;
@@ -255,6 +256,7 @@ public class UpdaterService extends Service {
                         getPausePendingIntent(update.getDownloadId()));
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
+                mNotificationBuilder.setAutoCancel(false);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 break;
             }
@@ -270,6 +272,7 @@ public class UpdaterService extends Service {
                         getResumePendingIntent(update.getDownloadId()));
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
+                mNotificationBuilder.setAutoCancel(false);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 break;
             }
@@ -286,6 +289,7 @@ public class UpdaterService extends Service {
                         getResumePendingIntent(update.getDownloadId()));
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
+                mNotificationBuilder.setAutoCancel(false);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 break;
             }
@@ -306,6 +310,7 @@ public class UpdaterService extends Service {
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
+                mNotificationBuilder.setAutoCancel(true);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 tryStopSelf();
                 break;
@@ -317,6 +322,7 @@ public class UpdaterService extends Service {
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
+                mNotificationBuilder.setAutoCancel(true);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 tryStopSelf();
                 break;
@@ -329,6 +335,7 @@ public class UpdaterService extends Service {
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
+                mNotificationBuilder.setAutoCancel(false);
                 startForeground(NOTIFICATION_ID, mNotificationBuilder.build());
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 break;
@@ -343,6 +350,7 @@ public class UpdaterService extends Service {
                         getRebootPendingIntent());
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
+                mNotificationBuilder.setAutoCancel(true);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 tryStopSelf();
                 break;
@@ -354,6 +362,7 @@ public class UpdaterService extends Service {
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
+                mNotificationBuilder.setAutoCancel(true);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 tryStopSelf();
                 break;

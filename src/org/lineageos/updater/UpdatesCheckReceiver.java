@@ -119,6 +119,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
                 PendingIntent.FLAG_UPDATE_CURRENT);
         notificationBuilder.setContentIntent(intent);
         notificationBuilder.setContentTitle(context.getString(R.string.new_updates_found_title));
+        notificationBuilder.setAutoCancel(true);
         notificationManager.notify(0, notificationBuilder.build());
     }
 

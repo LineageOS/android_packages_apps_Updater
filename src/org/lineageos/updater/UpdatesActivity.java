@@ -180,6 +180,8 @@ public class UpdatesActivity extends UpdatesListActivity {
                 .setChecked(preferences.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, true));
         menu.findItem(R.id.menu_auto_delete_updates)
                 .setChecked(preferences.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false));
+        menu.findItem(R.id.menu_mobile_data_warning)
+                .setChecked(preferences.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true));
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -211,6 +213,15 @@ public class UpdatesActivity extends UpdatesListActivity {
                 PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
                         .edit()
                         .putBoolean(Constants.PREF_AUTO_DELETE_UPDATES, enable)
+                        .apply();
+                return true;
+            }
+            case R.id.menu_mobile_data_warning: {
+                boolean enable = !item.isChecked();
+                item.setChecked(enable);
+                PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
+                        .edit()
+                        .putBoolean(Constants.PREF_MOBILE_DATA_WARNING, enable)
                         .apply();
                 return true;
             }

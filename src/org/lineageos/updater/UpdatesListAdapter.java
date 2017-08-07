@@ -16,6 +16,8 @@
 package org.lineageos.updater;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.view.ActionMode;
@@ -29,12 +31,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.lineageos.updater.controller.Controller;
 import org.lineageos.updater.misc.BuildInfoUtils;
+import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.FileUtils;
 import org.lineageos.updater.misc.PermissionsUtils;
 import org.lineageos.updater.misc.StringGenerator;
@@ -252,6 +256,39 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         notifyItemRangeChanged(position, getItemCount());
     }
 
+    private void startDownloadWithWarning(final String downloadId) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mActivity);
+        boolean warn = preferences.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true);
+        if (Utils.isOnWifiOrEthernet(mActivity) || !warn) {
+            mUpdaterController.startDownload(downloadId);
+            return;
+        }
+
+        View checkboxView = LayoutInflater.from(mActivity).inflate(R.layout.checkbox_view, null);
+        CheckBox checkbox = (CheckBox) checkboxView.findViewById(R.id.checkbox);
+        checkbox.setText(R.string.checkbox_mobile_data_warning);
+
+        new AlertDialog.Builder(mActivity)
+                .setTitle(R.string.update_on_mobile_data_title)
+                .setMessage(R.string.update_on_mobile_data_message)
+                .setView(checkboxView)
+                .setPositiveButton(R.string.action_description_download,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (checkbox.isChecked()) {
+                                    preferences.edit()
+                                            .putBoolean(Constants.PREF_MOBILE_DATA_WARNING, false)
+                                            .apply();
+                                    mActivity.supportInvalidateOptionsMenu();
+                                }
+                                mUpdaterController.startDownload(downloadId);
+                            }
+                        })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
+    }
+
     private void setButtonAction(ImageButton button, Action action, final String downloadId,
             boolean enabled) {
         final View.OnClickListener clickListener;
@@ -264,7 +301,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 clickListener = !enabled ? null : new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mUpdaterController.startDownload(downloadId);
+                        startDownloadWithWarning(downloadId);
                     }
                 };
                 break;

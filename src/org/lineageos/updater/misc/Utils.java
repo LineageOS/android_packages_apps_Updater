@@ -167,6 +167,14 @@ public class Utils {
         return !(info == null || !info.isConnected() || !info.isAvailable());
     }
 
+    public static boolean isOnWifiOrEthernet(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(
+                Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = cm.getActiveNetworkInfo();
+        return (info != null && (info.getType() == ConnectivityManager.TYPE_ETHERNET
+                || info.getType() == ConnectivityManager.TYPE_WIFI));
+    }
+
     /**
      * Compares two json formatted updates list files
      *

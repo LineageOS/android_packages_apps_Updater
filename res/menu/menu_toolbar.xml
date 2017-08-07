@@ -17,4 +17,9 @@
         android:checkable="true"
         android:title="@string/menu_auto_delete_updates"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_mobile_data_warning"
+        android:checkable="true"
+        android:title="@string/menu_mobile_data_warning"
+        app:showAsAction="never" />
 </menu>

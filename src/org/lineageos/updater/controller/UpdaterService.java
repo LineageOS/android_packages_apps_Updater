@@ -338,7 +338,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setProgress(100, 100, false);
                 String text = getString(R.string.installing_update_finished);
                 mNotificationStyle.bigText(text);
-                mNotificationBuilder.addAction(R.drawable.ic_tab_install,
+                mNotificationBuilder.addAction(R.drawable.ic_system_update,
                         getString(R.string.reboot),
                         getRebootPendingIntent());
                 mNotificationBuilder.setTicker(text);

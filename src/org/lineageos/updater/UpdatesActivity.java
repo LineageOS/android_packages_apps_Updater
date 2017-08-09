@@ -40,6 +40,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -285,17 +286,24 @@ public class UpdatesActivity extends UpdatesListActivity {
 
         List<String> updateIds = new ArrayList<>();
         List<UpdateInfo> sortedUpdates = controller.getUpdates();
-        Collections.sort(sortedUpdates, new Comparator<UpdateInfo>() {
-            @Override
-            public int compare(UpdateInfo u1, UpdateInfo u2) {
-                return Long.compare(u2.getTimestamp(), u1.getTimestamp());
+        if (sortedUpdates.isEmpty()) {
+            findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
+            findViewById(R.id.recycler_view).setVisibility(View.GONE);
+        } else {
+            findViewById(R.id.no_new_updates_view).setVisibility(View.GONE);
+            findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
+            Collections.sort(sortedUpdates, new Comparator<UpdateInfo>() {
+                @Override
+                public int compare(UpdateInfo u1, UpdateInfo u2) {
+                    return Long.compare(u2.getTimestamp(), u1.getTimestamp());
+                }
+            });
+            for (UpdateInfo update : sortedUpdates) {
+                updateIds.add(update.getDownloadId());
             }
-        });
-        for (UpdateInfo update : sortedUpdates) {
-            updateIds.add(update.getDownloadId());
+            mAdapter.setData(updateIds);
+            mAdapter.notifyDataSetChanged();
         }
-        mAdapter.setData(updateIds);
-        mAdapter.notifyDataSetChanged();
     }
 
     private void getUpdatesList() {

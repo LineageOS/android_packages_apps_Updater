@@ -76,6 +76,21 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/no_new_updates_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="46dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/list_no_updates"
+            android:textColor="?android:textColorSecondary" />
+    </android.support.v4.widget.NestedScrollView>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"

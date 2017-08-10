@@ -31,6 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 
@@ -153,6 +154,6 @@ public final class LegacySupport {
         if (subStrings.length < 4 || subStrings[3].length() < 7) {
             throw new IllegalFilenameException("The given filename is not valid");
         }
-        return subStrings[3].toLowerCase();
+        return subStrings[3].toLowerCase(Locale.ROOT);
     }
 }

@@ -49,6 +49,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -149,7 +150,7 @@ public class Utils {
         }
         String incrementalVersion = SystemProperties.get(Constants.PROP_BUILD_VERSION_INCREMENTAL);
         String device = SystemProperties.get(Constants.PROP_DEVICE);
-        String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).toLowerCase();
+        String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).toLowerCase(Locale.ROOT);
         return serverUrl + "/v1/" + device + "/" + type + "/" + incrementalVersion;
     }
 

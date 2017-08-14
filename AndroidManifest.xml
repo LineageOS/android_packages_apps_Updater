@@ -20,9 +20,10 @@
 
         <activity
             android:name=".UpdatesActivity"
+            android:excludeFromRecents="true"
             android:label="@string/display_name"
             android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleTask">
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

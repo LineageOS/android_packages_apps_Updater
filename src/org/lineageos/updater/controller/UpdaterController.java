@@ -195,7 +195,6 @@ public class UpdaterController implements Controller {
                 Update update = mDownloads.get(downloadId).mUpdate;
                 if (cancelled) {
                     Log.d(TAG, "Download cancelled");
-                    update.setStatus(UpdateStatus.PAUSED);
                     // Already notified
                 } else {
                     Log.e(TAG, "Download failed");

@@ -94,21 +94,11 @@ public class Utils {
     }
 
     public static boolean isCompatible(UpdateBaseInfo update) {
-        if (update.getTimestamp() < SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) {
-            Log.d(TAG, update.getName() + " is older than current build");
-            return false;
-        }
-        if (!update.getType().equalsIgnoreCase(SystemProperties.get(Constants.PROP_RELEASE_TYPE))) {
-            Log.d(TAG, update.getName() + " has type " + update.getType());
-            return false;
-        }
         return true;
     }
 
     public static boolean canInstall(UpdateBaseInfo update) {
-        return update.getTimestamp() >= SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0) &&
-                update.getVersion().equalsIgnoreCase(
-                        SystemProperties.get(Constants.PROP_BUILD_VERSION));
+        return true;
     }
 
     public static List<UpdateInfo> parseJson(File file, boolean compatibleOnly)
@@ -148,9 +138,9 @@ public class Utils {
         if (serverUrl.trim().isEmpty()) {
             serverUrl = context.getString(R.string.conf_update_server_url_def);
         }
-        String incrementalVersion = SystemProperties.get(Constants.PROP_BUILD_VERSION_INCREMENTAL);
+        String incrementalVersion = "0";
         String device = SystemProperties.get(Constants.PROP_DEVICE);
-        String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).toLowerCase(Locale.ROOT);
+        String type = "nightly";
         return serverUrl + "/v1/" + device + "/" + type + "/" + incrementalVersion;
     }
 

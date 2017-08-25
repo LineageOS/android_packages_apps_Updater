@@ -22,7 +22,10 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.RecyclerView;
+import android.text.SpannableString;
 import android.text.format.Formatter;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -68,7 +71,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         DOWNLOAD,
         PAUSE,
         RESUME,
-        INSTALL
+        INSTALL,
+        INFO,
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -186,6 +190,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         if (update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED) {
             viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, true));
             setButtonAction(viewHolder.mAction, Action.INSTALL, update.getDownloadId(), !isBusy());
+        } else if (!Utils.canInstall(update)) {
+            viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, false));
+            setButtonAction(viewHolder.mAction, Action.INFO, update.getDownloadId(), !isBusy());
         } else {
             viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, false));
             setButtonAction(viewHolder.mAction, Action.DOWNLOAD, update.getDownloadId(), !isBusy());
@@ -354,6 +361,18 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                             mActivity.showSnackbar(R.string.snack_update_not_installable,
                                     Snackbar.LENGTH_LONG);
                         }
+                    }
+                };
+            }
+            break;
+            case INFO: {
+                button.setImageResource(R.drawable.ic_info);
+                button.setContentDescription(mActivity.getString(R.string.action_description_info));
+                button.setEnabled(enabled);
+                clickListener = !enabled ? null : new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        showInfoDialog();
                     }
                 };
             }
@@ -540,5 +559,20 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     Snackbar.LENGTH_LONG);
         }
         stopActionMode();
+    }
+
+    private void showInfoDialog() {
+        String messageString = String.format(StringGenerator.getCurrentLocale(mActivity),
+                mActivity.getString(R.string.blocked_update_dialog_message),
+                mActivity.getString(R.string.blocked_update_info_url));
+        SpannableString message = new SpannableString(messageString);
+        Linkify.addLinks(message, Linkify.WEB_URLS);
+        AlertDialog dialog = new AlertDialog.Builder(mActivity)
+                .setTitle(R.string.blocked_update_dialog_title)
+                .setPositiveButton(android.R.string.ok, null)
+                .setMessage(message)
+                .show();
+        TextView textView = (TextView) dialog.findViewById(android.R.id.message);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }

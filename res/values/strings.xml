@@ -87,6 +87,7 @@
     <string name="action_description_pause">Pause download</string>
     <string name="action_description_resume">Resume download</string>
     <string name="action_description_install">Install update</string>
+    <string name="action_description_info">Update info</string>
 
     <string name="confirm_delete_dialog_title">Delete file</string>
     <string name="confirm_delete_dialog_message">Delete the selected update file?</string>
@@ -121,4 +122,8 @@
     <string name="update_on_mobile_data_message">You\'re about to download an update package using mobile data which is likely going to cause high data usage. Would you like to proceed?</string>
     <string name="checkbox_mobile_data_warning">Do not show again</string>
     <string name="menu_mobile_data_warning">Mobile data warning</string>
+
+    <string name="blocked_update_dialog_title">Update blocked</string>
+    <string name="blocked_update_dialog_message">This update cannot be installed using the updater app.  Please read <xliff:g id="info_url">%1$s</xliff:g> for more information.</string>
+    <string name="blocked_update_info_url" translatable="false">http://wiki.lineageos.org/upgrading.html</string>
 </resources>

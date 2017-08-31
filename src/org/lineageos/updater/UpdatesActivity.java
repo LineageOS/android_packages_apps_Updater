@@ -327,6 +327,12 @@ public class UpdatesActivity extends UpdatesListActivity {
             long millis = System.currentTimeMillis();
             preferences.edit().putLong(Constants.PREF_LAST_UPDATE_CHECK, millis).apply();
             updateLastCheckedString();
+            if (json.exists() && preferences.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, true) &&
+                    Utils.checkForNewUpdates(json, jsonNew)) {
+                UpdatesCheckReceiver.updateRepeatingUpdatesCheck(this);
+            }
+            // In case we set a one-shot check because of a previous failure
+            UpdatesCheckReceiver.cancelUpdatesCheck(this);
             jsonNew.renameTo(json);
         } catch (IOException | JSONException e) {
             Log.e(TAG, "Could not read json", e);

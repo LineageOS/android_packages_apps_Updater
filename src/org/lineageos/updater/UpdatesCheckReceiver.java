@@ -31,9 +31,13 @@ import org.json.JSONException;
 import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.model.UpdateInfo;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 public class UpdatesCheckReceiver extends BroadcastReceiver {
 
@@ -59,54 +63,54 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
             scheduleRepeatingUpdatesCheck(context);
         }
 
-        long lastCheck = preferences.getLong(Constants.PREF_LAST_UPDATE_CHECK, -1);
-        final long currentMillis = System.currentTimeMillis();
-        if (currentMillis > lastCheck + AlarmManager.INTERVAL_DAY) {
-            if (!Utils.isNetworkAvailable(context)) {
-                Log.d(TAG, "Network not available, scheduling new check");
+        if (!Utils.isNetworkAvailable(context)) {
+            Log.d(TAG, "Network not available, scheduling new check");
+            scheduleUpdatesCheck(context);
+            return;
+        }
+
+        final File json = Utils.getCachedUpdateList(context);
+        final File jsonNew = new File(json.getAbsolutePath() + ".tmp");
+        String url = Utils.getServerURL(context);
+        DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
+            @Override
+            public void onFailure(boolean cancelled) {
+                Log.e(TAG, "Could not download updates list, scheduling new check");
                 scheduleUpdatesCheck(context);
-                return;
             }
 
-            final File json = Utils.getCachedUpdateList(context);
-            final File jsonNew = new File(json.getAbsolutePath() + ".tmp");
-            String url = Utils.getServerURL(context);
-            DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
-                @Override
-                public void onFailure(boolean cancelled) {
-                    Log.e(TAG, "Could not download updates list, scheduling new check");
+            @Override
+            public void onResponse(int statusCode, String url,
+                    DownloadClient.Headers headers) {
+            }
+
+            @Override
+            public void onSuccess(File destination) {
+                try {
+                    if (json.exists() && Utils.checkForNewUpdates(json, jsonNew)) {
+                        showNotification(context);
+                        updateRepeatingUpdatesCheck(context);
+                    }
+                    jsonNew.renameTo(json);
+                    long currentMillis = System.currentTimeMillis();
+                    preferences.edit()
+                            .putLong(Constants.PREF_LAST_UPDATE_CHECK, currentMillis)
+                            .apply();
+                    // In case we set a one-shot check because of a previous failure
+                    cancelUpdatesCheck(context);
+                } catch (IOException | JSONException e) {
+                    Log.e(TAG, "Could not parse list, scheduling new check", e);
                     scheduleUpdatesCheck(context);
                 }
+            }
+        };
 
-                @Override
-                public void onResponse(int statusCode, String url,
-                        DownloadClient.Headers headers) {
-                }
-
-                @Override
-                public void onSuccess(File destination) {
-                    try {
-                        if (json.exists() && Utils.checkForNewUpdates(json, jsonNew)) {
-                            showNotification(context);
-                        }
-                        jsonNew.renameTo(json);
-                        preferences.edit()
-                                .putLong(Constants.PREF_LAST_UPDATE_CHECK, currentMillis)
-                                .apply();
-                    } catch (IOException | JSONException e) {
-                        Log.e(TAG, "Could not parse list, scheduling new check", e);
-                        scheduleUpdatesCheck(context);
-                    }
-                }
-            };
-
-            DownloadClient downloadClient = new DownloadClient.Builder()
-                    .setUrl(url)
-                    .setDestination(jsonNew)
-                    .setDownloadCallback(callback)
-                    .build();
-            downloadClient.start();
-        }
+        DownloadClient downloadClient = new DownloadClient.Builder()
+                .setUrl(url)
+                .setDestination(jsonNew)
+                .setDownloadCallback(callback)
+                .build();
+        downloadClient.start();
     }
 
     private static void showNotification(Context context) {
@@ -129,12 +133,21 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         return PendingIntent.getBroadcast(context, 0, intent, 0);
     }
 
+    public static void updateRepeatingUpdatesCheck(Context context) {
+        cancelRepeatingUpdatesCheck(context);
+        scheduleRepeatingUpdatesCheck(context);
+    }
+
     public static void scheduleRepeatingUpdatesCheck(Context context) {
+        long millisToNextRelease = millisToNextRelease(context);
         PendingIntent updateCheckIntent = getRepeatingUpdatesCheckIntent(context);
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
-                SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_DAY,
+                SystemClock.elapsedRealtime() + millisToNextRelease,
                 AlarmManager.INTERVAL_DAY, updateCheckIntent);
+
+        Date nextCheckDate = new Date(System.currentTimeMillis() + millisToNextRelease);
+        Log.d(TAG, "Setting daily updates check: " + nextCheckDate);
     }
 
     public static void cancelRepeatingUpdatesCheck(Context context) {
@@ -149,15 +162,66 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     }
 
     public static void scheduleUpdatesCheck(Context context) {
+        long millisToNextCheck = AlarmManager.INTERVAL_HOUR * 2;
         PendingIntent updateCheckIntent = getUpdatesCheckIntent(context);
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmMgr.set(AlarmManager.ELAPSED_REALTIME,
-                SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_HOUR * 2,
+                SystemClock.elapsedRealtime() + millisToNextCheck,
                 updateCheckIntent);
+
+        Date nextCheckDate = new Date(System.currentTimeMillis() + millisToNextCheck);
+        Log.d(TAG, "Setting one-shot updates check: " + nextCheckDate);
     }
 
     public static void cancelUpdatesCheck(Context context) {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmMgr.cancel(getUpdatesCheckIntent(context));
+        Log.d(TAG, "Cancelling pending one-shot check");
+    }
+
+    private static long millisToNextRelease(Context context) {
+        final long extraMillis = 3 * AlarmManager.INTERVAL_HOUR;
+        List<UpdateInfo> updates = null;
+        try {
+            updates = Utils.parseJson(Utils.getCachedUpdateList(context), false);
+        } catch (IOException | JSONException ignored) {
+        }
+
+        if (updates == null || updates.size() == 0) {
+            return SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_DAY;
+        }
+
+        long buildTimestamp = 0;
+        for (UpdateInfo update : updates) {
+            if (update.getTimestamp() > buildTimestamp) {
+                buildTimestamp = update.getTimestamp();
+            }
+        }
+        buildTimestamp *= 1000;
+
+        Calendar c = Calendar.getInstance();
+        long now = c.getTimeInMillis();
+        c.set(Calendar.HOUR_OF_DAY, 0);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        c.setTimeInMillis(c.getTimeInMillis() + millisSinceMidnight(buildTimestamp));
+        long millisToNextRelease = (c.getTimeInMillis() - now);
+        millisToNextRelease += extraMillis;
+        if (c.getTimeInMillis() < now) {
+            millisToNextRelease += AlarmManager.INTERVAL_DAY;
+        }
+
+        return millisToNextRelease;
+    }
+
+    private static long millisSinceMidnight(long millis) {
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(millis);
+        c.set(Calendar.HOUR_OF_DAY, 0);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        return millis - c.getTimeInMillis();
     }
 }

@@ -320,6 +320,20 @@ public class UpdatesActivity extends UpdatesListActivity {
         }
     }
 
+    private void processNewJson(File json, File jsonNew, boolean manualRefresh) {
+        try {
+            loadUpdatesList(jsonNew, manualRefresh);
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            long millis = System.currentTimeMillis();
+            preferences.edit().putLong(Constants.PREF_LAST_UPDATE_CHECK, millis).apply();
+            updateLastCheckedString();
+            jsonNew.renameTo(json);
+        } catch (IOException | JSONException e) {
+            Log.e(TAG, "Could not read json", e);
+            showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
+        }
+    }
+
     private void downloadUpdatesList(final boolean manualRefresh) {
         final File jsonFile = Utils.getCachedUpdateList(this);
         final File jsonFileTmp = new File(jsonFile.getAbsolutePath() + ".tmp");
@@ -357,20 +371,8 @@ public class UpdatesActivity extends UpdatesListActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        try {
-                            Log.d(TAG, "List downloaded");
-                            loadUpdatesList(jsonFileTmp, manualRefresh);
-                            long millis = System.currentTimeMillis();
-                            PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
-                                    .edit()
-                                    .putLong(Constants.PREF_LAST_UPDATE_CHECK, millis)
-                                    .apply();
-                            jsonFileTmp.renameTo(jsonFile);
-                            updateLastCheckedString();
-                        } catch (IOException | JSONException e) {
-                            Log.e(TAG, "Could not read json", e);
-                            showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
-                        }
+                        Log.d(TAG, "List downloaded");
+                        processNewJson(jsonFile, jsonFileTmp, manualRefresh);
                         progressDialog.dismiss();
                     }
                 });

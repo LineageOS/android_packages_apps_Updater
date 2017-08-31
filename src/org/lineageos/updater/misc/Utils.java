@@ -130,7 +130,7 @@ public class Utils {
             }
             try {
                 UpdateInfo update = parseJsonUpdate(updatesList.getJSONObject(i));
-                if (compatibleOnly && isCompatible(update)) {
+                if (!compatibleOnly || isCompatible(update)) {
                     updates.add(update);
                 } else {
                     Log.d(TAG, "Ignoring incompatible update " + update.getName());

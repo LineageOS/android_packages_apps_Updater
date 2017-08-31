@@ -62,55 +62,52 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
             scheduleRepeatingUpdatesCheck(context);
         }
 
-        long lastCheck = preferences.getLong(Constants.PREF_LAST_UPDATE_CHECK, -1);
-        final long currentMillis = System.currentTimeMillis();
-        if (currentMillis > lastCheck + AlarmManager.INTERVAL_DAY) {
-            if (!Utils.isNetworkAvailable(context)) {
-                Log.d(TAG, "Network not available, scheduling new check");
+        if (!Utils.isNetworkAvailable(context)) {
+            Log.d(TAG, "Network not available, scheduling new check");
+            scheduleUpdatesCheck(context);
+            return;
+        }
+
+        final File json = Utils.getCachedUpdateList(context);
+        final File jsonNew = new File(json.getAbsolutePath() + ".tmp");
+        String url = Utils.getServerURL(context);
+        DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
+            @Override
+            public void onFailure(boolean cancelled) {
+                Log.e(TAG, "Could not download updates list, scheduling new check");
                 scheduleUpdatesCheck(context);
-                return;
             }
 
-            final File json = Utils.getCachedUpdateList(context);
-            final File jsonNew = new File(json.getAbsolutePath() + ".tmp");
-            String url = Utils.getServerURL(context);
-            DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
-                @Override
-                public void onFailure(boolean cancelled) {
-                    Log.e(TAG, "Could not download updates list, scheduling new check");
+            @Override
+            public void onResponse(int statusCode, String url,
+                    DownloadClient.Headers headers) {
+            }
+
+            @Override
+            public void onSuccess(File destination) {
+                try {
+                    if (json.exists() && Utils.checkForNewUpdates(json, jsonNew)) {
+                        showNotification(context);
+                        updateRepeatingUpdatesCheck(context);
+                    }
+                    jsonNew.renameTo(json);
+                    long currentMillis = System.currentTimeMillis();
+                    preferences.edit()
+                            .putLong(Constants.PREF_LAST_UPDATE_CHECK, currentMillis)
+                            .apply();
+                } catch (IOException | JSONException e) {
+                    Log.e(TAG, "Could not parse list, scheduling new check", e);
                     scheduleUpdatesCheck(context);
                 }
+            }
+        };
 
-                @Override
-                public void onResponse(int statusCode, String url,
-                        DownloadClient.Headers headers) {
-                }
-
-                @Override
-                public void onSuccess(File destination) {
-                    try {
-                        if (json.exists() && Utils.checkForNewUpdates(json, jsonNew)) {
-                            showNotification(context);
-                            updateRepeatingUpdatesCheck(context);
-                        }
-                        jsonNew.renameTo(json);
-                        preferences.edit()
-                                .putLong(Constants.PREF_LAST_UPDATE_CHECK, currentMillis)
-                                .apply();
-                    } catch (IOException | JSONException e) {
-                        Log.e(TAG, "Could not parse list, scheduling new check", e);
-                        scheduleUpdatesCheck(context);
-                    }
-                }
-            };
-
-            DownloadClient downloadClient = new DownloadClient.Builder()
-                    .setUrl(url)
-                    .setDestination(jsonNew)
-                    .setDownloadCallback(callback)
-                    .build();
-            downloadClient.start();
-        }
+        DownloadClient downloadClient = new DownloadClient.Builder()
+                .setUrl(url)
+                .setDestination(jsonNew)
+                .setDownloadCallback(callback)
+                .build();
+        downloadClient.start();
     }
 
     private static void showNotification(Context context) {

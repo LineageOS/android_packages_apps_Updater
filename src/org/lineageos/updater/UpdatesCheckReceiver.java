@@ -31,9 +31,12 @@ import org.json.JSONException;
 import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.model.UpdateInfo;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.List;
 
 public class UpdatesCheckReceiver extends BroadcastReceiver {
 
@@ -88,6 +91,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
                     try {
                         if (json.exists() && Utils.checkForNewUpdates(json, jsonNew)) {
                             showNotification(context);
+                            updateRepeatingUpdatesCheck(context);
                         }
                         jsonNew.renameTo(json);
                         preferences.edit()
@@ -129,11 +133,16 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         return PendingIntent.getBroadcast(context, 0, intent, 0);
     }
 
+    public static void updateRepeatingUpdatesCheck(Context context) {
+        cancelRepeatingUpdatesCheck(context);
+        scheduleRepeatingUpdatesCheck(context);
+    }
+
     public static void scheduleRepeatingUpdatesCheck(Context context) {
         PendingIntent updateCheckIntent = getRepeatingUpdatesCheckIntent(context);
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
-                SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_DAY,
+                guessNextReleaseTime(context),
                 AlarmManager.INTERVAL_DAY, updateCheckIntent);
     }
 
@@ -159,5 +168,49 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     public static void cancelUpdatesCheck(Context context) {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmMgr.cancel(getUpdatesCheckIntent(context));
+    }
+
+    private static long guessNextReleaseTime(Context context) {
+        List<UpdateInfo> updates = null;
+        try {
+            updates = Utils.parseJson(Utils.getCachedUpdateList(context), false);
+        } catch (IOException | JSONException ignored) {
+        }
+
+        if (updates == null || updates.size() == 0) {
+            return SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_DAY;
+        }
+
+        long buildTimestamp = 0;
+        for (UpdateInfo update : updates) {
+            if (update.getTimestamp() > buildTimestamp) {
+                buildTimestamp = update.getTimestamp();
+            }
+        }
+        buildTimestamp *= 1000;
+
+        Calendar c = Calendar.getInstance();
+        long now = c.getTimeInMillis();
+        c.set(Calendar.HOUR_OF_DAY, 0);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        c.setTimeInMillis(c.getTimeInMillis() + millisSinceMidnight(buildTimestamp));
+        long millisToNextCheck = (c.getTimeInMillis() - now) + 2 * AlarmManager.INTERVAL_HOUR;
+        if (c.getTimeInMillis() < now) {
+            millisToNextCheck += AlarmManager.INTERVAL_DAY;
+        }
+
+        return SystemClock.elapsedRealtime() + millisToNextCheck;
+    }
+
+    private static long millisSinceMidnight(long millis) {
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(millis);
+        c.set(Calendar.HOUR_OF_DAY, 0);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        return millis - c.getTimeInMillis();
     }
 }

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="verification_failed_notification">Überprüfung fehlgeschlagen</string>
+    <string name="verifying_download_notification">Überprüfe Update-Datei</string>
+    <string name="downloading_notification">Lade Update</string>
+    <string name="download_paused_notification">Download pausiert</string>
+    <string name="download_paused_error_notification">Fehler beim Download</string>
+    <string name="download_completed_notification">Download abgeschlossen</string>
+    <string name="download_starting_notification">Beginne Download </string>
+
+    <string name="new_updates_found_title">Neue Updates</string>
+
+    <string name="text_download_speed">%1$s, %2$s/s</string>
+
+    <string name="pause_button">Pause</string>
+    <string name="resume_button">Fortsetzen</string>
+
+    <string name="installing_update">Installiere Update-Paket</string>
+    <string name="installing_update_error">Fehler bei der Installation</string>
+    <string name="installing_update_finished">Update installiert</string>
+    <string name="finalizing_package">Abschließen der Paket-Installation</string>
+    <string name="preparing_ota_first_boot">Bereite den ersten Start vor</string>
+    <string name="dialog_prepare_zip_message">Bereite Update vor</string>
+    <string name="notification_prepare_zip_error_title">Update konnte nicht vorbereitet werden</string>
+
+    <string name="reboot">Neustart</string>
+
+    <string name="menu_refresh">Aktualisieren</string>
+    <string name="menu_auto_updates_check">Automatische Update-Prüfung</string>
+    <string name="menu_auto_delete_updates">Updates nach Installation löschen</string>
+    <string name="menu_delete_update">Löschen</string>
+    <string name="menu_copy_url">URL kopieren</string>
+    <string name="menu_export_update">Exportiere Update (int. SD)</string>
+
+    <string name="dialog_checking_for_updates">Suche nach Updates</string>
+    <string name="snack_updates_found">Neue Updates gefunden</string>
+    <string name="snack_no_updates_found">Keine neuen Updates gefunden</string>
+    <string name="snack_updates_check_failed">Die Suche nach Updates ist fehlgeschlagen. Bitte prüfe deine Internetverbindung und versuche es später nochmal.</string>
+
+    <string name="snack_download_failed">Download fehlgeschlagen. Bitte prüfe deine Internetverbindung und versuche es später nochmal.</string>
+    <string name="snack_download_verification_failed">Überprüfung des Downloads fehlgeschlagen.</string>
+    <string name="snack_download_verified">Download abgeschlossen.</string>
+
+    <string name="snack_update_not_installable">Dieses Update kann nicht über die aktuelle Installation installiert werden.</string>
+
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Letzte Prüfung: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> left</string>
+    <string name="list_installing_update">Installiere Update</string>
+    <string name="list_verifying_update">Überprüfe Update</string>
+    <string name="list_no_updates">Keine neuen Updates gefunden. Um manuell nach neuen Updates zu suchen, tippe auf den Aktualisieren-Knopf.</string>
+
+    <string name="action_description_download">Download</string>
+    <string name="action_description_pause">Download pausieren</string>
+    <string name="action_description_resume">Download forsetzen</string>
+    <string name="action_description_install">Update installieren</string>
+    <string name="action_description_info">Informationen anzeigen</string>
+
+    <string name="confirm_delete_dialog_title">Datei löschen</string>
+    <string name="confirm_delete_dialog_message">Soll die gewählte Datei wirklich gelöscht werden?</string>
+
+    <string name="apply_update_dialog_title">Update anwenden</string>
+    <string name="apply_update_dialog_message">Du akualisierst auf <xliff:g id="update_name">%1$s</xliff:g>.\n\nWenn du <xliff:g id="ok">%2$s</xliff:g> drückst, wird das Gerät automatisch in den Recovery-Modus starten und das Update durchführen.\n\nHinweis: Diese Funktion setzt ein kompatibles Recovery voraus. Anderenfalls musst du manuell installieren.</string>
+    <string name="apply_update_dialog_message_ab">>Du akualisierst auf <xliff:g id="update_name">%1$s</xliff:g>.\n\nWenn du <xliff:g id="ok">%2$s</xliff:g>, wird das Geröt die Installation im Hintergrund durchführen.\n\nSobald die Aktualisierung abgeschlossen ist, wird es dich zu einem Neustart auffordern.</string>
+
+    <string name="label_download_url">Download URL</string>
+    <string name="toast_download_url_copied">URL kopiert</string>
+
+    <string name="snack_export_failed">Download konnte nicht exportiert werden</string>
+    <string name="dialog_export_title">Exportiere Update</string>
+    <string name="dialog_export_message">Exportiere Update als <xliff:g id="filename">%1$s</xliff:g> auf den internen Speicher.</string>
+    <string name="notification_export_success">Update abgebrochen</string>
+    <string name="notification_export_fail">Fehler beim Export</string>
+
+    <plurals name="duration_seconds">
+        <item quantity="one">1 Sekunde</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> Sekunden</item>
+    </plurals>
+    <plurals name="duration_minutes">
+        <item quantity="one">1 Minute</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> Minuten</item>
+    </plurals>
+    <plurals name="duration_hours">
+        <item quantity="one">1 Stunde</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> Stunden</item>
+    </plurals>
+
+    <string name="update_on_mobile_data_title">Warnung</string>
+    <string name="update_on_mobile_data_message">Du bist dabei das Update über deine mobile Datenverbindung herunterzulanden. Das wird zu einem hohen Verbrauch deines Datenvolumens führen. Möchtest du trotzdem fortfahren?</string>
+    <string name="checkbox_mobile_data_warning">Nicht wieder anzeigen</string>
+    <string name="menu_mobile_data_warning">Warnung mobile Datennutzung</string>
+
+    <string name="blocked_update_dialog_title">Update blockiert</string>
+    <string name="blocked_update_dialog_message">Dieses Update kann nicht mittels der Updater App installiert werden. Für weiterführende Informationen siehe <xliff:g id="info_url">%1$s</xliff:g>.</string>
+    <string name="blocked_update_info_url" translatable="false">http://wiki.lineageos.org/upgrading.html</string>
+</resources>

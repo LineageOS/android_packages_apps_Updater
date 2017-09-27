@@ -16,6 +16,7 @@
 package org.lineageos.updater.controller;
 
 import android.app.NotificationManager;
+import android.app.NotificationChannel;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -26,7 +27,7 @@ import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.preference.PreferenceManager;
 import android.text.format.Formatter;
 import android.util.Log;
@@ -78,7 +79,16 @@ public class UpdaterService extends Service {
         mUpdaterController = UpdaterController.getInstance(this);
 
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        mNotificationBuilder = new NotificationCompat.Builder(this);
+
+        String id = "ongoing_updates";
+        CharSequence name = getString(R.string.ongoing_channel_title);
+        String description = getString(R.string.ongoing_channel_desc);
+        int importance = NotificationManager.IMPORTANCE_LOW;
+        NotificationChannel notificationChannel = new NotificationChannel(id, name, importance);
+        notificationChannel.setDescription(description);
+        mNotificationManager.createNotificationChannel(notificationChannel);
+
+        mNotificationBuilder = new NotificationCompat.Builder(this, id);
         mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
         mNotificationBuilder.setShowWhen(false);
         mNotificationStyle = new NotificationCompat.BigTextStyle();

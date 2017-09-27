@@ -15,12 +15,13 @@
  */
 package org.lineageos.updater.misc;
 
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.support.v7.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.WindowManager;
 
@@ -37,6 +38,9 @@ import java.nio.channels.ReadableByteChannel;
 public class FileUtils {
 
     private static final String TAG = "FileUtils";
+
+    private static final String RESULTS_NOTIFICATION_CHANNEL =
+            "results_notification_channel";
 
     interface ProgressCallBack {
         void update(int progress);
@@ -166,13 +170,19 @@ public class FileUtils {
                 } else {
                     NotificationManager nm = (NotificationManager) context.getSystemService(
                             Context.NOTIFICATION_SERVICE);
-                    NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+                    NotificationChannel notificationChannel = new NotificationChannel(
+                            RESULTS_NOTIFICATION_CHANNEL,
+                            context.getString(R.string.results_channel_title),
+                            NotificationManager.IMPORTANCE_LOW);
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
+                            RESULTS_NOTIFICATION_CHANNEL);
                     builder.setSmallIcon(R.drawable.ic_system_update);
                     builder.setContentTitle(
                             success ? context.getString(R.string.notification_export_success)
                                     : context.getString(R.string.notification_export_fail));
                     builder.setContentText(destFile.getName());
                     final String notificationTag = destFile.getAbsolutePath();
+                    nm.createNotificationChannel(notificationChannel);
                     nm.notify(notificationTag, NOTIFICATION_ID, builder.build());
                 }
             }
@@ -240,11 +250,17 @@ public class FileUtils {
                     uncryptFile.delete();
                     NotificationManager nm = (NotificationManager) context.getSystemService(
                             Context.NOTIFICATION_SERVICE);
-                    NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+                    NotificationChannel notificationChannel = new NotificationChannel(
+                            RESULTS_NOTIFICATION_CHANNEL,
+                            context.getString(R.string.results_channel_title),
+                            NotificationManager.IMPORTANCE_LOW);
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
+                            RESULTS_NOTIFICATION_CHANNEL);
                     builder.setSmallIcon(R.drawable.ic_system_update);
                     builder.setContentTitle(
                             context.getString(R.string.notification_prepare_zip_error_title));
                     final String notificationTag = updateFile.getAbsolutePath();
+                    nm.createNotificationChannel(notificationChannel);
                     nm.notify(notificationTag, NOTIFICATION_ID, builder.build());
                 } else {
                     callback.run();

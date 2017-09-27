@@ -15,6 +15,7 @@
  */
 package org.lineageos.updater.controller;
 
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -26,7 +27,7 @@ import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.preference.PreferenceManager;
 import android.text.format.Formatter;
 import android.util.Log;
@@ -56,6 +57,9 @@ public class UpdaterService extends Service {
     public static final String EXTRA_DOWNLOAD_CONTROL = "extra_download_control";
     public static final String ACTION_INSTALL_UPDATE = "action_install_update";
 
+    private static final String ONGOING_NOTIFICATION_CHANNEL =
+            "ongoing_notification_channel";
+
     public static final int DOWNLOAD_RESUME = 0;
     public static final int DOWNLOAD_PAUSE = 1;
 
@@ -67,6 +71,7 @@ public class UpdaterService extends Service {
     private BroadcastReceiver mBroadcastReceiver;
     private NotificationCompat.Builder mNotificationBuilder;
     private NotificationManager mNotificationManager;
+    private NotificationChannel mNotificationChannel;
     private NotificationCompat.BigTextStyle mNotificationStyle;
 
     private UpdaterController mUpdaterController;
@@ -78,7 +83,12 @@ public class UpdaterService extends Service {
         mUpdaterController = UpdaterController.getInstance(this);
 
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        mNotificationBuilder = new NotificationCompat.Builder(this);
+        mNotificationChannel = new NotificationChannel(
+                ONGOING_NOTIFICATION_CHANNEL,
+                getString(R.string.ongoing_channel_title),
+                NotificationManager.IMPORTANCE_LOW);
+        mNotificationManager.createNotificationChannel(mNotificationChannel);
+        mNotificationBuilder = new NotificationCompat.Builder(this, ONGOING_NOTIFICATION_CHANNEL);
         mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
         mNotificationBuilder.setShowWhen(false);
         mNotificationStyle = new NotificationCompat.BigTextStyle();

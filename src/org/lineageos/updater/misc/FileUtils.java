@@ -16,11 +16,12 @@
 package org.lineageos.updater.misc;
 
 import android.app.NotificationManager;
+import android.app.NotificationChannel;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.support.v7.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.WindowManager;
 
@@ -166,7 +167,18 @@ public class FileUtils {
                 } else {
                     NotificationManager nm = (NotificationManager) context.getSystemService(
                             Context.NOTIFICATION_SERVICE);
-                    NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+
+                    String id = "result_channel";
+                    CharSequence name = context.getString(R.string.results_channel_title);
+                    String description = context.getString(R.string.results_channel_desc);
+                    int importance = NotificationManager.IMPORTANCE_LOW;
+                    NotificationChannel notificationChannel = new NotificationChannel(id, name,
+                            importance);
+                    notificationChannel.setDescription(description);
+                    nm.createNotificationChannel(notificationChannel);
+
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
+                            id);
                     builder.setSmallIcon(R.drawable.ic_system_update);
                     builder.setContentTitle(
                             success ? context.getString(R.string.notification_export_success)

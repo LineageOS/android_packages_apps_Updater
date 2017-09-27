@@ -15,6 +15,7 @@
  */
 package org.lineageos.updater.controller;
 
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -25,8 +26,8 @@ import android.content.IntentFilter;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.NotificationCompat;
 import android.text.format.Formatter;
 import android.util.Log;
 
@@ -53,6 +54,9 @@ public class UpdaterService extends Service {
     public static final String ACTION_INSTALL_UPDATE = "action_install_update";
     public static final String ACTION_INSTALL_STOP = "action_install_stop";
 
+    private static final String ONGOING_NOTIFICATION_CHANNEL =
+            "ongoing_notification_channel";
+
     public static final int DOWNLOAD_RESUME = 0;
     public static final int DOWNLOAD_PAUSE = 1;
 
@@ -75,6 +79,11 @@ public class UpdaterService extends Service {
         mUpdaterController = UpdaterController.getInstance(this);
 
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        NotificationChannel notificationChannel = new NotificationChannel(
+                ONGOING_NOTIFICATION_CHANNEL,
+                getString(R.string.ongoing_channel_title),
+                NotificationManager.IMPORTANCE_LOW);
+        mNotificationManager.createNotificationChannel(notificationChannel);
         mNotificationBuilder = new NotificationCompat.Builder(this);
         mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
         mNotificationBuilder.setShowWhen(false);

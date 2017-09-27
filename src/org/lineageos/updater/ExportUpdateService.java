@@ -15,6 +15,7 @@
  */
 package org.lineageos.updater;
 
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -42,6 +43,9 @@ public class ExportUpdateService extends Service {
 
     public static final String EXTRA_SOURCE_FILE = "source_file";
     public static final String EXTRA_DEST_FILE = "dest_file";
+
+    private static final String EXPORT_NOTIFICATION_CHANNEL =
+            "export_notification_channel";
 
     private volatile boolean mIsExporting = false;
 
@@ -133,8 +137,14 @@ public class ExportUpdateService extends Service {
     private void startExporting(File source, File destination) {
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        NotificationChannel notificationChannel = new NotificationChannel(
+                EXPORT_NOTIFICATION_CHANNEL,
+                getString(R.string.export_channel_title),
+                NotificationManager.IMPORTANCE_LOW);
+        notificationManager.createNotificationChannel(notificationChannel);
 
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this,
+                EXPORT_NOTIFICATION_CHANNEL);
         NotificationCompat.BigTextStyle notificationStyle = new NotificationCompat.BigTextStyle();
         notificationBuilder.setContentTitle(getString(R.string.dialog_export_title));
         notificationStyle.setBigContentTitle(getString(R.string.dialog_export_title));

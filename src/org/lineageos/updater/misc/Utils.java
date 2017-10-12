@@ -154,7 +154,8 @@ public class Utils {
             device = SystemProperties.get(Constants.PROP_DEVICE);
         }
         String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).toLowerCase(Locale.ROOT);
-        return serverUrl + "/v1/" + device + "/" + type + "/" + incrementalVersion;
+        return serverUrl.replace("DEVICE", device);
+//        return serverUrl + "/v1/" + device + "/" + type + "/" + incrementalVersion;
     }
 
     public static void triggerUpdate(Context context, String downloadId) {

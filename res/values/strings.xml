@@ -26,9 +26,9 @@
          The path is relative to the root of the external storage.-->
     <string name="export_path" translatable="false">LineageOS updates/</string>
 
-    <string name="conf_update_server_url_def" translatable="false">https://download.lineageos.org/api</string>
+    <string name="conf_update_server_url_def" translatable="false">https://raw.githubusercontent.com/TheTeletubbies/CMUpdater-API/cm-14.1/DEVICE/api.json</string>
 
-    <string name="conf_new_device_name" translatable="false"></string>
+    <string name="conf_new_device_name" translatable="false">kltetest</string>
 
     <string name="verification_failed_notification">Verification failed</string>
     <string name="verifying_download_notification">Verifying update</string>

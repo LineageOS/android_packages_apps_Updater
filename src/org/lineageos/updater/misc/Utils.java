@@ -149,7 +149,10 @@ public class Utils {
             serverUrl = context.getString(R.string.conf_update_server_url_def);
         }
         String incrementalVersion = SystemProperties.get(Constants.PROP_BUILD_VERSION_INCREMENTAL);
-        String device = SystemProperties.get(Constants.PROP_DEVICE);
+        String device = context.getString(R.string.conf_new_device_name);
+        if (device.trim().isEmpty()) {
+            device = SystemProperties.get(Constants.PROP_DEVICE);
+        }
         String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).toLowerCase(Locale.ROOT);
         return serverUrl + "/v1/" + device + "/" + type + "/" + incrementalVersion;
     }

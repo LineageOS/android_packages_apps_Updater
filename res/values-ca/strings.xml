@@ -71,10 +71,10 @@
   <string name="action_description_install">Instal·la l\'actualització</string>
   <string name="action_description_info">Mostrar informació</string>
   <string name="confirm_delete_dialog_title">Esborra el fitxer</string>
-  <string name="confirm_delete_dialog_message">Voleu esborrar el fitxer d\'actualització seleccionat?</string>
+  <string name="confirm_delete_dialog_message">Vols esborrar el fitxer d\'actualització seleccionat?</string>
   <string name="apply_update_dialog_title">Aplica l\'actualització</string>
-  <string name="apply_update_dialog_message">Esteu a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi premeu <xliff:g id="ok">%2$s</xliff:g>, el dispositiu es reiniciarà en mode recuperació per instal·lar l\'actualització.\n\nNota: Aquesta funció requereix un «Recovery» compatible o les actualitzacions s\'hauran d\'instal·lar manualment.</string>
-  <string name="apply_update_dialog_message_ab">Esteu a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi premeu <xliff:g id="ok">%2$s</xliff:g>, el dispositiu començarà a instal·lar en segon pla.\n\nUn cop completat, se\'t demanarà que reinicieu.</string>
+  <string name="apply_update_dialog_message">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu es reiniciarà en mode recuperació per instal·lar l\'actualització.\n\nNota: Aquesta funció requereix un «Recovery» compatible o les actualitzacions s\'hauran d\'instal·lar manualment.</string>
+  <string name="apply_update_dialog_message_ab">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu començarà a instal·lar en segon pla.\n\nUn cop completat, se\'t demanarà reiniciar.</string>
   <string name="label_download_url">URL de baixada</string>
   <string name="toast_download_url_copied">URL copiada</string>
   <string name="snack_export_failed">No s\'ha pogut exportar la baixada</string>

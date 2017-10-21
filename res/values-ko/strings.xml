@@ -17,8 +17,72 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">업데이터</string>
+  <string name="display_name">업데이터</string>
   <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <string name="verification_failed_notification">검증 실패</string>
+  <string name="verifying_download_notification">업데이트 검증 중</string>
+  <string name="downloading_notification">다운로드 중</string>
+  <string name="download_paused_notification">다운로드 일시 중지됨</string>
+  <string name="download_paused_error_notification">다운로드 오류</string>
+  <string name="download_completed_notification">다운로드 완료</string>
+  <string name="download_starting_notification">다운로드 시작</string>
+  <string name="new_updates_found_title">새 업데이트</string>
+  <string name="text_download_speed">%1$s, %2$s/s</string>
+  <string name="pause_button">일시 중지</string>
+  <string name="resume_button">이어 받기</string>
+  <string name="installing_update">업데이트 패키지 설치 중</string>
+  <string name="installing_update_error">설치 오류</string>
+  <string name="installing_update_finished">업데이트 설치됨</string>
+  <string name="finalizing_package">패키지 설치 마무리 중</string>
+  <string name="preparing_ota_first_boot">첫 번째 부팅 준비 중</string>
+  <string name="dialog_prepare_zip_message">예비 업데이트 준비</string>
+  <string name="notification_prepare_zip_error_title">업데이트 준비 실패</string>
+  <string name="reboot">다시 시작</string>
+  <string name="menu_refresh">새로고침</string>
+  <string name="menu_auto_updates_check">업데이트 자동 확인</string>
+  <string name="menu_auto_delete_updates">설치한 뒤 업데이트 파일 삭제</string>
+  <string name="menu_delete_update">삭제</string>
+  <string name="menu_copy_url">URL 복사</string>
+  <string name="menu_export_update">업데이트 내보내기</string>
+  <string name="snack_updates_found">새 업데이트 발견</string>
+  <string name="snack_updates_check_failed">업데이트 확인에 실패했습니다. 인터넷 연결을 확인한 뒤 다시 시도해 주세요.</string>
+  <string name="snack_download_failed">다운로드에 실패했습니다. 인터넷 연결을 확인한 뒤 다시 시도해 주세요.</string>
+  <string name="snack_download_verification_failed">업데이트 검증에 실패했습니다.</string>
+  <string name="snack_download_verified">다운로드가 완료되었습니다.</string>
+  <string name="header_title_text">LineageOS\n%1$s</string>
+  <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+  <string name="header_last_updates_check">마지막 확인: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+  <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+  <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> 남음</string>
+  <string name="list_verifying_update">업데이트 검증 중</string>
+  <string name="list_no_updates">새로운 업데이트가 없습니다. 수동으로 새 업데이트를 확인하려면 새로고침 버튼을 누르세요.</string>
+  <string name="action_description_download">다운로드</string>
+  <string name="action_description_pause">다운로드 일시 중지</string>
+  <string name="action_description_resume">다운로드 재개</string>
+  <string name="action_description_install">업데이트 설치</string>
+  <string name="action_description_info">정보 보기</string>
+  <string name="confirm_delete_dialog_title">파일 삭제</string>
+  <string name="confirm_delete_dialog_message">선택한 업데이트 파일을 삭제하시겠습니까?</string>
+  <string name="apply_update_dialog_title">업데이트 적용</string>
+  <string name="label_download_url">다운로드 URL</string>
+  <string name="toast_download_url_copied">URL 복사됨</string>
+  <plurals name="duration_seconds">
+    <item quantity="other"><xliff:g id="count">%d</xliff:g>초</item>
+  </plurals>
+  <plurals name="duration_minutes">
+    <item quantity="other"><xliff:g id="count">%d</xliff:g>분</item>
+  </plurals>
+  <plurals name="duration_hours">
+    <item quantity="other"><xliff:g id="count">%d</xliff:g>시간</item>
+  </plurals>
+  <string name="update_on_mobile_data_title">경고</string>
+  <string name="update_on_mobile_data_message">모바일 데이터를 사용하여 업데이트 패키지를 다운로드하려 합니다. 데이터를 매우 많이 사용하게 될 수 있습니다. 정말 계속하시겠습니까?</string>
+  <string name="checkbox_mobile_data_warning">다시 보지 않기</string>
+  <string name="menu_mobile_data_warning">모바일 데이터 경고</string>
+  <string name="blocked_update_dialog_title">업데이트 차단됨</string>
 </resources>

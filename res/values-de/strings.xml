@@ -28,6 +28,7 @@
   <string name="download_paused_notification">Herunterladen pausiert</string>
   <string name="download_paused_error_notification">Fehler beim Herunterladen</string>
   <string name="download_completed_notification">Herunterladen abgeschlossen</string>
+  <string name="download_starting_notification">Herunterladen wird gestartet</string>
   <string name="new_updates_found_title">Neue Updates</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Pause</string>
@@ -42,7 +43,7 @@
   <string name="reboot">Neustart</string>
   <string name="menu_refresh">Aktualisieren</string>
   <string name="menu_auto_updates_check">Automatisch nach Updates suchen</string>
-  <string name="menu_auto_delete_updates">Updates nach der Installation löschen</string>
+  <string name="menu_auto_delete_updates">Updates nach Installation löschen</string>
   <string name="menu_delete_update">Löschen</string>
   <string name="menu_copy_url">URL in Zwischenablage kopieren</string>
   <string name="menu_export_update">Update exportieren</string>
@@ -72,6 +73,8 @@
   <string name="confirm_delete_dialog_title">Datei löschen</string>
   <string name="confirm_delete_dialog_message">Soll die ausgewählte Update-Datei gelöscht werden?</string>
   <string name="apply_update_dialog_title">Update installieren</string>
+  <string name="apply_update_dialog_message">Bereit zum Update auf <xliff:g id="update_name">%1$s</xliff:g>\n\nWenn Sie <xliff:g id="ok">%2$s</xliff:g> drücken, wird das Gerät im Recovery-Modus gestartet, um das Update durchzuführen.\n\nHinweis: Diese Funktion erfordert ein kompatibles Recovery-System, anderenfalls muss das Update manuell installiert werden.</string>
+  <string name="apply_update_dialog_message_ab">Bereit zum Update auf <xliff:g id="update_name">%1$s</xliff:g>\n\nWenn Sie <xliff:g id="ok">%2$s drücken</xliff:g>, beginnt das Gerät im Hintergrund mit der Installation\n\nSobald diese abgeschlossen ist, werden Sie zum Neustart aufgefordert.</string>
   <string name="label_download_url">Download URL</string>
   <string name="toast_download_url_copied">URL wurde kopiert</string>
   <string name="snack_export_failed">Download konnte nicht exportiert werden</string>
@@ -94,6 +97,7 @@
   <string name="update_on_mobile_data_title">Achtung</string>
   <string name="update_on_mobile_data_message">Sie sind dabei ein Software-Update über das Mobilfunknetz herunterzuladen, was zu einem hohen Datenverbrauch führen kann. Möchten Sie fortfahren?</string>
   <string name="checkbox_mobile_data_warning">Nicht wieder anzeigen</string>
+  <string name="menu_mobile_data_warning">Mobildaten-Warnung</string>
   <string name="blocked_update_dialog_title">Update blockiert</string>
   <string name="blocked_update_dialog_message">Dieses Update kann mit der Updater-App nicht installiert werden. Für weitere Informationen lesen Sie bitte <xliff:g id="info_url">%1$s </xliff:g>.</string>
 </resources>

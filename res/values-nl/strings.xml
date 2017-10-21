@@ -79,7 +79,7 @@
   <string name="toast_download_url_copied">URL gekopieerd</string>
   <string name="snack_export_failed">Kan download niet exporteren</string>
   <string name="dialog_export_title">Update exporteren</string>
-  <string name="dialog_export_message">Update exporteren als <xliff:g id="filename">%1$s</xliff:g> naar de interne opslag.</string>
+  <string name="dialog_export_message">Update exporteren naar de interne opslag als <xliff:g id="filename">%1$s</xliff:g>.</string>
   <string name="notification_export_success">Update geëxporteerd</string>
   <string name="notification_export_fail">Fout bij exporteren</string>
   <plurals name="duration_seconds">

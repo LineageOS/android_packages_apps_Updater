@@ -126,4 +126,11 @@
     <string name="blocked_update_dialog_title">Update blocked</string>
     <string name="blocked_update_dialog_message">This update cannot be installed using the updater app.  Please read <xliff:g id="info_url">%1$s</xliff:g> for more information.</string>
     <string name="blocked_update_info_url" translatable="false">http://wiki.lineageos.org/upgrading.html</string>
+
+    <string name="requirements_title">Incompatible update</string>
+    <string name="requirements_message">This update has the following unmet requirements. Please update the firmware of the device to proceed.</string>
+    <string name="requirements_baseband">Baseband</string>
+    <string name="requirements_bootloader">Bootloader</string>
+    <string name="requirements_modem">Modem</string>
+    <string name="requirements_trustzone">TrustZone firmware</string>
 </resources>

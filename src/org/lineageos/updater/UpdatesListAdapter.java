@@ -45,6 +45,7 @@ import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.FileUtils;
 import org.lineageos.updater.misc.PermissionsUtils;
 import org.lineageos.updater.misc.StringGenerator;
+import org.lineageos.updater.misc.UpdateRequirementsUtils;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
@@ -54,6 +55,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.util.List;
+import java.util.Map;
 
 public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.ViewHolder> {
 
@@ -431,6 +433,12 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         UpdateInfo update = mUpdaterController.getUpdate(downloadId);
         int resId;
         try {
+            Map<String, String> requirements = UpdateRequirementsUtils
+                    .getRequirements(update.getFile());
+            if (!UpdateRequirementsUtils.isUpdateCompatible(requirements)) {
+                return UpdateRequirementsUtils.getDialog(mActivity, requirements);
+            }
+
             if (Utils.isABUpdate(update.getFile())) {
                 resId = R.string.apply_update_dialog_message_ab;
             } else {

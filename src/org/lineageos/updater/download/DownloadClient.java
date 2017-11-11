@@ -16,6 +16,7 @@
 package org.lineageos.updater.download;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -63,7 +64,7 @@ public interface DownloadClient {
         private DownloadClient.DownloadCallback mCallback;
         private DownloadClient.ProgressListener mProgressListener;
 
-        public DownloadClient build() {
+        public DownloadClient build() throws IOException {
             if (mUrl == null) {
                 throw new IllegalStateException("No download URL defined");
             } else if (mDestination == null) {
@@ -71,7 +72,7 @@ public interface DownloadClient {
             } else if (mCallback == null) {
                 throw new IllegalStateException("No download callback defined");
             }
-            return new OkHttpDownloadClient(mUrl, mDestination, mProgressListener, mCallback);
+            return new HttpURLConnectionClient(mUrl, mDestination, mProgressListener, mCallback);
         }
 
         public Builder setUrl(String url) {

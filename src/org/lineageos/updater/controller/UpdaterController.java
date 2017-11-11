@@ -31,6 +31,7 @@ import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -365,12 +366,20 @@ public class UpdaterController implements Controller {
             Log.d(TAG, "Changing name with " + destination.getName());
         }
         update.setFile(destination);
-        DownloadClient downloadClient = new DownloadClient.Builder()
-                .setUrl(update.getDownloadUrl())
-                .setDestination(update.getFile())
-                .setDownloadCallback(getDownloadCallback(downloadId))
-                .setProgressListener(getProgressListener(downloadId))
-                .build();
+        DownloadClient downloadClient;
+        try {
+            downloadClient = new DownloadClient.Builder()
+                    .setUrl(update.getDownloadUrl())
+                    .setDestination(update.getFile())
+                    .setDownloadCallback(getDownloadCallback(downloadId))
+                    .setProgressListener(getProgressListener(downloadId))
+                    .build();
+        } catch (IOException exception) {
+            Log.e(TAG, "Could not build download client");
+            update.setStatus(UpdateStatus.PAUSED_ERROR);
+            notifyUpdateChange(downloadId);
+            return false;
+        }
         addDownloadClient(mDownloads.get(downloadId), downloadClient);
         update.setStatus(UpdateStatus.STARTING);
         notifyUpdateChange(downloadId);
@@ -399,12 +408,20 @@ public class UpdaterController implements Controller {
             verifyUpdateAsync(downloadId);
             notifyUpdateChange(downloadId);
         } else {
-            DownloadClient downloadClient = new DownloadClient.Builder()
-                    .setUrl(update.getDownloadUrl())
-                    .setDestination(update.getFile())
-                    .setDownloadCallback(getDownloadCallback(downloadId))
-                    .setProgressListener(getProgressListener(downloadId))
-                    .build();
+            DownloadClient downloadClient;
+            try {
+                downloadClient = new DownloadClient.Builder()
+                        .setUrl(update.getDownloadUrl())
+                        .setDestination(update.getFile())
+                        .setDownloadCallback(getDownloadCallback(downloadId))
+                        .setProgressListener(getProgressListener(downloadId))
+                        .build();
+            } catch (IOException exception) {
+                Log.e(TAG, "Could not build download client");
+                update.setStatus(UpdateStatus.PAUSED_ERROR);
+                notifyUpdateChange(downloadId);
+                return false;
+            }
             addDownloadClient(mDownloads.get(downloadId), downloadClient);
             update.setStatus(UpdateStatus.STARTING);
             notifyUpdateChange(downloadId);

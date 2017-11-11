@@ -71,7 +71,7 @@ public interface DownloadClient {
             } else if (mCallback == null) {
                 throw new IllegalStateException("No download callback defined");
             }
-            return new OkHttpDownloadClient(mUrl, mDestination, mProgressListener, mCallback);
+            return new HttpURLConnectionClient(mUrl, mDestination, mProgressListener, mCallback);
         }
 
         public Builder setUrl(String url) {

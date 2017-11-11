@@ -105,12 +105,17 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
             }
         };
 
-        DownloadClient downloadClient = new DownloadClient.Builder()
-                .setUrl(url)
-                .setDestination(jsonNew)
-                .setDownloadCallback(callback)
-                .build();
-        downloadClient.start();
+        try {
+            DownloadClient downloadClient = new DownloadClient.Builder()
+                    .setUrl(url)
+                    .setDestination(jsonNew)
+                    .setDownloadCallback(callback)
+                    .build();
+            downloadClient.start();
+        } catch (IOException e) {
+            Log.e(TAG, "Could not fetch list, scheduling new check", e);
+            scheduleUpdatesCheck(context);
+        }
     }
 
     private static void showNotification(Context context) {

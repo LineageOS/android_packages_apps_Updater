@@ -385,11 +385,18 @@ public class UpdatesActivity extends UpdatesListActivity {
             }
         };
 
-        final DownloadClient downloadClient = new DownloadClient.Builder()
-                .setUrl(url)
-                .setDestination(jsonFileTmp)
-                .setDownloadCallback(callback)
-                .build();
+        final DownloadClient downloadClient;
+        try {
+            downloadClient = new DownloadClient.Builder()
+                    .setUrl(url)
+                    .setDestination(jsonFileTmp)
+                    .setDownloadCallback(callback)
+                    .build();
+        } catch (IOException exception) {
+            Log.e(TAG, "Could not build download client");
+            showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
+            return;
+        }
 
         progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override

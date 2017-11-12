@@ -153,6 +153,8 @@ public class UpdaterService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d(TAG, "Starting service");
+
         if (ACTION_DOWNLOAD_CONTROL.equals(intent.getAction())) {
             String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
             int action = intent.getIntExtra(EXTRA_DOWNLOAD_CONTROL, -1);
@@ -163,6 +165,7 @@ public class UpdaterService extends Service {
             } else {
                 Log.e(TAG, "Unknown download action");
             }
+            tryStopSelf();
         } else if (ACTION_INSTALL_UPDATE.equals(intent.getAction())) {
             String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
             UpdateInfo update = mUpdaterController.getUpdate(downloadId);
@@ -202,7 +205,6 @@ public class UpdaterService extends Service {
                 // TODO: user facing message
             }
         }
-        Log.d(TAG, "Service started");
         return START_NOT_STICKY;
     }
 

@@ -33,6 +33,7 @@
         </activity>
 
         <service android:name=".controller.UpdaterService" />
+        <service android:name=".CopyFileService" />
 
         <receiver android:name=".UpdaterReceiver" android:exported="false" />
 

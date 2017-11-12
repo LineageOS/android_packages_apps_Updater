@@ -16,6 +16,7 @@
 package org.lineageos.updater;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
@@ -42,7 +43,6 @@ import android.widget.TextView;
 import org.lineageos.updater.controller.Controller;
 import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
-import org.lineageos.updater.misc.FileUtils;
 import org.lineageos.updater.misc.PermissionsUtils;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
@@ -563,17 +563,15 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private void exportUpdate(UpdateInfo update) {
-        try {
-            File dest = new File(Utils.getExportPath(mActivity), update.getName());
-            if (dest.exists()) {
-                dest = Utils.appendSequentialNumber(dest);
-            }
-            FileUtils.copyFileWithDialog(mActivity, update.getFile(), dest);
-        } catch (IOException e) {
-            Log.e(TAG, "Export failed", e);
-            mActivity.showSnackbar(R.string.snack_export_failed,
-                    Snackbar.LENGTH_LONG);
+        File dest = new File(Utils.getExportPath(mActivity), update.getName());
+        if (dest.exists()) {
+            dest = Utils.appendSequentialNumber(dest);
         }
+        Intent intent = new Intent(mActivity, CopyFileService.class);
+        intent.setAction(CopyFileService.ACTION_START_COPY);
+        intent.putExtra(CopyFileService.EXTRA_SOURCE_FILE, update.getFile());
+        intent.putExtra(CopyFileService.EXTRA_DEST_FILE, dest);
+        mActivity.startService(intent);
         stopActionMode();
     }
 

@@ -25,6 +25,7 @@ import android.content.IntentFilter;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.NotificationCompat;
 import android.support.v7.preference.PreferenceManager;
@@ -55,6 +56,7 @@ public class UpdaterService extends Service {
     public static final String EXTRA_DOWNLOAD_ID = "extra_download_id";
     public static final String EXTRA_DOWNLOAD_CONTROL = "extra_download_control";
     public static final String ACTION_INSTALL_UPDATE = "action_install_update";
+    public static final String ACTION_INSTALL_STOP = "action_install_stop";
 
     public static final int DOWNLOAD_RESUME = 0;
     public static final int DOWNLOAD_PAUSE = 1;
@@ -70,6 +72,8 @@ public class UpdaterService extends Service {
     private NotificationCompat.BigTextStyle mNotificationStyle;
 
     private UpdaterController mUpdaterController;
+
+    private Thread mPrepareUpdateThread;
 
     @Override
     public void onCreate() {
@@ -184,15 +188,7 @@ public class UpdaterService extends Service {
                     } else if (Utils.isEncrypted(this, update.getFile())) {
                         // uncrypt rewrites the file so that it can be read without mounting
                         // the filesystem, so create a copy of it.
-                        File uncrytpFile = new File(
-                                update.getFile().getAbsolutePath() + Constants.UNCRYPT_FILE_EXT);
-                        FileUtils.prepareForUncrypt(this, update.getFile(), uncrytpFile,
-                                new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        installPackage(uncrytpFile);
-                                    }
-                                });
+                        prepareForUncryptAndInstall(update);
                     } else {
                         installPackage(update.getFile());
                     }
@@ -201,6 +197,8 @@ public class UpdaterService extends Service {
                 Log.e(TAG, "Could not install update", e);
                 // TODO: user facing message
             }
+        } else if (ACTION_INSTALL_STOP.equals(intent.getAction())) {
+            mPrepareUpdateThread.interrupt();
         }
         Log.d(TAG, "Service started");
         return START_NOT_STICKY;
@@ -213,6 +211,55 @@ public class UpdaterService extends Service {
             // TODO: show error message
             Log.e(TAG, "Could not install update", e);
         }
+    }
+
+    private void prepareForUncryptAndInstall(UpdateInfo update) {
+        String uncryptFilePath = update.getFile().getAbsolutePath() + Constants.UNCRYPT_FILE_EXT;
+        File uncryptFile = new File(uncryptFilePath);
+
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this);
+
+        Runnable copyUpdateRunnable = new Runnable() {
+            private long mLastUpdate = -1;
+
+            FileUtils.ProgressCallBack mProgressCallBack = new FileUtils.ProgressCallBack() {
+                @Override
+                public void update(int progress) {
+                    long now = SystemClock.elapsedRealtime();
+                    if (mLastUpdate < 0 || now - mLastUpdate > 500) {
+                        notificationBuilder.setProgress(100, progress, false);
+                        mNotificationManager.notify(NOTIFICATION_ID,
+                                notificationBuilder.build());
+                        mLastUpdate = now;
+                    }
+                }
+            };
+
+            @Override
+            public void run() {
+                try {
+                    FileUtils.copyFile(update.getFile(), uncryptFile, mProgressCallBack);
+                    installPackage(uncryptFile);
+                } catch (IOException e) {
+                    Log.e(TAG, "Could not copy update", e);
+                    uncryptFile.delete();
+                } finally {
+                    if (mPrepareUpdateThread.isInterrupted()) {
+                        uncryptFile.delete();
+                    }
+                    stopForeground(true);
+                }
+            }
+        };
+
+        mPrepareUpdateThread = new Thread(copyUpdateRunnable);
+        mPrepareUpdateThread.start();
+
+        notificationBuilder.setContentTitle(getString(R.string.dialog_prepare_zip_message));
+        notificationBuilder.setContentText(update.getName());
+        notificationBuilder.addAction(com.android.internal.R.drawable.ic_media_pause,
+                getString(android.R.string.cancel), getStopCopyPendingIntent());
+        startForeground(NOTIFICATION_ID, notificationBuilder.build());
     }
 
     public Controller getUpdaterController() {
@@ -432,11 +479,17 @@ public class UpdaterService extends Service {
                 PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
+    private PendingIntent getStopCopyPendingIntent() {
+        final Intent intent = new Intent(this, UpdaterService.class);
+        intent.setAction(ACTION_INSTALL_STOP);
+        return PendingIntent.getService(this, 0, intent,
+                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+
     private PendingIntent getRebootPendingIntent() {
         final Intent intent = new Intent(this, UpdaterReceiver.class);
         intent.setAction(UpdaterReceiver.ACTION_INSTALL_REBOOT);
         return PendingIntent.getBroadcast(this, 0, intent,
                 PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
     }
-
 }

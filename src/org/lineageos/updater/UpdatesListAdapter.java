@@ -73,6 +73,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         RESUME,
         INSTALL,
         INFO,
+        DELETE,
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -189,7 +190,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         if (update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED) {
             viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, true));
-            setButtonAction(viewHolder.mAction, Action.INSTALL, update.getDownloadId(), !isBusy());
+            setButtonAction(viewHolder.mAction,
+                    Utils.canInstall(update) ? Action.INSTALL : Action.DELETE,
+                    update.getDownloadId(), !isBusy());
         } else if (!Utils.canInstall(update)) {
             viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, false));
             setButtonAction(viewHolder.mAction, Action.INFO, update.getDownloadId(), !isBusy());
@@ -373,6 +376,19 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     @Override
                     public void onClick(View view) {
                         showInfoDialog();
+                    }
+                };
+            }
+            break;
+            case DELETE: {
+                button.setImageResource(R.drawable.ic_delete_black);
+                button.setContentDescription(
+                        mActivity.getString(R.string.action_description_delete));
+                button.setEnabled(enabled);
+                clickListener = !enabled ? null : new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        getDeleteDialog(downloadId).show();
                     }
                 };
             }

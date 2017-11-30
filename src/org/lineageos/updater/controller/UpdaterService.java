@@ -275,6 +275,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setOngoing(false);
                 mNotificationBuilder.setAutoCancel(false);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                tryStopSelf();
                 break;
             }
             case PAUSED_ERROR: {
@@ -292,6 +293,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setOngoing(false);
                 mNotificationBuilder.setAutoCancel(false);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                tryStopSelf();
                 break;
             }
             case VERIFYING: {

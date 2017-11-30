@@ -297,7 +297,8 @@ public class UpdaterService extends Service {
             }
             case VERIFIED: {
                 stopForeground(STOP_FOREGROUND_DETACH);
-                mNotificationBuilder.setProgress(100, 100, false);
+                mNotificationStyle.setSummaryText(null);
+                mNotificationBuilder.setProgress(0, 0, false);
                 String text = getString(R.string.download_completed_notification);
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
@@ -309,6 +310,7 @@ public class UpdaterService extends Service {
             }
             case VERIFICATION_FAILED: {
                 stopForeground(STOP_FOREGROUND_DETACH);
+                mNotificationStyle.setSummaryText(null);
                 mNotificationBuilder.setProgress(0, 0, false);
                 String text = getString(R.string.verification_failed_notification);
                 mNotificationStyle.bigText(text);
@@ -336,7 +338,8 @@ public class UpdaterService extends Service {
             }
             case INSTALLED: {
                 stopForeground(STOP_FOREGROUND_DETACH);
-                mNotificationBuilder.setProgress(100, 100, false);
+                mNotificationStyle.setSummaryText(null);
+                mNotificationBuilder.setProgress(0, 0, false);
                 String text = getString(R.string.installing_update_finished);
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.addAction(R.drawable.ic_system_update,
@@ -351,6 +354,7 @@ public class UpdaterService extends Service {
             }
             case INSTALLATION_FAILED: {
                 stopForeground(STOP_FOREGROUND_DETACH);
+                mNotificationStyle.setSummaryText(null);
                 mNotificationBuilder.setProgress(0, 0, false);
                 String text = getString(R.string.installing_update_error);
                 mNotificationStyle.bigText(text);

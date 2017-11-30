@@ -160,7 +160,10 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mProgressPercentage.setText(percentage);
         } else if (mUpdaterController.isInstallingUpdate(downloadId)) {
             setButtonAction(viewHolder.mAction, Action.CANCEL_INSTALLATION, downloadId, true);
-            viewHolder.mProgressText.setText(R.string.list_installing_update);
+            viewHolder.mProgressText.setText(
+                    update.getFinalizing() ?
+                            R.string.finalizing_package :
+                            R.string.preparing_ota_first_boot);
             viewHolder.mProgressBar.setProgress(update.getInstallProgress());
             String percentage = NumberFormat.getPercentInstance().format(
                     update.getInstallProgress() / 100.f);

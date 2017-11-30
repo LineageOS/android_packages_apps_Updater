@@ -28,6 +28,7 @@ public class Update extends UpdateBase implements UpdateInfo {
     private long mSpeed;
     private int mInstallProgress;
     private boolean mAvailableOnline;
+    private boolean mIsFinalizing;
 
     public Update() {
     }
@@ -47,6 +48,7 @@ public class Update extends UpdateBase implements UpdateInfo {
         mSpeed = update.getSpeed();
         mInstallProgress = update.getInstallProgress();
         mAvailableOnline = update.getAvailableOnline();
+        mIsFinalizing = update.getFinalizing();
     }
 
     @Override
@@ -128,5 +130,14 @@ public class Update extends UpdateBase implements UpdateInfo {
 
     public void setAvailableOnline(boolean availableOnline) {
         mAvailableOnline = availableOnline;
+    }
+
+    @Override
+    public boolean getFinalizing() {
+        return mIsFinalizing;
+    }
+
+    public void setFinalizing(boolean finalizing) {
+        mIsFinalizing = finalizing;
     }
 }

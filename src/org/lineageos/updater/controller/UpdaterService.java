@@ -27,7 +27,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.NotificationCompat;
-import android.support.v7.preference.PreferenceManager;
 import android.text.format.Formatter;
 import android.util.Log;
 
@@ -35,14 +34,11 @@ import org.lineageos.updater.R;
 import org.lineageos.updater.UpdaterReceiver;
 import org.lineageos.updater.UpdatesActivity;
 import org.lineageos.updater.misc.BuildInfoUtils;
-import org.lineageos.updater.misc.Constants;
-import org.lineageos.updater.misc.FileUtils;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
-import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
@@ -185,51 +181,24 @@ public class UpdaterService extends Service {
                         return START_STICKY;
                     }
                 } else {
-                    boolean deleteUpdate = PreferenceManager.getDefaultSharedPreferences(this)
-                            .getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, false);
-                    if (deleteUpdate) {
-                        // Renaming the file is enough to have it deleted automatically
-                        File uncrytpFile = new File(
-                                update.getFile().getAbsolutePath() + Constants.UNCRYPT_FILE_EXT);
-                        update.getFile().renameTo(uncrytpFile);
-                        installPackage(uncrytpFile);
-                    } else if (Utils.isEncrypted(this, update.getFile())) {
-                        // uncrypt rewrites the file so that it can be read without mounting
-                        // the filesystem, so create a copy of it.
-                        File uncrytpFile = new File(
-                                update.getFile().getAbsolutePath() + Constants.UNCRYPT_FILE_EXT);
-                        FileUtils.prepareForUncrypt(this, update.getFile(), uncrytpFile,
-                                new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        installPackage(uncrytpFile);
-                                    }
-                                });
-                    } else {
-                        installPackage(update.getFile());
-                    }
+                    UpdateInstaller installer = new UpdateInstaller(this, mUpdaterController);
+                    installer.install(downloadId);
                 }
             } catch (IOException e) {
                 Log.e(TAG, "Could not install update", e);
                 // TODO: user facing message
             }
         } else if (ACTION_INSTALL_STOP.equals(intent.getAction())) {
-            if (ABUpdateInstaller.isInstallingUpdate(this)) {
+            if (UpdateInstaller.isInstalling()) {
+                UpdateInstaller installer = new UpdateInstaller(this, mUpdaterController);
+                installer.cancel();
+            } else if (ABUpdateInstaller.isInstallingUpdate(this)) {
                 ABUpdateInstaller installer = new ABUpdateInstaller(this, mUpdaterController);
                 installer.reconnect();
                 installer.cancel();
             }
         }
         return START_NOT_STICKY;
-    }
-
-    private void installPackage(File update) {
-        try {
-            android.os.RecoverySystem.installPackage(this, update);
-        } catch (IOException e) {
-            // TODO: show error message
-            Log.e(TAG, "Could not install update", e);
-        }
     }
 
     public Controller getUpdaterController() {
@@ -351,7 +320,9 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.mActions.clear();
                 mNotificationBuilder.setProgress(0, 0, false);
                 mNotificationStyle.setSummaryText(null);
-                String text = getString(R.string.installing_update);
+                String text = UpdateInstaller.isInstalling() ?
+                        getString(R.string.dialog_prepare_zip_message) :
+                        getString(R.string.installing_update);
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
@@ -418,7 +389,8 @@ public class UpdaterService extends Service {
         mNotificationBuilder.setProgress(100, progress, false);
         String percent = NumberFormat.getPercentInstance().format(progress / 100.f);
         mNotificationStyle.setSummaryText(percent);
-        mNotificationStyle.bigText(
+        boolean notAB = UpdateInstaller.isInstalling();
+        mNotificationStyle.bigText(notAB ? getString(R.string.dialog_prepare_zip_message) :
                 update.getFinalizing() ?
                         getString(R.string.finalizing_package) :
                         getString(R.string.preparing_ota_first_boot));

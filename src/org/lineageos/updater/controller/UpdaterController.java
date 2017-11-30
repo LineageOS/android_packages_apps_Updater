@@ -53,6 +53,7 @@ public class UpdaterController implements Controller {
 
     private static final int MAX_REPORT_INTERVAL_MS = 1000;
 
+    private final Context mContext;
     private final LocalBroadcastManager mBroadcastManager;
     private final UpdatesDbHelper mUpdatesDbHelper;
 
@@ -81,6 +82,7 @@ public class UpdaterController implements Controller {
         PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Updater");
         mWakeLock.setReferenceCounted(false);
+        mContext = context.getApplicationContext();
 
         Utils.cleanupDownloadsDir(context);
 
@@ -532,11 +534,11 @@ public class UpdaterController implements Controller {
 
     @Override
     public boolean isInstallingUpdate() {
-        return ABUpdateInstaller.isInstallingUpdate();
+        return ABUpdateInstaller.isInstallingUpdate(mContext);
     }
 
     @Override
     public boolean isInstallingUpdate(String downloadId) {
-        return ABUpdateInstaller.isInstallingUpdate(downloadId);
+        return ABUpdateInstaller.isInstallingUpdate(mContext, downloadId);
     }
 }

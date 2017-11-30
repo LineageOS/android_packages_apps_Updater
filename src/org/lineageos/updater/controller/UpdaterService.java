@@ -186,7 +186,9 @@ public class UpdaterService extends Service {
                 }
             } catch (IOException e) {
                 Log.e(TAG, "Could not install update", e);
-                // TODO: user facing message
+                mUpdaterController.getActualUpdate(downloadId)
+                        .setStatus(UpdateStatus.INSTALLATION_FAILED);
+                mUpdaterController.notifyUpdateChange(downloadId);
             }
         } else if (ACTION_INSTALL_STOP.equals(intent.getAction())) {
             if (UpdateInstaller.isInstalling()) {

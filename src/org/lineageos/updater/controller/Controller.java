@@ -53,4 +53,6 @@ public interface Controller {
     boolean isInstallingUpdate(String downloadId);
 
     boolean isInstallingUpdate();
+
+    boolean isInstallingABUpdate();
 }

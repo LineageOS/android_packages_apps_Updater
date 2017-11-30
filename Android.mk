@@ -35,3 +35,22 @@ LOCAL_PRIVILEGED_MODULE := true
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 include $(BUILD_PACKAGE)
+
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := UpdaterStudio
+LOCAL_MODULE_CLASS := FAKE
+LOCAL_MODULE_SUFFIX := -timestamp
+updater_framework_dep := $(call java-lib-deps,framework)
+updater_system_libs_path := $(abspath $(LOCAL_PATH))/system_libs
+
+include $(BUILD_SYSTEM)/base_rules.mk
+
+.PHONY: $(LOCAL_BUILT_MODULE)
+$(LOCAL_BUILT_MODULE): $(updater_framework_dep)
+	$(hide) echo "Fake: $@"
+	$(hide) mkdir -p $(dir $@)
+	$(hide) touch $@
+	$(hide) mkdir -p $(updater_system_libs_path)
+	$(hide) rm -r $(updater_system_libs_path)/*.jar
+	$(hide) cp $(updater_framework_dep) $(updater_system_libs_path)/framework.jar

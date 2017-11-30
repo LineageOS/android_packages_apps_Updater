@@ -67,6 +67,8 @@ class ABUpdateInstaller {
                 case UpdateEngine.UpdateStatusConstants.FINALIZING: {
                     int progress = Math.round(percent * 100);
                     mUpdaterController.getActualUpdate(mDownloadId).setInstallProgress(progress);
+                    boolean finalizing = status == UpdateEngine.UpdateStatusConstants.FINALIZING;
+                    mUpdaterController.getActualUpdate(mDownloadId).setFinalizing(finalizing);
                     mUpdaterController.notifyInstallProgress(mDownloadId);
                 }
                 break;

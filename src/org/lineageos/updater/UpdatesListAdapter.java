@@ -159,7 +159,10 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         } else if (mUpdaterController.isInstallingUpdate(downloadId)) {
             setButtonAction(viewHolder.mAction, Action.INSTALL, downloadId, false);
             viewHolder.mProgressText.setText(R.string.list_installing_update);
-            viewHolder.mProgressBar.setIndeterminate(true);
+            viewHolder.mProgressBar.setProgress(update.getInstallProgress());
+            String percentage = NumberFormat.getPercentInstance().format(
+                    update.getInstallProgress() / 100.f);
+            viewHolder.mProgressPercentage.setText(percentage);
         } else if (mUpdaterController.isVerifyingUpdate(downloadId)) {
             setButtonAction(viewHolder.mAction, Action.INSTALL, downloadId, false);
             viewHolder.mProgressText.setText(R.string.list_verifying_update);
@@ -226,7 +229,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 activeLayout = update.getStatus() == UpdateStatus.STARTING;
                 break;
             case UpdateStatus.Persistent.VERIFIED:
-                activeLayout = false;
+                activeLayout = update.getStatus() == UpdateStatus.INSTALLING;
                 break;
             case UpdateStatus.Persistent.INCOMPLETE:
                 activeLayout = true;

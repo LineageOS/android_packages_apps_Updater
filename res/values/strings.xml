@@ -49,7 +49,6 @@
     <string name="finalizing_package">Finalizing package installation</string>
     <string name="preparing_ota_first_boot">Preparing for first boot</string>
     <string name="dialog_prepare_zip_message">Preliminary update preparation</string>
-    <string name="notification_prepare_zip_error_title">Could not prepare update</string>
 
     <string name="reboot">Reboot</string>
 

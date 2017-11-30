@@ -35,3 +35,15 @@ LOCAL_PRIVILEGED_MODULE := true
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 include $(BUILD_PACKAGE)
+
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := UpdaterStudio
+framework_dep := $(call java-lib-deps,framework)
+system_libs_path := $(abspath $(LOCAL_PATH))/system_libs
+
+include $(BUILD_PHONY_PACKAGE)
+
+$(LOCAL_BUILT_MODULE): $(framework_dep)
+	$(hide) mkdir -p $(system_libs_path) && cp $(framework_dep) $(system_libs_path)/framework.jar

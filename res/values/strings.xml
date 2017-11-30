@@ -105,6 +105,7 @@
     <string name="dialog_export_message">Exporting update as <xliff:g id="filename">%1$s</xliff:g> into the external storage.</string>
     <string name="notification_export_success">Update exported</string>
     <string name="notification_export_fail">Export error</string>
+    <string name="toast_already_exporting">Already exporting an update</string>
 
     <plurals name="duration_seconds">
         <item quantity="one">1 second</item>

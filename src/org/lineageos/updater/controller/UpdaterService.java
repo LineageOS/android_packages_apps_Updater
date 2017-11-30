@@ -153,7 +153,15 @@ public class UpdaterService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if (ACTION_DOWNLOAD_CONTROL.equals(intent.getAction())) {
+        Log.d(TAG, "Starting service");
+
+        if (intent == null || intent.getAction() == null) {
+            // The service is being restarted.
+            ABUpdateInstaller installer = new ABUpdateInstaller(this, mUpdaterController);
+            if (installer.reconnect()) {
+                return START_STICKY;
+            }
+        } else if (ACTION_DOWNLOAD_CONTROL.equals(intent.getAction())) {
             String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);
             int action = intent.getIntExtra(EXTRA_DOWNLOAD_CONTROL, -1);
             if (action == DOWNLOAD_RESUME) {
@@ -171,7 +179,10 @@ public class UpdaterService extends Service {
             }
             try {
                 if (Utils.isABUpdate(update.getFile())) {
-                    ABUpdateInstaller.start(this, mUpdaterController, downloadId);
+                    ABUpdateInstaller installer = new ABUpdateInstaller(this, mUpdaterController);
+                    if (installer.install(downloadId)) {
+                        return START_STICKY;
+                    }
                 } else {
                     boolean deleteUpdate = PreferenceManager.getDefaultSharedPreferences(this)
                             .getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, false);
@@ -202,7 +213,6 @@ public class UpdaterService extends Service {
                 // TODO: user facing message
             }
         }
-        Log.d(TAG, "Service started");
         return START_NOT_STICKY;
     }
 
@@ -367,6 +377,11 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setOngoing(false);
                 mNotificationBuilder.setAutoCancel(true);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                tryStopSelf();
+                break;
+            }
+            case INSTALLATION_CANCELLED: {
+                stopForeground(true);
                 tryStopSelf();
                 break;
             }

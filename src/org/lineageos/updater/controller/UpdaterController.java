@@ -534,11 +534,18 @@ public class UpdaterController implements Controller {
 
     @Override
     public boolean isInstallingUpdate() {
-        return ABUpdateInstaller.isInstallingUpdate(mContext);
+        return UpdateInstaller.isInstalling() ||
+                ABUpdateInstaller.isInstallingUpdate(mContext);
     }
 
     @Override
     public boolean isInstallingUpdate(String downloadId) {
-        return ABUpdateInstaller.isInstallingUpdate(mContext, downloadId);
+        return UpdateInstaller.isInstalling(downloadId) ||
+                ABUpdateInstaller.isInstallingUpdate(mContext, downloadId);
+    }
+
+    @Override
+    public boolean isInstallingABUpdate() {
+        return ABUpdateInstaller.isInstallingUpdate(mContext);
     }
 }

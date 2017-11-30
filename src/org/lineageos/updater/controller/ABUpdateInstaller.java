@@ -141,6 +141,9 @@ class ABUpdateInstaller {
         File file = mUpdaterController.getActualUpdate(mDownloadId).getFile();
         if (!file.exists()) {
             Log.e(TAG, "The given update doesn't exist");
+            mUpdaterController.getActualUpdate(downloadId)
+                    .setStatus(UpdateStatus.INSTALLATION_FAILED);
+            mUpdaterController.notifyUpdateChange(downloadId);
             return false;
         }
 
@@ -175,6 +178,9 @@ class ABUpdateInstaller {
         mUpdateEngine = new UpdateEngine();
         if (!mUpdateEngine.bind(mUpdateEngineCallback)) {
             Log.e(TAG, "Could not bind");
+            mUpdaterController.getActualUpdate(downloadId)
+                    .setStatus(UpdateStatus.INSTALLATION_FAILED);
+            mUpdaterController.notifyUpdateChange(downloadId);
             return false;
         }
         String zipFileUri = "file://" + file.getAbsolutePath();

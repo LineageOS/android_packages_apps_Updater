@@ -76,8 +76,10 @@ class UpdateInstaller {
         try {
             android.os.RecoverySystem.installPackage(mContext, update);
         } catch (IOException e) {
-            // TODO: show error message
             Log.e(TAG, "Could not install update", e);
+            mUpdaterController.getActualUpdate(downloadId)
+                    .setStatus(UpdateStatus.INSTALLATION_FAILED);
+            mUpdaterController.notifyUpdateChange(downloadId);
         }
     }
 

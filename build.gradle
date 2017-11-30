@@ -1,0 +1,68 @@
+repositories {
+    jcenter()
+    google()
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+    }
+}
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '26.0.3'
+
+    defaultConfig {
+        minSdkVersion 24
+        targetSdkVersion 24
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['res']
+            java.srcDirs = ['src']
+            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+}
+
+dependencies {
+    compileOnly fileTree(dir: 'system_libs/', include: ['*.jar'])
+
+    def support_library_version = "24.2.1"
+    implementation "com.android.support:appcompat-v7:${support_library_version}"
+    implementation "com.android.support:cardview-v7:${support_library_version}"
+    implementation "com.android.support:design:${support_library_version}"
+    implementation "com.android.support:preference-v7:${support_library_version}"
+    implementation "com.android.support:recyclerview-v7:${support_library_version}"
+}

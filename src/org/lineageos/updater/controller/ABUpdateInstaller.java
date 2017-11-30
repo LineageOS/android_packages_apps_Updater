@@ -16,6 +16,7 @@
 package org.lineageos.updater.controller;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.UpdateEngine;
 import android.os.UpdateEngineCallback;
 import android.support.v7.preference.PreferenceManager;
@@ -47,7 +48,6 @@ class ABUpdateInstaller {
     private final Context mContext;
 
     private final UpdateEngineCallback mUpdateEngineCallback = new UpdateEngineCallback() {
-
         @Override
         public void onStatusUpdate(int status, float percent) {
             switch (status) {
@@ -60,10 +60,27 @@ class ABUpdateInstaller {
                 break;
 
                 case UpdateEngine.UpdateStatusConstants.REPORTING_ERROR_EVENT: {
+                    sDownloadId = null;
                     Update update = mUpdaterController.getActualUpdate(mDownloadId);
                     update.setInstallProgress(0);
                     update.setStatus(UpdateStatus.INSTALLATION_FAILED);
                     mUpdaterController.notifyUpdateChange(mDownloadId);
+                }
+                break;
+
+                case UpdateEngine.UpdateStatusConstants.UPDATED_NEED_REBOOT: {
+                    sDownloadId = null;
+                    Update update = mUpdaterController.getActualUpdate(mDownloadId);
+                    update.setInstallProgress(0);
+                    update.setStatus(UpdateStatus.INSTALLED);
+                    mUpdaterController.notifyUpdateChange(mDownloadId);
+                    SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(
+                            mContext);
+                    boolean deleteUpdate = pref.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK,
+                            false);
+                    if (deleteUpdate) {
+                        mUpdaterController.deleteUpdate(mDownloadId);
+                    }
                 }
                 break;
             }
@@ -71,30 +88,6 @@ class ABUpdateInstaller {
 
         @Override
         public void onPayloadApplicationComplete(int errorCode) {
-            sDownloadId = null;
-            switch (errorCode) {
-                case UpdateEngine.ErrorCodeConstants.SUCCESS: {
-                    Update update = mUpdaterController.getActualUpdate(mDownloadId);
-                    update.setInstallProgress(0);
-                    update.setStatus(UpdateStatus.INSTALLED);
-                    mUpdaterController.notifyUpdateChange(mDownloadId);
-                }
-                break;
-
-                default: {
-                    Update update = mUpdaterController.getActualUpdate(mDownloadId);
-                    update.setInstallProgress(0);
-                    update.setStatus(UpdateStatus.INSTALLATION_FAILED);
-                    mUpdaterController.notifyUpdateChange(mDownloadId);
-                }
-                break;
-            }
-
-            boolean deleteUpdate = PreferenceManager.getDefaultSharedPreferences(mContext)
-                    .getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, false);
-            if (deleteUpdate) {
-                mUpdaterController.deleteUpdate(mDownloadId);
-            }
         }
     };
 

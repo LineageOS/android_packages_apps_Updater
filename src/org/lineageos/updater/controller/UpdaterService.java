@@ -413,20 +413,15 @@ public class UpdaterService extends Service {
     }
 
     private void handleInstallProgress(UpdateInfo update) {
+        setNotificationTitle(update);
         int progress = update.getInstallProgress();
         mNotificationBuilder.setProgress(100, progress, false);
-
-        setNotificationTitle(update);
-
-        if (progress == 0) {
-            mNotificationStyle.bigText(getString(R.string.finalizing_package));
-            mNotificationBuilder.setProgress(0, 0, true);
-        } else {
-            String percent = NumberFormat.getPercentInstance().format(progress / 100.f);
-            mNotificationStyle.setSummaryText(percent);
-            mNotificationStyle.bigText(getString(R.string.preparing_ota_first_boot));
-        }
-
+        String percent = NumberFormat.getPercentInstance().format(progress / 100.f);
+        mNotificationStyle.setSummaryText(percent);
+        mNotificationStyle.bigText(
+                update.getFinalizing() ?
+                        getString(R.string.finalizing_package) :
+                        getString(R.string.preparing_ota_first_boot));
         mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
     }
 

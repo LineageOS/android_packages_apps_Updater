@@ -35,4 +35,6 @@ public interface UpdateInfo extends UpdateBaseInfo {
     int getInstallProgress();
 
     boolean getAvailableOnline();
+
+    boolean getFinalizing();
 }

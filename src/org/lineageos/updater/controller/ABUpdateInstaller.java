@@ -205,4 +205,25 @@ class ABUpdateInstaller {
                 .remove(PREF_INSTALLING_AB_ID)
                 .apply();
     }
+
+    public boolean cancel() {
+        if (!isInstallingUpdate(mContext)) {
+            Log.e(TAG, "cancel: Not installing any update");
+            return false;
+        }
+
+        if (mUpdateEngine == null) {
+            Log.e(TAG, "Not connected to update engine");
+            return false;
+        }
+
+        mUpdateEngine.cancel();
+        installationDone();
+
+        mUpdaterController.getActualUpdate(mDownloadId)
+                .setStatus(UpdateStatus.INSTALLATION_CANCELLED);
+        mUpdaterController.notifyUpdateChange(mDownloadId);
+
+        return true;
+    }
 }

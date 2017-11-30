@@ -41,6 +41,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.lineageos.updater.controller.Controller;
+import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.PermissionsUtils;
@@ -74,6 +75,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         INSTALL,
         INFO,
         DELETE,
+        CANCEL_INSTALLATION,
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -157,7 +159,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     update.getProgress() / 100.f);
             viewHolder.mProgressPercentage.setText(percentage);
         } else if (mUpdaterController.isInstallingUpdate(downloadId)) {
-            setButtonAction(viewHolder.mAction, Action.INSTALL, downloadId, false);
+            setButtonAction(viewHolder.mAction, Action.CANCEL_INSTALLATION, downloadId, true);
             viewHolder.mProgressText.setText(R.string.list_installing_update);
             viewHolder.mProgressBar.setProgress(update.getInstallProgress());
             String percentage = NumberFormat.getPercentInstance().format(
@@ -396,6 +398,19 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 };
             }
             break;
+            case CANCEL_INSTALLATION: {
+                button.setImageResource(R.drawable.ic_cancel);
+                button.setContentDescription(
+                        mActivity.getString(R.string.action_description_cancel));
+                button.setEnabled(enabled);
+                clickListener = !enabled ? null : new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        getCancelInstallationDialog().show();
+                    }
+                };
+            }
+            break;
             default:
                 clickListener = null;
         }
@@ -473,6 +488,21 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Utils.triggerUpdate(mActivity, downloadId);
+                            }
+                        })
+                .setNegativeButton(android.R.string.cancel, null);
+    }
+
+    private AlertDialog.Builder getCancelInstallationDialog() {
+        return new AlertDialog.Builder(mActivity)
+                .setMessage(R.string.cancel_installation_dialog_message)
+                .setPositiveButton(android.R.string.ok,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent(mActivity, UpdaterService.class);
+                                intent.setAction(UpdaterService.ACTION_INSTALL_STOP);
+                                mActivity.startService(intent);
                             }
                         })
                 .setNegativeButton(android.R.string.cancel, null);

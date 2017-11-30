@@ -160,7 +160,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mProgressPercentage.setText(percentage);
         } else if (mUpdaterController.isInstallingUpdate(downloadId)) {
             setButtonAction(viewHolder.mAction, Action.CANCEL_INSTALLATION, downloadId, true);
-            viewHolder.mProgressText.setText(
+            boolean notAB = !mUpdaterController.isInstallingABUpdate();
+            viewHolder.mProgressText.setText(notAB ? R.string.dialog_prepare_zip_message :
                     update.getFinalizing() ?
                             R.string.finalizing_package :
                             R.string.preparing_ota_first_boot);

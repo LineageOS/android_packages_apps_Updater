@@ -55,6 +55,7 @@ public class UpdaterService extends Service {
     public static final String EXTRA_DOWNLOAD_ID = "extra_download_id";
     public static final String EXTRA_DOWNLOAD_CONTROL = "extra_download_control";
     public static final String ACTION_INSTALL_UPDATE = "action_install_update";
+    public static final String ACTION_INSTALL_STOP = "action_install_stop";
 
     public static final int DOWNLOAD_RESUME = 0;
     public static final int DOWNLOAD_PAUSE = 1;
@@ -211,6 +212,12 @@ public class UpdaterService extends Service {
             } catch (IOException e) {
                 Log.e(TAG, "Could not install update", e);
                 // TODO: user facing message
+            }
+        } else if (ACTION_INSTALL_STOP.equals(intent.getAction())) {
+            if (ABUpdateInstaller.isInstallingUpdate(this)) {
+                ABUpdateInstaller installer = new ABUpdateInstaller(this, mUpdaterController);
+                installer.reconnect();
+                installer.cancel();
             }
         }
         return START_NOT_STICKY;

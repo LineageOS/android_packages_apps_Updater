@@ -332,7 +332,7 @@ public class UpdaterService extends Service {
             }
             case INSTALLING: {
                 mNotificationBuilder.mActions.clear();
-                mNotificationBuilder.setProgress(0, 0, true);
+                mNotificationBuilder.setProgress(0, 0, false);
                 mNotificationStyle.setSummaryText(null);
                 String text = getString(R.string.installing_update);
                 mNotificationStyle.bigText(text);

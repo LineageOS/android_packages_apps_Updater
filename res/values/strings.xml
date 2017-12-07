@@ -26,6 +26,9 @@
     <!-- This is needed to clean up the previous download directory -->
     <string name="download_path_old" translatable="false">/data/lineageos_updates/</string>
 
+    <!-- Directory used to store temporary files. -->
+    <string name="cache_path" translatable="false">/cache/lineageos_updates/</string>
+
     <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
     <string name="export_path" translatable="false">LineageOS updates/</string>

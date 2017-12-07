@@ -16,10 +16,12 @@
 package org.lineageos.updater.controller;
 
 import android.content.Context;
+import android.os.StatFs;
 import android.os.SystemClock;
 import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
 
+import org.lineageos.updater.R;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.FileUtils;
 import org.lineageos.updater.misc.Utils;
@@ -81,14 +83,27 @@ class UpdateInstaller {
         }
     }
 
+    private File getDestinationFile(File file) {
+        String fileName = file.getName() + Constants.UNCRYPT_FILE_EXT;
+
+        File cachePath = Utils.getCachePath(mContext);
+        cachePath.mkdir();
+        if (cachePath.isDirectory()) {
+            StatFs stat = new StatFs(cachePath.getPath());
+            long spaceAvailable = stat.getBlockSizeLong() * stat.getAvailableBlocksLong();
+            long minExtraBytes = 50 * 1024 * 1024;
+            if (file.length() < spaceAvailable + minExtraBytes) {
+                return new File(cachePath, fileName);
+            }
+        }
+        return new File(file.getParent(), fileName);
+    }
+
     private void prepareForUncryptAndInstall(UpdateInfo update) {
         if (sPrepareUpdateThread != null) {
             Log.e(TAG, "Already preparing an update");
             return;
         }
-
-        String uncryptFilePath = update.getFile().getAbsolutePath() + Constants.UNCRYPT_FILE_EXT;
-        File uncryptFile = new File(uncryptFilePath);
 
         Runnable copyUpdateRunnable = new Runnable() {
             private long mLastUpdate = -1;
@@ -108,6 +123,8 @@ class UpdateInstaller {
 
             @Override
             public void run() {
+                File uncryptFile = getDestinationFile(update.getFile());
+                Log.d(TAG, "Update copy destination path: " + uncryptFile);
                 try {
                     FileUtils.copyFile(update.getFile(), uncryptFile, mProgressCallBack);
 

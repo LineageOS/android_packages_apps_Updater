@@ -69,6 +69,10 @@ public class Utils {
         return new File(context.getString(R.string.download_path_old));
     }
 
+    public static File getCachePath(Context context) {
+        return new File(context.getString(R.string.cache_path));
+    }
+
     public static File getExportPath(Context context) {
         File dir = new File(Environment.getExternalStorageDirectory(),
                 context.getString(R.string.export_path));
@@ -265,6 +269,7 @@ public class Utils {
 
         removeUncryptFiles(downloadPath);
         removeUncryptFiles(getOldDownloadPath(context));
+        removeUncryptFiles(getCachePath(context));
 
         final String DOWNLOADS_CLEANUP_DONE = "cleanup_done";
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);

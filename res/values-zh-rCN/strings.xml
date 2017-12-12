@@ -70,6 +70,7 @@
   <string name="action_description_resume">继续下载</string>
   <string name="action_description_install">安装更新</string>
   <string name="action_description_info">显示信息</string>
+  <string name="action_description_delete">删除更新</string>
   <string name="confirm_delete_dialog_title">删除文件</string>
   <string name="confirm_delete_dialog_message">您确定要删除选择的更新文件？</string>
   <string name="apply_update_dialog_title">应用更新</string>

@@ -70,6 +70,7 @@
   <string name="action_description_resume">Настави преузимање</string>
   <string name="action_description_install">Инсталирај ажурирање</string>
   <string name="action_description_info">Прикажи информације</string>
+  <string name="action_description_delete">Обриши ажурирање</string>
   <string name="confirm_delete_dialog_title">Обриши фајл</string>
   <string name="confirm_delete_dialog_message">Избриши изабрани фајл за ажурирање?</string>
   <string name="apply_update_dialog_title">Примени ажурирање</string>

@@ -70,6 +70,7 @@
   <string name="action_description_resume">Reprèn la baixada</string>
   <string name="action_description_install">Instal·la l\'actualització</string>
   <string name="action_description_info">Mostrar informació</string>
+  <string name="action_description_delete">Suprimeix l\'actualització</string>
   <string name="confirm_delete_dialog_title">Esborra el fitxer</string>
   <string name="confirm_delete_dialog_message">Vols esborrar el fitxer d\'actualització seleccionat?</string>
   <string name="apply_update_dialog_title">Aplica l\'actualització</string>

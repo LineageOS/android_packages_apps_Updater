@@ -70,6 +70,7 @@
   <string name="action_description_resume">Berrekin deskarga</string>
   <string name="action_description_install">Instalatu eguneraketa</string>
   <string name="action_description_info">Erakutsi informazioa</string>
+  <string name="action_description_delete">Ezabatu eguneraketa</string>
   <string name="confirm_delete_dialog_title">Ezabatu fitxategia</string>
   <string name="confirm_delete_dialog_message">Ezabatu hautatutako eguneraketa fitxategia?</string>
   <string name="apply_update_dialog_title">Aplikatu eguneraketa</string>

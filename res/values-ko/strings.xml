@@ -48,10 +48,12 @@
   <string name="menu_copy_url">URL 복사</string>
   <string name="menu_export_update">업데이트 내보내기</string>
   <string name="snack_updates_found">새 업데이트 발견</string>
+  <string name="snack_no_updates_found">새로운 업데이트 없음</string>
   <string name="snack_updates_check_failed">업데이트 확인에 실패했습니다. 인터넷 연결을 확인한 뒤 다시 시도해 주세요.</string>
   <string name="snack_download_failed">다운로드에 실패했습니다. 인터넷 연결을 확인한 뒤 다시 시도해 주세요.</string>
   <string name="snack_download_verification_failed">업데이트 검증에 실패했습니다.</string>
   <string name="snack_download_verified">다운로드가 완료되었습니다.</string>
+  <string name="snack_update_not_installable">현재 빌드에서는 이 업데이트를 설치할 수 없습니다.</string>
   <string name="header_title_text">LineageOS\n%1$s</string>
   <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
   <string name="header_last_updates_check">마지막 확인: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
@@ -59,6 +61,7 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> 남음</string>
+  <string name="list_installing_update">업데이트 설치 중</string>
   <string name="list_verifying_update">업데이트 검증 중</string>
   <string name="list_no_updates">새로운 업데이트가 없습니다. 수동으로 새 업데이트를 확인하려면 새로고침 버튼을 누르세요.</string>
   <string name="action_description_download">다운로드</string>
@@ -66,11 +69,19 @@
   <string name="action_description_resume">다운로드 재개</string>
   <string name="action_description_install">업데이트 설치</string>
   <string name="action_description_info">정보 보기</string>
+  <string name="action_description_delete">업데이트 삭제</string>
   <string name="confirm_delete_dialog_title">파일 삭제</string>
   <string name="confirm_delete_dialog_message">선택한 업데이트 파일을 삭제하시겠습니까?</string>
   <string name="apply_update_dialog_title">업데이트 적용</string>
+  <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> 버전으로 업그레이드를 시도하려 합니다.\n\n<xliff:g id="ok">%2$s</xliff:g>을 누르면 업데이트를 설치하기 위해 기기가 리커버리 모드로 다시 시작됩니다.\n\n주의: 이 기능은 호환되는 리커버리가 필요하며, 없을 경우 업데이트를 수동으로 설치해야 합니다.</string>
+  <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g> 버전으로 업그레이드를 시도하려 합니다.\n\n<xliff:g id="ok">%2$s</xliff:g>을 누르면 백그라운드에서 이 업데이트를 설치합니다.\n\n설치가 완료되면 기기를 다시 시작할 것인지 묻는 대화 상자가 나타납니다.</string>
   <string name="label_download_url">다운로드 URL</string>
   <string name="toast_download_url_copied">URL 복사됨</string>
+  <string name="snack_export_failed">업데이트를 내보내지 못했습니다.</string>
+  <string name="dialog_export_title">업데이트 내보내는 중</string>
+  <string name="dialog_export_message">업데이트를 외부 저장소에 <xliff:g id="filename">%1$s</xliff:g> 파일로 내보냈습니다.</string>
+  <string name="notification_export_success">업데이트를 내보냈습니다.</string>
+  <string name="notification_export_fail">내보내기 오류</string>
   <plurals name="duration_seconds">
     <item quantity="other"><xliff:g id="count">%d</xliff:g>초</item>
   </plurals>
@@ -85,4 +96,5 @@
   <string name="checkbox_mobile_data_warning">다시 보지 않기</string>
   <string name="menu_mobile_data_warning">모바일 데이터 경고</string>
   <string name="blocked_update_dialog_title">업데이트 차단됨</string>
+  <string name="blocked_update_dialog_message">이 업데이트는 업데이터 앱으로 설치할 수 없습니다. 자세한 정보는 <xliff:g id="info_url">%1$s</xliff:g> 페이지를 참고하세요.</string>
 </resources>

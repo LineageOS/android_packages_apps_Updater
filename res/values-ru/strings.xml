@@ -70,6 +70,7 @@
   <string name="action_description_resume">Возобновить скачивание</string>
   <string name="action_description_install">Установить обновление</string>
   <string name="action_description_info">Показать сведения</string>
+  <string name="action_description_delete">Удалить обновление</string>
   <string name="confirm_delete_dialog_title">Удалить файл</string>
   <string name="confirm_delete_dialog_message">Удалить выбранный файл обновления?</string>
   <string name="apply_update_dialog_title">Применить обновление</string>

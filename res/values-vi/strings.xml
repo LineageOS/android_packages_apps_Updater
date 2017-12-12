@@ -70,6 +70,7 @@
   <string name="action_description_resume">Tiếp tục tải xuống</string>
   <string name="action_description_install">Cài đặt bản cập nhật</string>
   <string name="action_description_info">Hiển thị thông tin</string>
+  <string name="action_description_delete">Xóa bản cập nhật</string>
   <string name="confirm_delete_dialog_title">Xoá tập tin</string>
   <string name="confirm_delete_dialog_message">Xóa các tập tin cập nhật được chọn?</string>
   <string name="apply_update_dialog_title">Áp dụng cập nhật</string>

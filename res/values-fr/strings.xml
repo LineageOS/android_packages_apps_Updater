@@ -16,8 +16,89 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="app_name">Gestionnaire de mise à jour</string>
+  <string name="display_name">Gestionnaire de mise à jour</string>
   <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <string name="verification_failed_notification">Échec de la vérification</string>
+  <string name="verifying_download_notification">Vérification de la mise à jour en cours</string>
+  <string name="downloading_notification">Téléchargement en cours</string>
+  <string name="download_paused_notification">Téléchargement mis en pause</string>
+  <string name="download_paused_error_notification">Erreur de téléchargement</string>
+  <string name="download_completed_notification">Téléchargement terminé</string>
+  <string name="download_starting_notification">Début du téléchargement</string>
+  <string name="new_updates_found_title">Nouvelles mises à jour</string>
+  <string name="text_download_speed">%1$s, %2$s/s</string>
+  <string name="pause_button">Pause</string>
+  <string name="resume_button">Reprendre</string>
+  <string name="installing_update">Installation du paquet de mise à jour en cours</string>
+  <string name="installing_update_error">Erreur d\'installation</string>
+  <string name="installing_update_finished">Mise à jour installée</string>
+  <string name="finalizing_package">Finalisation de l’installation du paquet</string>
+  <string name="preparing_ota_first_boot">Préparation pour le premier démarrage</string>
+  <string name="dialog_prepare_zip_message">Préparation de la mise à jour préliminaire</string>
+  <string name="notification_prepare_zip_error_title">Impossible de préparer la mise à jour</string>
+  <string name="reboot">Redémarrer</string>
+  <string name="menu_refresh">Actualiser</string>
+  <string name="menu_auto_updates_check">Vérification des mises à jour automatique</string>
+  <string name="menu_auto_delete_updates">Supprimer les mises à jour une fois installées</string>
+  <string name="menu_delete_update">Supprimer</string>
+  <string name="menu_copy_url">Copier l\'URL</string>
+  <string name="menu_export_update">Exporter la mise à jour</string>
+  <string name="dialog_checking_for_updates">Recherche de mises à jour en cours</string>
+  <string name="snack_updates_found">Nouvelles mises à jour disponibles</string>
+  <string name="snack_no_updates_found">Aucune nouvelle mise à jour disponible</string>
+  <string name="snack_updates_check_failed">La vérification de nouvelles mises à jour a échoué. Vérifiez votre connexion internet et réessayez ultérieurement.</string>
+  <string name="snack_download_failed">Le téléchargement a échoué. Vérifiez votre connexion internet et réessayez ultérieurement.</string>
+  <string name="snack_download_verification_failed">La vérification de la mise à jour a échoué.</string>
+  <string name="snack_download_verified">Téléchargement terminé.</string>
+  <string name="snack_update_not_installable">Cette mise à jour ne peut pas être installée sur votre version actuelle.</string>
+  <string name="header_title_text">LineageOS\n%1$s</string>
+  <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+  <string name="header_last_updates_check">Dernière vérification : <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+  <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+  <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 Mo">%2$s</xliff:g></string>
+  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> restante(s)</string>
+  <string name="list_installing_update">Installation de la mise à jour en cours</string>
+  <string name="list_verifying_update">Vérification de la mise à jour en cours</string>
+  <string name="list_no_updates">Aucune nouvelle mise à jour trouvée. Pour vérifier manuellement la présence de mises à jour, utiliser le bouton Actualiser.</string>
+  <string name="action_description_download">Télécharger</string>
+  <string name="action_description_pause">Suspendre le téléchargement</string>
+  <string name="action_description_resume">Reprendre le téléchargement</string>
+  <string name="action_description_install">Installer la mise à jour</string>
+  <string name="action_description_info">Afficher les informations</string>
+  <string name="action_description_delete">Supprimer la mise à jour</string>
+  <string name="confirm_delete_dialog_title">Supprimer le fichier</string>
+  <string name="confirm_delete_dialog_message">Supprimer le fichier de mise à jour sélectionné ?</string>
+  <string name="apply_update_dialog_title">Appliquer la mise à jour</string>
+  <string name="apply_update_dialog_message">Vous êtes sur le point d\'installer <xliff:g id="update_name">%1$s</xliff:g>.\n\nLorsque vous appuierez sur <xliff:g id="ok">%2$s</xliff:g>, votre appareil redémarrera automatiquement en mode recovery pour installer la mise à jour.\n\nRemarque : Cette opération nécessite un recovery compatible, sinon les mises à jour devront être installées manuellement.</string>
+  <string name="apply_update_dialog_message_ab">Vous êtes sur le point de faire la mise à jour vers <xliff:g id="update_name">%1$s</xliff:g>.\n\nLorsque vous appuierez sur <xliff:g id="ok">%2$s</xliff:g>, l’appareil commencera l\'installation en tâche de fond.\n\nUne fois celle-ci terminée, il vous sera demandé de redémarrer.</string>
+  <string name="label_download_url">URL de téléchargement</string>
+  <string name="toast_download_url_copied">URL copiée</string>
+  <string name="snack_export_failed">Le téléchargement n\'a pas pu être exporté</string>
+  <string name="dialog_export_title">Exportation de la mise à jour en cours</string>
+  <string name="dialog_export_message">Exportation de la mise à jour <xliff:g id="filename">%1$s</xliff:g> vers le stockage externe en cours.</string>
+  <string name="notification_export_success">Mise à jour exportée</string>
+  <string name="notification_export_fail">Erreur lors de l\'exportation</string>
+  <plurals name="duration_seconds">
+    <item quantity="one">1 seconde</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> secondes</item>
+  </plurals>
+  <plurals name="duration_minutes">
+    <item quantity="one">1 minute</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> minutes</item>
+  </plurals>
+  <plurals name="duration_hours">
+    <item quantity="one">1 heure</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> heures</item>
+  </plurals>
+  <string name="update_on_mobile_data_title">Avertissement</string>
+  <string name="update_on_mobile_data_message">Vous êtes sur le point de télécharger un paquet de mise à jour via les données mobiles qui pourrait représenter un volume de données important. Voulez-vous tout de même procéder au téléchargement ?</string>
+  <string name="checkbox_mobile_data_warning">Ne plus afficher</string>
+  <string name="menu_mobile_data_warning">Avertissement d\'usage des données mobiles</string>
+  <string name="blocked_update_dialog_title">Mise à jour bloquée</string>
+  <string name="blocked_update_dialog_message">Cette mise à jour ne peut pas être installée en utilisant le gestionnaire de mise à jour.  Veuillez lire <xliff:g id="info_url">%1$s</xliff:g> pour plus d’information.</string>
 </resources>

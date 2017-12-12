@@ -70,6 +70,7 @@
   <string name="action_description_resume">Nadaljuj prenos</string>
   <string name="action_description_install">Namesti posodobitev</string>
   <string name="action_description_info">Prikaži podatke</string>
+  <string name="action_description_delete">Izbriši posodobitev</string>
   <string name="confirm_delete_dialog_title">Izbriši datoteko</string>
   <string name="confirm_delete_dialog_message">Izbriši izbrano posodobitveno datoteko?</string>
   <string name="apply_update_dialog_title">Uveljavi posodbitev</string>

@@ -70,6 +70,7 @@
   <string name="action_description_resume">Възобнови изтеглянето</string>
   <string name="action_description_install">Инсталиране на актуализация</string>
   <string name="action_description_info">Показване на информация</string>
+  <string name="action_description_delete">Изтриване на актуализация</string>
   <string name="confirm_delete_dialog_title">Изтриване на файл</string>
   <string name="confirm_delete_dialog_message">Да бъде ли изтрит файлът на избраната актуализация?</string>
   <string name="apply_update_dialog_title">Приложи актуализацията</string>

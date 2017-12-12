@@ -61,7 +61,7 @@
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g>-<xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> 剩餘</string>
+  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - 剩餘 <xliff:g id="duration" example="3 minutes">%3$s</xliff:g></string>
   <string name="list_installing_update">正在安裝更新</string>
   <string name="list_verifying_update">正在驗證更新</string>
   <string name="list_no_updates">沒有找到新的更新。若要手動檢查新的更新，請使用「重新整理」按鍵。</string>
@@ -70,6 +70,7 @@
   <string name="action_description_resume">繼續下載</string>
   <string name="action_description_install">安裝更新</string>
   <string name="action_description_info">顯示資訊</string>
+  <string name="action_description_delete">刪除更新</string>
   <string name="confirm_delete_dialog_title">刪除檔案</string>
   <string name="confirm_delete_dialog_message">刪除已選取的更新檔案？</string>
   <string name="apply_update_dialog_title">套用更新</string>

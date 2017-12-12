@@ -70,6 +70,7 @@
   <string name="action_description_resume">המשך הורדה</string>
   <string name="action_description_install">התקן עדכון</string>
   <string name="action_description_info">הראה מידע</string>
+  <string name="action_description_delete">מחק עדכון</string>
   <string name="confirm_delete_dialog_title">מחק קובץ</string>
   <string name="confirm_delete_dialog_message">למחוק את קבצי העדכון שנבחרו?</string>
   <string name="apply_update_dialog_title">החל עדכון</string>

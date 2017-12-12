@@ -70,6 +70,7 @@
   <string name="action_description_resume">ダウンロードを再開</string>
   <string name="action_description_install">アップデートをインストール</string>
   <string name="action_description_info">情報を表示</string>
+  <string name="action_description_delete">アップデートを削除</string>
   <string name="confirm_delete_dialog_title">ファイルを削除</string>
   <string name="confirm_delete_dialog_message">選択したアップデートファイルを削除しますか？</string>
   <string name="apply_update_dialog_title">アップデートを適用</string>

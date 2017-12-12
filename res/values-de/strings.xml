@@ -70,6 +70,7 @@
   <string name="action_description_resume">Herunterladen fortsetzen</string>
   <string name="action_description_install">Update installieren</string>
   <string name="action_description_info">Informationen anzeigen</string>
+  <string name="action_description_delete">Update löschen</string>
   <string name="confirm_delete_dialog_title">Datei löschen</string>
   <string name="confirm_delete_dialog_message">Soll die ausgewählte Update-Datei gelöscht werden?</string>
   <string name="apply_update_dialog_title">Update installieren</string>

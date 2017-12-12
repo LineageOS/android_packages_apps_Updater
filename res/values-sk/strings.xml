@@ -70,6 +70,7 @@
   <string name="action_description_resume">Obnoviť preberanie</string>
   <string name="action_description_install">Nainštalovať aktualizáciu</string>
   <string name="action_description_info">Zobraziť informáciu</string>
+  <string name="action_description_delete">Vymazať aktualizáciu</string>
   <string name="confirm_delete_dialog_title">Vymazať súbor</string>
   <string name="confirm_delete_dialog_message">Vymazať vybraný súbor aktualizácie?</string>
   <string name="apply_update_dialog_title">Aplikovať aktualizáciu</string>

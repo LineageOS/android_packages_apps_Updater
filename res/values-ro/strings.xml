@@ -70,6 +70,7 @@
   <string name="action_description_resume">Reluați descărcarea</string>
   <string name="action_description_install">Instalați actualizarea</string>
   <string name="action_description_info">Arată informaţii</string>
+  <string name="action_description_delete">Ștergeți actualizarea</string>
   <string name="confirm_delete_dialog_title">Ștergeți fișierul</string>
   <string name="confirm_delete_dialog_message">Șterge fișierul de actualizare selectat?</string>
   <string name="apply_update_dialog_title">Aplicaţi actualizarea</string>

@@ -70,6 +70,7 @@
   <string name="action_description_resume">Riprendi il download</string>
   <string name="action_description_install">Installa l\'aggiornamento</string>
   <string name="action_description_info">Mostra informazioni</string>
+  <string name="action_description_delete">Elimina aggiornamento</string>
   <string name="confirm_delete_dialog_title">Elimina file</string>
   <string name="confirm_delete_dialog_message">Eliminare il file di aggiornamento selezionato?</string>
   <string name="apply_update_dialog_title">Applica aggiornamento</string>

@@ -70,6 +70,7 @@
   <string name="action_description_resume">Continuar a transferência</string>
   <string name="action_description_install">Instalar a atualização</string>
   <string name="action_description_info">Mostrar informação</string>
+  <string name="action_description_delete">Eliminar a atualização</string>
   <string name="confirm_delete_dialog_title">Eliminar ficheiro</string>
   <string name="confirm_delete_dialog_message">Deseja eliminar o ficheiro de atualizações selecionado?</string>
   <string name="apply_update_dialog_title">Aplicar atualização</string>

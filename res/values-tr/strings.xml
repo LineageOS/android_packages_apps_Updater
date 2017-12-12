@@ -70,6 +70,7 @@
   <string name="action_description_resume">İndirmeyi sürdür</string>
   <string name="action_description_install">Güncellemeyi yükle</string>
   <string name="action_description_info">Bilgileri göster</string>
+  <string name="action_description_delete">Güncellemeyi sil</string>
   <string name="confirm_delete_dialog_title">Dosya sil</string>
   <string name="confirm_delete_dialog_message">Seçilen güncelleme dosyası silinsin mi?</string>
   <string name="apply_update_dialog_title">Güncellemeyi uygula</string>

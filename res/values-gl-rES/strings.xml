@@ -70,6 +70,7 @@
   <string name="action_description_resume">Continuar a descarga</string>
   <string name="action_description_install">Instalar actualización</string>
   <string name="action_description_info">Amosar información</string>
+  <string name="action_description_delete">Eliminar actualización</string>
   <string name="confirm_delete_dialog_title">Eliminar ficheiro</string>
   <string name="confirm_delete_dialog_message">Eliminar o ficheiro de actualización seleccionado?</string>
   <string name="apply_update_dialog_title">Aplicar a actualización</string>

@@ -158,6 +158,7 @@ public class HttpURLConnectionClient implements DownloadClient {
         @Override
         public void run() {
             try {
+                mClient.setInstanceFollowRedirects(true);
                 mClient.connect();
                 int responseCode = mClient.getResponseCode();
                 mCallback.onResponse(responseCode, mClient.getURL().toString(), new Headers());

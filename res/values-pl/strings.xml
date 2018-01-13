@@ -42,14 +42,19 @@
   <string name="notification_prepare_zip_error_title">Nie może przygotować aktualizacji</string>
   <string name="reboot">Uruchom ponownie</string>
   <string name="menu_refresh">Odśwież</string>
+  <string name="menu_auto_updates_check">Automatyczne sprawdzanie aktualizacji</string>
   <string name="menu_auto_delete_updates">Usuń pliki aktualizacji po zainstalowaniu</string>
   <string name="menu_delete_update">Usuń</string>
   <string name="menu_copy_url">Kopiuj adres URL</string>
+  <string name="menu_export_update">Wyślij aktualizację</string>
   <string name="dialog_checking_for_updates">Sprawdzanie aktualizacji</string>
   <string name="snack_updates_found">Znaleziono nowe aktualizacje</string>
   <string name="snack_no_updates_found">Nie znaleziono nowych aktualizacji</string>
   <string name="snack_updates_check_failed">Sprawdzanie aktualizacji nie powiodło się. Sprawdź połączenie z Internetem i spróbuj ponownie.</string>
+  <string name="snack_download_failed">Pobieranie nie powiodło się. Sprawdź połączenie z Internetem i spróbuj ponownie później.</string>
+  <string name="snack_download_verification_failed">Weryfikacja aktualizacji się nie powiodła.</string>
   <string name="snack_download_verified">Pobieranie zakończone.</string>
+  <string name="snack_update_not_installable">Ta aktualizacja nie może zostać zainstalowana na bieżącej wersji systemu.</string>
   <string name="header_title_text">LineageOS\n%1$s</string>
   <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
   <string name="header_last_updates_check">Ostatnio sprawdzane: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
@@ -65,12 +70,17 @@
   <string name="action_description_resume">Wznów pobieranie</string>
   <string name="action_description_install">Zainstaluj aktualizację</string>
   <string name="action_description_info">Pokaż informację</string>
+  <string name="action_description_delete">Usuń aktualizację</string>
   <string name="confirm_delete_dialog_title">Usuń plik</string>
   <string name="confirm_delete_dialog_message">Usunąć wybrany plik aktualizacji?</string>
   <string name="apply_update_dialog_title">Zastosuj aktualizację</string>
   <string name="apply_update_dialog_message_ab">Masz zamiar zaktualizować do <xliff:g id="filename">%1$s</xliff:g>. \n\nGdy naciśniesz <xliff:g id="ok">%2$s</xliff:g>, urządzenie zacznie instalować w tle.\n\nPo zakończeniu wyświetli komunikat, aby urządzenie uruchomić ponownie.</string>
   <string name="label_download_url">Pobierz adres URL</string>
   <string name="toast_download_url_copied">Skopiowano adres URL</string>
+  <string name="snack_export_failed">Nie można wysłać</string>
+  <string name="dialog_export_title">Wysyłanie aktualizacji</string>
+  <string name="dialog_export_message">Wysyłanie aktualizacji jako <xliff:g id="filename">%1$s </xliff:g> do zewnętrznej pamięci masowej.</string>
+  <string name="notification_export_success">Aktualizacja wysłana</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 sekunda</item>
     <item quantity="few"><xliff:g id="count">%d</xliff:g> sekundy</item>
@@ -89,5 +99,7 @@
   <string name="update_on_mobile_data_title">Ostrzeżenie</string>
   <string name="update_on_mobile_data_message">Zamierzasz pobrać pakiet aktualizacji przy użyciu sieci komórkowej co spowoduje duże zużycie transferu danych. Czy chcesz kontynuować?</string>
   <string name="checkbox_mobile_data_warning">Nie pokazuj ponownie</string>
+  <string name="menu_mobile_data_warning">Ostrzeżenie o danych komórkowych</string>
   <string name="blocked_update_dialog_title">Aktualizacja zablokowana</string>
+  <string name="blocked_update_dialog_message">Tej aktualizacji nie można zainstalować przy użyciu aplikacji aktualizacji.  Zapoznaj się z <xliff:g id="info_url">%1$s </xliff:g> aby uzyskać więcej informacji.</string>
 </resources>

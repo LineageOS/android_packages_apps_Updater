@@ -70,6 +70,7 @@
   <string name="action_description_resume">Obnovit stahování</string>
   <string name="action_description_install">Instalovat aktualizaci</string>
   <string name="action_description_info">Zobrazit informace</string>
+  <string name="action_description_delete">Odstranit aktualizaci</string>
   <string name="confirm_delete_dialog_title">Smazat soubor</string>
   <string name="confirm_delete_dialog_message">Smazat zvolený soubor aktualizace?</string>
   <string name="apply_update_dialog_title">Použít aktualizaci</string>

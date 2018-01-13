@@ -67,6 +67,7 @@
   <string name="action_description_resume">Lanjutkan unduhan</string>
   <string name="action_description_install">Pasang pembaruan</string>
   <string name="action_description_info">Tampilkan informasi</string>
+  <string name="action_description_delete">Hapus pembaruan</string>
   <string name="confirm_delete_dialog_title">Hapus berkas</string>
   <string name="confirm_delete_dialog_message">Hapus berkas pembaruan yang terpilih?</string>
   <string name="apply_update_dialog_title">Terapkan pembaruan</string>

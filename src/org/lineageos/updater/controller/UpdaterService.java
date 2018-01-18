@@ -174,7 +174,7 @@ public class UpdaterService extends Service {
                     ABUpdateInstaller.start(this, mUpdaterController, downloadId);
                 } else {
                     boolean deleteUpdate = PreferenceManager.getDefaultSharedPreferences(this)
-                            .getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, false);
+                            .getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false);
                     if (deleteUpdate) {
                         // Renaming the file is enough to have it deleted automatically
                         File uncrytpFile = new File(

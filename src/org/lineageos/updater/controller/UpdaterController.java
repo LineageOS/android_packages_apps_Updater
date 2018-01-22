@@ -375,6 +375,7 @@ public class UpdaterController implements Controller {
                     .setDestination(update.getFile())
                     .setDownloadCallback(getDownloadCallback(downloadId))
                     .setProgressListener(getProgressListener(downloadId))
+                    .setUseDuplicateLinks(true)
                     .build();
         } catch (IOException exception) {
             Log.e(TAG, "Could not build download client");
@@ -417,6 +418,7 @@ public class UpdaterController implements Controller {
                         .setDestination(update.getFile())
                         .setDownloadCallback(getDownloadCallback(downloadId))
                         .setProgressListener(getProgressListener(downloadId))
+                        .setUseDuplicateLinks(true)
                         .build();
             } catch (IOException exception) {
                 Log.e(TAG, "Could not build download client");

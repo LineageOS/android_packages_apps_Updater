@@ -24,19 +24,27 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.SocketTimeoutException;
 import java.net.URL;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.net.ssl.SSLHandshakeException;
 
 public class HttpURLConnectionClient implements DownloadClient {
 
     private final static String TAG = "HttpURLConnectionClient";
 
-    private final HttpURLConnection mClient;
+    private HttpURLConnection mClient;
 
     private final File mDestination;
     private final DownloadClient.ProgressListener mProgressListener;
     private final DownloadClient.DownloadCallback mCallback;
+    private final boolean mUseDuplicateLinks;
 
     private DownloadThread mDownloadThread;
 
@@ -54,11 +62,13 @@ public class HttpURLConnectionClient implements DownloadClient {
 
     HttpURLConnectionClient(String url, File destination,
             DownloadClient.ProgressListener progressListener,
-            DownloadClient.DownloadCallback callback) throws IOException {
+            DownloadClient.DownloadCallback callback,
+            boolean useDuplicateLinks) throws IOException {
         mClient = (HttpURLConnection) new URL(url).openConnection();
         mDestination = destination;
         mProgressListener = progressListener;
         mCallback = callback;
+        mUseDuplicateLinks = useDuplicateLinks;
     }
 
     @Override
@@ -113,6 +123,10 @@ public class HttpURLConnectionClient implements DownloadClient {
         return (statusCode / 100) == 2;
     }
 
+    private static boolean isRedirectCode(int statusCode) {
+        return (statusCode / 100) == 3;
+    }
+
     private static boolean isPartialContentCode(int statusCode) {
         return statusCode == 206;
     }
@@ -155,11 +169,96 @@ public class HttpURLConnectionClient implements DownloadClient {
             }
         }
 
+        private void changeClientUrl(URL newUrl) throws IOException {
+            String range = mClient.getRequestProperty("Range");
+            mClient.disconnect();
+            mClient = (HttpURLConnection) newUrl.openConnection();
+            if (range != null) {
+                mClient.setRequestProperty("Range", range);
+            }
+        }
+
+        private void handleDuplicateLinks() throws IOException {
+            String protocol = mClient.getURL().getProtocol();
+
+            class DuplicateLink {
+                private URL mUrl;
+                private int mPriority;
+                private DuplicateLink(URL url, int priority) {
+                    mUrl = url;
+                    mPriority = priority;
+                }
+            }
+
+            PriorityQueue<DuplicateLink> duplicates = null;
+
+            for (Map.Entry<String, List<String>> entry : mClient.getHeaderFields().entrySet()) {
+                if ("Link".equals(entry.getKey())) {
+                    duplicates = new PriorityQueue<>(entry.getValue().size(),
+                            new Comparator<DuplicateLink>() {
+                                @Override
+                                public int compare(DuplicateLink d1, DuplicateLink d2) {
+                                    return Integer.compare(d1.mPriority, d2.mPriority);
+                                }
+                            });
+
+                    // https://tools.ietf.org/html/rfc6249
+                    String regex = "<(.+)>; rel=duplicate.*(?:pri=([0-9]+))?.*";
+                    Pattern pattern = Pattern.compile(regex);
+                    for (String field : entry.getValue()) {
+                        Matcher matcher = pattern.matcher(field);
+                        if (matcher.matches()) {
+                            URL url = new URL(matcher.group(1));
+                            String pri = matcher.group(2);
+                            int priority = pri != null ? Integer.parseInt(pri) : 999999;
+                            if (protocol.equals(url.getProtocol())) {
+                                Log.d(TAG, "Adding duplicate link " + url);
+                                duplicates.add(new DuplicateLink(url, priority));
+                            } else {
+                                // Don't allow protocol changes
+                                Log.d(TAG, "Invalid protocol for duplicate link " + url);
+                            }
+                        } else {
+                            Log.d(TAG, "Ignoring duplicate link " + field);
+                        }
+                    }
+                }
+            }
+
+            String newUrl = mClient.getHeaderField("Location");
+            changeClientUrl(new URL(newUrl));
+            Log.d(TAG, "Downloading from " + newUrl);
+
+            for (;;) {
+                try {
+                    mClient.connect();
+                    return;
+                } catch (SocketTimeoutException | SSLHandshakeException e) {
+                    if (duplicates != null && !duplicates.isEmpty()) {
+                        DuplicateLink link = duplicates.poll();
+                        duplicates.remove(link);
+                        changeClientUrl(link.mUrl);
+                        Log.e(TAG, "Using duplicate link " + link.mUrl, e);
+                    } else {
+                        throw e;
+                    }
+                }
+            }
+        }
+
         @Override
         public void run() {
             try {
+                mClient.setConnectTimeout(5000);
+                mClient.setInstanceFollowRedirects(!mUseDuplicateLinks);
                 mClient.connect();
+
                 int responseCode = mClient.getResponseCode();
+                if (mUseDuplicateLinks && isRedirectCode(responseCode)) {
+                    handleDuplicateLinks();
+                    responseCode = mClient.getResponseCode();
+                }
+
                 mCallback.onResponse(responseCode, mClient.getURL().toString(), new Headers());
 
                 if (mResume && isPartialContentCode(responseCode)) {

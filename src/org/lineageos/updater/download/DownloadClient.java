@@ -63,6 +63,7 @@ public interface DownloadClient {
         private File mDestination;
         private DownloadClient.DownloadCallback mCallback;
         private DownloadClient.ProgressListener mProgressListener;
+        private boolean mUseDuplicateLinks;
 
         public DownloadClient build() throws IOException {
             if (mUrl == null) {
@@ -72,7 +73,8 @@ public interface DownloadClient {
             } else if (mCallback == null) {
                 throw new IllegalStateException("No download callback defined");
             }
-            return new HttpURLConnectionClient(mUrl, mDestination, mProgressListener, mCallback);
+            return new HttpURLConnectionClient(mUrl, mDestination, mProgressListener, mCallback,
+                    mUseDuplicateLinks);
         }
 
         public Builder setUrl(String url) {
@@ -92,6 +94,11 @@ public interface DownloadClient {
 
         public Builder setProgressListener(DownloadClient.ProgressListener progressListener) {
             mProgressListener = progressListener;
+            return this;
+        }
+
+        public Builder setUseDuplicateLinks(boolean useDuplicateLinks) {
+            mUseDuplicateLinks = useDuplicateLinks;
             return this;
         }
     }

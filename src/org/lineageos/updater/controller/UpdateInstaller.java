@@ -70,7 +70,7 @@ class UpdateInstaller {
                 .putBoolean(Constants.PREF_INSTALL_NOTIFIED, false)
                 .apply();
 
-        if (Utils.isEncrypted(mContext, update.getFile())) {
+        if (Utils.isBlockEncrypted(mContext, update.getFile())) {
             // uncrypt rewrites the file so that it can be read without mounting
             // the filesystem, so create a copy of it.
             prepareForUncryptAndInstall(update);

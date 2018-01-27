@@ -363,8 +363,8 @@ public class Utils {
         Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show();
     }
 
-    public static boolean isEncrypted(Context context, File file) {
+    public static boolean isBlockEncrypted(Context context) {
         StorageManager sm = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
-        return sm.isEncrypted(file);
+        return sm.isBlockEncrypted();
     }
 }

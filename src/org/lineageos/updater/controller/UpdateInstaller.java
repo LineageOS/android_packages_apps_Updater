@@ -63,7 +63,7 @@ class UpdateInstaller {
                     update.getFile().getAbsolutePath() + Constants.UNCRYPT_FILE_EXT);
             update.getFile().renameTo(uncrytpFile);
             installPackage(uncrytpFile, downloadId);
-        } else if (Utils.isEncrypted(mContext, update.getFile())) {
+        } else if (Utils.isBlockEncrypted(mContext)) {
             // uncrypt rewrites the file so that it can be read without mounting
             // the filesystem, so create a copy of it.
             prepareForUncryptAndInstall(update);

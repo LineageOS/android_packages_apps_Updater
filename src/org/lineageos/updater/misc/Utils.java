@@ -64,6 +64,10 @@ public class Utils {
         return new File(context.getString(R.string.download_path));
     }
 
+    public static File getOldDownloadPath(Context context) {
+        return new File(context.getString(R.string.download_path_old));
+    }
+
     public static File getExportPath(Context context) {
         File dir = new File(Environment.getExternalStorageDirectory(),
                 context.getString(R.string.export_path));
@@ -267,6 +271,7 @@ public class Utils {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         removeUncryptFiles(downloadPath);
+        removeUncryptFiles(getOldDownloadPath(context));
 
         long buildTimestamp = SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0);
         long prevTimestamp = preferences.getLong(Constants.PREF_INSTALL_OLD_TIMESTAMP, 0);

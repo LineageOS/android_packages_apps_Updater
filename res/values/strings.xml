@@ -19,8 +19,12 @@
     <string name="display_name">Updater</string>
 
     <!-- Directory where the update files will be downloaded and stored.
+         This directory must not be encrypted.
          WARNING: The application can and will delete any unknown file. -->
-    <string name="download_path" translatable="false">/data/lineageos_updates/</string>
+    <string name="download_path" translatable="false">/data/lineageos_updates_de/</string>
+
+    <!-- This is needed to clean up the previous download directory -->
+    <string name="download_path_old" translatable="false">/data/lineageos_updates/</string>
 
     <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->

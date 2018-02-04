@@ -39,7 +39,6 @@
   <string name="finalizing_package">S\'està finalitzant la instal·lació del paquet</string>
   <string name="preparing_ota_first_boot">S\'està preparant el primer inici</string>
   <string name="dialog_prepare_zip_message">Preparació preliminar de l\'actualització</string>
-  <string name="notification_prepare_zip_error_title">No s\'ha pogut preparar l\'actualització</string>
   <string name="reboot">Reinicia</string>
   <string name="menu_refresh">Recarrega</string>
   <string name="menu_auto_updates_check">Comprova automàticament les actualitzacions</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> left</string>
-  <string name="list_installing_update">S\'està instal·lant l\'actualització</string>
   <string name="list_verifying_update">S\'està verificant l\'actualització</string>
   <string name="list_no_updates">No s\'han trobat noves actualitzacions. Per comprovar manualment si hi ha noves actualitzacions, utilitzeu el botó Refresca.</string>
   <string name="action_description_download">Baixa</string>
@@ -71,18 +69,19 @@
   <string name="action_description_install">Instal·la l\'actualització</string>
   <string name="action_description_info">Mostrar informació</string>
   <string name="action_description_delete">Suprimeix l\'actualització</string>
+  <string name="action_description_cancel">Cancel·la la instal·lació</string>
   <string name="confirm_delete_dialog_title">Esborra el fitxer</string>
   <string name="confirm_delete_dialog_message">Vols esborrar el fitxer d\'actualització seleccionat?</string>
   <string name="apply_update_dialog_title">Aplica l\'actualització</string>
   <string name="apply_update_dialog_message">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu es reiniciarà en mode recuperació per instal·lar l\'actualització.\n\nNota: Aquesta funció requereix un «Recovery» compatible o les actualitzacions s\'hauran d\'instal·lar manualment.</string>
   <string name="apply_update_dialog_message_ab">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu començarà a instal·lar en segon pla.\n\nUn cop completat, se\'t demanarà reiniciar.</string>
+  <string name="cancel_installation_dialog_message">Voleu cancel·lar la instal·lació?</string>
   <string name="label_download_url">URL de baixada</string>
   <string name="toast_download_url_copied">URL copiada</string>
-  <string name="snack_export_failed">No s\'ha pogut exportar la baixada</string>
   <string name="dialog_export_title">S\'està exportant l\'actualització</string>
-  <string name="dialog_export_message">S\'està exportant l\'actualització com a <xliff:g id="filename">%1$s</xliff:g> a l\'emmagatzematge extern.</string>
   <string name="notification_export_success">Actualització exportada</string>
   <string name="notification_export_fail">Ha fallat l\'exportació</string>
+  <string name="toast_already_exporting">Ja s\'està exportant una actualització</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 segon</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> segons</item>

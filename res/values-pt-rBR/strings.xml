@@ -39,7 +39,6 @@
   <string name="finalizing_package">Finalizando a instalação do pacote</string>
   <string name="preparing_ota_first_boot">Preparando-se para a primeira inicialização</string>
   <string name="dialog_prepare_zip_message">Preparação preliminar de atualização</string>
-  <string name="notification_prepare_zip_error_title">Não foi possível preparar a atualização</string>
   <string name="reboot">Reiniciar</string>
   <string name="menu_refresh">Atualizar</string>
   <string name="menu_auto_updates_check">Autoverificar por atualizações</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> restantes</string>
-  <string name="list_installing_update">Instalando atualização</string>
   <string name="list_verifying_update">Verificando atualização</string>
   <string name="list_no_updates">Não foram encontradas novas atualizações. Use o botão Atualizar para buscar por novas atualizações manualmente.</string>
   <string name="action_description_download">Baixar</string>
@@ -71,16 +69,16 @@
   <string name="action_description_install">Instalar atualização</string>
   <string name="action_description_info">Mostrar informações</string>
   <string name="action_description_delete">Excluir atualização</string>
+  <string name="action_description_cancel">Cancelar instalação</string>
   <string name="confirm_delete_dialog_title">Excluir arquivo</string>
   <string name="confirm_delete_dialog_message">Excluir o arquivo de atualização selecionado?</string>
   <string name="apply_update_dialog_title">Instalar atualização</string>
   <string name="apply_update_dialog_message">Você está prestes a atualizar para <xliff:g id="update_name">%1$s</xliff:g>.\n\nAo clicar em <xliff:g id="ok">%2$s</xliff:g>, o dispositivo reiniciará no modo de recuperação para instalar a atualização.\n\nÉ necessário ter uma Recuperação compatível, caso contrário as atualizações deverão ser instaladas manualmente.</string>
   <string name="apply_update_dialog_message_ab">Você está prestes a atualizar para <xliff:g id="update_name">%1$s</xliff:g>.\n\nAo clicar em <xliff:g id="ok">%2$s</xliff:g>, o dispositivo iniciará a instalação em segundo plano.\n\nAo concluir, você será solicitado a reiniciar o dispositivo.</string>
+  <string name="cancel_installation_dialog_message">Deseja cancelar a instalação?</string>
   <string name="label_download_url">URL de Download</string>
   <string name="toast_download_url_copied">URL copiado</string>
-  <string name="snack_export_failed">Não foi possível exportar o download</string>
   <string name="dialog_export_title">Exportando atualização</string>
-  <string name="dialog_export_message">Exportando a atualização como <xliff:g id="filename">%1$s</xliff:g> para o armazenamento externo.</string>
   <string name="notification_export_success">Atualização exportada</string>
   <string name="notification_export_fail">Falha ao exportar</string>
   <plurals name="duration_seconds">

@@ -39,7 +39,6 @@
   <string name="finalizing_package">正在完成包安装</string>
   <string name="preparing_ota_first_boot">正在为第一次启动进行准备</string>
   <string name="dialog_prepare_zip_message">预备更新准备</string>
-  <string name="notification_prepare_zip_error_title">无法准备更新</string>
   <string name="reboot">重新启动</string>
   <string name="menu_refresh">刷新</string>
   <string name="menu_auto_updates_check">自动检查更新</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> 剩余</string>
-  <string name="list_installing_update">正在安装更新</string>
   <string name="list_verifying_update">正在验证更新</string>
   <string name="list_no_updates">未找到更新。要手动检查更新，请使用刷新按钮。</string>
   <string name="action_description_download">下载</string>
@@ -71,18 +69,19 @@
   <string name="action_description_install">安装更新</string>
   <string name="action_description_info">显示信息</string>
   <string name="action_description_delete">删除更新</string>
+  <string name="action_description_cancel">取消安装</string>
   <string name="confirm_delete_dialog_title">删除文件</string>
   <string name="confirm_delete_dialog_message">您确定要删除选择的更新文件？</string>
   <string name="apply_update_dialog_title">应用更新</string>
   <string name="apply_update_dialog_message">您将要更新到 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下<xliff:g id="ok">%2$s</xliff:g>，您的设备将会重启到恢复模式并安装更新。\n\n注意：此功能需要一个兼容的恢复程序，否则您将需要手动安装更新。</string>
   <string name="apply_update_dialog_message_ab">您将要升级到 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下<xliff:g id="ok">%2$s</xliff:g>，设备将会在后台进行安装。\n\n当安装完毕后，将会提示您重新启动。</string>
+  <string name="cancel_installation_dialog_message">是否取消安装？</string>
   <string name="label_download_url">下载地址</string>
   <string name="toast_download_url_copied">地址已复制</string>
-  <string name="snack_export_failed">无法导出下载</string>
   <string name="dialog_export_title">正在导出更新</string>
-  <string name="dialog_export_message">更新 <xliff:g id="filename">%1$s</xliff:g> 将导出到外置存储器。</string>
   <string name="notification_export_success">更新已导出</string>
   <string name="notification_export_fail">导出错误</string>
+  <string name="toast_already_exporting">已导出更新</string>
   <plurals name="duration_seconds">
     <item quantity="other"><xliff:g id="count">%d</xliff:g> 秒</item>
   </plurals>

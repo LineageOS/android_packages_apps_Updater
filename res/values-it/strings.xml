@@ -39,7 +39,6 @@
   <string name="finalizing_package">Finalizzalizzazione del pachetto d\'installazione in corso</string>
   <string name="preparing_ota_first_boot">Preparazione per il primo avvio</string>
   <string name="dialog_prepare_zip_message">Preparazione aggiornamento preliminare</string>
-  <string name="notification_prepare_zip_error_title">Impossibile preparare l\'aggiornamento</string>
   <string name="reboot">Riavvia</string>
   <string name="menu_refresh">Ricarica</string>
   <string name="menu_auto_updates_check">Ricerca aggiornamenti automatica</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="Luglio 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> rimanenti</string>
-  <string name="list_installing_update">Installazione aggiornamento</string>
   <string name="list_verifying_update">Verifica aggiornamento</string>
   <string name="list_no_updates">Nessun nuovo aggiornamento trovato. Per controllare manualmente nuovi aggiornamenti, tocca il pulsante Aggiorna.</string>
   <string name="action_description_download">Download</string>
@@ -71,18 +69,19 @@
   <string name="action_description_install">Installa l\'aggiornamento</string>
   <string name="action_description_info">Mostra informazioni</string>
   <string name="action_description_delete">Elimina aggiornamento</string>
+  <string name="action_description_cancel">Annulla installazione</string>
   <string name="confirm_delete_dialog_title">Elimina file</string>
   <string name="confirm_delete_dialog_message">Eliminare il file di aggiornamento selezionato?</string>
   <string name="apply_update_dialog_title">Applica aggiornamento</string>
   <string name="apply_update_dialog_message">Si sta per aggiornare a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe si preme <xliff:g id="ok">%2$s</xliff:g>, il dispositivo verrà riavviato in modalità recovery per installare l\'aggiornamento automaticamente.\n\nNota: Questa funzione richiede una recovery compatibile, in caso contrario si dovrà procedere all\'installazione manualmente.</string>
   <string name="apply_update_dialog_message_ab">Si sta per aggiornare a <xliff:g id="update_name">%1$s</xliff:g>.\n\nPremendo <xliff:g id="ok">%2$s</xliff:g>, il dispositivo inizierà l\'installazione in background.\n\nUna volta completato verrà richiesto di riavviare il dispositivo.</string>
+  <string name="cancel_installation_dialog_message">Annullare l\'installazione?</string>
   <string name="label_download_url">Download URL</string>
   <string name="toast_download_url_copied">URL copiato</string>
-  <string name="snack_export_failed">Impossibile esportare il download</string>
   <string name="dialog_export_title">Esportazione aggiornamento</string>
-  <string name="dialog_export_message">Esportazione di aggiornamento come <xliff:g id="filename">%1$s </xliff:g> nell\'archiviazione esterna.</string>
   <string name="notification_export_success">Aggiornamento esportato</string>
   <string name="notification_export_fail">Errore esportazione</string>
+  <string name="toast_already_exporting">Esportazione aggiornamento già in corso</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 secondo</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> secondi</item>

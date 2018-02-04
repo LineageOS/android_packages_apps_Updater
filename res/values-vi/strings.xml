@@ -39,7 +39,6 @@
   <string name="finalizing_package">Đang hoàn tất gói cài đặt</string>
   <string name="preparing_ota_first_boot">Đang chuẩn bị cho lần khởi động đầu tiên</string>
   <string name="dialog_prepare_zip_message">Chuẩn bị cập nhật sơ bộ</string>
-  <string name="notification_prepare_zip_error_title">Không thể chuẩn bị cập nhật</string>
   <string name="reboot">Khởi động lại</string>
   <string name="menu_refresh">Làm mới</string>
   <string name="menu_auto_updates_check">Tự động kiểm tra bản cập nhật</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> của <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> của <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> còn lại</string>
-  <string name="list_installing_update">Đang cài đặt bản cập nhật</string>
   <string name="list_verifying_update">Đang xác thực bản cập nhật</string>
   <string name="list_no_updates">Không có bản cập nhật mới được tìm thấy. Để tự động kiểm tra các bản cập nhật mới, sử dụng nút Làm mới.</string>
   <string name="action_description_download">Tải xuống</string>
@@ -71,18 +69,19 @@
   <string name="action_description_install">Cài đặt bản cập nhật</string>
   <string name="action_description_info">Hiển thị thông tin</string>
   <string name="action_description_delete">Xóa bản cập nhật</string>
+  <string name="action_description_cancel">Huỷ cài đặt</string>
   <string name="confirm_delete_dialog_title">Xoá tập tin</string>
   <string name="confirm_delete_dialog_message">Xóa các tập tin cập nhật được chọn?</string>
   <string name="apply_update_dialog_title">Áp dụng cập nhật</string>
   <string name="apply_update_dialog_message">Bạn sắp nâng cấp lên <xliff:g id="update_name">%1$s</xliff:g>.\n\nNếu bạn chạm <xliff:g id="ok">%2$s</xliff:g>, thiết bị sẽ tự động khởi động lại trong chế độ phục hồi để cài đặt bản cập nhật.\n\nLưu ý: Tính năng này yêu cầu Bản Khôi Phục tương ứng hoặc các bản cập nhật sẽ cần phải được cài đặt thủ công.</string>
   <string name="apply_update_dialog_message_ab">Bạn sắp nâng cấp lên <xliff:g id="update_name">%1$s</xliff:g>.\n\nNếu bạn chạm <xliff:g id="ok">%2$s</xliff:g>, thiết bị sẽ bắt đầu cài đặt ở chế độ nền.\n\nSau khi hoàn tất, bạn sẽ được nhắc khởi động lại.</string>
+  <string name="cancel_installation_dialog_message">Huỷ cài đặt?</string>
   <string name="label_download_url">Tải xuống URL</string>
   <string name="toast_download_url_copied">Đã sao chép URL</string>
-  <string name="snack_export_failed">Không thể xuất tải xuống</string>
   <string name="dialog_export_title">Đang xuất bản cập nhật</string>
-  <string name="dialog_export_message">Xuất bản cập nhật <xliff:g id="filename">%1$s</xliff:g> vào lưu trữ ngoài.</string>
   <string name="notification_export_success">Đã xuất bản cập nhật</string>
   <string name="notification_export_fail">Lỗi xuất</string>
+  <string name="toast_already_exporting">Đã xuất một bản cập nhật</string>
   <plurals name="duration_seconds">
     <item quantity="other"><xliff:g id="count">%d</xliff:g> giây</item>
   </plurals>

@@ -39,7 +39,6 @@
   <string name="finalizing_package">Paket yükleme tamamlanıyor</string>
   <string name="preparing_ota_first_boot">Ön yükleme için hazırlanıyor</string>
   <string name="dialog_prepare_zip_message">Güncelleme ön hazırlığı</string>
-  <string name="notification_prepare_zip_error_title">Güncelleme hazırlanamadı</string>
   <string name="reboot">Yeniden başlat</string>
   <string name="menu_refresh">Yenile</string>
   <string name="menu_auto_updates_check">Otomatik güncelleme kontrolü</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> kaldı</string>
-  <string name="list_installing_update">Güncellemeyi yükle</string>
   <string name="list_verifying_update">Güncelleme doğrulanıyor</string>
   <string name="list_no_updates">Yeni güncelleme bulunamadı. El ile yeni güncellemeleri kontrol etmek için Yenile tuşunu kullanın.</string>
   <string name="action_description_download">İndir</string>
@@ -71,18 +69,19 @@
   <string name="action_description_install">Güncellemeyi yükle</string>
   <string name="action_description_info">Bilgileri göster</string>
   <string name="action_description_delete">Güncellemeyi sil</string>
+  <string name="action_description_cancel">Yüklemeyi iptal et</string>
   <string name="confirm_delete_dialog_title">Dosya sil</string>
   <string name="confirm_delete_dialog_message">Seçilen güncelleme dosyası silinsin mi?</string>
   <string name="apply_update_dialog_title">Güncellemeyi uygula</string>
   <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> yükseltmek üzeresiniz.\n\n<xliff:g id="ok">%2$s</xliff:g> bastığınızda, güncellemeyi yüklemek için cihaz kurtarma modun da yeniden başlatılacak.\n\nNot: Bu özellik uyumlu bir Kurtarma bölümü gerektirir veya güncellemelerin el ile kurulması gerekir.</string>
   <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g> yükseltmek üzeresiniz.\n\n<xliff:g id="ok">%2$s</xliff:g> tuşuna basarsanız, cihaz arka planda yüklemeye başlayacaktır.\n\nİşlem tamamlandığında, yeniden başlatmanız istenir.</string>
+  <string name="cancel_installation_dialog_message">Yükleme iptal edilsin mi?</string>
   <string name="label_download_url">İndirme bağlantısı</string>
   <string name="toast_download_url_copied">Bağlantı kopyalandı</string>
-  <string name="snack_export_failed">İndirme dışa aktarılamadı</string>
   <string name="dialog_export_title">Güncellemeyi dışarı aktar</string>
-  <string name="dialog_export_message"><xliff:g id="filename">%1$s</xliff:g> olarak güncellemeyi harici depolama birimine aktar.</string>
   <string name="notification_export_success">Dışa aktarılan güncelleme</string>
   <string name="notification_export_fail">Dışa aktarma hatası</string>
+  <string name="toast_already_exporting">Zaten bir güncelleme dışa aktarılıyor</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 saniye</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> saniye</item>

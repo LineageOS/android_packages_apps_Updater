@@ -39,7 +39,6 @@
   <string name="finalizing_package">Rematando a instalación do paquete</string>
   <string name="preparing_ota_first_boot">Preparando o primeiro arranque</string>
   <string name="dialog_prepare_zip_message">Preparación preliminar da actualización</string>
-  <string name="notification_prepare_zip_error_title">Non foi posible preparar a actualización</string>
   <string name="reboot">Reiniciar</string>
   <string name="menu_refresh">Actualizar</string>
   <string name="menu_auto_updates_check">Buscar actualizacións automaticamente</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta">restan <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g></string>
-  <string name="list_installing_update">Instalando actualización</string>
   <string name="list_verifying_update">Comprobando actualización</string>
   <string name="list_no_updates">Non se atoparon novas actualizacións. Para buscar manualmente, preme no botón Actualizar.</string>
   <string name="action_description_download">Descarga</string>
@@ -78,9 +76,7 @@
   <string name="apply_update_dialog_message_ab">Actualizaráse a <xliff:g id="update_name">%1$s</xliff:g>.\n\n Se pulsase <xliff:g id="ok">%2$s</xliff:g>, o dispositivo comezará a instalar en segundo plano.\n\nUnha vez terminado o proceso, pediráselle que reinicie.</string>
   <string name="label_download_url">URL da descarga</string>
   <string name="toast_download_url_copied">URL copiado</string>
-  <string name="snack_export_failed">Non foi posíbel exportar a descarga</string>
   <string name="dialog_export_title">Exportando actualización</string>
-  <string name="dialog_export_message">Exportando a actualización como <xliff:g id="filename">%1$s</xliff:g> no almaceamento externo.</string>
   <string name="notification_export_success">Actualización exportada</string>
   <string name="notification_export_fail">Exportar erro</string>
   <plurals name="duration_seconds">

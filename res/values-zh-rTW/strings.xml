@@ -39,7 +39,6 @@
   <string name="finalizing_package">正在完成套件安裝</string>
   <string name="preparing_ota_first_boot">正在準備第一次啟動</string>
   <string name="dialog_prepare_zip_message">正在準備更新</string>
-  <string name="notification_prepare_zip_error_title">無法準備更新</string>
   <string name="reboot">重新啟動</string>
   <string name="menu_refresh">重新整理</string>
   <string name="menu_auto_updates_check">自動更新檢查</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g>-<xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - 剩餘 <xliff:g id="duration" example="3 minutes">%3$s</xliff:g></string>
-  <string name="list_installing_update">正在安裝更新</string>
   <string name="list_verifying_update">正在驗證更新</string>
   <string name="list_no_updates">沒有找到新的更新。若要手動檢查新的更新，請使用「重新整理」按鍵。</string>
   <string name="action_description_download">下載</string>
@@ -71,18 +69,19 @@
   <string name="action_description_install">安裝更新</string>
   <string name="action_description_info">顯示資訊</string>
   <string name="action_description_delete">刪除更新</string>
+  <string name="action_description_cancel">取消安裝</string>
   <string name="confirm_delete_dialog_title">刪除檔案</string>
   <string name="confirm_delete_dialog_message">刪除已選取的更新檔案？</string>
   <string name="apply_update_dialog_title">套用更新</string>
   <string name="apply_update_dialog_message">您將更新至 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下 「<xliff:g id="ok">%2$s</xliff:g>」，裝置將重新啟動進入 Recovery 模式並安裝更新。\n\n注意：這項功能需要相容的 Recovery，否則將需要手動安裝更新。</string>
   <string name="apply_update_dialog_message_ab">您將要升級到 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下「<xliff:g id="ok">%2$s</xliff:g>」，裝置將在背景進行安裝。\n\n如安裝完成，將會提示重新啟動</string>
+  <string name="cancel_installation_dialog_message">是否取消安裝？</string>
   <string name="label_download_url">下載網址</string>
   <string name="toast_download_url_copied">網址已複製</string>
-  <string name="snack_export_failed">無法匯出下載</string>
   <string name="dialog_export_title">匯出更新</string>
-  <string name="dialog_export_message">更新 <xliff:g id="filename">%1$s </xliff:g> 將匯出到外部儲存空間</string>
   <string name="notification_export_success">已匯出更新</string>
   <string name="notification_export_fail">匯出錯誤</string>
+  <string name="toast_already_exporting">已匯出更新</string>
   <plurals name="duration_seconds">
     <item quantity="other"><xliff:g id="count">%d</xliff:g> 秒</item>
   </plurals>

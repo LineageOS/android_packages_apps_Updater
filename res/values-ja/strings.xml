@@ -39,7 +39,6 @@
   <string name="finalizing_package">パッケージのインストールを完了中</string>
   <string name="preparing_ota_first_boot">初回起動を準備中</string>
   <string name="dialog_prepare_zip_message">予備のアップデート準備</string>
-  <string name="notification_prepare_zip_error_title">アップデートを準備できませんでした</string>
   <string name="reboot">再起動</string>
   <string name="menu_refresh">再読み込み</string>
   <string name="menu_auto_updates_check">アップデートの自動確認</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - 残り<xliff:g id="duration" example="3 minutes">%3$s</xliff:g></string>
-  <string name="list_installing_update">アップデートのインストール</string>
   <string name="list_verifying_update">アップデートを確認</string>
   <string name="list_no_updates">新しい更新はありません。新しい更新を手動で確認するには、更新ボタンを押してください。</string>
   <string name="action_description_download">ダウンロード</string>
@@ -71,18 +69,19 @@
   <string name="action_description_install">アップデートをインストール</string>
   <string name="action_description_info">情報を表示</string>
   <string name="action_description_delete">アップデートを削除</string>
+  <string name="action_description_cancel">インストールをキャンセル</string>
   <string name="confirm_delete_dialog_title">ファイルを削除</string>
   <string name="confirm_delete_dialog_message">選択したアップデートファイルを削除しますか？</string>
   <string name="apply_update_dialog_title">アップデートを適用</string>
   <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g>にアップデートしようとしています。\n\n<xliff:g id="ok">%2$s</xliff:g>を押すと、アップデートをインストールするために端末をリカバリーモードでに再起動します。\n\n注意: この機能には対応したリカバリーが必要です。なければ手動でインストールする必要があります。</string>
   <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g> にアップデートしようとしています。\n\n<xliff:g id="ok">%2$s</xliff:g>を押すと、バックグラウンドでインストールを開始します。\n\nインストールが完了したら、再起動を促すプロンプトが表示されます。</string>
+  <string name="cancel_installation_dialog_message">インストールをキャンセルしますか？</string>
   <string name="label_download_url">ダウンロード URL</string>
   <string name="toast_download_url_copied">URL をコピーしました</string>
-  <string name="snack_export_failed">ダウンロードをエクスポートできませんでした</string>
   <string name="dialog_export_title">アップデートのエクスポート中</string>
-  <string name="dialog_export_message">アップデートを <xliff:g id="filename">%1$s</xliff:g> として外部ストレージにエクスポート中</string>
   <string name="notification_export_success">アップデートのエクスポート</string>
   <string name="notification_export_fail">エラー出力</string>
+  <string name="toast_already_exporting">すでにアップデートをエクスポートしています。</string>
   <plurals name="duration_seconds">
     <item quantity="other"><xliff:g id="count">%d</xliff:g> 秒</item>
   </plurals>

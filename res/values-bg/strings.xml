@@ -39,7 +39,6 @@
   <string name="finalizing_package">Финализиране на пакетната инсталация</string>
   <string name="preparing_ota_first_boot">Подготовка за първо зареждане</string>
   <string name="dialog_prepare_zip_message">Предварителна подготовка на актуализацията</string>
-  <string name="notification_prepare_zip_error_title">Актуализацията не можа да бъде подготвена</string>
   <string name="reboot">Рестартиране</string>
   <string name="menu_refresh">Опресняване</string>
   <string name="menu_auto_updates_check">Автоматична проверка за актуализациите</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> left</string>
-  <string name="list_installing_update">Инсталиране на актуализация</string>
   <string name="list_verifying_update">Проверка на актуализацията</string>
   <string name="list_no_updates">Не са намерени нови актуализации. За да проверите ръчно за нови актуализации, използвайте бутона за обновяване.</string>
   <string name="action_description_download">Изтегли</string>
@@ -71,18 +69,19 @@
   <string name="action_description_install">Инсталиране на актуализация</string>
   <string name="action_description_info">Показване на информация</string>
   <string name="action_description_delete">Изтриване на актуализация</string>
+  <string name="action_description_cancel">Отмяна на инсталацията</string>
   <string name="confirm_delete_dialog_title">Изтриване на файл</string>
   <string name="confirm_delete_dialog_message">Да бъде ли изтрит файлът на избраната актуализация?</string>
   <string name="apply_update_dialog_title">Приложи актуализацията</string>
   <string name="apply_update_dialog_message">На път сте да актуализирате до версия <xliff:g id="update_name">%1$s</xliff:g>.\n\nако натиснете <xliff:g id="ok">%2$s</xliff:g>, устройството ще се рестартира в режим на възстановяване, за да инсталира актуализацията. \ n \ nЗабележка: Тази функция изисква съвместимо Recovery или актуализации трябва да бъдат инсталирани ръчно.</string>
   <string name="apply_update_dialog_message_ab">На път сте да актуализирате до версия <xliff:g id="update_name">%1$s</xliff:g>.\n\nАко натиснете <xliff:g id="ok">%2$s</xliff:g>, устройството ще започне инсталирането във фонов режим.\n\nКогато завърши, ще бъдете подканени да рестартирате.</string>
+  <string name="cancel_installation_dialog_message">Анулиране на инсталирането?</string>
   <string name="label_download_url">Изтеглете URL</string>
   <string name="toast_download_url_copied">URL Копиран</string>
-  <string name="snack_export_failed">Изтеглянето не можа да се експортира</string>
   <string name="dialog_export_title">Експортиране на актуализация</string>
-  <string name="dialog_export_message">Експортиране на актуализация <xliff:g id="filename">%1$s</xliff:g> във външно хранилище.</string>
   <string name="notification_export_success">Актуализацията е експортирана</string>
   <string name="notification_export_fail">Грешка при експортиране</string>
+  <string name="toast_already_exporting">Вече изнася актуализация</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 секунда</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> секунди</item>

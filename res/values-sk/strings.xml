@@ -39,7 +39,6 @@
   <string name="finalizing_package">Dokončuje sa inštalácia balíka</string>
   <string name="preparing_ota_first_boot">Príprava na prvé spustenie</string>
   <string name="dialog_prepare_zip_message">Predbežná príprava aktualizácie</string>
-  <string name="notification_prepare_zip_error_title">Nemôžem pripraviť aktualizáciu</string>
   <string name="reboot">Reštartovať</string>
   <string name="menu_refresh">Obnoviť</string>
   <string name="menu_auto_updates_check">Automatická kontrola aktualizácií</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> left</string>
-  <string name="list_installing_update">Inštalácia aktualizácie</string>
   <string name="list_verifying_update">Overujem aktualizáciu</string>
   <string name="list_no_updates">Neboli nájdené žiadne nové aktualizácie. Ak chcete ručne vyhľadať nové aktualizácie, použite tlačítko Aktualizovať.</string>
   <string name="action_description_download">Stiahnuť</string>
@@ -71,18 +69,19 @@
   <string name="action_description_install">Nainštalovať aktualizáciu</string>
   <string name="action_description_info">Zobraziť informáciu</string>
   <string name="action_description_delete">Vymazať aktualizáciu</string>
+  <string name="action_description_cancel">Zrušiť inštaláciu</string>
   <string name="confirm_delete_dialog_title">Vymazať súbor</string>
   <string name="confirm_delete_dialog_message">Vymazať vybraný súbor aktualizácie?</string>
   <string name="apply_update_dialog_title">Aplikovať aktualizáciu</string>
   <string name="apply_update_dialog_message">Idete aktualizovať na <xliff:g id="update_name">%1$s</xliff:g>.\n\nAk stlačíte <xliff:g id="ok">%2$s</xliff:g>, zariadenie sa reštartuje do recovery režimu na inštaláciu aktualizácie.\n\nPoznámka: Táto funkcia vyžaduje kompatibilné Recovery alebo treba aktualizácie nainštalovať ručne.</string>
   <string name="apply_update_dialog_message_ab">Idete aktualizovať na <xliff:g id="update_name">%1$s</xliff:g>.\n\nAk stlačíte <xliff:g id="ok">%2$s</xliff:g>, zariadenie začne inštaláciu v pozadí.\n\nPo ukončení budete vyzvaný na reštart.</string>
+  <string name="cancel_installation_dialog_message">Zrušiť inštaláciu?</string>
   <string name="label_download_url">URL adresa</string>
   <string name="toast_download_url_copied">URL skopírované</string>
-  <string name="snack_export_failed">Nemôžem exportovať preberanie</string>
   <string name="dialog_export_title">Export aktualizácie</string>
-  <string name="dialog_export_message">Exportujem aktualizáciu ako <xliff:g id="filename">%1$s</xliff:g> do vnútorného úložiska.</string>
   <string name="notification_export_success">Aktualizácia exportovaná</string>
   <string name="notification_export_fail">Chyba exportu</string>
+  <string name="toast_already_exporting">Aktualizácia sa už exportuje</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 sekunda</item>
     <item quantity="few"><xliff:g id="count">%d</xliff:g> sekundy</item>

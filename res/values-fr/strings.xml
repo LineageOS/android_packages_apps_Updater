@@ -39,7 +39,6 @@
   <string name="finalizing_package">Finalisation de l’installation du paquet</string>
   <string name="preparing_ota_first_boot">Préparation pour le premier démarrage</string>
   <string name="dialog_prepare_zip_message">Préparation de la mise à jour préliminaire</string>
-  <string name="notification_prepare_zip_error_title">Impossible de préparer la mise à jour</string>
   <string name="reboot">Redémarrer</string>
   <string name="menu_refresh">Actualiser</string>
   <string name="menu_auto_updates_check">Vérification des mises à jour automatique</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 Mo">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> restante(s)</string>
-  <string name="list_installing_update">Installation de la mise à jour en cours</string>
   <string name="list_verifying_update">Vérification de la mise à jour en cours</string>
   <string name="list_no_updates">Aucune nouvelle mise à jour trouvée. Pour vérifier manuellement la présence de mises à jour, utiliser le bouton Actualiser.</string>
   <string name="action_description_download">Télécharger</string>
@@ -78,9 +76,7 @@
   <string name="apply_update_dialog_message_ab">Vous êtes sur le point de faire la mise à jour vers <xliff:g id="update_name">%1$s</xliff:g>.\n\nLorsque vous appuierez sur <xliff:g id="ok">%2$s</xliff:g>, l’appareil commencera l\'installation en tâche de fond.\n\nUne fois celle-ci terminée, il vous sera demandé de redémarrer.</string>
   <string name="label_download_url">URL de téléchargement</string>
   <string name="toast_download_url_copied">URL copiée</string>
-  <string name="snack_export_failed">Le téléchargement n\'a pas pu être exporté</string>
   <string name="dialog_export_title">Exportation de la mise à jour en cours</string>
-  <string name="dialog_export_message">Exportation de la mise à jour <xliff:g id="filename">%1$s</xliff:g> vers le stockage externe en cours.</string>
   <string name="notification_export_success">Mise à jour exportée</string>
   <string name="notification_export_fail">Erreur lors de l\'exportation</string>
   <plurals name="duration_seconds">

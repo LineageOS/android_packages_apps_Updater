@@ -39,7 +39,6 @@
   <string name="finalizing_package">Kończenie instalacji pakietu</string>
   <string name="preparing_ota_first_boot">Przygotowanie do pierwszego uruchomienia</string>
   <string name="dialog_prepare_zip_message">Przygotowanie wstępne aktualizacji</string>
-  <string name="notification_prepare_zip_error_title">Nie może przygotować aktualizacji</string>
   <string name="reboot">Uruchom ponownie</string>
   <string name="menu_refresh">Odśwież</string>
   <string name="menu_auto_updates_check">Automatyczne sprawdzanie aktualizacji</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - pozostało <xliff:g id="duration" example="3 minutes">%3$s</xliff:g></string>
-  <string name="list_installing_update">Instalowanie aktualizacji</string>
   <string name="list_verifying_update">Sprawdzanie aktualizacji</string>
   <string name="list_no_updates">Nie znaleziono nowych aktualizacji. Aby ręcznie sprawdzić dostępność nowych aktualizacji, użyj przycisku Odśwież.</string>
   <string name="action_description_download">Pobierz</string>
@@ -77,9 +75,7 @@
   <string name="apply_update_dialog_message_ab">Masz zamiar zaktualizować do <xliff:g id="filename">%1$s</xliff:g>. \n\nGdy naciśniesz <xliff:g id="ok">%2$s</xliff:g>, urządzenie zacznie instalować w tle.\n\nPo zakończeniu wyświetli komunikat, aby urządzenie uruchomić ponownie.</string>
   <string name="label_download_url">Pobierz adres URL</string>
   <string name="toast_download_url_copied">Skopiowano adres URL</string>
-  <string name="snack_export_failed">Nie można wysłać</string>
   <string name="dialog_export_title">Wysyłanie aktualizacji</string>
-  <string name="dialog_export_message">Wysyłanie aktualizacji jako <xliff:g id="filename">%1$s </xliff:g> do zewnętrznej pamięci masowej.</string>
   <string name="notification_export_success">Aktualizacja wysłana</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 sekunda</item>

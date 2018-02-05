@@ -22,4 +22,8 @@
         android:checkable="true"
         android:title="@string/menu_mobile_data_warning"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_show_changelog"
+        android:title="@string/menu_show_changelog"
+        app:showAsAction="never" />
 </menu>

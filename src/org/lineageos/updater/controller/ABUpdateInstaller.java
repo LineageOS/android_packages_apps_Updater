@@ -49,7 +49,7 @@ class ABUpdateInstaller {
     private final Context mContext;
     private String mDownloadId;
 
-    private UpdateEngine mUpdateEngine;
+    private UpdateEngine mUpdateEngine = null;
     private boolean mBound;
 
     private final UpdateEngineCallback mUpdateEngineCallback = new UpdateEngineCallback() {
@@ -212,6 +212,12 @@ class ABUpdateInstaller {
         mDownloadId = PreferenceManager.getDefaultSharedPreferences(mContext)
                 .getString(PREF_INSTALLING_AB_ID, null);
 
+        if (mUpdateEngine != null) {
+            mUpdateEngine.unbind();
+            mUpdateEngine = null;
+        }
+
+        mUpdateEngine = new UpdateEngine();
         // We will get a status notification as soon as we are connected
         mBound = mUpdateEngine.bind(mUpdateEngineCallback);
         if (!mBound) {
@@ -241,6 +247,7 @@ class ABUpdateInstaller {
         }
 
         mUpdateEngine.cancel();
+        mUpdateEngine.unbind();
         installationDone(false);
 
         mUpdaterController.getActualUpdate(mDownloadId)

@@ -69,10 +69,12 @@
   <string name="action_description_install">Zainstaluj aktualizację</string>
   <string name="action_description_info">Pokaż informację</string>
   <string name="action_description_delete">Usuń aktualizację</string>
+  <string name="action_description_cancel">Anuluj instalację</string>
   <string name="confirm_delete_dialog_title">Usuń plik</string>
   <string name="confirm_delete_dialog_message">Usunąć wybrany plik aktualizacji?</string>
   <string name="apply_update_dialog_title">Zastosuj aktualizację</string>
   <string name="apply_update_dialog_message_ab">Masz zamiar zaktualizować do <xliff:g id="filename">%1$s</xliff:g>. \n\nGdy naciśniesz <xliff:g id="ok">%2$s</xliff:g>, urządzenie zacznie instalować w tle.\n\nPo zakończeniu wyświetli komunikat, aby urządzenie uruchomić ponownie.</string>
+  <string name="cancel_installation_dialog_message">Anulować instalację?</string>
   <string name="label_download_url">Pobierz adres URL</string>
   <string name="toast_download_url_copied">Skopiowano adres URL</string>
   <string name="dialog_export_title">Wysyłanie aktualizacji</string>

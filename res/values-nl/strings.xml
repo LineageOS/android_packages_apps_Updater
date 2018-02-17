@@ -69,16 +69,19 @@
   <string name="action_description_install">Update installeren</string>
   <string name="action_description_info">Informatie weergeven</string>
   <string name="action_description_delete">Update verwijderen</string>
+  <string name="action_description_cancel">Installatie annuleren</string>
   <string name="confirm_delete_dialog_title">Bestand verwijderen</string>
   <string name="confirm_delete_dialog_message">Geselecteerde update-bestand verwijderen?</string>
   <string name="apply_update_dialog_title">Update toepassen</string>
   <string name="apply_update_dialog_message">Uw systeem wordt bijgewerkt naar <xliff:g id="update_name">%1$s</xliff:g>.\n\nWanneer u op <xliff:g id="ok">%2$s</xliff:g> tikt, zal het apparaat herstarten naar recovery om de update te installeren.\n\nLet op: een compatibele recovery is vereist, anders moet de update handmatig worden geïnstalleerd.</string>
   <string name="apply_update_dialog_message_ab">Uw systeem wordt bijgewerkt naar <xliff:g id="update_name">%1$s</xliff:g>.\n\nWanneer u op <xliff:g id="ok">%2$s</xliff:g> tikt, zal het apparaat de update op de achtergrond uitvoeren.\n\nWanneer de installatie voltooid is zal gevraagd worden het toestel te herstarten.</string>
+  <string name="cancel_installation_dialog_message">Installatie annuleren?</string>
   <string name="label_download_url">Download-URL</string>
   <string name="toast_download_url_copied">URL gekopieerd</string>
   <string name="dialog_export_title">Update exporteren</string>
   <string name="notification_export_success">Update geëxporteerd</string>
   <string name="notification_export_fail">Fout bij exporteren</string>
+  <string name="toast_already_exporting">Er wordt al een update geëxporteerd</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 seconde</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> seconden</item>

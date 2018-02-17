@@ -69,16 +69,19 @@
   <string name="action_description_install">Instalar a atualização</string>
   <string name="action_description_info">Mostrar informação</string>
   <string name="action_description_delete">Eliminar a atualização</string>
+  <string name="action_description_cancel">Cancelar instalação</string>
   <string name="confirm_delete_dialog_title">Eliminar ficheiro</string>
   <string name="confirm_delete_dialog_message">Deseja eliminar o ficheiro de atualizações selecionado?</string>
   <string name="apply_update_dialog_title">Aplicar atualização</string>
   <string name="apply_update_dialog_message">Está prestes a atualizar para <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe carregar em<xliff:g id="ok">%2$s</xliff:g>, o dispositivo irá reiniciar no modo de recuperação para instalar a atualização.\n\nNota: É necessária uma Recuperação compatível, caso contrário as atualizações terão de ser instaladas manualmente.</string>
   <string name="apply_update_dialog_message_ab">Está prestes a atualizar para <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe selecionar <xliff:g id="ok">%2$s</xliff:g>, o dispositivo irá iniciar a instalação em plano de fundo.\n\nUma vez concluída, ser-lhe-á pedido que reinicie o dispositivo.</string>
+  <string name="cancel_installation_dialog_message">Cancelar a instalação?</string>
   <string name="label_download_url">URL de transferência</string>
   <string name="toast_download_url_copied">URL copiado</string>
   <string name="dialog_export_title">A exportar a atualização</string>
   <string name="notification_export_success">Atualização exportada</string>
   <string name="notification_export_fail">Erro de exportação</string>
+  <string name="toast_already_exporting">Já está a exportar uma atualização</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 segundo</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> segundos</item>

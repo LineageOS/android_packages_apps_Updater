@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2f170b91_d09520a4",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2018-02-17T12:49:53Z",
+      "side": 1,
+      "message": "I think we should return true here, even if the end result is the same.",
+      "revId": "424d14e570c40373b9ff8cf63a6d7460261db2e7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

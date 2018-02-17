@@ -81,6 +81,7 @@
   <string name="dialog_export_title">Exportando atualização</string>
   <string name="notification_export_success">Atualização exportada</string>
   <string name="notification_export_fail">Falha ao exportar</string>
+  <string name="toast_already_exporting">Uma atualização já está sendo exportada</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 segundo</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> segundos</item>

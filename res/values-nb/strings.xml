@@ -23,6 +23,7 @@
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
   <string name="verification_failed_notification">Bekreftelse mislyktes</string>
+  <string name="verifying_download_notification">Bekrefter oppdatering</string>
   <string name="downloading_notification">Laster ned</string>
   <string name="download_paused_notification">Nedlasting pauset</string>
   <string name="download_paused_error_notification">Nedlastingsfeil</string>
@@ -37,9 +38,9 @@
   <string name="installing_update_finished">Oppdatering installert</string>
   <string name="finalizing_package">Fullfører pakkeinstallsjon</string>
   <string name="preparing_ota_first_boot">Forbereder første oppstart</string>
-  <string name="notification_prepare_zip_error_title">Kunne ikke forberede oppdatering</string>
   <string name="reboot">Start på nytt</string>
   <string name="menu_refresh">Oppdater</string>
+  <string name="menu_auto_updates_check">Auto-oppdateringssjekk</string>
   <string name="menu_auto_delete_updates">Slett oppdateringer når installert</string>
   <string name="menu_delete_update">Slett</string>
   <string name="menu_copy_url">Kopier nettadresse</string>
@@ -49,6 +50,7 @@
   <string name="snack_no_updates_found">Ingen nye oppdateringer funnet</string>
   <string name="snack_updates_check_failed">Oppdateringssjekken mislyktes. Sjekk din internettilkobling og prøv igjen senere.</string>
   <string name="snack_download_failed">Nedlastingen mislyktes. Sjekk din internettilkobling og prøv igjen senere.</string>
+  <string name="snack_download_verification_failed">Oppdateringsbekreftelsen mislyktes.</string>
   <string name="snack_download_verified">Nedlasting fullført.</string>
   <string name="snack_update_not_installable">Denne oppdateringen kan ikke installeres over gjeldende installasjon.</string>
   <string name="header_title_text">LineageOS\n%1$s</string>
@@ -58,18 +60,20 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> av <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> av <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> gjenstår</string>
-  <string name="list_installing_update">Installerer oppdatering</string>
   <string name="list_verifying_update">Bekrefter oppdatering</string>
   <string name="action_description_download">Last ned</string>
   <string name="action_description_pause">Sett nedlasting på pause</string>
   <string name="action_description_resume">Fortsett nedlasting</string>
   <string name="action_description_install">Installer oppdatering</string>
   <string name="action_description_info">Vis informasjon</string>
+  <string name="action_description_delete">Slett oppdatering</string>
   <string name="confirm_delete_dialog_title">Slett fil</string>
   <string name="confirm_delete_dialog_message">Slett valgt oppdateringsfil?</string>
+  <string name="apply_update_dialog_title">Installer oppdatering</string>
+  <string name="apply_update_dialog_message">Du er i ferd med å oppdatere til <xliff:g id="update_name">%1$s</xliff:g>.\n\nHvis du trykker <xliff:g id="ok">%2$s</xliff:g> vil enheten starte på nytt i gjenopprettingsmodus for å installere oppdateringen.\n\nMerk: Denne funksjonen krever en kompatibel gjenopprettingsprogramvare ellers må oppdateringer installeres manuelt.</string>
+  <string name="apply_update_dialog_message_ab">Du er i ferd med å oppdatere til <xliff:g id="update_name">%1$s</xliff:g>.\n\nHvis du trykker <xliff:g id="ok">%2$s</xliff:g> vil enheten begynne å installere i bakgrunnen.\n\nNår den er ferdig, vil du bli spurt om å starte på nytt.</string>
   <string name="label_download_url">Last ned nettadresse</string>
   <string name="toast_download_url_copied">Nettadresse kopiert</string>
-  <string name="snack_export_failed">Kunne ikke eksportere nedlasting</string>
   <string name="dialog_export_title">Eksporterer oppdatering</string>
   <string name="notification_export_success">Oppdatering eksportert</string>
   <string name="notification_export_fail">Eksporteringsfeil</string>
@@ -90,4 +94,6 @@
   <string name="checkbox_mobile_data_warning">Ikke vis igjen</string>
   <string name="menu_mobile_data_warning">Advarsel for mobildata</string>
   <string name="blocked_update_dialog_title">Oppdatering blokkert</string>
+  <string name="blocked_update_dialog_message">Denne oppdateringen kan ikke installeres med oppdateringsappen. Les <xliff:g id="info_url">%1$s</xliff:g> for mer informasjon.</string>
+  <string name="new_updates_channel_title">Nye oppdateringer</string>
 </resources>

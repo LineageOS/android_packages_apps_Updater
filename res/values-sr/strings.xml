@@ -39,7 +39,6 @@
   <string name="finalizing_package">Довршавање инсталације пакета</string>
   <string name="preparing_ota_first_boot">Припрема за прво покретање</string>
   <string name="dialog_prepare_zip_message">Припрема прелиминарних ажурирања</string>
-  <string name="notification_prepare_zip_error_title">Није могуће припремити ажурирање</string>
   <string name="reboot">Покрени поново</string>
   <string name="menu_refresh">Оcвежи</string>
   <string name="menu_auto_updates_check">Аутоматски провери ажурирања</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s </xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s </xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> од <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s </xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s </xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s </xliff:g> ostalo</string>
-  <string name="list_installing_update">Инсталирај ажурирања</string>
   <string name="list_verifying_update">Верификација анжурирања</string>
   <string name="list_no_updates">Нема нових ажурирања. Да ручно провериш нова ажурирања користи дугме освежи.</string>
   <string name="action_description_download">Преузми</string>
@@ -70,6 +68,7 @@
   <string name="action_description_resume">Настави преузимање</string>
   <string name="action_description_install">Инсталирај ажурирање</string>
   <string name="action_description_info">Прикажи информације</string>
+  <string name="action_description_delete">Обриши ажурирање</string>
   <string name="confirm_delete_dialog_title">Обриши фајл</string>
   <string name="confirm_delete_dialog_message">Избриши изабрани фајл за ажурирање?</string>
   <string name="apply_update_dialog_title">Примени ажурирање</string>
@@ -77,9 +76,7 @@
   <string name="apply_update_dialog_message_ab">Биће инсталирано <xliff:g id="update_name">%1$s</xliff:g>.\n\nАко додирнете <xliff:g id="ok">%2$s</xliff:g>, уређај ће почети инсталацијуу позадини.\n\nКада буде завршено биће понуђено рестартовање.</string>
   <string name="label_download_url">URL адреса за преузимање</string>
   <string name="toast_download_url_copied">URL Копиран</string>
-  <string name="snack_export_failed">Није могуће извести преузимање</string>
   <string name="dialog_export_title">Извези ажурирања</string>
-  <string name="dialog_export_message">Извоз ажурирања као <xliff:g id="filename">%1$s</xliff:g> у спољно складиште.</string>
   <string name="notification_export_success">Ажурирање извезено</string>
   <string name="notification_export_fail">Грешка при извозу</string>
   <plurals name="duration_seconds">
@@ -103,4 +100,5 @@
   <string name="menu_mobile_data_warning">Упозорење мобилних података</string>
   <string name="blocked_update_dialog_title">Ажурирање је блокирано</string>
   <string name="blocked_update_dialog_message">Ово ажурирање се не може инсталирати апликацијом Ажурирање. Прочитај <xliff:g id="info_url">%1$s</xliff:g> за више информација.</string>
+  <string name="new_updates_channel_title">Нова ажурирања</string>
 </resources>

@@ -16,14 +16,69 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="app_name">Aktualizator</string>
+  <string name="display_name">Aktualizator</string>
   <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <string name="verification_failed_notification">Weryfikacja nie powiodła się</string>
+  <string name="verifying_download_notification">Weryfikacja aktualizacji</string>
+  <string name="downloading_notification">Pobieranie</string>
+  <string name="download_paused_notification">Pobieranie wstrzymane</string>
+  <string name="download_paused_error_notification">Błąd pobierania</string>
+  <string name="download_completed_notification">Pobieranie zakończone</string>
+  <string name="download_starting_notification">Rozpoczęcie pobierania</string>
+  <string name="new_updates_found_title">Nowe aktualizacje</string>
+  <string name="text_download_speed">%1$s, %2$s/s</string>
+  <string name="pause_button">Wstrzymaj</string>
+  <string name="resume_button">Wznów</string>
+  <string name="installing_update">Instalowanie pakietu aktualizacji</string>
+  <string name="installing_update_error">Błąd instalacji</string>
+  <string name="installing_update_finished">Zainstalowano aktualizację</string>
+  <string name="finalizing_package">Kończenie instalacji pakietu</string>
+  <string name="preparing_ota_first_boot">Przygotowanie do pierwszego uruchomienia</string>
+  <string name="dialog_prepare_zip_message">Przygotowanie wstępne aktualizacji</string>
+  <string name="reboot">Uruchom ponownie</string>
+  <string name="menu_refresh">Odśwież</string>
+  <string name="menu_auto_updates_check">Automatyczne sprawdzanie aktualizacji</string>
+  <string name="menu_auto_delete_updates">Usuń pliki aktualizacji po zainstalowaniu</string>
+  <string name="menu_delete_update">Usuń</string>
+  <string name="menu_copy_url">Kopiuj adres URL</string>
+  <string name="menu_export_update">Wyślij aktualizację</string>
+  <string name="dialog_checking_for_updates">Sprawdzanie aktualizacji</string>
+  <string name="snack_updates_found">Znaleziono nowe aktualizacje</string>
+  <string name="snack_no_updates_found">Nie znaleziono nowych aktualizacji</string>
+  <string name="snack_updates_check_failed">Sprawdzanie aktualizacji nie powiodło się. Sprawdź połączenie z Internetem i spróbuj ponownie.</string>
+  <string name="snack_download_failed">Pobieranie nie powiodło się. Sprawdź połączenie z Internetem i spróbuj ponownie później.</string>
+  <string name="snack_download_verification_failed">Weryfikacja aktualizacji się nie powiodła.</string>
+  <string name="snack_download_verified">Pobieranie zakończone.</string>
+  <string name="snack_update_not_installable">Ta aktualizacja nie może zostać zainstalowana na bieżącej wersji systemu.</string>
+  <string name="header_title_text">LineageOS\n%1$s</string>
+  <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+  <string name="header_last_updates_check">Ostatnio sprawdzane: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+  <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+  <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - pozostało <xliff:g id="duration" example="3 minutes">%3$s</xliff:g></string>
+  <string name="list_verifying_update">Sprawdzanie aktualizacji</string>
+  <string name="list_no_updates">Nie znaleziono nowych aktualizacji. Aby ręcznie sprawdzić dostępność nowych aktualizacji, użyj przycisku Odśwież.</string>
+  <string name="action_description_download">Pobierz</string>
+  <string name="action_description_pause">Wstrzymaj pobieranie</string>
+  <string name="action_description_resume">Wznów pobieranie</string>
+  <string name="action_description_install">Zainstaluj aktualizację</string>
+  <string name="action_description_info">Pokaż informację</string>
+  <string name="action_description_delete">Usuń aktualizację</string>
+  <string name="action_description_cancel">Anuluj instalację</string>
+  <string name="confirm_delete_dialog_title">Usuń plik</string>
+  <string name="confirm_delete_dialog_message">Usunąć wybrany plik aktualizacji?</string>
   <string name="apply_update_dialog_title">Zastosuj aktualizację</string>
   <string name="apply_update_dialog_message_ab">Masz zamiar zaktualizować do <xliff:g id="filename">%1$s</xliff:g>. \n\nGdy naciśniesz <xliff:g id="ok">%2$s</xliff:g>, urządzenie zacznie instalować w tle.\n\nPo zakończeniu wyświetli komunikat, aby urządzenie uruchomić ponownie.</string>
+  <string name="cancel_installation_dialog_message">Anulować instalację?</string>
   <string name="label_download_url">Pobierz adres URL</string>
   <string name="toast_download_url_copied">Skopiowano adres URL</string>
+  <string name="dialog_export_title">Wysyłanie aktualizacji</string>
+  <string name="notification_export_success">Aktualizacja wysłana</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 sekunda</item>
     <item quantity="few"><xliff:g id="count">%d</xliff:g> sekundy</item>
@@ -42,5 +97,8 @@
   <string name="update_on_mobile_data_title">Ostrzeżenie</string>
   <string name="update_on_mobile_data_message">Zamierzasz pobrać pakiet aktualizacji przy użyciu sieci komórkowej co spowoduje duże zużycie transferu danych. Czy chcesz kontynuować?</string>
   <string name="checkbox_mobile_data_warning">Nie pokazuj ponownie</string>
+  <string name="menu_mobile_data_warning">Ostrzeżenie o danych komórkowych</string>
   <string name="blocked_update_dialog_title">Aktualizacja zablokowana</string>
+  <string name="blocked_update_dialog_message">Tej aktualizacji nie można zainstalować przy użyciu aplikacji aktualizacji.  Zapoznaj się z <xliff:g id="info_url">%1$s </xliff:g> aby uzyskać więcej informacji.</string>
+  <string name="new_updates_channel_title">Nowe aktualizacje</string>
 </resources>

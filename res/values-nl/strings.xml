@@ -39,7 +39,6 @@
   <string name="finalizing_package">Installatie van het pakket afronden</string>
   <string name="preparing_ota_first_boot">Eerste start voorbereiden</string>
   <string name="dialog_prepare_zip_message">Update voorbereiden</string>
-  <string name="notification_prepare_zip_error_title">Kan update niet voorbereiden</string>
   <string name="reboot">Herstarten</string>
   <string name="menu_refresh">Vernieuwen</string>
   <string name="menu_auto_updates_check">Automatisch controleren op updates</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> van <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> van <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> resterend</string>
-  <string name="list_installing_update">Update installeren</string>
   <string name="list_verifying_update">Update verifiëren</string>
   <string name="list_no_updates">Geen nieuwe updates gevonden. Gebruik de knop Vernieuwen om handmatig te controleren op nieuwe updates.</string>
   <string name="action_description_download">Downloaden</string>
@@ -70,18 +68,20 @@
   <string name="action_description_resume">Download hervatten</string>
   <string name="action_description_install">Update installeren</string>
   <string name="action_description_info">Informatie weergeven</string>
+  <string name="action_description_delete">Update verwijderen</string>
+  <string name="action_description_cancel">Installatie annuleren</string>
   <string name="confirm_delete_dialog_title">Bestand verwijderen</string>
   <string name="confirm_delete_dialog_message">Geselecteerde update-bestand verwijderen?</string>
   <string name="apply_update_dialog_title">Update toepassen</string>
   <string name="apply_update_dialog_message">Uw systeem wordt bijgewerkt naar <xliff:g id="update_name">%1$s</xliff:g>.\n\nWanneer u op <xliff:g id="ok">%2$s</xliff:g> tikt, zal het apparaat herstarten naar recovery om de update te installeren.\n\nLet op: een compatibele recovery is vereist, anders moet de update handmatig worden geïnstalleerd.</string>
   <string name="apply_update_dialog_message_ab">Uw systeem wordt bijgewerkt naar <xliff:g id="update_name">%1$s</xliff:g>.\n\nWanneer u op <xliff:g id="ok">%2$s</xliff:g> tikt, zal het apparaat de update op de achtergrond uitvoeren.\n\nWanneer de installatie voltooid is zal gevraagd worden het toestel te herstarten.</string>
+  <string name="cancel_installation_dialog_message">Installatie annuleren?</string>
   <string name="label_download_url">Download-URL</string>
   <string name="toast_download_url_copied">URL gekopieerd</string>
-  <string name="snack_export_failed">Kan download niet exporteren</string>
   <string name="dialog_export_title">Update exporteren</string>
-  <string name="dialog_export_message">Update exporteren naar de interne opslag als <xliff:g id="filename">%1$s</xliff:g>.</string>
   <string name="notification_export_success">Update geëxporteerd</string>
   <string name="notification_export_fail">Fout bij exporteren</string>
+  <string name="toast_already_exporting">Er wordt al een update geëxporteerd</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 seconde</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> seconden</item>
@@ -100,4 +100,5 @@
   <string name="menu_mobile_data_warning">Waarschuwing mobiele gegevens</string>
   <string name="blocked_update_dialog_title">Update geblokkeerd</string>
   <string name="blocked_update_dialog_message">Deze update kan niet worden geïnstalleerd met behulp van de updater-app. Lees <xliff:g id="info_url">%1$s</xliff:g> voor meer informatie.</string>
+  <string name="new_updates_channel_title">Nieuwe updates</string>
 </resources>

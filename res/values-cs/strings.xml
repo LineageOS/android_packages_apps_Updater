@@ -39,7 +39,6 @@
   <string name="finalizing_package">Dokončování instalace balíčku</string>
   <string name="preparing_ota_first_boot">Příprava na první spuštění</string>
   <string name="dialog_prepare_zip_message">Příprava předběžné aktualizace</string>
-  <string name="notification_prepare_zip_error_title">Aktualizaci nelze připravit</string>
   <string name="reboot">Reboot</string>
   <string name="menu_refresh">Obnovit</string>
   <string name="menu_auto_updates_check">Automatická kontrola aktualizací</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> zbývá</string>
-  <string name="list_installing_update">Instalace aktualizace</string>
   <string name="list_verifying_update">Ověření aktualizace</string>
   <string name="list_no_updates">Nebyly nalezeny žádné nové aktualizace. Chcete-li ručně vyhledat nové aktualizace, použijte tlačítko „Obnovit“.</string>
   <string name="action_description_download">Stáhnout</string>
@@ -70,18 +68,20 @@
   <string name="action_description_resume">Obnovit stahování</string>
   <string name="action_description_install">Instalovat aktualizaci</string>
   <string name="action_description_info">Zobrazit informace</string>
+  <string name="action_description_delete">Odstranit aktualizaci</string>
+  <string name="action_description_cancel">Zrušit instalaci</string>
   <string name="confirm_delete_dialog_title">Smazat soubor</string>
   <string name="confirm_delete_dialog_message">Smazat zvolený soubor aktualizace?</string>
   <string name="apply_update_dialog_title">Použít aktualizaci</string>
   <string name="apply_update_dialog_message">Chystáte se aktualizovat na <xliff:g id="update_name">%1$s</xliff:g>.\n\nPokud stisknete <xliff:g id="ok">%2$s</xliff:g>, telefon se restartuje do režimu Recovery, kde budete pokračovat v instalaci aktualizace.\n\nPoznámka: tato funkce vyžaduje nainstalovaný kompatibilní režim Recovery nebo je nutné instalaci provést ručně.</string>
   <string name="apply_update_dialog_message_ab">Chystáte se aktualizovat na <xliff:g id="update_name">%1$s</xliff:g>.\n\nPokud stisknete <xliff:g id="ok">%2$s</xliff:g>, spustí se instalace na pozadí.\n\nPo dokončení budete vyzváni k restartu.</string>
+  <string name="cancel_installation_dialog_message">Zrušit instalaci?</string>
   <string name="label_download_url">URL stažení</string>
   <string name="toast_download_url_copied">URL zkopírována</string>
-  <string name="snack_export_failed">Stažení nelze exportovat</string>
   <string name="dialog_export_title">Export aktualizace</string>
-  <string name="dialog_export_message">Export aktualizací jako <xliff:g id="filename">%1$s </xliff:g> do externího úložiště.</string>
   <string name="notification_export_success">Aktualizace exportována</string>
   <string name="notification_export_fail">Chyba exportu</string>
+  <string name="toast_already_exporting">Aktualizace se již exportuje</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 sekunda</item>
     <item quantity="few"><xliff:g id="COUNT">%d</xliff:g> sekundy</item>
@@ -103,4 +103,7 @@
   <string name="menu_mobile_data_warning">Upozornění mobilních dat</string>
   <string name="blocked_update_dialog_title">Aktualizace zablokována</string>
   <string name="blocked_update_dialog_message">Tuto aktualizaci nelze nainstalovat pomocí aplikace aktualizace.  Přečtěte si <xliff:g id="info_url">%1$s </xliff:g> pro další informace.</string>
+  <string name="export_channel_title">Dokončení exportu</string>
+  <string name="new_updates_channel_title">Nové aktualizace</string>
+  <string name="ongoing_channel_title">Probíhající stahování</string>
 </resources>

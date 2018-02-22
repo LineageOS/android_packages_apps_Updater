@@ -39,7 +39,6 @@
   <string name="finalizing_package">Se finalizează instalarea pachetului</string>
   <string name="preparing_ota_first_boot">Se pregătește pentru prima pornire</string>
   <string name="dialog_prepare_zip_message">Pregătire preliminară pentru actualizare</string>
-  <string name="notification_prepare_zip_error_title">Nu s-a putut pregăti actualizarea</string>
   <string name="reboot">Repornire</string>
   <string name="menu_refresh">Reîmprospătare</string>
   <string name="menu_auto_updates_check">Verificare automată a actualizărilor</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> din <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> din <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> rămas</string>
-  <string name="list_installing_update">Instalare actualizare</string>
   <string name="list_verifying_update">Verificare actualizare</string>
   <string name="list_no_updates">Nicio actualizare nouă găsită. Pentru a verifica manual pentru noi actualizări, utilizați butonul Reîmprospătare.</string>
   <string name="action_description_download">Descărcați</string>
@@ -70,18 +68,20 @@
   <string name="action_description_resume">Reluați descărcarea</string>
   <string name="action_description_install">Instalați actualizarea</string>
   <string name="action_description_info">Arată informaţii</string>
+  <string name="action_description_delete">Ștergeți actualizarea</string>
+  <string name="action_description_cancel">Revocaţi instalarea</string>
   <string name="confirm_delete_dialog_title">Ștergeți fișierul</string>
   <string name="confirm_delete_dialog_message">Șterge fișierul de actualizare selectat?</string>
   <string name="apply_update_dialog_title">Aplicaţi actualizarea</string>
   <string name="apply_update_dialog_message">Sunteți pe cale de a face upgrade la <xliff:g id="update_name">%1$s</xliff:g>.\n\nDacă apăsați <xliff:g id="ok">%2$s</xliff:g>, dispozitivul se va restarta în modul de recuperare pentru a instala actualizarea.\n\nNotă: Această caracteristică necesită o Recuperare compatibilă sau actualizările vor trebui să fie instalate manual.</string>
   <string name="apply_update_dialog_message_ab">Sunteți pe cale de a face upgrade la <xliff:g id="update_name">%1$s</xliff:g>.\n\nDacă apăsați <xliff:g id="ok">%2$s</xliff:g>, dispozitivul va începe instalarea în fundal.\n\nOdată finalizată, veți fi anunțat(ă) să reporniți telefonul.</string>
+  <string name="cancel_installation_dialog_message">Revocaţi instalarea?</string>
   <string name="label_download_url">Descărcați URL-ul</string>
   <string name="toast_download_url_copied">URL copiat</string>
-  <string name="snack_export_failed">Nu s-a putut exporta descărcarea</string>
   <string name="dialog_export_title">Exportare actualizare</string>
-  <string name="dialog_export_message">Exportare actualizare ca <xliff:g id="filename">%1$s</xliff:g> în stocarea externă.</string>
   <string name="notification_export_success">Actualizare exportată</string>
   <string name="notification_export_fail">Eroare de export</string>
+  <string name="toast_already_exporting">Se exportează deja o actualizare</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 secundă</item>
     <item quantity="few"><xliff:g id="count">%d</xliff:g> (de) secunde</item>
@@ -103,4 +103,7 @@
   <string name="menu_mobile_data_warning">Avertizare de date mobile</string>
   <string name="blocked_update_dialog_title">Actualizare blocată</string>
   <string name="blocked_update_dialog_message">Această actualizare nu poate fi instalată folosind aplicația actualizator.  Vă rugăm să citiţi <xliff:g id="info_url">%1$s</xliff:g> pentru mai multe informaţii.</string>
+  <string name="export_channel_title">Completare export</string>
+  <string name="new_updates_channel_title">Actualizări noi</string>
+  <string name="ongoing_channel_title">Descărcări în desfășurare</string>
 </resources>

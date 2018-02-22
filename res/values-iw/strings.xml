@@ -39,7 +39,6 @@
   <string name="finalizing_package">משלים את התקנת החבילה</string>
   <string name="preparing_ota_first_boot">מתכונן להפעלה ראשונה</string>
   <string name="dialog_prepare_zip_message">מתכונן להתקנת העדכון</string>
-  <string name="notification_prepare_zip_error_title">הכנת העדכון נכשלה</string>
   <string name="reboot">הפעלה מחדש</string>
   <string name="menu_refresh">ריענון</string>
   <string name="menu_auto_updates_check">בדיקת עדכונים אוטומטית</string>
@@ -62,7 +61,6 @@
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> מתוך <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
   <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> מתוך <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> נותרו</string>
-  <string name="list_installing_update">מתקין עדכון</string>
   <string name="list_verifying_update">מאמת עדכון</string>
   <string name="list_no_updates">לא נמצאו עדכונים חדשים. בכדי לבדוק אם יש עדכונים חדשים, לחץ על רענון.</string>
   <string name="action_description_download">הורד</string>
@@ -70,18 +68,20 @@
   <string name="action_description_resume">המשך הורדה</string>
   <string name="action_description_install">התקן עדכון</string>
   <string name="action_description_info">הראה מידע</string>
+  <string name="action_description_delete">מחק עדכון</string>
+  <string name="action_description_cancel">ביטול התקנה</string>
   <string name="confirm_delete_dialog_title">מחק קובץ</string>
   <string name="confirm_delete_dialog_message">למחוק את קבצי העדכון שנבחרו?</string>
   <string name="apply_update_dialog_title">החל עדכון</string>
   <string name="apply_update_dialog_message">אתה עומד לשדרג אל <xliff:g id="update_name">%1$s</xliff:g>.\n\nאם תבחר <xliff:g id="ok">%2$s</xliff:g>, המכשיר יופעל מחדש למצב שחזור (Recovery) להתקנת העדכון.\n\nשים לב: תכונה זו דורשת ריקוברי תואם או שהעדכון לא יותקן אוטומטית.</string>
   <string name="apply_update_dialog_message_ab">אתה עומד לעדכן אל <xliff:g id="update_name">%1$s</xliff:g>.\n\nאם תלחץ על <xliff:g id="ok">%2$s</xliff:g>, המכשיר יתחיל בהתקנה ברקע.\n\nלאחר שההתקנה תסתיים, תתבקש להפעיל את המכשיר מחדש.</string>
+  <string name="cancel_installation_dialog_message">לבטל את ההתקנה?</string>
   <string name="label_download_url">כתובת ההורדה</string>
   <string name="toast_download_url_copied">הכתובת הועתקה</string>
-  <string name="snack_export_failed">לא ניתן ליצא הורדה</string>
   <string name="dialog_export_title">מיצא עדכון</string>
-  <string name="dialog_export_message">מיצא עדכון כ־<xliff:g id="filename">%1$s</xliff:g> לאחסון החיצוני.</string>
   <string name="notification_export_success">העדכון ייוצא בהצלחה</string>
   <string name="notification_export_fail">שגיאה בייצוא</string>
+  <string name="toast_already_exporting">כבר באמצע ייצוא עדכון</string>
   <plurals name="duration_seconds">
     <item quantity="one">שנייה אחת</item>
     <item quantity="two"><xliff:g id="count">%d</xliff:g> שניות</item>
@@ -106,4 +106,7 @@
   <string name="menu_mobile_data_warning">אזהרת אינטרנט סלולרי</string>
   <string name="blocked_update_dialog_title">העדכון חסום</string>
   <string name="blocked_update_dialog_message">אין אפשרות להתקין עדכון זה באמצעות יישום המעדכן.  תוכל לקרוא בקישור <xliff:g id="info_url">%1$s</xliff:g> לקבלת מידע נוסף.</string>
+  <string name="export_channel_title">השלמת הייצוא</string>
+  <string name="new_updates_channel_title">עדכונים חדשים</string>
+  <string name="ongoing_channel_title">הורדות בפעולה</string>
 </resources>

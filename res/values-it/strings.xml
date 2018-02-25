@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Elimina</string>
   <string name="menu_copy_url">Copia indirizzo URL</string>
   <string name="menu_export_update">Esporta aggiornamento</string>
+  <string name="menu_show_changelog">Mostra il ChangeLog</string>
   <string name="dialog_checking_for_updates">Controllo aggiornamenti</string>
   <string name="snack_updates_found">Nessun aggiornamento trovato</string>
   <string name="snack_no_updates_found">Nessun nuovo aggiornamento trovato</string>
@@ -100,5 +101,7 @@
   <string name="menu_mobile_data_warning">Avviso utilizzo dati mobili</string>
   <string name="blocked_update_dialog_title">Aggiornamento bloccato</string>
   <string name="blocked_update_dialog_message">Questo aggiornamento non può essere installato usando l\'app updater.  Si prega di leggere <xliff:g id="info_url">%1$s</xliff:g> per ulteriori informazioni.</string>
+  <string name="export_channel_title">Completamento esportazione</string>
   <string name="new_updates_channel_title">Nuovi aggiornamenti</string>
+  <string name="ongoing_channel_title">Download in corso</string>
 </resources>

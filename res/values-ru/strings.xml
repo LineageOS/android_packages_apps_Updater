@@ -82,21 +82,6 @@
   <string name="notification_export_success">Обновление экспортировано</string>
   <string name="notification_export_fail">Ошибка экспорта</string>
   <string name="toast_already_exporting">Экспорт уже выполняется</string>
-  <plurals name="duration_seconds">
-    <item quantity="one"><xliff:g id="count">%d</xliff:g> секунда</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> секунды</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> секунд</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one"><xliff:g id="count">%d</xliff:g> минута</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> минуты</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> минут</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one"><xliff:g id="count">%d</xliff:g> час</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> часа</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> часов</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Предупреждение</string>
   <string name="update_on_mobile_data_message">Скачивание обновления по мобильной сети расходует большой объём трафика и может привести к непредвиденным расходам. Продолжить?</string>
   <string name="checkbox_mobile_data_warning">Не показывать это сообщение</string>

@@ -79,21 +79,6 @@
   <string name="toast_download_url_copied">Skopiowano adres URL</string>
   <string name="dialog_export_title">Wysyłanie aktualizacji</string>
   <string name="notification_export_success">Aktualizacja wysłana</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 sekunda</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> sekundy</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> sekund</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minuta</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> minuty</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minut</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 godzina</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> godziny</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> godzin</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Ostrzeżenie</string>
   <string name="update_on_mobile_data_message">Zamierzasz pobrać pakiet aktualizacji przy użyciu sieci komórkowej co spowoduje duże zużycie transferu danych. Czy chcesz kontynuować?</string>
   <string name="checkbox_mobile_data_warning">Nie pokazuj ponownie</string>

@@ -46,6 +46,7 @@
   <string name="menu_delete_update">移除</string>
   <string name="menu_copy_url">複製網址</string>
   <string name="menu_export_update">匯出更新</string>
+  <string name="menu_show_changelog">顯示更新日誌</string>
   <string name="dialog_checking_for_updates">正在檢查更新</string>
   <string name="snack_updates_found">發現新的更新</string>
   <string name="snack_no_updates_found">沒有找到新的更新</string>

@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Ezabatu</string>
   <string name="menu_copy_url">Kopiatu URL-a</string>
   <string name="menu_export_update">Esportatu eguneraketa</string>
+  <string name="menu_show_changelog">Erakutsi aldaketa-egunkaria</string>
   <string name="dialog_checking_for_updates">Eguneraketak bilatzen</string>
   <string name="snack_updates_found">Eguneraketa berriak aurkitu dira</string>
   <string name="snack_no_updates_found">Ez da eguneraketa berririk aurkitu</string>
@@ -100,5 +101,7 @@
   <string name="menu_mobile_data_warning">Datu mugikorren abisua</string>
   <string name="blocked_update_dialog_title">Eguneraketa blokeatuta</string>
   <string name="blocked_update_dialog_message">Eguneraketa hau ezin da eguneratze-aplikazioarekin instalatu. Irakurri <xliff:g id="info_url">%1$s</xliff:g> informazio gehiagorako.</string>
+  <string name="export_channel_title">Esportazioaren osaketa</string>
   <string name="new_updates_channel_title">Eguneraketa berriak</string>
+  <string name="ongoing_channel_title">Abian diren deskargak</string>
 </resources>

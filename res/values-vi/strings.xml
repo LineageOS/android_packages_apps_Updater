@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Xóa</string>
   <string name="menu_copy_url">Sao chép URL</string>
   <string name="menu_export_update">Xuất bản cập nhật</string>
+  <string name="menu_show_changelog">Hiển thị nhật ký thay đổi</string>
   <string name="dialog_checking_for_updates">Đang kiểm tra bản cập nhật</string>
   <string name="snack_updates_found">Đã tìm thấy bản cập nhật mới</string>
   <string name="snack_no_updates_found">Không tìm thấy bản cập nhật mới</string>

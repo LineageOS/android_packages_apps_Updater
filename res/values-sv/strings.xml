@@ -38,6 +38,7 @@
   <string name="menu_auto_updates_check">Sök efter uppdateringar automatiskt</string>
   <string name="menu_delete_update">Ta bort</string>
   <string name="menu_copy_url">Kopiera webbadress</string>
+  <string name="menu_show_changelog">Visa ändringslogg</string>
   <string name="dialog_checking_for_updates">Söker efter uppdateringar</string>
   <string name="snack_updates_found">Nya uppdateringar hittades</string>
   <string name="snack_no_updates_found">Inga nya uppdateringar hittades</string>
@@ -72,5 +73,7 @@
   </plurals>
   <string name="update_on_mobile_data_title">Varning</string>
   <string name="checkbox_mobile_data_warning">Visa inte igen</string>
+  <string name="export_channel_title">Export slutförd</string>
   <string name="new_updates_channel_title">Nya uppdateringar</string>
+  <string name="ongoing_channel_title">Pågående nedladdningar</string>
 </resources>

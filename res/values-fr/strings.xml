@@ -100,4 +100,5 @@
   <string name="blocked_update_dialog_title">Mise à jour bloquée</string>
   <string name="blocked_update_dialog_message">Cette mise à jour ne peut pas être installée en utilisant le gestionnaire de mise à jour.  Veuillez lire <xliff:g id="info_url">%1$s</xliff:g> pour plus d’information.</string>
   <string name="new_updates_channel_title">Nouvelles mises à jour</string>
+  <string name="ongoing_channel_title">Téléchargements en cours</string>
 </resources>

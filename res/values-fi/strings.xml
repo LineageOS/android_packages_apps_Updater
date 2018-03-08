@@ -22,4 +22,7 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <string name="menu_show_changelog">Näytä muutosloki</string>
+  <string name="export_channel_title">Vienti valmis</string>
+  <string name="ongoing_channel_title">Käynnissä olevat lataukset</string>
 </resources>

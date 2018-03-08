@@ -83,6 +83,24 @@
   <string name="notification_export_success">Aktualizácia exportovaná</string>
   <string name="notification_export_fail">Chyba exportu</string>
   <string name="toast_already_exporting">Aktualizácia sa už exportuje</string>
+  <plurals name="duration_seconds">
+    <item quantity="one">1 sekunda</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> sekundy</item>
+    <item quantity="many"><xliff:g id="count">%d</xliff:g> sekúnd</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> sekúnd</item>
+  </plurals>
+  <plurals name="duration_minutes">
+    <item quantity="one">1 minúta</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> minúty</item>
+    <item quantity="many"><xliff:g id="count">%d</xliff:g> minút</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> minút</item>
+  </plurals>
+  <plurals name="duration_hours">
+    <item quantity="one">1 hodina</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> hodiny</item>
+    <item quantity="many"><xliff:g id="count">%d</xliff:g> hodín</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> hodín</item>
+  </plurals>
   <string name="update_on_mobile_data_title">Upozornenie</string>
   <string name="update_on_mobile_data_message">Chystáte sa stiahnuť aktualizáciu pomocou mobilných dát, čo pravdepodobne zapríčiní veľký prenos mobilných dát. Prajete si pokračovať?</string>
   <string name="checkbox_mobile_data_warning">Nabudúce nezobrazovať</string>

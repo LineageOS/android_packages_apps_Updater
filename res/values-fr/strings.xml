@@ -69,6 +69,7 @@
   <string name="action_description_install">Installer la mise à jour</string>
   <string name="action_description_info">Afficher les informations</string>
   <string name="action_description_delete">Supprimer la mise à jour</string>
+  <string name="action_description_cancel">Annuler l\'installation</string>
   <string name="confirm_delete_dialog_title">Supprimer le fichier</string>
   <string name="confirm_delete_dialog_message">Supprimer le fichier de mise à jour sélectionné ?</string>
   <string name="apply_update_dialog_title">Appliquer la mise à jour</string>

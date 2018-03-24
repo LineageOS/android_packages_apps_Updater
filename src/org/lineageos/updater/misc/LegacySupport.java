@@ -17,6 +17,7 @@ package org.lineageos.updater.misc;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.FileUtils;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -68,7 +69,7 @@ public final class LegacySupport {
         Log.d(TAG, "Importing downloads");
 
         List<String> notReplacing = new ArrayList<>();
-        File updatesDir = new File(context.getDataDir(), "app_updates/");
+        File updatesDir = new File("/data/lineageos_updates/");
         if (updatesDir.isDirectory()) {
             UpdatesDbHelper dbHelper = new UpdatesDbHelper(context);
             File[] files = updatesDir.listFiles();

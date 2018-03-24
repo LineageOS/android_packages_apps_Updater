@@ -60,10 +60,6 @@ public final class LegacySupport {
      */
     public static List<String> importDownloads(Context context,
             List<UpdateInfo> updatesJson) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        if (preferences.getBoolean(IMPORT_DONE, false)) {
-            return null;
-        }
 
         Log.d(TAG, "Importing downloads");
 
@@ -109,7 +105,6 @@ public final class LegacySupport {
                 }
             }
         }
-        preferences.edit().putBoolean(IMPORT_DONE, true).apply();
         return notReplacing;
     }
 

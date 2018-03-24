@@ -229,6 +229,7 @@ public class UpdaterService extends Service {
     private void handleUpdateStatusChange(UpdateInfo update) {
         switch (update.getStatus()) {
             case DELETED: {
+                Log.d(TAG, "Deleted: " + update.getDownloadId());
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationBuilder.setOngoing(false);
                 mNotificationManager.cancel(NOTIFICATION_ID);
@@ -236,6 +237,7 @@ public class UpdaterService extends Service {
                 break;
             }
             case STARTING: {
+                Log.d(TAG, "Starting: " + update.getDownloadId());
                 mNotificationBuilder.mActions.clear();
                 mNotificationBuilder.setProgress(0, 0, true);
                 mNotificationStyle.setSummaryText(null);
@@ -249,6 +251,7 @@ public class UpdaterService extends Service {
                 break;
             }
             case DOWNLOADING: {
+                Log.d(TAG, "Downloading: " + update.getDownloadId());
                 String text = getString(R.string.downloading_notification);
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.addAction(com.android.internal.R.drawable.ic_media_pause,
@@ -261,6 +264,7 @@ public class UpdaterService extends Service {
                 break;
             }
             case PAUSED: {
+                Log.d(TAG, "Paused: " + update.getDownloadId());
                 stopForeground(STOP_FOREGROUND_DETACH);
                 // In case we pause before the first progress update
                 mNotificationBuilder.setProgress(100, update.getProgress(), false);
@@ -278,6 +282,7 @@ public class UpdaterService extends Service {
                 break;
             }
             case PAUSED_ERROR: {
+                Log.d(TAG, "Download error: " + update.getDownloadId());
                 stopForeground(STOP_FOREGROUND_DETACH);
                 int progress = update.getProgress();
                 // In case we pause before the first progress update
@@ -296,6 +301,7 @@ public class UpdaterService extends Service {
                 break;
             }
             case VERIFYING: {
+                Log.d(TAG, "Verifying: " + update.getDownloadId());
                 mNotificationBuilder.setProgress(0, 0, true);
                 mNotificationStyle.setSummaryText(null);
                 mNotificationBuilder.mActions.clear();
@@ -306,6 +312,7 @@ public class UpdaterService extends Service {
                 break;
             }
             case VERIFIED: {
+                Log.d(TAG, "Verified: " + update.getDownloadId());
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationStyle.setSummaryText(null);
                 mNotificationBuilder.setProgress(0, 0, false);
@@ -319,6 +326,7 @@ public class UpdaterService extends Service {
                 break;
             }
             case VERIFICATION_FAILED: {
+                Log.d(TAG, "Verification failed: " + update.getDownloadId());
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationStyle.setSummaryText(null);
                 mNotificationBuilder.setProgress(0, 0, false);
@@ -332,6 +340,7 @@ public class UpdaterService extends Service {
                 break;
             }
             case INSTALLING: {
+                Log.d(TAG, "Installing: " + update.getDownloadId());
                 mNotificationBuilder.mActions.clear();
                 mNotificationBuilder.setProgress(0, 0, false);
                 mNotificationStyle.setSummaryText(null);
@@ -347,6 +356,7 @@ public class UpdaterService extends Service {
                 break;
             }
             case INSTALLED: {
+                Log.d(TAG, "Installed: " + update.getDownloadId());
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationStyle.setSummaryText(null);
                 mNotificationBuilder.setProgress(0, 0, false);
@@ -363,6 +373,7 @@ public class UpdaterService extends Service {
                 break;
             }
             case INSTALLATION_FAILED: {
+                Log.d(TAG, "Installation failed: " + update.getDownloadId());
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationStyle.setSummaryText(null);
                 mNotificationBuilder.setProgress(0, 0, false);
@@ -376,6 +387,7 @@ public class UpdaterService extends Service {
                 break;
             }
             case INSTALLATION_CANCELLED: {
+                Log.d(TAG, "Installation cancelled: " + update.getDownloadId());
                 stopForeground(true);
                 tryStopSelf();
                 break;
@@ -412,6 +424,9 @@ public class UpdaterService extends Service {
                         getString(R.string.finalizing_package) :
                         getString(R.string.preparing_ota_first_boot));
         mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+
+        String status = update.getFinalizing() ? "finalizing" : "preparing";
+        Log.d(TAG, update.getDownloadId() + " is " + status + ", percent=" + percent);
     }
 
     private void setNotificationTitle(UpdateInfo update) {

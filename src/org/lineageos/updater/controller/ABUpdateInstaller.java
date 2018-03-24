@@ -44,12 +44,15 @@ class ABUpdateInstaller {
     private static final String PREF_INSTALLING_AB_ID = "installing_ab_id";
     private static final String PREF_NEEDS_REBOOT = "needs_reboot";
 
+    private static ABUpdateInstaller sInstance = null;
+
     private final UpdaterController mUpdaterController;
     private final Context mContext;
     private String mDownloadId;
     private boolean mReconnecting;
 
     private UpdateEngine mUpdateEngine;
+    private boolean mBound;
 
     private final UpdateEngineCallback mUpdateEngineCallback = new UpdateEngineCallback() {
 
@@ -125,9 +128,18 @@ class ABUpdateInstaller {
                 pref.getBoolean(ABUpdateInstaller.PREF_NEEDS_REBOOT, false);
     }
 
-    ABUpdateInstaller(Context context, UpdaterController updaterController) {
+    private ABUpdateInstaller(Context context, UpdaterController updaterController) {
         mUpdaterController = updaterController;
-        mContext = context;
+        mContext = context.getApplicationContext();
+        mUpdateEngine = new UpdateEngine();
+    }
+
+    static synchronized ABUpdateInstaller getInstance(Context context,
+            UpdaterController updaterController) {
+        if (sInstance == null) {
+            sInstance = new ABUpdateInstaller(context, updaterController);
+        }
+        return sInstance;
     }
 
     public boolean install(String downloadId) {
@@ -172,14 +184,17 @@ class ABUpdateInstaller {
             return false;
         }
 
-        mUpdateEngine = new UpdateEngine();
-        if (!mUpdateEngine.bind(mUpdateEngineCallback)) {
-            Log.e(TAG, "Could not bind");
-            mUpdaterController.getActualUpdate(downloadId)
-                    .setStatus(UpdateStatus.INSTALLATION_FAILED);
-            mUpdaterController.notifyUpdateChange(downloadId);
-            return false;
+        if (!mBound) {
+            mBound = mUpdateEngine.bind(mUpdateEngineCallback);
+            if (!mBound) {
+                Log.e(TAG, "Could not bind");
+                mUpdaterController.getActualUpdate(downloadId)
+                        .setStatus(UpdateStatus.INSTALLATION_FAILED);
+                mUpdaterController.notifyUpdateChange(downloadId);
+                return false;
+            }
         }
+
         String zipFileUri = "file://" + file.getAbsolutePath();
         mUpdateEngine.applyPayload(zipFileUri, offset, 0, headerKeyValuePairs);
 
@@ -199,13 +214,22 @@ class ABUpdateInstaller {
             return false;
         }
 
+        if (mBound) {
+            return true;
+        }
+
         mReconnecting = true;
         mDownloadId = PreferenceManager.getDefaultSharedPreferences(mContext)
                 .getString(PREF_INSTALLING_AB_ID, null);
 
-        mUpdateEngine = new UpdateEngine();
         // We will get a status notification as soon as we are connected
-        return mUpdateEngine.bind(mUpdateEngineCallback);
+        mBound = mUpdateEngine.bind(mUpdateEngineCallback);
+        if (!mBound) {
+            Log.e(TAG, "Could not bind");
+            return false;
+        }
+
+        return true;
     }
 
     private void installationDone(boolean needsReboot) {
@@ -221,7 +245,7 @@ class ABUpdateInstaller {
             return false;
         }
 
-        if (mUpdateEngine == null) {
+        if (!mBound) {
             Log.e(TAG, "Not connected to update engine");
             return false;
         }

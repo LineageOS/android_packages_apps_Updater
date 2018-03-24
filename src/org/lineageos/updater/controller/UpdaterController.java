@@ -18,7 +18,9 @@ package org.lineageos.updater.controller;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.FileUtils;
 import android.os.PowerManager;
+import android.os.Process;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -250,6 +252,13 @@ public class UpdaterController implements Controller {
             public void run() {
                 Update update = mDownloads.get(downloadId).mUpdate;
                 File file = update.getFile();
+
+                int perms = FileUtils.S_IWUSR | FileUtils.S_IRUSR |
+                        FileUtils.S_IWGRP | FileUtils.S_IRGRP;
+                int uid = Process.SYSTEM_UID;
+                int gid = Process.getGidForName("cache");
+                FileUtils.setPermissions(file, perms, uid, gid);
+
                 if (file.exists() && verifyPackage(file)) {
                     update.setPersistentStatus(UpdateStatus.Persistent.VERIFIED);
                     mUpdatesDbHelper.changeUpdateStatus(update);

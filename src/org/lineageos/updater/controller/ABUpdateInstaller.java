@@ -147,9 +147,6 @@ class ABUpdateInstaller {
             return false;
         }
 
-        mUpdaterController.getActualUpdate(mDownloadId).setStatus(UpdateStatus.INSTALLING);
-        mUpdaterController.notifyUpdateChange(mDownloadId);
-
         long offset;
         String[] headerKeyValuePairs;
         try {

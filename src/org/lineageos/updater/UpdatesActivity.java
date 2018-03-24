@@ -270,6 +270,9 @@ public class UpdatesActivity extends UpdatesListActivity {
 
         List<UpdateInfo> updates = Utils.parseJson(jsonFile, true);
 
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);        
+        preferences.edit().putBoolean(IMPORT_DONE, false).apply();
+
         List<String> importedNotAvailableOnline = LegacySupport.importDownloads(this, updates);
 
         List<String> updatesOnline = new ArrayList<>();

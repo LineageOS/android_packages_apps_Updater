@@ -152,12 +152,14 @@ public class UpdaterService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(TAG, "Starting service");
 
-        if ((intent == null || intent.getAction() == null) &&
-                ABUpdateInstaller.isInstallingUpdate(this)) {
-            // The service is being restarted.
-            ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this, mUpdaterController);
-            if (installer.reconnect()) {
-                return START_STICKY;
+        if (intent == null || intent.getAction() == null) {
+            if (ABUpdateInstaller.isInstallingUpdate(this)) {
+                // The service is being restarted.
+                ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
+                        mUpdaterController);
+                if (installer.reconnect()) {
+                    return START_STICKY;
+                }
             }
         } else if (ACTION_DOWNLOAD_CONTROL.equals(intent.getAction())) {
             String downloadId = intent.getStringExtra(EXTRA_DOWNLOAD_ID);

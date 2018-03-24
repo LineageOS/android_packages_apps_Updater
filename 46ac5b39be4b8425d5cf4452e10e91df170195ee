@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8212d747_cbdaa69a",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2018-03-24T22:39:03Z",
+      "side": 1,
+      "message": "The purpose of this flag is having one-time import to provide an upgrade path from the previous app. If you are going to reset the flag every single time, you can just get rid of it.",
+      "range": {
+        "startLine": 274,
+        "startChar": 8,
+        "endLine": 274,
+        "endChar": 66
+      },
+      "revId": "46ac5b39be4b8425d5cf4452e10e91df170195ee",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

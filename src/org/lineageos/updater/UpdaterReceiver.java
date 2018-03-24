@@ -18,7 +18,11 @@ package org.lineageos.updater;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.PowerManager;
+import android.support.v7.preference.PreferenceManager;
+
+import org.lineageos.updater.misc.Constants;
 
 public class UpdaterReceiver extends BroadcastReceiver {
 
@@ -30,6 +34,9 @@ public class UpdaterReceiver extends BroadcastReceiver {
         if (ACTION_INSTALL_REBOOT.equals(intent.getAction())) {
             PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
             pm.reboot(null);
+        } else if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+            SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+            pref.edit().remove(Constants.PREF_NEEDS_REBOOT).apply();
         }
     }
 }

@@ -42,7 +42,6 @@ class ABUpdateInstaller {
     private static final String TAG = "ABUpdateInstaller";
 
     private static final String PREF_INSTALLING_AB_ID = "installing_ab_id";
-    private static final String PREF_NEEDS_REBOOT = "needs_reboot";
 
     private static ABUpdateInstaller sInstance = null;
 
@@ -123,13 +122,13 @@ class ABUpdateInstaller {
     static synchronized boolean isInstallingUpdate(Context context) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         return pref.getString(ABUpdateInstaller.PREF_INSTALLING_AB_ID, null) != null ||
-                pref.getBoolean(ABUpdateInstaller.PREF_NEEDS_REBOOT, false);
+                pref.getBoolean(Constants.PREF_NEEDS_REBOOT, false);
     }
 
     static synchronized boolean isInstallingUpdate(Context context, String downloadId) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         return downloadId.equals(pref.getString(ABUpdateInstaller.PREF_INSTALLING_AB_ID, null)) ||
-                pref.getBoolean(ABUpdateInstaller.PREF_NEEDS_REBOOT, false);
+                pref.getBoolean(Constants.PREF_NEEDS_REBOOT, false);
     }
 
     private ABUpdateInstaller(Context context, UpdaterController updaterController) {
@@ -237,7 +236,7 @@ class ABUpdateInstaller {
 
     private void installationDone(boolean needsReboot) {
         PreferenceManager.getDefaultSharedPreferences(mContext).edit()
-                .putBoolean(PREF_NEEDS_REBOOT, needsReboot)
+                .putBoolean(Constants.PREF_NEEDS_REBOOT, needsReboot)
                 .remove(PREF_INSTALLING_AB_ID)
                 .apply();
     }

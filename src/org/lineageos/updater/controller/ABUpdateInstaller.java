@@ -68,6 +68,10 @@ class ABUpdateInstaller {
             switch (status) {
                 case UpdateEngine.UpdateStatusConstants.DOWNLOADING:
                 case UpdateEngine.UpdateStatusConstants.FINALIZING: {
+                    if (update.getStatus() != UpdateStatus.INSTALLING) {
+                        update.setStatus(UpdateStatus.INSTALLING);
+                        mUpdaterController.notifyUpdateChange(mDownloadId);
+                    }
                     int progress = Math.round(percent * 100);
                     mUpdaterController.getActualUpdate(mDownloadId).setInstallProgress(progress);
                     boolean finalizing = status == UpdateEngine.UpdateStatusConstants.FINALIZING;

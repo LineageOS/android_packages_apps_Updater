@@ -104,6 +104,8 @@ public class UpdaterController implements Controller {
     private Map<String, DownloadEntry> mDownloads = new HashMap<>();
 
     void notifyUpdateChange(String downloadId) {
+        Log.d(TAG, "Notification: setting status of " + downloadId + " to " +
+                getUpdate(downloadId).getStatus());
         Intent intent = new Intent();
         intent.setAction(ACTION_UPDATE_STATUS);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
@@ -111,6 +113,7 @@ public class UpdaterController implements Controller {
     }
 
     void notifyUpdateDelete(String downloadId) {
+        Log.d(TAG, "Notification: deleting " + downloadId);
         Intent intent = new Intent();
         intent.setAction(ACTION_UPDATE_REMOVED);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
@@ -118,6 +121,7 @@ public class UpdaterController implements Controller {
     }
 
     void notifyDownloadProgress(String downloadId) {
+        Log.d(TAG, "Notification: download progress of " + downloadId + " has changed");
         Intent intent = new Intent();
         intent.setAction(ACTION_DOWNLOAD_PROGRESS);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
@@ -125,6 +129,7 @@ public class UpdaterController implements Controller {
     }
 
     void notifyInstallProgress(String downloadId) {
+        Log.d(TAG, "Notification: install progress of " + downloadId + " has changed");
         Intent intent = new Intent();
         intent.setAction(ACTION_INSTALL_PROGRESS);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);

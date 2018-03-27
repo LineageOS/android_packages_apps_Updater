@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Sil</string>
   <string name="menu_copy_url">URL adresini kopyala</string>
   <string name="menu_export_update">Güncellemeyi dışarı aktar</string>
+  <string name="menu_show_changelog">Değişiklikleri göster</string>
   <string name="dialog_checking_for_updates">Güncellemeler kontrol ediliyor</string>
   <string name="snack_updates_found">Yeni güncelleştirmeler bulundu</string>
   <string name="snack_no_updates_found">Yeni güncelleme bulunamadı</string>

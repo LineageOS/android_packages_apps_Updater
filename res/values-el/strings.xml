@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Διαγραφή</string>
   <string name="menu_copy_url">Αντιγραφή URL</string>
   <string name="menu_export_update">Εξαγωγή ενημέρωσης</string>
+  <string name="menu_show_changelog">Εμφάνιση αλλαγών</string>
   <string name="dialog_checking_for_updates">Έλεγχος για ενημερώσεις</string>
   <string name="snack_updates_found">Βρέθηκαν νέες ενημερώσεις</string>
   <string name="snack_no_updates_found">Δεν βρέθηκαν νέες ενημερώσεις</string>

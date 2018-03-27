@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Удалить</string>
   <string name="menu_copy_url">Копировать URL-адрес</string>
   <string name="menu_export_update">Экспорт обновлений</string>
+  <string name="menu_show_changelog">Показать журнал изменений</string>
   <string name="dialog_checking_for_updates">Проверка обновлений</string>
   <string name="snack_updates_found">Доступно новое обновление</string>
   <string name="snack_no_updates_found">Обновлений не найдено</string>
@@ -85,16 +86,19 @@
   <plurals name="duration_seconds">
     <item quantity="one"><xliff:g id="count">%d</xliff:g> секунда</item>
     <item quantity="few"><xliff:g id="count">%d</xliff:g> секунды</item>
+    <item quantity="many"><xliff:g id="count">%d</xliff:g> секунд</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> секунд</item>
   </plurals>
   <plurals name="duration_minutes">
     <item quantity="one"><xliff:g id="count">%d</xliff:g> минута</item>
     <item quantity="few"><xliff:g id="count">%d</xliff:g> минуты</item>
+    <item quantity="many"><xliff:g id="count">%d</xliff:g> минут</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> минут</item>
   </plurals>
   <plurals name="duration_hours">
     <item quantity="one"><xliff:g id="count">%d</xliff:g> час</item>
     <item quantity="few"><xliff:g id="count">%d</xliff:g> часа</item>
+    <item quantity="many"><xliff:g id="count">%d</xliff:g> часов</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> часов</item>
   </plurals>
   <string name="update_on_mobile_data_title">Предупреждение</string>

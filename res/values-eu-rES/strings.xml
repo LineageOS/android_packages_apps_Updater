@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Ezabatu</string>
   <string name="menu_copy_url">Kopiatu URL-a</string>
   <string name="menu_export_update">Esportatu eguneraketa</string>
+  <string name="menu_show_changelog">Erakutsi aldaketa-egunkaria</string>
   <string name="dialog_checking_for_updates">Eguneraketak bilatzen</string>
   <string name="snack_updates_found">Eguneraketa berriak aurkitu dira</string>
   <string name="snack_no_updates_found">Ez da eguneraketa berririk aurkitu</string>

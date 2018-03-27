@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Vymazať</string>
   <string name="menu_copy_url">Kopírovať URL</string>
   <string name="menu_export_update">Export aktualizácie</string>
+  <string name="menu_show_changelog">Zobraziť zoznam zmien</string>
   <string name="dialog_checking_for_updates">Kontrolovanie aktualizácií</string>
   <string name="snack_updates_found">Našli sa nové aktualizácie</string>
   <string name="snack_no_updates_found">Nenašli sa žiadne nové aktualizácie</string>
@@ -85,16 +86,19 @@
   <plurals name="duration_seconds">
     <item quantity="one">1 sekunda</item>
     <item quantity="few"><xliff:g id="count">%d</xliff:g> sekundy</item>
+    <item quantity="many"><xliff:g id="count">%d</xliff:g> sekúnd</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> sekúnd</item>
   </plurals>
   <plurals name="duration_minutes">
     <item quantity="one">1 minúta</item>
     <item quantity="few"><xliff:g id="count">%d</xliff:g> minúty</item>
+    <item quantity="many"><xliff:g id="count">%d</xliff:g> minút</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> minút</item>
   </plurals>
   <plurals name="duration_hours">
     <item quantity="one">1 hodina</item>
     <item quantity="few"><xliff:g id="count">%d</xliff:g> hodiny</item>
+    <item quantity="many"><xliff:g id="count">%d</xliff:g> hodín</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> hodín</item>
   </plurals>
   <string name="update_on_mobile_data_title">Upozornenie</string>

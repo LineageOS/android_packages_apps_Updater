@@ -16,8 +16,92 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="app_name">Ažuriranje</string>
+  <string name="display_name">Ažuriranje</string>
   <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <string name="verification_failed_notification">Potvrda neuspješna</string>
+  <string name="verifying_download_notification">Provjera ažuriranja</string>
+  <string name="downloading_notification">Preuzimanje</string>
+  <string name="download_paused_notification">Preuzimanje pauzirano</string>
+  <string name="download_paused_error_notification">Pogreška preuzimanja</string>
+  <string name="download_completed_notification">Preuzimanje je završeno</string>
+  <string name="download_starting_notification">Početak preuzimanja</string>
+  <string name="new_updates_found_title">Nova ažuriranja</string>
+  <string name="text_download_speed">%1$s, %2$s/s</string>
+  <string name="pause_button">Pauziraj</string>
+  <string name="resume_button">Nastavi</string>
+  <string name="installing_update">Instaliranje paketa ažuriranja</string>
+  <string name="installing_update_error">Pogreška prilikom instalacije</string>
+  <string name="installing_update_finished">Ažuriranje instalirano</string>
+  <string name="finalizing_package">Finaliziranje paketa instaliranja</string>
+  <string name="preparing_ota_first_boot">Priprema za prvo pokretanje</string>
+  <string name="dialog_prepare_zip_message">Preliminarna priprema ažuriranja</string>
+  <string name="reboot">Ponovno pokreni</string>
+  <string name="menu_refresh">Osvježi</string>
+  <string name="menu_auto_updates_check">Provjeri ažuriranja automatski</string>
+  <string name="menu_auto_delete_updates">Izbriši ažuriranja nakon instalacije</string>
+  <string name="menu_delete_update">Izbriši</string>
+  <string name="menu_copy_url">Kopiraj URL</string>
+  <string name="menu_export_update">Izvezi ažuriranje</string>
+  <string name="menu_show_changelog">Prikaži promjene</string>
+  <string name="dialog_checking_for_updates">Provjera ažuriranja</string>
+  <string name="snack_updates_found">Pronađena su nova ažuriranja</string>
+  <string name="snack_no_updates_found">Nema pronađenih novih ažuriranja</string>
+  <string name="snack_updates_check_failed">Provjera ažuriranja nije uspjela. Provjerite internetsku vezu i pokušajte ponovo kasnije.</string>
+  <string name="snack_download_failed">Preuzimanje nije uspjelo. Provjerite internetsku vezu i pokušajte ponovo kasnije.</string>
+  <string name="snack_download_verification_failed">Provjera ažuriranja nije uspjela.</string>
+  <string name="snack_download_verified">Preuzimanje je završeno.</string>
+  <string name="snack_update_not_installable">Ovo se ažuriranje ne može instalirati na trenutnu verziju.</string>
+  <string name="header_title_text">LineageOS\n%1$s</string>
+  <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+  <string name="header_last_updates_check">Zadnja provjera: <xliff:g id="date" example="1 January 1970">%1$s </xliff:g> (<xliff:g id="time" example="01:23">%2$s </xliff:g>)</string>
+  <string name="list_build_version">LineageOS <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+  <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s </xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s </xliff:g></string>
+  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s </xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s </xliff:g></string>
+  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s </xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s </xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s </xliff:g> ostalo</string>
+  <string name="list_verifying_update">Provjera ažuriranja</string>
+  <string name="list_no_updates">Nema pronađenih novih ažuriranja. Za ručnu provjeru novih ažuriranja upotrijebite gumb Osvježi.</string>
+  <string name="action_description_download">Preuzmi</string>
+  <string name="action_description_pause">Pauziraj preuzimanje</string>
+  <string name="action_description_resume">Nastavi s preuzimanjem</string>
+  <string name="action_description_install">Instaliraj ažuriranje</string>
+  <string name="action_description_info">Prikaži informacija</string>
+  <string name="action_description_delete">Izbriši ažuriranje</string>
+  <string name="action_description_cancel">Prekini instalaciju</string>
+  <string name="confirm_delete_dialog_title">Izbriši datoteku</string>
+  <string name="confirm_delete_dialog_message">Želite li izbrisati odabranu datoteku ažuriranja?</string>
+  <string name="apply_update_dialog_title">Primjeni ažuriranje</string>
+  <string name="apply_update_dialog_message">Ažurirat ćete svoj sustav na <xliff:g id="filename">%1$s</xliff:g>.\n\nAko pritisnete <xliff:g id="ok">%2$s</xliff:g>, uređaj će se sam ponovno pokrenuti u načinu oporavka kako bi instalirao ažuriranje.\n\nNapomena: ova značajka zahtijeva kompatibilan Oporavak. U suprotnome će se ažuriranja morati instalirati ručno.</string>
+  <string name="apply_update_dialog_message_ab">Spremate se ažurirati na <xliff:g id="filename">%1$s </xliff:g>.\n\nAko dodirnete <xliff:g id="ok">%2$s</xliff:g>, uređaj će započeti instalaciju u pozadini.\n\nKad se završi, trebati ćete ponovno pokrenuti uređaj.</string>
+  <string name="cancel_installation_dialog_message">Prekinuti instalaciju?</string>
+  <string name="label_download_url">Preuzmi URL</string>
+  <string name="toast_download_url_copied">URL kopiran</string>
+  <string name="dialog_export_title">Izvoz ažuriranja</string>
+  <string name="notification_export_success">Ažuriranje je izvezeno</string>
+  <string name="notification_export_fail">Pogreška izvoza</string>
+  <string name="toast_already_exporting">Ažuriranje se već izvozi</string>
+  <plurals name="duration_seconds">
+    <item quantity="one">1 sekunda</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> sekundi</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> sekundi</item>
+  </plurals>
+  <plurals name="duration_minutes">
+    <item quantity="one">1 minutu</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> minuta</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> minuta</item>
+  </plurals>
+  <plurals name="duration_hours">
+    <item quantity="one">1 sat</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> sati</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> sati</item>
+  </plurals>
+  <string name="update_on_mobile_data_title">Upozorenje</string>
+  <string name="update_on_mobile_data_message">Upravo ćete preuzeti paket ažuriranja pomoću mobilnih podataka koji će vjerojatno uzrokovati visoku upotrebu podataka. Želite li nastaviti?</string>
+  <string name="checkbox_mobile_data_warning">Ne prikazuj ponovno</string>
+  <string name="menu_mobile_data_warning">Upozorenje o mobilnim podacima</string>
+  <string name="blocked_update_dialog_title">Ažuriranje je blokirano</string>
+  <string name="blocked_update_dialog_message">Ovo se ažuriranje ne može instalirati pomoću aplikacije za ažuriranje.  Molimo pročitajte <xliff:g id="info_url">%1$s</xliff:g> za više informacija.</string>
 </resources>

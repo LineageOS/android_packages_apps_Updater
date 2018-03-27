@@ -22,4 +22,83 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <string name="verification_failed_notification">Vahvistus epäonnistui</string>
+  <string name="verifying_download_notification">Todentaa päivitystä</string>
+  <string name="downloading_notification">Ladataan</string>
+  <string name="download_paused_notification">Lataus keskeytetty</string>
+  <string name="download_paused_error_notification">Latausvirhe</string>
+  <string name="download_completed_notification">Lataus suoritettu</string>
+  <string name="download_starting_notification">Aloitetaan latausta</string>
+  <string name="new_updates_found_title">Uudet päivitykset</string>
+  <string name="text_download_speed">%1$s, %2$s/s</string>
+  <string name="pause_button">Tauko</string>
+  <string name="resume_button">Jatka</string>
+  <string name="installing_update">Asennetaan päivitystä</string>
+  <string name="installing_update_error">Asennusvirhe</string>
+  <string name="installing_update_finished">Päivitys asennettu</string>
+  <string name="finalizing_package">Viimeistellään päivityksen asennusta</string>
+  <string name="preparing_ota_first_boot">Valmistellaan ensimmäistä käynnistystä</string>
+  <string name="dialog_prepare_zip_message">Alustava päivityksen valmistelu</string>
+  <string name="reboot">Käynnistä uudelleen</string>
+  <string name="menu_refresh">Päivitä</string>
+  <string name="menu_auto_updates_check">Automaattinen päivitysten tarkistus</string>
+  <string name="menu_auto_delete_updates">Poista päivitykset asennuksen jälkeen</string>
+  <string name="menu_delete_update">Poista</string>
+  <string name="menu_copy_url">Kopioi URL-osoite</string>
+  <string name="menu_export_update">Vie päivitys</string>
+  <string name="menu_show_changelog">Näytä muutosloki</string>
+  <string name="dialog_checking_for_updates">Tarkistetaan päivityksiä</string>
+  <string name="snack_updates_found">Uusia päivityksiä löytyi</string>
+  <string name="snack_no_updates_found">Uusia päivityksiä ei löytynyt</string>
+  <string name="snack_updates_check_failed">Päivitysten tarkistaminen epäonnistui. Tarkista internet-yhteytesi ja yritä uudelleen.</string>
+  <string name="snack_download_failed">Lataaminen epäonnistui. Tarkista internet-yhteytesi ja yritä uudelleen.</string>
+  <string name="snack_download_verification_failed">Päivityksen vahvistaminen epäonnistui.</string>
+  <string name="snack_download_verified">Lataus suoritettu.</string>
+  <string name="snack_update_not_installable">Tätä päivitystä ei voida asentaa nykyisen version päälle.</string>
+  <string name="header_title_text">LineageOS\n%1$s</string>
+  <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+  <string name="header_last_updates_check">Viimeksi tarkistettu: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+  <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+  <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> jäljellä</string>
+  <string name="list_verifying_update">Todentaa päivitystä</string>
+  <string name="list_no_updates">Uusia päivityksiä ei löytynyt. Tarkistaaksesi päivitykset manuaalisesti, paina Päivitä-painiketta.</string>
+  <string name="action_description_download">Lataa</string>
+  <string name="action_description_pause">Keskeytä lataaminen</string>
+  <string name="action_description_resume">Jatka lataamista</string>
+  <string name="action_description_install">Asenna päivitys</string>
+  <string name="action_description_info">Näytä tiedot</string>
+  <string name="action_description_delete">Poista päivitys</string>
+  <string name="action_description_cancel">Peruuta asennus</string>
+  <string name="confirm_delete_dialog_title">Poista tiedosto</string>
+  <string name="confirm_delete_dialog_message">Poista valittu päivitystiedosto?</string>
+  <string name="apply_update_dialog_title">Asenna päivitys</string>
+  <string name="apply_update_dialog_message">Olet päivittämässä versioon <xliff:g id="update_name">%1$s</xliff:g>.\n\nJos painat <xliff:g id="ok">%2$s</xliff:g>, laite käynnistyy Recovery-tilaan. \n\nHuomautus: Tämä toiminto vaatii yhteensopivan Recoveryn tai päivitys pitää asentaa manuaalisesti.</string>
+  <string name="apply_update_dialog_message_ab">Olet päivittämässä versioon <xliff:g id="update_name">%1$s</xliff:g>.\n\nJos painat <xliff:g id="ok">%2$s</xliff:g>, asennus alkaa taustalla.\n\nKun asennus on valmis, sinua pyydetään käynnistämään laite uudelleen.</string>
+  <string name="cancel_installation_dialog_message">Peruuta asennus?</string>
+  <string name="label_download_url">Lataussivun URL-osoite</string>
+  <string name="toast_download_url_copied">URL-osoite kopioitu</string>
+  <string name="dialog_export_title">Viedään päivitystä</string>
+  <string name="notification_export_success">Päivitys viety</string>
+  <string name="notification_export_fail">Vienti epäonnistui</string>
+  <string name="toast_already_exporting">Päivityksen vieminen jo käynnissä</string>
+  <plurals name="duration_seconds">
+    <item quantity="one">1 sekunti</item>
+    <item quantity="other"><xliff:g id="Count">%d</xliff:g> sekuntia</item>
+  </plurals>
+  <plurals name="duration_minutes">
+    <item quantity="one">1 minuutti</item>
+    <item quantity="other"><xliff:g id="Count">%d</xliff:g> minuuttia</item>
+  </plurals>
+  <plurals name="duration_hours">
+    <item quantity="one">1 tunti</item>
+    <item quantity="other"><xliff:g id="Count">%d</xliff:g> tuntia</item>
+  </plurals>
+  <string name="update_on_mobile_data_title">Varoitus</string>
+  <string name="update_on_mobile_data_message">Olet lataamassa päivityspakettia käyttämällä mobiilidataa, joka voi aiheuttaa tiedonsiirtokuluja. Haluatko jatkaa?</string>
+  <string name="checkbox_mobile_data_warning">Älä näytä uudelleen</string>
+  <string name="menu_mobile_data_warning">Mobiilidatavaroitus</string>
+  <string name="blocked_update_dialog_title">Päivitys estetty</string>
+  <string name="blocked_update_dialog_message">Tätä päivitystä ei voida asentaa päivitys-sovelluksella. Lue <xliff:g id="info_url">%1$s</xliff:g> saadaksesi lisätietoja.</string>
 </resources>

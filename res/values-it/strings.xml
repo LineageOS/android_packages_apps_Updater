@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Elimina</string>
   <string name="menu_copy_url">Copia indirizzo URL</string>
   <string name="menu_export_update">Esporta aggiornamento</string>
+  <string name="menu_show_changelog">Mostra il ChangeLog</string>
   <string name="dialog_checking_for_updates">Controllo aggiornamenti</string>
   <string name="snack_updates_found">Nessun aggiornamento trovato</string>
   <string name="snack_no_updates_found">Nessun nuovo aggiornamento trovato</string>

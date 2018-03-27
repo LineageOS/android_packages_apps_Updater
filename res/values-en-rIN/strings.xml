@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Delete</string>
   <string name="menu_copy_url">Copy URL</string>
   <string name="menu_export_update">Export update</string>
+  <string name="menu_show_changelog">Show changelog</string>
   <string name="dialog_checking_for_updates">Checking for updates</string>
   <string name="snack_updates_found">New updates found</string>
   <string name="snack_no_updates_found">No new updates found</string>

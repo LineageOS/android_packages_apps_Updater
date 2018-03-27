@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Eliminar</string>
   <string name="menu_copy_url">Copiar URL</string>
   <string name="menu_export_update">Exportar actualización</string>
+  <string name="menu_show_changelog">Amosar o rexistro de cambios</string>
   <string name="dialog_checking_for_updates">Comprobando actualizacións</string>
   <string name="snack_updates_found">Atopáronse novas actualizacións</string>
   <string name="snack_no_updates_found">Non se atoparon novas actualizacións</string>
@@ -69,16 +70,19 @@
   <string name="action_description_install">Instalar actualización</string>
   <string name="action_description_info">Amosar información</string>
   <string name="action_description_delete">Eliminar actualización</string>
+  <string name="action_description_cancel">Cancelar instalación</string>
   <string name="confirm_delete_dialog_title">Eliminar ficheiro</string>
   <string name="confirm_delete_dialog_message">Eliminar o ficheiro de actualización seleccionado?</string>
   <string name="apply_update_dialog_title">Aplicar a actualización</string>
   <string name="apply_update_dialog_message">Procederase a actualizar <xliff:g id="update_name">%1$s</xliff:g>.\n\nAo premer en <xliff:g id="ok">%2$s</xliff:g>, reiniciarase no modo recuperación para instalar a actualización.\n\nAviso: Esta función require dunha recuperación compatible ou as actualizacións precisarán de se instalar manualmente.</string>
   <string name="apply_update_dialog_message_ab">Actualizaráse a <xliff:g id="update_name">%1$s</xliff:g>.\n\n Se pulsase <xliff:g id="ok">%2$s</xliff:g>, o dispositivo comezará a instalar en segundo plano.\n\nUnha vez terminado o proceso, pediráselle que reinicie.</string>
+  <string name="cancel_installation_dialog_message">Cancelar a instalación?</string>
   <string name="label_download_url">URL da descarga</string>
   <string name="toast_download_url_copied">URL copiado</string>
   <string name="dialog_export_title">Exportando actualización</string>
   <string name="notification_export_success">Actualización exportada</string>
   <string name="notification_export_fail">Exportar erro</string>
+  <string name="toast_already_exporting">Xa se está a exportar unha actualización</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 segundo</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> segundos</item>

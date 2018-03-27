@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Izbriši</string>
   <string name="menu_copy_url">Kopiraj URL</string>
   <string name="menu_export_update">Izvoz posodobitve</string>
+  <string name="menu_show_changelog">Prikaži dnevnik sprememb</string>
   <string name="dialog_checking_for_updates">Preverjanje za posodobitve</string>
   <string name="snack_updates_found">Najdene nove posodobitve</string>
   <string name="snack_no_updates_found">Ni najdenih novih posodobitev</string>

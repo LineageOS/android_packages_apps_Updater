@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Excluir</string>
   <string name="menu_copy_url">Copiar URL</string>
   <string name="menu_export_update">Exportar atualização</string>
+  <string name="menu_show_changelog">Mostrar alterações</string>
   <string name="dialog_checking_for_updates">Verificando se há atualizações disponíveis</string>
   <string name="snack_updates_found">Nova atualização disponível</string>
   <string name="snack_no_updates_found">Não foram encontradas novas atualizações</string>

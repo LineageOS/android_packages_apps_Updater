@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Supprimer</string>
   <string name="menu_copy_url">Copier l\'URL</string>
   <string name="menu_export_update">Exporter la mise à jour</string>
+  <string name="menu_show_changelog">Afficher l\'historique des modifications</string>
   <string name="dialog_checking_for_updates">Recherche de mises à jour en cours</string>
   <string name="snack_updates_found">Nouvelles mises à jour disponibles</string>
   <string name="snack_no_updates_found">Aucune nouvelle mise à jour disponible</string>
@@ -69,16 +70,19 @@
   <string name="action_description_install">Installer la mise à jour</string>
   <string name="action_description_info">Afficher les informations</string>
   <string name="action_description_delete">Supprimer la mise à jour</string>
+  <string name="action_description_cancel">Annuler l\'installation</string>
   <string name="confirm_delete_dialog_title">Supprimer le fichier</string>
   <string name="confirm_delete_dialog_message">Supprimer le fichier de mise à jour sélectionné ?</string>
   <string name="apply_update_dialog_title">Appliquer la mise à jour</string>
   <string name="apply_update_dialog_message">Vous êtes sur le point d\'installer <xliff:g id="update_name">%1$s</xliff:g>.\n\nLorsque vous appuierez sur <xliff:g id="ok">%2$s</xliff:g>, votre appareil redémarrera automatiquement en mode recovery pour installer la mise à jour.\n\nRemarque : Cette opération nécessite un recovery compatible, sinon les mises à jour devront être installées manuellement.</string>
   <string name="apply_update_dialog_message_ab">Vous êtes sur le point de faire la mise à jour vers <xliff:g id="update_name">%1$s</xliff:g>.\n\nLorsque vous appuierez sur <xliff:g id="ok">%2$s</xliff:g>, l’appareil commencera l\'installation en tâche de fond.\n\nUne fois celle-ci terminée, il vous sera demandé de redémarrer.</string>
+  <string name="cancel_installation_dialog_message">Annuler l\'installation ?</string>
   <string name="label_download_url">URL de téléchargement</string>
   <string name="toast_download_url_copied">URL copiée</string>
   <string name="dialog_export_title">Exportation de la mise à jour en cours</string>
   <string name="notification_export_success">Mise à jour exportée</string>
   <string name="notification_export_fail">Erreur lors de l\'exportation</string>
+  <string name="toast_already_exporting">Une mise à jour est déjà en cours d\'export</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 seconde</item>
     <item quantity="other"><xliff:g id="count">%d</xliff:g> secondes</item>

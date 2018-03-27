@@ -78,21 +78,6 @@
   <string name="dialog_export_title">Експорт оновлення</string>
   <string name="notification_export_success">Оновлення експортовано</string>
   <string name="notification_export_fail">Помилка експорту</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 секунда</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> секунди</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> секунд</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 хвилина</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> хвилини</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> хвилин</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 година</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> години</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> годин</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Попередження</string>
   <string name="update_on_mobile_data_message">Ви збираєтесь завантажити пакет оновлень за допомогою мобільних даних, що ймовірно призведе до високого використання мобільного трафіку. Хочете продовжити?</string>
   <string name="checkbox_mobile_data_warning">Не показувати знову</string>

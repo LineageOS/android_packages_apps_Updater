@@ -69,31 +69,19 @@
   <string name="action_description_install">Instalovat aktualizaci</string>
   <string name="action_description_info">Zobrazit informace</string>
   <string name="action_description_delete">Odstranit aktualizaci</string>
+  <string name="action_description_cancel">Zrušit instalaci</string>
   <string name="confirm_delete_dialog_title">Smazat soubor</string>
   <string name="confirm_delete_dialog_message">Smazat zvolený soubor aktualizace?</string>
   <string name="apply_update_dialog_title">Použít aktualizaci</string>
   <string name="apply_update_dialog_message">Chystáte se aktualizovat na <xliff:g id="update_name">%1$s</xliff:g>.\n\nPokud stisknete <xliff:g id="ok">%2$s</xliff:g>, telefon se restartuje do režimu Recovery, kde budete pokračovat v instalaci aktualizace.\n\nPoznámka: tato funkce vyžaduje nainstalovaný kompatibilní režim Recovery nebo je nutné instalaci provést ručně.</string>
   <string name="apply_update_dialog_message_ab">Chystáte se aktualizovat na <xliff:g id="update_name">%1$s</xliff:g>.\n\nPokud stisknete <xliff:g id="ok">%2$s</xliff:g>, spustí se instalace na pozadí.\n\nPo dokončení budete vyzváni k restartu.</string>
+  <string name="cancel_installation_dialog_message">Zrušit instalaci?</string>
   <string name="label_download_url">URL stažení</string>
   <string name="toast_download_url_copied">URL zkopírována</string>
   <string name="dialog_export_title">Export aktualizace</string>
   <string name="notification_export_success">Aktualizace exportována</string>
   <string name="notification_export_fail">Chyba exportu</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 sekunda</item>
-    <item quantity="few"><xliff:g id="COUNT">%d</xliff:g> sekundy</item>
-    <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> sekund</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minuta</item>
-    <item quantity="few"><xliff:g id="COUNT">%d</xliff:g> minuty</item>
-    <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> minut</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 hodina</item>
-    <item quantity="few"><xliff:g id="COUNT">%d</xliff:g> hodiny</item>
-    <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> hodin</item>
-  </plurals>
+  <string name="toast_already_exporting">Aktualizace se již exportuje</string>
   <string name="update_on_mobile_data_title">Varování</string>
   <string name="update_on_mobile_data_message">Chystáte se stáhnout aktualizaci pomocí mobilních dat, což pravděpodobně zapříčiní vysoké využití dat. Přejete si pokračovat?</string>
   <string name="checkbox_mobile_data_warning">Znovu nezobrazovat</string>

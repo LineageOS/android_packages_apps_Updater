@@ -69,16 +69,19 @@
   <string name="action_description_install">Инсталирај ажурирање</string>
   <string name="action_description_info">Прикажи информације</string>
   <string name="action_description_delete">Обриши ажурирање</string>
+  <string name="action_description_cancel">Откажи инсталацију</string>
   <string name="confirm_delete_dialog_title">Обриши фајл</string>
   <string name="confirm_delete_dialog_message">Избриши изабрани фајл за ажурирање?</string>
   <string name="apply_update_dialog_title">Примени ажурирање</string>
   <string name="apply_update_dialog_message">Биће инсталирано <xliff:g id="update_name">%1$s</xliff:g>.\n\nАко додирнете <xliff:g id="ok">%2$s</xliff:g>, уређај ће се поново покренути у режим опоравка ради инсталације ажурирања.\n\nНапомена: За ову функцију је неопходан одговарајући режим опоравка или ћете морати да инсталирате ручно.</string>
   <string name="apply_update_dialog_message_ab">Биће инсталирано <xliff:g id="update_name">%1$s</xliff:g>.\n\nАко додирнете <xliff:g id="ok">%2$s</xliff:g>, уређај ће почети инсталацијуу позадини.\n\nКада буде завршено биће понуђено рестартовање.</string>
+  <string name="cancel_installation_dialog_message">Откажи инсталацију?</string>
   <string name="label_download_url">URL адреса за преузимање</string>
   <string name="toast_download_url_copied">URL Копиран</string>
   <string name="dialog_export_title">Извези ажурирања</string>
   <string name="notification_export_success">Ажурирање извезено</string>
   <string name="notification_export_fail">Грешка при извозу</string>
+  <string name="toast_already_exporting">Већ извозим ажурирање</string>
   <plurals name="duration_seconds">
     <item quantity="one">1 секунда</item>
     <item quantity="few"><xliff:g id="count">%d</xliff:g> секунди</item>

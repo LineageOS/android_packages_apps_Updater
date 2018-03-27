@@ -46,6 +46,7 @@
   <string name="menu_delete_update">Șterge</string>
   <string name="menu_copy_url">Copiază URL</string>
   <string name="menu_export_update">Exportează actualizarea</string>
+  <string name="menu_show_changelog">Arată changelog</string>
   <string name="dialog_checking_for_updates">Căutare actualizări</string>
   <string name="snack_updates_found">Noi actualizări găsite</string>
   <string name="snack_no_updates_found">Nu s-au găsit actualizări noi</string>

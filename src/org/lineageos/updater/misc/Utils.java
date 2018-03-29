@@ -144,15 +144,19 @@ public class Utils {
     }
 
     public static String getServerURL(Context context) {
-        String serverUrl = SystemProperties.get(Constants.PROP_UPDATER_URI);
-        if (serverUrl.trim().isEmpty()) {
-            serverUrl = context.getString(R.string.conf_update_server_url_def);
-        }
         String incrementalVersion = SystemProperties.get(Constants.PROP_BUILD_VERSION_INCREMENTAL);
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
                 SystemProperties.get(Constants.PROP_DEVICE));
         String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).toLowerCase(Locale.ROOT);
-        return serverUrl + "/v1/" + device + "/" + type + "/" + incrementalVersion;
+
+        String serverUrl = SystemProperties.get(Constants.PROP_UPDATER_URI);
+        if (serverUrl.trim().isEmpty()) {
+            serverUrl = context.getString(R.string.conf_update_server_url_def);
+        }
+
+        return serverUrl.replace("{device}", device)
+                .replace("{type}", type)
+                .replace("{incr}", incrementalVersion);
     }
 
     public static String getChangelogURL(Context context) {

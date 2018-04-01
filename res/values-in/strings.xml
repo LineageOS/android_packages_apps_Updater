@@ -96,4 +96,5 @@
   <string name="blocked_update_dialog_title">Pembaruan diblokir</string>
   <string name="blocked_update_dialog_message">Pembaruan ini tidak dapat dipasang menggunakan aplikasi pembaruan.  Baca <xliff:g id="info_url">%1$s</xliff:g> untuk informasi lebih lanjut.</string>
   <string name="new_updates_channel_title">Pembaruan baru</string>
+  <string name="ongoing_channel_title">Unduhan sedang berlangsung</string>
 </resources>

@@ -78,14 +78,6 @@ class ABUpdateInstaller {
                 }
                 break;
 
-                case UpdateEngine.UpdateStatusConstants.REPORTING_ERROR_EVENT: {
-                    installationDone(false);
-                    update.setInstallProgress(0);
-                    update.setStatus(UpdateStatus.INSTALLATION_FAILED);
-                    mUpdaterController.notifyUpdateChange(mDownloadId);
-                }
-                break;
-
                 case UpdateEngine.UpdateStatusConstants.UPDATED_NEED_REBOOT: {
                     installationDone(true);
                     update.setInstallProgress(0);
@@ -112,6 +104,13 @@ class ABUpdateInstaller {
 
         @Override
         public void onPayloadApplicationComplete(int errorCode) {
+            if (errorCode != UpdateEngine.ErrorCodeConstants.SUCCESS) {
+                installationDone(false);
+                Update update = mUpdaterController.getActualUpdate(mDownloadId);
+                update.setInstallProgress(0);
+                update.setStatus(UpdateStatus.INSTALLATION_FAILED);
+                mUpdaterController.notifyUpdateChange(mDownloadId);
+            }
         }
     };
 

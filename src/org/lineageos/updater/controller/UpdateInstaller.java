@@ -16,7 +16,9 @@
 package org.lineageos.updater.controller;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
 
@@ -55,15 +57,20 @@ class UpdateInstaller {
 
     void install(String downloadId) {
         UpdateInfo update = mUpdaterController.getUpdate(downloadId);
-        boolean deleteUpdate = PreferenceManager.getDefaultSharedPreferences(mContext)
-                .getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false);
-        if (deleteUpdate) {
-            // Renaming the file is enough to have it deleted automatically
-            File uncrytpFile = new File(
-                    update.getFile().getAbsolutePath() + Constants.UNCRYPT_FILE_EXT);
-            update.getFile().renameTo(uncrytpFile);
-            installPackage(uncrytpFile, downloadId);
-        } else if (Utils.isEncrypted(mContext, update.getFile())) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+        long buildTimestamp = SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0);
+        long lastBuildTimestamp = preferences.getLong(Constants.PREF_INSTALL_OLD_TIMESTAMP,
+                buildTimestamp);
+        boolean isReinstalling = buildTimestamp == lastBuildTimestamp;
+        preferences.edit()
+                .putLong(Constants.PREF_INSTALL_OLD_TIMESTAMP, buildTimestamp)
+                .putLong(Constants.PREF_INSTALL_NEW_TIMESTAMP, update.getTimestamp())
+                .putString(Constants.PREF_INSTALL_PACKAGE_PATH, update.getFile().getAbsolutePath())
+                .putBoolean(Constants.PREF_INSTALL_AGAIN, isReinstalling)
+                .putBoolean(Constants.PREF_INSTALL_NOTIFIED, false)
+                .apply();
+
+        if (Utils.isEncrypted(mContext, update.getFile())) {
             // uncrypt rewrites the file so that it can be read without mounting
             // the filesystem, so create a copy of it.
             prepareForUncryptAndInstall(update);

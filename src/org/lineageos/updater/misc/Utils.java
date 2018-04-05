@@ -268,11 +268,22 @@ public class Utils {
      */
     public static void cleanupDownloadsDir(Context context) {
         File downloadPath = getDownloadPath(context);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         removeUncryptFiles(downloadPath);
 
+        String buildTimestamp = SystemProperties.get(Constants.PROP_BUILD_DATE);
+        String prevTimestamp = preferences.getString(Constants.PREF_INSTALL_BUILD_TIMESTAMP, null);
+        String lastUpdatePath = preferences.getString(Constants.PREF_INSTALL_PACKAGE_PATH, null);
+        boolean deleteUpdates = preferences.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false);
+        if ((!buildTimestamp.equals(prevTimestamp)) && deleteUpdates && lastUpdatePath != null) {
+            File lastUpdate = new File(lastUpdatePath);
+            if (lastUpdate.exists()) {
+                lastUpdate.delete();
+            }
+        }
+
         final String DOWNLOADS_CLEANUP_DONE = "cleanup_done";
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         if (preferences.getBoolean(DOWNLOADS_CLEANUP_DONE, false)) {
             return;
         }

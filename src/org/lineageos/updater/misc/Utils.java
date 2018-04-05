@@ -268,11 +268,26 @@ public class Utils {
      */
     public static void cleanupDownloadsDir(Context context) {
         File downloadPath = getDownloadPath(context);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         removeUncryptFiles(downloadPath);
 
+        long buildTimestamp = SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0);
+        long prevTimestamp = preferences.getLong(Constants.PREF_INSTALL_BUILD_TIMESTAMP, 0);
+        String lastUpdatePath = preferences.getString(Constants.PREF_INSTALL_PACKAGE_PATH, null);
+        boolean reinstalling = preferences.getBoolean(Constants.PREF_INSTALL_AGAIN, false);
+        boolean deleteUpdates = preferences.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false);
+        if ((buildTimestamp != prevTimestamp || reinstalling) && deleteUpdates &&
+                lastUpdatePath != null) {
+            File lastUpdate = new File(lastUpdatePath);
+            if (lastUpdate.exists()) {
+                lastUpdate.delete();
+                // Remove the pref not to delete the file if re-downloaded
+                preferences.edit().remove(Constants.PREF_INSTALL_PACKAGE_PATH).apply();
+            }
+        }
+
         final String DOWNLOADS_CLEANUP_DONE = "cleanup_done";
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         if (preferences.getBoolean(DOWNLOADS_CLEANUP_DONE, false)) {
             return;
         }

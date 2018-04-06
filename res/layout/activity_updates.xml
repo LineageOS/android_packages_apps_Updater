@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:theme="@style/AppTheme.AppBarOverlay"
-            app:collapsedTitleTextAppearance="@style/TextAppearanceWhite"
+            app:collapsedTitleTextAppearance="@style/TextAppearanceInverted"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleTextAppearance="@style/TextAppearanceTransparent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="16dp"
-                    android:textColor="@color/white"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="56sp" />
 
                 <TextView
@@ -47,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_title"
-                    android:textColor="@color/white"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
 
                 <TextView
@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_build_date"
-                    android:textColor="@color/white"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
 
                 <TextView
@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_build_version"
-                    android:textColor="@color/white"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </RelativeLayout>
 
@@ -71,7 +71,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:titleTextColor="@color/white"
+                android:textColor="?android:attr/textColorPrimary"
                 app:layout_collapseMode="pin" />
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>

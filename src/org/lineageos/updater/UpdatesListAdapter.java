@@ -82,6 +82,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         private TextView mBuildDate;
         private TextView mBuildVersion;
+        private TextView mBuildSize;
 
         private ProgressBar mProgressBar;
         private TextView mProgressText;
@@ -92,6 +93,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
             mBuildDate = (TextView) view.findViewById(R.id.build_date);
             mBuildVersion = (TextView) view.findViewById(R.id.build_version);
+            mBuildSize = (TextView) view.findViewById(R.id.build_size);
 
             mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
             mProgressText = (TextView) view.findViewById(R.id.progress_text);
@@ -172,6 +174,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 viewHolder.mBuildDate));
         viewHolder.mProgressBar.setVisibility(View.VISIBLE);
         viewHolder.mProgressText.setVisibility(View.VISIBLE);
+        viewHolder.mBuildSize.setVisibility(View.INVISIBLE);
     }
 
     private void handleNotActiveStatus(ViewHolder viewHolder, UpdateInfo update) {
@@ -190,8 +193,12 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     getLongClickListener(update, false, viewHolder.mBuildDate));
             setButtonAction(viewHolder.mAction, Action.DOWNLOAD, update.getDownloadId(), !isBusy());
         }
-        viewHolder.mProgressBar.setVisibility(View.GONE);
-        viewHolder.mProgressText.setVisibility(View.GONE);
+        String fileSize = Formatter.formatShortFileSize(mActivity, update.getFileSize());
+        viewHolder.mBuildSize.setText(fileSize);
+
+        viewHolder.mProgressBar.setVisibility(View.INVISIBLE);
+        viewHolder.mProgressText.setVisibility(View.INVISIBLE);
+        viewHolder.mBuildSize.setVisibility(View.VISIBLE);
     }
 
     @Override

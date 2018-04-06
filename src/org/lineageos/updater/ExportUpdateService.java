@@ -141,7 +141,7 @@ public class ExportUpdateService extends Service {
         notificationStyle.bigText(destination.getName());
         notificationBuilder.setStyle(notificationStyle);
         notificationBuilder.setSmallIcon(R.drawable.ic_system_update);
-        notificationBuilder.addAction(R.drawable.ic_pause,
+        notificationBuilder.addAction(com.android.internal.R.drawable.ic_media_pause,
                 getString(android.R.string.cancel),
                 getStopPendingIntent());
 

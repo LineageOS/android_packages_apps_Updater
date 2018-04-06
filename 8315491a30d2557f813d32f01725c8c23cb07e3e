@@ -22,6 +22,30 @@
       "revId": "8315491a30d2557f813d32f01725c8c23cb07e3e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "17beac93_0536844e",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2018-04-06T18:04:29Z",
+      "side": 1,
+      "message": "Yeah, that was my intention...",
+      "parentUuid": "cd4fcb46_cf889073",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 24
+      },
+      "revId": "8315491a30d2557f813d32f01725c8c23cb07e3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }

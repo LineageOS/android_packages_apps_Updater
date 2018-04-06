@@ -22,7 +22,6 @@ public class Update extends UpdateBase implements UpdateInfo {
     private UpdateStatus mStatus = UpdateStatus.UNKNOWN;
     private int mPersistentStatus = UpdateStatus.Persistent.UNKNOWN;
     private File mFile;
-    private long mFileSize;
     private int mProgress;
     private long mEta;
     private long mSpeed;
@@ -42,7 +41,6 @@ public class Update extends UpdateBase implements UpdateInfo {
         mStatus = update.getStatus();
         mPersistentStatus = update.getPersistentStatus();
         mFile = update.getFile();
-        mFileSize = update.getFileSize();
         mProgress = update.getProgress();
         mEta = update.getEta();
         mSpeed = update.getSpeed();
@@ -76,15 +74,6 @@ public class Update extends UpdateBase implements UpdateInfo {
 
     public void setFile(File file) {
         mFile = file;
-    }
-
-    @Override
-    public long getFileSize() {
-        return mFileSize;
-    }
-
-    public void setFileSize(long fileSize) {
-        mFileSize = fileSize;
     }
 
     @Override

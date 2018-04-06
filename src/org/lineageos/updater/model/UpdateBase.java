@@ -23,6 +23,7 @@ public class UpdateBase implements UpdateBaseInfo {
     private long mTimestamp;
     private String mType;
     private String mVersion;
+    private long mFileSize;
 
     public UpdateBase() {
     }
@@ -34,6 +35,7 @@ public class UpdateBase implements UpdateBaseInfo {
         mTimestamp = update.getTimestamp();
         mType = update.getType();
         mVersion = update.getVersion();
+        mFileSize = update.getFileSize();
     }
 
     @Override
@@ -88,5 +90,14 @@ public class UpdateBase implements UpdateBaseInfo {
 
     public void setDownloadUrl(String downloadUrl) {
         mDownloadUrl = downloadUrl;
+    }
+
+    @Override
+    public long getFileSize() {
+        return mFileSize;
+    }
+
+    public void setFileSize(long fileSize) {
+        mFileSize = fileSize;
     }
 }

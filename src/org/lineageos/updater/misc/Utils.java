@@ -136,7 +136,7 @@ public class Utils {
                     Log.d(TAG, "Ignoring incompatible update " + update.getName());
                 }
             } catch (JSONException e) {
-                Log.e(TAG, "Could not parse update object, index=" + i);
+                Log.e(TAG, "Could not parse update object, index=" + i, e);
             }
         }
 

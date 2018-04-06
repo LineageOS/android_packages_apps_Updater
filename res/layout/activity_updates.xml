@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:theme="@style/AppTheme.AppBarOverlay"
-            app:collapsedTitleTextAppearance="@style/TextAppearanceWhite"
+            app:collapsedTitleTextAppearance="@style/TextAppearanceInverted"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleTextAppearance="@style/TextAppearanceTransparent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
@@ -39,39 +39,43 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="16dp"
-                    android:textColor="@color/white"
-                    android:textSize="56sp" />
-
-                <TextView
-                    android:id="@+id/header_build_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/header_title"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="56sp"
+                    tools:text="LineageOS\n15.1" />
 
                 <TextView
                     android:id="@+id/header_build_version"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/header_build_date"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:layout_below="@id/header_title"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp"
+                    tools:text="Android 8.1.0" />
+
+                <TextView
+                    android:id="@+id/header_build_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/header_build_version"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp"
+                    tools:text="February 30th 2018" />
 
                 <TextView
                     android:id="@+id/header_last_check"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/header_build_version"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:layout_below="@id/header_build_date"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp"
+                    tools:text="Last check: February 29th 2018 (12:30)" />
             </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:titleTextColor="@color/white"
+                android:textColor="?android:attr/textColorPrimary"
                 app:layout_collapseMode="pin" />
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -98,5 +102,6 @@
         android:clipToPadding="false"
         android:paddingBottom="5dp"
         android:scrollbars="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/update_item_view" />
 </android.support.design.widget.CoordinatorLayout>

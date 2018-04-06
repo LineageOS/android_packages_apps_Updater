@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_export_update"
-        android:icon="@drawable/ic_save"
-        android:title="@string/menu_export_update"
-        android:visible="false"
-        app:showAsAction="ifRoom" />
+        android:title="@string/menu_export_update" />
     <item
         android:id="@+id/menu_delete_action"
-        android:icon="@drawable/ic_delete"
-        android:title="@string/menu_delete_update"
-        android:visible="false"
-        app:showAsAction="ifRoom" />
+        android:title="@string/menu_delete_update" />
     <item
         android:id="@+id/menu_copy_url"
-        android:title="@string/menu_copy_url"
-        android:visible="false"
-        app:showAsAction="never" />
+        android:title="@string/menu_copy_url" />
 </menu>

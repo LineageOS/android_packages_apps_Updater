@@ -20,7 +20,10 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.view.ActionMode;
+import android.support.v7.view.ContextThemeWrapper;
+import android.support.v7.view.menu.MenuBuilder;
+import android.support.v7.view.menu.MenuPopupHelper;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.text.SpannableString;
 import android.text.format.Formatter;
@@ -28,10 +31,8 @@ import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -65,7 +66,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private String mSelectedDownload;
     private Controller mUpdaterController;
     private UpdatesListActivity mActivity;
-    private ActionMode mActionMode;
 
     private enum Action {
         DOWNLOAD,
@@ -118,7 +118,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.update_item_view, viewGroup, false);
-        view.setBackground(mActivity.getDrawable(R.drawable.list_item_background));
         return new ViewHolder(view);
     }
 
@@ -185,7 +184,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mProgressBar.setProgress(update.getProgress());
         }
 
-        viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, canDelete));
+        viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, canDelete,
+                viewHolder.mBuildDate));
     }
 
     private void handleNotActiveStatus(ViewHolder viewHolder, UpdateInfo update) {
@@ -197,15 +197,18 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         viewHolder.mBuildVersion.setText(buildVersion);
 
         if (update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED) {
-            viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, true));
+            viewHolder.itemView.setOnLongClickListener(
+                    getLongClickListener(update, true, viewHolder.mBuildDate));
             setButtonAction(viewHolder.mAction,
                     Utils.canInstall(update) ? Action.INSTALL : Action.DELETE,
                     update.getDownloadId(), !isBusy());
         } else if (!Utils.canInstall(update)) {
-            viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, false));
+            viewHolder.itemView.setOnLongClickListener(
+                    getLongClickListener(update, false, viewHolder.mBuildDate));
             setButtonAction(viewHolder.mAction, Action.INFO, update.getDownloadId(), !isBusy());
         } else {
-            viewHolder.itemView.setOnLongClickListener(getLongClickListener(update, false));
+            viewHolder.itemView.setOnLongClickListener(
+                    getLongClickListener(update, false, viewHolder.mBuildDate));
             setButtonAction(viewHolder.mAction, Action.DOWNLOAD, update.getDownloadId(), !isBusy());
         }
     }
@@ -390,7 +393,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         button.setOnClickListener(v -> {
             if (clickListener != null) {
                 clickListener.onClick(v);
-                stopActionMode();
             }
         });
     }
@@ -413,11 +415,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private View.OnLongClickListener getLongClickListener(final UpdateInfo update,
-            final boolean canDelete) {
+            final boolean canDelete, View anchor) {
         return view -> {
-            if (mActionMode == null) {
-                startActionMode(update, canDelete);
-            }
+            startActionMode(update, canDelete, anchor);
             return true;
         };
     }
@@ -461,86 +461,47 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .setNegativeButton(android.R.string.cancel, null);
     }
 
-    private void stopActionMode() {
-        if (mActionMode != null) {
-            mActionMode.finish();
-        }
-    }
-
-    private void startActionMode(final UpdateInfo update, final boolean canDelete) {
-        if (mActionMode != null) {
-            Log.d(TAG, "Action mode already enabled");
-            return;
-        }
-
+    private void startActionMode(final UpdateInfo update, final boolean canDelete, View anchor) {
         mSelectedDownload = update.getDownloadId();
         notifyItemChanged(update.getDownloadId());
 
-        // Hide Action Bar not to steal the focus when using a D-pad
-        final boolean showActionBar;
-        if (mActivity.getSupportActionBar() != null &&
-                mActivity.getSupportActionBar().isShowing()) {
-            showActionBar = true;
-            mActivity.getSupportActionBar().hide();
-        } else {
-            showActionBar = false;
-        }
+        ContextThemeWrapper wrapper = new ContextThemeWrapper(mActivity,
+                R.style.AppTheme_PopupMenuOverlapAnchor);
+        PopupMenu popupMenu = new PopupMenu(wrapper, anchor, Gravity.NO_GRAVITY,
+                R.attr.actionOverflowMenuStyle, 0);
+        popupMenu.inflate(R.menu.menu_action_mode);
 
-        mActionMode = mActivity.startSupportActionMode(new ActionMode.Callback() {
-            @Override
-            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-                MenuInflater inflater = mode.getMenuInflater();
-                inflater.inflate(R.menu.menu_action_mode, menu);
-                menu.findItem(R.id.menu_delete_action).setVisible(canDelete);
-                menu.findItem(R.id.menu_copy_url).setVisible(update.getAvailableOnline());
-                menu.findItem(R.id.menu_export_update).setVisible(
-                        update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED);
-                return true;
+        MenuBuilder menu = (MenuBuilder) popupMenu.getMenu();
+        menu.findItem(R.id.menu_delete_action).setVisible(canDelete);
+        menu.findItem(R.id.menu_copy_url).setVisible(update.getAvailableOnline());
+        menu.findItem(R.id.menu_export_update).setVisible(
+                update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED);
+
+        popupMenu.setOnMenuItemClickListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.menu_delete_action:
+                    getDeleteDialog(update.getDownloadId()).show();
+                    return true;
+                case R.id.menu_copy_url:
+                    Utils.addToClipboard(mActivity,
+                            mActivity.getString(R.string.label_download_url),
+                            update.getDownloadUrl(),
+                            mActivity.getString(R.string.toast_download_url_copied));
+                    return true;
+                case R.id.menu_export_update:
+                    // TODO: start exporting once the permission has been granted
+                    boolean hasPermission = PermissionsUtils.checkAndRequestStoragePermission(
+                            mActivity, 0);
+                    if (hasPermission) {
+                        exportUpdate(update);
+                    }
+                    return true;
             }
-
-            @Override
-            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-                return false;
-            }
-
-            @Override
-            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.menu_delete_action:
-                        getDeleteDialog(update.getDownloadId())
-                                .setOnDismissListener(dialog -> mode.finish())
-                                .show();
-                        return true;
-                    case R.id.menu_copy_url:
-                        Utils.addToClipboard(mActivity,
-                                mActivity.getString(R.string.label_download_url),
-                                update.getDownloadUrl(),
-                                mActivity.getString(R.string.toast_download_url_copied));
-                        mode.finish();
-                        return true;
-                    case R.id.menu_export_update:
-                        // TODO: start exporting once the permission has been granted
-                        boolean hasPermission = PermissionsUtils.checkAndRequestStoragePermission(
-                                mActivity, 0);
-                        if (hasPermission) {
-                            exportUpdate(update);
-                        }
-                        return true;
-                }
-                return false;
-            }
-
-            @Override
-            public void onDestroyActionMode(ActionMode mode) {
-                mSelectedDownload = null;
-                mActionMode = null;
-                notifyItemChanged(update.getDownloadId());
-
-                if (showActionBar) {
-                    mActivity.getSupportActionBar().show();
-                }
-            }
+            return false;
         });
+
+        MenuPopupHelper helper = new MenuPopupHelper(wrapper, menu, anchor);
+        helper.show();
     }
 
     private void exportUpdate(UpdateInfo update) {
@@ -553,7 +514,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         intent.putExtra(ExportUpdateService.EXTRA_SOURCE_FILE, update.getFile());
         intent.putExtra(ExportUpdateService.EXTRA_DEST_FILE, dest);
         mActivity.startService(intent);
-        stopActionMode();
     }
 
     private void showInfoDialog() {

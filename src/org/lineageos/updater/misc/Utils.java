@@ -88,6 +88,7 @@ public class Utils {
         update.setName(object.getString("filename"));
         update.setDownloadId(object.getString("id"));
         update.setType(object.getString("romtype"));
+        update.setFileSize(object.getLong("size"));
         update.setDownloadUrl(object.getString("url"));
         update.setVersion(object.getString("version"));
         return update;

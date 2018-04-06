@@ -27,4 +27,6 @@ public interface UpdateBaseInfo {
     String getVersion();
 
     String getDownloadUrl();
+
+    long getFileSize();
 }

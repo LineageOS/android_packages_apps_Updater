@@ -82,7 +82,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         private ImageButton mAction;
 
         private View mNotActiveLayout;
-        private TextView mBuildDate;
+        private TextView mBuildDateSize;
         private TextView mBuildVersion;
 
         private View mActiveLayout;
@@ -96,7 +96,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             mAction = (ImageButton) view.findViewById(R.id.update_action);
 
             mNotActiveLayout = view.findViewById(R.id.build_layout_not_active);
-            mBuildDate = (TextView) view.findViewById(R.id.build_date);
+            mBuildDateSize = (TextView) view.findViewById(R.id.build_date_size);
             mBuildVersion = (TextView) view.findViewById(R.id.build_version);
 
             mActiveLayout = view.findViewById(R.id.build_layout_active);
@@ -194,7 +194,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 DateFormat.LONG, update.getTimestamp());
         String buildVersion = mActivity.getString(R.string.list_build_version,
                 update.getVersion());
-        viewHolder.mBuildDate.setText(buildDate);
+        String size = Formatter.formatShortFileSize(mActivity, update.getFileSize());
+        String buildDateSize = mActivity.getString(R.string.list_build_date_size, buildDate, size);
+        viewHolder.mBuildDateSize.setText(buildDateSize);
         viewHolder.mBuildVersion.setText(buildVersion);
 
         if (update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED) {

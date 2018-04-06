@@ -17,6 +17,7 @@ a JSON with the following structure:
       "id": "5eb63bbbe01eeed093cb22bb8f5acdc3",
       "romtype": "nightly",
       "url": "https://example.com/ota-package.zip",
+      "size": 314572800,
       "version": "15.1"
     }
   ]
@@ -29,6 +30,7 @@ The `id` attribute is a string that uniquely identifies the update.
 The `romtype` attribute is the string to be compared with the `ro.lineage.releasetype` property.  
 The `url` attribute is the URL of the file to be downloaded.  
 The `version` attribute is the string to be compared with the `ro.lineage.build.version` property.  
+The `size` attribute is the size of the update expressed in bytes.  
 
 Additional attributes are ignored.
 

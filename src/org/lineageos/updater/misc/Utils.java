@@ -90,6 +90,7 @@ public class Utils {
         update.setType(object.getString("romtype"));
         update.setDownloadUrl(object.getString("url"));
         update.setVersion(object.getString("version"));
+        update.setFileSize(object.getLong("size"));
         return update;
     }
 

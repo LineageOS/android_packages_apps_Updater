@@ -37,7 +37,7 @@
                     android:paddingBottom="8sp" />
 
                 <TextView
-                    android:id="@+id/build_date"
+                    android:id="@+id/build_date_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/build_version" />

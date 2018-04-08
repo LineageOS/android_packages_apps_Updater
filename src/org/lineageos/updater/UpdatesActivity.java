@@ -31,18 +31,21 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -183,14 +186,6 @@ public class UpdatesActivity extends UpdatesListActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_toolbar, menu);
-        SharedPreferences preferences =
-                PreferenceManager.getDefaultSharedPreferences(this);
-        menu.findItem(R.id.menu_auto_updates_check)
-                .setChecked(preferences.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, true));
-        menu.findItem(R.id.menu_auto_delete_updates)
-                .setChecked(preferences.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false));
-        menu.findItem(R.id.menu_mobile_data_warning)
-                .setChecked(preferences.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true));
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -201,37 +196,8 @@ public class UpdatesActivity extends UpdatesListActivity {
                 downloadUpdatesList(true);
                 return true;
             }
-            case R.id.menu_auto_updates_check: {
-                boolean enable = !item.isChecked();
-                item.setChecked(enable);
-                PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
-                        .edit()
-                        .putBoolean(Constants.PREF_AUTO_UPDATES_CHECK, enable)
-                        .apply();
-                if (enable) {
-                    UpdatesCheckReceiver.scheduleRepeatingUpdatesCheck(this);
-                } else {
-                    UpdatesCheckReceiver.cancelRepeatingUpdatesCheck(this);
-                    UpdatesCheckReceiver.cancelUpdatesCheck(this);
-                }
-                return true;
-            }
-            case R.id.menu_auto_delete_updates: {
-                boolean enable = !item.isChecked();
-                item.setChecked(enable);
-                PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
-                        .edit()
-                        .putBoolean(Constants.PREF_AUTO_DELETE_UPDATES, enable)
-                        .apply();
-                return true;
-            }
-            case R.id.menu_mobile_data_warning: {
-                boolean enable = !item.isChecked();
-                item.setChecked(enable);
-                PreferenceManager.getDefaultSharedPreferences(UpdatesActivity.this)
-                        .edit()
-                        .putBoolean(Constants.PREF_MOBILE_DATA_WARNING, enable)
-                        .apply();
+            case R.id.menu_preferences: {
+                showPreferencesDialog();
                 return true;
             }
             case R.id.menu_show_changelog: {
@@ -446,5 +412,39 @@ public class UpdatesActivity extends UpdatesListActivity {
             mRefreshAnimation.setRepeatCount(0);
             mRefreshIconView.setEnabled(true);
         }
+    }
+
+    private void showPreferencesDialog() {
+        View view = LayoutInflater.from(this).inflate(R.layout.preferences_dialog, null);
+        Switch autoCheck = (Switch) view.findViewById(R.id.preferences_auto_updates_check);
+        Switch autoDelete = (Switch) view.findViewById(R.id.preferences_auto_delete_updates);
+        Switch dataWarning = (Switch) view.findViewById(R.id.preferences_mobile_data_warning);
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        autoCheck.setChecked(prefs.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, true));
+        autoDelete.setChecked(prefs.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false));
+        dataWarning.setChecked(prefs.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true));
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.menu_preferences)
+                .setView(view)
+                .setOnDismissListener(dialogInterface -> {
+                    prefs.edit()
+                            .putBoolean(Constants.PREF_AUTO_UPDATES_CHECK,
+                                    autoCheck.isChecked())
+                            .putBoolean(Constants.PREF_AUTO_DELETE_UPDATES,
+                                    autoDelete.isChecked())
+                            .putBoolean(Constants.PREF_MOBILE_DATA_WARNING,
+                                    dataWarning.isChecked())
+                            .apply();
+
+                    if (autoCheck.isChecked()) {
+                        UpdatesCheckReceiver.scheduleRepeatingUpdatesCheck(this);
+                    } else {
+                        UpdatesCheckReceiver.cancelRepeatingUpdatesCheck(this);
+                        UpdatesCheckReceiver.cancelUpdatesCheck(this);
+                    }
+                })
+                .show();
     }
 }

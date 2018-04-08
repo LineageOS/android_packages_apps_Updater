@@ -15,7 +15,6 @@
  */
 package org.lineageos.updater;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -292,17 +291,14 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .setMessage(R.string.update_on_mobile_data_message)
                 .setView(checkboxView)
                 .setPositiveButton(R.string.action_description_download,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                if (checkbox.isChecked()) {
-                                    preferences.edit()
-                                            .putBoolean(Constants.PREF_MOBILE_DATA_WARNING, false)
-                                            .apply();
-                                    mActivity.supportInvalidateOptionsMenu();
-                                }
-                                mUpdaterController.startDownload(downloadId);
+                        (dialog, which) -> {
+                            if (checkbox.isChecked()) {
+                                preferences.edit()
+                                        .putBoolean(Constants.PREF_MOBILE_DATA_WARNING, false)
+                                        .apply();
+                                mActivity.supportInvalidateOptionsMenu();
                             }
+                            mUpdaterController.startDownload(downloadId);
                         })
                 .setNegativeButton(android.R.string.cancel, null)
                 .show();
@@ -317,24 +313,15 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setContentDescription(
                         mActivity.getString(R.string.action_description_download));
                 button.setEnabled(enabled);
-                clickListener = !enabled ? null : new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        startDownloadWithWarning(downloadId);
-                    }
-                };
+                clickListener = enabled ? view -> startDownloadWithWarning(downloadId) : null;
                 break;
             case PAUSE:
                 button.setImageResource(R.drawable.ic_pause);
                 button.setContentDescription(
                         mActivity.getString(R.string.action_description_pause));
                 button.setEnabled(enabled);
-                clickListener = !enabled ? null : new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        mUpdaterController.pauseDownload(downloadId);
-                    }
-                };
+                clickListener = enabled ? view -> mUpdaterController.pauseDownload(downloadId)
+                        : null;
                 break;
             case RESUME: {
                 button.setImageResource(R.drawable.ic_resume);
@@ -344,17 +331,14 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 UpdateInfo update = mUpdaterController.getUpdate(downloadId);
                 final boolean canInstall = Utils.canInstall(update) ||
                         update.getFile().length() == update.getFileSize();
-                clickListener = !enabled ? null : new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (canInstall) {
-                            mUpdaterController.resumeDownload(downloadId);
-                        } else {
-                            mActivity.showSnackbar(R.string.snack_update_not_installable,
-                                    Snackbar.LENGTH_LONG);
-                        }
+                clickListener = enabled ? view -> {
+                    if (canInstall) {
+                        mUpdaterController.resumeDownload(downloadId);
+                    } else {
+                        mActivity.showSnackbar(R.string.snack_update_not_installable,
+                                Snackbar.LENGTH_LONG);
                     }
-                };
+                } : null;
             }
             break;
             case INSTALL: {
@@ -364,29 +348,21 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setEnabled(enabled);
                 UpdateInfo update = mUpdaterController.getUpdate(downloadId);
                 final boolean canInstall = Utils.canInstall(update);
-                clickListener = !enabled ? null : new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (canInstall) {
-                            getInstallDialog(downloadId).show();
-                        } else {
-                            mActivity.showSnackbar(R.string.snack_update_not_installable,
-                                    Snackbar.LENGTH_LONG);
-                        }
+                clickListener = enabled ? view -> {
+                    if (canInstall) {
+                        getInstallDialog(downloadId).show();
+                    } else {
+                        mActivity.showSnackbar(R.string.snack_update_not_installable,
+                                Snackbar.LENGTH_LONG);
                     }
-                };
+                } : null;
             }
             break;
             case INFO: {
                 button.setImageResource(R.drawable.ic_info);
                 button.setContentDescription(mActivity.getString(R.string.action_description_info));
                 button.setEnabled(enabled);
-                clickListener = !enabled ? null : new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        showInfoDialog();
-                    }
-                };
+                clickListener = enabled ? view -> showInfoDialog() : null;
             }
             break;
             case DELETE: {
@@ -394,12 +370,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setContentDescription(
                         mActivity.getString(R.string.action_description_delete));
                 button.setEnabled(enabled);
-                clickListener = !enabled ? null : new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        getDeleteDialog(downloadId).show();
-                    }
-                };
+                clickListener = enabled ? view -> getDeleteDialog(downloadId).show() : null;
             }
             break;
             case CANCEL_INSTALLATION: {
@@ -407,12 +378,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setContentDescription(
                         mActivity.getString(R.string.action_description_cancel));
                 button.setEnabled(enabled);
-                clickListener = !enabled ? null : new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        getCancelInstallationDialog().show();
-                    }
-                };
+                clickListener = enabled ? view -> getCancelInstallationDialog().show() : null;
             }
             break;
             default:
@@ -421,13 +387,10 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         button.setAlpha(enabled ? 1.f : mAlphaDisabledValue);
 
         // Disable action mode when a button is clicked
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (clickListener != null) {
-                    clickListener.onClick(v);
-                    stopActionMode();
-                }
+        button.setOnClickListener(v -> {
+            if (clickListener != null) {
+                clickListener.onClick(v);
+                stopActionMode();
             }
         });
     }
@@ -442,26 +405,20 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .setTitle(R.string.confirm_delete_dialog_title)
                 .setMessage(R.string.confirm_delete_dialog_message)
                 .setPositiveButton(android.R.string.ok,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                mUpdaterController.pauseDownload(downloadId);
-                                mUpdaterController.deleteUpdate(downloadId);
-                            }
+                        (dialog, which) -> {
+                            mUpdaterController.pauseDownload(downloadId);
+                            mUpdaterController.deleteUpdate(downloadId);
                         })
                 .setNegativeButton(android.R.string.cancel, null);
     }
 
     private View.OnLongClickListener getLongClickListener(final UpdateInfo update,
             final boolean canDelete) {
-        return new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                if (mActionMode == null) {
-                    startActionMode(update, canDelete);
-                }
-                return true;
+        return view -> {
+            if (mActionMode == null) {
+                startActionMode(update, canDelete);
             }
+            return true;
         };
     }
 
@@ -488,12 +445,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .setMessage(mActivity.getString(resId, buildInfoText,
                         mActivity.getString(android.R.string.ok)))
                 .setPositiveButton(android.R.string.ok,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Utils.triggerUpdate(mActivity, downloadId);
-                            }
-                        })
+                        (dialog, which) -> Utils.triggerUpdate(mActivity, downloadId))
                 .setNegativeButton(android.R.string.cancel, null);
     }
 
@@ -501,13 +453,10 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         return new AlertDialog.Builder(mActivity)
                 .setMessage(R.string.cancel_installation_dialog_message)
                 .setPositiveButton(android.R.string.ok,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Intent intent = new Intent(mActivity, UpdaterService.class);
-                                intent.setAction(UpdaterService.ACTION_INSTALL_STOP);
-                                mActivity.startService(intent);
-                            }
+                        (dialog, which) -> {
+                            Intent intent = new Intent(mActivity, UpdaterService.class);
+                            intent.setAction(UpdaterService.ACTION_INSTALL_STOP);
+                            mActivity.startService(intent);
                         })
                 .setNegativeButton(android.R.string.cancel, null);
     }
@@ -559,12 +508,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 switch (item.getItemId()) {
                     case R.id.menu_delete_action:
                         getDeleteDialog(update.getDownloadId())
-                                .setOnDismissListener(new DialogInterface.OnDismissListener() {
-                                    @Override
-                                    public void onDismiss(DialogInterface dialog) {
-                                        mode.finish();
-                                    }
-                                })
+                                .setOnDismissListener(dialog -> mode.finish())
                                 .show();
                         return true;
                     case R.id.menu_copy_url:

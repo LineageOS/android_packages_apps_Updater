@@ -35,27 +35,42 @@ class UpdateInstaller {
 
     private static final String TAG = "UpdateInstaller";
 
-    private static Thread sPrepareUpdateThread;
-    private static boolean sCancelled;
+    private static UpdateInstaller sInstance = null;
+    private static String sInstallingUpdate = null;
+
+    private Thread mPrepareUpdateThread;
+    private volatile boolean mCanCancel;
 
     private final Context mContext;
     private final UpdaterController mUpdaterController;
 
-    UpdateInstaller(Context context, UpdaterController controller) {
-        mContext = context;
+    private UpdateInstaller(Context context, UpdaterController controller) {
+        mContext = context.getApplicationContext();
         mUpdaterController = controller;
     }
 
-    static boolean isInstalling() {
-        return !sCancelled && sPrepareUpdateThread != null;
+    static synchronized UpdateInstaller getInstance(Context context,
+            UpdaterController updaterController) {
+        if (sInstance == null) {
+            sInstance = new UpdateInstaller(context, updaterController);
+        }
+        return sInstance;
     }
 
-    static boolean isInstalling(String downloadId) {
-        return !sCancelled && sPrepareUpdateThread != null &&
-                downloadId.equals(sPrepareUpdateThread.getName());
+    static synchronized boolean isInstalling() {
+        return sInstallingUpdate != null;
+    }
+
+    static synchronized boolean isInstalling(String downloadId) {
+        return sInstallingUpdate != null && sInstallingUpdate.equals(downloadId);
     }
 
     void install(String downloadId) {
+        if (isInstalling()) {
+            Log.e(TAG, "Already installing an update");
+            return;
+        }
+
         UpdateInfo update = mUpdaterController.getUpdate(downloadId);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
         long buildTimestamp = SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0);
@@ -90,12 +105,7 @@ class UpdateInstaller {
         }
     }
 
-    private void prepareForUncryptAndInstall(UpdateInfo update) {
-        if (sPrepareUpdateThread != null) {
-            Log.e(TAG, "Already preparing an update");
-            return;
-        }
-
+    private synchronized void prepareForUncryptAndInstall(UpdateInfo update) {
         String uncryptFilePath = update.getFile().getAbsolutePath() + Constants.UNCRYPT_FILE_EXT;
         File uncryptFile = new File(uncryptFilePath);
 
@@ -118,49 +128,49 @@ class UpdateInstaller {
             @Override
             public void run() {
                 try {
+                    mCanCancel = true;
                     FileUtils.copyFile(update.getFile(), uncryptFile, mProgressCallBack);
-
-                    // Use INSTALLATION_CANCELLED to clear everything.
-                    // This shouldn't really matter in case of success.
-                    mUpdaterController.getActualUpdate(update.getDownloadId())
-                            .setStatus(UpdateStatus.INSTALLATION_CANCELLED);
-                    mUpdaterController.getActualUpdate(update.getDownloadId())
-                            .setInstallProgress(0);
-                    mUpdaterController.notifyUpdateChange(update.getDownloadId());
-
-                    if (!sPrepareUpdateThread.isInterrupted()) {
-                        installPackage(uncryptFile, update.getDownloadId());
-                    } else {
+                    mCanCancel = false;
+                    if (mPrepareUpdateThread.isInterrupted()) {
+                        mUpdaterController.getActualUpdate(update.getDownloadId())
+                                .setStatus(UpdateStatus.INSTALLATION_CANCELLED);
+                        mUpdaterController.getActualUpdate(update.getDownloadId())
+                                .setInstallProgress(0);
                         uncryptFile.delete();
+                    } else {
+                        installPackage(uncryptFile, update.getDownloadId());
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "Could not copy update", e);
                     uncryptFile.delete();
                     mUpdaterController.getActualUpdate(update.getDownloadId())
                             .setStatus(UpdateStatus.INSTALLATION_FAILED);
-                    mUpdaterController.notifyUpdateChange(update.getDownloadId());
                 } finally {
-                    sPrepareUpdateThread = null;
+                    synchronized (UpdateInstaller.this) {
+                        mCanCancel = false;
+                        mPrepareUpdateThread = null;
+                        sInstallingUpdate = null;
+                    }
+                    mUpdaterController.notifyUpdateChange(update.getDownloadId());
                 }
             }
         };
 
-        sPrepareUpdateThread = new Thread(copyUpdateRunnable);
-        sPrepareUpdateThread.setName(update.getDownloadId());
-        sPrepareUpdateThread.start();
-        sCancelled = false;
+        mPrepareUpdateThread = new Thread(copyUpdateRunnable);
+        mPrepareUpdateThread.start();
+        sInstallingUpdate = update.getDownloadId();
+        mCanCancel = false;
 
         mUpdaterController.getActualUpdate(update.getDownloadId())
                 .setStatus(UpdateStatus.INSTALLING);
         mUpdaterController.notifyUpdateChange(update.getDownloadId());
     }
 
-    public void cancel() {
-        if (sCancelled || sPrepareUpdateThread == null) {
-            Log.d(TAG, "Nothing is being copied");
+    public synchronized void cancel() {
+        if (!mCanCancel) {
+            Log.d(TAG, "Nothing to cancel");
             return;
         }
-        sCancelled = true;
-        sPrepareUpdateThread.interrupt();
+        mPrepareUpdateThread.interrupt();
     }
 }

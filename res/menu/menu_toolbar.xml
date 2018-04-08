@@ -5,22 +5,10 @@
         android:id="@+id/menu_refresh"
         android:icon="@drawable/ic_menu_refresh"
         android:title="@string/menu_refresh"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/menu_auto_updates_check"
-        android:checkable="true"
-        android:checked="true"
-        android:title="@string/menu_auto_updates_check"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/menu_auto_delete_updates"
-        android:checkable="true"
-        android:title="@string/menu_auto_delete_updates"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/menu_mobile_data_warning"
-        android:checkable="true"
-        android:title="@string/menu_mobile_data_warning"
+        android:id="@+id/menu_preferences"
+        android:title="@string/menu_preferences"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_show_changelog"

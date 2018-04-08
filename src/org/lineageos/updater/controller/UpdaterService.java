@@ -181,7 +181,8 @@ public class UpdaterService extends Service {
                             mUpdaterController);
                     installer.install(downloadId);
                 } else {
-                    UpdateInstaller installer = new UpdateInstaller(this, mUpdaterController);
+                    UpdateInstaller installer = UpdateInstaller.getInstance(this,
+                            mUpdaterController);
                     installer.install(downloadId);
                 }
             } catch (IOException e) {
@@ -192,7 +193,8 @@ public class UpdaterService extends Service {
             }
         } else if (ACTION_INSTALL_STOP.equals(intent.getAction())) {
             if (UpdateInstaller.isInstalling()) {
-                UpdateInstaller installer = new UpdateInstaller(this, mUpdaterController);
+                UpdateInstaller installer = UpdateInstaller.getInstance(this,
+                        mUpdaterController);
                 installer.cancel();
             } else if (ABUpdateInstaller.isInstallingUpdate(this)) {
                 ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingEnd="24dp"
+    android:paddingStart="24dp"
+    android:paddingTop="16dp">
+
+    <Switch
+        android:id="@+id/preferences_auto_updates_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:text="@string/menu_auto_updates_check"
+        android:textSize="16sp" />
+
+    <Switch
+        android:id="@+id/preferences_auto_delete_updates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:text="@string/menu_auto_delete_updates"
+        android:textSize="16sp" />
+
+    <Switch
+        android:id="@+id/preferences_mobile_data_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_mobile_data_warning"
+        android:textSize="16sp" />
+</LinearLayout>

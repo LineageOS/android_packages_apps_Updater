@@ -175,36 +175,30 @@ public class ExportUpdateService extends Service {
         startForeground(NOTIFICATION_ID, notificationBuilder.build());
         notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
 
-        Runnable runnableComplete = new Runnable() {
-            @Override
-            public void run() {
-                notificationStyle.setSummaryText(null);
-                notificationStyle.setBigContentTitle(
-                        getString(R.string.notification_export_success));
-                notificationBuilder.setContentTitle(
-                        getString(R.string.notification_export_success));
-                notificationBuilder.setProgress(0, 0, false);
-                notificationBuilder.setContentText(destination.getName());
-                notificationBuilder.mActions.clear();
-                notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
-                stopForeground(STOP_FOREGROUND_DETACH);
-            }
+        Runnable runnableComplete = () -> {
+            notificationStyle.setSummaryText(null);
+            notificationStyle.setBigContentTitle(
+                    getString(R.string.notification_export_success));
+            notificationBuilder.setContentTitle(
+                    getString(R.string.notification_export_success));
+            notificationBuilder.setProgress(0, 0, false);
+            notificationBuilder.setContentText(destination.getName());
+            notificationBuilder.mActions.clear();
+            notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
+            stopForeground(STOP_FOREGROUND_DETACH);
         };
 
-        Runnable runnableFailed = new Runnable() {
-            @Override
-            public void run() {
-                notificationStyle.setSummaryText(null);
-                notificationStyle.setBigContentTitle(
-                        getString(R.string.notification_export_fail));
-                notificationBuilder.setContentTitle(
-                        getString(R.string.notification_export_fail));
-                notificationBuilder.setProgress(0, 0, false);
-                notificationBuilder.setContentText(null);
-                notificationBuilder.mActions.clear();
-                notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
-                stopForeground(STOP_FOREGROUND_DETACH);
-            }
+        Runnable runnableFailed = () -> {
+            notificationStyle.setSummaryText(null);
+            notificationStyle.setBigContentTitle(
+                    getString(R.string.notification_export_fail));
+            notificationBuilder.setContentTitle(
+                    getString(R.string.notification_export_fail));
+            notificationBuilder.setProgress(0, 0, false);
+            notificationBuilder.setContentText(null);
+            notificationBuilder.mActions.clear();
+            notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
+            stopForeground(STOP_FOREGROUND_DETACH);
         };
 
         mExportRunnable = new ExportRunnable(source, destination, progressCallBack,

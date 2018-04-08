@@ -60,8 +60,6 @@ import org.lineageos.updater.model.UpdateInfo;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class UpdatesActivity extends UpdatesListActivity {
@@ -308,12 +306,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         } else {
             findViewById(R.id.no_new_updates_view).setVisibility(View.GONE);
             findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
-            Collections.sort(sortedUpdates, new Comparator<UpdateInfo>() {
-                @Override
-                public int compare(UpdateInfo u1, UpdateInfo u2) {
-                    return Long.compare(u2.getTimestamp(), u1.getTimestamp());
-                }
-            });
+            sortedUpdates.sort((u1, u2) -> Long.compare(u2.getTimestamp(), u1.getTimestamp()));
             for (UpdateInfo update : sortedUpdates) {
                 updateIds.add(update.getDownloadId());
             }
@@ -366,14 +359,11 @@ public class UpdatesActivity extends UpdatesListActivity {
             @Override
             public void onFailure(final boolean cancelled) {
                 Log.e(TAG, "Could not download updates list");
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (!cancelled) {
-                            showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
-                        }
-                        refreshAnimationStop();
+                runOnUiThread(() -> {
+                    if (!cancelled) {
+                        showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
                     }
+                    refreshAnimationStop();
                 });
             }
 
@@ -384,13 +374,10 @@ public class UpdatesActivity extends UpdatesListActivity {
 
             @Override
             public void onSuccess(File destination) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Log.d(TAG, "List downloaded");
-                        processNewJson(jsonFile, jsonFileTmp, manualRefresh);
-                        refreshAnimationStop();
-                    }
+                runOnUiThread(() -> {
+                    Log.d(TAG, "List downloaded");
+                    processNewJson(jsonFile, jsonFileTmp, manualRefresh);
+                    refreshAnimationStop();
                 });
             }
         };

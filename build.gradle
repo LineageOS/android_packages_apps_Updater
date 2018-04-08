@@ -32,7 +32,7 @@ android {
     lintOptions {
         ignore 'ProtectedPermissions'
         // These depend on translations
-        ignore 'ExtraTranslation', 'ImpliedQuantity', 'MissingQuantity', 'MissingTranslation'
+        ignore 'ExtraTranslation', 'ImpliedQuantity', 'MissingQuantity', 'MissingTranslation', 'StringFormatInvalid'
     }
 
     sourceSets {

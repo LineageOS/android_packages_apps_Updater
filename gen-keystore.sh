@@ -1,29 +1,32 @@
-#!/bin/sh
+#!/bin/bash
 
-if [ $# -ne 6 ]; then
+if [ $# -ne 4 ]; then
     echo "Usage: `basename $0` PRIVATE_KEY CERTIFICATE \\"
-    echo "          KEYSTORE_PASSWRD KEY_PASSWORD KEY_ALIAS \\"
-    echo "          OUTPUT_KEYSTORE_PATH"
+    echo "          KEY_ALIAS OUTPUT_KEYSTORE_PATH"
     echo
     echo "Example:"
     echo "  `basename $0` \\"
     echo "          ../../../build/target/product/security/testkey.pk8 \\"
     echo "          ../../../build/target/product/security/testkey.x509.pem \\"
-    echo "          keystore-password key-password android testkey.jks"
+    echo "          android testkey.jks"
     exit 0
 fi
 
 PRIVATE_KEY="$1"
 CERTIFICATE="$2"
-KEYSTORE_PASSWORD="$3"
-KEY_PASSWORD="$4"
-KEY_ALIAS="$5"
-KEYSTORE_PATH="$6"
+KEY_ALIAS="$3"
+KEYSTORE_PATH="$4"
 
 if [ -f "$KEYSTORE_PATH" ]; then
     echo "$KEYSTORE_PATH already exists"
     exit 1
 fi
+
+echo "The passwords will be stored in clear text"
+read -p "Enter new keystore password: " -s KEYSTORE_PASSWORD
+echo
+read -p "Enter new key password: " -s KEY_PASSWORD
+echo
 
 tmpdir=`mktemp -d`
 trap 'rm -rf $tmpdir;' 0

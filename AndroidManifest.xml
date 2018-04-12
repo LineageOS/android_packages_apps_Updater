@@ -32,6 +32,10 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".ChangelogActivity"
+            android:theme="@style/AppTheme.AlertDialog" />
+
         <service android:name=".controller.UpdaterService" />
         <service android:name=".ExportUpdateService" />
 

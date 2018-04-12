@@ -23,7 +23,6 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.icu.text.DateFormat;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -187,6 +186,9 @@ public class UpdatesActivity extends UpdatesListActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        if (getString(R.string.updater_changelog_url).isEmpty()) {
+            menu.findItem(R.id.menu_show_changelog).setVisible(false);
+        }
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -202,9 +204,8 @@ public class UpdatesActivity extends UpdatesListActivity {
                 return true;
             }
             case R.id.menu_show_changelog: {
-                Intent openUrl = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(Utils.getChangelogURL(this)));
-                startActivity(openUrl);
+                Intent intent = new Intent(this, ChangelogActivity.class);
+                startActivity(intent);
                 return true;
             }
         }

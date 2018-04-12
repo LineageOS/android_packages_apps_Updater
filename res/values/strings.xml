@@ -34,6 +34,9 @@
     -->
     <string name="updater_server_url" translatable="false">https://download.lineageos.org/api/v1/{device}/{type}/{incr}</string>
 
+    <!-- Leave empty to hide the changelog -->
+    <string name="updater_changelog_url" translatable="false">https://download.lineageos.org/api/v1/changes/<xliff:g id="device_name">%1$s</xliff:g>/<xliff:g id="timestamp">%2$d</xliff:g>/</string>
+
     <string name="verification_failed_notification">Verification failed</string>
     <string name="verifying_download_notification">Verifying update</string>
     <string name="downloading_notification">Downloading</string>
@@ -67,7 +70,6 @@
     <string name="menu_copy_url">Copy URL</string>
     <string name="menu_export_update">Export update</string>
     <string name="menu_show_changelog">Show changelog</string>
-    <string name="menu_changelog_url" translatable="false">https://download.lineageos.org/<xliff:g id="device_name">%1$s</xliff:g>/changes</string>
 
     <string name="snack_updates_found">New updates found</string>
     <string name="snack_no_updates_found">No new updates found</string>
@@ -141,4 +143,10 @@
     <string name="new_updates_channel_title">New updates</string>
     <string name="ongoing_channel_title">Ongoing downloads</string>
     <string name="update_failed_channel_title">Update failed</string>
+
+    <string name="changelog_current_build_label">Current build: <xliff:g id="date" example="January 1, 2018">%1$s</xliff:g></string>
+    <string name="changelog_load_more">Load more</string>
+    <string-array name="changelog_subjects_to_hide" translatable="false">
+        <item>Automatic translation import</item>
+    </string-array>
 </resources>

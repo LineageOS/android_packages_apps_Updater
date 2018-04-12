@@ -35,6 +35,40 @@ The `version` attribute is the string to be compared with the `ro.lineage.build.
 Additional attributes are ignored.
 
 
+### Changelog
+
+Updater will try to get the changelog only if the `updater_changelog_url`
+resource is set. The app makes `GET` requests and expects a JSON as response.
+
+The response must have the following format:
+```json
+{
+  "last": 1230764400,
+  "res": [
+    {
+      "project": "Project name",
+      "subject": "Subject of the change",
+      "submitted": 12307645300,
+      "url": "https://example.com/change_url"
+    }
+  ]
+}
+```
+
+The changes can be returned in batches. The `last` attribute reports
+a timestamp value older than that of the oldest change returned. Its
+value is used to generate the next `GET` request.
+
+The format of the `GET` request is the following:
+```http
+GET /api/v1/device_name/timestamp
+```
+
+where `device_name` is the name of the device and `timestamp` is the value of
+last received `last` attribute minus 1 or the current timestamp. The initial
+request has a `timestamp` value of `-1`.
+
+
 Build with Android Studio
 -------------------------
 Updater needs access to the system API, therefore it can't be built only using

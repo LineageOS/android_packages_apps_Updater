@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Bekreftelse mislyktes</string>
   <string name="verifying_download_notification">Bekrefter oppdatering</string>
   <string name="downloading_notification">Laster ned</string>
@@ -45,7 +51,6 @@
   <string name="menu_delete_update">Slett</string>
   <string name="menu_copy_url">Kopier nettadresse</string>
   <string name="menu_export_update">Eksporter oppdatering</string>
-  <string name="dialog_checking_for_updates">Ser etter oppdateringer</string>
   <string name="snack_updates_found">Nye oppdateringer funnet</string>
   <string name="snack_no_updates_found">Ingen nye oppdateringer funnet</string>
   <string name="snack_updates_check_failed">Oppdateringssjekken mislyktes. Sjekk din internettilkobling og prøv igjen senere.</string>
@@ -58,15 +63,8 @@
   <string name="header_last_updates_check">Sist sjekket: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> av <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> av <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> gjenstår</string>
   <string name="list_verifying_update">Bekrefter oppdatering</string>
-  <string name="action_description_download">Last ned</string>
-  <string name="action_description_pause">Sett nedlasting på pause</string>
-  <string name="action_description_resume">Fortsett nedlasting</string>
-  <string name="action_description_install">Installer oppdatering</string>
-  <string name="action_description_info">Vis informasjon</string>
-  <string name="action_description_delete">Slett oppdatering</string>
+  <string name="action_download">Last ned</string>
   <string name="confirm_delete_dialog_title">Slett fil</string>
   <string name="confirm_delete_dialog_message">Slett valgt oppdateringsfil?</string>
   <string name="apply_update_dialog_title">Installer oppdatering</string>

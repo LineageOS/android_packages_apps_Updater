@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Preverjanje je spodletelo</string>
   <string name="verifying_download_notification">Preverjanje posodobitve</string>
   <string name="downloading_notification">Prenašanje</string>
@@ -41,13 +47,12 @@
   <string name="dialog_prepare_zip_message">Predhodna priprava posodobitve</string>
   <string name="reboot">Ponovni zagon</string>
   <string name="menu_refresh">Osveži</string>
-  <string name="menu_auto_updates_check">Samod. prever. za posod.</string>
-  <string name="menu_auto_delete_updates">Izbris posod. po namestitvi</string>
+  <string name="menu_auto_updates_check">Samodejno preverjanje za posodobitve</string>
+  <string name="menu_auto_delete_updates">Izbris posodobitev po namestitvi</string>
   <string name="menu_delete_update">Izbriši</string>
   <string name="menu_copy_url">Kopiraj URL</string>
   <string name="menu_export_update">Izvoz posodobitve</string>
   <string name="menu_show_changelog">Prikaži dnevnik sprememb</string>
-  <string name="dialog_checking_for_updates">Preverjanje za posodobitve</string>
   <string name="snack_updates_found">Najdene nove posodobitve</string>
   <string name="snack_no_updates_found">Ni najdenih novih posodobitev</string>
   <string name="snack_updates_check_failed">Preverjanje za posodobitve je spodletelo. Preverite svojo internetno povezavo in poskusite znova kasneje.</string>
@@ -60,17 +65,9 @@
   <string name="header_last_updates_check">Zadnje preverjanje: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> preostalo</string>
   <string name="list_verifying_update">Preverjanje posodobitve</string>
   <string name="list_no_updates">Ni najdenih novih posodobitev. Za ročno preverjanje novih posodobitev, uporabite gumb Osveži.</string>
-  <string name="action_description_download">Prenos</string>
-  <string name="action_description_pause">Premor prenosa</string>
-  <string name="action_description_resume">Nadaljuj prenos</string>
-  <string name="action_description_install">Namesti posodobitev</string>
-  <string name="action_description_info">Prikaži podatke</string>
-  <string name="action_description_delete">Izbriši posodobitev</string>
-  <string name="action_description_cancel">Prekliči nameščanje</string>
+  <string name="action_download">Prenos</string>
   <string name="confirm_delete_dialog_title">Izbriši datoteko</string>
   <string name="confirm_delete_dialog_message">Izbriši izbrano posodobitveno datoteko?</string>
   <string name="apply_update_dialog_title">Uveljavi posodbitev</string>
@@ -104,7 +101,7 @@
   <string name="update_on_mobile_data_title">Opozorilo</string>
   <string name="update_on_mobile_data_message">Ste pred prenosom posodobitvenega paketa z uporabo mobilnih podatkov, kar bo verjetno povzročilo visoko porabo podatkov. Ali želite nadaljevati?</string>
   <string name="checkbox_mobile_data_warning">Ne prikaži ponovno</string>
-  <string name="menu_mobile_data_warning">Opozorilo mob. podatkov</string>
+  <string name="menu_mobile_data_warning">Opozorilo mobilnih podatkov</string>
   <string name="blocked_update_dialog_title">Posodobitev blokirana</string>
   <string name="blocked_update_dialog_message">Te posodobitve ni mogoče namestiti z uporabo aplikacije za posodabljanje. Za več informacij preberite <xliff:g id="info_url">%1$s</xliff:g>.</string>
   <string name="export_channel_title">Zaključek izvoza</string>

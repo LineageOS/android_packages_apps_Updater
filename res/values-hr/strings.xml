@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Potvrda neuspješna</string>
   <string name="verifying_download_notification">Provjera ažuriranja</string>
   <string name="downloading_notification">Preuzimanje</string>
@@ -47,7 +53,6 @@
   <string name="menu_copy_url">Kopiraj URL</string>
   <string name="menu_export_update">Izvezi ažuriranje</string>
   <string name="menu_show_changelog">Prikaži promjene</string>
-  <string name="dialog_checking_for_updates">Provjera ažuriranja</string>
   <string name="snack_updates_found">Pronađena su nova ažuriranja</string>
   <string name="snack_no_updates_found">Nema pronađenih novih ažuriranja</string>
   <string name="snack_updates_check_failed">Provjera ažuriranja nije uspjela. Provjerite internetsku vezu i pokušajte ponovo kasnije.</string>
@@ -60,17 +65,9 @@
   <string name="header_last_updates_check">Zadnja provjera: <xliff:g id="date" example="1 January 1970">%1$s </xliff:g> (<xliff:g id="time" example="01:23">%2$s </xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s </xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s </xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s </xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s </xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s </xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s </xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s </xliff:g> ostalo</string>
   <string name="list_verifying_update">Provjera ažuriranja</string>
   <string name="list_no_updates">Nema pronađenih novih ažuriranja. Za ručnu provjeru novih ažuriranja upotrijebite gumb Osvježi.</string>
-  <string name="action_description_download">Preuzmi</string>
-  <string name="action_description_pause">Pauziraj preuzimanje</string>
-  <string name="action_description_resume">Nastavi s preuzimanjem</string>
-  <string name="action_description_install">Instaliraj ažuriranje</string>
-  <string name="action_description_info">Prikaži informacija</string>
-  <string name="action_description_delete">Izbriši ažuriranje</string>
-  <string name="action_description_cancel">Prekini instalaciju</string>
+  <string name="action_download">Preuzmi</string>
   <string name="confirm_delete_dialog_title">Izbriši datoteku</string>
   <string name="confirm_delete_dialog_message">Želite li izbrisati odabranu datoteku ažuriranja?</string>
   <string name="apply_update_dialog_title">Primjeni ažuriranje</string>

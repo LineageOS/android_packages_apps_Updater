@@ -20,4 +20,10 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
 </resources>

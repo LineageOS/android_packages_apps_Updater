@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Egiaztapenak huts egin du</string>
   <string name="verifying_download_notification">Eguneraketa egiaztatzen</string>
   <string name="downloading_notification">Deskargatzen</string>
@@ -47,7 +53,6 @@
   <string name="menu_copy_url">Kopiatu URL-a</string>
   <string name="menu_export_update">Esportatu eguneraketa</string>
   <string name="menu_show_changelog">Erakutsi aldaketa-egunkaria</string>
-  <string name="dialog_checking_for_updates">Eguneraketak bilatzen</string>
   <string name="snack_updates_found">Eguneraketa berriak aurkitu dira</string>
   <string name="snack_no_updates_found">Ez da eguneraketa berririk aurkitu</string>
   <string name="snack_updates_check_failed">Eguneraketa bilaketak huts egin du. Interneterako konexioa egiaztatu eta berriro saiatu, mesedez.</string>
@@ -60,17 +65,9 @@
   <string name="header_last_updates_check">Azken egiaztaketa: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> left</string>
   <string name="list_verifying_update">Eguneraketa egiaztatzen</string>
   <string name="list_no_updates">Ez da eguneraketa berririk aurkitu. Eguneraketak eskuz egiaztatzeko, erabili freskatze botoia.</string>
-  <string name="action_description_download">Deskargatu</string>
-  <string name="action_description_pause">Pausatu deskarga</string>
-  <string name="action_description_resume">Berrekin deskarga</string>
-  <string name="action_description_install">Instalatu eguneraketa</string>
-  <string name="action_description_info">Erakutsi informazioa</string>
-  <string name="action_description_delete">Ezabatu eguneraketa</string>
-  <string name="action_description_cancel">Ezeztatu instalazioa</string>
+  <string name="action_download">Deskargatu</string>
   <string name="confirm_delete_dialog_title">Ezabatu fitxategia</string>
   <string name="confirm_delete_dialog_message">Ezabatu hautatutako eguneraketa fitxategia?</string>
   <string name="apply_update_dialog_title">Aplikatu eguneraketa</string>

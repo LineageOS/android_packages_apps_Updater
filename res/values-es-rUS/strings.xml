@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Verificación fallida</string>
   <string name="verifying_download_notification">Verificando actualización</string>
   <string name="downloading_notification">Descargando</string>
@@ -47,7 +53,6 @@
   <string name="menu_copy_url">Copiar URL</string>
   <string name="menu_export_update">Exportar actualización</string>
   <string name="menu_show_changelog">Mostrar registro de cambios</string>
-  <string name="dialog_checking_for_updates">Buscando actualizaciones</string>
   <string name="snack_updates_found">Se encontraron nuevas actualizaciones</string>
   <string name="snack_no_updates_found">No se encontraron nuevas actualizaciones</string>
   <string name="snack_updates_check_failed">Error en la búsqueda de actualizaciones. Comprueba la conexión a Internet e intenta de nuevo más tarde.</string>
@@ -60,17 +65,9 @@
   <string name="header_last_updates_check">Última comprobación: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - Quedan <xliff:g id="duration" example="3 minutes">%3$s</xliff:g></string>
   <string name="list_verifying_update">Verificando actualización</string>
   <string name="list_no_updates">Sin nuevas actualizaciones disponibles. Para comprobar manualmente, pulsa el botón «Actualizar».</string>
-  <string name="action_description_download">Descargar</string>
-  <string name="action_description_pause">Pausar descarga</string>
-  <string name="action_description_resume">Reanudar descarga</string>
-  <string name="action_description_install">Instalar actualización</string>
-  <string name="action_description_info">Mostrar información</string>
-  <string name="action_description_delete">Borrar actualización</string>
-  <string name="action_description_cancel">Cancelar instalación</string>
+  <string name="action_download">Descargar</string>
   <string name="confirm_delete_dialog_title">Borrar archivo</string>
   <string name="confirm_delete_dialog_message">¿Borrar el archivo de actualización seleccionado?</string>
   <string name="apply_update_dialog_title">Aplicar actualización</string>

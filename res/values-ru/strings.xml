@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Проверка не удалась</string>
   <string name="verifying_download_notification">Проверка обновления</string>
   <string name="downloading_notification">Загрузка</string>
@@ -29,6 +35,7 @@
   <string name="download_paused_error_notification">Ошибка при загрузке</string>
   <string name="download_completed_notification">Загрузка завершена</string>
   <string name="download_starting_notification">Загрузка началась</string>
+  <string name="update_failed_notification">Сбой обновления</string>
   <string name="new_updates_found_title">Новые обновления</string>
   <string name="text_download_speed">%1$s, %2$s/с</string>
   <string name="pause_button">Пауза</string>
@@ -41,13 +48,13 @@
   <string name="dialog_prepare_zip_message">Подготовка обновления</string>
   <string name="reboot">Перезапуск</string>
   <string name="menu_refresh">Обновить</string>
+  <string name="menu_preferences">Настройки</string>
   <string name="menu_auto_updates_check">Автоматическая проверка обновлений</string>
   <string name="menu_auto_delete_updates">Удалить файлы обновления после установки</string>
   <string name="menu_delete_update">Удалить</string>
   <string name="menu_copy_url">Копировать URL-адрес</string>
   <string name="menu_export_update">Экспорт обновлений</string>
   <string name="menu_show_changelog">Показать журнал изменений</string>
-  <string name="dialog_checking_for_updates">Проверка обновлений</string>
   <string name="snack_updates_found">Доступно новое обновление</string>
   <string name="snack_no_updates_found">Обновлений не найдено</string>
   <string name="snack_updates_check_failed">Не удалось выполнить проверку обновлений. Проверьте подключение к Интернету и повторите попытку.</string>
@@ -60,17 +67,17 @@
   <string name="header_last_updates_check">Поиск обновлений выполнялся <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> в <xliff:g id="time" example="01:23">%2$s</xliff:g></string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - осталось <xliff:g id="duration" example="3 minutes">%3$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (осталось <xliff:g id="duration" example="3 minutes">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Проверка обновлений</string>
   <string name="list_no_updates">Нет доступных обновлений. Чтобы повторно проверить их наличие, нажмите кнопку «Обновить».</string>
-  <string name="action_description_download">Скачать</string>
-  <string name="action_description_pause">Приостановить скачивание</string>
-  <string name="action_description_resume">Возобновить скачивание</string>
-  <string name="action_description_install">Установить обновление</string>
-  <string name="action_description_info">Показать сведения</string>
-  <string name="action_description_delete">Удалить обновление</string>
-  <string name="action_description_cancel">Отменить установку</string>
+  <string name="action_download">Скачать</string>
+  <string name="action_pause">Приостановить</string>
+  <string name="action_resume">Возобновить</string>
+  <string name="action_install">Установить</string>
+  <string name="action_info">Информация</string>
+  <string name="action_delete">Удалить</string>
+  <string name="action_cancel">Отмена</string>
   <string name="confirm_delete_dialog_title">Удалить файл</string>
   <string name="confirm_delete_dialog_message">Удалить выбранный файл обновления?</string>
   <string name="apply_update_dialog_title">Применить обновление</string>
@@ -110,4 +117,5 @@
   <string name="export_channel_title">Экспорт завершен</string>
   <string name="new_updates_channel_title">Новые обновления</string>
   <string name="ongoing_channel_title">Текущие загрузки</string>
+  <string name="update_failed_channel_title">Сбой обновления</string>
 </resources>

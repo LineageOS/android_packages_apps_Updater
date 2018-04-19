@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Verifikasi gagal</string>
   <string name="verifying_download_notification">Memverifikasi pembaruan</string>
   <string name="downloading_notification">Mengunduh</string>
@@ -47,7 +53,6 @@
   <string name="menu_copy_url">Salin URL</string>
   <string name="menu_export_update">Ekspor pembaruan</string>
   <string name="menu_show_changelog">Tampilkan catatan perubahan</string>
-  <string name="dialog_checking_for_updates">Memeriksa pembaruan</string>
   <string name="snack_updates_found">Pembaruan baru ditemukan</string>
   <string name="snack_no_updates_found">Tidak ada pembaruan baru ditemukan</string>
   <string name="snack_updates_check_failed">Pemeriksaan pembaruan gagal. Silakan periksa koneksi Internet Anda dan coba lagi nanti.</string>
@@ -59,17 +64,9 @@
   <string name="header_last_updates_check">Terakhir diperiksa: <xliff:g id="date" example="1 January 1970">%1$s </xliff:g> (<xliff:g id="time" example="01:23">%2$s </xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> lagi</string>
   <string name="list_verifying_update">Memverifikasi pembaruan</string>
   <string name="list_no_updates">Pembaruan tidak ditemukan. Untuk memeriksa pembaruan secara manual, gunakan tombol Segarkan.</string>
-  <string name="action_description_download">Unduh</string>
-  <string name="action_description_pause">Jeda unduhan</string>
-  <string name="action_description_resume">Lanjutkan unduhan</string>
-  <string name="action_description_install">Pasang pembaruan</string>
-  <string name="action_description_info">Tampilkan informasi</string>
-  <string name="action_description_delete">Hapus pembaruan</string>
-  <string name="action_description_cancel">Membatalkan pemasangan</string>
+  <string name="action_download">Unduh</string>
   <string name="confirm_delete_dialog_title">Hapus berkas</string>
   <string name="confirm_delete_dialog_message">Hapus berkas pembaruan yang terpilih?</string>
   <string name="apply_update_dialog_title">Terapkan pembaruan</string>
@@ -80,6 +77,7 @@
   <string name="dialog_export_title">Mengekspor pembaruan</string>
   <string name="notification_export_success">Pembaruan diekspor</string>
   <string name="notification_export_fail">Kesalahan saat mengekspor</string>
+  <string name="toast_already_exporting">Sudah mengekspor pembaruan</string>
   <plurals name="duration_seconds">
     <item quantity="other"><xliff:g id="count">%d</xliff:g> detik</item>
   </plurals>

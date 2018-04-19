@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Ověření selhalo</string>
   <string name="verifying_download_notification">Ověření aktualizace</string>
   <string name="downloading_notification">Stahování</string>
@@ -46,7 +52,6 @@
   <string name="menu_delete_update">Odstranit</string>
   <string name="menu_copy_url">Kopírovat URL</string>
   <string name="menu_export_update">Export aktualizace</string>
-  <string name="dialog_checking_for_updates">Vyhledávání aktualizací</string>
   <string name="snack_updates_found">Nalezeny nové aktualizace</string>
   <string name="snack_no_updates_found">Nové aktualizace nenalezeny</string>
   <string name="snack_updates_check_failed">Zjištění nové verze selhalo. Prosím zkontrolujte připojení k internetu a pokus opakujte.</string>
@@ -59,17 +64,9 @@
   <string name="header_last_updates_check">Poslední kontrola: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> zbývá</string>
   <string name="list_verifying_update">Ověření aktualizace</string>
   <string name="list_no_updates">Nebyly nalezeny žádné nové aktualizace. Chcete-li ručně vyhledat nové aktualizace, použijte tlačítko „Obnovit“.</string>
-  <string name="action_description_download">Stáhnout</string>
-  <string name="action_description_pause">Pozastavit stahování</string>
-  <string name="action_description_resume">Obnovit stahování</string>
-  <string name="action_description_install">Instalovat aktualizaci</string>
-  <string name="action_description_info">Zobrazit informace</string>
-  <string name="action_description_delete">Odstranit aktualizaci</string>
-  <string name="action_description_cancel">Zrušit instalaci</string>
+  <string name="action_download">Stáhnout</string>
   <string name="confirm_delete_dialog_title">Smazat soubor</string>
   <string name="confirm_delete_dialog_message">Smazat zvolený soubor aktualizace?</string>
   <string name="apply_update_dialog_title">Použít aktualizaci</string>

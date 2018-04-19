@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Xác minh thất bại</string>
   <string name="verifying_download_notification">Đang xác thực bản cập nhật</string>
   <string name="downloading_notification">Đang tải xuống</string>
@@ -47,7 +53,6 @@
   <string name="menu_copy_url">Sao chép URL</string>
   <string name="menu_export_update">Xuất bản cập nhật</string>
   <string name="menu_show_changelog">Hiển thị nhật ký thay đổi</string>
-  <string name="dialog_checking_for_updates">Đang kiểm tra bản cập nhật</string>
   <string name="snack_updates_found">Đã tìm thấy bản cập nhật mới</string>
   <string name="snack_no_updates_found">Không tìm thấy bản cập nhật mới</string>
   <string name="snack_updates_check_failed">Kiểm tra bản cập nhật không thành công. Vui lòng kiểm tra kết nối internet của bạn và thử lại sau.</string>
@@ -60,17 +65,9 @@
   <string name="header_last_updates_check">Lần kiểm tra cuối: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> của <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> của <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> còn lại</string>
   <string name="list_verifying_update">Đang xác thực bản cập nhật</string>
   <string name="list_no_updates">Không có bản cập nhật mới được tìm thấy. Để tự động kiểm tra các bản cập nhật mới, sử dụng nút Làm mới.</string>
-  <string name="action_description_download">Tải xuống</string>
-  <string name="action_description_pause">Tạm dừng tải xuống</string>
-  <string name="action_description_resume">Tiếp tục tải xuống</string>
-  <string name="action_description_install">Cài đặt bản cập nhật</string>
-  <string name="action_description_info">Hiển thị thông tin</string>
-  <string name="action_description_delete">Xóa bản cập nhật</string>
-  <string name="action_description_cancel">Huỷ cài đặt</string>
+  <string name="action_download">Tải xuống</string>
   <string name="confirm_delete_dialog_title">Xoá tập tin</string>
   <string name="confirm_delete_dialog_message">Xóa các tập tin cập nhật được chọn?</string>
   <string name="apply_update_dialog_title">Áp dụng cập nhật</string>

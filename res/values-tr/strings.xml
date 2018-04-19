@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Doğrulama başarısız</string>
   <string name="verifying_download_notification">Güncelleme doğrulanıyor</string>
   <string name="downloading_notification">İndiriliyor</string>
@@ -47,7 +53,6 @@
   <string name="menu_copy_url">URL adresini kopyala</string>
   <string name="menu_export_update">Güncellemeyi dışarı aktar</string>
   <string name="menu_show_changelog">Değişiklikleri göster</string>
-  <string name="dialog_checking_for_updates">Güncellemeler kontrol ediliyor</string>
   <string name="snack_updates_found">Yeni güncelleştirmeler bulundu</string>
   <string name="snack_no_updates_found">Yeni güncelleme bulunamadı</string>
   <string name="snack_updates_check_failed">Güncelleme kontrolü başarısız oldu. Lütfen internet bağlantınızı kontrol edin ve daha sonra tekrar deneyin.</string>
@@ -60,17 +65,9 @@
   <string name="header_last_updates_check">Son kontrol zamanı: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> kaldı</string>
   <string name="list_verifying_update">Güncelleme doğrulanıyor</string>
   <string name="list_no_updates">Yeni güncelleme bulunamadı. El ile yeni güncellemeleri kontrol etmek için Yenile tuşunu kullanın.</string>
-  <string name="action_description_download">İndir</string>
-  <string name="action_description_pause">İndirmeyi duraklat</string>
-  <string name="action_description_resume">İndirmeyi sürdür</string>
-  <string name="action_description_install">Güncellemeyi yükle</string>
-  <string name="action_description_info">Bilgileri göster</string>
-  <string name="action_description_delete">Güncellemeyi sil</string>
-  <string name="action_description_cancel">Yüklemeyi iptal et</string>
+  <string name="action_download">İndir</string>
   <string name="confirm_delete_dialog_title">Dosya sil</string>
   <string name="confirm_delete_dialog_message">Seçilen güncelleme dosyası silinsin mi?</string>
   <string name="apply_update_dialog_title">Güncellemeyi uygula</string>

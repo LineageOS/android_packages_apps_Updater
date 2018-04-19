@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Vahvistus epäonnistui</string>
   <string name="verifying_download_notification">Todentaa päivitystä</string>
   <string name="downloading_notification">Ladataan</string>
@@ -47,7 +53,6 @@
   <string name="menu_copy_url">Kopioi URL-osoite</string>
   <string name="menu_export_update">Vie päivitys</string>
   <string name="menu_show_changelog">Näytä muutosloki</string>
-  <string name="dialog_checking_for_updates">Tarkistetaan päivityksiä</string>
   <string name="snack_updates_found">Uusia päivityksiä löytyi</string>
   <string name="snack_no_updates_found">Uusia päivityksiä ei löytynyt</string>
   <string name="snack_updates_check_failed">Päivitysten tarkistaminen epäonnistui. Tarkista internet-yhteytesi ja yritä uudelleen.</string>
@@ -60,17 +65,9 @@
   <string name="header_last_updates_check">Viimeksi tarkistettu: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> jäljellä</string>
   <string name="list_verifying_update">Todentaa päivitystä</string>
   <string name="list_no_updates">Uusia päivityksiä ei löytynyt. Tarkistaaksesi päivitykset manuaalisesti, paina Päivitä-painiketta.</string>
-  <string name="action_description_download">Lataa</string>
-  <string name="action_description_pause">Keskeytä lataaminen</string>
-  <string name="action_description_resume">Jatka lataamista</string>
-  <string name="action_description_install">Asenna päivitys</string>
-  <string name="action_description_info">Näytä tiedot</string>
-  <string name="action_description_delete">Poista päivitys</string>
-  <string name="action_description_cancel">Peruuta asennus</string>
+  <string name="action_download">Lataa</string>
   <string name="confirm_delete_dialog_title">Poista tiedosto</string>
   <string name="confirm_delete_dialog_message">Poista valittu päivitystiedosto?</string>
   <string name="apply_update_dialog_title">Asenna päivitys</string>

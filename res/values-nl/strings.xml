@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Verificatie mislukt</string>
   <string name="verifying_download_notification">Update verifiëren</string>
   <string name="downloading_notification">Downloaden</string>
@@ -46,7 +52,7 @@
   <string name="menu_delete_update">Verwijderen</string>
   <string name="menu_copy_url">URL kopiëren</string>
   <string name="menu_export_update">Update exporteren</string>
-  <string name="dialog_checking_for_updates">Controleren op updates</string>
+  <string name="menu_show_changelog">Changelog weergeven</string>
   <string name="snack_updates_found">Nieuwe updates gevonden</string>
   <string name="snack_no_updates_found">Geen nieuwe updates gevonden</string>
   <string name="snack_updates_check_failed">Kan niet controleren op updates. Controleer uw internetverbinding en probeer het later opnieuw.</string>
@@ -59,17 +65,9 @@
   <string name="header_last_updates_check">Laatst gecontroleerd: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> van <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> van <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> resterend</string>
   <string name="list_verifying_update">Update verifiëren</string>
   <string name="list_no_updates">Geen nieuwe updates gevonden. Gebruik de knop Vernieuwen om handmatig te controleren op nieuwe updates.</string>
-  <string name="action_description_download">Downloaden</string>
-  <string name="action_description_pause">Download pauzeren</string>
-  <string name="action_description_resume">Download hervatten</string>
-  <string name="action_description_install">Update installeren</string>
-  <string name="action_description_info">Informatie weergeven</string>
-  <string name="action_description_delete">Update verwijderen</string>
-  <string name="action_description_cancel">Installatie annuleren</string>
+  <string name="action_download">Downloaden</string>
   <string name="confirm_delete_dialog_title">Bestand verwijderen</string>
   <string name="confirm_delete_dialog_message">Geselecteerde update-bestand verwijderen?</string>
   <string name="apply_update_dialog_title">Update toepassen</string>

@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">검증 실패</string>
   <string name="verifying_download_notification">업데이트 검증 중</string>
   <string name="downloading_notification">다운로드 중</string>
@@ -47,7 +53,6 @@
   <string name="menu_copy_url">URL 복사</string>
   <string name="menu_export_update">업데이트 내보내기</string>
   <string name="menu_show_changelog">변경 사항 보기</string>
-  <string name="dialog_checking_for_updates">업데이트 확인 중</string>
   <string name="snack_updates_found">새 업데이트 발견</string>
   <string name="snack_no_updates_found">새로운 업데이트 없음</string>
   <string name="snack_updates_check_failed">업데이트 확인에 실패했습니다. 인터넷 연결을 확인한 뒤 다시 시도해 주세요.</string>
@@ -60,17 +65,9 @@
   <string name="header_last_updates_check">마지막 확인: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> 남음</string>
   <string name="list_verifying_update">업데이트 검증 중</string>
   <string name="list_no_updates">새로운 업데이트가 없습니다. 수동으로 새 업데이트를 확인하려면 새로고침 버튼을 누르세요.</string>
-  <string name="action_description_download">다운로드</string>
-  <string name="action_description_pause">다운로드 일시 중지</string>
-  <string name="action_description_resume">다운로드 재개</string>
-  <string name="action_description_install">업데이트 설치</string>
-  <string name="action_description_info">정보 보기</string>
-  <string name="action_description_delete">업데이트 삭제</string>
-  <string name="action_description_cancel">설치 취소</string>
+  <string name="action_download">다운로드</string>
   <string name="confirm_delete_dialog_title">파일 삭제</string>
   <string name="confirm_delete_dialog_message">선택한 업데이트 파일을 삭제하시겠습니까?</string>
   <string name="apply_update_dialog_title">업데이트 적용</string>

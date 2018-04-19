@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Αποτυχία επαλήθευσης</string>
   <string name="verifying_download_notification">Επαλήθευση ενημέρωσης</string>
   <string name="downloading_notification">Λήψη</string>
@@ -29,6 +35,7 @@
   <string name="download_paused_error_notification">Σφάλμα λήψης</string>
   <string name="download_completed_notification">Η λήψη ολοκληρώθηκε</string>
   <string name="download_starting_notification">Έναρξη λήψης</string>
+  <string name="update_failed_notification">Η ενημέρωση απέτυχε</string>
   <string name="new_updates_found_title">Νέες ενημερώσεις</string>
   <string name="text_download_speed">%1$s, %2$s/δ</string>
   <string name="pause_button">Παύση</string>
@@ -41,13 +48,13 @@
   <string name="dialog_prepare_zip_message">Προκαταρκτική προετοιμασία ενημέρωσης</string>
   <string name="reboot">Επανεκκίνηση</string>
   <string name="menu_refresh">Ανανέωση</string>
+  <string name="menu_preferences">Προτιμήσεις</string>
   <string name="menu_auto_updates_check">Αυτόματος έλεγχος ενημερώσεων</string>
   <string name="menu_auto_delete_updates">Διαγραφή αρχείου μετά την ενημέρωση</string>
   <string name="menu_delete_update">Διαγραφή</string>
   <string name="menu_copy_url">Αντιγραφή URL</string>
   <string name="menu_export_update">Εξαγωγή ενημέρωσης</string>
   <string name="menu_show_changelog">Εμφάνιση αλλαγών</string>
-  <string name="dialog_checking_for_updates">Έλεγχος για ενημερώσεις</string>
   <string name="snack_updates_found">Βρέθηκαν νέες ενημερώσεις</string>
   <string name="snack_no_updates_found">Δεν βρέθηκαν νέες ενημερώσεις</string>
   <string name="snack_updates_check_failed">Ο έλεγχος για ενημερώσεις απέτυχε. Παρακαλώ ελέγξτε την σύνδεσή σας στο διαδίκτυο και προσπαθήστε αργότερα.</string>
@@ -60,17 +67,17 @@
   <string name="header_last_updates_check">Τελευταίος έλεγχος: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - απομένουν <xliff:g id="duration" example="3 minutes">%3$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (απομένουν <xliff:g id="duration" example="3 minutes">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Επαλήθευση ενημέρωσης</string>
   <string name="list_no_updates">Δεν βρέθηκαν νέες ενημερώσεις. Για να ελέγξετε χειροκίνητα για νέες ενημερώσεις, χρησιμοποιήστε το πλήκτρο Ανανέωσης.</string>
-  <string name="action_description_download">Λήψη</string>
-  <string name="action_description_pause">Παύση λήψης</string>
-  <string name="action_description_resume">Συνέχιση λήψης</string>
-  <string name="action_description_install">Εγκατάσταση ενημέρωσης</string>
-  <string name="action_description_info">Εμφάνιση πληροφοριών</string>
-  <string name="action_description_delete">Διαγραφή ενημέρωσης</string>
-  <string name="action_description_cancel">Ακύρωση εγκατάστασης</string>
+  <string name="action_download">Λήψη</string>
+  <string name="action_pause">Παύση</string>
+  <string name="action_resume">Συνέχιση</string>
+  <string name="action_install">Εγκατάσταση</string>
+  <string name="action_info">Πληροφορίες</string>
+  <string name="action_delete">Διαγραφή</string>
+  <string name="action_cancel">Ακύρωση</string>
   <string name="confirm_delete_dialog_title">Διαγραφή αρχείου</string>
   <string name="confirm_delete_dialog_message">Διαγραφή του επιλεγμένου αρχείου ενημέρωσης;</string>
   <string name="apply_update_dialog_title">Εφαρμογή ενημέρωσης</string>

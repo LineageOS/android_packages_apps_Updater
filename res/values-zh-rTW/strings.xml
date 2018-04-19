@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">驗證失敗</string>
   <string name="verifying_download_notification">正在驗證更新</string>
   <string name="downloading_notification">下載中</string>
@@ -47,7 +53,6 @@
   <string name="menu_copy_url">複製網址</string>
   <string name="menu_export_update">匯出更新</string>
   <string name="menu_show_changelog">顯示更新日誌</string>
-  <string name="dialog_checking_for_updates">正在檢查更新</string>
   <string name="snack_updates_found">發現新的更新</string>
   <string name="snack_no_updates_found">沒有找到新的更新</string>
   <string name="snack_updates_check_failed">更新檢查失敗。請檢查您的網路連線並稍後重試。</string>
@@ -60,17 +65,9 @@
   <string name="header_last_updates_check">上次檢查：<xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g>-<xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - 剩餘 <xliff:g id="duration" example="3 minutes">%3$s</xliff:g></string>
   <string name="list_verifying_update">正在驗證更新</string>
   <string name="list_no_updates">沒有找到新的更新。若要手動檢查新的更新，請使用「重新整理」按鍵。</string>
-  <string name="action_description_download">下載</string>
-  <string name="action_description_pause">暫停下載</string>
-  <string name="action_description_resume">繼續下載</string>
-  <string name="action_description_install">安裝更新</string>
-  <string name="action_description_info">顯示資訊</string>
-  <string name="action_description_delete">刪除更新</string>
-  <string name="action_description_cancel">取消安裝</string>
+  <string name="action_download">下載</string>
   <string name="confirm_delete_dialog_title">刪除檔案</string>
   <string name="confirm_delete_dialog_message">刪除已選擇的更新檔案？</string>
   <string name="apply_update_dialog_title">套用更新</string>

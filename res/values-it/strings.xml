@@ -22,6 +22,12 @@
          WARNING: The application can and will delete any unknown file. -->
   <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
+  <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
   <string name="verification_failed_notification">Verifica fallita</string>
   <string name="verifying_download_notification">Verifica aggiornamenti</string>
   <string name="downloading_notification">Download in corso</string>
@@ -41,36 +47,27 @@
   <string name="dialog_prepare_zip_message">Preparazione aggiornamento preliminare</string>
   <string name="reboot">Riavvia</string>
   <string name="menu_refresh">Ricarica</string>
-  <string name="menu_auto_updates_check">Ricerca aggiornamenti automatica</string>
+  <string name="menu_auto_updates_check">Ricerca aggiornamenti automaticamente</string>
   <string name="menu_auto_delete_updates">Elimina gli aggiornamenti dopo l\'installazione</string>
   <string name="menu_delete_update">Elimina</string>
   <string name="menu_copy_url">Copia indirizzo URL</string>
   <string name="menu_export_update">Esporta aggiornamento</string>
-  <string name="menu_show_changelog">Mostra il ChangeLog</string>
-  <string name="dialog_checking_for_updates">Controllo aggiornamenti</string>
+  <string name="menu_show_changelog">Mostra il changelog</string>
   <string name="snack_updates_found">Nessun aggiornamento trovato</string>
   <string name="snack_no_updates_found">Nessun nuovo aggiornamento trovato</string>
   <string name="snack_updates_check_failed">La verifica di aggiornamenti è fallita. Controlla la connessione ad internet e riprova più tardi.</string>
   <string name="snack_download_failed">Il download dell\'aggiornamento è fallito. Controlla la connessione ad internet e riprova più tardi.</string>
   <string name="snack_download_verification_failed">Verifica dell\'aggiornamento fallita.</string>
-  <string name="snack_download_verified">Download video completato.</string>
+  <string name="snack_download_verified">Download aggiornamento completato.</string>
   <string name="snack_update_not_installable">Questo aggiornamento non può essere installato sopra la versione corrente.</string>
   <string name="header_title_text">LineageOS\n%1$s</string>
   <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
   <string name="header_last_updates_check">Ultima verifica: <xliff:g id="date" example="1 Gennaio 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="Luglio 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-  <string name="list_download_progress_eta"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> - <xliff:g id="duration" example="3 minutes">%3$s</xliff:g> rimanenti</string>
   <string name="list_verifying_update">Verifica aggiornamento</string>
   <string name="list_no_updates">Nessun nuovo aggiornamento trovato. Per controllare manualmente nuovi aggiornamenti, tocca il pulsante Aggiorna.</string>
-  <string name="action_description_download">Download</string>
-  <string name="action_description_pause">Download in pausa</string>
-  <string name="action_description_resume">Riprendi il download</string>
-  <string name="action_description_install">Installa l\'aggiornamento</string>
-  <string name="action_description_info">Mostra informazioni</string>
-  <string name="action_description_delete">Elimina aggiornamento</string>
-  <string name="action_description_cancel">Annulla installazione</string>
+  <string name="action_download">Download</string>
   <string name="confirm_delete_dialog_title">Elimina file</string>
   <string name="confirm_delete_dialog_message">Eliminare il file di aggiornamento selezionato?</string>
   <string name="apply_update_dialog_title">Applica aggiornamento</string>

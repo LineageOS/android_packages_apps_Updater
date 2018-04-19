@@ -17,8 +17,10 @@ package org.lineageos.updater;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.view.menu.MenuBuilder;
@@ -67,6 +69,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private Controller mUpdaterController;
     private UpdatesListActivity mActivity;
 
+    private Drawable mTrustIcon;
+
     private enum Action {
         DOWNLOAD,
         PAUSE,
@@ -106,6 +110,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         TypedValue tv = new TypedValue();
         mActivity.getTheme().resolveAttribute(android.R.attr.disabledAlpha, tv, true);
         mAlphaDisabledValue = tv.getFloat();
+        mTrustIcon = ContextCompat.getDrawable(mActivity, R.drawable.ic_trust);
     }
 
     @Override
@@ -124,6 +129,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         boolean canDelete = false;
 
         final String downloadId = update.getDownloadId();
+
+        // Reset verified status drawable
+        viewHolder.mBuildVersion.setCompoundDrawables(null, null, null, null);
         if (mUpdaterController.isDownloading(downloadId)) {
             canDelete = true;
             String downloaded = StringGenerator.bytesToMegabytes(mActivity,
@@ -156,6 +164,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             setButtonAction(viewHolder.mAction, Action.INSTALL, downloadId, false);
             viewHolder.mProgressText.setText(R.string.list_verifying_update);
             viewHolder.mProgressBar.setIndeterminate(true);
+            viewHolder.mBuildVersion.setCompoundDrawables(null, null, mTrustIcon, null);
         } else {
             canDelete = true;
             setButtonAction(viewHolder.mAction, Action.RESUME, downloadId, !isBusy());
@@ -184,6 +193,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             setButtonAction(viewHolder.mAction,
                     Utils.canInstall(update) ? Action.INSTALL : Action.DELETE,
                     update.getDownloadId(), !isBusy());
+            viewHolder.mBuildVersion.setCompoundDrawables(null, null, mTrustIcon, null);
         } else if (!Utils.canInstall(update)) {
             viewHolder.itemView.setOnLongClickListener(
                     getLongClickListener(update, false, viewHolder.mBuildDate));

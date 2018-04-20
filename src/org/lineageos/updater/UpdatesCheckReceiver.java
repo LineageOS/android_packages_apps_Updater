@@ -38,6 +38,7 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class UpdatesCheckReceiver extends BroadcastReceiver {
 
@@ -70,7 +71,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         }
 
         final File json = Utils.getCachedUpdateList(context);
-        final File jsonNew = new File(json.getAbsolutePath() + ".tmp");
+        final File jsonNew = new File(json.getAbsolutePath() + UUID.randomUUID());
         String url = Utils.getServerURL(context);
         DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
             @Override

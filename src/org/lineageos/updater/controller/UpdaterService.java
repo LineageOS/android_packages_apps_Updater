@@ -393,7 +393,7 @@ public class UpdaterService extends Service {
         setNotificationTitle(update);
 
         String speed = Formatter.formatFileSize(this, update.getSpeed());
-        CharSequence eta = StringGenerator.formatDuration(this, update.getEta() * 1000);
+        CharSequence eta = StringGenerator.formatETA(this, update.getEta() * 1000);
         mNotificationStyle.bigText(
                 getString(R.string.text_download_speed, eta, speed));
 

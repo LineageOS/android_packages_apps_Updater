@@ -133,7 +133,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     update.getProgress() / 100.f);
             long eta = update.getEta();
             if (eta > 0) {
-                CharSequence etaString = StringGenerator.formatDuration(mActivity, eta * 1000);
+                CharSequence etaString = StringGenerator.formatETA(mActivity, eta * 1000);
                 viewHolder.mProgressText.setText(mActivity.getString(
                         R.string.list_download_progress_eta_new, downloaded, total, etaString,
                         percentage));

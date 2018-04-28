@@ -56,6 +56,8 @@
     <string name="finalizing_package">Finalizing package installation</string>
     <string name="preparing_ota_first_boot">Preparing for first boot</string>
     <string name="dialog_prepare_zip_message">Preliminary update preparation</string>
+    <string name="dialog_battery_low_title">Low battery</string>
+    <string name="dialog_battery_low_message">The battery level is too low, please charge your device to continue.</string>
 
     <string name="reboot">Reboot</string>
 

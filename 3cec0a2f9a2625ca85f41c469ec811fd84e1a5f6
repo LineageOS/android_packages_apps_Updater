@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "36150bae_d170a435",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2018-04-28T13:49:47Z",
+      "side": 1,
+      "message": "Omitted intentionally. I\u0027m even thinking of raising the minimum to 25% to take into account possible random variations that can happen rebooting.",
+      "parentUuid": "91d49bc6_cebd6af9",
+      "range": {
+        "startLine": 10,
+        "startChar": 28,
+        "endLine": 10,
+        "endChar": 48
+      },
+      "revId": "3cec0a2f9a2625ca85f41c469ec811fd84e1a5f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "347b9f6f_e16c9c2d",
         "filename": "src/org/lineageos/updater/controller/UpdateInstaller.java",
         "patchSetId": 2

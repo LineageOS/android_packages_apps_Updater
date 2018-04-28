@@ -17,11 +17,14 @@ package org.lineageos.updater.controller;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.BatteryManager;
 import android.os.SystemClock;
 import android.os.SystemProperties;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
 
+import org.lineageos.updater.R;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.FileUtils;
 import org.lineageos.updater.misc.Utils;
@@ -65,9 +68,24 @@ class UpdateInstaller {
         return sInstallingUpdate != null && sInstallingUpdate.equals(downloadId);
     }
 
+    private static boolean isBatteryLevelOk(Context context) {
+        BatteryManager bm = context.getSystemService(BatteryManager.class);
+        int percent = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
+        return percent >= context.getResources().getInteger(R.integer.battery_ok_percentage);
+    }
+
     void install(String downloadId) {
         if (isInstalling()) {
             Log.e(TAG, "Already installing an update");
+            return;
+        }
+
+        if (!isBatteryLevelOk(mContext)) {
+            new AlertDialog.Builder(mContext)
+                    .setTitle(R.string.dialog_battery_low_title)
+                    .setMessage(R.string.dialog_battery_low_message)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show();
             return;
         }
 

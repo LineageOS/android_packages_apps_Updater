@@ -124,7 +124,7 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> minutes left</item>
     </plurals>
     <plurals name="eta_hours">
-        <item quantity="one">1 hour</item>
+        <item quantity="one">1 hour left</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> hours left</item>
     </plurals>
 

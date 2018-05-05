@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">İndirme hatası</string>
   <string name="download_completed_notification">İndirme tamamlandı</string>
   <string name="download_starting_notification">İndirme başlatılıyor</string>
+  <string name="update_failed_notification">Güncelleme başarısız</string>
   <string name="new_updates_found_title">Yeni güncellemeler</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Duraklat</string>
@@ -47,6 +48,7 @@
   <string name="dialog_prepare_zip_message">Güncelleme ön hazırlığı</string>
   <string name="reboot">Yeniden başlat</string>
   <string name="menu_refresh">Yenile</string>
+  <string name="menu_preferences">Tercihler</string>
   <string name="menu_auto_updates_check">Otomatik güncelleme kontrolü</string>
   <string name="menu_auto_delete_updates">Yüklendiğinde güncellemeleri sil</string>
   <string name="menu_delete_update">Sil</string>
@@ -65,9 +67,17 @@
   <string name="header_last_updates_check">Son kontrol zamanı: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Güncelleme doğrulanıyor</string>
   <string name="list_no_updates">Yeni güncelleme bulunamadı. El ile yeni güncellemeleri kontrol etmek için Yenile tuşunu kullanın.</string>
   <string name="action_download">İndir</string>
+  <string name="action_pause">Duraklat</string>
+  <string name="action_resume">Devam et</string>
+  <string name="action_install">Yükle</string>
+  <string name="action_info">Bilgi</string>
+  <string name="action_delete">Sil</string>
+  <string name="action_cancel">İptal</string>
   <string name="confirm_delete_dialog_title">Dosya sil</string>
   <string name="confirm_delete_dialog_message">Seçilen güncelleme dosyası silinsin mi?</string>
   <string name="apply_update_dialog_title">Güncellemeyi uygula</string>
@@ -80,17 +90,17 @@
   <string name="notification_export_success">Dışa aktarılan güncelleme</string>
   <string name="notification_export_fail">Dışa aktarma hatası</string>
   <string name="toast_already_exporting">Zaten bir güncelleme dışa aktarılıyor</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 saniye</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> saniye</item>
+  <plurals name="eta_seconds">
+    <item quantity="one">1 saniye kaldı</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> saniye kaldı</item>
   </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 dakika</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> dakika</item>
+  <plurals name="eta_minutes">
+    <item quantity="one">1 dakika kaldı</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> dakika kaldı</item>
   </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 saat</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> saat</item>
+  <plurals name="eta_hours">
+    <item quantity="one">1 saat kaldı</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> saat kaldı</item>
   </plurals>
   <string name="update_on_mobile_data_title">Uyarı</string>
   <string name="update_on_mobile_data_message">Büyük bir olasılıkla yüksek veri kullanımına neden olacak mobil veri kullanarak bir güncelleme paketi indirmek üzeresiniz. Devam etmek ister misiniz?</string>

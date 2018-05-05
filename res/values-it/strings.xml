@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">Errore durante il download</string>
   <string name="download_completed_notification">Download completato</string>
   <string name="download_starting_notification">Avvio download</string>
+  <string name="update_failed_notification">Aggiornamento fallito</string>
   <string name="new_updates_found_title">Nuovi aggiornamenti</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Pausa</string>
@@ -47,6 +48,7 @@
   <string name="dialog_prepare_zip_message">Preparazione aggiornamento preliminare</string>
   <string name="reboot">Riavvia</string>
   <string name="menu_refresh">Ricarica</string>
+  <string name="menu_preferences">Preferenze</string>
   <string name="menu_auto_updates_check">Ricerca aggiornamenti automaticamente</string>
   <string name="menu_auto_delete_updates">Elimina gli aggiornamenti dopo l\'installazione</string>
   <string name="menu_delete_update">Elimina</string>
@@ -65,9 +67,16 @@
   <string name="header_last_updates_check">Ultima verifica: <xliff:g id="date" example="1 Gennaio 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="Luglio 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
   <string name="list_verifying_update">Verifica aggiornamento</string>
   <string name="list_no_updates">Nessun nuovo aggiornamento trovato. Per controllare manualmente nuovi aggiornamenti, tocca il pulsante Aggiorna.</string>
   <string name="action_download">Download</string>
+  <string name="action_pause">Pausa</string>
+  <string name="action_resume">Riprendi</string>
+  <string name="action_install">Installa</string>
+  <string name="action_info">Info</string>
+  <string name="action_delete">Elimina</string>
+  <string name="action_cancel">Annulla</string>
   <string name="confirm_delete_dialog_title">Elimina file</string>
   <string name="confirm_delete_dialog_message">Eliminare il file di aggiornamento selezionato?</string>
   <string name="apply_update_dialog_title">Applica aggiornamento</string>
@@ -80,18 +89,6 @@
   <string name="notification_export_success">Aggiornamento esportato</string>
   <string name="notification_export_fail">Errore esportazione</string>
   <string name="toast_already_exporting">Esportazione aggiornamento già in corso</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 secondo</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> secondi</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minuto</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minuti</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 ora</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> ore</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Attenzione</string>
   <string name="update_on_mobile_data_message">Stai per scaricare un aggiornamento utilizzando i dati mobili, ciò potrebbe comportare un utilizzo elevato di dati. Vuoi procedere?</string>
   <string name="checkbox_mobile_data_warning">Non mostrare di nuovo</string>

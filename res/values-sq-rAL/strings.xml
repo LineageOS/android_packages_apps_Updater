@@ -30,8 +30,4 @@
   <string name="reboot">Rindiz</string>
   <string name="menu_refresh">Rifresko</string>
   <string name="menu_delete_update">Fshije</string>
-  <plurals name="duration_hours">
-    <item quantity="one">1 orë</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> orë</item>
-  </plurals>
 </resources>

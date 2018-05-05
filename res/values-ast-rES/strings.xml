@@ -77,14 +77,6 @@
   <string name="dialog_export_title">Esportando anovamientu</string>
   <string name="notification_export_success">Esportóse l\'anovamientu</string>
   <string name="notification_export_fail">Fallu d\'esportación</string>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minute</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minutos</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 hora</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> hores</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Alvertencia</string>
   <string name="update_on_mobile_data_message">Tas a piques de baxar un paquete d\'anovamientu usando los datos móviles que pue causar un usu altu de datos. ¿Prestaríate siguir?</string>
   <string name="checkbox_mobile_data_warning">Nun amosar más</string>

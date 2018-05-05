@@ -80,18 +80,6 @@
   <string name="notification_export_success">Update geëxporteerd</string>
   <string name="notification_export_fail">Fout bij exporteren</string>
   <string name="toast_already_exporting">Er wordt al een update geëxporteerd</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 seconde</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> seconden</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minuut</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minuten</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 uur</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> uur</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Let op</string>
   <string name="update_on_mobile_data_message">U staat op het punt een update te downloaden via mobiele gegevens, wat tot een hoog gegevensgebruik kan leiden. Wilt u verder gaan?</string>
   <string name="checkbox_mobile_data_warning">Niet opnieuw tonen</string>

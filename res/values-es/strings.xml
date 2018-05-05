@@ -47,6 +47,7 @@
   <string name="dialog_prepare_zip_message">Preparación preliminar de la actualización</string>
   <string name="reboot">Reiniciar</string>
   <string name="menu_refresh">Actualizar</string>
+  <string name="menu_preferences">Preferencias</string>
   <string name="menu_auto_updates_check">Comprobación de actualizaciones automática</string>
   <string name="menu_auto_delete_updates">Borrar actualizaciones luego de instalar</string>
   <string name="menu_delete_update">Borrar</string>
@@ -65,9 +66,15 @@
   <string name="header_last_updates_check">Última comprobación: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
   <string name="list_verifying_update">Verificando actualización</string>
   <string name="list_no_updates">Sin nuevas actualizaciones disponibles. Para comprobar manualmente, pulsa el botón «Actualizar».</string>
   <string name="action_download">Descargar</string>
+  <string name="action_pause">Pausar</string>
+  <string name="action_resume">Reanudar</string>
+  <string name="action_install">Instalar</string>
+  <string name="action_info">Información</string>
+  <string name="action_cancel">Cancelar</string>
   <string name="confirm_delete_dialog_title">Borrar archivo</string>
   <string name="confirm_delete_dialog_message">¿Borrar el archivo de actualización seleccionado?</string>
   <string name="apply_update_dialog_title">Aplicar actualización</string>
@@ -80,18 +87,6 @@
   <string name="notification_export_success">Actualización exportada</string>
   <string name="notification_export_fail">Error de exportación</string>
   <string name="toast_already_exporting">Ya se está exportando una actualización</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 segundo</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> segundos</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minuto</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minutos</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 hora</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> horas</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Advertencia</string>
   <string name="update_on_mobile_data_message">Se descargará un paquete de actualización usando los datos móviles, que probablemente ocasione un alto consumo de datos. ¿Quieres continuar?</string>
   <string name="checkbox_mobile_data_warning">No mostrar de nuevo</string>

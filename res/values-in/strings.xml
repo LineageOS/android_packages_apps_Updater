@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">Kesalahan pengunduhan</string>
   <string name="download_completed_notification">Unduhan selesai</string>
   <string name="download_starting_notification">Memulai unduhan</string>
+  <string name="update_failed_notification">Pembaruan gagal</string>
   <string name="new_updates_found_title">Pembaruan baru</string>
   <string name="text_download_speed">%1$s, %2$s/d</string>
   <string name="pause_button">Jeda</string>
@@ -47,6 +48,7 @@
   <string name="dialog_prepare_zip_message">Persiapan awal pembaruan</string>
   <string name="reboot">Mulai ulang</string>
   <string name="menu_refresh">Segarkan</string>
+  <string name="menu_preferences">Preferensi</string>
   <string name="menu_auto_updates_check">Periksa pembaruan otomatis</string>
   <string name="menu_auto_delete_updates">Hapus pembaruan saat dipasang</string>
   <string name="menu_delete_update">Hapus</string>
@@ -64,9 +66,16 @@
   <string name="header_last_updates_check">Terakhir diperiksa: <xliff:g id="date" example="1 January 1970">%1$s </xliff:g> (<xliff:g id="time" example="01:23">%2$s </xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
   <string name="list_verifying_update">Memverifikasi pembaruan</string>
   <string name="list_no_updates">Pembaruan tidak ditemukan. Untuk memeriksa pembaruan secara manual, gunakan tombol Segarkan.</string>
   <string name="action_download">Unduh</string>
+  <string name="action_pause">Jeda</string>
+  <string name="action_resume">Lanjutkan</string>
+  <string name="action_install">Pasang</string>
+  <string name="action_info">Info</string>
+  <string name="action_delete">Hapus</string>
+  <string name="action_cancel">Batal</string>
   <string name="confirm_delete_dialog_title">Hapus berkas</string>
   <string name="confirm_delete_dialog_message">Hapus berkas pembaruan yang terpilih?</string>
   <string name="apply_update_dialog_title">Terapkan pembaruan</string>
@@ -78,15 +87,6 @@
   <string name="notification_export_success">Pembaruan diekspor</string>
   <string name="notification_export_fail">Kesalahan saat mengekspor</string>
   <string name="toast_already_exporting">Sudah mengekspor pembaruan</string>
-  <plurals name="duration_seconds">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> detik</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> menit</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> jam</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Peringatan</string>
   <string name="update_on_mobile_data_message">Anda akan mengunduh paket pembaruan menggunakan data seluler yang mungkin akan menyebabkan penggunaan data yang tinggi. Apakah Anda ingin melanjutkan?</string>
   <string name="checkbox_mobile_data_warning">Jangan tampilkan lagi</string>
@@ -95,4 +95,5 @@
   <string name="blocked_update_dialog_message">Pembaruan ini tidak dapat dipasang menggunakan aplikasi pembaruan.  Baca <xliff:g id="info_url">%1$s</xliff:g> untuk informasi lebih lanjut.</string>
   <string name="new_updates_channel_title">Pembaruan baru</string>
   <string name="ongoing_channel_title">Unduhan sedang berlangsung</string>
+  <string name="update_failed_channel_title">Pembaruan gagal</string>
 </resources>

@@ -80,21 +80,6 @@
   <string name="notification_export_success">Ažuriranje je izvezeno</string>
   <string name="notification_export_fail">Pogreška izvoza</string>
   <string name="toast_already_exporting">Ažuriranje se već izvozi</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 sekunda</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> sekundi</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> sekundi</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minutu</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> minuta</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minuta</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 sat</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> sati</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> sati</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Upozorenje</string>
   <string name="update_on_mobile_data_message">Upravo ćete preuzeti paket ažuriranja pomoću mobilnih podataka koji će vjerojatno uzrokovati visoku upotrebu podataka. Želite li nastaviti?</string>
   <string name="checkbox_mobile_data_warning">Ne prikazuj ponovno</string>

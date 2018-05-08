@@ -59,18 +59,6 @@
   <string name="label_download_url">Nedladdningsadress</string>
   <string name="toast_download_url_copied">Webbadressen har kopierats</string>
   <string name="notification_export_fail">Exporteringsfel</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 sekund</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> sekunder</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">en minut</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minuter</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">en timme</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> timmar</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Varning</string>
   <string name="checkbox_mobile_data_warning">Visa inte igen</string>
   <string name="export_channel_title">Export slutförd</string>

@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">다운로드 오류</string>
   <string name="download_completed_notification">다운로드 완료</string>
   <string name="download_starting_notification">다운로드 시작</string>
+  <string name="update_failed_notification">업데이트 실패</string>
   <string name="new_updates_found_title">새 업데이트</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">일시 중지</string>
@@ -47,6 +48,7 @@
   <string name="dialog_prepare_zip_message">예비 업데이트 준비</string>
   <string name="reboot">다시 시작</string>
   <string name="menu_refresh">새로고침</string>
+  <string name="menu_preferences">설정</string>
   <string name="menu_auto_updates_check">업데이트 자동 확인</string>
   <string name="menu_auto_delete_updates">설치한 뒤 업데이트 파일 삭제</string>
   <string name="menu_delete_update">삭제</string>
@@ -65,9 +67,17 @@
   <string name="header_last_updates_check">마지막 확인: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">업데이트 검증 중</string>
   <string name="list_no_updates">새로운 업데이트가 없습니다. 수동으로 새 업데이트를 확인하려면 새로고침 버튼을 누르세요.</string>
   <string name="action_download">다운로드</string>
+  <string name="action_pause">일시 중지</string>
+  <string name="action_resume">이어 받기</string>
+  <string name="action_install">설치</string>
+  <string name="action_info">정보</string>
+  <string name="action_delete">삭제</string>
+  <string name="action_cancel">취소</string>
   <string name="confirm_delete_dialog_title">파일 삭제</string>
   <string name="confirm_delete_dialog_message">선택한 업데이트 파일을 삭제하시겠습니까?</string>
   <string name="apply_update_dialog_title">업데이트 적용</string>
@@ -80,14 +90,14 @@
   <string name="notification_export_success">업데이트를 내보냈습니다.</string>
   <string name="notification_export_fail">내보내기 오류</string>
   <string name="toast_already_exporting">이미 업데이트를 내보내는 중입니다.</string>
-  <plurals name="duration_seconds">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g>초</item>
+  <plurals name="eta_seconds">
+    <item quantity="other"><xliff:g id="count">%d</xliff:g>초 남음</item>
   </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g>분</item>
+  <plurals name="eta_minutes">
+    <item quantity="other"><xliff:g id="count">%d</xliff:g>분 남음</item>
   </plurals>
-  <plurals name="duration_hours">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g>시간</item>
+  <plurals name="eta_hours">
+    <item quantity="other"><xliff:g id="count">%d</xliff:g>시간 남음</item>
   </plurals>
   <string name="update_on_mobile_data_title">경고</string>
   <string name="update_on_mobile_data_message">모바일 데이터를 사용하여 업데이트 패키지를 다운로드하려 합니다. 데이터를 매우 많이 사용하게 될 수 있습니다. 정말 계속하시겠습니까?</string>
@@ -98,4 +108,5 @@
   <string name="export_channel_title">내보내기 완료</string>
   <string name="new_updates_channel_title">새 업데이트</string>
   <string name="ongoing_channel_title">진행 중인 다운로드</string>
+  <string name="update_failed_channel_title">업데이트 실패</string>
 </resources>

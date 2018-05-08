@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">Napaka pri prenosu</string>
   <string name="download_completed_notification">Prenos končan</string>
   <string name="download_starting_notification">Začetek prenosa</string>
+  <string name="update_failed_notification">Posodobitev je spodletela</string>
   <string name="new_updates_found_title">Nove posodobitve</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Premor</string>
@@ -47,11 +48,12 @@
   <string name="dialog_prepare_zip_message">Predhodna priprava posodobitve</string>
   <string name="reboot">Ponovni zagon</string>
   <string name="menu_refresh">Osveži</string>
+  <string name="menu_preferences">Nastavitve</string>
   <string name="menu_auto_updates_check">Samodejno preverjanje za posodobitve</string>
   <string name="menu_auto_delete_updates">Izbris posodobitev po namestitvi</string>
   <string name="menu_delete_update">Izbriši</string>
   <string name="menu_copy_url">Kopiraj URL</string>
-  <string name="menu_export_update">Izvoz posodobitve</string>
+  <string name="menu_export_update">Izvozi posodobitev</string>
   <string name="menu_show_changelog">Prikaži dnevnik sprememb</string>
   <string name="snack_updates_found">Najdene nove posodobitve</string>
   <string name="snack_no_updates_found">Ni najdenih novih posodobitev</string>
@@ -65,9 +67,17 @@
   <string name="header_last_updates_check">Zadnje preverjanje: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Preverjanje posodobitve</string>
   <string name="list_no_updates">Ni najdenih novih posodobitev. Za ročno preverjanje novih posodobitev, uporabite gumb Osveži.</string>
-  <string name="action_download">Prenos</string>
+  <string name="action_download">Prenesi</string>
+  <string name="action_pause">Premor</string>
+  <string name="action_resume">Nadaljuj</string>
+  <string name="action_install">Namesti</string>
+  <string name="action_info">Podatki</string>
+  <string name="action_delete">Izbriši</string>
+  <string name="action_cancel">Prekliči</string>
   <string name="confirm_delete_dialog_title">Izbriši datoteko</string>
   <string name="confirm_delete_dialog_message">Izbriši izbrano posodobitveno datoteko?</string>
   <string name="apply_update_dialog_title">Uveljavi posodbitev</string>
@@ -80,23 +90,23 @@
   <string name="notification_export_success">Posodobitev izvožena</string>
   <string name="notification_export_fail">Napaka pri izvozu</string>
   <string name="toast_already_exporting">Posodobitev se že izvaža</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 sekunda</item>
-    <item quantity="two"><xliff:g id="count">%d</xliff:g> sekundi</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> sekunde</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> sekund</item>
+  <plurals name="eta_seconds">
+    <item quantity="one"><xliff:g id="count">%d</xliff:g> sekunda preostala</item>
+    <item quantity="two"><xliff:g id="count">%d</xliff:g> sekundi preostali</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> sekunde preostale</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> sekund preostalo</item>
   </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minuta</item>
-    <item quantity="two"><xliff:g id="count">%d</xliff:g> minuti</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> minute</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minut</item>
+  <plurals name="eta_minutes">
+    <item quantity="one"><xliff:g id="count">%d</xliff:g> minuta preostala</item>
+    <item quantity="two"><xliff:g id="count">%d</xliff:g> minuti preostali</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> minute preostale</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> minut preostalo</item>
   </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 ura</item>
-    <item quantity="two"><xliff:g id="count">%d</xliff:g> uri</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> ure</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> ur</item>
+  <plurals name="eta_hours">
+    <item quantity="one"><xliff:g id="count">%d</xliff:g> ura preostala</item>
+    <item quantity="two"><xliff:g id="count">%d</xliff:g> uri preostali</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> ure preostale</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> ur preostalo</item>
   </plurals>
   <string name="update_on_mobile_data_title">Opozorilo</string>
   <string name="update_on_mobile_data_message">Ste pred prenosom posodobitvenega paketa z uporabo mobilnih podatkov, kar bo verjetno povzročilo visoko porabo podatkov. Ali želite nadaljevati?</string>
@@ -107,4 +117,5 @@
   <string name="export_channel_title">Zaključek izvoza</string>
   <string name="new_updates_channel_title">Nove posodobitve</string>
   <string name="ongoing_channel_title">Prenosi v teku</string>
+  <string name="update_failed_channel_title">Posodobitev je spodletela</string>
 </resources>

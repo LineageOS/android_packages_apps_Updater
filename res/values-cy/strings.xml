@@ -26,28 +26,4 @@
           {type} - Build type
           {incr} - Incremental version
     -->
-  <plurals name="duration_seconds">
-    <item quantity="zero"><xliff:g id="count">%d</xliff:g> eiliadau</item>
-    <item quantity="one">1 eiliad</item>
-    <item quantity="two"><xliff:g id="count">%d</xliff:g> eiliad</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> eiliad</item>
-    <item quantity="many"><xliff:g id="count">%d</xliff:g> eiliad</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> eiliad</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="zero"><xliff:g id="count">%d</xliff:g> munudau</item>
-    <item quantity="one">1 munud</item>
-    <item quantity="two"><xliff:g id="count">%d</xliff:g> funud</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> munud</item>
-    <item quantity="many"><xliff:g id="count">%d</xliff:g> munud</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> munud</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="zero"><xliff:g id="count">%d</xliff:g> oriau</item>
-    <item quantity="one">1 awr</item>
-    <item quantity="two"><xliff:g id="count">%d</xliff:g> awr</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> awr</item>
-    <item quantity="many"><xliff:g id="count">%d</xliff:g> awr</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> awr</item>
-  </plurals>
 </resources>

@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">Eroare la descărcare</string>
   <string name="download_completed_notification">Descărcare terminată</string>
   <string name="download_starting_notification">Pornire descărcare</string>
+  <string name="update_failed_notification">Actualizare eșuată</string>
   <string name="new_updates_found_title">Actualizări noi</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Pauză</string>
@@ -47,6 +48,7 @@
   <string name="dialog_prepare_zip_message">Pregătire preliminară pentru actualizare</string>
   <string name="reboot">Repornire</string>
   <string name="menu_refresh">Reîmprospătare</string>
+  <string name="menu_preferences">Preferințe</string>
   <string name="menu_auto_updates_check">Verificare automată a actualizărilor</string>
   <string name="menu_auto_delete_updates">Şterge actualizările atunci când sunt instalate</string>
   <string name="menu_delete_update">Șterge</string>
@@ -65,9 +67,17 @@
   <string name="header_last_updates_check">Ultima verificare: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> din <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> din <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Verificare actualizare</string>
   <string name="list_no_updates">Nicio actualizare nouă găsită. Pentru a verifica manual pentru noi actualizări, utilizați butonul Reîmprospătare.</string>
   <string name="action_download">Descărcați</string>
+  <string name="action_pause">Pauză</string>
+  <string name="action_resume">Reluaţi</string>
+  <string name="action_install">Instalați</string>
+  <string name="action_info">Info</string>
+  <string name="action_delete">Ștergeți</string>
+  <string name="action_cancel">Anulare</string>
   <string name="confirm_delete_dialog_title">Ștergeți fișierul</string>
   <string name="confirm_delete_dialog_message">Șterge fișierul de actualizare selectat?</string>
   <string name="apply_update_dialog_title">Aplicaţi actualizarea</string>
@@ -80,20 +90,20 @@
   <string name="notification_export_success">Actualizare exportată</string>
   <string name="notification_export_fail">Eroare de export</string>
   <string name="toast_already_exporting">Se exportează deja o actualizare</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 secundă</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> (de) secunde</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> (de) secunde</item>
+  <plurals name="eta_seconds">
+    <item quantity="one">1 secundă rămasă</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> (de) secunde rămase</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> (de) secunde rămase</item>
   </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minut</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> (de) minute</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> (de) minute</item>
+  <plurals name="eta_minutes">
+    <item quantity="one">1 minut rămas</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> (de) minute rămase</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> (de) minute rămase</item>
   </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 oră</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> (de) ore</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> (de) ore</item>
+  <plurals name="eta_hours">
+    <item quantity="one">1 oră rămasă</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> (de) ore rămase</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> (de) ore rămase</item>
   </plurals>
   <string name="update_on_mobile_data_title">Avertizare</string>
   <string name="update_on_mobile_data_message">Sunteți pe cale de a descărca un pachet de actualizare folosind datele mobile care, probabil, vor provoca o utilizare mare de date. Doriţi să continuaţi?</string>
@@ -104,4 +114,5 @@
   <string name="export_channel_title">Completare export</string>
   <string name="new_updates_channel_title">Actualizări noi</string>
   <string name="ongoing_channel_title">Descărcări în desfășurare</string>
+  <string name="update_failed_channel_title">Actualizare eșuată</string>
 </resources>

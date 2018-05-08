@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">Erreur de téléchargement</string>
   <string name="download_completed_notification">Téléchargement terminé</string>
   <string name="download_starting_notification">Début du téléchargement</string>
+  <string name="update_failed_notification">Échec de la mise à jour</string>
   <string name="new_updates_found_title">Nouvelles mises à jour</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Pause</string>
@@ -47,6 +48,7 @@
   <string name="dialog_prepare_zip_message">Préparation de la mise à jour préliminaire</string>
   <string name="reboot">Redémarrer</string>
   <string name="menu_refresh">Actualiser</string>
+  <string name="menu_preferences">Préférences</string>
   <string name="menu_auto_updates_check">Vérification des mises à jour automatique</string>
   <string name="menu_auto_delete_updates">Supprimer les mises à jour une fois installées</string>
   <string name="menu_delete_update">Supprimer</string>
@@ -65,9 +67,16 @@
   <string name="header_last_updates_check">Dernière vérification : <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> sur <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
   <string name="list_verifying_update">Vérification de la mise à jour en cours</string>
   <string name="list_no_updates">Aucune nouvelle mise à jour trouvée. Pour vérifier manuellement la présence de mises à jour, utiliser le bouton Actualiser.</string>
   <string name="action_download">Télécharger</string>
+  <string name="action_pause">Mettre en pause</string>
+  <string name="action_resume">Reprendre</string>
+  <string name="action_install">Installer</string>
+  <string name="action_info">Informations</string>
+  <string name="action_delete">Supprimer</string>
+  <string name="action_cancel">Annuler</string>
   <string name="confirm_delete_dialog_title">Supprimer le fichier</string>
   <string name="confirm_delete_dialog_message">Supprimer le fichier de mise à jour sélectionné ?</string>
   <string name="apply_update_dialog_title">Appliquer la mise à jour</string>
@@ -80,18 +89,6 @@
   <string name="notification_export_success">Mise à jour exportée</string>
   <string name="notification_export_fail">Erreur lors de l\'exportation</string>
   <string name="toast_already_exporting">Une mise à jour est déjà en cours d\'export</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 seconde</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> secondes</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minute</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minutes</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 heure</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> heures</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Avertissement</string>
   <string name="update_on_mobile_data_message">Vous êtes sur le point de télécharger un paquet de mise à jour via les données mobiles qui pourrait représenter un volume de données important. Voulez-vous tout de même procéder au téléchargement ?</string>
   <string name="checkbox_mobile_data_warning">Ne plus afficher</string>
@@ -101,4 +98,5 @@
   <string name="export_channel_title">Fin de l\'exportation</string>
   <string name="new_updates_channel_title">Nouvelles mises à jour</string>
   <string name="ongoing_channel_title">Téléchargements en cours</string>
+  <string name="update_failed_channel_title">Échec de la mise à jour</string>
 </resources>

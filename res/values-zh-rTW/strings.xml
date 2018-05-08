@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">下載錯誤</string>
   <string name="download_completed_notification">下載完成</string>
   <string name="download_starting_notification">正在開始下載</string>
+  <string name="update_failed_notification">更新失敗</string>
   <string name="new_updates_found_title">有新的更新</string>
   <string name="text_download_speed">%1$s，%2$s/秒</string>
   <string name="pause_button">暫停</string>
@@ -47,6 +48,7 @@
   <string name="dialog_prepare_zip_message">正在準備更新</string>
   <string name="reboot">重新啟動</string>
   <string name="menu_refresh">重新整理</string>
+  <string name="menu_preferences">使用偏好</string>
   <string name="menu_auto_updates_check">自動更新檢查</string>
   <string name="menu_auto_delete_updates">安裝後刪除更新檔案</string>
   <string name="menu_delete_update">移除</string>
@@ -65,9 +67,17 @@
   <string name="header_last_updates_check">上次檢查：<xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g>-<xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">正在驗證更新</string>
   <string name="list_no_updates">沒有找到新的更新。若要手動檢查新的更新，請使用「重新整理」按鍵。</string>
   <string name="action_download">下載</string>
+  <string name="action_pause">暫停</string>
+  <string name="action_resume">恢復</string>
+  <string name="action_install">安裝</string>
+  <string name="action_info">資訊</string>
+  <string name="action_delete">刪除</string>
+  <string name="action_cancel">取消</string>
   <string name="confirm_delete_dialog_title">刪除檔案</string>
   <string name="confirm_delete_dialog_message">刪除已選擇的更新檔案？</string>
   <string name="apply_update_dialog_title">套用更新</string>
@@ -80,14 +90,14 @@
   <string name="notification_export_success">已匯出更新</string>
   <string name="notification_export_fail">匯出錯誤</string>
   <string name="toast_already_exporting">已匯出更新</string>
-  <plurals name="duration_seconds">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> 秒</item>
+  <plurals name="eta_seconds">
+    <item quantity="other">還剩 <xliff:g id="count">%d</xliff:g> 秒鐘</item>
   </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> 分鐘</item>
+  <plurals name="eta_minutes">
+    <item quantity="other">還剩 <xliff:g id="count">%d</xliff:g> 分鐘</item>
   </plurals>
-  <plurals name="duration_hours">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> 小時</item>
+  <plurals name="eta_hours">
+    <item quantity="other">還剩 <xliff:g id="count">%d</xliff:g> 小時</item>
   </plurals>
   <string name="update_on_mobile_data_title">警告</string>
   <string name="update_on_mobile_data_message">下載的更新檔案有可能會使用較高的行動數據，您要繼續嗎？</string>
@@ -98,4 +108,5 @@
   <string name="export_channel_title">匯出完成</string>
   <string name="new_updates_channel_title">有新的更新</string>
   <string name="ongoing_channel_title">目前下載</string>
+  <string name="update_failed_channel_title">更新失敗</string>
 </resources>

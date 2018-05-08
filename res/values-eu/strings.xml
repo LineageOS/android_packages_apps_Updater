@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">Deskarga-errorea</string>
   <string name="download_completed_notification">Deskarga osatuta</string>
   <string name="download_starting_notification">Deskarga hasten</string>
+  <string name="update_failed_notification">Eguneraketak huts egin du</string>
   <string name="new_updates_found_title">Eguneraketa berriak</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Pausatu</string>
@@ -47,6 +48,7 @@
   <string name="dialog_prepare_zip_message">Aldez aurreko eguneraketaren prestaketa</string>
   <string name="reboot">Berrabiarazi</string>
   <string name="menu_refresh">Freskatu</string>
+  <string name="menu_preferences">Hobespenak</string>
   <string name="menu_auto_updates_check">Eguneraketen egiaztaketa automatikoa</string>
   <string name="menu_auto_delete_updates">Ezabatu eguneraketak instalatutakoan</string>
   <string name="menu_delete_update">Ezabatu</string>
@@ -65,9 +67,17 @@
   <string name="header_last_updates_check">Azken egiaztaketa: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Eguneraketa egiaztatzen</string>
   <string name="list_no_updates">Ez da eguneraketa berririk aurkitu. Eguneraketak eskuz egiaztatzeko, erabili freskatze botoia.</string>
   <string name="action_download">Deskargatu</string>
+  <string name="action_pause">Pausatu</string>
+  <string name="action_resume">Berrekin</string>
+  <string name="action_install">Instalatu</string>
+  <string name="action_info">Informazioa</string>
+  <string name="action_delete">Ezabatu</string>
+  <string name="action_cancel">Utzi</string>
   <string name="confirm_delete_dialog_title">Ezabatu fitxategia</string>
   <string name="confirm_delete_dialog_message">Ezabatu hautatutako eguneraketa fitxategia?</string>
   <string name="apply_update_dialog_title">Aplikatu eguneraketa</string>
@@ -80,17 +90,17 @@
   <string name="notification_export_success">Eguneraketa esportatuta</string>
   <string name="notification_export_fail">Esportazio errorea</string>
   <string name="toast_already_exporting">Eguneraketa bat esportatzen dagoeneko</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">Segundo 1</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> segundo</item>
+  <plurals name="eta_seconds">
+    <item quantity="one">Segundo 1 geratzen da</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> segundo geratzen dira</item>
   </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">Minutu 1</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minutu</item>
+  <plurals name="eta_minutes">
+    <item quantity="one">Minutu 1 geratzen da</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> minutu geratzen dira</item>
   </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">Ordu 1</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> ordu</item>
+  <plurals name="eta_hours">
+    <item quantity="one">Ordu 1 geratzen da</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> ordu geratzen dira</item>
   </plurals>
   <string name="update_on_mobile_data_title">Abisua</string>
   <string name="update_on_mobile_data_message">Eguneratze pakete bat deskargatuko duzu datu mugikorrak erabiliz, honek datuen erabilera handia egingo du. Ziur aurrera jarraitu nahi duzula?</string>
@@ -101,4 +111,5 @@
   <string name="export_channel_title">Esportazioaren osaketa</string>
   <string name="new_updates_channel_title">Eguneraketa berriak</string>
   <string name="ongoing_channel_title">Abian diren deskargak</string>
+  <string name="update_failed_channel_title">Eguneraketak huts egin du</string>
 </resources>

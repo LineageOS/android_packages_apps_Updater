@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">Lỗi tải xuống</string>
   <string name="download_completed_notification">Tải xuống hoàn tất</string>
   <string name="download_starting_notification">Đang bắt đầu tải xuống</string>
+  <string name="update_failed_notification">Cập nhật thất bại</string>
   <string name="new_updates_found_title">Bản cập nhật mới</string>
   <string name="text_download_speed">%1$s, %2$s/giây</string>
   <string name="pause_button">Tạm dừng</string>
@@ -47,6 +48,7 @@
   <string name="dialog_prepare_zip_message">Chuẩn bị cập nhật sơ bộ</string>
   <string name="reboot">Khởi động lại</string>
   <string name="menu_refresh">Làm mới</string>
+  <string name="menu_preferences">Sở thích</string>
   <string name="menu_auto_updates_check">Tự động kiểm tra bản cập nhật</string>
   <string name="menu_auto_delete_updates">Xóa bản cập nhật khi cài đặt hoàn tất</string>
   <string name="menu_delete_update">Xóa</string>
@@ -65,9 +67,16 @@
   <string name="header_last_updates_check">Lần kiểm tra cuối: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
   <string name="list_verifying_update">Đang xác thực bản cập nhật</string>
   <string name="list_no_updates">Không có bản cập nhật mới được tìm thấy. Để tự động kiểm tra các bản cập nhật mới, sử dụng nút Làm mới.</string>
   <string name="action_download">Tải xuống</string>
+  <string name="action_pause">Tạm dừng</string>
+  <string name="action_resume">Tiếp tục</string>
+  <string name="action_install">Cài đặt</string>
+  <string name="action_info">Thông tin</string>
+  <string name="action_delete">Xóa</string>
+  <string name="action_cancel">Hủy</string>
   <string name="confirm_delete_dialog_title">Xoá tập tin</string>
   <string name="confirm_delete_dialog_message">Xóa các tập tin cập nhật được chọn?</string>
   <string name="apply_update_dialog_title">Áp dụng cập nhật</string>
@@ -80,15 +89,6 @@
   <string name="notification_export_success">Đã xuất bản cập nhật</string>
   <string name="notification_export_fail">Lỗi xuất</string>
   <string name="toast_already_exporting">Đã xuất một bản cập nhật</string>
-  <plurals name="duration_seconds">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> giây</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> phút</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> giờ</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Cảnh báo</string>
   <string name="update_on_mobile_data_message">Bạn sắp tải xuống một gói cập nhật sử dụng dữ liệu di động có khả năng gây ra việc sử dụng dữ liệu cao. Bạn có muốn tiến hành không?</string>
   <string name="checkbox_mobile_data_warning">Không hiện lại</string>
@@ -98,4 +98,5 @@
   <string name="export_channel_title">Hoàn thành xuất</string>
   <string name="new_updates_channel_title">Bản cập nhật mới</string>
   <string name="ongoing_channel_title">Đang tải xuống</string>
+  <string name="update_failed_channel_title">Cập nhật thất bại</string>
 </resources>

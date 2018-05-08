@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">Download error</string>
   <string name="download_completed_notification">Download completed</string>
   <string name="download_starting_notification">Starting download</string>
+  <string name="update_failed_notification">Update failed</string>
   <string name="new_updates_found_title">New updates</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Pause</string>
@@ -47,6 +48,7 @@
   <string name="dialog_prepare_zip_message">Preliminary update preparation</string>
   <string name="reboot">Reboot</string>
   <string name="menu_refresh">Refresh</string>
+  <string name="menu_preferences">Preferences</string>
   <string name="menu_auto_updates_check">Auto updates check</string>
   <string name="menu_auto_delete_updates">Delete updates when installed</string>
   <string name="menu_delete_update">Delete</string>
@@ -65,9 +67,16 @@
   <string name="header_last_updates_check">Last checked: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
   <string name="list_verifying_update">Verifying update</string>
   <string name="list_no_updates">No new updates found. To manually check for new updates, use the Refresh button.</string>
   <string name="action_download">Download</string>
+  <string name="action_pause">Pause</string>
+  <string name="action_resume">Resume</string>
+  <string name="action_install">Install</string>
+  <string name="action_info">Info</string>
+  <string name="action_delete">Delete</string>
+  <string name="action_cancel">Cancel</string>
   <string name="confirm_delete_dialog_title">Delete file</string>
   <string name="confirm_delete_dialog_message">Delete the selected update file?</string>
   <string name="apply_update_dialog_title">Apply update</string>
@@ -80,18 +89,6 @@
   <string name="notification_export_success">Update exported</string>
   <string name="notification_export_fail">Export error</string>
   <string name="toast_already_exporting">Already exporting an update</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 second</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> seconds</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minute</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minutes</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 hour</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> hours</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Warning</string>
   <string name="update_on_mobile_data_message">You\'re about to download an update package using mobile data which is likely going to cause high data usage. Would you like to proceed?</string>
   <string name="checkbox_mobile_data_warning">Do not show again</string>
@@ -101,4 +98,5 @@
   <string name="export_channel_title">Export completion</string>
   <string name="new_updates_channel_title">New updates</string>
   <string name="ongoing_channel_title">Ongoing downloads</string>
+  <string name="update_failed_channel_title">Update failed</string>
 </resources>

@@ -68,7 +68,7 @@
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="Luglio 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="duration" example="3 minutes">%3$s</xliff:g> rimantenti) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Verifica aggiornamento</string>
   <string name="list_no_updates">Nessun nuovo aggiornamento trovato. Per controllare manualmente nuovi aggiornamenti, tocca il pulsante Aggiorna.</string>
   <string name="action_download">Download</string>
@@ -90,17 +90,17 @@
   <string name="notification_export_success">Aggiornamento esportato</string>
   <string name="notification_export_fail">Errore esportazione</string>
   <string name="toast_already_exporting">Esportazione aggiornamento già in corso</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 secondo</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> secondi</item>
+  <plurals name="eta_seconds">
+    <item quantity="one">1 secondo rimanente</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> secondi rimanenti</item>
   </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 minuto</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minuti</item>
+  <plurals name="eta_minutes">
+    <item quantity="one">1 minuto rimanente</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> minuti rimanenti</item>
   </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 ora</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> ore</item>
+  <plurals name="eta_hours">
+    <item quantity="one">1 ora rimanente</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> ore rimanenti</item>
   </plurals>
   <string name="update_on_mobile_data_title">Attenzione</string>
   <string name="update_on_mobile_data_message">Stai per scaricare un aggiornamento utilizzando i dati mobili, ciò potrebbe comportare un utilizzo elevato di dati. Vuoi procedere?</string>

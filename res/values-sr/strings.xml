@@ -52,6 +52,7 @@
   <string name="menu_delete_update">Обриши</string>
   <string name="menu_copy_url">Копирај URL</string>
   <string name="menu_export_update">Извези ажурирања</string>
+  <string name="menu_show_changelog">Прикажи дневник измена</string>
   <string name="snack_updates_found">Ново ажурирање пронађено</string>
   <string name="snack_no_updates_found">Нису пронађена нова ажурирања</string>
   <string name="snack_updates_check_failed">Провера за ажурирања није успела. Провери своју интернет везу и покушај поново касније.</string>
@@ -79,26 +80,13 @@
   <string name="notification_export_success">Ажурирање извезено</string>
   <string name="notification_export_fail">Грешка при извозу</string>
   <string name="toast_already_exporting">Већ извозим ажурирање</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">1 секунда</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> секунди</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> секунди</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">1 минут</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> минута</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> минута</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">1 сат</item>
-    <item quantity="few"><xliff:g id="count">%d</xliff:g> сати</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> сати</item>
-  </plurals>
   <string name="update_on_mobile_data_title">Упозорење</string>
   <string name="update_on_mobile_data_message">Преузећете пакет ажурирања користећи мобилну интернет везу што ће вероватно прузроковати високу употребу мобилног интернета. Желите ли да наставите?</string>
   <string name="checkbox_mobile_data_warning">Не приказуј поново</string>
   <string name="menu_mobile_data_warning">Упозорење мобилних података</string>
   <string name="blocked_update_dialog_title">Ажурирање је блокирано</string>
   <string name="blocked_update_dialog_message">Ово ажурирање се не може инсталирати апликацијом Ажурирање. Прочитај <xliff:g id="info_url">%1$s</xliff:g> за више информација.</string>
+  <string name="export_channel_title">Извоз завршен</string>
   <string name="new_updates_channel_title">Нова ажурирања</string>
+  <string name="ongoing_channel_title">Преузимања у току</string>
 </resources>

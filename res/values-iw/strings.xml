@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">ההורדה נכשלה</string>
   <string name="download_completed_notification">ההורדה הושלמה</string>
   <string name="download_starting_notification">מתחיל להוריד</string>
+  <string name="update_failed_notification">העדכון נכשל</string>
   <string name="new_updates_found_title">עדכונים חדשים</string>
   <string name="text_download_speed">%2$s,%1$s לשניה</string>
   <string name="pause_button">השהה</string>
@@ -47,6 +48,7 @@
   <string name="dialog_prepare_zip_message">מתכונן להתקנת העדכון</string>
   <string name="reboot">הפעלה מחדש</string>
   <string name="menu_refresh">ריענון</string>
+  <string name="menu_preferences">העדפות</string>
   <string name="menu_auto_updates_check">בדיקת עדכונים אוטומטית</string>
   <string name="menu_auto_delete_updates">מחק קובצי עדכון לאחר התקנתם</string>
   <string name="menu_delete_update">מחק</string>
@@ -65,9 +67,16 @@
   <string name="header_last_updates_check">בדיקה אחרונה: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> מתוך <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
   <string name="list_verifying_update">מאמת עדכון</string>
   <string name="list_no_updates">לא נמצאו עדכונים חדשים. בכדי לבדוק אם יש עדכונים חדשים, לחץ על רענון.</string>
   <string name="action_download">הורד</string>
+  <string name="action_pause">השהה</string>
+  <string name="action_resume">המשך</string>
+  <string name="action_install">התקן</string>
+  <string name="action_info">מידע</string>
+  <string name="action_delete">מחיקה</string>
+  <string name="action_cancel">ביטול</string>
   <string name="confirm_delete_dialog_title">מחק קובץ</string>
   <string name="confirm_delete_dialog_message">למחוק את קבצי העדכון שנבחרו?</string>
   <string name="apply_update_dialog_title">החל עדכון</string>
@@ -80,24 +89,6 @@
   <string name="notification_export_success">העדכון ייוצא בהצלחה</string>
   <string name="notification_export_fail">שגיאה בייצוא</string>
   <string name="toast_already_exporting">כבר באמצע ייצוא עדכון</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">שנייה אחת</item>
-    <item quantity="two"><xliff:g id="count">%d</xliff:g> שניות</item>
-    <item quantity="many"><xliff:g id="count">%d</xliff:g> שניות</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> שניות</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">דקה אחת</item>
-    <item quantity="two"><xliff:g id="count">%d</xliff:g> דקות</item>
-    <item quantity="many"><xliff:g id="count">%d</xliff:g> דקות</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> דקות</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">שעה אחת</item>
-    <item quantity="two"><xliff:g id="count">%d</xliff:g> שעות</item>
-    <item quantity="many"><xliff:g id="count">%d</xliff:g> שעות</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> שעות</item>
-  </plurals>
   <string name="update_on_mobile_data_title">אזהרה</string>
   <string name="update_on_mobile_data_message">אתה עומד להוריד חבילת עדכונים באמצעות האינטרנט הסלולרי שסביר להניח יגרום לבזבוז חלק גדול מחבילת הגלישה שלך. להמשיך?</string>
   <string name="checkbox_mobile_data_warning">אל תציג שוב</string>
@@ -107,4 +98,5 @@
   <string name="export_channel_title">השלמת הייצוא</string>
   <string name="new_updates_channel_title">עדכונים חדשים</string>
   <string name="ongoing_channel_title">הורדות בפעולה</string>
+  <string name="update_failed_channel_title">העדכון נכשל</string>
 </resources>

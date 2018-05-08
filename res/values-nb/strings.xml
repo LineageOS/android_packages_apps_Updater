@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">Nedlastingsfeil</string>
   <string name="download_completed_notification">Nedlasting fullført</string>
   <string name="download_starting_notification">Starter nedlasting</string>
+  <string name="update_failed_notification">Oppdatering feilet</string>
   <string name="new_updates_found_title">Nye oppdateringer</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Pause</string>
@@ -44,8 +45,10 @@
   <string name="installing_update_finished">Oppdatering installert</string>
   <string name="finalizing_package">Fullfører pakkeinstallsjon</string>
   <string name="preparing_ota_first_boot">Forbereder første oppstart</string>
+  <string name="dialog_prepare_zip_message">Forhåndsregler tas før oppdatering</string>
   <string name="reboot">Start på nytt</string>
   <string name="menu_refresh">Oppdater</string>
+  <string name="menu_preferences">Innstillinger</string>
   <string name="menu_auto_updates_check">Auto-oppdateringssjekk</string>
   <string name="menu_auto_delete_updates">Slett oppdateringer når installert</string>
   <string name="menu_delete_update">Slett</string>
@@ -63,30 +66,28 @@
   <string name="header_last_updates_check">Sist sjekket: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> av <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
   <string name="list_verifying_update">Bekrefter oppdatering</string>
+  <string name="list_no_updates">Ingen nye programvareoppdateringer funnet. For å se etter oppdateringer manuelt, bruk Oppdater-knappen.</string>
   <string name="action_download">Last ned</string>
+  <string name="action_pause">Sett på pause</string>
+  <string name="action_resume">Fortsett</string>
+  <string name="action_install">Installer</string>
+  <string name="action_info">Info</string>
+  <string name="action_delete">Slett</string>
+  <string name="action_cancel">Avbryt</string>
   <string name="confirm_delete_dialog_title">Slett fil</string>
   <string name="confirm_delete_dialog_message">Slett valgt oppdateringsfil?</string>
   <string name="apply_update_dialog_title">Installer oppdatering</string>
   <string name="apply_update_dialog_message">Du er i ferd med å oppdatere til <xliff:g id="update_name">%1$s</xliff:g>.\n\nHvis du trykker <xliff:g id="ok">%2$s</xliff:g> vil enheten starte på nytt i gjenopprettingsmodus for å installere oppdateringen.\n\nMerk: Denne funksjonen krever en kompatibel gjenopprettingsprogramvare ellers må oppdateringer installeres manuelt.</string>
   <string name="apply_update_dialog_message_ab">Du er i ferd med å oppdatere til <xliff:g id="update_name">%1$s</xliff:g>.\n\nHvis du trykker <xliff:g id="ok">%2$s</xliff:g> vil enheten begynne å installere i bakgrunnen.\n\nNår den er ferdig, vil du bli spurt om å starte på nytt.</string>
+  <string name="cancel_installation_dialog_message">Vil du avbryte installasjonen?</string>
   <string name="label_download_url">Last ned nettadresse</string>
   <string name="toast_download_url_copied">Nettadresse kopiert</string>
   <string name="dialog_export_title">Eksporterer oppdatering</string>
   <string name="notification_export_success">Oppdatering eksportert</string>
   <string name="notification_export_fail">Eksporteringsfeil</string>
-  <plurals name="duration_seconds">
-    <item quantity="one">ett sekund</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> sekunder</item>
-  </plurals>
-  <plurals name="duration_minutes">
-    <item quantity="one">Ett minutt</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minutter</item>
-  </plurals>
-  <plurals name="duration_hours">
-    <item quantity="one">Én time</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> timer</item>
-  </plurals>
+  <string name="toast_already_exporting">Eksporterer allerede en oppdatering</string>
   <string name="update_on_mobile_data_title">Advarsel</string>
   <string name="update_on_mobile_data_message">Du er i ferd med å laste ned en oppdateringspakke ved bruk av mobildata, noe som antagelig vil forårsake høy databruk. Ønsker du å fortsette?</string>
   <string name="checkbox_mobile_data_warning">Ikke vis igjen</string>
@@ -94,4 +95,5 @@
   <string name="blocked_update_dialog_title">Oppdatering blokkert</string>
   <string name="blocked_update_dialog_message">Denne oppdateringen kan ikke installeres med oppdateringsappen. Les <xliff:g id="info_url">%1$s</xliff:g> for mer informasjon.</string>
   <string name="new_updates_channel_title">Nye oppdateringer</string>
+  <string name="update_failed_channel_title">Oppdatering feilet</string>
 </resources>

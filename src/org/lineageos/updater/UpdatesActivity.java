@@ -55,7 +55,6 @@ import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
-import org.lineageos.updater.misc.LegacySupport;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.UpdateInfo;
@@ -243,20 +242,11 @@ public class UpdatesActivity extends UpdatesListActivity {
         boolean newUpdates = false;
 
         List<UpdateInfo> updates = Utils.parseJson(jsonFile, true);
-
-        List<String> importedNotAvailableOnline = LegacySupport.importDownloads(this, updates);
-
         List<String> updatesOnline = new ArrayList<>();
         for (UpdateInfo update : updates) {
             newUpdates |= controller.addUpdate(update);
             updatesOnline.add(update.getDownloadId());
         }
-
-        if (importedNotAvailableOnline != null) {
-            updatesOnline.removeAll(importedNotAvailableOnline);
-            controller.setUpdatesNotAvailableOnline(importedNotAvailableOnline);
-        }
-
         controller.setUpdatesAvailableOnline(updatesOnline, true);
 
         if (manualRefresh) {

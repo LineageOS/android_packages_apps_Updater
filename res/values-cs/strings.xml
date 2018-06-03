@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">Chyba při stahování</string>
   <string name="download_completed_notification">Stahování úspěšné</string>
   <string name="download_starting_notification">Zahajování stahování</string>
+  <string name="update_failed_notification">Aktualizace se nezdařila</string>
   <string name="new_updates_found_title">Nové aktualizace</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Pozastavit</string>
@@ -47,11 +48,13 @@
   <string name="dialog_prepare_zip_message">Příprava předběžné aktualizace</string>
   <string name="reboot">Reboot</string>
   <string name="menu_refresh">Obnovit</string>
+  <string name="menu_preferences">Předvolby</string>
   <string name="menu_auto_updates_check">Automatická kontrola aktualizací</string>
   <string name="menu_auto_delete_updates">Odstranit aktualizace po instalaci</string>
   <string name="menu_delete_update">Odstranit</string>
   <string name="menu_copy_url">Kopírovat URL</string>
   <string name="menu_export_update">Export aktualizace</string>
+  <string name="menu_show_changelog">Zobrazit seznam změn</string>
   <string name="snack_updates_found">Nalezeny nové aktualizace</string>
   <string name="snack_no_updates_found">Nové aktualizace nenalezeny</string>
   <string name="snack_updates_check_failed">Zjištění nové verze selhalo. Prosím zkontrolujte připojení k internetu a pokus opakujte.</string>
@@ -64,9 +67,17 @@
   <string name="header_last_updates_check">Poslední kontrola: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Ověření aktualizace</string>
   <string name="list_no_updates">Nebyly nalezeny žádné nové aktualizace. Chcete-li ručně vyhledat nové aktualizace, použijte tlačítko „Obnovit“.</string>
   <string name="action_download">Stáhnout</string>
+  <string name="action_pause">Pozastavit</string>
+  <string name="action_resume">Pokračovat</string>
+  <string name="action_install">Instalovat</string>
+  <string name="action_info">Informace</string>
+  <string name="action_delete">Odstranit</string>
+  <string name="action_cancel">Zrušit</string>
   <string name="confirm_delete_dialog_title">Smazat soubor</string>
   <string name="confirm_delete_dialog_message">Smazat zvolený soubor aktualizace?</string>
   <string name="apply_update_dialog_title">Použít aktualizaci</string>
@@ -79,6 +90,24 @@
   <string name="notification_export_success">Aktualizace exportována</string>
   <string name="notification_export_fail">Chyba exportu</string>
   <string name="toast_already_exporting">Aktualizace se již exportuje</string>
+  <plurals name="eta_seconds">
+    <item quantity="one">Zbývá 1 sekunda</item>
+    <item quantity="few">Zbývají <xliff:g id="count">%d</xliff:g> sekundy</item>
+    <item quantity="many">Zbývá <xliff:g id="count">%d</xliff:g> sekund</item>
+    <item quantity="other">Zbývá <xliff:g id="count">%d</xliff:g> sekund</item>
+  </plurals>
+  <plurals name="eta_minutes">
+    <item quantity="one">Zbývá 1 minuta</item>
+    <item quantity="few">Zbývají <xliff:g id="count">%d</xliff:g> minuty</item>
+    <item quantity="many">Zbývá <xliff:g id="count">%d</xliff:g> minut</item>
+    <item quantity="other">Zbývá <xliff:g id="count">%d</xliff:g> minut</item>
+  </plurals>
+  <plurals name="eta_hours">
+    <item quantity="one">Zbývá 1 hodina</item>
+    <item quantity="few">Zbývají <xliff:g id="count">%d</xliff:g> hodiny</item>
+    <item quantity="many">Zbývá <xliff:g id="count">%d</xliff:g> hodin</item>
+    <item quantity="other">Zbývá <xliff:g id="count">%d</xliff:g> hodin</item>
+  </plurals>
   <string name="update_on_mobile_data_title">Varování</string>
   <string name="update_on_mobile_data_message">Chystáte se stáhnout aktualizaci pomocí mobilních dat, což pravděpodobně zapříčiní vysoké využití dat. Přejete si pokračovat?</string>
   <string name="checkbox_mobile_data_warning">Znovu nezobrazovat</string>
@@ -88,4 +117,5 @@
   <string name="export_channel_title">Dokončení exportu</string>
   <string name="new_updates_channel_title">Nové aktualizace</string>
   <string name="ongoing_channel_title">Probíhající stahování</string>
+  <string name="update_failed_channel_title">Aktualizace se nezdařila</string>
 </resources>

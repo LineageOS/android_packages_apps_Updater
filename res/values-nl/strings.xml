@@ -35,6 +35,7 @@
   <string name="download_paused_error_notification">Fout bij downloaden</string>
   <string name="download_completed_notification">Downloaden voltooid</string>
   <string name="download_starting_notification">Download starten</string>
+  <string name="update_failed_notification">Update mislukt</string>
   <string name="new_updates_found_title">Nieuwe updates</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Pauzeren</string>
@@ -68,6 +69,12 @@
   <string name="list_verifying_update">Update verifiëren</string>
   <string name="list_no_updates">Geen nieuwe updates gevonden. Gebruik de knop Vernieuwen om handmatig te controleren op nieuwe updates.</string>
   <string name="action_download">Downloaden</string>
+  <string name="action_pause">Pauzeren</string>
+  <string name="action_resume">Hervatten</string>
+  <string name="action_install">Installeren</string>
+  <string name="action_info">Informatie</string>
+  <string name="action_delete">Verwijderen</string>
+  <string name="action_cancel">Annuleren</string>
   <string name="confirm_delete_dialog_title">Bestand verwijderen</string>
   <string name="confirm_delete_dialog_message">Geselecteerde update-bestand verwijderen?</string>
   <string name="apply_update_dialog_title">Update toepassen</string>
@@ -80,6 +87,18 @@
   <string name="notification_export_success">Update geëxporteerd</string>
   <string name="notification_export_fail">Fout bij exporteren</string>
   <string name="toast_already_exporting">Er wordt al een update geëxporteerd</string>
+  <plurals name="eta_seconds">
+    <item quantity="one">1 seconde resterend</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> seconden resterend</item>
+  </plurals>
+  <plurals name="eta_minutes">
+    <item quantity="one">1 minuut resterend</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> minuten resterend</item>
+  </plurals>
+  <plurals name="eta_hours">
+    <item quantity="one">1 uur resterend</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> uur resterend</item>
+  </plurals>
   <string name="update_on_mobile_data_title">Let op</string>
   <string name="update_on_mobile_data_message">U staat op het punt een update te downloaden via mobiele gegevens, wat tot een hoog gegevensgebruik kan leiden. Wilt u verder gaan?</string>
   <string name="checkbox_mobile_data_warning">Niet opnieuw tonen</string>
@@ -88,4 +107,5 @@
   <string name="blocked_update_dialog_message">Deze update kan niet worden geïnstalleerd met behulp van de updater-app. Lees <xliff:g id="info_url">%1$s</xliff:g> voor meer informatie.</string>
   <string name="export_channel_title">Exporteren voltooid</string>
   <string name="new_updates_channel_title">Nieuwe updates</string>
+  <string name="update_failed_channel_title">Update mislukt</string>
 </resources>

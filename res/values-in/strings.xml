@@ -67,6 +67,7 @@
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="duration" example="3 minutes">%3$s</xliff:g> lagi) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Memverifikasi pembaruan</string>
   <string name="list_no_updates">Pembaruan tidak ditemukan. Untuk memeriksa pembaruan secara manual, gunakan tombol Segarkan.</string>
   <string name="action_download">Unduh</string>
@@ -87,12 +88,21 @@
   <string name="notification_export_success">Pembaruan diekspor</string>
   <string name="notification_export_fail">Kesalahan saat mengekspor</string>
   <string name="toast_already_exporting">Sudah mengekspor pembaruan</string>
+  <plurals name="eta_seconds">
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> detik tersisa</item>
+  </plurals>
+  <plurals name="eta_minutes">
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> menit tersisa</item>
+  </plurals>
+  <plurals name="eta_hours">
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> jam tersisa</item>
+  </plurals>
   <string name="update_on_mobile_data_title">Peringatan</string>
   <string name="update_on_mobile_data_message">Anda akan mengunduh paket pembaruan menggunakan data seluler yang mungkin akan menyebabkan penggunaan data yang tinggi. Apakah Anda ingin melanjutkan?</string>
   <string name="checkbox_mobile_data_warning">Jangan tampilkan lagi</string>
   <string name="menu_mobile_data_warning">Peringatan data seluler</string>
   <string name="blocked_update_dialog_title">Pembaruan diblokir</string>
-  <string name="blocked_update_dialog_message">Pembaruan ini tidak dapat dipasang menggunakan aplikasi pembaruan.  Baca <xliff:g id="info_url">%1$s</xliff:g> untuk informasi lebih lanjut.</string>
+  <string name="blocked_update_dialog_message">Pembaruan ini tidak dapat dipasang menggunakan aplikasi pembaruan. Baca <xliff:g id="info_url">%1$s</xliff:g> untuk informasi lebih lanjut.</string>
   <string name="new_updates_channel_title">Pembaruan baru</string>
   <string name="ongoing_channel_title">Unduhan sedang berlangsung</string>
   <string name="update_failed_channel_title">Pembaruan gagal</string>

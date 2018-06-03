@@ -48,6 +48,7 @@
   <string name="dialog_prepare_zip_message">Update wird vorbereitet</string>
   <string name="reboot">Neustart</string>
   <string name="menu_refresh">Aktualisieren</string>
+  <string name="menu_preferences">Voreinstellungen</string>
   <string name="menu_auto_updates_check">Automatisch nach Updates suchen</string>
   <string name="menu_auto_delete_updates">Updates nach Installation löschen</string>
   <string name="menu_delete_update">Löschen</string>
@@ -71,6 +72,7 @@
   <string name="list_verifying_update">Update wird geprüft</string>
   <string name="list_no_updates">Keine neuen Updates gefunden. Um manuell nach neuen Updates zu suchen, verwenden Sie die Schaltfläche \"Aktualisieren\".</string>
   <string name="action_download">Herunterladen</string>
+  <string name="action_pause">Anhalten</string>
   <string name="action_resume">Fortsetzen</string>
   <string name="action_install">Installieren</string>
   <string name="action_info">Information</string>
@@ -88,6 +90,18 @@
   <string name="notification_export_success">Update wurde exportiert</string>
   <string name="notification_export_fail">Fehler beim Export</string>
   <string name="toast_already_exporting">Update wird bereits exportiert</string>
+  <plurals name="eta_seconds">
+    <item quantity="one">Noch 1 Sekunde</item>
+    <item quantity="other">Noch <xliff:g id="count">%d</xliff:g> Sekunden</item>
+  </plurals>
+  <plurals name="eta_minutes">
+    <item quantity="one">Noch 1 Minute</item>
+    <item quantity="other">Noch <xliff:g id="count">%d</xliff:g> Minuten</item>
+  </plurals>
+  <plurals name="eta_hours">
+    <item quantity="one">Noch 1 Stunde</item>
+    <item quantity="other">Noch <xliff:g id="count">%d</xliff:g> Stunden</item>
+  </plurals>
   <string name="update_on_mobile_data_title">Achtung</string>
   <string name="update_on_mobile_data_message">Sie sind dabei ein Software-Update über das Mobilfunknetz herunterzuladen, was zu einem hohen Datenverbrauch führen kann. Möchten Sie fortfahren?</string>
   <string name="checkbox_mobile_data_warning">Nicht wieder anzeigen</string>

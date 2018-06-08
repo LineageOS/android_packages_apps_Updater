@@ -37,6 +37,7 @@ public final class Constants {
     public static final String PROP_DEVICE = "ro.cm.device";
     public static final String PROP_NEXT_DEVICE = "ro.updater.next_device";
     public static final String PROP_RELEASE_TYPE = "ro.cm.releasetype";
+    public static final String PROP_UPDATER_ALLOW_DOWNGRADING = "cm.updater.allow_downgrading";
     public static final String PROP_UPDATER_URI = "cm.updater.uri";
 
     public static final String PREF_INSTALL_OLD_TIMESTAMP = "install_old_timestamp";

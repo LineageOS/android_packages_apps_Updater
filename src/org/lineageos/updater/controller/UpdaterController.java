@@ -538,4 +538,9 @@ public class UpdaterController implements Controller {
     public boolean isInstallingABUpdate() {
         return ABUpdateInstaller.isInstallingUpdate(mContext);
     }
+
+    @Override
+    public boolean isWaitingForReboot(String downloadId) {
+        return ABUpdateInstaller.isWaitingForReboot(mContext, downloadId);
+    }
 }

@@ -55,4 +55,6 @@ public interface Controller {
     boolean isInstallingUpdate();
 
     boolean isInstallingABUpdate();
+
+    boolean isWaitingForReboot(String downloadId);
 }

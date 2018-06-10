@@ -20,6 +20,7 @@ import android.content.SharedPreferences;
 import android.os.UpdateEngine;
 import android.os.UpdateEngineCallback;
 import android.support.v7.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.util.Log;
 
 import org.lineageos.updater.misc.Constants;
@@ -117,13 +118,19 @@ class ABUpdateInstaller {
     static synchronized boolean isInstallingUpdate(Context context) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         return pref.getString(ABUpdateInstaller.PREF_INSTALLING_AB_ID, null) != null ||
-                pref.getBoolean(Constants.PREF_NEEDS_REBOOT, false);
+                pref.getString(Constants.PREF_NEEDS_REBOOT_ID, null) != null;
     }
 
     static synchronized boolean isInstallingUpdate(Context context, String downloadId) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         return downloadId.equals(pref.getString(ABUpdateInstaller.PREF_INSTALLING_AB_ID, null)) ||
-                pref.getBoolean(Constants.PREF_NEEDS_REBOOT, false);
+                TextUtils.equals(pref.getString(Constants.PREF_NEEDS_REBOOT_ID, null), downloadId);
+    }
+
+    static synchronized boolean isWaitingForReboot(Context context, String downloadId) {
+        String waitingId = PreferenceManager.getDefaultSharedPreferences(context)
+                .getString(Constants.PREF_NEEDS_REBOOT_ID, null);
+        return TextUtils.equals(waitingId, downloadId);
     }
 
     private ABUpdateInstaller(Context context, UpdaterController updaterController) {
@@ -230,8 +237,10 @@ class ABUpdateInstaller {
     }
 
     private void installationDone(boolean needsReboot) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        String id = needsReboot ? prefs.getString(PREF_INSTALLING_AB_ID, null) : null;
         PreferenceManager.getDefaultSharedPreferences(mContext).edit()
-                .putBoolean(Constants.PREF_NEEDS_REBOOT, needsReboot)
+                .putString(Constants.PREF_NEEDS_REBOOT_ID, id)
                 .remove(PREF_INSTALLING_AB_ID)
                 .apply();
     }

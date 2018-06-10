@@ -68,6 +68,7 @@
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g>-<xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">正在驗證更新</string>
   <string name="list_no_updates">沒有找到新的更新。若要手動檢查新的更新，請使用「重新整理」按鍵。</string>
   <string name="action_download">下載</string>
@@ -89,6 +90,15 @@
   <string name="notification_export_success">已匯出更新</string>
   <string name="notification_export_fail">匯出錯誤</string>
   <string name="toast_already_exporting">已匯出更新</string>
+  <plurals name="eta_seconds">
+    <item quantity="other">還剩 <xliff:g id="count">%d</xliff:g> 秒鐘</item>
+  </plurals>
+  <plurals name="eta_minutes">
+    <item quantity="other">還剩 <xliff:g id="count">%d</xliff:g> 分鐘</item>
+  </plurals>
+  <plurals name="eta_hours">
+    <item quantity="other">還剩 <xliff:g id="count">%d</xliff:g> 小時</item>
+  </plurals>
   <string name="update_on_mobile_data_title">警告</string>
   <string name="update_on_mobile_data_message">下載的更新檔案有可能會使用較高的行動數據，您要繼續嗎？</string>
   <string name="checkbox_mobile_data_warning">不再顯示</string>

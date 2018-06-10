@@ -68,6 +68,7 @@
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Eguneraketa egiaztatzen</string>
   <string name="list_no_updates">Ez da eguneraketa berririk aurkitu. Eguneraketak eskuz egiaztatzeko, erabili freskatze botoia.</string>
   <string name="action_download">Deskargatu</string>
@@ -89,6 +90,18 @@
   <string name="notification_export_success">Eguneraketa esportatuta</string>
   <string name="notification_export_fail">Esportazio errorea</string>
   <string name="toast_already_exporting">Eguneraketa bat esportatzen dagoeneko</string>
+  <plurals name="eta_seconds">
+    <item quantity="one">Segundo 1 geratzen da</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> segundo geratzen dira</item>
+  </plurals>
+  <plurals name="eta_minutes">
+    <item quantity="one">Minutu 1 geratzen da</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> minutu geratzen dira</item>
+  </plurals>
+  <plurals name="eta_hours">
+    <item quantity="one">Ordu 1 geratzen da</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> ordu geratzen dira</item>
+  </plurals>
   <string name="update_on_mobile_data_title">Abisua</string>
   <string name="update_on_mobile_data_message">Eguneratze pakete bat deskargatuko duzu datu mugikorrak erabiliz, honek datuen erabilera handia egingo du. Ziur aurrera jarraitu nahi duzula?</string>
   <string name="checkbox_mobile_data_warning">Ez erakutsi berriro</string>

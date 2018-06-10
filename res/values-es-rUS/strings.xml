@@ -68,6 +68,7 @@
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Verificando actualización</string>
   <string name="list_no_updates">Sin nuevas actualizaciones disponibles. Para comprobar manualmente, pulsa el botón «Actualizar».</string>
   <string name="action_download">Descargar</string>
@@ -89,6 +90,18 @@
   <string name="notification_export_success">Actualización exportada</string>
   <string name="notification_export_fail">Error de exportación</string>
   <string name="toast_already_exporting">Ya se está exportando una actualización</string>
+  <plurals name="eta_seconds">
+    <item quantity="one">Queda 1 segundo</item>
+    <item quantity="other">Quedan <xliff:g id="count">%d</xliff:g> segundos</item>
+  </plurals>
+  <plurals name="eta_minutes">
+    <item quantity="one">Queda 1 minuto</item>
+    <item quantity="other">Quedan <xliff:g id="count">%d</xliff:g> minutos</item>
+  </plurals>
+  <plurals name="eta_hours">
+    <item quantity="one">Queda 1 hora</item>
+    <item quantity="other">Quedan <xliff:g id="count">%d</xliff:g> horas</item>
+  </plurals>
   <string name="update_on_mobile_data_title">Advertencia</string>
   <string name="update_on_mobile_data_message">Se descargará un paquete de actualización usando los datos móviles, que probablemente ocasione un alto consumo de datos. ¿Quieres continuar?</string>
   <string name="checkbox_mobile_data_warning">No mostrar de nuevo</string>

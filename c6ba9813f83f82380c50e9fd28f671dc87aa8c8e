@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0bc6f42d_8d3c9463",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2018-06-12T17:26:20Z",
+      "side": 1,
+      "message": "Checking the actual prop is probably less error prone.",
+      "range": {
+        "startLine": 457,
+        "startChar": 24,
+        "endLine": 457,
+        "endChar": 65
+      },
+      "revId": "c6ba9813f83f82380c50e9fd28f671dc87aa8c8e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b948e91e_d6ae3dae",
+        "filename": "src/org/lineageos/updater/misc/Constants.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2018-06-12T17:26:20Z",
+      "side": 1,
+      "message": "You are using a sys. prop, yet you actually set it when you toggle the pref. Either use persist. or set the property on every start.",
+      "range": {
+        "startLine": 40,
+        "startChar": 60,
+        "endLine": 40,
+        "endChar": 84
+      },
+      "revId": "c6ba9813f83f82380c50e9fd28f671dc87aa8c8e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e256e642_53887556",
+        "filename": "src/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2018-06-12T17:26:20Z",
+      "side": 1,
+      "message": "I\u0027d use isABDevice for consistency, and you could move this up close to the other isAB methods.",
+      "range": {
+        "startLine": 366,
+        "startChar": 26,
+        "endLine": 366,
+        "endChar": 36
+      },
+      "revId": "c6ba9813f83f82380c50e9fd28f671dc87aa8c8e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "02377a19_ea7ddc6c",
+        "filename": "src/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2018-06-12T17:26:20Z",
+      "side": 1,
+      "message": "Spaces.",
+      "range": {
+        "startLine": 371,
+        "startChar": 8,
+        "endLine": 371,
+        "endChar": 11
+      },
+      "revId": "c6ba9813f83f82380c50e9fd28f671dc87aa8c8e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

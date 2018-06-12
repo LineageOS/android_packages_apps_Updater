@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "57145bde_dbf164b8",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2018-06-12T18:53:44Z",
+      "side": 1,
+      "message": "Should add a summary to describe what this does, it\u0027s too vague now. Updates should be lowercase too",
+      "revId": "c6ba9813f83f82380c50e9fd28f671dc87aa8c8e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0bc6f42d_8d3c9463",
         "filename": "src/org/lineageos/updater/UpdatesActivity.java",
         "patchSetId": 2

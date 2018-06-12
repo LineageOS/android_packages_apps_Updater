@@ -420,11 +420,17 @@ public class UpdatesActivity extends UpdatesListActivity {
         Switch autoCheck = view.findViewById(R.id.preferences_auto_updates_check);
         Switch autoDelete = view.findViewById(R.id.preferences_auto_delete_updates);
         Switch dataWarning = view.findViewById(R.id.preferences_mobile_data_warning);
+        Switch fastABUpdate = view.findViewById(R.id.preferences_fast_ab_update);
+
+        if (!Utils.isAbDevice()) {
+            fastABUpdate.setVisibility(View.GONE);
+        }
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         autoCheck.setChecked(prefs.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, true));
         autoDelete.setChecked(prefs.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false));
         dataWarning.setChecked(prefs.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true));
+        fastABUpdate.setChecked(prefs.getBoolean(Constants.PREF_FAST_AB_UPDATE, false));
 
         new AlertDialog.Builder(this)
                 .setTitle(R.string.menu_preferences)
@@ -437,6 +443,8 @@ public class UpdatesActivity extends UpdatesListActivity {
                                     autoDelete.isChecked())
                             .putBoolean(Constants.PREF_MOBILE_DATA_WARNING,
                                     dataWarning.isChecked())
+                            .putBoolean(Constants.PREF_FAST_AB_UPDATE,
+                                    fastABUpdate.isChecked())
                             .apply();
 
                     if (autoCheck.isChecked()) {
@@ -444,6 +452,10 @@ public class UpdatesActivity extends UpdatesListActivity {
                     } else {
                         UpdatesCheckReceiver.cancelRepeatingUpdatesCheck(this);
                         UpdatesCheckReceiver.cancelUpdatesCheck(this);
+                    }
+
+                    if (fastABUpdate.getVisibility() != View.GONE) {
+                        Utils.fastAbInstallation(fastABUpdate.isChecked());
                     }
                 })
                 .show();

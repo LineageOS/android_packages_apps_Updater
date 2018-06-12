@@ -141,4 +141,6 @@
     <string name="new_updates_channel_title">New updates</string>
     <string name="ongoing_channel_title">Ongoing downloads</string>
     <string name="update_failed_channel_title">Update failed</string>
+
+    <string name="menu_fast_ab_update">Install A/B Updates faster</string>
 </resources>

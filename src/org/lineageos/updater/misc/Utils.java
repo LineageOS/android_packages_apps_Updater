@@ -362,4 +362,20 @@ public class Utils {
         StorageManager sm = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
         return sm.isEncrypted(file);
     }
+
+    public static boolean isAbDevice() {
+        String isAb = SystemProperties.get(Constants.PROP_AB_DEVICE);
+        if(isAb.isEmpty()) {
+            return false;
+        }
+        return true;
+    }
+
+    public static void fastAbInstallation(boolean enable) {
+        if(enable) {
+           SystemProperties.set(Constants.PROP_FAST_AB_INSTALLATION, "true");
+        } else {
+           SystemProperties.set(Constants.PROP_FAST_AB_INSTALLATION, "false");
+        }
+    }
 }

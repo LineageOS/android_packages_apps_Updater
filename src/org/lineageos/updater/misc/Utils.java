@@ -362,4 +362,8 @@ public class Utils {
         StorageManager sm = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
         return sm.isEncrypted(file);
     }
+
+    public static boolean isAbDevice() {
+        return SystemProperties.getBoolean(Constants.PROP_AB_DEVICE, false);
+    }
 }

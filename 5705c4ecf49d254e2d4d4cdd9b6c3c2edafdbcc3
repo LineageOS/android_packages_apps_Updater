@@ -2,6 +2,109 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba670c1e_adc73c7a",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-06-12T09:52:57Z",
+      "side": 1,
+      "message": "space",
+      "revId": "5705c4ecf49d254e2d4d4cdd9b6c3c2edafdbcc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "edd71210_d462dccc",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-06-12T09:52:57Z",
+      "side": 1,
+      "message": "space",
+      "revId": "5705c4ecf49d254e2d4d4cdd9b6c3c2edafdbcc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a4c3abd2_a390ded1",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-06-12T09:52:57Z",
+      "side": 1,
+      "message": "Utils.fastAbInstallation(fastABUpdate.isChecked());",
+      "range": {
+        "startLine": 458,
+        "startChar": 24,
+        "endLine": 462,
+        "endChar": 25
+      },
+      "revId": "5705c4ecf49d254e2d4d4cdd9b6c3c2edafdbcc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "523e1290_35a49d1a",
+        "filename": "src/org/lineageos/updater/misc/Constants.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-06-12T09:52:57Z",
+      "side": 1,
+      "message": "no, there are non-A/B devices that set this prop.",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 70
+      },
+      "revId": "5705c4ecf49d254e2d4d4cdd9b6c3c2edafdbcc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "727a98f2_de338093",
+        "filename": "src/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-06-12T09:52:57Z",
+      "side": 1,
+      "message": "return !SystemProperties.get(Constants.PROP_AB_DEVICE).isEmpty();",
+      "range": {
+        "startLine": 367,
+        "startChar": 8,
+        "endLine": 371,
+        "endChar": 20
+      },
+      "revId": "5705c4ecf49d254e2d4d4cdd9b6c3c2edafdbcc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9030fae5_550ddde4",
         "filename": "src/org/lineageos/updater/misc/Utils.java",
         "patchSetId": 1
@@ -13,6 +116,29 @@
       "writtenOn": "2018-06-12T09:44:55Z",
       "side": 1,
       "message": "space",
+      "revId": "5705c4ecf49d254e2d4d4cdd9b6c3c2edafdbcc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "85871ade_16ed207f",
+        "filename": "src/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-06-12T09:52:57Z",
+      "side": 1,
+      "message": "SystemProperties.set(Constants.PROP_FAST_AB_INSTALLATION, String.valueOf(enable));",
+      "range": {
+        "startLine": 375,
+        "startChar": 8,
+        "endLine": 379,
+        "endChar": 9
+      },
       "revId": "5705c4ecf49d254e2d4d4cdd9b6c3c2edafdbcc3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false

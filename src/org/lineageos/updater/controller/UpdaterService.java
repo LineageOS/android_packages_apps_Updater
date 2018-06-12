@@ -204,7 +204,7 @@ public class UpdaterService extends Service {
         return ABUpdateInstaller.isInstallingUpdate(this) ? START_STICKY : START_NOT_STICKY;
     }
 
-    public Controller getUpdaterController() {
+    public UpdaterController getUpdaterController() {
         return mUpdaterController;
     }
 

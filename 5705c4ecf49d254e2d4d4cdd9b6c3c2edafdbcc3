@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9030fae5_550ddde4",
+        "filename": "src/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2018-06-12T09:44:55Z",
+      "side": 1,
+      "message": "space",
+      "revId": "5705c4ecf49d254e2d4d4cdd9b6c3c2edafdbcc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

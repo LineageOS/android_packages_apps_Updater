@@ -334,6 +334,10 @@ public class Utils {
         throw new IllegalStateException();
     }
 
+    public static boolean isABDevice() {
+        return SystemProperties.getBoolean(Constants.PROP_AB_DEVICE, false);
+    }
+
     public static boolean isABUpdate(ZipFile zipFile) {
         return zipFile.getEntry(Constants.AB_PAYLOAD_BIN_PATH) != null &&
                 zipFile.getEntry(Constants.AB_PAYLOAD_PROPERTIES_PATH) != null;

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "12081b7f_3d595c14",
+        "filename": "res/drawable/ic_download_pause.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2018-06-13T16:24:12Z",
+      "side": 1,
+      "message": "this is useless, remove it",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 47
+      },
+      "revId": "e1674fe38caa02fe7defc79347cf1dd93ce27eff",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

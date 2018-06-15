@@ -17,6 +17,7 @@ package org.lineageos.updater;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.BatteryManager;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
@@ -422,6 +423,12 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private AlertDialog.Builder getInstallDialog(final String downloadId) {
+        if (!isBatteryLevelOk()) {
+            return new AlertDialog.Builder(mActivity)
+                    .setTitle(R.string.dialog_battery_low_title)
+                    .setMessage(R.string.dialog_battery_low_message)
+                    .setPositiveButton(android.R.string.ok, null);
+        }
         UpdateInfo update = mUpdaterController.getUpdate(downloadId);
         int resId;
         try {
@@ -528,5 +535,11 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .show();
         TextView textView = (TextView) dialog.findViewById(android.R.id.message);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+    private boolean isBatteryLevelOk() {
+        BatteryManager bm = mActivity.getSystemService(BatteryManager.class);
+        int percent = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
+        return percent >= mActivity.getResources().getInteger(R.integer.battery_ok_percentage);
     }
 }

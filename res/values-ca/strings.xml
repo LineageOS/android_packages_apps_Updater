@@ -46,6 +46,8 @@
   <string name="finalizing_package">S\'està finalitzant la instal·lació del paquet</string>
   <string name="preparing_ota_first_boot">S\'està preparant el primer inici</string>
   <string name="dialog_prepare_zip_message">Preparació preliminar de l\'actualització</string>
+  <string name="dialog_battery_low_title">Bateria baixa</string>
+  <string name="dialog_battery_low_message">El nivell de bateria és massa baix, carregueu el dispositiu per continuar.</string>
   <string name="reboot">Reinicia</string>
   <string name="menu_refresh">Recarrega</string>
   <string name="menu_preferences">Preferències</string>

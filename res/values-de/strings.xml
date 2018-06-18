@@ -46,6 +46,8 @@
   <string name="finalizing_package">Die Paketinstallation wird abgeschlossen</string>
   <string name="preparing_ota_first_boot">Erster Start wird vorbereitet</string>
   <string name="dialog_prepare_zip_message">Update wird vorbereitet</string>
+  <string name="dialog_battery_low_title">Akkustand niedrig</string>
+  <string name="dialog_battery_low_message">Der Akkustand ist zu niedrig, bitte laden Sie Ihr Gerät auf, um fortzufahren.</string>
   <string name="reboot">Neustart</string>
   <string name="menu_refresh">Aktualisieren</string>
   <string name="menu_preferences">Voreinstellungen</string>

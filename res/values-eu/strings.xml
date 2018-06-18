@@ -46,6 +46,8 @@
   <string name="finalizing_package">Paketearen instalazioarekin bukatzen</string>
   <string name="preparing_ota_first_boot">Lehen abiorako prestatzen</string>
   <string name="dialog_prepare_zip_message">Aldez aurreko eguneraketaren prestaketa</string>
+  <string name="dialog_battery_low_title">Bateria gutxi</string>
+  <string name="dialog_battery_low_message">Bateria maila baxuegi dago, kargatu zure gailua jarraitzeko.</string>
   <string name="reboot">Berrabiarazi</string>
   <string name="menu_refresh">Freskatu</string>
   <string name="menu_preferences">Hobespenak</string>

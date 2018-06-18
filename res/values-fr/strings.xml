@@ -90,6 +90,18 @@
   <string name="notification_export_success">Mise à jour exportée</string>
   <string name="notification_export_fail">Erreur lors de l\'exportation</string>
   <string name="toast_already_exporting">Une mise à jour est déjà en cours d\'export</string>
+  <plurals name="eta_seconds">
+    <item quantity="one">temps restant : 1 seconde</item>
+    <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> secondes</item>
+  </plurals>
+  <plurals name="eta_minutes">
+    <item quantity="one">temps restant : 1 minute</item>
+    <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> minutes</item>
+  </plurals>
+  <plurals name="eta_hours">
+    <item quantity="one">temps restant : 1 heure</item>
+    <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> heures</item>
+  </plurals>
   <string name="update_on_mobile_data_title">Avertissement</string>
   <string name="update_on_mobile_data_message">Vous êtes sur le point de télécharger un paquet de mise à jour via les données mobiles qui pourrait représenter un volume de données important. Voulez-vous tout de même procéder au téléchargement ?</string>
   <string name="checkbox_mobile_data_warning">Ne plus afficher</string>

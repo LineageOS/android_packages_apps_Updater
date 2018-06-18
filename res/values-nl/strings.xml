@@ -48,6 +48,7 @@
   <string name="dialog_prepare_zip_message">Update voorbereiden</string>
   <string name="reboot">Herstarten</string>
   <string name="menu_refresh">Vernieuwen</string>
+  <string name="menu_preferences">Instellingen</string>
   <string name="menu_auto_updates_check">Automatisch controleren op updates</string>
   <string name="menu_auto_delete_updates">Updates verwijderen nadat ze geïnstalleerd zijn</string>
   <string name="menu_delete_update">Verwijderen</string>

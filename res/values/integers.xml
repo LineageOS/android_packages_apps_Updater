@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="battery_ok_percentage">40</integer>
+    <integer name="battery_ok_percentage">15</integer>
 </resources>

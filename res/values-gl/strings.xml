@@ -46,6 +46,8 @@
   <string name="finalizing_package">Rematando a instalación do paquete</string>
   <string name="preparing_ota_first_boot">Preparando o primeiro arranque</string>
   <string name="dialog_prepare_zip_message">Preparación preliminar da actualización</string>
+  <string name="dialog_battery_low_title">Batería baixa</string>
+  <string name="dialog_battery_low_message">O nivel da batería e baixo de máis, por favor carga o teu dispositivo para continuar.</string>
   <string name="reboot">Reiniciar</string>
   <string name="menu_refresh">Actualizar</string>
   <string name="menu_preferences">Preferencias</string>

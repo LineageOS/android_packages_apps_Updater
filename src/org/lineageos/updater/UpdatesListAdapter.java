@@ -540,6 +540,15 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private boolean isBatteryLevelOk() {
         BatteryManager bm = mActivity.getSystemService(BatteryManager.class);
         int percent = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
-        return percent >= mActivity.getResources().getInteger(R.integer.battery_ok_percentage);
+        int status = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_STATUS);
+        switch (status) {
+            case BatteryManager.BATTERY_STATUS_FULL:
+            case BatteryManager.BATTERY_STATUS_UNKNOWN:
+                return true;
+            case BatteryManager.BATTERY_STATUS_CHARGING:
+                return percent >= mActivity.getResources().getInteger(R.integer.battery_ok_percentage_charging);
+            default:
+                return percent >= mActivity.getResources().getInteger(R.integer.battery_ok_percentage_discharging);
+        }
     }
 }

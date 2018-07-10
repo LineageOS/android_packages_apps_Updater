@@ -16,6 +16,7 @@
 package org.lineageos.updater;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.BatteryManager;
 import android.preference.PreferenceManager;
@@ -424,9 +425,14 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     private AlertDialog.Builder getInstallDialog(final String downloadId) {
         if (!isBatteryLevelOk()) {
+            String message = mActivity.getString(R.string.dialog_battery_low_message_pct,
+                    NumberFormat.getPercentInstance().format(mActivity.getResources()
+                            .getInteger(R.integer.battery_ok_percentage_discharging)),
+                    NumberFormat.getPercentInstance().format(mActivity.getResources()
+                            .getInteger(R.integer.battery_ok_percentage_charging)));
             return new AlertDialog.Builder(mActivity)
                     .setTitle(R.string.dialog_battery_low_title)
-                    .setMessage(R.string.dialog_battery_low_message)
+                    .setMessage(message)
                     .setPositiveButton(android.R.string.ok, null);
         }
         UpdateInfo update = mUpdaterController.getUpdate(downloadId);
@@ -538,8 +544,16 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private boolean isBatteryLevelOk() {
-        BatteryManager bm = mActivity.getSystemService(BatteryManager.class);
-        int percent = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
-        return percent >= mActivity.getResources().getInteger(R.integer.battery_ok_percentage);
+        Intent intent = mActivity.registerReceiver(null,
+                new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+        if (!intent.getBooleanExtra(BatteryManager.EXTRA_PRESENT, false)) {
+            return true;
+        }
+        int percent = Math.round(100.f * intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 100) /
+                intent.getIntExtra(BatteryManager.EXTRA_SCALE, 100));
+        int required = intent.getBooleanExtra(BatteryManager.EXTRA_PLUGGED, false) ?
+                mActivity.getResources().getInteger(R.integer.battery_ok_percentage_charging) :
+                mActivity.getResources().getInteger(R.integer.battery_ok_percentage_discharging);
+        return percent >= required;
     }
 }

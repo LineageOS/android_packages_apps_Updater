@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ebe93a3_0321553a",
+        "filename": "src/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2018-07-10T20:00:38Z",
+      "side": 1,
+      "message": "How about:\n\n    SystemProperties.getBoolean(Constants.PROP_AB_DEVICE, false);",
+      "range": {
+        "startLine": 367,
+        "startChar": 15,
+        "endLine": 367,
+        "endChar": 73
+      },
+      "revId": "f2553390e9a6fd461680a0dddef8cc810389b4a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

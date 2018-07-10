@@ -145,4 +145,8 @@
     <string name="update_failed_channel_title">Update failed</string>
 
     <string name="menu_ab_perf_mode">Install A/B Updates faster</string>
+
+
+    <string name="installation_suspended_notification">Installation suspended</string>
+    <string name="suspend_button">Suspend</string>
 </resources>

@@ -43,6 +43,7 @@ class ABUpdateInstaller {
     private static final String TAG = "ABUpdateInstaller";
 
     private static final String PREF_INSTALLING_AB_ID = "installing_ab_id";
+    private static final String PREF_INSTALLING_SUSPENDED_AB_ID = "installing_suspended_ab_id";
 
     private static ABUpdateInstaller sInstance = null;
 
@@ -125,6 +126,16 @@ class ABUpdateInstaller {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         return downloadId.equals(pref.getString(ABUpdateInstaller.PREF_INSTALLING_AB_ID, null)) ||
                 TextUtils.equals(pref.getString(Constants.PREF_NEEDS_REBOOT_ID, null), downloadId);
+    }
+
+    static synchronized boolean isInstallingUpdateSuspended(Context context) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        return pref.getString(ABUpdateInstaller.PREF_INSTALLING_SUSPENDED_AB_ID, null) != null;
+    }
+
+    static synchronized boolean isInstallingUpdateSuspended(Context context, String downloadId) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        return downloadId.equals(pref.getString(ABUpdateInstaller.PREF_INSTALLING_SUSPENDED_AB_ID, null));
     }
 
     static synchronized boolean isWaitingForReboot(Context context, String downloadId) {
@@ -266,6 +277,54 @@ class ABUpdateInstaller {
         mUpdaterController.getActualUpdate(mDownloadId)
                 .setStatus(UpdateStatus.INSTALLATION_CANCELLED);
         mUpdaterController.notifyUpdateChange(mDownloadId);
+
+        return true;
+    }
+
+    public boolean suspend() {
+        if (!isInstallingUpdate(mContext)) {
+            Log.e(TAG, "cancel: Not installing any update");
+            return false;
+        }
+
+        if (!mBound) {
+            Log.e(TAG, "Not connected to update engine");
+            return false;
+        }
+
+        mUpdateEngine.suspend();
+
+        mUpdaterController.getActualUpdate(mDownloadId)
+                .setStatus(UpdateStatus.INSTALLATION_SUSPENDED);
+        mUpdaterController.notifyUpdateChange(mDownloadId);
+
+        PreferenceManager.getDefaultSharedPreferences(mContext).edit()
+                .putString(PREF_INSTALLING_SUSPENDED_AB_ID, mDownloadId)
+                .apply();
+
+        return true;
+    }
+
+    public boolean resume() {
+        if (!isInstallingUpdateSuspended(mContext)) {
+            Log.e(TAG, "cancel: No update is suspended");
+            return false;
+        }
+
+        if (!mBound) {
+            Log.e(TAG, "Not connected to update engine");
+            return false;
+        }
+
+        mUpdateEngine.resume();
+
+        mUpdaterController.getActualUpdate(mDownloadId)
+                .setStatus(UpdateStatus.INSTALLING);
+        mUpdaterController.notifyUpdateChange(mDownloadId);
+
+        PreferenceManager.getDefaultSharedPreferences(mContext).edit()
+                .remove(PREF_INSTALLING_SUSPENDED_AB_ID)
+                .apply();
 
         return true;
     }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82319dc6_66644624",
+        "filename": "src/org/lineageos/updater/UpdatesListAdapter.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2018-07-14T12:13:08Z",
+      "side": 1,
+      "message": "sorry, but line length",
+      "range": {
+        "startLine": 429,
+        "startChar": 100,
+        "endLine": 429,
+        "endChar": 101
+      },
+      "revId": "b08b8f95b2cd715057a9337621f65575a8e9f532",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

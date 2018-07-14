@@ -95,8 +95,8 @@ public class Utils {
 
     public static boolean isCompatible(UpdateBaseInfo update) {
         if (!SystemProperties.getBoolean(Constants.PROP_UPDATER_ALLOW_DOWNGRADING, false) &&
-                update.getTimestamp() < SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) {
-            Log.d(TAG, update.getName() + " is older than current build");
+                update.getTimestamp() <= SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) {
+            Log.d(TAG, update.getName() + " is older than/equal to the current build");
             return false;
         }
         if (!update.getType().equalsIgnoreCase(SystemProperties.get(Constants.PROP_RELEASE_TYPE))) {
@@ -108,7 +108,7 @@ public class Utils {
 
     public static boolean canInstall(UpdateBaseInfo update) {
         return (SystemProperties.getBoolean(Constants.PROP_UPDATER_ALLOW_DOWNGRADING, false) ||
-                update.getTimestamp() >= SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) &&
+                update.getTimestamp() > SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) &&
                 update.getVersion().equalsIgnoreCase(
                         SystemProperties.get(Constants.PROP_BUILD_VERSION));
     }

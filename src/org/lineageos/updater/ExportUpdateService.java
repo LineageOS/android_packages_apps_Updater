@@ -200,7 +200,6 @@ public class ExportUpdateService extends Service {
     private PendingIntent getStopPendingIntent() {
         final Intent intent = new Intent(this, ExportUpdateService.class);
         intent.setAction(ACTION_STOP_EXPORTING);
-        return PendingIntent.getService(this, 0, intent,
-                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
+        return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 }

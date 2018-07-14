@@ -446,8 +446,7 @@ public class UpdaterService extends Service {
         intent.setAction(ACTION_DOWNLOAD_CONTROL);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
         intent.putExtra(EXTRA_DOWNLOAD_CONTROL, DOWNLOAD_RESUME);
-        return PendingIntent.getService(this, 0, intent,
-                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
+        return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
     private PendingIntent getPausePendingIntent(String downloadId) {
@@ -455,15 +454,13 @@ public class UpdaterService extends Service {
         intent.setAction(ACTION_DOWNLOAD_CONTROL);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
         intent.putExtra(EXTRA_DOWNLOAD_CONTROL, DOWNLOAD_PAUSE);
-        return PendingIntent.getService(this, 0, intent,
-                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
+        return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
     private PendingIntent getRebootPendingIntent() {
         final Intent intent = new Intent(this, UpdaterReceiver.class);
         intent.setAction(UpdaterReceiver.ACTION_INSTALL_REBOOT);
-        return PendingIntent.getBroadcast(this, 0, intent,
-                PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_UPDATE_CURRENT);
+        return PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
 }

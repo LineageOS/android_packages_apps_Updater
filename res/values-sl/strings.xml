@@ -47,7 +47,6 @@
   <string name="preparing_ota_first_boot">Priprava na prvi zagon</string>
   <string name="dialog_prepare_zip_message">Predhodna priprava posodobitve</string>
   <string name="dialog_battery_low_title">Nizko stanje baterije</string>
-  <string name="dialog_battery_low_message">Raven napolnjenosti baterije je prenizko, napolnite vašo napravo za nadaljevanje.</string>
   <string name="reboot">Ponovni zagon</string>
   <string name="menu_refresh">Osveži</string>
   <string name="menu_preferences">Nastavitve</string>

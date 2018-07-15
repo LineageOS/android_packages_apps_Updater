@@ -47,7 +47,6 @@
   <string name="preparing_ota_first_boot">Se pregătește pentru prima pornire</string>
   <string name="dialog_prepare_zip_message">Pregătire preliminară pentru actualizare</string>
   <string name="dialog_battery_low_title">Baterie slabă</string>
-  <string name="dialog_battery_low_message">Nivelul bateriei este prea scăzut, vă rugăm să încărcați dispozitivul pentru a continua.</string>
   <string name="reboot">Repornire</string>
   <string name="menu_refresh">Reîmprospătare</string>
   <string name="menu_preferences">Preferințe</string>

@@ -46,6 +46,7 @@
   <string name="finalizing_package">משלים את התקנת החבילה</string>
   <string name="preparing_ota_first_boot">מתכונן להפעלה ראשונה</string>
   <string name="dialog_prepare_zip_message">מתכונן להתקנת העדכון</string>
+  <string name="dialog_battery_low_title">סוללה חלשה</string>
   <string name="reboot">הפעלה מחדש</string>
   <string name="menu_refresh">ריענון</string>
   <string name="menu_preferences">העדפות</string>

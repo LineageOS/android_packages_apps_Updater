@@ -46,6 +46,7 @@
   <string name="finalizing_package">Finalisation de l’installation du paquet</string>
   <string name="preparing_ota_first_boot">Préparation pour le premier démarrage</string>
   <string name="dialog_prepare_zip_message">Préparation de la mise à jour préliminaire</string>
+  <string name="dialog_battery_low_title">Batterie faible</string>
   <string name="reboot">Redémarrer</string>
   <string name="menu_refresh">Actualiser</string>
   <string name="menu_preferences">Préférences</string>

@@ -47,7 +47,6 @@
   <string name="preparing_ota_first_boot">Preparazione per il primo avvio</string>
   <string name="dialog_prepare_zip_message">Preparazione aggiornamento preliminare</string>
   <string name="dialog_battery_low_title">Batteria scarica</string>
-  <string name="dialog_battery_low_message">Il livello di carica residua della batteria è troppo basso, ricarica il dispositivo prima di procedere.</string>
   <string name="reboot">Riavvia</string>
   <string name="menu_refresh">Ricarica</string>
   <string name="menu_preferences">Preferenze</string>

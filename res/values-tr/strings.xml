@@ -47,7 +47,6 @@
   <string name="preparing_ota_first_boot">Ön yükleme için hazırlanıyor</string>
   <string name="dialog_prepare_zip_message">Güncelleme ön hazırlığı</string>
   <string name="dialog_battery_low_title">Düşük pil</string>
-  <string name="dialog_battery_low_message">Pil seviyesi çok düşük, devam etmek için lütfen cihazınızı şarj edin.</string>
   <string name="reboot">Yeniden başlat</string>
   <string name="menu_refresh">Yenile</string>
   <string name="menu_preferences">Tercihler</string>

@@ -47,7 +47,6 @@
   <string name="preparing_ota_first_boot">A preparar para a primeira inicialização</string>
   <string name="dialog_prepare_zip_message">Preparação preliminar de atualização</string>
   <string name="dialog_battery_low_title">Bateria fraca</string>
-  <string name="dialog_battery_low_message">O nível da bateria é muito baixo. Por favor, carregue o seu dispositivo para continuar</string>
   <string name="reboot">Reiniciar</string>
   <string name="menu_refresh">Atualizar</string>
   <string name="menu_preferences">Preferências</string>

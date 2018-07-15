@@ -47,7 +47,6 @@
   <string name="preparing_ota_first_boot">正在準備第一次啟動</string>
   <string name="dialog_prepare_zip_message">正在準備更新</string>
   <string name="dialog_battery_low_title">電量不足</string>
-  <string name="dialog_battery_low_message">電池電量過低，請給您的裝置充電</string>
   <string name="reboot">重新啟動</string>
   <string name="menu_refresh">重新整理</string>
   <string name="menu_preferences">使用偏好</string>

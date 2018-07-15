@@ -47,7 +47,6 @@
   <string name="preparing_ota_first_boot">Příprava na první spuštění</string>
   <string name="dialog_prepare_zip_message">Příprava předběžné aktualizace</string>
   <string name="dialog_battery_low_title">Slabá baterie</string>
-  <string name="dialog_battery_low_message">Úroveň nabití baterie je příliš nízká. Před pokračováním prosím baterii nabijte.</string>
   <string name="reboot">Reboot</string>
   <string name="menu_refresh">Obnovit</string>
   <string name="menu_preferences">Předvolby</string>

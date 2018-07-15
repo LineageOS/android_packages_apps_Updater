@@ -47,7 +47,7 @@
   <string name="preparing_ota_first_boot">Προετοιμασία για την πρώτη εκκίνηση</string>
   <string name="dialog_prepare_zip_message">Προκαταρκτική προετοιμασία ενημέρωσης</string>
   <string name="dialog_battery_low_title">Χαμηλή μπαταρία</string>
-  <string name="dialog_battery_low_message">Η στάθμη της μπαταρίας είναι πολύ χαμηλή, φορτίστε τη συσκευή σας για να συνεχίσετε.</string>
+  <string name="dialog_battery_low_message_pct">Η στάθμη της μπαταρίας είναι πολύ χαμηλή, χρειάζεστε τουλάχιστον <xliff:g id="percent_discharging">%1$d</xliff:g>%% της μπαταρίας για να συνεχίσετε ή <xliff:g id="percent_charging">%2$d</xliff:g>%% κατά την φόρτιση.</string>
   <string name="reboot">Επανεκκίνηση</string>
   <string name="menu_refresh">Ανανέωση</string>
   <string name="menu_preferences">Προτιμήσεις</string>
@@ -57,6 +57,7 @@
   <string name="menu_copy_url">Αντιγραφή URL</string>
   <string name="menu_export_update">Εξαγωγή ενημέρωσης</string>
   <string name="menu_show_changelog">Εμφάνιση αλλαγών</string>
+  <string name="menu_ab_perf_mode">Γρηγορότερη εγκατάσταση ενημερώσεων</string>
   <string name="snack_updates_found">Βρέθηκαν νέες ενημερώσεις</string>
   <string name="snack_no_updates_found">Δεν βρέθηκαν νέες ενημερώσεις</string>
   <string name="snack_updates_check_failed">Ο έλεγχος για ενημερώσεις απέτυχε. Παρακαλώ ελέγξτε την σύνδεσή σας στο διαδίκτυο και προσπαθήστε αργότερα.</string>

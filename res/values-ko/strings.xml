@@ -47,7 +47,6 @@
   <string name="preparing_ota_first_boot">첫 번째 부팅 준비 중</string>
   <string name="dialog_prepare_zip_message">예비 업데이트 준비</string>
   <string name="dialog_battery_low_title">배터리 부족</string>
-  <string name="dialog_battery_low_message">배터리 수준이 낮습니다. 계속하려면 기기를 충전해 주세요.</string>
   <string name="reboot">다시 시작</string>
   <string name="menu_refresh">새로고침</string>
   <string name="menu_preferences">설정</string>

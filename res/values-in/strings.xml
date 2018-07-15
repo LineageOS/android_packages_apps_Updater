@@ -47,7 +47,6 @@
   <string name="preparing_ota_first_boot">Mempersiapkan untuk boot pertama</string>
   <string name="dialog_prepare_zip_message">Persiapan awal pembaruan</string>
   <string name="dialog_battery_low_title">Baterai lemah</string>
-  <string name="dialog_battery_low_message">Tingkat baterai terlalu rendah, silakan isi daya perangkat Anda untuk melanjutkan.</string>
   <string name="reboot">Mulai ulang</string>
   <string name="menu_refresh">Segarkan</string>
   <string name="menu_preferences">Preferensi</string>

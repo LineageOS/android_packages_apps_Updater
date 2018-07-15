@@ -47,7 +47,6 @@
   <string name="preparing_ota_first_boot">Подготовка к первому запуску</string>
   <string name="dialog_prepare_zip_message">Подготовка обновления</string>
   <string name="dialog_battery_low_title">Низкий заряд батареи</string>
-  <string name="dialog_battery_low_message">Уровень заряда батареи слишком низкий, пожалуйста, зарядите устройство, чтобы продолжить.</string>
   <string name="reboot">Перезапуск</string>
   <string name="menu_refresh">Обновить</string>
   <string name="menu_preferences">Настройки</string>

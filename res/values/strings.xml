@@ -70,7 +70,7 @@
     <string name="menu_export_update">Export update</string>
     <string name="menu_show_changelog">Show changelog</string>
     <string name="menu_changelog_url" translatable="false">https://download.lineageos.org/<xliff:g id="device_name">%1$s</xliff:g>/changes</string>
-    <string name="menu_ab_perf_mode">Install updates faster</string>
+    <string name="menu_ab_perf_mode">Prioritize Update Process</string>
 
     <string name="snack_updates_found">New updates found</string>
     <string name="snack_no_updates_found">No new updates found</string>

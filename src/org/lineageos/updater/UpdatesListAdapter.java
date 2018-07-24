@@ -161,11 +161,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             setButtonAction(viewHolder.mAction, Action.INSTALL, downloadId, false);
             viewHolder.mProgressText.setText(R.string.list_verifying_update);
             viewHolder.mProgressBar.setIndeterminate(true);
-        } else if (mUpdaterController.isWaitingForReboot(downloadId)) {
-            setButtonAction(viewHolder.mAction, Action.REBOOT, downloadId, false);
-            viewHolder.mProgressText.setText(R.string.installing_update_finished);
-            viewHolder.mProgressBar.setIndeterminate(false);
-            viewHolder.mProgressBar.setProgress(100);
         } else {
             canDelete = true;
             setButtonAction(viewHolder.mAction, Action.RESUME, downloadId, !isBusy());
@@ -188,7 +183,12 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private void handleNotActiveStatus(ViewHolder viewHolder, UpdateInfo update) {
-        if (update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED) {
+        final String downloadId = update.getDownloadId();
+        if (mUpdaterController.isWaitingForReboot(downloadId)) {
+            viewHolder.itemView.setOnLongClickListener(
+                    getLongClickListener(update, false, viewHolder.mBuildDate));
+            setButtonAction(viewHolder.mAction, Action.REBOOT, downloadId, true);
+        } else if (update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED) {
             viewHolder.itemView.setOnLongClickListener(
                     getLongClickListener(update, true, viewHolder.mBuildDate));
             setButtonAction(viewHolder.mAction,

@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c422461_d4ec30b4",
+        "filename": "src/org/lineageos/updater/UpdatesListAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-07-24T09:43:05Z",
+      "side": 1,
+      "message": "downloadId",
+      "range": {
+        "startLine": 196,
+        "startChar": 20,
+        "endLine": 196,
+        "endChar": 42
+      },
+      "revId": "56bdf0802a9ed2072a358bae8f4e3eba9e74e8cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2328717f_01967bf3",
+        "filename": "src/org/lineageos/updater/UpdatesListAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-07-24T09:43:05Z",
+      "side": 1,
+      "message": "downloadId",
+      "range": {
+        "startLine": 200,
+        "startChar": 61,
+        "endLine": 200,
+        "endChar": 83
+      },
+      "revId": "56bdf0802a9ed2072a358bae8f4e3eba9e74e8cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "244488be_eabe94b5",
+        "filename": "src/org/lineageos/updater/UpdatesListAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-07-24T09:43:05Z",
+      "side": 1,
+      "message": "downloadId",
+      "range": {
+        "startLine": 204,
+        "startChar": 65,
+        "endLine": 204,
+        "endChar": 87
+      },
+      "revId": "56bdf0802a9ed2072a358bae8f4e3eba9e74e8cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

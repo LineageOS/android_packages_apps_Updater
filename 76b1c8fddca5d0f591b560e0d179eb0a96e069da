@@ -16,6 +16,24 @@
       "revId": "76b1c8fddca5d0f591b560e0d179eb0a96e069da",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e26e34a9_afe6290c",
+        "filename": "src/org/lineageos/updater/controller/ABUpdateInstaller.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2018-07-25T07:17:06Z",
+      "side": 1,
+      "message": "makes sense.",
+      "parentUuid": "750a9b79_0c74ee66",
+      "revId": "76b1c8fddca5d0f591b560e0d179eb0a96e069da",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }

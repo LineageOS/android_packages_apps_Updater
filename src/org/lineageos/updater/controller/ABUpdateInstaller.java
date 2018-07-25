@@ -52,6 +52,7 @@ class ABUpdateInstaller {
 
     private UpdateEngine mUpdateEngine;
     private boolean mBound;
+    private boolean mPerfModeEnabled;
 
     private final UpdateEngineCallback mUpdateEngineCallback = new UpdateEngineCallback() {
 
@@ -115,6 +116,16 @@ class ABUpdateInstaller {
         }
     };
 
+    private final SharedPreferences.OnSharedPreferenceChangeListener mPrefListener =
+        new SharedPreferences.OnSharedPreferenceChangeListener() {
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPrefs, String key) {
+            if (Constants.PREF_AB_PERF_MODE.equals(key)) {
+                mPerfModeEnabled = isPerfModeEnabled(mContext);
+            }
+        }
+    };
+
     static synchronized boolean isInstallingUpdate(Context context) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         return pref.getString(ABUpdateInstaller.PREF_INSTALLING_AB_ID, null) != null ||
@@ -133,10 +144,18 @@ class ABUpdateInstaller {
         return TextUtils.equals(waitingId, downloadId);
     }
 
+    static synchronized boolean isPerfModeEnabled(Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context)
+            .getBoolean(Constants.PREF_AB_PERF_MODE, false);
+    }
+
     private ABUpdateInstaller(Context context, UpdaterController updaterController) {
         mUpdaterController = updaterController;
         mContext = context.getApplicationContext();
         mUpdateEngine = new UpdateEngine();
+        mPerfModeEnabled = isPerfModeEnabled(mContext);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        prefs.registerOnSharedPreferenceChangeListener(mPrefListener);
     }
 
     static synchronized ABUpdateInstaller getInstance(Context context,
@@ -200,9 +219,7 @@ class ABUpdateInstaller {
             }
         }
 
-        boolean enableABPerfMode = PreferenceManager.getDefaultSharedPreferences(mContext)
-                .getBoolean(Constants.PREF_AB_PERF_MODE, false);
-        mUpdateEngine.setPerformanceMode(enableABPerfMode);
+        setPerformanceMode(mPerfModeEnabled);
 
         String zipFileUri = "file://" + file.getAbsolutePath();
         mUpdateEngine.applyPayload(zipFileUri, offset, 0, headerKeyValuePairs);

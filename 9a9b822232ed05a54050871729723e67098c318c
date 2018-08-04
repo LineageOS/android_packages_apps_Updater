@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2506d43e_3603f4b3",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2018-08-04T12:07:04Z",
+      "side": 1,
+      "message": "Not sure about this. onResume() is called every time we go back to the activity, so we add a bunch of extra unnecessary calls. Doing this when the preference value changes and when we call install() seems a better option.",
+      "range": {
+        "startLine": 191,
+        "startChar": 8,
+        "endLine": 191,
+        "endChar": 22
+      },
+      "revId": "9a9b822232ed05a54050871729723e67098c318c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

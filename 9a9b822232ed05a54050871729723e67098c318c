@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "e093bacf_466179d1",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2018-08-04T12:20:55Z",
+      "side": 1,
+      "message": "unnecessary newline",
+      "revId": "9a9b822232ed05a54050871729723e67098c318c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2506d43e_3603f4b3",
         "filename": "src/org/lineageos/updater/UpdatesActivity.java",
         "patchSetId": 2

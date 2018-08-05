@@ -47,6 +47,7 @@
   <string name="preparing_ota_first_boot">Подготовка за първо зареждане</string>
   <string name="dialog_prepare_zip_message">Предварителна подготовка на актуализацията</string>
   <string name="dialog_battery_low_title">Изтощена батерия</string>
+  <string name="dialog_battery_low_message_pct">Нивото на батерията е прекалено ниско, необходимо е най-малко <xliff:g id="percent_discharging">%1$d</xliff:g>%% за да продължите, <xliff:g id="percent_charging">%2$d</xliff:g>%%.</string>
   <string name="reboot">Рестартиране</string>
   <string name="menu_refresh">Опресняване</string>
   <string name="menu_preferences">Настройки</string>
@@ -56,6 +57,7 @@
   <string name="menu_copy_url">Копирай адреса</string>
   <string name="menu_export_update">Експортиране на актуализация</string>
   <string name="menu_show_changelog">Покажи промените</string>
+  <string name="menu_ab_perf_mode">По-бързо инсталиране на актуализации</string>
   <string name="snack_updates_found">Намерена е нова актуализация</string>
   <string name="snack_no_updates_found">Няма нови актуализации</string>
   <string name="snack_updates_check_failed">Проверката за актуализации се провали. Моля проверете връзката с интернет и опитайте отново по-късно.</string>

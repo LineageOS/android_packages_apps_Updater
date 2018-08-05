@@ -47,6 +47,7 @@
   <string name="preparing_ota_first_boot">Preparando para el primer arranque</string>
   <string name="dialog_prepare_zip_message">Preparación preliminar de la actualización</string>
   <string name="dialog_battery_low_title">Batería baja</string>
+  <string name="dialog_battery_low_message_pct">El nivel de la batería es demasiado bajo, necesita al menos <xliff:g id="percent_discharging">%1$d</xliff:g>%% de batería para continuar, <xliff:g id="percent_charging">%2$d</xliff:g>%% si el dispositivo se está cargando.</string>
   <string name="reboot">Reiniciar</string>
   <string name="menu_refresh">Actualizar</string>
   <string name="menu_preferences">Preferencias</string>
@@ -56,6 +57,7 @@
   <string name="menu_copy_url">Copiar URL</string>
   <string name="menu_export_update">Exportar actualización</string>
   <string name="menu_show_changelog">Mostrar registro de cambios</string>
+  <string name="menu_ab_perf_mode">Instalar actualizaciones más rápidamente</string>
   <string name="snack_updates_found">Se encontraron nuevas actualizaciones</string>
   <string name="snack_no_updates_found">No se encontraron nuevas actualizaciones</string>
   <string name="snack_updates_check_failed">Error en la búsqueda de actualizaciones. Comprueba la conexión a Internet e intenta de nuevo más tarde.</string>

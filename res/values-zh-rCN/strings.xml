@@ -47,6 +47,7 @@
   <string name="preparing_ota_first_boot">正在为第一次启动进行准备</string>
   <string name="dialog_prepare_zip_message">预备更新准备</string>
   <string name="dialog_battery_low_title">低电量</string>
+  <string name="dialog_battery_low_message_pct">电池电量过低，您需要至少 <xliff:g id="percent_discharging">%1$d</xliff:g>%% 的电量才能继续；如果正在充电，则需要 <xliff:g id="percent_charging">%2$d</xliff:g>%% 的电量才能继续。</string>
   <string name="reboot">重新启动</string>
   <string name="menu_refresh">刷新</string>
   <string name="menu_preferences">首选项</string>
@@ -56,6 +57,7 @@
   <string name="menu_copy_url">复制网址</string>
   <string name="menu_export_update">导出更新</string>
   <string name="menu_show_changelog">显示更新日志</string>
+  <string name="menu_ab_perf_mode">更快地安装更新</string>
   <string name="snack_updates_found">找到新更新</string>
   <string name="snack_no_updates_found">没有找到新的更新</string>
   <string name="snack_updates_check_failed">检查更新失败。 请您检查您的网络连接并稍后重试。</string>

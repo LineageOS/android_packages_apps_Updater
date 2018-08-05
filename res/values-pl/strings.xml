@@ -47,6 +47,7 @@
   <string name="preparing_ota_first_boot">Przygotowanie do pierwszego uruchomienia</string>
   <string name="dialog_prepare_zip_message">Przygotowanie wstępne aktualizacji</string>
   <string name="dialog_battery_low_title">Niskim poziom baterii</string>
+  <string name="dialog_battery_low_message_pct">Poziom naładowania baterii jest zbyt niski, musisz mieć co najmniej <xliff:g id="percent_discharging">%1$d</xliff:g>% baterii lub <xliff:g id="percent_charging">%2$d</xliff:g>% w trakcie ładowania.</string>
   <string name="reboot">Uruchom ponownie</string>
   <string name="menu_refresh">Odśwież</string>
   <string name="menu_preferences">Ustawienia</string>
@@ -56,6 +57,7 @@
   <string name="menu_copy_url">Kopiuj adres URL</string>
   <string name="menu_export_update">Wyślij aktualizację</string>
   <string name="menu_show_changelog">Pokaż listę zmian</string>
+  <string name="menu_ab_perf_mode">Instaluj aktualizacje szybciej</string>
   <string name="snack_updates_found">Znaleziono nowe aktualizacje</string>
   <string name="snack_no_updates_found">Nie znaleziono nowych aktualizacji</string>
   <string name="snack_updates_check_failed">Sprawdzanie aktualizacji nie powiodło się. Sprawdź połączenie z Internetem i spróbuj ponownie.</string>

@@ -47,6 +47,7 @@
   <string name="preparing_ota_first_boot">첫 번째 부팅 준비 중</string>
   <string name="dialog_prepare_zip_message">예비 업데이트 준비</string>
   <string name="dialog_battery_low_title">배터리 부족</string>
+  <string name="dialog_battery_low_message_pct">배터리 수준이 너무 낮습니다. 계속하려면 방전 중일 경우 <xliff:g id="percent_discharging">%1$d</xliff:g>%% 이상, 충전 중일 경우 <xliff:g id="percent_charging">%2$d</xliff:g>%% 이상의 배터리 수준이 필요합니다.</string>
   <string name="reboot">다시 시작</string>
   <string name="menu_refresh">새로고침</string>
   <string name="menu_preferences">설정</string>
@@ -56,6 +57,7 @@
   <string name="menu_copy_url">URL 복사</string>
   <string name="menu_export_update">업데이트 내보내기</string>
   <string name="menu_show_changelog">변경 사항 보기</string>
+  <string name="menu_ab_perf_mode">업데이트 빠른 설치</string>
   <string name="snack_updates_found">새 업데이트 발견</string>
   <string name="snack_no_updates_found">새로운 업데이트 없음</string>
   <string name="snack_updates_check_failed">업데이트 확인에 실패했습니다. 인터넷 연결을 확인한 뒤 다시 시도해 주세요.</string>

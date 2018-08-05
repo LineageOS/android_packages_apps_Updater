@@ -47,6 +47,7 @@
   <string name="preparing_ota_first_boot">מתכונן להפעלה ראשונה</string>
   <string name="dialog_prepare_zip_message">מתכונן להתקנת העדכון</string>
   <string name="dialog_battery_low_title">סוללה חלשה</string>
+  <string name="dialog_battery_low_message_pct">הסוללה חלשה מדי, אתה צריך לפחות <xliff:g id="percent_discharging">%1$d</xliff:g>%% אחוזים בשביל להמשיך ו־<xliff:g id="percent_charging">%2$d</xliff:g>%% אחוזים אם המכשיר בטעינה.</string>
   <string name="reboot">הפעלה מחדש</string>
   <string name="menu_refresh">ריענון</string>
   <string name="menu_preferences">העדפות</string>
@@ -56,6 +57,7 @@
   <string name="menu_copy_url">העתק כתובת אינטרנט</string>
   <string name="menu_export_update">יצא עדכון</string>
   <string name="menu_show_changelog">הצג רשימת שינויים</string>
+  <string name="menu_ab_perf_mode">התקן עדכונים מהר יותר</string>
   <string name="snack_updates_found">נמצאו עדכונים חדשים</string>
   <string name="snack_no_updates_found">לא נמצאו עדכונים חדשים</string>
   <string name="snack_updates_check_failed">בדיקת העדכונים נכשלה. בדוק את החיבור שלך לאינטרנט ונסה שוב מאוחר יותר.</string>

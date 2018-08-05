@@ -47,6 +47,7 @@
   <string name="preparing_ota_first_boot">Priprava na prvi zagon</string>
   <string name="dialog_prepare_zip_message">Predhodna priprava posodobitve</string>
   <string name="dialog_battery_low_title">Nizko stanje baterije</string>
+  <string name="dialog_battery_low_message_pct">Raven napolnjenosti baterije je prenizko, potrebnih je vsaj <xliff:g id="percent_discharging">%1$d</xliff:g>%% baterije za nadaljevanje, <xliff:g id="percent_charging">%2$d</xliff:g>%% med polnjenjem.</string>
   <string name="reboot">Ponovni zagon</string>
   <string name="menu_refresh">Osveži</string>
   <string name="menu_preferences">Nastavitve</string>
@@ -56,6 +57,7 @@
   <string name="menu_copy_url">Kopiraj URL</string>
   <string name="menu_export_update">Izvozi posodobitev</string>
   <string name="menu_show_changelog">Prikaži dnevnik sprememb</string>
+  <string name="menu_ab_perf_mode">Namesti posodobitve hitreje</string>
   <string name="snack_updates_found">Najdene nove posodobitve</string>
   <string name="snack_no_updates_found">Ni najdenih novih posodobitev</string>
   <string name="snack_updates_check_failed">Preverjanje za posodobitve je spodletelo. Preverite svojo internetno povezavo in poskusite znova kasneje.</string>

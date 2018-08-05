@@ -47,6 +47,7 @@
   <string name="preparing_ota_first_boot">A preparar para a primeira inicialização</string>
   <string name="dialog_prepare_zip_message">Preparação preliminar de atualização</string>
   <string name="dialog_battery_low_title">Bateria fraca</string>
+  <string name="dialog_battery_low_message_pct">O nível da bateria está demasiado baixo. Precisa de, pelo menos, <xliff:g id="percent_discharging">%1$d</xliff:g>%% de bateria para continuar, <xliff:g id="percent_charging">%2$d</xliff:g>%% se estiver a carregar.</string>
   <string name="reboot">Reiniciar</string>
   <string name="menu_refresh">Atualizar</string>
   <string name="menu_preferences">Preferências</string>
@@ -56,6 +57,7 @@
   <string name="menu_copy_url">Copiar URL</string>
   <string name="menu_export_update">Exportar atualização</string>
   <string name="menu_show_changelog">Mostrar registo de alterações</string>
+  <string name="menu_ab_perf_mode">Instalar atualizações mais rapidamente</string>
   <string name="snack_updates_found">Não foram encontradas atualizações</string>
   <string name="snack_no_updates_found">Não foram encontradas novas atualizações</string>
   <string name="snack_updates_check_failed">A verificação de atualizações falhou. Por favor, verifique a sua ligação à internet e tente novamente.</string>

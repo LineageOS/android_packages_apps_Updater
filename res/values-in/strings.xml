@@ -47,6 +47,7 @@
   <string name="preparing_ota_first_boot">Mempersiapkan untuk boot pertama</string>
   <string name="dialog_prepare_zip_message">Persiapan awal pembaruan</string>
   <string name="dialog_battery_low_title">Baterai lemah</string>
+  <string name="dialog_battery_low_message_pct">Tingkat baterai terlalu rendah, Anda memerlukan setidaknya <xliff:g id="percent_discharging">%1$d</xliff:g>%% baterai untuk melanjutkan, <xliff:g id="percent_charging">%2$d</xliff:g>%% jika saat pengisian.</string>
   <string name="reboot">Mulai ulang</string>
   <string name="menu_refresh">Segarkan</string>
   <string name="menu_preferences">Preferensi</string>
@@ -56,6 +57,7 @@
   <string name="menu_copy_url">Salin URL</string>
   <string name="menu_export_update">Ekspor pembaruan</string>
   <string name="menu_show_changelog">Tampilkan catatan perubahan</string>
+  <string name="menu_ab_perf_mode">Memasang pembaruan lebih cepat</string>
   <string name="snack_updates_found">Pembaruan baru ditemukan</string>
   <string name="snack_no_updates_found">Tidak ada pembaruan baru ditemukan</string>
   <string name="snack_updates_check_failed">Pemeriksaan pembaruan gagal. Silakan periksa koneksi Internet Anda dan coba lagi nanti.</string>

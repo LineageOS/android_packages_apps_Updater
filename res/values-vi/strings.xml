@@ -46,14 +46,18 @@
   <string name="finalizing_package">Đang hoàn tất gói cài đặt</string>
   <string name="preparing_ota_first_boot">Đang chuẩn bị cho lần khởi động đầu tiên</string>
   <string name="dialog_prepare_zip_message">Chuẩn bị cập nhật sơ bộ</string>
+  <string name="dialog_battery_low_title">Pin yếu</string>
+  <string name="dialog_battery_low_message_pct">Mức pin quá thấp, bạn cần tối thiểu <xliff:g id="percent_discharging">%1$d</xliff:g>%% pin để tiếp tục, <xliff:g id="percent_charging">%2$d</xliff:g>%% nếu đang sạc.</string>
   <string name="reboot">Khởi động lại</string>
   <string name="menu_refresh">Làm mới</string>
+  <string name="menu_preferences">Tùy chỉnh</string>
   <string name="menu_auto_updates_check">Tự động kiểm tra bản cập nhật</string>
   <string name="menu_auto_delete_updates">Xóa bản cập nhật khi cài đặt hoàn tất</string>
   <string name="menu_delete_update">Xóa</string>
   <string name="menu_copy_url">Sao chép URL</string>
   <string name="menu_export_update">Xuất bản cập nhật</string>
   <string name="menu_show_changelog">Hiển thị nhật ký thay đổi</string>
+  <string name="menu_ab_perf_mode">Cài đặt bản cập nhật nhanh hơn</string>
   <string name="snack_updates_found">Đã tìm thấy bản cập nhật mới</string>
   <string name="snack_no_updates_found">Không tìm thấy bản cập nhật mới</string>
   <string name="snack_updates_check_failed">Kiểm tra bản cập nhật không thành công. Vui lòng kiểm tra kết nối internet của bạn và thử lại sau.</string>

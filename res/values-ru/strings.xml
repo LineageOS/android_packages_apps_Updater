@@ -73,7 +73,7 @@
   <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
   <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Проверка обновлений</string>
-  <string name="list_no_updates">Нет доступных обновлений. Чтобы повторно проверить их наличие, нажмите кнопку «Обновить».</string>
+  <string name="list_no_updates">Обновлений не найдено. Чтобы вручную проверить наличие обновлений, используйте кнопку Обновить.</string>
   <string name="action_download">Скачать</string>
   <string name="action_pause">Приостановить</string>
   <string name="action_resume">Возобновить</string>
@@ -84,8 +84,8 @@
   <string name="confirm_delete_dialog_title">Удалить файл</string>
   <string name="confirm_delete_dialog_message">Удалить выбранный файл обновления?</string>
   <string name="apply_update_dialog_title">Применить обновление</string>
-  <string name="apply_update_dialog_message">Будет выполнено обновление до версии «<xliff:g id="update_name">%1$s</xliff:g>».\n\nПри нажатии кнопки «<xliff:g id="ok">%2$s</xliff:g>» устройство перезапустится и перейдет в режим восстановления для установки новой версии. \n\nПримечание: для этой функции необходим совместимый режим восстановления. При возникновении ошибки потребуется установить обновление вручную.</string>
-  <string name="apply_update_dialog_message_ab">Будет выполнено обновление до версии «<xliff:g id="update_name">%1$s</xliff:g>».\n\nПри нажатии кнопки «<xliff:g id="ok">%2$s</xliff:g>» будет начата установка обновления в фоновом режиме. \n\nПо завершении установки потребуется перезапустить устройство.</string>
+  <string name="apply_update_dialog_message">Будет выполнено обновление до версии <xliff:g id="update_name">%1$s</xliff:g>.\n\nПри нажатии кнопки <xliff:g id="ok">%2$s</xliff:g> устройство будет перезапущено и переведено в режим восстановления для установки новой версии.\n\nПримечание: для этой функции необходим совместимый режим восстановления. При возникновении ошибки потребуется установить обновление вручную.</string>
+  <string name="apply_update_dialog_message_ab">Будет выполнено обновление до версии <xliff:g id="update_name">%1$s</xliff:g>.\n\nПри нажатии кнопки <xliff:g id="ok">%2$s</xliff:g> будет начата установка в фоновом режиме.\n\nПо завершении вам будет предложено перезапустить устройство.</string>
   <string name="cancel_installation_dialog_message">Отменить установку?</string>
   <string name="label_download_url">Ссылка для скачивания</string>
   <string name="toast_download_url_copied">URL скопирован в буфер обмена</string>

@@ -47,6 +47,7 @@
   <string name="preparing_ota_first_boot">Příprava na první spuštění</string>
   <string name="dialog_prepare_zip_message">Příprava předběžné aktualizace</string>
   <string name="dialog_battery_low_title">Slabá baterie</string>
+  <string name="dialog_battery_low_message_pct">Úroveň nabití baterie je příliš nízká, potřebujete alespoň <xliff:g id="percent_discharging">%1$d</xliff:g>%% baterie pro pokračování, <xliff:g id="percent_charging">%2$d</xliff:g>%% při nabíjení.</string>
   <string name="reboot">Reboot</string>
   <string name="menu_refresh">Obnovit</string>
   <string name="menu_preferences">Předvolby</string>
@@ -56,6 +57,7 @@
   <string name="menu_copy_url">Kopírovat URL</string>
   <string name="menu_export_update">Export aktualizace</string>
   <string name="menu_show_changelog">Zobrazit seznam změn</string>
+  <string name="menu_ab_perf_mode">Nainstalovat aktualizace rychleji</string>
   <string name="snack_updates_found">Nalezeny nové aktualizace</string>
   <string name="snack_no_updates_found">Nové aktualizace nenalezeny</string>
   <string name="snack_updates_check_failed">Zjištění nové verze selhalo. Prosím zkontrolujte připojení k internetu a pokus opakujte.</string>

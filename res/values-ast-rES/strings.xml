@@ -29,12 +29,13 @@
           {incr} - Incremental version
     -->
   <string name="verification_failed_notification">Falló la verificación</string>
-  <string name="verifying_download_notification">Verificando anovamientu</string>
+  <string name="verifying_download_notification">Verificando l\'anovamientu</string>
   <string name="downloading_notification">Baxando</string>
   <string name="download_paused_notification">Descarga posada</string>
   <string name="download_paused_error_notification">Fallu de descarga</string>
   <string name="download_completed_notification">Completóse la descarga</string>
   <string name="download_starting_notification">Aniciando descarga</string>
+  <string name="update_failed_notification">Falló l\'anovamientu</string>
   <string name="new_updates_found_title">Anovamientos nuevos</string>
   <string name="text_download_speed">%1$s, %2$s/s</string>
   <string name="pause_button">Posar</string>
@@ -44,9 +45,10 @@
   <string name="installing_update_finished">Instalóse l\'anovamientu</string>
   <string name="finalizing_package">Finando la instalación del paquete</string>
   <string name="preparing_ota_first_boot">Tresnando\'l primer arranque</string>
-  <string name="dialog_prepare_zip_message">Tresnáu prelimiar d\'anovamientu</string>
+  <string name="dialog_prepare_zip_message">Tresnáu preliminar del anovamientu</string>
   <string name="reboot">Reaniciar</string>
   <string name="menu_refresh">Refrescar</string>
+  <string name="menu_preferences">Preferencies</string>
   <string name="menu_auto_updates_check">Comprobación automática d\'anovamientos</string>
   <string name="menu_auto_delete_updates">Desaniciar anovamientos al instalalos</string>
   <string name="menu_delete_update">Desaniciar</string>
@@ -84,4 +86,5 @@
   <string name="blocked_update_dialog_title">Bloquióse l\'anovamientu</string>
   <string name="blocked_update_dialog_message">Esti anovamientu nun pue instalase usando l\'aplicación anovadora. Llei <xliff:g id="info_url">%1$s</xliff:g> pa más información, por favor.</string>
   <string name="new_updates_channel_title">Anovamientos nuevos</string>
+  <string name="update_failed_channel_title">Falló l\'anovamientu</string>
 </resources>

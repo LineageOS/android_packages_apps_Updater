@@ -47,6 +47,7 @@
   <string name="preparing_ota_first_boot">Préparation pour le premier démarrage</string>
   <string name="dialog_prepare_zip_message">Préparation de la mise à jour préliminaire</string>
   <string name="dialog_battery_low_title">Batterie faible</string>
+  <string name="dialog_battery_low_message_pct">Le niveau de batterie est trop faible. Pour continuer, vous devez avoir au moins <xliff:g id="percent_discharging">%1$d</xliff:g> %% de batterie restante, ou <xliff:g id="percent_charging">%2$d</xliff:g> %% si l\'appareil est en charge.</string>
   <string name="reboot">Redémarrer</string>
   <string name="menu_refresh">Actualiser</string>
   <string name="menu_preferences">Préférences</string>
@@ -56,6 +57,7 @@
   <string name="menu_copy_url">Copier l\'URL</string>
   <string name="menu_export_update">Exporter la mise à jour</string>
   <string name="menu_show_changelog">Afficher l\'historique des modifications</string>
+  <string name="menu_ab_perf_mode">Installer les mises à jour plus rapidement</string>
   <string name="snack_updates_found">Nouvelles mises à jour disponibles</string>
   <string name="snack_no_updates_found">Aucune nouvelle mise à jour disponible</string>
   <string name="snack_updates_check_failed">La vérification de nouvelles mises à jour a échoué. Vérifiez votre connexion internet et réessayez ultérieurement.</string>

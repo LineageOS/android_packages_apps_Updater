@@ -57,7 +57,6 @@
   <string name="menu_copy_url">Kopírovat URL</string>
   <string name="menu_export_update">Export aktualizace</string>
   <string name="menu_show_changelog">Zobrazit seznam změn</string>
-  <string name="menu_ab_perf_mode">Nainstalovat aktualizace rychleji</string>
   <string name="snack_updates_found">Nalezeny nové aktualizace</string>
   <string name="snack_no_updates_found">Nové aktualizace nenalezeny</string>
   <string name="snack_updates_check_failed">Zjištění nové verze selhalo. Prosím zkontrolujte připojení k internetu a pokus opakujte.</string>

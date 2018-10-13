@@ -57,7 +57,6 @@
   <string name="menu_copy_url">Копировать URL-адрес</string>
   <string name="menu_export_update">Экспорт обновлений</string>
   <string name="menu_show_changelog">Показать журнал изменений</string>
-  <string name="menu_ab_perf_mode">Устанавливайте обновления быстрее</string>
   <string name="snack_updates_found">Доступно новое обновление</string>
   <string name="snack_no_updates_found">Обновлений не найдено</string>
   <string name="snack_updates_check_failed">Не удалось выполнить проверку обновлений. Проверьте подключение к Интернету и повторите попытку.</string>
@@ -73,7 +72,7 @@
   <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
   <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Проверка обновлений</string>
-  <string name="list_no_updates">Обновлений не найдено. Чтобы вручную проверить наличие обновлений, используйте кнопку Обновить.</string>
+  <string name="list_no_updates">Обновлений не найдено. Чтобы проверить наличие обновлений вручную, используйте кнопку Обновить.</string>
   <string name="action_download">Скачать</string>
   <string name="action_pause">Приостановить</string>
   <string name="action_resume">Возобновить</string>

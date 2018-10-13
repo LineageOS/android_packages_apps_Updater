@@ -57,7 +57,6 @@
   <string name="menu_copy_url">Salin URL</string>
   <string name="menu_export_update">Ekspor pembaruan</string>
   <string name="menu_show_changelog">Tampilkan catatan perubahan</string>
-  <string name="menu_ab_perf_mode">Memasang pembaruan lebih cepat</string>
   <string name="snack_updates_found">Pembaruan baru ditemukan</string>
   <string name="snack_no_updates_found">Tidak ada pembaruan baru ditemukan</string>
   <string name="snack_updates_check_failed">Pemeriksaan pembaruan gagal. Silakan periksa koneksi Internet Anda dan coba lagi nanti.</string>

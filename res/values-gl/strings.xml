@@ -57,7 +57,6 @@
   <string name="menu_copy_url">Copiar URL</string>
   <string name="menu_export_update">Exportar actualización</string>
   <string name="menu_show_changelog">Amosar o rexistro de cambios</string>
-  <string name="menu_ab_perf_mode">Instalar actualizacións máis rapidamente</string>
   <string name="snack_updates_found">Atopáronse novas actualizacións</string>
   <string name="snack_no_updates_found">Non se atoparon novas actualizacións</string>
   <string name="snack_updates_check_failed">A verificación da descarga fallou. Comproba a túa conexión a internet e téntao de novo.</string>

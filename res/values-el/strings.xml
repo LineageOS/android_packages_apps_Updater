@@ -57,7 +57,7 @@
   <string name="menu_copy_url">Αντιγραφή URL</string>
   <string name="menu_export_update">Εξαγωγή ενημέρωσης</string>
   <string name="menu_show_changelog">Εμφάνιση αλλαγών</string>
-  <string name="menu_ab_perf_mode">Γρηγορότερη εγκατάσταση ενημερώσεων</string>
+  <string name="menu_ab_perf_mode">Επιτάχυνση διαδικασίας ενημέρωσης</string>
   <string name="snack_updates_found">Βρέθηκαν νέες ενημερώσεις</string>
   <string name="snack_no_updates_found">Δεν βρέθηκαν νέες ενημερώσεις</string>
   <string name="snack_updates_check_failed">Ο έλεγχος για ενημερώσεις απέτυχε. Παρακαλώ ελέγξτε την σύνδεσή σας στο διαδίκτυο και προσπαθήστε αργότερα.</string>

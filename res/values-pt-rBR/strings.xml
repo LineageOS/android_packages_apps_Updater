@@ -56,7 +56,6 @@
   <string name="menu_copy_url">Copiar URL</string>
   <string name="menu_export_update">Exportar atualização</string>
   <string name="menu_show_changelog">Mostrar alterações</string>
-  <string name="menu_ab_perf_mode">Instalar atualizações mais rapidamente</string>
   <string name="snack_updates_found">Nova atualização disponível</string>
   <string name="snack_no_updates_found">Não foram encontradas novas atualizações</string>
   <string name="snack_updates_check_failed">Falha ao procurar por atualizações. Verifique sua conexão com a internet e tente novamente.</string>

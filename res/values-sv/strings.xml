@@ -39,6 +39,7 @@
   <string name="installing_update">Installerar uppdateringspaketet</string>
   <string name="installing_update_error">Installationsfel</string>
   <string name="installing_update_finished">Uppdateringen har installerats</string>
+  <string name="dialog_battery_low_title">Låg batterinivå</string>
   <string name="reboot">Starta om</string>
   <string name="menu_refresh">Uppdatera</string>
   <string name="menu_auto_updates_check">Sök efter uppdateringar automatiskt</string>

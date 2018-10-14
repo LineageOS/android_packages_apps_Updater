@@ -46,6 +46,7 @@
   <string name="finalizing_package">Die Paketinstallation wird abgeschlossen</string>
   <string name="preparing_ota_first_boot">Erster Start wird vorbereitet</string>
   <string name="dialog_prepare_zip_message">Update wird vorbereitet</string>
+  <string name="dialog_battery_low_message_pct">Ihr Akkustand ist zu niedrig. Es werden mindestens <xliff:g id="percent_discharging">%1$d</xliff:g>%% Restkapazität (oder <xliff:g id="percent_charging">%2$d</xliff:g>%% mit angeschlossenem Ladegerät) benötigt, um fortzufahren.</string>
   <string name="reboot">Neustart</string>
   <string name="menu_refresh">Aktualisieren</string>
   <string name="menu_preferences">Voreinstellungen</string>
@@ -68,7 +69,7 @@
   <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
   <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
   <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> von <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> von <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g>(<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> von <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
   <string name="list_verifying_update">Update wird geprüft</string>
   <string name="list_no_updates">Keine neuen Updates gefunden. Um manuell nach neuen Updates zu suchen, verwenden Sie die Schaltfläche \"Aktualisieren\".</string>
   <string name="action_download">Herunterladen</string>
@@ -91,16 +92,16 @@
   <string name="notification_export_fail">Fehler beim Export</string>
   <string name="toast_already_exporting">Update wird bereits exportiert</string>
   <plurals name="eta_seconds">
-    <item quantity="one">Noch 1 Sekunde</item>
-    <item quantity="other">Noch <xliff:g id="count">%d</xliff:g> Sekunden</item>
+    <item quantity="one">noch 1 Sekunde</item>
+    <item quantity="other">noch <xliff:g id="count">%d</xliff:g> Sekunden</item>
   </plurals>
   <plurals name="eta_minutes">
-    <item quantity="one">Noch 1 Minute</item>
-    <item quantity="other">Noch <xliff:g id="count">%d</xliff:g> Minuten</item>
+    <item quantity="one">noch 1 Minute</item>
+    <item quantity="other">noch <xliff:g id="count">%d</xliff:g> Minuten</item>
   </plurals>
   <plurals name="eta_hours">
-    <item quantity="one">Noch 1 Stunde</item>
-    <item quantity="other">Noch <xliff:g id="count">%d</xliff:g> Stunden</item>
+    <item quantity="one">noch 1 Stunde</item>
+    <item quantity="other">noch <xliff:g id="count">%d</xliff:g> Stunden</item>
   </plurals>
   <string name="update_on_mobile_data_title">Achtung</string>
   <string name="update_on_mobile_data_message">Sie sind dabei ein Software-Update über das Mobilfunknetz herunterzuladen, was zu einem hohen Datenverbrauch führen kann. Möchten Sie fortfahren?</string>

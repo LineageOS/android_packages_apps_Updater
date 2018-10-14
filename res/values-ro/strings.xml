@@ -46,6 +46,8 @@
   <string name="finalizing_package">Se finalizează instalarea pachetului</string>
   <string name="preparing_ota_first_boot">Se pregătește pentru prima pornire</string>
   <string name="dialog_prepare_zip_message">Pregătire preliminară pentru actualizare</string>
+  <string name="dialog_battery_low_title">Baterie slabă</string>
+  <string name="dialog_battery_low_message_pct">Nivelul bateriei este prea scăzut. Aveți nevoie de cel puțin<xliff:g id="percent_discharging">%1$d</xliff:g>%% pentru a continua, <xliff:g id="percent_charging">%2$d</xliff:g>%% dacă telefonul este la încărcat.</string>
   <string name="reboot">Repornire</string>
   <string name="menu_refresh">Reîmprospătare</string>
   <string name="menu_preferences">Preferințe</string>

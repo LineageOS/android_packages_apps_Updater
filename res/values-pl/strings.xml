@@ -46,6 +46,8 @@
   <string name="finalizing_package">Kończenie instalacji pakietu</string>
   <string name="preparing_ota_first_boot">Przygotowanie do pierwszego uruchomienia</string>
   <string name="dialog_prepare_zip_message">Przygotowanie wstępne aktualizacji</string>
+  <string name="dialog_battery_low_title">Niskim poziom baterii</string>
+  <string name="dialog_battery_low_message_pct">Poziom naładowania baterii jest zbyt niski, musisz mieć co najmniej <xliff:g id="percent_discharging">%1$d</xliff:g>% baterii lub <xliff:g id="percent_charging">%2$d</xliff:g>% w trakcie ładowania.</string>
   <string name="reboot">Uruchom ponownie</string>
   <string name="menu_refresh">Odśwież</string>
   <string name="menu_preferences">Ustawienia</string>

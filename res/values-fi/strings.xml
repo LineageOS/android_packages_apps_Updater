@@ -46,6 +46,8 @@
   <string name="finalizing_package">Viimeistellään päivityksen asennusta</string>
   <string name="preparing_ota_first_boot">Valmistellaan ensimmäistä käynnistystä</string>
   <string name="dialog_prepare_zip_message">Alustava päivityksen valmistelu</string>
+  <string name="dialog_battery_low_title">Akku vähissä</string>
+  <string name="dialog_battery_low_message_pct">Akun varaus on liian matala, tarvitset vähintään <xliff:g id="percent_discharging">%1$d</xliff:g>%% jatkaaksesi, <xliff:g id="percent_charging">%2$d</xliff:g>%% jos laite on latauksessa.</string>
   <string name="reboot">Käynnistä uudelleen</string>
   <string name="menu_refresh">Päivitä</string>
   <string name="menu_preferences">Ominaisuudet</string>

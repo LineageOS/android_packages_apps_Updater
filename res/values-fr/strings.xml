@@ -46,6 +46,8 @@
   <string name="finalizing_package">Finalisation de l’installation du paquet</string>
   <string name="preparing_ota_first_boot">Préparation pour le premier démarrage</string>
   <string name="dialog_prepare_zip_message">Préparation de la mise à jour préliminaire</string>
+  <string name="dialog_battery_low_title">Batterie faible</string>
+  <string name="dialog_battery_low_message_pct">Le niveau de batterie est trop faible. Pour continuer, vous devez avoir au moins <xliff:g id="percent_discharging">%1$d</xliff:g> %% de batterie restante, ou <xliff:g id="percent_charging">%2$d</xliff:g> %% si l\'appareil est en charge.</string>
   <string name="reboot">Redémarrer</string>
   <string name="menu_refresh">Actualiser</string>
   <string name="menu_preferences">Préférences</string>
@@ -90,6 +92,18 @@
   <string name="notification_export_success">Mise à jour exportée</string>
   <string name="notification_export_fail">Erreur lors de l\'exportation</string>
   <string name="toast_already_exporting">Une mise à jour est déjà en cours d\'export</string>
+  <plurals name="eta_seconds">
+    <item quantity="one">temps restant : 1 seconde</item>
+    <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> secondes</item>
+  </plurals>
+  <plurals name="eta_minutes">
+    <item quantity="one">temps restant : 1 minute</item>
+    <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> minutes</item>
+  </plurals>
+  <plurals name="eta_hours">
+    <item quantity="one">temps restant : 1 heure</item>
+    <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> heures</item>
+  </plurals>
   <string name="update_on_mobile_data_title">Avertissement</string>
   <string name="update_on_mobile_data_message">Vous êtes sur le point de télécharger un paquet de mise à jour via les données mobiles qui pourrait représenter un volume de données important. Voulez-vous tout de même procéder au téléchargement ?</string>
   <string name="checkbox_mobile_data_warning">Ne plus afficher</string>

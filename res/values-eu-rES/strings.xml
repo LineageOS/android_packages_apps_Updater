@@ -46,6 +46,8 @@
   <string name="finalizing_package">Paketearen instalazioarekin bukatzen</string>
   <string name="preparing_ota_first_boot">Lehen abiorako prestatzen</string>
   <string name="dialog_prepare_zip_message">Aldez aurreko eguneraketaren prestaketa</string>
+  <string name="dialog_battery_low_title">Bateria gutxi</string>
+  <string name="dialog_battery_low_message_pct">Bateria maila baxuegia da, gutxienez bateriaren %% <xliff:g id="percent_discharging">%1$d</xliff:g> behar da jarraitzeko, %% <xliff:g id="percent_charging">%2$d</xliff:g> kargatzen badago.</string>
   <string name="reboot">Berrabiarazi</string>
   <string name="menu_refresh">Freskatu</string>
   <string name="menu_preferences">Hobespenak</string>
@@ -82,7 +84,7 @@
   <string name="confirm_delete_dialog_message">Ezabatu hautatutako eguneraketa fitxategia?</string>
   <string name="apply_update_dialog_title">Aplikatu eguneraketa</string>
   <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g>. bertsioa instalatzera zoaz.\n\n <xliff:g id="ok">%2$s</xliff:g> sakatzean, gailua berreskuratze moduan berrabiaraziko da eguneraketa instalatzeko.\n\nOharra: Berreskuratze aplikazio bateragarri bat behar du ezaugarri honek, bestela eguneraketak eskuz instalatu beharko dira.</string>
-  <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g>. bertsioa instalatzera zoaz.\n\n <xliff:g id="ok">%2$s</xliff:g> sakatzean, gailu aatzeko planoan hasiko da eguneratzen.\n\nBehin bukatuta berrabiaraztea eskatuko zaizu.</string>
+  <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g> bertsioa instalatzera zoaz.\n\n<xliff:g id="ok">%2$s</xliff:g> sakatzean, gailua atzeko planoan hasiko da eguneratzen.\n\nBehin bukatuta berrabiaraztea eskatuko zaizu.</string>
   <string name="cancel_installation_dialog_message">Ezeztatu instalazioa?</string>
   <string name="label_download_url">Deskargaren URL-s</string>
   <string name="toast_download_url_copied">URL-a kopiatuta</string>

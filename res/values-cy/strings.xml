@@ -26,4 +26,5 @@
           {type} - Build type
           {incr} - Incremental version
     -->
+  <string name="action_cancel">Diddymu</string>
 </resources>

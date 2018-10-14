@@ -46,6 +46,8 @@
   <string name="finalizing_package">Paket yükleme tamamlanıyor</string>
   <string name="preparing_ota_first_boot">Ön yükleme için hazırlanıyor</string>
   <string name="dialog_prepare_zip_message">Güncelleme ön hazırlığı</string>
+  <string name="dialog_battery_low_title">Düşük pil</string>
+  <string name="dialog_battery_low_message_pct">Pil seviyesi çok düşük, devam etmek için en az <xliff:g id="percent_discharging">%1$d</xliff:g>%% pil gereklidir, <xliff:g id="percent_charging">%2$d</xliff:g>%% şarj ediliyor.</string>
   <string name="reboot">Yeniden başlat</string>
   <string name="menu_refresh">Yenile</string>
   <string name="menu_preferences">Tercihler</string>

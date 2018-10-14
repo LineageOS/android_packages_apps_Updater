@@ -46,6 +46,8 @@
   <string name="finalizing_package">Dokončuje sa inštalácia balíka</string>
   <string name="preparing_ota_first_boot">Príprava na prvé spustenie</string>
   <string name="dialog_prepare_zip_message">Predbežná príprava aktualizácie</string>
+  <string name="dialog_battery_low_title">Vybitá batéria</string>
+  <string name="dialog_battery_low_message_pct">Úroveň nabitia batérie je príliš nízka, budete potrebovať aspoň <xliff:g id="percent_discharging">%1$d</xliff:g>%% batérie na pokračovanie, <xliff:g id="percent_charging">%2$d</xliff:g>%% pri nabíjaní.</string>
   <string name="reboot">Reštartovať</string>
   <string name="menu_refresh">Obnoviť</string>
   <string name="menu_preferences">Predvoľby</string>

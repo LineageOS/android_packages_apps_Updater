@@ -16,15 +16,15 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Directory where the update files will be downloaded and stored.
+    <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
-  <!-- Directory where the downloads will be exported to.
+    <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
-  <!--
+    <!--
         Optional placeholders replaced at runtime:
           {device} - Device name
           {type} - Build type
           {incr} - Incremental version
     -->
-  <string name="action_cancel">Diddymu</string>
+    <string name="action_cancel">Diddymu</string>
 </resources>

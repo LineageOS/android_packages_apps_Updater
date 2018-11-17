@@ -7,13 +7,26 @@
     android:paddingStart="24dp"
     android:paddingTop="16dp">
 
-    <Switch
-        android:id="@+id/preferences_auto_updates_check"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/menu_auto_updates_check"
-        android:textSize="16sp" />
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/menu_auto_updates_check"
+            android:textColor="@color/inverted"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/preferences_auto_updates_check_interval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:entries="@array/menu_auto_updates_check_interval_entries" />
+    </LinearLayout>
 
     <Switch
         android:id="@+id/preferences_auto_delete_updates"

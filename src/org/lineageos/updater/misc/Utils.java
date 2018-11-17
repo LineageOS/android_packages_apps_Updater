@@ -368,4 +368,14 @@ public class Utils {
         StorageManager sm = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
         return sm.isEncrypted(file);
     }
+
+    public static int getUpdateCheckInterval(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return preferences.getInt(Constants.PREF_AUTO_UPDATES_CHECK_INTERVAL,
+                                  Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY);
+    }
+
+    public static boolean isUpdateCheckEnabled(Context context) {
+        return getUpdateCheckInterval(context) != Constants.AUTO_UPDATES_CHECK_INTERVAL_NEVER;
+    }
 }

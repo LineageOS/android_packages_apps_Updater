@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu_auto_updates_check_interval_entries" translatable="false">
+        <item>@string/menu_auto_updates_check_interval_daily</item>
+        <item>@string/menu_auto_updates_check_interval_weekly</item>
+        <item>@string/menu_auto_updates_check_interval_monthly</item>
+    </string-array>
+</resources>

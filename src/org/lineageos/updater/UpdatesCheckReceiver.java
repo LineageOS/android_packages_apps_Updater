@@ -155,15 +155,39 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     }
 
     public static void scheduleRepeatingUpdatesCheck(Context context) {
+        final SharedPreferences preferences =
+                PreferenceManager.getDefaultSharedPreferences(context);
+        int autoUpdatesCheckInterval = preferences.getInt(
+                Constants.PREF_AUTO_UPDATES_CHECK_INTERVAL,
+                Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY);
+        long alarmInterval = -1;
+
+        switch (autoUpdatesCheckInterval) {
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_DAILY:
+                alarmInterval = AlarmManager.INTERVAL_DAY;
+                break;
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY:
+                alarmInterval = AlarmManager.INTERVAL_DAY * 7;
+                break;
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_MONTHLY:
+                alarmInterval = AlarmManager.INTERVAL_DAY * 30;
+                break;
+        }
+
+        if (alarmInterval == -1) {
+            Log.e(TAG, "Unable to set automatic updates check due to invalid alarmInterval value");
+            return;
+        }
+
         long millisToNextRelease = millisToNextRelease(context);
         PendingIntent updateCheckIntent = getRepeatingUpdatesCheckIntent(context);
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
                 SystemClock.elapsedRealtime() + millisToNextRelease,
-                AlarmManager.INTERVAL_DAY, updateCheckIntent);
+                alarmInterval, updateCheckIntent);
 
         Date nextCheckDate = new Date(System.currentTimeMillis() + millisToNextRelease);
-        Log.d(TAG, "Setting daily updates check: " + nextCheckDate);
+        Log.d(TAG, "Setting automatic updates check: " + nextCheckDate);
     }
 
     public static void cancelRepeatingUpdatesCheck(Context context) {

@@ -15,6 +15,13 @@
         android:text="@string/menu_auto_updates_check"
         android:textSize="16sp" />
 
+    <Spinner
+        android:id="@+id/preferences_auto_updates_check_interval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:entries="@array/menu_auto_updates_check_interval_entries" />
+
     <Switch
         android:id="@+id/preferences_auto_delete_updates"
         android:layout_width="match_parent"

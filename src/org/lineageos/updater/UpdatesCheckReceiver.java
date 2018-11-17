@@ -59,7 +59,8 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
 
         final SharedPreferences preferences =
                 PreferenceManager.getDefaultSharedPreferences(context);
-        if (!preferences.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, true)) {
+
+        if (!Utils.isUpdateCheckEnabled(context)) {
             return;
         }
 
@@ -155,15 +156,17 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     }
 
     public static void scheduleRepeatingUpdatesCheck(Context context) {
-        long millisToNextRelease = millisToNextRelease(context);
+        if (!Utils.isUpdateCheckEnabled(context)) {
+            return;
+        }
+
+        long nextCheckMillis = millisForNextCheck(context);
         PendingIntent updateCheckIntent = getRepeatingUpdatesCheckIntent(context);
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
-                SystemClock.elapsedRealtime() + millisToNextRelease,
-                AlarmManager.INTERVAL_DAY, updateCheckIntent);
+        alarmMgr.set(AlarmManager.RTC, nextCheckMillis, updateCheckIntent);
 
-        Date nextCheckDate = new Date(System.currentTimeMillis() + millisToNextRelease);
-        Log.d(TAG, "Setting daily updates check: " + nextCheckDate);
+        Date nextCheckDate = new Date(nextCheckMillis);
+        Log.d(TAG, "Setting automatic updates check: " + nextCheckDate);
     }
 
     public static void cancelRepeatingUpdatesCheck(Context context) {
@@ -195,50 +198,28 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         Log.d(TAG, "Cancelling pending one-shot check");
     }
 
-    private static long millisToNextRelease(Context context) {
-        final long extraMillis = 3 * AlarmManager.INTERVAL_HOUR;
+    private static long millisForNextCheck(Context context) {
+        int autoUpdatesCheckInterval = Utils.getUpdateCheckInterval(context);
 
-        List<UpdateInfo> updates = null;
-        try {
-            updates = Utils.parseJson(Utils.getCachedUpdateList(context), false);
-        } catch (IOException | JSONException ignored) {
+        long alarmInterval = 0;
+
+        switch (autoUpdatesCheckInterval) {
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_DAILY:
+                alarmInterval = AlarmManager.INTERVAL_DAY;
+                break;
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY:
+                alarmInterval = AlarmManager.INTERVAL_DAY * 7;
+                break;
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_MONTHLY:
+                alarmInterval = AlarmManager.INTERVAL_DAY * 30;
+                break;
         }
 
-        if (updates == null || updates.size() == 0) {
-            return SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_DAY;
+        if (alarmInterval == 0) {
+            Log.w(TAG, "millisToNextRelease: alarmInterval not set, default to a month!");
+            alarmInterval = AlarmManager.INTERVAL_DAY * 30;
         }
 
-        long buildTimestamp = 0;
-        for (UpdateInfo update : updates) {
-            if (update.getTimestamp() > buildTimestamp) {
-                buildTimestamp = update.getTimestamp();
-            }
-        }
-        buildTimestamp *= 1000;
-
-        Calendar c = Calendar.getInstance();
-        long now = c.getTimeInMillis();
-        c.set(Calendar.HOUR_OF_DAY, 0);
-        c.set(Calendar.MINUTE, 0);
-        c.set(Calendar.SECOND, 0);
-        c.set(Calendar.MILLISECOND, 0);
-        c.setTimeInMillis(c.getTimeInMillis() + millisSinceMidnight(buildTimestamp));
-        long millisToNextRelease = (c.getTimeInMillis() - now);
-        millisToNextRelease += extraMillis;
-        if (c.getTimeInMillis() < now) {
-            millisToNextRelease += AlarmManager.INTERVAL_DAY;
-        }
-
-        return millisToNextRelease;
-    }
-
-    private static long millisSinceMidnight(long millis) {
-        Calendar c = Calendar.getInstance();
-        c.setTimeInMillis(millis);
-        c.set(Calendar.HOUR_OF_DAY, 0);
-        c.set(Calendar.MINUTE, 0);
-        c.set(Calendar.SECOND, 0);
-        c.set(Calendar.MILLISECOND, 0);
-        return millis - c.getTimeInMillis();
+        return System.currentTimeMillis() + alarmInterval;
     }
 }

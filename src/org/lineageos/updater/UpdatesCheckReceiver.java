@@ -59,7 +59,10 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
 
         final SharedPreferences preferences =
                 PreferenceManager.getDefaultSharedPreferences(context);
-        if (!preferences.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, true)) {
+
+        int autoCheckInterval = preferences.getInt(Constants.PREF_AUTO_UPDATES_CHECK_INTERVAL,
+                Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY);
+        if (autoCheckInterval == Constants.AUTO_UPDATES_CHECK_INTERVAL_NEVER) {
             return;
         }
 
@@ -155,15 +158,23 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     }
 
     public static void scheduleRepeatingUpdatesCheck(Context context) {
-        long millisToNextRelease = millisToNextRelease(context);
-        PendingIntent updateCheckIntent = getRepeatingUpdatesCheckIntent(context);
-        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
-                SystemClock.elapsedRealtime() + millisToNextRelease,
-                AlarmManager.INTERVAL_DAY, updateCheckIntent);
+        final SharedPreferences preferences =
+                PreferenceManager.getDefaultSharedPreferences(context);
+        int autoUpdatesCheckInterval = preferences.getInt(
+                Constants.PREF_AUTO_UPDATES_CHECK_INTERVAL,
+                Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY);
 
-        Date nextCheckDate = new Date(System.currentTimeMillis() + millisToNextRelease);
-        Log.d(TAG, "Setting daily updates check: " + nextCheckDate);
+        if (autoUpdatesCheckInterval != Constants.AUTO_UPDATES_CHECK_INTERVAL_NEVER) {
+            long millisToNextRelease = millisToNextRelease(context);
+            PendingIntent updateCheckIntent = getRepeatingUpdatesCheckIntent(context);
+            AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+            alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
+                    SystemClock.elapsedRealtime() + millisToNextRelease,
+                    AlarmManager.INTERVAL_DAY, updateCheckIntent);
+
+            Date nextCheckDate = new Date(System.currentTimeMillis() + millisToNextRelease);
+            Log.d(TAG, "Setting automatic updates check: " + nextCheckDate);
+        }
     }
 
     public static void cancelRepeatingUpdatesCheck(Context context) {
@@ -197,6 +208,30 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
 
     private static long millisToNextRelease(Context context) {
         final long extraMillis = 3 * AlarmManager.INTERVAL_HOUR;
+        final SharedPreferences preferences =
+                PreferenceManager.getDefaultSharedPreferences(context);
+        int autoUpdatesCheckInterval = preferences.getInt(
+                Constants.PREF_AUTO_UPDATES_CHECK_INTERVAL,
+                Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY);
+
+        long alarmInterval = 0;
+
+        switch (autoUpdatesCheckInterval) {
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_DAILY:
+                alarmInterval = AlarmManager.INTERVAL_DAY;
+                break;
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY:
+                alarmInterval = AlarmManager.INTERVAL_DAY * 7;
+                break;
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_MONTHLY:
+                alarmInterval = AlarmManager.INTERVAL_DAY * 30;
+                break;
+        }
+
+        if (alarmInterval == 0) {
+            Log.w(TAG, "millisToNextRelease: alarmInterval not set, default to a month!");
+            alarmInterval = AlarmManager.INTERVAL_DAY * 30;
+        }
 
         List<UpdateInfo> updates = null;
         try {
@@ -205,7 +240,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         }
 
         if (updates == null || updates.size() == 0) {
-            return SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_DAY;
+            return SystemClock.elapsedRealtime() + alarmInterval;
         }
 
         long buildTimestamp = 0;
@@ -226,7 +261,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         long millisToNextRelease = (c.getTimeInMillis() - now);
         millisToNextRelease += extraMillis;
         if (c.getTimeInMillis() < now) {
-            millisToNextRelease += AlarmManager.INTERVAL_DAY;
+            millisToNextRelease += alarmInterval;
         }
 
         return millisToNextRelease;

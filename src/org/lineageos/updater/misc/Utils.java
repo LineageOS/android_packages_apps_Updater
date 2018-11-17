@@ -15,6 +15,7 @@
  */
 package org.lineageos.updater.misc;
 
+import android.app.AlarmManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -367,5 +368,33 @@ public class Utils {
     public static boolean isEncrypted(Context context, File file) {
         StorageManager sm = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
         return sm.isEncrypted(file);
+    }
+
+    public static int getUpdateCheckSetting(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return preferences.getInt(Constants.PREF_AUTO_UPDATES_CHECK_INTERVAL,
+                                  Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY);
+    }
+
+    public static boolean isUpdateCheckEnabled(Context context) {
+        return getUpdateCheckSetting(context) != Constants.AUTO_UPDATES_CHECK_INTERVAL_NEVER;
+    }
+
+    public static long getUpdateCheckInterval(Context context) {
+        long alarmInterval = -1;
+
+        switch (Utils.getUpdateCheckSetting(context)) {
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_DAILY:
+                alarmInterval = AlarmManager.INTERVAL_DAY;
+                break;
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY:
+                alarmInterval = AlarmManager.INTERVAL_DAY * 7;
+                break;
+            case Constants.AUTO_UPDATES_CHECK_INTERVAL_MONTHLY:
+                alarmInterval = AlarmManager.INTERVAL_DAY * 30;
+                break;
+        }
+
+        return alarmInterval;
     }
 }

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4dfd425d_b0b076dd",
+        "filename": "src/org/lineageos/updater/UpdatesCheckReceiver.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 15734
+      },
+      "writtenOn": "2018-11-18T17:26:50Z",
+      "side": 1,
+      "message": "Doesn\u0027t this just change the interval that Android is allowed to move the Alarm in? i.e. if set to monthly, the Alarm would be allowed to fire 30 days later than intended.",
+      "range": {
+        "startLine": 186,
+        "startChar": 20,
+        "endLine": 186,
+        "endChar": 33
+      },
+      "revId": "2ed31c9463e91919d7b815147637b00b86e9c698",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e554492_87ee5a5a",
+        "filename": "src/org/lineageos/updater/UpdatesCheckReceiver.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 15734
+      },
+      "writtenOn": "2018-11-18T17:26:50Z",
+      "side": 1,
+      "message": "We should probably hook that Setting into here.",
+      "range": {
+        "startLine": 253,
+        "startChar": 35,
+        "endLine": 253,
+        "endChar": 60
+      },
+      "revId": "2ed31c9463e91919d7b815147637b00b86e9c698",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

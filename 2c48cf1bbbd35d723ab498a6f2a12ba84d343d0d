@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "05149988_3b84772d",
+        "filename": "src/org/lineageos/updater/UpdatesCheckReceiver.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 15734
+      },
+      "writtenOn": "2018-11-24T10:55:46Z",
+      "side": 1,
+      "message": "Parts like those could probably be moved into Utils for less redundant code and better readability.",
+      "range": {
+        "startLine": 161,
+        "startChar": 8,
+        "endLine": 165,
+        "endChar": 62
+      },
+      "revId": "2c48cf1bbbd35d723ab498a6f2a12ba84d343d0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b079e86_a0771d02",
+        "filename": "src/org/lineageos/updater/UpdatesCheckReceiver.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 15734
+      },
+      "writtenOn": "2018-11-24T10:55:46Z",
+      "side": 1,
+      "message": "We could probably return early here instead of wrapping everything into a big if(), but that\u0027s subject to coding style.",
+      "range": {
+        "startLine": 167,
+        "startChar": 8,
+        "endLine": 167,
+        "endChar": 86
+      },
+      "revId": "2c48cf1bbbd35d723ab498a6f2a12ba84d343d0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b245f93_8af35705",
+        "filename": "src/org/lineageos/updater/UpdatesCheckReceiver.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 15734
+      },
+      "writtenOn": "2018-11-24T10:55:46Z",
+      "side": 1,
+      "message": "Aside from a rename, this method could probably use a cleanup, because we probably don\u0027t need that \"calculate from last build timestamp\" logic anymore.",
+      "range": {
+        "startLine": 209,
+        "startChar": 24,
+        "endLine": 209,
+        "endChar": 43
+      },
+      "revId": "2c48cf1bbbd35d723ab498a6f2a12ba84d343d0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7da671d1_ed9c29fd",
+        "filename": "src/org/lineageos/updater/UpdatesCheckReceiver.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 15734
+      },
+      "writtenOn": "2018-11-24T10:55:46Z",
+      "side": 1,
+      "message": "I\u0027m still not sure if this is the correct thing to do if alarmInterval is still 0. This function is never called when the setting is currently set to \"never\", so we probably won\u0027t see this message anyways.",
+      "range": {
+        "startLine": 231,
+        "startChar": 8,
+        "endLine": 234,
+        "endChar": 9
+      },
+      "revId": "2c48cf1bbbd35d723ab498a6f2a12ba84d343d0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

@@ -47,6 +47,7 @@
     <string name="preparing_ota_first_boot">Preparando-se para a primeira inicialização</string>
     <string name="dialog_prepare_zip_message">Preparação preliminar de atualização</string>
     <string name="dialog_battery_low_title">Bateria fraca</string>
+    <string name="dialog_battery_low_message_pct">O nível da bateria está muito baixo, precisando de, pelo menos, <xliff:g id="percent_discharging">%1$d</xliff:g>%% de bateria para continuar, ou <xliff:g id="percent_charging">%2$d</xliff:g>%% se estiver carregando.</string>
     <string name="reboot">Reiniciar</string>
     <string name="menu_refresh">Atualizar</string>
     <string name="menu_preferences">Preferências</string>

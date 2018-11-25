@@ -57,6 +57,7 @@
     <string name="menu_copy_url">Kopiuj adres URL</string>
     <string name="menu_export_update">Wyślij aktualizację</string>
     <string name="menu_show_changelog">Pokaż listę zmian</string>
+    <string name="menu_ab_perf_mode">Nadaj wyższy priorytet procesowi aktualizacji</string>
     <string name="snack_updates_found">Znaleziono nowe aktualizacje</string>
     <string name="snack_no_updates_found">Nie znaleziono nowych aktualizacji</string>
     <string name="snack_updates_check_failed">Sprawdzanie aktualizacji nie powiodło się. Sprawdź połączenie z Internetem i spróbuj ponownie.</string>

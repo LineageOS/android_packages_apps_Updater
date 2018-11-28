@@ -29,4 +29,8 @@ public final class BuildInfoUtils {
     public static String getBuildVersion() {
         return SystemProperties.get(Constants.PROP_BUILD_VERSION);
     }
+
+    public static String getDevice() {
+        return SystemProperties.get(Constants.PROP_DEVICE);
+    }
 }

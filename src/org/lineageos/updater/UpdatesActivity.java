@@ -119,6 +119,11 @@ public class UpdatesActivity extends UpdatesListActivity {
 
         updateLastCheckedString();
 
+        TextView headerDeviceName = (TextView) findViewById(R.id.header_device_name);
+        headerDeviceName.setText(
+                getString(R.string.list_device_name, BuildInfoUtils.getDevice());
+        );
+
         TextView headerBuildVersion = (TextView) findViewById(R.id.header_build_version);
         headerBuildVersion.setText(
                 getString(R.string.header_android_version, Build.VERSION.RELEASE));

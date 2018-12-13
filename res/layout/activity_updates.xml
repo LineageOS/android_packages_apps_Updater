@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="16dp"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/inverted"
                     android:textSize="56sp" />
 
                 <TextView
@@ -47,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_title"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/inverted"
                     android:textSize="12sp" />
 
                 <TextView
@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_device_name"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/inverted"
                     android:textSize="12sp" />
 
                 <TextView
@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_build_version"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/inverted"
                     android:textSize="12sp" />
 
                 <TextView
@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_build_date"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/inverted"
                     android:textSize="12sp" />
             </RelativeLayout>
 
@@ -79,7 +79,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@color/inverted"
                 app:layout_collapseMode="pin" />
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/list_no_updates"
-            android:textColor="?android:textColorSecondary" />
+            android:textColor="@color/inverted" />
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.v7.widget.RecyclerView

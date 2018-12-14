@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Diweddarydd</string>
+    <string name="display_name">Diweddarydd</string>
     <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
     <!-- Directory where the downloads will be exported to.
@@ -26,5 +28,14 @@
           {type} - Build type
           {incr} - Incremental version
     -->
+    <string name="verifying_download_notification">Yn dilysu\'r diweddariad</string>
+    <string name="download_starting_notification">Yn dechrau lawrlwytho</string>
+    <string name="snack_updates_check_failed">Methodd gwiriad y diweddariad. Gwiria dy gysylltiad â\'r rhwydwaith a rhoi cynnig arall arni.</string>
+    <string name="snack_download_verification_failed">Methodd dilysiad y diweddariad.</string>
+    <string name="snack_update_not_installable">Ni ellir gosod y diweddariad hwn ar ben yr adeiledd cyfredol.</string>
+    <string name="list_verifying_update">Yn dilysu\'r diweddariad</string>
     <string name="action_cancel">Diddymu</string>
+    <string name="update_on_mobile_data_title">Rhybudd</string>
+    <string name="update_on_mobile_data_message">Rwyt ar fin lawrlwytho pecyn diweddaru gyda llawer o ddata dros gysylltiad data symudol. Wyt ti am barhau?</string>
+    <string name="blocked_update_dialog_message">Ni ellir gosod y diweddariad hwn gyda\'r ap diweddarydd. Gweler <xliff:g id="info_url">%1$s</xliff:g> am wybodaeth bellach.</string>
 </resources>

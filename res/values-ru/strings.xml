@@ -58,7 +58,7 @@
     <string name="menu_export_update">Экспорт обновлений</string>
     <string name="menu_show_changelog">Показать журнал изменений</string>
     <string name="menu_ab_perf_mode">Приоритет процесса обновления</string>
-    <string name="snack_updates_found">Доступно новое обновление</string>
+    <string name="snack_updates_found">Доступно обновление</string>
     <string name="snack_no_updates_found">Обновлений не найдено</string>
     <string name="snack_updates_check_failed">Не удалось выполнить проверку обновлений. Проверьте подключение к Интернету и повторите попытку.</string>
     <string name="snack_download_failed">Загрузка не удалась. Проверьте подключение к Интернету и повторите попытку.</string>

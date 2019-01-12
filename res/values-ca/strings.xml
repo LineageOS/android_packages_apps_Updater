@@ -16,103 +16,103 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Actualitzador</string>
-  <string name="display_name">Actualitzador</string>
-  <!-- Directory where the update files will be downloaded and stored.
+    <string name="app_name">Actualitzador</string>
+    <string name="display_name">Actualitzador</string>
+    <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
-  <!-- Directory where the downloads will be exported to.
+    <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
-  <!--
+    <!--
         Optional placeholders replaced at runtime:
           {device} - Device name
           {type} - Build type
           {incr} - Incremental version
     -->
-  <string name="verification_failed_notification">Ha fallat la verificació</string>
-  <string name="verifying_download_notification">S\'està verificant l\'actualització</string>
-  <string name="downloading_notification">S\'està baixant</string>
-  <string name="download_paused_notification">Baixada en pausa</string>
-  <string name="download_paused_error_notification">Baixada fallida</string>
-  <string name="download_completed_notification">Baixada completada</string>
-  <string name="download_starting_notification">S\'està iniciant la baixada</string>
-  <string name="update_failed_notification">Actualització fallida</string>
-  <string name="new_updates_found_title">Noves actualitzacions</string>
-  <string name="text_download_speed">%1$s, %2$s/s</string>
-  <string name="pause_button">Pausa</string>
-  <string name="resume_button">Reprèn</string>
-  <string name="installing_update">S\'està instal·lant el paquet d\'actualització</string>
-  <string name="installing_update_error">Instal·lació fallida</string>
-  <string name="installing_update_finished">Actualització instal·lada</string>
-  <string name="finalizing_package">S\'està finalitzant la instal·lació del paquet</string>
-  <string name="preparing_ota_first_boot">S\'està preparant el primer inici</string>
-  <string name="dialog_prepare_zip_message">Preparació preliminar de l\'actualització</string>
-  <string name="dialog_battery_low_title">Bateria baixa</string>
-  <string name="dialog_battery_low_message_pct">El nivell de la bateria és massa baix, necessiteu com a mínim <xliff:g id="percent_discharging">%1$d</xliff:g>%% de bateria per continuar, <xliff:g id="percent_charging">%2$d</xliff:g>%% si el dispositiu s\'està carregant.</string>
-  <string name="reboot">Reinicia</string>
-  <string name="menu_refresh">Recarrega</string>
-  <string name="menu_preferences">Preferències</string>
-  <string name="menu_auto_updates_check">Comprova automàticament les actualitzacions</string>
-  <string name="menu_auto_delete_updates">Elimina les actualitzacions una vegada s\'hagin instal·lat</string>
-  <string name="menu_delete_update">Elimina</string>
-  <string name="menu_copy_url">Copia l\'URL</string>
-  <string name="menu_export_update">Exporta l\'actualització</string>
-  <string name="menu_show_changelog">Mostra el registre de canvis</string>
-  <string name="menu_ab_perf_mode">Instal·la actualitzacions més ràpidament</string>
-  <string name="snack_updates_found">No s\'han trobat noves actualitzacions</string>
-  <string name="snack_no_updates_found">No s\'han trobat noves actualitzacions</string>
-  <string name="snack_updates_check_failed">Ha fallat la comprovació d\'actualització. Verifiqueu la connexió a Internet i tomeu-ho a provar més tard.</string>
-  <string name="snack_download_failed">Ha fallat la la baixada. Verifiqueu la connexió a Internet i torneu-ho a provar més tard.</string>
-  <string name="snack_download_verification_failed">Ha fallat la verificació de l\'actualització.</string>
-  <string name="snack_download_verified">Baixada completada.</string>
-  <string name="snack_update_not_installable">Aquesta actualització no es pot instal·lar a sobre de la compilació actual.</string>
-  <string name="header_title_text">LineageOS\n%1$s</string>
-  <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-  <string name="header_last_updates_check">Darrera comprovació: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
-  <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
-  <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
-  <string name="list_verifying_update">S\'està verificant l\'actualització</string>
-  <string name="list_no_updates">No s\'han trobat noves actualitzacions. Per comprovar manualment si hi ha noves actualitzacions, utilitzeu el botó Refresca.</string>
-  <string name="action_download">Baixa</string>
-  <string name="action_pause">Pausa</string>
-  <string name="action_resume">Reprèn</string>
-  <string name="action_install">Instal·la</string>
-  <string name="action_info">Informació</string>
-  <string name="action_delete">Suprimeix</string>
-  <string name="action_cancel">Cancel·la</string>
-  <string name="confirm_delete_dialog_title">Esborra el fitxer</string>
-  <string name="confirm_delete_dialog_message">Vols esborrar el fitxer d\'actualització seleccionat?</string>
-  <string name="apply_update_dialog_title">Aplica l\'actualització</string>
-  <string name="apply_update_dialog_message">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu es reiniciarà en mode recuperació per instal·lar l\'actualització.\n\nNota: Aquesta funció requereix un «Recovery» compatible o les actualitzacions s\'hauran d\'instal·lar manualment.</string>
-  <string name="apply_update_dialog_message_ab">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu començarà a instal·lar en segon pla.\n\nUn cop completat, se\'t demanarà reiniciar.</string>
-  <string name="cancel_installation_dialog_message">Voleu cancel·lar la instal·lació?</string>
-  <string name="label_download_url">URL de baixada</string>
-  <string name="toast_download_url_copied">URL copiada</string>
-  <string name="dialog_export_title">S\'està exportant l\'actualització</string>
-  <string name="notification_export_success">Actualització exportada</string>
-  <string name="notification_export_fail">Ha fallat l\'exportació</string>
-  <string name="toast_already_exporting">Ja s\'està exportant una actualització</string>
-  <plurals name="eta_seconds">
-    <item quantity="one">Falta 1 segon</item>
-    <item quantity="other">Falten <xliff:g id="count">%d</xliff:g> segons</item>
-  </plurals>
-  <plurals name="eta_minutes">
-    <item quantity="one">Falta 1 minut</item>
-    <item quantity="other">Falten <xliff:g id="count">%d</xliff:g> minuts</item>
-  </plurals>
-  <plurals name="eta_hours">
-    <item quantity="one">Falta 1 hora</item>
-    <item quantity="other">Falten <xliff:g id="count">%d</xliff:g> hores</item>
-  </plurals>
-  <string name="update_on_mobile_data_title">Advertència</string>
-  <string name="update_on_mobile_data_message">Estàs a punt de baixar un paquet d\'actualització amb dades mòbils que probablement generarà un alt ús de dades. Voleu continuar?</string>
-  <string name="checkbox_mobile_data_warning">No ho tornis a mostrar</string>
-  <string name="menu_mobile_data_warning">Avís d\'ús de dades</string>
-  <string name="blocked_update_dialog_title">Actualització bloquejada</string>
-  <string name="blocked_update_dialog_message">Aquesta actualització no es pot instal·lar mitjançant l\'aplicació actualitzador. Per obtenir més informació, llegiu <xliff:g id="info_url">%1$s</xliff:g>.</string>
-  <string name="export_channel_title">Exportació completada</string>
-  <string name="new_updates_channel_title">Noves actualitzacions</string>
-  <string name="ongoing_channel_title">Baixades en curs</string>
-  <string name="update_failed_channel_title">Actualització fallida</string>
+    <string name="verification_failed_notification">Ha fallat la verificació</string>
+    <string name="verifying_download_notification">S\'està verificant l\'actualització</string>
+    <string name="downloading_notification">S\'està baixant</string>
+    <string name="download_paused_notification">Baixada en pausa</string>
+    <string name="download_paused_error_notification">Baixada fallida</string>
+    <string name="download_completed_notification">Baixada completada</string>
+    <string name="download_starting_notification">S\'està iniciant la baixada</string>
+    <string name="update_failed_notification">Actualització fallida</string>
+    <string name="new_updates_found_title">Noves actualitzacions</string>
+    <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="pause_button">Pausa</string>
+    <string name="resume_button">Reprèn</string>
+    <string name="installing_update">S\'està instal·lant el paquet d\'actualització</string>
+    <string name="installing_update_error">Instal·lació fallida</string>
+    <string name="installing_update_finished">Actualització instal·lada</string>
+    <string name="finalizing_package">S\'està finalitzant la instal·lació del paquet</string>
+    <string name="preparing_ota_first_boot">S\'està preparant el primer inici</string>
+    <string name="dialog_prepare_zip_message">Preparació preliminar de l\'actualització</string>
+    <string name="dialog_battery_low_title">Bateria baixa</string>
+    <string name="dialog_battery_low_message_pct">El nivell de la bateria és massa baix, necessiteu com a mínim <xliff:g id="percent_discharging">%1$d</xliff:g>%% de bateria per continuar, <xliff:g id="percent_charging">%2$d</xliff:g>%% si el dispositiu s\'està carregant.</string>
+    <string name="reboot">Reinicia</string>
+    <string name="menu_refresh">Recarrega</string>
+    <string name="menu_preferences">Preferències</string>
+    <string name="menu_auto_updates_check">Comprova automàticament les actualitzacions</string>
+    <string name="menu_auto_delete_updates">Elimina les actualitzacions una vegada s\'hagin instal·lat</string>
+    <string name="menu_delete_update">Elimina</string>
+    <string name="menu_copy_url">Copia l\'URL</string>
+    <string name="menu_export_update">Exporta l\'actualització</string>
+    <string name="menu_show_changelog">Mostra el registre de canvis</string>
+    <string name="menu_ab_perf_mode">Prioritza el procés d\'actualització</string>
+    <string name="snack_updates_found">No s\'han trobat noves actualitzacions</string>
+    <string name="snack_no_updates_found">No s\'han trobat noves actualitzacions</string>
+    <string name="snack_updates_check_failed">Ha fallat la comprovació d\'actualització. Verifiqueu la connexió a Internet i tomeu-ho a provar més tard.</string>
+    <string name="snack_download_failed">Ha fallat la la baixada. Verifiqueu la connexió a Internet i torneu-ho a provar més tard.</string>
+    <string name="snack_download_verification_failed">Ha fallat la verificació de l\'actualització.</string>
+    <string name="snack_download_verified">Baixada completada.</string>
+    <string name="snack_update_not_installable">Aquesta actualització no es pot instal·lar a sobre de la compilació actual.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Darrera comprovació: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_verifying_update">S\'està verificant l\'actualització</string>
+    <string name="list_no_updates">No s\'han trobat noves actualitzacions. Per comprovar manualment si hi ha noves actualitzacions, utilitzeu el botó Refresca.</string>
+    <string name="action_download">Baixa</string>
+    <string name="action_pause">Pausa</string>
+    <string name="action_resume">Reprèn</string>
+    <string name="action_install">Instal·la</string>
+    <string name="action_info">Informació</string>
+    <string name="action_delete">Suprimeix</string>
+    <string name="action_cancel">Cancel·la</string>
+    <string name="confirm_delete_dialog_title">Esborra el fitxer</string>
+    <string name="confirm_delete_dialog_message">Vols esborrar el fitxer d\'actualització seleccionat?</string>
+    <string name="apply_update_dialog_title">Aplica l\'actualització</string>
+    <string name="apply_update_dialog_message">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu es reiniciarà en mode recuperació per instal·lar l\'actualització.\n\nNota: Aquesta funció requereix un «Recovery» compatible o les actualitzacions s\'hauran d\'instal·lar manualment.</string>
+    <string name="apply_update_dialog_message_ab">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu començarà a instal·lar en segon pla.\n\nUn cop completat, se\'t demanarà reiniciar.</string>
+    <string name="cancel_installation_dialog_message">Voleu cancel·lar la instal·lació?</string>
+    <string name="label_download_url">URL de baixada</string>
+    <string name="toast_download_url_copied">URL copiada</string>
+    <string name="dialog_export_title">S\'està exportant l\'actualització</string>
+    <string name="notification_export_success">Actualització exportada</string>
+    <string name="notification_export_fail">Ha fallat l\'exportació</string>
+    <string name="toast_already_exporting">Ja s\'està exportant una actualització</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">Falta 1 segon</item>
+        <item quantity="other">Falten <xliff:g id="count">%d</xliff:g> segons</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">Falta 1 minut</item>
+        <item quantity="other">Falten <xliff:g id="count">%d</xliff:g> minuts</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">Falta 1 hora</item>
+        <item quantity="other">Falten <xliff:g id="count">%d</xliff:g> hores</item>
+    </plurals>
+    <string name="update_on_mobile_data_title">Advertència</string>
+    <string name="update_on_mobile_data_message">Estàs a punt de baixar un paquet d\'actualització amb dades mòbils que probablement generarà un alt ús de dades. Voleu continuar?</string>
+    <string name="checkbox_mobile_data_warning">No ho tornis a mostrar</string>
+    <string name="menu_mobile_data_warning">Avís d\'ús de dades</string>
+    <string name="blocked_update_dialog_title">Actualització bloquejada</string>
+    <string name="blocked_update_dialog_message">Aquesta actualització no es pot instal·lar mitjançant l\'aplicació actualitzador. Per obtenir més informació, llegiu <xliff:g id="info_url">%1$s</xliff:g>.</string>
+    <string name="export_channel_title">Exportació completada</string>
+    <string name="new_updates_channel_title">Noves actualitzacions</string>
+    <string name="ongoing_channel_title">Baixades en curs</string>
+    <string name="update_failed_channel_title">Actualització fallida</string>
 </resources>

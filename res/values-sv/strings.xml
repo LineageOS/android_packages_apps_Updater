@@ -16,52 +16,53 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Directory where the update files will be downloaded and stored.
+    <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
-  <!-- Directory where the downloads will be exported to.
+    <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
-  <!--
+    <!--
         Optional placeholders replaced at runtime:
           {device} - Device name
           {type} - Build type
           {incr} - Incremental version
     -->
-  <string name="verification_failed_notification">Verifieringen misslyckades</string>
-  <string name="verifying_download_notification">Verifierar uppdateringen</string>
-  <string name="downloading_notification">Laddar ner</string>
-  <string name="download_paused_notification">Nedladdning pausad</string>
-  <string name="download_paused_error_notification">Nedladdningsfel</string>
-  <string name="download_completed_notification">Nedladdning slutförd</string>
-  <string name="download_starting_notification">Påbörjar nedladdning</string>
-  <string name="new_updates_found_title">Nya uppdateringar</string>
-  <string name="text_download_speed">%1$s, %2$s/s</string>
-  <string name="resume_button">Återuppta</string>
-  <string name="installing_update">Installerar uppdateringspaketet</string>
-  <string name="installing_update_error">Installationsfel</string>
-  <string name="installing_update_finished">Uppdateringen har installerats</string>
-  <string name="reboot">Starta om</string>
-  <string name="menu_refresh">Uppdatera</string>
-  <string name="menu_auto_updates_check">Sök efter uppdateringar automatiskt</string>
-  <string name="menu_delete_update">Ta bort</string>
-  <string name="menu_copy_url">Kopiera webbadress</string>
-  <string name="menu_show_changelog">Visa ändringslogg</string>
-  <string name="snack_updates_found">Nya uppdateringar hittades</string>
-  <string name="snack_no_updates_found">Inga nya uppdateringar hittades</string>
-  <string name="snack_download_verified">Nedladdningen är slutförd.</string>
-  <string name="header_title_text">LineageOS\n%1$s</string>
-  <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-  <string name="header_last_updates_check">Senaste kontrollen utfördes: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
-  <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
-  <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> – <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_verifying_update">Verifierar uppdateringen</string>
-  <string name="action_download">Ladda ner</string>
-  <string name="confirm_delete_dialog_title">Ta bort fil</string>
-  <string name="label_download_url">Nedladdningsadress</string>
-  <string name="toast_download_url_copied">Webbadressen har kopierats</string>
-  <string name="notification_export_fail">Exporteringsfel</string>
-  <string name="update_on_mobile_data_title">Varning</string>
-  <string name="checkbox_mobile_data_warning">Visa inte igen</string>
-  <string name="export_channel_title">Export slutförd</string>
-  <string name="new_updates_channel_title">Nya uppdateringar</string>
-  <string name="ongoing_channel_title">Pågående nedladdningar</string>
+    <string name="verification_failed_notification">Verifieringen misslyckades</string>
+    <string name="verifying_download_notification">Verifierar uppdateringen</string>
+    <string name="downloading_notification">Laddar ner</string>
+    <string name="download_paused_notification">Nedladdning pausad</string>
+    <string name="download_paused_error_notification">Nedladdningsfel</string>
+    <string name="download_completed_notification">Nedladdning slutförd</string>
+    <string name="download_starting_notification">Påbörjar nedladdning</string>
+    <string name="new_updates_found_title">Nya uppdateringar</string>
+    <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="resume_button">Återuppta</string>
+    <string name="installing_update">Installerar uppdateringspaketet</string>
+    <string name="installing_update_error">Installationsfel</string>
+    <string name="installing_update_finished">Uppdateringen har installerats</string>
+    <string name="dialog_battery_low_title">Låg batterinivå</string>
+    <string name="reboot">Starta om</string>
+    <string name="menu_refresh">Uppdatera</string>
+    <string name="menu_auto_updates_check">Sök efter uppdateringar automatiskt</string>
+    <string name="menu_delete_update">Ta bort</string>
+    <string name="menu_copy_url">Kopiera webbadress</string>
+    <string name="menu_show_changelog">Visa ändringslogg</string>
+    <string name="snack_updates_found">Nya uppdateringar hittades</string>
+    <string name="snack_no_updates_found">Inga nya uppdateringar hittades</string>
+    <string name="snack_download_verified">Nedladdningen är slutförd.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Senaste kontrollen utfördes: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> – <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_verifying_update">Verifierar uppdateringen</string>
+    <string name="action_download">Ladda ner</string>
+    <string name="confirm_delete_dialog_title">Ta bort fil</string>
+    <string name="label_download_url">Nedladdningsadress</string>
+    <string name="toast_download_url_copied">Webbadressen har kopierats</string>
+    <string name="notification_export_fail">Exporteringsfel</string>
+    <string name="update_on_mobile_data_title">Varning</string>
+    <string name="checkbox_mobile_data_warning">Visa inte igen</string>
+    <string name="export_channel_title">Export slutförd</string>
+    <string name="new_updates_channel_title">Nya uppdateringar</string>
+    <string name="ongoing_channel_title">Pågående nedladdningar</string>
 </resources>

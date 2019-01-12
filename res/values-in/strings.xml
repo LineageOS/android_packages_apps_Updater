@@ -16,100 +16,100 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Pembaruan</string>
-  <string name="display_name">Pembaruan</string>
-  <!-- Directory where the update files will be downloaded and stored.
+    <string name="app_name">Pembaruan</string>
+    <string name="display_name">Pembaruan</string>
+    <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
-  <!-- Directory where the downloads will be exported to.
+    <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
-  <!--
+    <!--
         Optional placeholders replaced at runtime:
           {device} - Device name
           {type} - Build type
           {incr} - Incremental version
     -->
-  <string name="verification_failed_notification">Verifikasi gagal</string>
-  <string name="verifying_download_notification">Memverifikasi pembaruan</string>
-  <string name="downloading_notification">Mengunduh</string>
-  <string name="download_paused_notification">Unduhan dijeda</string>
-  <string name="download_paused_error_notification">Kesalahan pengunduhan</string>
-  <string name="download_completed_notification">Unduhan selesai</string>
-  <string name="download_starting_notification">Memulai unduhan</string>
-  <string name="update_failed_notification">Pembaruan gagal</string>
-  <string name="new_updates_found_title">Pembaruan baru</string>
-  <string name="text_download_speed">%1$s, %2$s/d</string>
-  <string name="pause_button">Jeda</string>
-  <string name="resume_button">Lanjutkan</string>
-  <string name="installing_update">Memasang paket pembaruan</string>
-  <string name="installing_update_error">Kesalahan pemasangan</string>
-  <string name="installing_update_finished">Pembaruan dipasang</string>
-  <string name="finalizing_package">Menyelesaikan pemasangan paket</string>
-  <string name="preparing_ota_first_boot">Mempersiapkan untuk boot pertama</string>
-  <string name="dialog_prepare_zip_message">Persiapan awal pembaruan</string>
-  <string name="dialog_battery_low_title">Baterai lemah</string>
-  <string name="dialog_battery_low_message_pct">Tingkat baterai terlalu rendah, Anda memerlukan setidaknya <xliff:g id="percent_discharging">%1$d</xliff:g>%% baterai untuk melanjutkan, <xliff:g id="percent_charging">%2$d</xliff:g>%% jika saat pengisian.</string>
-  <string name="reboot">Mulai ulang</string>
-  <string name="menu_refresh">Segarkan</string>
-  <string name="menu_preferences">Preferensi</string>
-  <string name="menu_auto_updates_check">Periksa pembaruan otomatis</string>
-  <string name="menu_auto_delete_updates">Hapus pembaruan saat dipasang</string>
-  <string name="menu_delete_update">Hapus</string>
-  <string name="menu_copy_url">Salin URL</string>
-  <string name="menu_export_update">Ekspor pembaruan</string>
-  <string name="menu_show_changelog">Tampilkan catatan perubahan</string>
-  <string name="menu_ab_perf_mode">Memasang pembaruan lebih cepat</string>
-  <string name="snack_updates_found">Pembaruan baru ditemukan</string>
-  <string name="snack_no_updates_found">Tidak ada pembaruan baru ditemukan</string>
-  <string name="snack_updates_check_failed">Pemeriksaan pembaruan gagal. Silakan periksa koneksi Internet Anda dan coba lagi nanti.</string>
-  <string name="snack_download_failed">Unduhan gagal. Silakan periksa koneksi Internet Anda dan coba lagi nanti.</string>
-  <string name="snack_download_verification_failed">Verifikasi pembaruan gagal.</string>
-  <string name="snack_download_verified">Unduhan selesai.</string>
-  <string name="snack_update_not_installable">Pembaruan ini tidak dapat dipasang di atas pembuatan saat ini.</string>
-  <string name="header_title_text">LineageOS\n%1$s</string>
-  <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s </xliff:g></string>
-  <string name="header_last_updates_check">Terakhir diperiksa: <xliff:g id="date" example="1 January 1970">%1$s </xliff:g> (<xliff:g id="time" example="01:23">%2$s </xliff:g>)</string>
-  <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
-  <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="duration" example="3 minutes">%3$s</xliff:g> lagi) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
-  <string name="list_verifying_update">Memverifikasi pembaruan</string>
-  <string name="list_no_updates">Pembaruan tidak ditemukan. Untuk memeriksa pembaruan secara manual, gunakan tombol Segarkan.</string>
-  <string name="action_download">Unduh</string>
-  <string name="action_pause">Jeda</string>
-  <string name="action_resume">Lanjutkan</string>
-  <string name="action_install">Pasang</string>
-  <string name="action_info">Info</string>
-  <string name="action_delete">Hapus</string>
-  <string name="action_cancel">Batal</string>
-  <string name="confirm_delete_dialog_title">Hapus berkas</string>
-  <string name="confirm_delete_dialog_message">Hapus berkas pembaruan yang terpilih?</string>
-  <string name="apply_update_dialog_title">Terapkan pembaruan</string>
-  <string name="apply_update_dialog_message">Anda akan meningkatkan ke <xliff:g id="update_name">%1$s</xliff:g>.\n\nJika Anda menekan <xliff:g id="ok">%2$s</xliff:g>, perangkat akan mulai ulang sendiri dalam mode recovery untuk memasang pembaruan.\n\nPerhatian: Fitur ini memerlukan Recovery yang kompatibel atau pembaruan perlu dipasang secara manual.</string>
-  <string name="apply_update_dialog_message_ab">Anda akan meningkatkan ke <xliff:g id="update_name">%1$s</xliff:g>.\n\nJika Anda menekan <xliff:g id="ok">%2$s</xliff:g>, perangkat akan mulai memasang di latar belakang.\n\nSetelah selesai, Anda akan diminta untuk memulai ulang perangkat.</string>
-  <string name="cancel_installation_dialog_message">Batalkan pemasangan?</string>
-  <string name="label_download_url">URL Unduh</string>
-  <string name="toast_download_url_copied">URL disalin</string>
-  <string name="dialog_export_title">Mengekspor pembaruan</string>
-  <string name="notification_export_success">Pembaruan diekspor</string>
-  <string name="notification_export_fail">Kesalahan saat mengekspor</string>
-  <string name="toast_already_exporting">Sudah mengekspor pembaruan</string>
-  <plurals name="eta_seconds">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> detik tersisa</item>
-  </plurals>
-  <plurals name="eta_minutes">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> menit tersisa</item>
-  </plurals>
-  <plurals name="eta_hours">
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> jam tersisa</item>
-  </plurals>
-  <string name="update_on_mobile_data_title">Peringatan</string>
-  <string name="update_on_mobile_data_message">Anda akan mengunduh paket pembaruan menggunakan data seluler yang mungkin akan menyebabkan penggunaan data yang tinggi. Apakah Anda ingin melanjutkan?</string>
-  <string name="checkbox_mobile_data_warning">Jangan tampilkan lagi</string>
-  <string name="menu_mobile_data_warning">Peringatan data seluler</string>
-  <string name="blocked_update_dialog_title">Pembaruan diblokir</string>
-  <string name="blocked_update_dialog_message">Pembaruan ini tidak dapat dipasang menggunakan aplikasi pembaruan. Baca <xliff:g id="info_url">%1$s</xliff:g> untuk informasi lebih lanjut.</string>
-  <string name="export_channel_title">Penyelesaian ekspor</string>
-  <string name="new_updates_channel_title">Pembaruan baru</string>
-  <string name="ongoing_channel_title">Unduhan sedang berlangsung</string>
-  <string name="update_failed_channel_title">Pembaruan gagal</string>
+    <string name="verification_failed_notification">Verifikasi gagal</string>
+    <string name="verifying_download_notification">Memverifikasi pembaruan</string>
+    <string name="downloading_notification">Mengunduh</string>
+    <string name="download_paused_notification">Unduhan dijeda</string>
+    <string name="download_paused_error_notification">Kesalahan pengunduhan</string>
+    <string name="download_completed_notification">Unduhan selesai</string>
+    <string name="download_starting_notification">Memulai unduhan</string>
+    <string name="update_failed_notification">Pembaruan gagal</string>
+    <string name="new_updates_found_title">Pembaruan baru</string>
+    <string name="text_download_speed">%1$s, %2$s/d</string>
+    <string name="pause_button">Jeda</string>
+    <string name="resume_button">Lanjutkan</string>
+    <string name="installing_update">Memasang paket pembaruan</string>
+    <string name="installing_update_error">Kesalahan pemasangan</string>
+    <string name="installing_update_finished">Pembaruan dipasang</string>
+    <string name="finalizing_package">Menyelesaikan pemasangan paket</string>
+    <string name="preparing_ota_first_boot">Mempersiapkan untuk boot pertama</string>
+    <string name="dialog_prepare_zip_message">Persiapan awal pembaruan</string>
+    <string name="dialog_battery_low_title">Baterai lemah</string>
+    <string name="dialog_battery_low_message_pct">Tingkat baterai terlalu rendah, Anda memerlukan setidaknya <xliff:g id="percent_discharging">%1$d</xliff:g>%% baterai untuk melanjutkan, <xliff:g id="percent_charging">%2$d</xliff:g>%% jika saat pengisian.</string>
+    <string name="reboot">Mulai ulang</string>
+    <string name="menu_refresh">Segarkan</string>
+    <string name="menu_preferences">Preferensi</string>
+    <string name="menu_auto_updates_check">Periksa pembaruan otomatis</string>
+    <string name="menu_auto_delete_updates">Hapus pembaruan saat dipasang</string>
+    <string name="menu_delete_update">Hapus</string>
+    <string name="menu_copy_url">Salin URL</string>
+    <string name="menu_export_update">Ekspor pembaruan</string>
+    <string name="menu_show_changelog">Tampilkan catatan perubahan</string>
+    <string name="menu_ab_perf_mode">Prioritaskan proses pembaruan</string>
+    <string name="snack_updates_found">Pembaruan baru ditemukan</string>
+    <string name="snack_no_updates_found">Tidak ada pembaruan baru ditemukan</string>
+    <string name="snack_updates_check_failed">Pemeriksaan pembaruan gagal. Silakan periksa koneksi Internet Anda dan coba lagi nanti.</string>
+    <string name="snack_download_failed">Unduhan gagal. Silakan periksa koneksi Internet Anda dan coba lagi nanti.</string>
+    <string name="snack_download_verification_failed">Verifikasi pembaruan gagal.</string>
+    <string name="snack_download_verified">Unduhan selesai.</string>
+    <string name="snack_update_not_installable">Pembaruan ini tidak dapat dipasang di atas pembuatan saat ini.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s </xliff:g></string>
+    <string name="header_last_updates_check">Terakhir diperiksa: <xliff:g id="date" example="1 January 1970">%1$s </xliff:g> (<xliff:g id="time" example="01:23">%2$s </xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="duration" example="3 minutes">%3$s</xliff:g> lagi) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_verifying_update">Memverifikasi pembaruan</string>
+    <string name="list_no_updates">Pembaruan tidak ditemukan. Untuk memeriksa pembaruan secara manual, gunakan tombol Segarkan.</string>
+    <string name="action_download">Unduh</string>
+    <string name="action_pause">Jeda</string>
+    <string name="action_resume">Lanjutkan</string>
+    <string name="action_install">Pasang</string>
+    <string name="action_info">Info</string>
+    <string name="action_delete">Hapus</string>
+    <string name="action_cancel">Batal</string>
+    <string name="confirm_delete_dialog_title">Hapus berkas</string>
+    <string name="confirm_delete_dialog_message">Hapus berkas pembaruan yang terpilih?</string>
+    <string name="apply_update_dialog_title">Terapkan pembaruan</string>
+    <string name="apply_update_dialog_message">Anda akan meningkatkan ke <xliff:g id="update_name">%1$s</xliff:g>.\n\nJika Anda menekan <xliff:g id="ok">%2$s</xliff:g>, perangkat akan mulai ulang sendiri dalam mode recovery untuk memasang pembaruan.\n\nPerhatian: Fitur ini memerlukan Recovery yang kompatibel atau pembaruan perlu dipasang secara manual.</string>
+    <string name="apply_update_dialog_message_ab">Anda akan meningkatkan ke <xliff:g id="update_name">%1$s</xliff:g>.\n\nJika Anda menekan <xliff:g id="ok">%2$s</xliff:g>, perangkat akan mulai memasang di latar belakang.\n\nSetelah selesai, Anda akan diminta untuk memulai ulang perangkat.</string>
+    <string name="cancel_installation_dialog_message">Batalkan pemasangan?</string>
+    <string name="label_download_url">URL Unduh</string>
+    <string name="toast_download_url_copied">URL disalin</string>
+    <string name="dialog_export_title">Mengekspor pembaruan</string>
+    <string name="notification_export_success">Pembaruan diekspor</string>
+    <string name="notification_export_fail">Kesalahan saat mengekspor</string>
+    <string name="toast_already_exporting">Sudah mengekspor pembaruan</string>
+    <plurals name="eta_seconds">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> detik tersisa</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> menit tersisa</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> jam tersisa</item>
+    </plurals>
+    <string name="update_on_mobile_data_title">Peringatan</string>
+    <string name="update_on_mobile_data_message">Anda akan mengunduh paket pembaruan menggunakan data seluler yang mungkin akan menyebabkan penggunaan data yang tinggi. Apakah Anda ingin melanjutkan?</string>
+    <string name="checkbox_mobile_data_warning">Jangan tampilkan lagi</string>
+    <string name="menu_mobile_data_warning">Peringatan data seluler</string>
+    <string name="blocked_update_dialog_title">Pembaruan diblokir</string>
+    <string name="blocked_update_dialog_message">Pembaruan ini tidak dapat dipasang menggunakan aplikasi pembaruan.  Baca <xliff:g id="info_url">%1$s</xliff:g> untuk informasi lebih lanjut.</string>
+    <string name="export_channel_title">Penyelesaian ekspor</string>
+    <string name="new_updates_channel_title">Pembaruan baru</string>
+    <string name="ongoing_channel_title">Unduhan sedang berlangsung</string>
+    <string name="update_failed_channel_title">Pembaruan gagal</string>
 </resources>

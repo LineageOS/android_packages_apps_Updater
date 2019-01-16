@@ -78,19 +78,18 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
     public long addUpdate(Update update) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(UpdateEntry.COLUMN_NAME_STATUS, update.getPersistentStatus());
-        values.put(UpdateEntry.COLUMN_NAME_PATH, update.getFile().getAbsolutePath());
-        values.put(UpdateEntry.COLUMN_NAME_DOWNLOAD_ID, update.getDownloadId());
-        values.put(UpdateEntry.COLUMN_NAME_TIMESTAMP, update.getTimestamp());
-        values.put(UpdateEntry.COLUMN_NAME_TYPE, update.getType());
-        values.put(UpdateEntry.COLUMN_NAME_VERSION, update.getVersion());
-        values.put(UpdateEntry.COLUMN_NAME_SIZE, update.getFileSize());
+        fillContentValues(update, values);
         return db.insert(UpdateEntry.TABLE_NAME, null, values);
     }
 
     public long addUpdateWithOnConflict(Update update, int conflictAlgorithm) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
+        fillContentValues(update, values);
+        return db.insertWithOnConflict(UpdateEntry.TABLE_NAME, null, values, conflictAlgorithm);
+    }
+
+    private static void fillContentValues(Update update, ContentValues values) {
         values.put(UpdateEntry.COLUMN_NAME_STATUS, update.getPersistentStatus());
         values.put(UpdateEntry.COLUMN_NAME_PATH, update.getFile().getAbsolutePath());
         values.put(UpdateEntry.COLUMN_NAME_DOWNLOAD_ID, update.getDownloadId());
@@ -98,7 +97,6 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
         values.put(UpdateEntry.COLUMN_NAME_TYPE, update.getType());
         values.put(UpdateEntry.COLUMN_NAME_VERSION, update.getVersion());
         values.put(UpdateEntry.COLUMN_NAME_SIZE, update.getFileSize());
-        return db.insertWithOnConflict(UpdateEntry.TABLE_NAME, null, values, conflictAlgorithm);
     }
 
     public boolean removeUpdate(String downloadId) {

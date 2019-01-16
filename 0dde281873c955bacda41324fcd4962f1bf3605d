@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a32ac1a_82636afe",
+        "filename": "src/org/lineageos/updater/UpdatesDbHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-01-16T15:44:42Z",
+      "side": 1,
+      "message": "Why static?",
+      "range": {
+        "startLine": 92,
+        "startChar": 12,
+        "endLine": 92,
+        "endChar": 19
+      },
+      "revId": "0dde281873c955bacda41324fcd4962f1bf3605d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

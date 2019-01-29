@@ -252,7 +252,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 update.getVersion());
         viewHolder.mBuildDate.setText(buildDate);
         viewHolder.mBuildVersion.setText(buildVersion);
-        viewHolder.mBuildVersion.setCompoundDrawables(null, null, null, null);
 
         if (activeLayout) {
             handleActiveStatus(viewHolder, update);

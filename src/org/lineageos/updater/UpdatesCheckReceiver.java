@@ -59,8 +59,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
 
         final SharedPreferences preferences =
                 PreferenceManager.getDefaultSharedPreferences(context);
-
-        if (!Utils.isUpdateCheckEnabled(context)) {
+        if (!preferences.getBoolean(Constants.PREF_AUTO_UPDATES_CHECK, true)) {
             return;
         }
 
@@ -156,19 +155,15 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     }
 
     public static void scheduleRepeatingUpdatesCheck(Context context) {
-        if (!Utils.isUpdateCheckEnabled(context)) {
-            return;
-        }
-
+        long millisToNextRelease = millisToNextRelease(context);
         PendingIntent updateCheckIntent = getRepeatingUpdatesCheckIntent(context);
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        alarmMgr.setRepeating(AlarmManager.RTC, System.currentTimeMillis() +
-                Utils.getUpdateCheckInterval(context), Utils.getUpdateCheckInterval(context),
-                updateCheckIntent);
+        alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
+                SystemClock.elapsedRealtime() + millisToNextRelease,
+                AlarmManager.INTERVAL_DAY, updateCheckIntent);
 
-        Date nextCheckDate = new Date(System.currentTimeMillis() +
-                Utils.getUpdateCheckInterval(context));
-        Log.d(TAG, "Setting automatic updates check: " + nextCheckDate);
+        Date nextCheckDate = new Date(System.currentTimeMillis() + millisToNextRelease);
+        Log.d(TAG, "Setting daily updates check: " + nextCheckDate);
     }
 
     public static void cancelRepeatingUpdatesCheck(Context context) {
@@ -198,5 +193,52 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmMgr.cancel(getUpdatesCheckIntent(context));
         Log.d(TAG, "Cancelling pending one-shot check");
+    }
+
+    private static long millisToNextRelease(Context context) {
+        final long extraMillis = 3 * AlarmManager.INTERVAL_HOUR;
+
+        List<UpdateInfo> updates = null;
+        try {
+            updates = Utils.parseJson(Utils.getCachedUpdateList(context), false);
+        } catch (IOException | JSONException ignored) {
+        }
+
+        if (updates == null || updates.size() == 0) {
+            return SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_DAY;
+        }
+
+        long buildTimestamp = 0;
+        for (UpdateInfo update : updates) {
+            if (update.getTimestamp() > buildTimestamp) {
+                buildTimestamp = update.getTimestamp();
+            }
+        }
+        buildTimestamp *= 1000;
+
+        Calendar c = Calendar.getInstance();
+        long now = c.getTimeInMillis();
+        c.set(Calendar.HOUR_OF_DAY, 0);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        c.setTimeInMillis(c.getTimeInMillis() + millisSinceMidnight(buildTimestamp));
+        long millisToNextRelease = (c.getTimeInMillis() - now);
+        millisToNextRelease += extraMillis;
+        if (c.getTimeInMillis() < now) {
+            millisToNextRelease += AlarmManager.INTERVAL_DAY;
+        }
+
+        return millisToNextRelease;
+    }
+
+    private static long millisSinceMidnight(long millis) {
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(millis);
+        c.set(Calendar.HOUR_OF_DAY, 0);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        return millis - c.getTimeInMillis();
     }
 }

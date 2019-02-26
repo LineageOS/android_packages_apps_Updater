@@ -57,6 +57,7 @@
     <string name="menu_copy_url">Sao chép URL</string>
     <string name="menu_export_update">Xuất bản cập nhật</string>
     <string name="menu_show_changelog">Hiển thị nhật ký thay đổi</string>
+    <string name="menu_ab_perf_mode">Ưu tiên quá trình cập nhật</string>
     <string name="snack_updates_found">Đã tìm thấy bản cập nhật mới</string>
     <string name="snack_no_updates_found">Không tìm thấy bản cập nhật mới</string>
     <string name="snack_updates_check_failed">Kiểm tra bản cập nhật không thành công. Vui lòng kiểm tra kết nối internet của bạn và thử lại sau.</string>

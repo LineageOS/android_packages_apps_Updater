@@ -31,9 +31,11 @@
     <string name="verifying_download_notification">Yn dilysu\'r diweddariad</string>
     <string name="downloading_notification">Yn lawrlwytho</string>
     <string name="download_starting_notification">Yn dechrau lawrlwytho</string>
+    <string name="new_updates_found_title">Diweddariadau newydd</string>
     <string name="dialog_battery_low_title">Batri isel</string>
     <string name="dialog_battery_low_message_pct">Does dim digon o bŵer yn y batri. Rhaid cael o leiaf <xliff:g id="percent_discharging">%1$d</xliff:g>%% o fatri er mwyn parhau, <xliff:g id="percent_charging">%2$d</xliff:g>%% os yn gwefru.</string>
     <string name="menu_preferences">Dewisiadau</string>
+    <string name="menu_auto_delete_updates">Dileu diweddariadau ar ôl eu gosod</string>
     <string name="menu_show_changelog">Dangos log newid</string>
     <string name="menu_ab_perf_mode">Blaenoriaethu\'r broses diweddaru</string>
     <string name="snack_updates_found">Mae yna ddiweddariad(au) newydd</string>
@@ -45,11 +47,13 @@
     <string name="header_last_updates_check">Gwiriwyd diwethaf: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> o <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
     <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> o <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Yn dilysu\'r diweddariad</string>
     <string name="list_no_updates">Ni chanfuwyd diweddariadau newydd. I wirio am ddiweddariadau newydd dy hun, defnyddia\'r botwm ail-lwytho.</string>
     <string name="action_cancel">Diddymu</string>
     <string name="apply_update_dialog_message">Rwyt ar fin uwchraddio i <xliff:g id="update_name">%1$s</xliff:g>.\n\nOs wyt yn gwasgu <xliff:g id="ok">%2$s</xliff:g>, bydd y ddyfais yn ail-ddechrau ei hun i\'r modd adfer er mwyn gosod y diweddariad.\n\nNodyn: Mae ar y nodwedd hon angen Dull Adfer (recovery) cydnaws er mwyn gosod diweddariadau yn awtomatig.</string>
+    <string name="apply_update_dialog_message_ab">Rwyt ar fin uwchraddio i <xliff:g id="update_name">%1$s</xliff:g>.\n\nOs wyt yn gwasgu <xliff:g id="ok">%2$s</xliff:g>, bydd y ddyfais yn dechrau\'r gosod yn y cefndir.\n\nPan fydd wedi\'i gwblhau, cei dy hysbysu i ailddechrau\'r system.</string>
     <plurals name="eta_seconds">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> eiliadau yn weddill</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> eiliad yn weddill</item>
@@ -80,5 +84,6 @@
     <string name="menu_mobile_data_warning">Rhybudd data symudol</string>
     <string name="blocked_update_dialog_message">Ni ellir gosod y diweddariad hwn gyda\'r ap diweddarydd. Gweler <xliff:g id="info_url">%1$s</xliff:g> am wybodaeth bellach.</string>
     <string name="export_channel_title">Cwblhawyd allforio</string>
+    <string name="new_updates_channel_title">Diweddariadau newydd</string>
     <string name="ongoing_channel_title">Llwythi sy\'n parhau</string>
 </resources>

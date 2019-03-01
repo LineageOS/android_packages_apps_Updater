@@ -18,16 +18,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Aktualizace</string>
     <string name="display_name">Aktualizace</string>
-    <!-- Directory where the update files will be downloaded and stored.
-         WARNING: The application can and will delete any unknown file. -->
-    <!-- Directory where the downloads will be exported to.
-         The path is relative to the root of the external storage.-->
-    <!--
-        Optional placeholders replaced at runtime:
-          {device} - Device name
-          {type} - Build type
-          {incr} - Incremental version
-    -->
     <string name="verification_failed_notification">Ověření selhalo</string>
     <string name="verifying_download_notification">Ověření aktualizace</string>
     <string name="downloading_notification">Stahování</string>
@@ -57,6 +47,7 @@
     <string name="menu_copy_url">Kopírovat URL</string>
     <string name="menu_export_update">Export aktualizace</string>
     <string name="menu_show_changelog">Zobrazit seznam změn</string>
+    <string name="menu_ab_perf_mode">Upřednostňovat proces aktualizace</string>
     <string name="snack_updates_found">Nalezeny nové aktualizace</string>
     <string name="snack_no_updates_found">Nové aktualizace nenalezeny</string>
     <string name="snack_updates_check_failed">Zjištění nové verze selhalo. Prosím zkontrolujte připojení k internetu a pokus opakujte.</string>

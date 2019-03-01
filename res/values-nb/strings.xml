@@ -18,16 +18,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Oppdaterer</string>
     <string name="display_name">Oppdaterer</string>
-    <!-- Directory where the update files will be downloaded and stored.
-         WARNING: The application can and will delete any unknown file. -->
-    <!-- Directory where the downloads will be exported to.
-         The path is relative to the root of the external storage.-->
-    <!--
-        Optional placeholders replaced at runtime:
-          {device} - Device name
-          {type} - Build type
-          {incr} - Incremental version
-    -->
     <string name="verification_failed_notification">Bekreftelse mislyktes</string>
     <string name="verifying_download_notification">Bekrefter oppdatering</string>
     <string name="downloading_notification">Laster ned</string>

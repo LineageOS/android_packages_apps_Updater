@@ -16,14 +16,45 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Directory where the update files will be downloaded and stored.
-         WARNING: The application can and will delete any unknown file. -->
-    <!-- Directory where the downloads will be exported to.
-         The path is relative to the root of the external storage.-->
-    <!--
-        Optional placeholders replaced at runtime:
-          {device} - Device name
-          {type} - Build type
-          {incr} - Incremental version
-    -->
+    <string name="app_name">Updater</string>
+    <string name="display_name">Updater</string>
+    <string name="verification_failed_notification">Verification failed</string>
+    <string name="verifying_download_notification">Verifying update</string>
+    <string name="downloading_notification">Downloading</string>
+    <string name="download_paused_notification">Download paused</string>
+    <string name="download_paused_error_notification">Download error</string>
+    <string name="download_completed_notification">Download completed</string>
+    <string name="download_starting_notification">Starting download</string>
+    <string name="update_failed_notification">Update failed</string>
+    <string name="new_updates_found_title">New updates</string>
+    <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="pause_button">Pause</string>
+    <string name="resume_button">Resume</string>
+    <string name="installing_update">Installing update package</string>
+    <string name="installing_update_error">Install error</string>
+    <string name="installing_update_finished">Update installed</string>
+    <string name="finalizing_package">Finalizing package installation</string>
+    <string name="preparing_ota_first_boot">Preparing for first boot</string>
+    <string name="dialog_prepare_zip_message">Preliminary update preparation</string>
+    <string name="reboot">Reboot</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_preferences">Preferences</string>
+    <string name="menu_auto_updates_check">Auto updates check</string>
+    <string name="menu_auto_delete_updates">Delete updates when installed</string>
+    <string name="menu_delete_update">Delete</string>
+    <string name="menu_copy_url">Copy URL</string>
+    <string name="menu_export_update">Export update</string>
+    <string name="snack_updates_found">New updates found</string>
+    <string name="snack_no_updates_found">No new updates found</string>
+    <string name="snack_updates_check_failed">The update check failed. Please check your internet connection and try again later.</string>
+    <string name="snack_download_failed">The download failed. Please check your internet connection and try again later.</string>
+    <string name="snack_download_verification_failed">The update verification failed.</string>
+    <plurals name="eta_hours">
+        <item quantity="one">1 hour left</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> hours left</item>
+    </plurals>
+    <string name="export_channel_title">Export completion</string>
+    <string name="new_updates_channel_title">New updates</string>
+    <string name="ongoing_channel_title">Ongoing downloads</string>
+    <string name="update_failed_channel_title">Update failed</string>
 </resources>

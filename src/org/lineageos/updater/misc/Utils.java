@@ -104,6 +104,11 @@ public class Utils {
             Log.d(TAG, update.getName() + " has type " + update.getType());
             return false;
         }
+        if (update.getType().getVersion().compareTo(SystemProperties.get(
+                Constants.PROP_BUILD_VERSION)) < 0) {
+            Log.d(TAG, update.getName() + "is older than current Android version");
+            return false;
+        }
         return true;
     }
 

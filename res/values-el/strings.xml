@@ -16,98 +16,88 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Ενημερώσεις</string>
-  <string name="display_name">Ενημερώσεις</string>
-  <!-- Directory where the update files will be downloaded and stored.
-         WARNING: The application can and will delete any unknown file. -->
-  <!-- Directory where the downloads will be exported to.
-         The path is relative to the root of the external storage.-->
-  <!--
-        Optional placeholders replaced at runtime:
-          {device} - Device name
-          {type} - Build type
-          {incr} - Incremental version
-    -->
-  <string name="verification_failed_notification">Αποτυχία επαλήθευσης</string>
-  <string name="verifying_download_notification">Επαλήθευση ενημέρωσης</string>
-  <string name="downloading_notification">Λήψη</string>
-  <string name="download_paused_notification">Λήψη σε παύση</string>
-  <string name="download_paused_error_notification">Σφάλμα λήψης</string>
-  <string name="download_completed_notification">Η λήψη ολοκληρώθηκε</string>
-  <string name="download_starting_notification">Έναρξη λήψης</string>
-  <string name="update_failed_notification">Η ενημέρωση απέτυχε</string>
-  <string name="new_updates_found_title">Νέες ενημερώσεις</string>
-  <string name="text_download_speed">%1$s, %2$s/δ</string>
-  <string name="pause_button">Παύση</string>
-  <string name="resume_button">Συνέχιση</string>
-  <string name="installing_update">Εγκατάσταση πακέτου ενημέρωσης</string>
-  <string name="installing_update_error">Σφάλμα εγκατάστασης</string>
-  <string name="installing_update_finished">Η ενημέρωση εγκαταστάθηκε</string>
-  <string name="finalizing_package">Ολοκλήρωση της εγκατάστασης του πακέτου</string>
-  <string name="preparing_ota_first_boot">Προετοιμασία για την πρώτη εκκίνηση</string>
-  <string name="dialog_prepare_zip_message">Προκαταρκτική προετοιμασία ενημέρωσης</string>
-  <string name="dialog_battery_low_title">Χαμηλή μπαταρία</string>
-  <string name="dialog_battery_low_message_pct">Η στάθμη της μπαταρίας είναι πολύ χαμηλή, χρειάζεστε τουλάχιστον <xliff:g id="percent_discharging">%1$d</xliff:g>%% της μπαταρίας για να συνεχίσετε ή <xliff:g id="percent_charging">%2$d</xliff:g>%% κατά την φόρτιση.</string>
-  <string name="reboot">Επανεκκίνηση</string>
-  <string name="menu_refresh">Ανανέωση</string>
-  <string name="menu_preferences">Προτιμήσεις</string>
-  <string name="menu_auto_updates_check">Αυτόματος έλεγχος ενημερώσεων</string>
-  <string name="menu_auto_delete_updates">Διαγραφή αρχείου μετά την ενημέρωση</string>
-  <string name="menu_delete_update">Διαγραφή</string>
-  <string name="menu_copy_url">Αντιγραφή URL</string>
-  <string name="menu_export_update">Εξαγωγή ενημέρωσης</string>
-  <string name="menu_show_changelog">Εμφάνιση αλλαγών</string>
-  <string name="snack_updates_found">Βρέθηκαν νέες ενημερώσεις</string>
-  <string name="snack_no_updates_found">Δεν βρέθηκαν νέες ενημερώσεις</string>
-  <string name="snack_updates_check_failed">Ο έλεγχος για ενημερώσεις απέτυχε. Παρακαλώ ελέγξτε την σύνδεσή σας στο διαδίκτυο και προσπαθήστε αργότερα.</string>
-  <string name="snack_download_failed">Η λήψη απέτυχε. Παρακαλούμε ελέγξτε την σύνδεση σας στο διαδίκτυο και προσπαθήστε αργότερα.</string>
-  <string name="snack_download_verification_failed">Αποτυχία επαλήθευσης της ενημέρωσης.</string>
-  <string name="snack_download_verified">Η λήψη ολοκληρώθηκε.</string>
-  <string name="snack_update_not_installable">Αυτή η ενημέρωση δεν μπορεί να εγκατασταθεί πάνω από την τρέχουσα έκδοση.</string>
-  <string name="header_title_text">LineageOS\n%1$s</string>
-  <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-  <string name="header_last_updates_check">Τελευταίος έλεγχος: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
-  <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
-  <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
-  <string name="list_verifying_update">Επαλήθευση ενημέρωσης</string>
-  <string name="list_no_updates">Δεν βρέθηκαν νέες ενημερώσεις. Για να ελέγξετε χειροκίνητα για νέες ενημερώσεις, χρησιμοποιήστε το πλήκτρο Ανανέωσης.</string>
-  <string name="action_download">Λήψη</string>
-  <string name="action_pause">Παύση</string>
-  <string name="action_resume">Συνέχιση</string>
-  <string name="action_install">Εγκατάσταση</string>
-  <string name="action_info">Πληροφορίες</string>
-  <string name="action_delete">Διαγραφή</string>
-  <string name="action_cancel">Ακύρωση</string>
-  <string name="confirm_delete_dialog_title">Διαγραφή αρχείου</string>
-  <string name="confirm_delete_dialog_message">Διαγραφή του επιλεγμένου αρχείου ενημέρωσης;</string>
-  <string name="apply_update_dialog_title">Εφαρμογή ενημέρωσης</string>
-  <string name="apply_update_dialog_message">Πρόκειται να αναβαθμίσετε σε <xliff:g id="update_name">%1$s</xliff:g>.\n\nΑν πατήσετε <xliff:g id="ok">%2$s</xliff:g>, η συσκευή θα κάνει επανεκκίνηση σε λειτουργία recovery για να εγκατασταθεί η ενημέρωση.\n\nΣημείωση: Αυτή η λειτουργία απαιτεί μια συμβατή recovery αλλιώς η ενημέρωση θα πρέπει να εγκατασταθεί χειροκίνητα.</string>
-  <string name="apply_update_dialog_message_ab">Πρόκειται να αναβαθμίσετε σε <xliff:g id="update_name">%1$s</xliff:g>.\n\nΕάν πατήσετε <xliff:g id="ok">%2$s</xliff:g>, η συσκευή θα ξεκινήσει την εγκατάσταση στο παρασκήνιο.\n\nΌταν ολοκληρωθεί, θα σας ζητηθεί να κάνετε επανεκκίνηση.</string>
-  <string name="cancel_installation_dialog_message">Ακύρωση της εγκατάστασης;</string>
-  <string name="label_download_url">Λήψη συνδέσμου</string>
-  <string name="toast_download_url_copied">Ο σύνδεσμος αντιγράφηκε</string>
-  <string name="dialog_export_title">Εξαγωγή ενημέρωσης</string>
-  <string name="notification_export_success">Η ενημέρωση εξάχθηκε</string>
-  <string name="notification_export_fail">Σφάλμα εξαγωγής</string>
-  <string name="toast_already_exporting">Εξάγεται ήδη μία ενημέρωση</string>
-  <plurals name="eta_seconds">
-    <item quantity="one">απομένει 1 δευτερόλεπτο</item>
-    <item quantity="other">απομένουν <xliff:g id="count">%d</xliff:g> δευτερόλεπτα</item>
-  </plurals>
-  <plurals name="eta_minutes">
-    <item quantity="one">απομένει 1 λεπτό</item>
-    <item quantity="other">απομένουν <xliff:g id="count">%d</xliff:g> λεπτά</item>
-  </plurals>
-  <plurals name="eta_hours">
-    <item quantity="one">απομένει 1 ώρα</item>
-    <item quantity="other">απομένουν <xliff:g id="count">%d</xliff:g> ώρες</item>
-  </plurals>
-  <string name="update_on_mobile_data_title">Προσοχή</string>
-  <string name="update_on_mobile_data_message">Είστε έτοιμοι να κατεβάσετε ένα πακέτο ενημέρωσης χρησιμοποιώντας δεδομένα κινητής τηλεφωνίας το οποίο είναι πιθανό να προκαλέσει υψηλή χρήση δεδομένων. Θα θέλατε να συνεχίσετε;</string>
-  <string name="checkbox_mobile_data_warning">Να μην εμφανιστεί ξανά</string>
-  <string name="menu_mobile_data_warning">Προειδοποίηση δεδομένων κινητής τηλ.</string>
-  <string name="blocked_update_dialog_title">Η ενημέρωση μπλοκαρίστηκε</string>
-  <string name="blocked_update_dialog_message">Αυτή η ενημέρωση δεν μπορεί να εγκατασταθεί χρησιμοποιώντας την εφαρμογή ενημέρωσης.  Παρακαλούμε διαβάστε το <xliff:g id="info_url">%1$s </xliff:g> για περισσότερες πληροφορίες.</string>
+    <string name="app_name">Ενημερώσεις</string>
+    <string name="display_name">Ενημερώσεις</string>
+    <string name="verification_failed_notification">Αποτυχία επαλήθευσης</string>
+    <string name="verifying_download_notification">Επαλήθευση ενημέρωσης</string>
+    <string name="downloading_notification">Λήψη</string>
+    <string name="download_paused_notification">Λήψη σε παύση</string>
+    <string name="download_paused_error_notification">Σφάλμα λήψης</string>
+    <string name="download_completed_notification">Η λήψη ολοκληρώθηκε</string>
+    <string name="download_starting_notification">Έναρξη λήψης</string>
+    <string name="update_failed_notification">Η ενημέρωση απέτυχε</string>
+    <string name="new_updates_found_title">Νέες ενημερώσεις</string>
+    <string name="text_download_speed">%1$s, %2$s/δ</string>
+    <string name="pause_button">Παύση</string>
+    <string name="resume_button">Συνέχιση</string>
+    <string name="installing_update">Εγκατάσταση πακέτου ενημέρωσης</string>
+    <string name="installing_update_error">Σφάλμα εγκατάστασης</string>
+    <string name="installing_update_finished">Η ενημέρωση εγκαταστάθηκε</string>
+    <string name="finalizing_package">Ολοκλήρωση της εγκατάστασης του πακέτου</string>
+    <string name="preparing_ota_first_boot">Προετοιμασία για την πρώτη εκκίνηση</string>
+    <string name="dialog_prepare_zip_message">Προκαταρκτική προετοιμασία ενημέρωσης</string>
+    <string name="dialog_battery_low_title">Χαμηλή μπαταρία</string>
+    <string name="dialog_battery_low_message_pct">Η στάθμη της μπαταρίας είναι πολύ χαμηλή, χρειάζεστε τουλάχιστον <xliff:g id="percent_discharging">%1$d</xliff:g>%% της μπαταρίας για να συνεχίσετε ή <xliff:g id="percent_charging">%2$d</xliff:g>%% κατά την φόρτιση.</string>
+    <string name="reboot">Επανεκκίνηση</string>
+    <string name="menu_refresh">Ανανέωση</string>
+    <string name="menu_preferences">Προτιμήσεις</string>
+    <string name="menu_auto_updates_check">Αυτόματος έλεγχος ενημερώσεων</string>
+    <string name="menu_auto_delete_updates">Διαγραφή αρχείου μετά την ενημέρωση</string>
+    <string name="menu_delete_update">Διαγραφή</string>
+    <string name="menu_copy_url">Αντιγραφή URL</string>
+    <string name="menu_export_update">Εξαγωγή ενημέρωσης</string>
+    <string name="menu_show_changelog">Εμφάνιση αλλαγών</string>
+    <string name="snack_updates_found">Βρέθηκαν νέες ενημερώσεις</string>
+    <string name="snack_no_updates_found">Δεν βρέθηκαν νέες ενημερώσεις</string>
+    <string name="snack_updates_check_failed">Ο έλεγχος για ενημερώσεις απέτυχε. Παρακαλώ ελέγξτε την σύνδεσή σας στο διαδίκτυο και προσπαθήστε αργότερα.</string>
+    <string name="snack_download_failed">Η λήψη απέτυχε. Παρακαλούμε ελέγξτε την σύνδεση σας στο διαδίκτυο και προσπαθήστε αργότερα.</string>
+    <string name="snack_download_verification_failed">Αποτυχία επαλήθευσης της ενημέρωσης.</string>
+    <string name="snack_download_verified">Η λήψη ολοκληρώθηκε.</string>
+    <string name="snack_update_not_installable">Αυτή η ενημέρωση δεν μπορεί να εγκατασταθεί πάνω από την τρέχουσα έκδοση.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Τελευταίος έλεγχος: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_verifying_update">Επαλήθευση ενημέρωσης</string>
+    <string name="list_no_updates">Δεν βρέθηκαν νέες ενημερώσεις. Για να ελέγξετε χειροκίνητα για νέες ενημερώσεις, χρησιμοποιήστε το πλήκτρο Ανανέωσης.</string>
+    <string name="action_download">Λήψη</string>
+    <string name="action_pause">Παύση</string>
+    <string name="action_resume">Συνέχιση</string>
+    <string name="action_install">Εγκατάσταση</string>
+    <string name="action_info">Πληροφορίες</string>
+    <string name="action_delete">Διαγραφή</string>
+    <string name="action_cancel">Ακύρωση</string>
+    <string name="confirm_delete_dialog_title">Διαγραφή αρχείου</string>
+    <string name="confirm_delete_dialog_message">Διαγραφή του επιλεγμένου αρχείου ενημέρωσης;</string>
+    <string name="apply_update_dialog_title">Εφαρμογή ενημέρωσης</string>
+    <string name="apply_update_dialog_message">Πρόκειται να αναβαθμίσετε σε <xliff:g id="update_name">%1$s</xliff:g>.\n\nΑν πατήσετε <xliff:g id="ok">%2$s</xliff:g>, η συσκευή θα κάνει επανεκκίνηση σε λειτουργία recovery για να εγκατασταθεί η ενημέρωση.\n\nΣημείωση: Αυτή η λειτουργία απαιτεί μια συμβατή recovery αλλιώς η ενημέρωση θα πρέπει να εγκατασταθεί χειροκίνητα.</string>
+    <string name="apply_update_dialog_message_ab">Πρόκειται να αναβαθμίσετε σε <xliff:g id="update_name">%1$s</xliff:g>.\n\nΕάν πατήσετε <xliff:g id="ok">%2$s</xliff:g>, η συσκευή θα ξεκινήσει την εγκατάσταση στο παρασκήνιο.\n\nΌταν ολοκληρωθεί, θα σας ζητηθεί να κάνετε επανεκκίνηση.</string>
+    <string name="cancel_installation_dialog_message">Ακύρωση της εγκατάστασης;</string>
+    <string name="label_download_url">Λήψη συνδέσμου</string>
+    <string name="toast_download_url_copied">Ο σύνδεσμος αντιγράφηκε</string>
+    <string name="dialog_export_title">Εξαγωγή ενημέρωσης</string>
+    <string name="notification_export_success">Η ενημέρωση εξάχθηκε</string>
+    <string name="notification_export_fail">Σφάλμα εξαγωγής</string>
+    <string name="toast_already_exporting">Εξάγεται ήδη μία ενημέρωση</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">απομένει 1 δευτερόλεπτο</item>
+        <item quantity="other">απομένουν <xliff:g id="count">%d</xliff:g> δευτερόλεπτα</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">απομένει 1 λεπτό</item>
+        <item quantity="other">απομένουν <xliff:g id="count">%d</xliff:g> λεπτά</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">απομένει 1 ώρα</item>
+        <item quantity="other">απομένουν <xliff:g id="count">%d</xliff:g> ώρες</item>
+    </plurals>
+    <string name="update_on_mobile_data_title">Προσοχή</string>
+    <string name="update_on_mobile_data_message">Είστε έτοιμοι να κατεβάσετε ένα πακέτο ενημέρωσης χρησιμοποιώντας δεδομένα κινητής τηλεφωνίας το οποίο είναι πιθανό να προκαλέσει υψηλή χρήση δεδομένων. Θα θέλατε να συνεχίσετε;</string>
+    <string name="checkbox_mobile_data_warning">Να μην εμφανιστεί ξανά</string>
+    <string name="menu_mobile_data_warning">Προειδοποίηση δεδομένων κινητής τηλ.</string>
+    <string name="blocked_update_dialog_title">Η ενημέρωση μπλοκαρίστηκε</string>
+    <string name="blocked_update_dialog_message">Αυτή η ενημέρωση δεν μπορεί να εγκατασταθεί χρησιμοποιώντας την εφαρμογή ενημέρωσης.  Παρακαλούμε διαβάστε το <xliff:g id="info_url">%1$s </xliff:g> για περισσότερες πληροφορίες.</string>
 </resources>

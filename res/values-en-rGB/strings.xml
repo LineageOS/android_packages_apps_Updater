@@ -16,97 +16,88 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Updater</string>
-  <string name="display_name">Updater</string>
-  <!-- Directory where the update files will be downloaded and stored.
-         WARNING: The application can and will delete any unknown file. -->
-  <!-- Directory where the downloads will be exported to.
-         The path is relative to the root of the external storage.-->
-  <!--
-        Optional placeholders replaced at runtime:
-          {device} - Device name
-          {type} - Build type
-          {incr} - Incremental version
-    -->
-  <string name="verification_failed_notification">Verification failed</string>
-  <string name="verifying_download_notification">Verifying update</string>
-  <string name="downloading_notification">Downloading</string>
-  <string name="download_paused_notification">Download paused</string>
-  <string name="download_paused_error_notification">Download error</string>
-  <string name="download_completed_notification">Download completed</string>
-  <string name="download_starting_notification">Starting download</string>
-  <string name="update_failed_notification">Update failed</string>
-  <string name="new_updates_found_title">New updates</string>
-  <string name="text_download_speed">%1$s, %2$s/s</string>
-  <string name="pause_button">Pause</string>
-  <string name="resume_button">Resume</string>
-  <string name="installing_update">Installing update package</string>
-  <string name="installing_update_error">Install error</string>
-  <string name="installing_update_finished">Update installed</string>
-  <string name="finalizing_package">Finalising package installation</string>
-  <string name="preparing_ota_first_boot">Preparing for first boot</string>
-  <string name="dialog_prepare_zip_message">Preliminary update preparation</string>
-  <string name="dialog_battery_low_title">Low battery</string>
-  <string name="reboot">Reboot</string>
-  <string name="menu_refresh">Refresh</string>
-  <string name="menu_preferences">Preferences</string>
-  <string name="menu_auto_updates_check">Auto updates check</string>
-  <string name="menu_auto_delete_updates">Delete updates when installed</string>
-  <string name="menu_delete_update">Delete</string>
-  <string name="menu_copy_url">Copy URL</string>
-  <string name="menu_export_update">Export update</string>
-  <string name="menu_show_changelog">Show changelog</string>
-  <string name="snack_updates_found">New updates found</string>
-  <string name="snack_no_updates_found">No new updates found</string>
-  <string name="snack_updates_check_failed">The update check failed. Please check your internet connection and try again later.</string>
-  <string name="snack_download_failed">The download failed. Please check your internet connection and try again later.</string>
-  <string name="snack_download_verification_failed">The update verification failed.</string>
-  <string name="snack_download_verified">Download completed.</string>
-  <string name="snack_update_not_installable">This update can\'t be installed on top of the current build.</string>
-  <string name="header_title_text">LineageOS\n%1$s</string>
-  <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-  <string name="header_last_updates_check">Last checked: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
-  <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
-  <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-  <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
-  <string name="list_verifying_update">Verifying update</string>
-  <string name="list_no_updates">No new updates found. To manually check for new updates, use the Refresh button.</string>
-  <string name="action_download">Download</string>
-  <string name="action_pause">Pause</string>
-  <string name="action_resume">Resume</string>
-  <string name="action_install">Install</string>
-  <string name="action_info">Info</string>
-  <string name="action_delete">Delete</string>
-  <string name="action_cancel">Cancel</string>
-  <string name="confirm_delete_dialog_title">Delete file</string>
-  <string name="confirm_delete_dialog_message">Delete the selected update file?</string>
-  <string name="apply_update_dialog_title">Apply update</string>
-  <string name="apply_update_dialog_message">You are about to upgrade to <xliff:g id="update_name">%1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will restart itself in recovery mode to install the update.\n\nNote: This feature requires a compatible Recovery or updates will need to be installed manually.</string>
-  <string name="apply_update_dialog_message_ab">You are about to upgrade to <xliff:g id="update_name">%1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will begin installing in the background.\n\nOnce completed, you will be prompted to reboot.</string>
-  <string name="cancel_installation_dialog_message">Cancel the installation?</string>
-  <string name="label_download_url">Download URL</string>
-  <string name="toast_download_url_copied">URL Copied</string>
-  <string name="dialog_export_title">Exporting update</string>
-  <string name="notification_export_success">Update exported</string>
-  <string name="notification_export_fail">Export error</string>
-  <string name="toast_already_exporting">Already exporting an update</string>
-  <plurals name="eta_seconds">
-    <item quantity="one">1 second left</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> seconds left</item>
-  </plurals>
-  <plurals name="eta_minutes">
-    <item quantity="one">1 minute left</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> minutes left</item>
-  </plurals>
-  <plurals name="eta_hours">
-    <item quantity="one">1 hour left</item>
-    <item quantity="other"><xliff:g id="count">%d</xliff:g> hours left</item>
-  </plurals>
-  <string name="update_on_mobile_data_title">Warning</string>
-  <string name="update_on_mobile_data_message">You\'re about to download an update package using mobile data which is likely going to cause high data usage. Would you like to proceed?</string>
-  <string name="checkbox_mobile_data_warning">Do not show again</string>
-  <string name="menu_mobile_data_warning">Mobile data warning</string>
-  <string name="blocked_update_dialog_title">Update blocked</string>
-  <string name="blocked_update_dialog_message">This update cannot be installed using the updater app.  Please read <xliff:g id="info_url">%1$s</xliff:g> for more information.</string>
+    <string name="app_name">Updater</string>
+    <string name="display_name">Updater</string>
+    <string name="verification_failed_notification">Verification failed</string>
+    <string name="verifying_download_notification">Verifying update</string>
+    <string name="downloading_notification">Downloading</string>
+    <string name="download_paused_notification">Download paused</string>
+    <string name="download_paused_error_notification">Download error</string>
+    <string name="download_completed_notification">Download completed</string>
+    <string name="download_starting_notification">Starting download</string>
+    <string name="update_failed_notification">Update failed</string>
+    <string name="new_updates_found_title">New updates</string>
+    <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="pause_button">Pause</string>
+    <string name="resume_button">Resume</string>
+    <string name="installing_update">Installing update package</string>
+    <string name="installing_update_error">Install error</string>
+    <string name="installing_update_finished">Update installed</string>
+    <string name="finalizing_package">Finalising package installation</string>
+    <string name="preparing_ota_first_boot">Preparing for first boot</string>
+    <string name="dialog_prepare_zip_message">Preliminary update preparation</string>
+    <string name="dialog_battery_low_title">Low battery</string>
+    <string name="dialog_battery_low_message_pct">The battery level is too low, you need at least <xliff:g id="percent_discharging">%1$d</xliff:g>%% of the battery to continue, <xliff:g id="percent_charging">%2$d</xliff:g>%% if charging.</string>
+    <string name="reboot">Reboot</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_preferences">Preferences</string>
+    <string name="menu_auto_updates_check">Auto updates check</string>
+    <string name="menu_auto_delete_updates">Delete updates when installed</string>
+    <string name="menu_delete_update">Delete</string>
+    <string name="menu_copy_url">Copy URL</string>
+    <string name="menu_export_update">Export update</string>
+    <string name="menu_show_changelog">Show changelog</string>
+    <string name="snack_updates_found">New updates found</string>
+    <string name="snack_no_updates_found">No new updates found</string>
+    <string name="snack_updates_check_failed">The update check failed. Please check your internet connection and try again later.</string>
+    <string name="snack_download_failed">The download failed. Please check your internet connection and try again later.</string>
+    <string name="snack_download_verification_failed">The update verification failed.</string>
+    <string name="snack_download_verified">Download completed.</string>
+    <string name="snack_update_not_installable">This update can\'t be installed on top of the current build.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Last checked: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_verifying_update">Verifying update</string>
+    <string name="list_no_updates">No new updates found. To manually check for new updates, use the Refresh button.</string>
+    <string name="action_download">Download</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_install">Install</string>
+    <string name="action_info">Info</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="confirm_delete_dialog_title">Delete file</string>
+    <string name="confirm_delete_dialog_message">Delete the selected update file?</string>
+    <string name="apply_update_dialog_title">Apply update</string>
+    <string name="apply_update_dialog_message">You are about to upgrade to <xliff:g id="update_name">%1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will restart itself in recovery mode to install the update.\n\nNote: This feature requires a compatible Recovery or updates will need to be installed manually.</string>
+    <string name="apply_update_dialog_message_ab">You are about to upgrade to <xliff:g id="update_name">%1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will begin installing in the background.\n\nOnce completed, you will be prompted to reboot.</string>
+    <string name="cancel_installation_dialog_message">Cancel the installation?</string>
+    <string name="label_download_url">Download URL</string>
+    <string name="toast_download_url_copied">URL Copied</string>
+    <string name="dialog_export_title">Exporting update</string>
+    <string name="notification_export_success">Update exported</string>
+    <string name="notification_export_fail">Export error</string>
+    <string name="toast_already_exporting">Already exporting an update</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">1 second left</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> seconds left</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">1 minute left</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> minutes left</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">1 hour left</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> hours left</item>
+    </plurals>
+    <string name="update_on_mobile_data_title">Warning</string>
+    <string name="update_on_mobile_data_message">You\'re about to download an update package using mobile data which is likely going to cause high data usage. Would you like to proceed?</string>
+    <string name="checkbox_mobile_data_warning">Do not show again</string>
+    <string name="menu_mobile_data_warning">Mobile data warning</string>
+    <string name="blocked_update_dialog_title">Update blocked</string>
+    <string name="blocked_update_dialog_message">This update cannot be installed using the updater app.  Please read <xliff:g id="info_url">%1$s</xliff:g> for more information.</string>
 </resources>

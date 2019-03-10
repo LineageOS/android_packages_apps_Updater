@@ -16,31 +16,21 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Directory where the update files will be downloaded and stored.
-         WARNING: The application can and will delete any unknown file. -->
-  <!-- Directory where the downloads will be exported to.
-         The path is relative to the root of the external storage.-->
-  <!--
-        Optional placeholders replaced at runtime:
-          {device} - Device name
-          {type} - Build type
-          {incr} - Incremental version
-    -->
-  <string name="update_failed_notification">Agiornamentu fallidu</string>
-  <string name="new_updates_found_title">Agiornamentos noos</string>
-  <string name="pause_button">Pàusa</string>
-  <string name="resume_button">Sighi</string>
-  <string name="installing_update_finished">Agiornamentu installadu</string>
-  <string name="reboot">Torra a allùghere</string>
-  <string name="menu_preferences">Preferèntzias</string>
-  <string name="menu_delete_update">Iscantzella</string>
-  <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-  <string name="action_download">Iscàrriga</string>
-  <string name="action_pause">Pàusa</string>
-  <string name="action_resume">Sighi</string>
-  <string name="action_install">Installa</string>
-  <string name="action_info">Informatziones</string>
-  <string name="action_delete">Iscantzella</string>
-  <string name="action_cancel">Annulla</string>
-  <string name="update_on_mobile_data_title">Atentzione</string>
+    <string name="update_failed_notification">Agiornamentu fallidu</string>
+    <string name="new_updates_found_title">Agiornamentos noos</string>
+    <string name="pause_button">Pàusa</string>
+    <string name="resume_button">Sighi</string>
+    <string name="installing_update_finished">Agiornamentu installadu</string>
+    <string name="reboot">Torra a allùghere</string>
+    <string name="menu_preferences">Preferèntzias</string>
+    <string name="menu_delete_update">Iscantzella</string>
+    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+    <string name="action_download">Iscàrriga</string>
+    <string name="action_pause">Pàusa</string>
+    <string name="action_resume">Sighi</string>
+    <string name="action_install">Installa</string>
+    <string name="action_info">Informatziones</string>
+    <string name="action_delete">Iscantzella</string>
+    <string name="action_cancel">Annulla</string>
+    <string name="update_on_mobile_data_title">Atentzione</string>
 </resources>

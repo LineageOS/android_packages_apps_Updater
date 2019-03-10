@@ -16,71 +16,61 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Оновлення</string>
-  <string name="display_name">Оновлення</string>
-  <!-- Directory where the update files will be downloaded and stored.
-         WARNING: The application can and will delete any unknown file. -->
-  <!-- Directory where the downloads will be exported to.
-         The path is relative to the root of the external storage.-->
-  <!--
-        Optional placeholders replaced at runtime:
-          {device} - Device name
-          {type} - Build type
-          {incr} - Incremental version
-    -->
-  <string name="verification_failed_notification">Не вдалося виконати перевірку</string>
-  <string name="verifying_download_notification">Перевірка оновлення</string>
-  <string name="downloading_notification">Завантаження</string>
-  <string name="download_paused_notification">Завантаження призупинено</string>
-  <string name="download_paused_error_notification">Помилка завантаження</string>
-  <string name="download_completed_notification">Завантаження завершено</string>
-  <string name="download_starting_notification">Початок завантаження</string>
-  <string name="new_updates_found_title">Нові оновлення</string>
-  <string name="text_download_speed">%1$s, %2$s/с</string>
-  <string name="pause_button">Пауза</string>
-  <string name="resume_button">Продовжити</string>
-  <string name="installing_update">Пакунок оновлення встановлюється</string>
-  <string name="installing_update_error">Помилка встановлення</string>
-  <string name="installing_update_finished">Оновлення встановлено</string>
-  <string name="finalizing_package">Завершення встановлення</string>
-  <string name="preparing_ota_first_boot">Підготовка до першого завантаження</string>
-  <string name="dialog_prepare_zip_message">Підготовка оновлення</string>
-  <string name="reboot">Перезавантаження</string>
-  <string name="menu_refresh">Оновити</string>
-  <string name="menu_auto_updates_check">Автоматична перевірка оновлень</string>
-  <string name="menu_auto_delete_updates">Видалити файли оновлення після інсталяції</string>
-  <string name="menu_delete_update">Видалити</string>
-  <string name="menu_copy_url">Копіювати URL</string>
-  <string name="menu_export_update">Експорт оновлення</string>
-  <string name="snack_updates_found">Знайдено оновлення</string>
-  <string name="snack_no_updates_found">Оновлень не знайдено</string>
-  <string name="snack_updates_check_failed">Перевірка оновлення не вдалася. Будь-ласка перевірте з’єднання з мережею і спробуйте ще раз.</string>
-  <string name="snack_download_failed">Завантаження оновлення не вдалось. Будь-ласка перевірте з’єднання з мережею і спробуйте ще раз.</string>
-  <string name="snack_download_verification_failed">Не пройшла перевірка оновлення.</string>
-  <string name="snack_download_verified">Завантаження завершено.</string>
-  <string name="snack_update_not_installable">Це оновлення не можна інсталювати на поточну збірку.</string>
-  <string name="header_title_text">LineageOS\n%1$s</string>
-  <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-  <string name="header_last_updates_check">Остання перевірка: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
-  <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
-  <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-  <string name="list_verifying_update">Перевірка оновлення</string>
-  <string name="list_no_updates">Оновлень не знайдено. Щоб вручну перевірити наявність оновлень, натисніть кнопку Оновити.</string>
-  <string name="action_download">Завантажити</string>
-  <string name="confirm_delete_dialog_title">Видалити файл</string>
-  <string name="confirm_delete_dialog_message">Видалити обраний файл оновлення?</string>
-  <string name="apply_update_dialog_title">Застосувати оновлення</string>
-  <string name="apply_update_dialog_message">Ви збираєтесь оновитись на <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо Ви натиснете <xliff:g id="ok">%2$s</xliff:g>, пристрій перезавантажиться у Recovery для встановлення.\n\nПримітка: ця функція потребує сумісне Recovery, в іншому випадку оновлення необхідно встановити вручну.</string>
-  <string name="apply_update_dialog_message_ab">Ви збираєтесь оновитись на <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо ви натиснети на <xliff:g id="ok">%2$s</xliff:g>, пристрій почне встановлення у фоновому режимі.\n\nПісля встановлення вам буде запропоновано перезавантажити пристрій.</string>
-  <string name="label_download_url">URL-адреса завантаження</string>
-  <string name="toast_download_url_copied">URL-адресу скопійовано</string>
-  <string name="dialog_export_title">Експорт оновлення</string>
-  <string name="notification_export_success">Оновлення експортовано</string>
-  <string name="notification_export_fail">Помилка експорту</string>
-  <string name="update_on_mobile_data_title">Попередження</string>
-  <string name="update_on_mobile_data_message">Ви збираєтесь завантажити пакет оновлень за допомогою мобільних даних, що ймовірно призведе до високого використання мобільного трафіку. Хочете продовжити?</string>
-  <string name="checkbox_mobile_data_warning">Не показувати знову</string>
-  <string name="menu_mobile_data_warning">Попередження про мобільні дані</string>
-  <string name="blocked_update_dialog_title">Оновлення заблоковане</string>
-  <string name="blocked_update_dialog_message">Це оновлення не можна інсталювати за допомогою штатного оновлювача.  Будь ласка, прочитайте <xliff:g id="info_url">%1$s</xliff:g> для отримання додаткової інформації.</string>
+    <string name="app_name">Оновлення</string>
+    <string name="display_name">Оновлення</string>
+    <string name="verification_failed_notification">Не вдалося виконати перевірку</string>
+    <string name="verifying_download_notification">Перевірка оновлення</string>
+    <string name="downloading_notification">Завантаження</string>
+    <string name="download_paused_notification">Завантаження призупинено</string>
+    <string name="download_paused_error_notification">Помилка завантаження</string>
+    <string name="download_completed_notification">Завантаження завершено</string>
+    <string name="download_starting_notification">Початок завантаження</string>
+    <string name="new_updates_found_title">Нові оновлення</string>
+    <string name="text_download_speed">%1$s, %2$s/с</string>
+    <string name="pause_button">Пауза</string>
+    <string name="resume_button">Продовжити</string>
+    <string name="installing_update">Пакунок оновлення встановлюється</string>
+    <string name="installing_update_error">Помилка встановлення</string>
+    <string name="installing_update_finished">Оновлення встановлено</string>
+    <string name="finalizing_package">Завершення встановлення</string>
+    <string name="preparing_ota_first_boot">Підготовка до першого завантаження</string>
+    <string name="dialog_prepare_zip_message">Підготовка оновлення</string>
+    <string name="reboot">Перезавантаження</string>
+    <string name="menu_refresh">Оновити</string>
+    <string name="menu_auto_updates_check">Автоматична перевірка оновлень</string>
+    <string name="menu_auto_delete_updates">Видалити файли оновлення після інсталяції</string>
+    <string name="menu_delete_update">Видалити</string>
+    <string name="menu_copy_url">Копіювати URL</string>
+    <string name="menu_export_update">Експорт оновлення</string>
+    <string name="snack_updates_found">Знайдено оновлення</string>
+    <string name="snack_no_updates_found">Оновлень не знайдено</string>
+    <string name="snack_updates_check_failed">Перевірка оновлення не вдалася. Будь-ласка перевірте з’єднання з мережею і спробуйте ще раз.</string>
+    <string name="snack_download_failed">Завантаження оновлення не вдалось. Будь-ласка перевірте з’єднання з мережею і спробуйте ще раз.</string>
+    <string name="snack_download_verification_failed">Не пройшла перевірка оновлення.</string>
+    <string name="snack_download_verified">Завантаження завершено.</string>
+    <string name="snack_update_not_installable">Це оновлення не можна інсталювати на поточну збірку.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Остання перевірка: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_verifying_update">Перевірка оновлення</string>
+    <string name="list_no_updates">Оновлень не знайдено. Щоб вручну перевірити наявність оновлень, натисніть кнопку Оновити.</string>
+    <string name="action_download">Завантажити</string>
+    <string name="confirm_delete_dialog_title">Видалити файл</string>
+    <string name="confirm_delete_dialog_message">Видалити обраний файл оновлення?</string>
+    <string name="apply_update_dialog_title">Застосувати оновлення</string>
+    <string name="apply_update_dialog_message">Ви збираєтесь оновитись на <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо Ви натиснете <xliff:g id="ok">%2$s</xliff:g>, пристрій перезавантажиться у Recovery для встановлення.\n\nПримітка: ця функція потребує сумісне Recovery, в іншому випадку оновлення необхідно встановити вручну.</string>
+    <string name="apply_update_dialog_message_ab">Ви збираєтесь оновитись на <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо ви натиснети на <xliff:g id="ok">%2$s</xliff:g>, пристрій почне встановлення у фоновому режимі.\n\nПісля встановлення вам буде запропоновано перезавантажити пристрій.</string>
+    <string name="label_download_url">URL-адреса завантаження</string>
+    <string name="toast_download_url_copied">URL-адресу скопійовано</string>
+    <string name="dialog_export_title">Експорт оновлення</string>
+    <string name="notification_export_success">Оновлення експортовано</string>
+    <string name="notification_export_fail">Помилка експорту</string>
+    <string name="update_on_mobile_data_title">Попередження</string>
+    <string name="update_on_mobile_data_message">Ви збираєтесь завантажити пакет оновлень за допомогою мобільних даних, що ймовірно призведе до високого використання мобільного трафіку. Хочете продовжити?</string>
+    <string name="checkbox_mobile_data_warning">Не показувати знову</string>
+    <string name="menu_mobile_data_warning">Попередження про мобільні дані</string>
+    <string name="blocked_update_dialog_title">Оновлення заблоковане</string>
+    <string name="blocked_update_dialog_message">Це оновлення не можна інсталювати за допомогою штатного оновлювача.  Будь ласка, прочитайте <xliff:g id="info_url">%1$s</xliff:g> для отримання додаткової інформації.</string>
 </resources>

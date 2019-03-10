@@ -18,16 +18,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Updater</string>
     <string name="display_name">Updater</string>
-    <!-- Directory where the update files will be downloaded and stored.
-         WARNING: The application can and will delete any unknown file. -->
-    <!-- Directory where the downloads will be exported to.
-         The path is relative to the root of the external storage.-->
-    <!--
-        Optional placeholders replaced at runtime:
-          {device} - Device name
-          {type} - Build type
-          {incr} - Incremental version
-    -->
     <string name="verification_failed_notification">Überprüfung fehlgeschlagen</string>
     <string name="verifying_download_notification">Update wird geprüft</string>
     <string name="downloading_notification">Wird heruntergeladen</string>
@@ -52,6 +42,10 @@
     <string name="menu_refresh">Aktualisieren</string>
     <string name="menu_preferences">Voreinstellungen</string>
     <string name="menu_auto_updates_check">Automatisch nach Updates suchen</string>
+    <string name="menu_auto_updates_check_interval_daily">Einmal am Tag</string>
+    <string name="menu_auto_updates_check_interval_weekly">Einmal pro Woche</string>
+    <string name="menu_auto_updates_check_interval_monthly">Einmal pro Monat</string>
+    <string name="menu_auto_updates_check_interval_never">Niemals</string>
     <string name="menu_auto_delete_updates">Updates nach Installation löschen</string>
     <string name="menu_delete_update">Löschen</string>
     <string name="menu_copy_url">URL in Zwischenablage kopieren</string>

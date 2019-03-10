@@ -18,16 +18,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Актуализатор</string>
     <string name="display_name">Актуализатор</string>
-    <!-- Directory where the update files will be downloaded and stored.
-         WARNING: The application can and will delete any unknown file. -->
-    <!-- Directory where the downloads will be exported to.
-         The path is relative to the root of the external storage.-->
-    <!--
-        Optional placeholders replaced at runtime:
-          {device} - Device name
-          {type} - Build type
-          {incr} - Incremental version
-    -->
     <string name="verification_failed_notification">Неуспешна проверка</string>
     <string name="verifying_download_notification">Проверено обновяване</string>
     <string name="downloading_notification">Сваляне</string>
@@ -52,6 +42,10 @@
     <string name="menu_refresh">Опресняване</string>
     <string name="menu_preferences">Настройки</string>
     <string name="menu_auto_updates_check">Автоматична проверка за актуализациите</string>
+    <string name="menu_auto_updates_check_interval_daily">Ежедневно</string>
+    <string name="menu_auto_updates_check_interval_weekly">Ежеседмично</string>
+    <string name="menu_auto_updates_check_interval_monthly">Ежемесечно</string>
+    <string name="menu_auto_updates_check_interval_never">Никога</string>
     <string name="menu_auto_delete_updates">Изтриване на актуализациите след инсталиране</string>
     <string name="menu_delete_update">Изтриване</string>
     <string name="menu_copy_url">Копирай адреса</string>

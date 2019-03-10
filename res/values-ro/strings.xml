@@ -18,16 +18,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Actualizator</string>
     <string name="display_name">Actualizator</string>
-    <!-- Directory where the update files will be downloaded and stored.
-         WARNING: The application can and will delete any unknown file. -->
-    <!-- Directory where the downloads will be exported to.
-         The path is relative to the root of the external storage.-->
-    <!--
-        Optional placeholders replaced at runtime:
-          {device} - Device name
-          {type} - Build type
-          {incr} - Incremental version
-    -->
     <string name="verification_failed_notification">Verificarea a eșuat</string>
     <string name="verifying_download_notification">Verificare actualizare</string>
     <string name="downloading_notification">Descărcare</string>
@@ -52,6 +42,10 @@
     <string name="menu_refresh">Reîmprospătare</string>
     <string name="menu_preferences">Preferințe</string>
     <string name="menu_auto_updates_check">Verificare automată a actualizărilor</string>
+    <string name="menu_auto_updates_check_interval_daily">Odată pe zi</string>
+    <string name="menu_auto_updates_check_interval_weekly">Odată pe săptămână</string>
+    <string name="menu_auto_updates_check_interval_monthly">Odată pe lună</string>
+    <string name="menu_auto_updates_check_interval_never">Niciodată</string>
     <string name="menu_auto_delete_updates">Şterge actualizările atunci când sunt instalate</string>
     <string name="menu_delete_update">Șterge</string>
     <string name="menu_copy_url">Copiază URL</string>

@@ -42,6 +42,9 @@
     <string name="menu_refresh">새로고침</string>
     <string name="menu_preferences">설정</string>
     <string name="menu_auto_updates_check">업데이트 자동 확인</string>
+    <string name="menu_auto_updates_check_interval_daily">하루에 한 번</string>
+    <string name="menu_auto_updates_check_interval_weekly">일주일에 한 번</string>
+    <string name="menu_auto_updates_check_interval_monthly">한달에 한 번</string>
     <string name="menu_auto_delete_updates">설치한 뒤 업데이트 파일 삭제</string>
     <string name="menu_delete_update">삭제</string>
     <string name="menu_copy_url">URL 복사</string>

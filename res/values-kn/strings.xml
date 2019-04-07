@@ -18,17 +18,25 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="dialog_battery_low_title">ಕ್ಷೀಣಿಸಿದೆ</string>
     <string name="dialog_battery_low_message_pct">ಮಿಂತಿಣಿ ಮಟ್ಟ ತೀರಾ ಕಡಿಮೆಯಿದೆ. ಮುಂದುವರಿಸಲು ನಿಮಗೆ ಕನಿಷ್ಟ <xliff:g id="percent_discharging">%1$d</xliff:g>%% ಚಾರ್ಜ್ ಅಥವಾ ಚಾರ್ಜಿಂಗ್ನಲ್ಲಿ <xliff:g id="percent_charging">%2$d</xliff:g>%% ಬೇಕು.</string>
+    <string name="menu_auto_updates_check_interval_daily">ದಿನಕ್ಕೊಮ್ಮೆ</string>
+    <string name="menu_auto_updates_check_interval_weekly">ವಾರಕ್ಕೊಮ್ಮೆ</string>
+    <string name="menu_auto_updates_check_interval_monthly">ತಿಂಗಳಿಗೊಮ್ಮೆ</string>
+    <string name="menu_auto_updates_check_interval_never">ಎಂದಿಗೂ ಬೇಡ</string>
     <string name="menu_show_changelog">ಬದಲಾವಣೆಗಳನ್ನು	ತೋರಿಸು</string>
     <string name="menu_ab_perf_mode">ನವೀಕರಣಕ್ಕೆ ಆದ್ಯತೆ ಕೊಡು</string>
     <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> ರಲ್ಲಿ <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="apply_update_dialog_message">ನೀವು ಈಗ <xliff:g id="update_name">%1$s</xliff:g>ಗೆ ಉನ್ನತೀಕರಿಸಲು ಹೋಗುತ್ತಿದ್ದೀರಿ.\n\nನೀವು <xliff:g id="ok">%2$s</xliff:g> ಒತ್ತಿದರೆ, ಸಾಧನವು ಹೊಸ ತಂತ್ರಾಂಶ ಸ್ಥಾಪಿಸಲು ಸ್ವಯಂ ಮರುಚೇತರಿಕೆ ರೀತಿಯಲ್ಲಿ ಪುನರಾರಂಭವಾಗುತ್ತದೆ.\n\nಸೂಚನೆ: ಈ ವೈಶಿಷ್ಟ್ಯಕ್ಕೆ ಹೊಂದಿಕೊಳ್ಳುವ ಮರುಚೇತರಿಕೆ ಅಗತ್ಯವಿದೆ ಇಲ್ಲವಾದರೆ ಕೈಯಾರೆ ಉನ್ನತೀಕರಿಸಬೇಕಾಗುತ್ತದೆ.</string>
+    <string name="apply_update_dialog_message_ab">ನೀವು ಈಗ <xliff:g id="update_name">%1$s</xliff:g>ಗೆ ಉನ್ನತೀಕರಿಸಲು ಹೋಗುತ್ತಿದ್ದೀರಿ.\n\nನೀವು <xliff:g id="ok">%2$s</xliff:g> ಒತ್ತಿದರೆ, ಸಾಧನವು ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಅನುಸ್ಥಾಪನೆ ಪ್ರಾರಂಭಿಸುತ್ತದೆ.\n\nಪೂರ್ಣಗೊಂಡಾಗ ಸಾಧನವನ್ನು ಮರುಹೂಡಲು ನಿಮಗೆ ಪ್ರೇರೇಪಿಸುವುದು.</string>
     <plurals name="eta_minutes">
         <item quantity="one">೧ ನಿಮಿಷ ಬಾಕಿ</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ನಿಮಿಷಗಳು ಬಾಕಿ</item>
     </plurals>
     <plurals name="eta_hours">
         <item quantity="one">೧ ಗಂಟೆ ಬಾಕಿ</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಗಂಟೆಗಳು ಬಾಕಿ</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಗಂಟೆ ಬಾಕಿ</item>
     </plurals>
+    <string name="update_on_mobile_data_title">ಎಚ್ಚರಿಕೆ</string>
+    <string name="update_on_mobile_data_message">ನೀವು ಮೊಬೈಲ್ ದತ್ತಾಂಶವನ್ನು ಹೆಚ್ಚು ಬಳಕೆ ಉಂಟುಮಾಡುವ ನವೀಕರಣ ಘಂಟನ್ನು ಇಳಿಸ ಹೊರಟಿರುವಿರಿ. ಮುಂದುವರಿಸಬೇಕೆ?</string>
     <string name="export_channel_title">ನಿರ್ಯಾತ ಪೂರ್ಣತೆ</string>
     <string name="ongoing_channel_title">ಪ್ರಗತಿಯಲ್ಲಿರುವ ಕೆಳಭರಿತಗಳು</string>
 </resources>

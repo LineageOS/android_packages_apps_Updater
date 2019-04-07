@@ -18,6 +18,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="dialog_battery_low_title">Madal akutase</string>
     <string name="dialog_battery_low_message_pct">Akutase on liiga madal, jätkamiseks on vaja akut vähemalt <xliff:g id="percent_discharging">%1$d</xliff:g>%%, laadimise korral <xliff:g id="percent_charging">%2$d</xliff:g>%%.</string>
+    <string name="menu_auto_updates_check_interval_daily">Kord päevas</string>
+    <string name="menu_auto_updates_check_interval_weekly">Kord nädalas</string>
+    <string name="menu_auto_updates_check_interval_monthly">Kord kuus</string>
+    <string name="menu_auto_updates_check_interval_never">Mitte kunagi</string>
     <string name="menu_show_changelog">Näita muutuste nimekirja</string>
     <string name="menu_ab_perf_mode">Eelista uuendusprotsessi</string>
     <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>

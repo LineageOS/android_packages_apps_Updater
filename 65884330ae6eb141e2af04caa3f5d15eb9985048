@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e51a165_7392b8ce",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2019-04-14T21:56:56Z",
+      "side": 1,
+      "message": "Use standard java string format (%1$s) -\u003e String.format(upgradeUrl, device)",
+      "revId": "65884330ae6eb141e2af04caa3f5d15eb9985048",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea294820_4bc06c53",
+        "filename": "src/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2019-04-14T21:56:56Z",
+      "side": 1,
+      "message": "Use standard java string format (%1$s) -\u003e String.format(upgradeUrl, device)",
+      "revId": "65884330ae6eb141e2af04caa3f5d15eb9985048",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

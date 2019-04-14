@@ -162,6 +162,13 @@ public class Utils {
                 .replace("{incr}", incrementalVersion);
     }
 
+    public static String getUpgradeBlockedURL(Context context) {
+        String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
+                SystemProperties.get(Constants.PROP_DEVICE));
+        String upgradeUrl = context.getString(R.string.blocked_update_info_url);
+        return upgradeUrl.replace("{device}", device);
+    }
+
     public static String getChangelogURL(Context context) {
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
                 SystemProperties.get(Constants.PROP_DEVICE));

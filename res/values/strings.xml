@@ -142,7 +142,7 @@
 
     <string name="blocked_update_dialog_title">Update blocked</string>
     <string name="blocked_update_dialog_message">This update cannot be installed using the updater app.  Please read <xliff:g id="info_url">%1$s</xliff:g> for more information.</string>
-    <string name="blocked_update_info_url" translatable="false">http://wiki.lineageos.org/upgrading.html</string>
+    <string name="blocked_update_info_url" translatable="false">http://wiki.lineageos.org/devices/{device}/upgrade</string>
 
     <string name="export_channel_title">Export completion</string>
     <string name="new_updates_channel_title">New updates</string>

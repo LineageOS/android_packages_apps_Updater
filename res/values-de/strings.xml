@@ -42,6 +42,10 @@
     <string name="menu_refresh">Aktualisieren</string>
     <string name="menu_preferences">Voreinstellungen</string>
     <string name="menu_auto_updates_check">Automatisch nach Updates suchen</string>
+    <string name="menu_auto_updates_check_interval_daily">Einmal am Tag</string>
+    <string name="menu_auto_updates_check_interval_weekly">Einmal pro Woche</string>
+    <string name="menu_auto_updates_check_interval_monthly">Einmal pro Monat</string>
+    <string name="menu_auto_updates_check_interval_never">Niemals</string>
     <string name="menu_auto_delete_updates">Updates nach Installation löschen</string>
     <string name="menu_delete_update">Löschen</string>
     <string name="menu_copy_url">URL in Zwischenablage kopieren</string>

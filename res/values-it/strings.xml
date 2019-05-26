@@ -42,6 +42,10 @@
     <string name="menu_refresh">Ricarica</string>
     <string name="menu_preferences">Preferenze</string>
     <string name="menu_auto_updates_check">Ricerca aggiornamenti automaticamente</string>
+    <string name="menu_auto_updates_check_interval_daily">Quotidianamente</string>
+    <string name="menu_auto_updates_check_interval_weekly">Settimanalmente</string>
+    <string name="menu_auto_updates_check_interval_monthly">Mensilmente</string>
+    <string name="menu_auto_updates_check_interval_never">Mai</string>
     <string name="menu_auto_delete_updates">Elimina gli aggiornamenti dopo l\'installazione</string>
     <string name="menu_delete_update">Elimina</string>
     <string name="menu_copy_url">Copia indirizzo URL</string>

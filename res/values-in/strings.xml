@@ -42,6 +42,10 @@
     <string name="menu_refresh">Segarkan</string>
     <string name="menu_preferences">Preferensi</string>
     <string name="menu_auto_updates_check">Periksa pembaruan otomatis</string>
+    <string name="menu_auto_updates_check_interval_daily">Sehari sekali</string>
+    <string name="menu_auto_updates_check_interval_weekly">Seminggu sekali</string>
+    <string name="menu_auto_updates_check_interval_monthly">Sebulan sekali</string>
+    <string name="menu_auto_updates_check_interval_never">Jangan pernah</string>
     <string name="menu_auto_delete_updates">Hapus pembaruan saat dipasang</string>
     <string name="menu_delete_update">Hapus</string>
     <string name="menu_copy_url">Salin URL</string>

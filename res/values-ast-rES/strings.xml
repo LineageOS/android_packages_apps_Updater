@@ -42,6 +42,10 @@
     <string name="menu_refresh">Refrescar</string>
     <string name="menu_preferences">Preferencies</string>
     <string name="menu_auto_updates_check">Comprobación automática d\'anovamientos</string>
+    <string name="menu_auto_updates_check_interval_daily">Una vegada al día</string>
+    <string name="menu_auto_updates_check_interval_weekly">Una vegada por selmana</string>
+    <string name="menu_auto_updates_check_interval_monthly">Una vegada al mes</string>
+    <string name="menu_auto_updates_check_interval_never">Enxamás</string>
     <string name="menu_auto_delete_updates">Desaniciar anovamientos al instalalos</string>
     <string name="menu_delete_update">Desaniciar</string>
     <string name="menu_copy_url">Copiar URL</string>

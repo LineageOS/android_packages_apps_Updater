@@ -42,6 +42,10 @@
     <string name="menu_refresh">Опресняване</string>
     <string name="menu_preferences">Настройки</string>
     <string name="menu_auto_updates_check">Автоматична проверка за актуализациите</string>
+    <string name="menu_auto_updates_check_interval_daily">Ежедневно</string>
+    <string name="menu_auto_updates_check_interval_weekly">Ежеседмично</string>
+    <string name="menu_auto_updates_check_interval_monthly">Ежемесечно</string>
+    <string name="menu_auto_updates_check_interval_never">Никога</string>
     <string name="menu_auto_delete_updates">Изтриване на актуализациите след инсталиране</string>
     <string name="menu_delete_update">Изтриване</string>
     <string name="menu_copy_url">Копирай адреса</string>

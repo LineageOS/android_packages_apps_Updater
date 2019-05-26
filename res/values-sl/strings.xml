@@ -42,6 +42,10 @@
     <string name="menu_refresh">Osveži</string>
     <string name="menu_preferences">Nastavitve</string>
     <string name="menu_auto_updates_check">Samodejno preverjanje za posodobitve</string>
+    <string name="menu_auto_updates_check_interval_daily">Enkrat na dan</string>
+    <string name="menu_auto_updates_check_interval_weekly">Enkrat na teden</string>
+    <string name="menu_auto_updates_check_interval_monthly">Enkrat na mesec</string>
+    <string name="menu_auto_updates_check_interval_never">Nikoli</string>
     <string name="menu_auto_delete_updates">Izbris posodobitev po namestitvi</string>
     <string name="menu_delete_update">Izbriši</string>
     <string name="menu_copy_url">Kopiraj URL</string>

@@ -42,6 +42,10 @@
     <string name="menu_refresh">Atualizar</string>
     <string name="menu_preferences">Preferências</string>
     <string name="menu_auto_updates_check">Autoverificar por atualizações</string>
+    <string name="menu_auto_updates_check_interval_daily">Diariamente</string>
+    <string name="menu_auto_updates_check_interval_weekly">Semanalmente</string>
+    <string name="menu_auto_updates_check_interval_monthly">Mensalmente</string>
+    <string name="menu_auto_updates_check_interval_never">Nunca</string>
     <string name="menu_auto_delete_updates">Excluir pacotes instalados</string>
     <string name="menu_delete_update">Excluir</string>
     <string name="menu_copy_url">Copiar URL</string>

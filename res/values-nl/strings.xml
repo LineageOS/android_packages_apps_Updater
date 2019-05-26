@@ -40,6 +40,10 @@
     <string name="menu_refresh">Vernieuwen</string>
     <string name="menu_preferences">Instellingen</string>
     <string name="menu_auto_updates_check">Automatisch controleren op updates</string>
+    <string name="menu_auto_updates_check_interval_daily">Een keer per dag</string>
+    <string name="menu_auto_updates_check_interval_weekly">Een keer per week</string>
+    <string name="menu_auto_updates_check_interval_monthly">Een keer per maand</string>
+    <string name="menu_auto_updates_check_interval_never">Nooit</string>
     <string name="menu_auto_delete_updates">Updates verwijderen nadat ze geïnstalleerd zijn</string>
     <string name="menu_delete_update">Verwijderen</string>
     <string name="menu_copy_url">URL kopiëren</string>

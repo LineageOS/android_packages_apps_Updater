@@ -42,6 +42,10 @@
     <string name="menu_refresh">Freskatu</string>
     <string name="menu_preferences">Hobespenak</string>
     <string name="menu_auto_updates_check">Eguneraketen egiaztaketa automatikoa</string>
+    <string name="menu_auto_updates_check_interval_daily">Egunean behin</string>
+    <string name="menu_auto_updates_check_interval_weekly">Astean behin</string>
+    <string name="menu_auto_updates_check_interval_monthly">Hilabetean behin</string>
+    <string name="menu_auto_updates_check_interval_never">Inoiz ez</string>
     <string name="menu_auto_delete_updates">Ezabatu eguneraketak instalatutakoan</string>
     <string name="menu_delete_update">Ezabatu</string>
     <string name="menu_copy_url">Kopiatu URL-a</string>

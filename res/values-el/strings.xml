@@ -42,6 +42,10 @@
     <string name="menu_refresh">Ανανέωση</string>
     <string name="menu_preferences">Προτιμήσεις</string>
     <string name="menu_auto_updates_check">Αυτόματος έλεγχος ενημερώσεων</string>
+    <string name="menu_auto_updates_check_interval_daily">Μία φορά την ημέρα</string>
+    <string name="menu_auto_updates_check_interval_weekly">Μία φορά την εβδομάδα</string>
+    <string name="menu_auto_updates_check_interval_monthly">Μία φορά το μήνα</string>
+    <string name="menu_auto_updates_check_interval_never">Ποτέ</string>
     <string name="menu_auto_delete_updates">Διαγραφή αρχείου μετά την ενημέρωση</string>
     <string name="menu_delete_update">Διαγραφή</string>
     <string name="menu_copy_url">Αντιγραφή URL</string>

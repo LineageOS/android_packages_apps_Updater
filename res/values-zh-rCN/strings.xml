@@ -42,6 +42,10 @@
     <string name="menu_refresh">刷新</string>
     <string name="menu_preferences">首选项</string>
     <string name="menu_auto_updates_check">自动检查更新</string>
+    <string name="menu_auto_updates_check_interval_daily">每天一次</string>
+    <string name="menu_auto_updates_check_interval_weekly">每周一次</string>
+    <string name="menu_auto_updates_check_interval_monthly">每月一次</string>
+    <string name="menu_auto_updates_check_interval_never">永不</string>
     <string name="menu_auto_delete_updates">安装完毕后删除更新</string>
     <string name="menu_delete_update">删除</string>
     <string name="menu_copy_url">复制网址</string>

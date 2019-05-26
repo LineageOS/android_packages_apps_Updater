@@ -42,6 +42,10 @@
     <string name="menu_refresh">Ail-lwytho</string>
     <string name="menu_preferences">Dewisiadau</string>
     <string name="menu_auto_updates_check">Gwirio yn awtomatig</string>
+    <string name="menu_auto_updates_check_interval_daily">Unwaith y dydd</string>
+    <string name="menu_auto_updates_check_interval_weekly">Unwaith yr wythnos</string>
+    <string name="menu_auto_updates_check_interval_monthly">Unwaith y mis</string>
+    <string name="menu_auto_updates_check_interval_never">Byth</string>
     <string name="menu_auto_delete_updates">Dileu diweddariadau ar ôl eu gosod</string>
     <string name="menu_delete_update">Dileu</string>
     <string name="menu_copy_url">Copïo\'r URL</string>
@@ -94,7 +98,7 @@
     <plurals name="eta_minutes">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> munudau yn weddill</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> munud yn weddill</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> munud yn weddill</item>
+        <item quantity="two"><xliff:g id="count">%d</xliff:g> funud yn weddill</item>
         <item quantity="few"><xliff:g id="count">%d</xliff:g> munud yn weddill</item>
         <item quantity="many"><xliff:g id="count">%d</xliff:g> munud yn weddill</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> munud yn weddill</item>

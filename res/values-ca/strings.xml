@@ -42,6 +42,10 @@
     <string name="menu_refresh">Recarrega</string>
     <string name="menu_preferences">Preferències</string>
     <string name="menu_auto_updates_check">Comprova automàticament les actualitzacions</string>
+    <string name="menu_auto_updates_check_interval_daily">Un cop al dia</string>
+    <string name="menu_auto_updates_check_interval_weekly">Un cop per setmana</string>
+    <string name="menu_auto_updates_check_interval_monthly">Un cop al mes</string>
+    <string name="menu_auto_updates_check_interval_never">Mai</string>
     <string name="menu_auto_delete_updates">Elimina les actualitzacions una vegada s\'hagin instal·lat</string>
     <string name="menu_delete_update">Elimina</string>
     <string name="menu_copy_url">Copia l\'URL</string>

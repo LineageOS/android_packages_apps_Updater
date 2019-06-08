@@ -26,10 +26,12 @@
     <string name="download_completed_notification">Η λήψη ολοκληρώθηκε</string>
     <string name="download_starting_notification">Έναρξη λήψης</string>
     <string name="update_failed_notification">Η ενημέρωση απέτυχε</string>
+    <string name="installation_suspended_notification">Η εγκατάσταση έχει ανασταλεί</string>
     <string name="new_updates_found_title">Νέες ενημερώσεις</string>
     <string name="text_download_speed">%1$s, %2$s/δ</string>
     <string name="pause_button">Παύση</string>
     <string name="resume_button">Συνέχιση</string>
+    <string name="suspend_button">Αναστολή</string>
     <string name="installing_update">Εγκατάσταση πακέτου ενημέρωσης</string>
     <string name="installing_update_error">Σφάλμα εγκατάστασης</string>
     <string name="installing_update_finished">Η ενημέρωση εγκαταστάθηκε</string>

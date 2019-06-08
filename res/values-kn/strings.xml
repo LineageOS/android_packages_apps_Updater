@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="dialog_battery_low_title">ಕ್ಷೀಣಿಸಿದೆ</string>
+    <string name="dialog_battery_low_title">ಅಲ್ಪ ಮಿಂತಿಣಿ</string>
     <string name="dialog_battery_low_message_pct">ಮಿಂತಿಣಿ ಮಟ್ಟ ತೀರಾ ಕಡಿಮೆಯಿದೆ. ಮುಂದುವರಿಸಲು ನಿಮಗೆ ಕನಿಷ್ಟ <xliff:g id="percent_discharging">%1$d</xliff:g>%% ಚಾರ್ಜ್ ಅಥವಾ ಚಾರ್ಜಿಂಗ್ನಲ್ಲಿ <xliff:g id="percent_charging">%2$d</xliff:g>%% ಬೇಕು.</string>
     <string name="menu_auto_updates_check_interval_daily">ದಿನಕ್ಕೊಮ್ಮೆ</string>
     <string name="menu_auto_updates_check_interval_weekly">ವಾರಕ್ಕೊಮ್ಮೆ</string>

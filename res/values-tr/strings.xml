@@ -26,10 +26,12 @@
     <string name="download_completed_notification">İndirme tamamlandı</string>
     <string name="download_starting_notification">İndirme başlatılıyor</string>
     <string name="update_failed_notification">Güncelleme başarısız</string>
+    <string name="installation_suspended_notification">Kurulum askıya alındı</string>
     <string name="new_updates_found_title">Yeni güncellemeler</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Duraklat</string>
     <string name="resume_button">Devam</string>
+    <string name="suspend_button">Askıya al</string>
     <string name="installing_update">Güncelleştirme paketi yükleniyor</string>
     <string name="installing_update_error">Yükleme hatası</string>
     <string name="installing_update_finished">Güncelleştirme yüklü</string>

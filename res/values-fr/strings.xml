@@ -42,6 +42,10 @@
     <string name="menu_refresh">Actualiser</string>
     <string name="menu_preferences">Préférences</string>
     <string name="menu_auto_updates_check">Vérification des mises à jour automatique</string>
+    <string name="menu_auto_updates_check_interval_daily">Une fois par jour</string>
+    <string name="menu_auto_updates_check_interval_weekly">Une fois par semaine</string>
+    <string name="menu_auto_updates_check_interval_monthly">Une fois par mois</string>
+    <string name="menu_auto_updates_check_interval_never">Jamais</string>
     <string name="menu_auto_delete_updates">Supprimer les mises à jour une fois installées</string>
     <string name="menu_delete_update">Supprimer</string>
     <string name="menu_copy_url">Copier l\'URL</string>

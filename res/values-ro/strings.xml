@@ -26,10 +26,12 @@
     <string name="download_completed_notification">Descărcare terminată</string>
     <string name="download_starting_notification">Pornire descărcare</string>
     <string name="update_failed_notification">Actualizare eșuată</string>
+    <string name="installation_suspended_notification">Instalarea a fost suspendată</string>
     <string name="new_updates_found_title">Actualizări noi</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Pauză</string>
     <string name="resume_button">Reluaţi</string>
+    <string name="suspend_button">Suspendă</string>
     <string name="installing_update">Se instalează pachetul de actualizare</string>
     <string name="installing_update_error">Eroare la instalare</string>
     <string name="installing_update_finished">Actualizare instalată</string>

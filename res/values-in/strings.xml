@@ -26,10 +26,12 @@
     <string name="download_completed_notification">Unduhan selesai</string>
     <string name="download_starting_notification">Memulai unduhan</string>
     <string name="update_failed_notification">Pembaruan gagal</string>
+    <string name="installation_suspended_notification">Pemasangan ditunda</string>
     <string name="new_updates_found_title">Pembaruan baru</string>
     <string name="text_download_speed">%1$s, %2$s/d</string>
     <string name="pause_button">Jeda</string>
     <string name="resume_button">Lanjutkan</string>
+    <string name="suspend_button">Tunda</string>
     <string name="installing_update">Memasang paket pembaruan</string>
     <string name="installing_update_error">Kesalahan pemasangan</string>
     <string name="installing_update_finished">Pembaruan dipasang</string>

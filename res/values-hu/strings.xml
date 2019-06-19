@@ -26,10 +26,12 @@
     <string name="download_completed_notification">A letöltés befejeződött</string>
     <string name="download_starting_notification">A letöltés indítása</string>
     <string name="update_failed_notification">A frissítés sikertelen</string>
+    <string name="installation_suspended_notification">A telepítés felfüggesztve</string>
     <string name="new_updates_found_title">Új frissítések</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Szüneteltetés</string>
     <string name="resume_button">Folytatás</string>
+    <string name="suspend_button">Felfüggesztés</string>
     <string name="installing_update">Frissítőcsomag-telepítés</string>
     <string name="installing_update_error">Telepítési hiba</string>
     <string name="installing_update_finished">A frissítés telepítve</string>

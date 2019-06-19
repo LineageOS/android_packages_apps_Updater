@@ -26,10 +26,12 @@
     <string name="download_completed_notification">Deskarga osatuta</string>
     <string name="download_starting_notification">Deskarga hasten</string>
     <string name="update_failed_notification">Eguneraketak huts egin du</string>
+    <string name="installation_suspended_notification">Instalazioa eten da</string>
     <string name="new_updates_found_title">Eguneraketa berriak</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Pausatu</string>
     <string name="resume_button">Berrekin</string>
+    <string name="suspend_button">Eten</string>
     <string name="installing_update">Eguneraketa-paketea instalatzen</string>
     <string name="installing_update_error">Instalazio-errorea</string>
     <string name="installing_update_finished">Eguneraketa instalatuta</string>

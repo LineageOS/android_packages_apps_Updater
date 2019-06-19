@@ -26,10 +26,12 @@
     <string name="download_completed_notification">ダウンロードが完了しました</string>
     <string name="download_starting_notification">ダウンロードを開始中</string>
     <string name="update_failed_notification">更新に失敗しました</string>
+    <string name="installation_suspended_notification">インストールは保留されました</string>
     <string name="new_updates_found_title">新しいアップデート</string>
     <string name="text_download_speed">%1$s、%2$s/s</string>
     <string name="pause_button">一時停止</string>
     <string name="resume_button">再開</string>
+    <string name="suspend_button">保留</string>
     <string name="installing_update">アップデートパッケージをインストール中</string>
     <string name="installing_update_error">インストールエラー</string>
     <string name="installing_update_finished">アップデートのインストール完了</string>
@@ -42,6 +44,10 @@
     <string name="menu_refresh">再読み込み</string>
     <string name="menu_preferences">設定</string>
     <string name="menu_auto_updates_check">アップデートの自動確認</string>
+    <string name="menu_auto_updates_check_interval_daily">1日に1回</string>
+    <string name="menu_auto_updates_check_interval_weekly">1週間に1回</string>
+    <string name="menu_auto_updates_check_interval_monthly">1か月に1回</string>
+    <string name="menu_auto_updates_check_interval_never">なし</string>
     <string name="menu_auto_delete_updates">インストール後にアップデートを削除する</string>
     <string name="menu_delete_update">削除</string>
     <string name="menu_copy_url">URL のコピー</string>

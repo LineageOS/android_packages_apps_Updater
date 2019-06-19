@@ -26,10 +26,12 @@
     <string name="download_completed_notification">اكتمل التنزيل</string>
     <string name="download_starting_notification">بدء التنزيل</string>
     <string name="update_failed_notification">فشل التحديث</string>
+    <string name="installation_suspended_notification">تم تعليق التثبيت</string>
     <string name="new_updates_found_title">تحديثات جديدة</string>
     <string name="text_download_speed">%1$s، %2$s/ثانية</string>
     <string name="pause_button">إيقاف مؤقت</string>
     <string name="resume_button">استئناف</string>
+    <string name="suspend_button">تعليق</string>
     <string name="installing_update">جارٍ تثبيت حزمة التحديث</string>
     <string name="installing_update_error">خطأ في التثبيت</string>
     <string name="installing_update_finished">تم تثبيت التحديث</string>

@@ -26,10 +26,12 @@
     <string name="download_completed_notification">Изтеглянето приключи</string>
     <string name="download_starting_notification">Започни сваляне</string>
     <string name="update_failed_notification">Актуализацията прекратена</string>
+    <string name="installation_suspended_notification">Инсталацията е прекратена</string>
     <string name="new_updates_found_title">Нови актуализации</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Пауза</string>
     <string name="resume_button">Възобнови</string>
+    <string name="suspend_button">Прекратено</string>
     <string name="installing_update">Инсталиране на пакета за актуализация</string>
     <string name="installing_update_error">Грешка при инсталиране</string>
     <string name="installing_update_finished">Актуализацията е инсталирана</string>

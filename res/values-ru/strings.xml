@@ -26,10 +26,12 @@
     <string name="download_completed_notification">Загрузка завершена</string>
     <string name="download_starting_notification">Загрузка началась</string>
     <string name="update_failed_notification">Сбой обновления</string>
+    <string name="installation_suspended_notification">Установка приостановлена</string>
     <string name="new_updates_found_title">Доступны обновления</string>
     <string name="text_download_speed">%1$s, %2$s/с</string>
     <string name="pause_button">Пауза</string>
     <string name="resume_button">Возобновить</string>
+    <string name="suspend_button">Приостановить</string>
     <string name="installing_update">Установка обновлений</string>
     <string name="installing_update_error">Ошибка установки</string>
     <string name="installing_update_finished">Обновление установлено</string>

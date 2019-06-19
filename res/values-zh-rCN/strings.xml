@@ -26,10 +26,12 @@
     <string name="download_completed_notification">下载完成</string>
     <string name="download_starting_notification">正在开始下载</string>
     <string name="update_failed_notification">更新失败</string>
+    <string name="installation_suspended_notification">安装已挂起</string>
     <string name="new_updates_found_title">新的更新</string>
     <string name="text_download_speed">%1$s, %2$s/秒</string>
     <string name="pause_button">暂停</string>
     <string name="resume_button">继续</string>
+    <string name="suspend_button">挂起</string>
     <string name="installing_update">正在安装更新包</string>
     <string name="installing_update_error">安装错误</string>
     <string name="installing_update_finished">更新已安装</string>

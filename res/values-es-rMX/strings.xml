@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="installation_suspended_notification">Instalación suspendida</string>
+    <string name="suspend_button">Suspender</string>
     <string name="menu_auto_updates_check_interval_daily">Una vez al día</string>
     <string name="menu_auto_updates_check_interval_weekly">Una vez a la semana</string>
     <string name="menu_auto_updates_check_interval_monthly">Una vez al mes</string>

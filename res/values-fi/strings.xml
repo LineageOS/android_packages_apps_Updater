@@ -26,10 +26,12 @@
     <string name="download_completed_notification">Lataus suoritettu</string>
     <string name="download_starting_notification">Aloitetaan latausta</string>
     <string name="update_failed_notification">Päivitys epäonnistui</string>
+    <string name="installation_suspended_notification">Asennus keskeytetty</string>
     <string name="new_updates_found_title">Uudet päivitykset</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Tauko</string>
     <string name="resume_button">Jatka</string>
+    <string name="suspend_button">Keskeytä</string>
     <string name="installing_update">Asennetaan päivitystä</string>
     <string name="installing_update_error">Asennusvirhe</string>
     <string name="installing_update_finished">Päivitys asennettu</string>

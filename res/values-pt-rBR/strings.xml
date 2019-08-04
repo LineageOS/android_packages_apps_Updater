@@ -30,6 +30,7 @@
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Pausar</string>
     <string name="resume_button">Continuar</string>
+    <string name="suspend_button">Suspender</string>
     <string name="installing_update">Instalando o pacote de atualização</string>
     <string name="installing_update_error">Erro de instalação</string>
     <string name="installing_update_finished">Atualização instalada</string>

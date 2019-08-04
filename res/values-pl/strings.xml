@@ -26,10 +26,12 @@
     <string name="download_completed_notification">Pobieranie zakończone</string>
     <string name="download_starting_notification">Rozpoczęcie pobierania</string>
     <string name="update_failed_notification">Aktualizacja nie powiodła się</string>
+    <string name="installation_suspended_notification">Instalacja zawieszona</string>
     <string name="new_updates_found_title">Nowe aktualizacje</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Wstrzymaj</string>
     <string name="resume_button">Wznów</string>
+    <string name="suspend_button">Zawieś</string>
     <string name="installing_update">Instalowanie pakietu aktualizacji</string>
     <string name="installing_update_error">Błąd instalacji</string>
     <string name="installing_update_finished">Zainstalowano aktualizację</string>

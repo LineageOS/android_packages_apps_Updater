@@ -42,6 +42,10 @@
     <string name="menu_refresh">Obnovit</string>
     <string name="menu_preferences">Předvolby</string>
     <string name="menu_auto_updates_check">Automatická kontrola aktualizací</string>
+    <string name="menu_auto_updates_check_interval_daily">Jednou denně</string>
+    <string name="menu_auto_updates_check_interval_weekly">Jednou týdně</string>
+    <string name="menu_auto_updates_check_interval_monthly">Jednou měsíčně</string>
+    <string name="menu_auto_updates_check_interval_never">Nikdy</string>
     <string name="menu_auto_delete_updates">Odstranit aktualizace po instalaci</string>
     <string name="menu_delete_update">Odstranit</string>
     <string name="menu_copy_url">Kopírovat URL</string>

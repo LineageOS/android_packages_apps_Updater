@@ -16,8 +16,88 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Përditësuesi</string>
+    <string name="display_name">Përditësuesi</string>
+    <string name="verification_failed_notification">Verifikimi dështoi</string>
+    <string name="verifying_download_notification">Duke verifikuar përditësimin</string>
     <string name="downloading_notification">Duke u shkarkuar</string>
+    <string name="download_paused_notification">Shkarkimi ndaloi</string>
+    <string name="download_paused_error_notification">Problem në shkarkim</string>
+    <string name="download_completed_notification">Shkarkimi përfundoi</string>
+    <string name="download_starting_notification">Duke filluar shkarkimin</string>
+    <string name="update_failed_notification">Përditësimi dështoi</string>
+    <string name="new_updates_found_title">Përditësime të reja</string>
+    <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="pause_button">Pusho</string>
+    <string name="resume_button">Rinis</string>
+    <string name="installing_update">Duke instaluar paketën e përditësimit</string>
+    <string name="installing_update_error">Gabim në instalim</string>
+    <string name="installing_update_finished">Përditesimi u instalua</string>
+    <string name="finalizing_package">Në perfundim të instalimit të paketës</string>
+    <string name="preparing_ota_first_boot">Po përgatitet për ndezjen e parë</string>
+    <string name="dialog_prepare_zip_message">Parapërgatitje për përditësimin</string>
+    <string name="dialog_battery_low_title">Bateria e ulët</string>
+    <string name="dialog_battery_low_message_pct">Niveli i baterië është shumë i ulët, për të vazhduar duhet të jetë të paktën <xliff:g id="percent_discharging">%1$d</xliff:g>%% e baterisë, ose <xliff:g id="percent_charging">%2$d</xliff:g>%% nëse po karikohet.</string>
     <string name="reboot">Rindiz</string>
     <string name="menu_refresh">Rifresko</string>
+    <string name="menu_preferences">Parapëlqime</string>
+    <string name="menu_auto_updates_check">Kontroll automatik të përditësimeve</string>
+    <string name="menu_auto_delete_updates">Fshi përditësimet pas instalimit</string>
     <string name="menu_delete_update">Fshije</string>
+    <string name="menu_copy_url">Kopjo URL</string>
+    <string name="menu_export_update">Eksporto përditësimin</string>
+    <string name="menu_show_changelog">Shfaq ndryshimet</string>
+    <string name="snack_updates_found">Ka përditësime të reja</string>
+    <string name="snack_no_updates_found">Nuk u gjet asnjë përditësim i ri</string>
+    <string name="snack_updates_check_failed">Kontrolli për përditësim dështoi. Ju lutem kontrolloni për lidhjen me internet e më pas provoni sërish.</string>
+    <string name="snack_download_failed">Shkarkimi dështoi. Ju lutem kontrolloni për lidhjen me internetin dhe provoni sërish.</string>
+    <string name="snack_download_verification_failed">Verifikim i përditësimit dështoi.</string>
+    <string name="snack_download_verified">Shkarkimi përfundoi.</string>
+    <string name="snack_update_not_installable">Ky përditësim nuk mund të instalohet mbi këtë version aktual.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Kontrolli i fundit: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> e <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> e <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_verifying_update">Duke verifikuar përditësimin</string>
+    <string name="list_no_updates">Nuk ka përditësime të reja. Për të kërkuar manualisht për përditësime të reja, përdor butonin Rifresko.</string>
+    <string name="action_download">Shkarko</string>
+    <string name="action_pause">Pezullo</string>
+    <string name="action_resume">Rinis</string>
+    <string name="action_install">Instalo</string>
+    <string name="action_info">Informacion</string>
+    <string name="action_delete">Fshi</string>
+    <string name="action_cancel">Anullo</string>
+    <string name="confirm_delete_dialog_title">Fshi skedarin</string>
+    <string name="confirm_delete_dialog_message">Dëshiron të fshish skedarin e zgjedhur të përditësimit?</string>
+    <string name="apply_update_dialog_title">Apliko përditësimin</string>
+    <string name="apply_update_dialog_message">Ju po përditësoheni në <xliff:g id="update_name">%1$s</xliff:g>.\n\nNëse shtypni <xliff:g id="ok">%2$s</xliff:g>, telefoni do te rindizet ne Gjendjen Recovery për të instaluar përditesimin.\n\nShënim: Ky funksion kërkon nje Recovery të përshtatshem ose perditesimi do duhet të bëhet manualisht.</string>
+    <string name="apply_update_dialog_message_ab">Ju po përditësoheni në <xliff:g id="update_name">%1$s</xliff:g>.\n\nNëse zgjidhni <xliff:g id="ok">%2$s</xliff:g>, paisja do fillojë instalimin prapaskenë. \n\nSapo të përfundojë, ju do të pyeteni për të rindezur paisjen.</string>
+    <string name="cancel_installation_dialog_message">Anullo instalimin?</string>
+    <string name="label_download_url">Shkarko URL</string>
+    <string name="toast_download_url_copied">URL u kopjua</string>
+    <string name="dialog_export_title">Duke exportuar përditësimin</string>
+    <string name="notification_export_success">Përditësimi u eksportua</string>
+    <string name="notification_export_fail">Problem në exportim</string>
+    <string name="toast_already_exporting">Aktualisht po exporton një përditësim</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">1 sekondë e mbetur</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> sekonda të mbetura</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">1 minutë e mbetur</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> minuta të mbetura</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">1 orë e mbetur</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> orë të mbetura</item>
+    </plurals>
+    <string name="update_on_mobile_data_title">Paralajmërim</string>
+    <string name="update_on_mobile_data_message">Jo po shkarkoni një paketë përditësimi duke përodur internetin e kartës, e cila do konsumojë shumë internet. Dëshironi të vazhdoni?</string>
+    <string name="checkbox_mobile_data_warning">Mos e shfaq përsëri</string>
+    <string name="menu_mobile_data_warning">Paralajmërim për përdorim nga rrjeti telefonik</string>
+    <string name="blocked_update_dialog_title">Përditësimi është bllokuar</string>
+    <string name="blocked_update_dialog_message">Ky përditësim nuk mund të instalohet me app e përditësuesit. Për më shumë informacion ju lutem lexoni <xliff:g id="info_url">%1$s</xliff:g>.</string>
 </resources>

@@ -93,7 +93,7 @@
     <plurals name="eta_minutes">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> munudau yn weddill</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> munud yn weddill</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> munud yn weddill</item>
+        <item quantity="two"><xliff:g id="count">%d</xliff:g> funud yn weddill</item>
         <item quantity="few"><xliff:g id="count">%d</xliff:g> munud yn weddill</item>
         <item quantity="many"><xliff:g id="count">%d</xliff:g> munud yn weddill</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> munud yn weddill</item>

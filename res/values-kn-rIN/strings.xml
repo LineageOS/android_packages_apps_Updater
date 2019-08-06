@@ -16,13 +16,13 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="dialog_battery_low_title">ಕ್ಷೀಣಿಸಿದೆ</string>
+    <string name="dialog_battery_low_title">ಅಲ್ಪ ಮಿಂತಿಣಿ</string>
     <string name="dialog_battery_low_message_pct">ಮಿಂತಿಣಿ ಮಟ್ಟ ತೀರಾ ಕಡಿಮೆಯಿದೆ. ಮುಂದುವರಿಸಲು ನಿಮಗೆ ಕನಿಷ್ಟ <xliff:g id="percent_discharging">%1$d</xliff:g>%% ಚಾರ್ಜ್ ಅಥವಾ ಚಾರ್ಜಿಂಗ್ನಲ್ಲಿ <xliff:g id="percent_charging">%2$d</xliff:g>%% ಬೇಕು.</string>
     <string name="menu_show_changelog">ಬದಲಾವಣೆಗಳನ್ನು	ತೋರಿಸು</string>
     <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> ರಲ್ಲಿ <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <plurals name="eta_seconds">
         <item quantity="one">೧ ಕ್ಷಣ ಬಾಕಿ</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಕ್ಷಣಗಳು ಬಾಕಿ</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಕ್ಷಣ ಬಾಕಿ</item>
     </plurals>
     <plurals name="eta_minutes">
         <item quantity="one">೧ ನಿಮಿಷ ಬಾಕಿ</item>
@@ -30,6 +30,6 @@
     </plurals>
     <plurals name="eta_hours">
         <item quantity="one">೧ ಗಂಟೆ ಬಾಕಿ</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಗಂಟೆಗಳು ಬಾಕಿ</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಗಂಟೆ ಬಾಕಿ</item>
     </plurals>
 </resources>

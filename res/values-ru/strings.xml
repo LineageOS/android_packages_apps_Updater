@@ -56,8 +56,8 @@
     <string name="menu_ab_perf_mode">Приоритет процесса обновления</string>
     <string name="snack_updates_found">Доступно обновление</string>
     <string name="snack_no_updates_found">Обновлений не найдено</string>
-    <string name="snack_updates_check_failed">Не удалось выполнить проверку обновлений. Проверьте подключение к Интернету и повторите попытку.</string>
-    <string name="snack_download_failed">Загрузка не удалась. Проверьте подключение к Интернету и повторите попытку.</string>
+    <string name="snack_updates_check_failed">Проверка обновлений не удалась. Проверьте подключение к интернету и повторите попытку.</string>
+    <string name="snack_download_failed">Загрузка не удалась. Проверьте подключение к интернету и повторите попытку.</string>
     <string name="snack_download_verification_failed">Ошибка проверки обновления.</string>
     <string name="snack_download_verified">Загрузка завершена.</string>
     <string name="snack_update_not_installable">Это обновление не может быть установлено поверх текущей сборки.</string>

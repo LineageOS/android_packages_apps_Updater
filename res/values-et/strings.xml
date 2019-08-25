@@ -39,5 +39,6 @@
         <item quantity="one">1 tund jäänud</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> tundi jäänud</item>
     </plurals>
+    <string name="export_channel_title">Ekspordi lõpuleviimine</string>
     <string name="ongoing_channel_title">Käimasolevad allalaadimised</string>
 </resources>

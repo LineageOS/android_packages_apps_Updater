@@ -19,9 +19,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.UpdateEngine;
 import android.os.UpdateEngineCallback;
-import android.support.v7.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
+
+import androidx.preference.PreferenceManager;
 
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;

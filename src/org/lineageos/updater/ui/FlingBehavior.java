@@ -1,11 +1,13 @@
 package org.lineageos.updater.ui;
 
 import android.content.Context;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.appbar.AppBarLayout;
 
 public final class FlingBehavior extends AppBarLayout.Behavior {
     private static final int TOP_CHILD_FLING_THRESHOLD = 3;

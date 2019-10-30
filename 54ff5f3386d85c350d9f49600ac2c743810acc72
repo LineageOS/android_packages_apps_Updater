@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7262f812_4dabbade",
+        "filename": "src/org/lineageos/updater/controller/ABUpdateInstaller.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2019-10-30T18:51:52Z",
+      "side": 1,
+      "message": "can/should probably remove this",
+      "range": {
+        "startLine": 91,
+        "startChar": 20,
+        "endLine": 91,
+        "endChar": 71
+      },
+      "revId": "54ff5f3386d85c350d9f49600ac2c743810acc72",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

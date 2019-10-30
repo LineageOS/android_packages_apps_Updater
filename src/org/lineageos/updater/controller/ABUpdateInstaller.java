@@ -89,6 +89,7 @@ class ABUpdateInstaller {
                     update.setInstallProgress(0);
                     update.setStatus(UpdateStatus.INSTALLED);
                     mUpdaterController.notifyUpdateChange(mDownloadId);
+                    mUpdaterController.notifyInstallFinished(mDownloadId);
                     SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(
                             mContext);
                     boolean deleteUpdate = pref.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES,

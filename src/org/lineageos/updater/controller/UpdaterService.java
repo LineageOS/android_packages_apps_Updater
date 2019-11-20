@@ -402,8 +402,8 @@ public class UpdaterService extends Service {
                         getString(R.string.reboot),
                         getRebootPendingIntent());
                 mNotificationBuilder.setTicker(text);
-                mNotificationBuilder.setOngoing(false);
-                mNotificationBuilder.setAutoCancel(true);
+                mNotificationBuilder.setOngoing(true);
+                mNotificationBuilder.setAutoCancel(false);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
                 tryStopSelf();
                 break;

@@ -16,15 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">อัปเดต</string>
+    <string name="display_name">อัปเดต</string>
+    <string name="verification_failed_notification">การยืนยันล้มเหลว</string>
+    <string name="verifying_download_notification">กำลังตรวจสอบการอัปเดต</string>
+    <string name="downloading_notification">กำลังดาวน์โหลด</string>
+    <string name="download_paused_notification">ดาวน์โหลดหยุดชั่วคราว</string>
+    <string name="download_paused_error_notification">ดาวน์โหลดผิดพลาด</string>
+    <string name="download_completed_notification">ดาวน์โหลดเสร็จสมบูรณ์</string>
+    <string name="download_starting_notification">กำลัง​เริ่ม​ดาวน์​โหลด</string>
+    <string name="installation_suspended_notification">การติดตั้งถูกระงับ</string>
+    <string name="new_updates_found_title">การอัปเดตใหม่</string>
+    <string name="pause_button">พัก</string>
+    <string name="resume_button">ทำต่อ</string>
+    <string name="suspend_button">ระงับ</string>
+    <string name="installing_update">กำลังติดตั้งแพ็คเกจการอัพเดท</string>
+    <string name="installing_update_error">มีข้อผิดพลาดในการติดตั้ง</string>
+    <string name="installing_update_finished">ติดตั้งการอัปเดตเรียบร้อยแล้ว</string>
     <string name="dialog_battery_low_title">แบตเตอรี่ต่ำ</string>
     <string name="dialog_battery_low_message_pct">ระดับแบตเตอรี่ต่ำเกินไป คุณจะต้องมีระดับแบตเตอรี่อย่างน้อย <xliff:g id="percent_discharging">%1$d</xliff:g>%% เพื่อดำเนินต่อ <xliff:g id="percent_charging">%2$d</xliff:g>%% หากกำลังชาร์จ</string>
+    <string name="reboot">เริ่มระบบใหม่</string>
+    <string name="menu_refresh">โหลดใหม่</string>
+    <string name="menu_auto_updates_check">ตรวจสอบการอัปเดตอัตโนมัติ</string>
     <string name="menu_auto_updates_check_interval_daily">วันละครั้ง</string>
     <string name="menu_auto_updates_check_interval_weekly">สัปดาห์ละครั้ง</string>
     <string name="menu_auto_updates_check_interval_monthly">เดือนละครั้ง</string>
     <string name="menu_auto_updates_check_interval_never">ไม่เลย</string>
+    <string name="menu_auto_delete_updates">ลบการอัปเดตเมื่อติดตั้งเสร็จสิ้น</string>
+    <string name="menu_delete_update">ลบ</string>
+    <string name="menu_copy_url">คัดลอก URL</string>
     <string name="menu_show_changelog">แสดงการเปลี่ยนแปลง</string>
     <string name="menu_ab_perf_mode">จัดลำดับความสำคัญของกระบวนการอัพเดต</string>
+    <string name="snack_updates_found">ไม่พบการอัปเดตใหม่</string>
     <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> สำหรับ <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="label_download_url">ดาวน์โหลด URL</string>
+    <string name="toast_download_url_copied">คัดลอก URL แล้ว</string>
     <plurals name="eta_seconds">
         <item quantity="other">เหลือ <xliff:g id="count">%d</xliff:g> วินาที</item>
     </plurals>
@@ -34,6 +60,10 @@
     <plurals name="eta_hours">
         <item quantity="other">เหลือ <xliff:g id="count">%d</xliff:g> ชั่วโมง</item>
     </plurals>
+    <string name="update_on_mobile_data_title">คำเตือน</string>
+    <string name="update_on_mobile_data_message">คุณกำลังจะดาวน์โหลดแพ็คเกจการอัปเดตโดยใช้ข้อมูลมือถือซึ่งมีโอกาสที่จะทำให้เกิดการใช้ข้อมูลสูง คุณต้องการดำเนินการต่อหรือไม่</string>
+    <string name="checkbox_mobile_data_warning">ไม่ต้องแสดงอีก</string>
     <string name="export_channel_title">ส่งออกเสร็จสมบูรณ์</string>
+    <string name="new_updates_channel_title">การอัปเดตใหม่</string>
     <string name="ongoing_channel_title">การดาวน์โหลดที่กำลังดำเนินอยู่</string>
 </resources>

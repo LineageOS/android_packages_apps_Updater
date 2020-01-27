@@ -107,7 +107,7 @@
     <string name="menu_mobile_data_warning">Mobil verilənlər xəbərdarlığı</string>
     <string name="blocked_update_dialog_title">Yeniləmə əngəlləndi</string>
     <string name="blocked_update_dialog_message">Bu yeniləmə, tətbiq yeniləyici istifadə edilərək quraşdırıla bilməz. Ətraflı məlumat üçün zəhmət olmasa <xliff:g id="info_url">%1$s</xliff:g> ünvanını oxuyun.</string>
-    <string name="export_channel_title">İxrac tamamlandı</string>
+    <string name="export_channel_title">Köçürmə tamamlandı</string>
     <string name="new_updates_channel_title">Ən son yeniləmələr</string>
     <string name="ongoing_channel_title">Davam edən endirmələr</string>
     <string name="update_failed_channel_title">Yeniləmə uğursuz oldu</string>

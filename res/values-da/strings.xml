@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="display_name">Opdatering</string>
     <string name="downloading_notification">Henter</string>
     <string name="download_paused_notification">Overførsel på pause</string>
     <string name="download_paused_error_notification">Overførselsfejl</string>

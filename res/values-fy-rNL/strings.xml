@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="installation_suspended_notification">Ynstallaasje ûnderbrutsen</string>
+    <string name="suspend_button">Underbrekke</string>
     <string name="menu_auto_updates_check_interval_daily">Ien kear deis</string>
     <string name="menu_auto_updates_check_interval_weekly">Ien kear yn de wike</string>
     <string name="menu_auto_updates_check_interval_monthly">Ien kear yn de moanne</string>

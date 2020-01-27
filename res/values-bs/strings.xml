@@ -37,5 +37,6 @@
         <item quantity="few"><xliff:g id="count">%d</xliff:g> sata preostalo</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> sati preostalo</item>
     </plurals>
+    <string name="export_channel_title">Izvoz završen</string>
     <string name="ongoing_channel_title">Preuzimanja u toku</string>
 </resources>

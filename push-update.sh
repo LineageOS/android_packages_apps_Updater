@@ -39,8 +39,13 @@ id=`echo "$zip_name" | sha1sum | cut -d' ' -f1`
 version=`echo "$zip_name" | cut -d'-' -f2`
 type=`echo "$zip_name" | cut -d'-' -f4`
 build_date=`echo "$zip_name" | cut -d'-' -f3 | cut -d'_' -f1`
-timestamp=`date --date="$build_date 23:59:59" +%s`
-size=`stat -c "%s" "$zip_path"`
+if [[ "`uname`" == "Darwin" ]]; then
+    timestamp=`date -jf "%Y%m%d %H:%M:%S" "$build_date 23:59:59" +%s`
+    size=`stat -f%z "$zip_path"`
+else
+    timestamp=`date --date="$build_date 23:59:59" +%s`
+    size=`stat -c "%s" "$zip_path"`
+fi
 
 adb push "$zip_path" "$zip_path_device"
 adb shell chgrp cache "$zip_path_device"

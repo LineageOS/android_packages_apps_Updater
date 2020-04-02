@@ -31,6 +31,7 @@ import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.preference.PreferenceManager;
 
 import org.lineageos.updater.R;
 import org.lineageos.updater.UpdaterReceiver;
@@ -400,6 +401,11 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setOngoing(false);
                 mNotificationBuilder.setAutoCancel(true);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(mContext);
+                boolean deleteUpdate = pref.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false);
+                if (deleteUpdate) {
+                    mUpdaterController.deleteUpdate(mDownloadId);
+                }
                 tryStopSelf();
                 break;
             }

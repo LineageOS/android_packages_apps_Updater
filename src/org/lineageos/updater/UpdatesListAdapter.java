@@ -78,6 +78,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private UpdaterController mUpdaterController;
     private UpdatesListActivity mActivity;
 
+    private AlertDialog infoDialog;
+
     private enum Action {
         DOWNLOAD,
         PAUSE,
@@ -125,6 +127,15 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.update_item_view, viewGroup, false);
         return new ViewHolder(view);
+    }
+
+    @Override
+    public void onViewDetachedFromWindow(ViewHolder holder) {
+        super.onViewDetachedFromWindow(holder);
+
+        if (infoDialog != null) {
+            infoDialog.dismiss();
+        }
     }
 
     public void setUpdaterController(UpdaterController updaterController) {
@@ -545,12 +556,15 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 Utils.getUpgradeBlockedURL(mActivity));
         SpannableString message = new SpannableString(messageString);
         Linkify.addLinks(message, Linkify.WEB_URLS);
-        AlertDialog dialog = new AlertDialog.Builder(mActivity)
+        if (infoDialog != null) {
+            infoDialog.dismiss();
+        }
+        infoDialog = new AlertDialog.Builder(mActivity)
                 .setTitle(R.string.blocked_update_dialog_title)
                 .setPositiveButton(android.R.string.ok, null)
                 .setMessage(message)
                 .show();
-        TextView textView = (TextView) dialog.findViewById(android.R.id.message);
+        TextView textView = (TextView) infoDialog.findViewById(android.R.id.message);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 

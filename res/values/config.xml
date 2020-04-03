@@ -16,4 +16,6 @@
 -->
 <resources>
     <bool name="config_hideRecoveryUpdate">false</bool>
+
+    <bool name="config_only_show_latest_update">false</bool>
 </resources>

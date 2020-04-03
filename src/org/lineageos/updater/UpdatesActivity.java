@@ -74,6 +74,7 @@ import org.lineageos.updater.model.UpdateInfo;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 
@@ -279,9 +280,21 @@ public class UpdatesActivity extends UpdatesListActivity {
 
         List<UpdateInfo> updates = Utils.parseJson(jsonFile, true);
         List<String> updatesOnline = new ArrayList<>();
-        for (UpdateInfo update : updates) {
-            newUpdates |= controller.addUpdate(update);
-            updatesOnline.add(update.getDownloadId());
+
+        if (!updates.isEmpty()) {
+            // sort updates from newest to oldest
+            updates.sort(Comparator.comparingLong(UpdateInfo::getTimestamp).reversed());
+
+            final boolean onlyShowLatestUpdate = getResources().getBoolean(
+                    R.bool.update_only_show_latest_version);
+            for (final UpdateInfo update : updates) {
+                newUpdates |= controller.addUpdate(update);
+                updatesOnline.add(update.getDownloadId());
+
+                if (onlyShowLatestUpdate) {
+                    break;
+                }
+            }
         }
         controller.setUpdatesAvailableOnline(updatesOnline, true);
 

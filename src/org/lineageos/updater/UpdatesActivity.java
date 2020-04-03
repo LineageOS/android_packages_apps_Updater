@@ -447,8 +447,10 @@ public class UpdatesActivity extends UpdatesListActivity {
                         UpdatesCheckReceiver.cancelUpdatesCheck(this);
                     }
 
-                    boolean enableABPerfMode = abPerfMode.isChecked();
-                    mUpdaterService.getUpdaterController().setPerformanceMode(enableABPerfMode);
+                    if (Utils.isABDevice()) {
+                        boolean enableABPerfMode = abPerfMode.isChecked();
+                        mUpdaterService.getUpdaterController().setPerformanceMode(enableABPerfMode);
+                    }
                 })
                 .show();
     }

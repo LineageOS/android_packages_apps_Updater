@@ -126,7 +126,10 @@ public class UpdaterService extends Service {
                     if (extras != null && downloadId.equals(
                             extras.getString(UpdaterController.EXTRA_DOWNLOAD_ID))) {
                         mNotificationBuilder.setExtras(null);
-                        mNotificationManager.cancel(NOTIFICATION_ID);
+                        UpdateInfo update = mUpdaterController.getUpdate(downloadId);
+                        if (update.getStatus() != INSTALLED) {
+                            mNotificationManager.cancel(NOTIFICATION_ID);
+                        }
                     }
                 }
             }

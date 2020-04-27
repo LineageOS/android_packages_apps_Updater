@@ -204,7 +204,8 @@ class ABUpdateInstaller {
         }
 
         boolean enableABPerfMode = PreferenceManager.getDefaultSharedPreferences(mContext)
-                .getBoolean(Constants.PREF_AB_PERF_MODE, false);
+                .getBoolean(Constants.PREF_AB_PERF_MODE,
+                        mContext.getResources().getBoolean(R.bool.config_ab_perf_mode));
         mUpdateEngine.setPerformanceMode(enableABPerfMode);
 
         String zipFileUri = "file://" + file.getAbsolutePath();

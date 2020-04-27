@@ -492,10 +492,13 @@ public class UpdatesActivity extends UpdatesListActivity {
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         autoCheckInterval.setSelection(Utils.getUpdateCheckSetting(this));
-        autoDelete.setChecked(prefs.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false));
+        autoDelete.setChecked(prefs.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES,
+                getResources().getBoolean(R.bool.config_auto_delete_updates)));
         meteredNetworkWarning.setChecked(prefs.getBoolean(Constants.PREF_METERED_NETWORK_WARNING,
-                prefs.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true)));
-        abPerfMode.setChecked(prefs.getBoolean(Constants.PREF_AB_PERF_MODE, false));
+                prefs.getBoolean(Constants.PREF_MOBILE_DATA_WARNING,
+                        getResources().getBoolean(R.bool.config_metered_network_warning))));
+        abPerfMode.setChecked(prefs.getBoolean(Constants.PREF_AB_PERF_MODE,
+                getResources().getBoolean(R.bool.config_ab_perf_mode)));
 
         if (getResources().getBoolean(R.bool.config_hideRecoveryUpdate)) {
             // Hide the update feature if explicitly requested.

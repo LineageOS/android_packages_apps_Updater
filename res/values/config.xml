@@ -16,4 +16,8 @@
 -->
 <resources>
     <bool name="config_hideRecoveryUpdate">false</bool>
+
+    <bool name="config_auto_delete_updates">false</bool>
+    <bool name="config_metered_network_warning">true</bool>
+    <bool name="config_ab_perf_mode">false</bool>
 </resources>

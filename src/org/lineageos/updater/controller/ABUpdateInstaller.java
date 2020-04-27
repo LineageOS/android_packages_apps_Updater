@@ -24,6 +24,7 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
+import org.lineageos.updater.R;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.Update;
@@ -204,7 +205,8 @@ class ABUpdateInstaller {
         }
 
         boolean enableABPerfMode = PreferenceManager.getDefaultSharedPreferences(mContext)
-                .getBoolean(Constants.PREF_AB_PERF_MODE, false);
+                .getBoolean(Constants.PREF_AB_PERF_MODE,
+                        mContext.getResources().getBoolean(R.bool.config_ab_perf_mode));
         mUpdateEngine.setPerformanceMode(enableABPerfMode);
 
         String zipFileUri = "file://" + file.getAbsolutePath();

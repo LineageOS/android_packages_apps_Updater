@@ -55,6 +55,9 @@
     <string name="menu_ab_perf_mode">จัดลำดับความสำคัญของกระบวนการอัพเดต</string>
     <string name="snack_updates_found">ไม่พบการอัปเดตใหม่</string>
     <string name="snack_no_updates_found">ไม่พบการอัปเดตใหม่</string>
+    <string name="snack_updates_check_failed">การตรวจสอบอัปเดตล้มเหลว โปรดตรวจสอบการเชื่อมต่ออินเตอร์เน็ตแล้วลองใหม่</string>
+    <string name="snack_download_failed">การดาวน์โหลดล้มเหลว โปรดตรวจสอบการเชื่อมต่ออินเตอร์เน็ตแล้วลองใหม่</string>
+    <string name="snack_download_verification_failed">การยืนยันการอัปเดตล้มเหลว</string>
     <string name="snack_download_verified">ดาวน์โหลดเสร็จสมบูรณ์</string>
     <string name="snack_update_not_installable">การอัปเดตนี้ไม่สามารถติดตั้งบนบิลด์ปัจจุบัน</string>
     <string name="header_last_updates_check">ตรวจสอบล่าสุด: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
@@ -72,6 +75,7 @@
     <string name="confirm_delete_dialog_title">ลบไฟล์</string>
     <string name="confirm_delete_dialog_message">ลบไฟล์การอัปเดตที่เลือกไว้หรือไม่</string>
     <string name="apply_update_dialog_title">ใช้การอัปเดต</string>
+    <string name="apply_update_dialog_message">คุณกำลังจะอัปเกรดเป็น <xliff:g id="update_name">%1$s</xliff:g>.\n\nถ้าคุณกด <xliff:g id="ok">%2$s</xliff:g>, อุปกรณ์จะเริ่มต้นใหม่ในโหมดกู้คืนเพื่อติดตั้งไฟล์อัปเดต\n\nหมายเหตุ: ฟีเจอร์นี้ต้องการระบบกู้คืนที่ถูกรองรับ ไม่งั้นผู้ใช้จะต้องติดตั้งการอัปเดตด้วยตนเอง</string>
     <string name="apply_update_dialog_message_ab">คุณกำลังจะอัปเกรดเป็น <xliff:g id="update_name">%1$s</xliff:g>.\n\nถ้าคุณกด <xliff:g id="ok">%2$s</xliff:g>, อุปกรณ์จะเริ่มติดตั้งในพื้นหลัง\n\nเมื่อเสร็จสิ้นคุณจะได้รับแจ้งให้รีบูต</string>
     <string name="cancel_installation_dialog_message">ยกเลิกการติดตั้งหรือไม่</string>
     <string name="label_download_url">ดาวน์โหลด URL</string>
@@ -79,6 +83,7 @@
     <string name="dialog_export_title">กำลังส่งออกการอัปเดต</string>
     <string name="notification_export_success">การอัปเดตถูกส่งออกแล้ว</string>
     <string name="notification_export_fail">การส่งออกเกิดข้อผิดพลาด</string>
+    <string name="toast_already_exporting">ดำเนินการส่งออกอัปเดตเรียบร้อยแล้ว</string>
     <plurals name="eta_seconds">
         <item quantity="other">เหลือ <xliff:g id="count">%d</xliff:g> วินาที</item>
     </plurals>
@@ -93,6 +98,7 @@
     <string name="checkbox_mobile_data_warning">ไม่ต้องแสดงอีก</string>
     <string name="menu_mobile_data_warning">คำเตือนการใช้งานข้อมูลมือถือ</string>
     <string name="blocked_update_dialog_title">การอัปเดตถูกปิดกั้น</string>
+    <string name="blocked_update_dialog_message">ไม่สามารถติดตั้งอัปเดตนี้ด้วยแอปอัปเดต  กรุณาอ่านที่ <xliff:g id="info_url">%1$s</xliff:g> สำหรับข้อมูลเพิ่มเติม</string>
     <string name="export_channel_title">ส่งออกเสร็จสมบูรณ์</string>
     <string name="new_updates_channel_title">การอัปเดตใหม่</string>
     <string name="ongoing_channel_title">การดาวน์โหลดที่กำลังดำเนินอยู่</string>

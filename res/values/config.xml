@@ -17,6 +17,10 @@
 <resources>
     <bool name="config_hideRecoveryUpdate">false</bool>
 
-    <!-- Whether to show the latest update only (true) or multiple updates (false) -->
-    <bool name="config_onlyShowLatestUpdate">false</bool>
+    <!-- Whether to show a single update only (true) or multiple updates (false) -->
+    <bool name="config_onlyShowSingleUpdate">false</bool>
+
+    <!-- If true, sort updates from oldest to newest (useful for incremental OTAs).
+         If false, sort updates from newest to oldest. -->
+    <bool name="config_sortUpdatesFromOldestToNewest">false</bool>
 </resources>

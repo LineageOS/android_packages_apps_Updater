@@ -282,16 +282,24 @@ public class UpdatesActivity extends UpdatesListActivity {
         List<String> updatesOnline = new ArrayList<>();
 
         if (!updates.isEmpty()) {
-            // sort updates from newest to oldest
-            updates.sort(Comparator.comparingLong(UpdateInfo::getTimestamp).reversed());
+            final boolean sortFromOldestToNewest = getResources().getBoolean(
+                    R.bool.config_sortUpdatesFromOldestToNewest);
+            if (sortFromOldestToNewest) {
+                // sort updates from oldest to newest in order to ensure that
+                // builds are installed in order (important for incremental OTAs)
+                updates.sort(Comparator.comparingLong(UpdateInfo::getTimestamp));
+            } else {
+                // sort updates from newest to oldest
+                updates.sort(Comparator.comparingLong(UpdateInfo::getTimestamp).reversed());
+            }
 
-            final boolean onlyShowLatestUpdate = getResources().getBoolean(
-                    R.bool.config_onlyShowLatestUpdate);
+            final boolean onlyShowSingleUpdate = getResources().getBoolean(
+                    R.bool.config_onlyShowSingleUpdate);
             for (final UpdateInfo update : updates) {
                 newUpdates |= controller.addUpdate(update);
                 updatesOnline.add(update.getDownloadId());
 
-                if (onlyShowLatestUpdate) {
+                if (onlyShowSingleUpdate) {
                     break;
                 }
             }

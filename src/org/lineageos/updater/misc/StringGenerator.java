@@ -49,10 +49,6 @@ public final class StringGenerator {
         return f.format(date);
     }
 
-    public static String bytesToMegabytes(Context context, long bytes) {
-        return String.format(getCurrentLocale(context), "%.0f", bytes / 1024.f / 1024.f);
-    }
-
     public static String formatETA(Context context, long millis) {
         final long SECOND_IN_MILLIS = 1000;
         final long MINUTE_IN_MILLIS = SECOND_IN_MILLIS * 60;

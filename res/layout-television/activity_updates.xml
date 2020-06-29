@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:weightSum="2"
+            android:weightSum="3"
             android:orientation="horizontal">
 
             <Button
@@ -72,6 +72,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/menu_refresh"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+
+            <Button
+                android:id="@+id/local_update"
+                android:drawableLeft="@drawable/ic_system_update"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="local update"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
 
             <Button

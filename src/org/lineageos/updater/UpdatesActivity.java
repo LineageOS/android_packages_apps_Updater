@@ -17,6 +17,7 @@ package org.lineageos.updater;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.app.UiModeManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -47,6 +48,7 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SwitchCompat;
@@ -69,6 +71,7 @@ import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.model.Update;
 import org.lineageos.updater.model.UpdateInfo;
 
 import java.io.File;
@@ -77,7 +80,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class UpdatesActivity extends UpdatesListActivity {
+public class UpdatesActivity extends UpdatesListActivity implements UpdateImporter.Callbacks {
 
     private static final String TAG = "UpdatesActivity";
     private UpdaterService mUpdaterService;
@@ -103,10 +106,16 @@ public class UpdatesActivity extends UpdatesListActivity {
                 }
             });
 
+    private UpdateImporter mUpdateImporter;
+    @SuppressWarnings("deprecation")
+    private ProgressDialog importDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updates);
+
+        mUpdateImporter = new UpdateImporter(this, this);
 
         UiModeManager uiModeManager = getSystemService(UiModeManager.class);
         mIsTV = uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION;
@@ -195,6 +204,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         } else {
             findViewById(R.id.refresh).setOnClickListener(v -> downloadUpdatesList(true));
             findViewById(R.id.preferences).setOnClickListener(v -> showPreferencesDialog());
+            findViewById(R.id.local_update).setOnClickListener(v -> mUpdateImporter.openImportPicker());
         }
     }
 
@@ -211,6 +221,17 @@ public class UpdatesActivity extends UpdatesListActivity {
         intentFilter.addAction(UpdaterController.ACTION_INSTALL_PROGRESS);
         intentFilter.addAction(UpdaterController.ACTION_UPDATE_REMOVED);
         LocalBroadcastManager.getInstance(this).registerReceiver(mBroadcastReceiver, intentFilter);
+    }
+
+    @Override
+    protected void onPause() {
+        if (importDialog != null) {
+            importDialog.dismiss();
+            importDialog = null;
+            mUpdateImporter.stopImport();
+        }
+
+        super.onPause();
     }
 
     @Override
@@ -242,6 +263,9 @@ public class UpdatesActivity extends UpdatesListActivity {
                     Uri.parse(Utils.getChangelogURL(this)));
             startActivity(openUrl);
             return true;
+        } else if (itemId == R.id.menu_local_update) {
+            mUpdateImporter.openImportPicker();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -252,8 +276,60 @@ public class UpdatesActivity extends UpdatesListActivity {
         return true;
     }
 
-    private final ServiceConnection mConnection = new ServiceConnection() {
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (!mUpdateImporter.onResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
 
+    @Override
+    @SuppressWarnings("deprecation")
+    public void onImportStarted() {
+        if (importDialog != null && importDialog.isShowing()) {
+            importDialog.dismiss();
+        }
+
+        importDialog = ProgressDialog.show(this, getString(R.string.local_update_import),
+                getString(R.string.local_update_import_progress), true, false);
+    }
+
+    @Override
+    public void onImportCompleted(Update update) {
+        if (importDialog != null) {
+            importDialog.dismiss();
+            importDialog = null;
+        }
+
+        if (update == null) {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.local_update_import)
+                    .setMessage(R.string.local_update_import_failure)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show();
+            return;
+        }
+
+        mAdapter.notifyDataSetChanged();
+
+        final Runnable deleteUpdate = () -> UpdaterController.getInstance(this)
+                .deleteUpdate(update.getDownloadId());
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.local_update_import)
+                .setMessage(getString(R.string.local_update_import_success, update.getName()))
+                .setPositiveButton(R.string.local_update_import_install, (dialog, which) -> {
+                    mAdapter.addItem(update.getDownloadId());
+                    // Update UI
+                    getUpdatesList();
+                    Utils.triggerUpdate(this, update.getDownloadId());
+                })
+                .setNegativeButton(android.R.string.cancel, (dialog, which) -> deleteUpdate.run())
+                .setOnCancelListener((dialog) -> deleteUpdate.run())
+                .show();
+    }
+
+    private final ServiceConnection mConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName className,
                 IBinder service) {
@@ -404,6 +480,10 @@ public class UpdatesActivity extends UpdatesListActivity {
     }
 
     private void handleDownloadStatusChange(String downloadId) {
+        if (Update.LOCAL_ID.equals(downloadId)) {
+            return;
+        }
+
         UpdateInfo update = mUpdaterService.getUpdaterController().getUpdate(downloadId);
         switch (update.getStatus()) {
             case PAUSED_ERROR:

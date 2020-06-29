@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2022 The LineageOS Project
+ * Copyright (C) 2017-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@ import org.lineageos.updater.model.UpdateStatus;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.ViewHolder> {
@@ -292,6 +293,14 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     public void setData(List<String> downloadIds) {
         mDownloadIds = downloadIds;
+    }
+
+    public void addItem(String downloadId) {
+        if (mDownloadIds == null) {
+            mDownloadIds = new ArrayList<>();
+        }
+        mDownloadIds.add(0, downloadId);
+        notifyItemInserted(0);
     }
 
     public void notifyItemChanged(String downloadId) {

@@ -65,6 +65,7 @@ import org.lineageos.updater.model.UpdateStatus;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.ViewHolder> {
@@ -295,6 +296,14 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     public void setData(List<String> downloadIds) {
         mDownloadIds = downloadIds;
+    }
+
+    public void addItem(String downloadId) {
+        if (mDownloadIds == null) {
+            mDownloadIds = new ArrayList<>();
+        }
+        mDownloadIds.add(0, downloadId);
+        notifyItemInserted(0);
     }
 
     public void notifyItemChanged(String downloadId) {

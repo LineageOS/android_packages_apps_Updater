@@ -459,15 +459,10 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         }
         UpdateInfo update = mUpdaterController.getUpdate(downloadId);
         int resId;
-        try {
-            if (Utils.isABUpdate(update.getFile())) {
-                resId = R.string.apply_update_dialog_message_ab;
-            } else {
-                resId = R.string.apply_update_dialog_message;
-            }
-        } catch (IOException e) {
-            Log.e(TAG, "Could not determine the type of the update");
-            return null;
+        if (Utils.isABDevice()) {
+            resId = R.string.apply_update_dialog_message_ab;
+        } else {
+            resId = R.string.apply_update_dialog_message;
         }
 
         String buildDate = StringGenerator.getDateLocalizedUTC(mActivity,

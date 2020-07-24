@@ -164,24 +164,31 @@ class ABUpdateInstaller {
         mDownloadId = downloadId;
 
         File file = mUpdaterController.getActualUpdate(mDownloadId).getFile();
-        if (!file.exists()) {
-            Log.e(TAG, "The given update doesn't exist");
-            mUpdaterController.getActualUpdate(downloadId)
-                    .setStatus(UpdateStatus.INSTALLATION_FAILED);
-            mUpdaterController.notifyUpdateChange(downloadId);
-            return false;
-        }
 
         long offset;
+        long length;
         String[] headerKeyValuePairs;
+
+        ZipFile zipFile = null;
         try {
-            ZipFile zipFile = new ZipFile(file);
+            zipFile = new ZipFile(file);
+        }
+        catch (IOException | IllegalArgumentException e) {
+            Log.e(TAG, "Could not prepare " + file, e);
+            mUpdaterController.getActualUpdate(mDownloadId)
+                    .setStatus(UpdateStatus.INSTALLATION_FAILED);
+            mUpdaterController.notifyUpdateChange(mDownloadId);
+            return false;
+        }
+        try {
             offset = Utils.getZipEntryOffset(zipFile, Constants.AB_PAYLOAD_BIN_PATH);
+            length = 0;
             ZipEntry payloadPropEntry = zipFile.getEntry(Constants.AB_PAYLOAD_PROPERTIES_PATH);
             try (InputStream is = zipFile.getInputStream(payloadPropEntry);
                  InputStreamReader isr = new InputStreamReader(is);
                  BufferedReader br = new BufferedReader(isr)) {
                 List<String> lines = new ArrayList<>();
+                lines.add("update_type=delta");
                 for (String line; (line = br.readLine()) != null;) {
                     lines.add(line);
                 }
@@ -189,7 +196,14 @@ class ABUpdateInstaller {
                 headerKeyValuePairs = lines.toArray(headerKeyValuePairs);
             }
             zipFile.close();
-        } catch (IOException | IllegalArgumentException e) {
+        }
+        catch (IllegalArgumentException e) {
+            // No payload properties means this is an old style update
+            offset = 0;
+            length = file.length();
+            headerKeyValuePairs = new String[1];
+            headerKeyValuePairs[0] = "update_type=edify";
+        } catch (IOException e) {
             Log.e(TAG, "Could not prepare " + file, e);
             mUpdaterController.getActualUpdate(mDownloadId)
                     .setStatus(UpdateStatus.INSTALLATION_FAILED);
@@ -213,7 +227,7 @@ class ABUpdateInstaller {
         mUpdateEngine.setPerformanceMode(enableABPerfMode);
 
         String zipFileUri = "file://" + file.getAbsolutePath();
-        mUpdateEngine.applyPayload(zipFileUri, offset, 0, headerKeyValuePairs);
+        mUpdateEngine.applyPayload(zipFileUri, offset, length, headerKeyValuePairs);
 
         mUpdaterController.getActualUpdate(mDownloadId).setStatus(UpdateStatus.INSTALLING);
         mUpdaterController.notifyUpdateChange(mDownloadId);

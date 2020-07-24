@@ -119,8 +119,13 @@ public class UpdaterService extends Service {
                     handleDownloadProgressChange(update);
                 } else if (UpdaterController.ACTION_INSTALL_PROGRESS.equals(intent.getAction())) {
                     UpdateInfo update = mUpdaterController.getUpdate(downloadId);
-                    setNotificationTitle(update);
-                    handleInstallProgress(update);
+                    if (update == null) {
+                        setNotificationTitle(update);
+                        handleInstallProgress(update);
+                    }
+                    else {
+                        Log.e(TAG, "ACTION_INSTALL_PROGRESS with no update");
+                    }
                 } else if (UpdaterController.ACTION_UPDATE_REMOVED.equals(intent.getAction())) {
                     Bundle extras = mNotificationBuilder.getExtras();
                     if (extras != null && downloadId.equals(
@@ -195,21 +200,14 @@ public class UpdaterService extends Service {
             if (update.getPersistentStatus() != UpdateStatus.Persistent.VERIFIED) {
                 throw new IllegalArgumentException(update.getDownloadId() + " is not verified");
             }
-            try {
-                if (Utils.isABUpdate(update.getFile())) {
-                    ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
-                            mUpdaterController);
-                    installer.install(downloadId);
-                } else {
-                    UpdateInstaller installer = UpdateInstaller.getInstance(this,
-                            mUpdaterController);
-                    installer.install(downloadId);
-                }
-            } catch (IOException e) {
-                Log.e(TAG, "Could not install update", e);
-                mUpdaterController.getActualUpdate(downloadId)
-                        .setStatus(UpdateStatus.INSTALLATION_FAILED);
-                mUpdaterController.notifyUpdateChange(downloadId);
+            if (Utils.isABDevice()) {
+                ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
+                        mUpdaterController);
+                installer.install(downloadId);
+            } else {
+                UpdateInstaller installer = UpdateInstaller.getInstance(this,
+                        mUpdaterController);
+                installer.install(downloadId);
             }
         } else if (ACTION_INSTALL_STOP.equals(intent.getAction())) {
             if (UpdateInstaller.isInstalling()) {

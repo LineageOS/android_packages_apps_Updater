@@ -351,18 +351,6 @@ public class Utils {
         return SystemProperties.getBoolean(Constants.PROP_AB_DEVICE, false);
     }
 
-    public static boolean isABUpdate(ZipFile zipFile) {
-        return zipFile.getEntry(Constants.AB_PAYLOAD_BIN_PATH) != null &&
-                zipFile.getEntry(Constants.AB_PAYLOAD_PROPERTIES_PATH) != null;
-    }
-
-    public static boolean isABUpdate(File file) throws IOException {
-        ZipFile zipFile = new ZipFile(file);
-        boolean isAB = isABUpdate(zipFile);
-        zipFile.close();
-        return isAB;
-    }
-
     public static boolean hasTouchscreen(Context context) {
         return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN);
     }

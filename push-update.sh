@@ -16,9 +16,15 @@ if [ "`adb get-state 2>/dev/null`" != "device" ]; then
     echo "No device found. Waiting for one..."
     adb wait-for-device
 fi
-if ! adb root; then
-    echo "Could not run adbd as root"
-    exit 1
+uid=$(adb shell id -u)
+if [ "$uid" -ne 0 ]; then
+    if ! adb root; then
+        echo "Could not run adbd as root"
+        exit 1
+    fi
+    did_root=1
+else
+    did_root=0
 fi
 
 zip_path_device=$updates_dir/`basename "$zip_path"`
@@ -52,5 +58,7 @@ adb shell "sqlite3 /data/data/org.lineageos.updater/databases/updates.db" \
     "\"INSERT INTO updates (status, path, download_id, timestamp, type, version, size)" \
     "  VALUES ($status, '$zip_path_device', '$id', $timestamp, '$type', '$version', $size)\""
 
-# Exit root mode
-adb unroot
+if [ "$did_root" -ne 0 ]; then
+    # Exit root mode
+    adb unroot
+fi

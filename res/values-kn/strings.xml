@@ -26,6 +26,10 @@
     <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> ರಲ್ಲಿ <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="apply_update_dialog_message">ನೀವು ಈಗ <xliff:g id="update_name">%1$s</xliff:g>ಗೆ ಉನ್ನತೀಕರಿಸಲು ಹೋಗುತ್ತಿದ್ದೀರಿ.\n\nನೀವು <xliff:g id="ok">%2$s</xliff:g> ಒತ್ತಿದರೆ, ಸಾಧನವು ಹೊಸ ತಂತ್ರಾಂಶ ಸ್ಥಾಪಿಸಲು ಸ್ವಯಂ ಮರುಚೇತರಿಕೆ ರೀತಿಯಲ್ಲಿ ಪುನರಾರಂಭವಾಗುತ್ತದೆ.\n\nಸೂಚನೆ: ಈ ವೈಶಿಷ್ಟ್ಯಕ್ಕೆ ಹೊಂದಿಕೊಳ್ಳುವ ಮರುಚೇತರಿಕೆ ಅಗತ್ಯವಿದೆ ಇಲ್ಲವಾದರೆ ಕೈಯಾರೆ ಉನ್ನತೀಕರಿಸಬೇಕಾಗುತ್ತದೆ.</string>
     <string name="apply_update_dialog_message_ab">ನೀವು ಈಗ <xliff:g id="update_name">%1$s</xliff:g>ಗೆ ಉನ್ನತೀಕರಿಸಲು ಹೋಗುತ್ತಿದ್ದೀರಿ.\n\nನೀವು <xliff:g id="ok">%2$s</xliff:g> ಒತ್ತಿದರೆ, ಸಾಧನವು ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಅನುಸ್ಥಾಪನೆ ಪ್ರಾರಂಭಿಸುತ್ತದೆ.\n\nಪೂರ್ಣಗೊಂಡಾಗ ಸಾಧನವನ್ನು ಮರುಹೂಡಲು ನಿಮಗೆ ಪ್ರೇರೇಪಿಸುವುದು.</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">೧ ಕ್ಷಣ ಬಾಕಿ</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಕ್ಷಣ ಬಾಕಿ</item>
+    </plurals>
     <plurals name="eta_minutes">
         <item quantity="one">೧ ನಿಮಿಷ ಬಾಕಿ</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ನಿಮಿಷಗಳು ಬಾಕಿ</item>

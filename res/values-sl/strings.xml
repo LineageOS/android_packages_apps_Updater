@@ -47,7 +47,7 @@
     <string name="menu_auto_updates_check_interval_weekly">Enkrat na teden</string>
     <string name="menu_auto_updates_check_interval_monthly">Enkrat na mesec</string>
     <string name="menu_auto_updates_check_interval_never">Nikoli</string>
-    <string name="menu_auto_delete_updates">Izbris posodobitev po namestitvi</string>
+    <string name="menu_auto_delete_updates">Izbriši posodobitve po namestitvi</string>
     <string name="menu_delete_update">Izbriši</string>
     <string name="menu_copy_url">Kopiraj URL</string>
     <string name="menu_export_update">Izvozi posodobitev</string>

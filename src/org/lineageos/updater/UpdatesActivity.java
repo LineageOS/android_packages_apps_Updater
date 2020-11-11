@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017,2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.SystemProperties;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -414,9 +415,12 @@ public class UpdatesActivity extends UpdatesListActivity {
         Switch autoDelete = view.findViewById(R.id.preferences_auto_delete_updates);
         Switch dataWarning = view.findViewById(R.id.preferences_mobile_data_warning);
         Switch abPerfMode = view.findViewById(R.id.preferences_ab_perf_mode);
+        Switch updateRecovery = view.findViewById(R.id.preferences_update_recovery);
 
         if (!Utils.isABDevice()) {
             abPerfMode.setVisibility(View.GONE);
+        } else {
+            updateRecovery.setVisibility(View.GONE);
         }
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -424,6 +428,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         autoDelete.setChecked(prefs.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false));
         dataWarning.setChecked(prefs.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true));
         abPerfMode.setChecked(prefs.getBoolean(Constants.PREF_AB_PERF_MODE, false));
+        updateRecovery.setChecked(prefs.getBoolean(Constants.PREF_UPDATE_RECOVERY, false));
 
         new AlertDialog.Builder(this)
                 .setTitle(R.string.menu_preferences)
@@ -438,6 +443,8 @@ public class UpdatesActivity extends UpdatesListActivity {
                                     dataWarning.isChecked())
                             .putBoolean(Constants.PREF_AB_PERF_MODE,
                                     abPerfMode.isChecked())
+                            .putBoolean(Constants.PREF_UPDATE_RECOVERY,
+                                    updateRecovery.isChecked())
                             .apply();
 
                     if (Utils.isUpdateCheckEnabled(this)) {
@@ -450,6 +457,10 @@ public class UpdatesActivity extends UpdatesListActivity {
                     if (Utils.isABDevice()) {
                         boolean enableABPerfMode = abPerfMode.isChecked();
                         mUpdaterService.getUpdaterController().setPerformanceMode(enableABPerfMode);
+                    } else {
+                        boolean enableRecoveryUpdate = updateRecovery.isChecked();
+                        SystemProperties.set(Constants.UPDATE_RECOVERY_PROPERTY,
+                                String.valueOf(!enableRecoveryUpdate));
                     }
                 })
                 .show();

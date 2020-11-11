@@ -52,4 +52,12 @@
         android:layout_marginBottom="16dp"
         android:text="@string/menu_ab_perf_mode"
         android:textSize="16sp" />
+
+    <Switch
+        android:id="@+id/preferences_update_recovery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/menu_update_recovery"
+        android:textSize="16sp" />
 </LinearLayout>

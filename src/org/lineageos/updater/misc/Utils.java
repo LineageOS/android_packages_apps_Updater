@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -400,5 +400,15 @@ public class Utils {
             case Constants.AUTO_UPDATES_CHECK_INTERVAL_MONTHLY:
                 return AlarmManager.INTERVAL_DAY * 30;
         }
+    }
+
+    public static boolean isRecoveryUpdateExecPresent() {
+        return new File(Constants.UPDATE_RECOVERY_EXEC).exists();
+    }
+
+    public static boolean isRecoveryUpdateExecStubbedOut() {
+        File f = new File(Constants.UPDATE_RECOVERY_EXEC);
+        Log.d(TAG, "Recovery update exec has length " + f.length());
+        return f.length() == 0;
     }
 }

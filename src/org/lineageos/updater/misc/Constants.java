@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ public final class Constants {
     public static final String PREF_AB_PERF_MODE = "ab_perf_mode";
     public static final String PREF_MOBILE_DATA_WARNING = "pref_mobile_data_warning";
     public static final String PREF_NEEDS_REBOOT_ID = "needs_reboot_id";
+    public static final String PREF_UPDATE_RECOVERY = "update_recovery";
 
     public static final String UNCRYPT_FILE_EXT = ".uncrypt";
 
@@ -52,4 +53,7 @@ public final class Constants {
     public static final String PREF_INSTALL_PACKAGE_PATH = "install_package_path";
     public static final String PREF_INSTALL_AGAIN = "install_again";
     public static final String PREF_INSTALL_NOTIFIED = "install_notified";
+
+    public static final String UPDATE_RECOVERY_EXEC = "/vendor/bin/install-recovery.sh";
+    public static final String UPDATE_RECOVERY_PROPERTY = "persist.vendor.recovery_update";
 }

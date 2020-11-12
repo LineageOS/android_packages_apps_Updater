@@ -22,6 +22,30 @@
       "revId": "92567a2ab480d879fffe34e32ae16a9ee6d57b46",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e510cc3e_452cdda6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-11-12T01:34:52Z",
+      "side": 1,
+      "message": "Hm, or maybe not. install-recovery seems to be only created for edify style packages but either way, there are edify devices without recovery partition I guess?",
+      "parentUuid": "84501e15_e2be7388",
+      "range": {
+        "startLine": 10,
+        "startChar": 25,
+        "endLine": 10,
+        "endChar": 67
+      },
+      "revId": "92567a2ab480d879fffe34e32ae16a9ee6d57b46",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

@@ -70,6 +70,30 @@
       "revId": "bd655af3579b767af6b59d8346447346cea3b572",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "500c4099_90b40387",
+        "filename": "src/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 18205
+      },
+      "writtenOn": "2020-11-12T10:21:09Z",
+      "side": 1,
+      "message": "Autogenerate a prop from checking BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE in vendor/lineage ?",
+      "parentUuid": "d6084e1a_367ba122",
+      "range": {
+        "startLine": 406,
+        "startChar": 7,
+        "endLine": 406,
+        "endChar": 65
+      },
+      "revId": "bd655af3579b767af6b59d8346447346cea3b572",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

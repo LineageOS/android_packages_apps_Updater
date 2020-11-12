@@ -46,6 +46,30 @@
       "revId": "bd655af3579b767af6b59d8346447346cea3b572",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6084e1a_367ba122",
+        "filename": "src/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-11-12T10:08:03Z",
+      "side": 1,
+      "message": "Not sure if overriding vendor service from system would work but in that case how would we know whether updating recovery should be disabled? Another prop? Updater resource overlay?",
+      "parentUuid": "f846e823_cfc480b9",
+      "range": {
+        "startLine": 406,
+        "startChar": 7,
+        "endLine": 406,
+        "endChar": 65
+      },
+      "revId": "bd655af3579b767af6b59d8346447346cea3b572",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }

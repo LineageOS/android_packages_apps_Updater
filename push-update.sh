@@ -39,7 +39,7 @@ id=`echo "$zip_name" | sha1sum | cut -d' ' -f1`
 version=`echo "$zip_name" | cut -d'-' -f2`
 type=`echo "$zip_name" | cut -d'-' -f4`
 build_date=`echo "$zip_name" | cut -d'-' -f3 | cut -d'_' -f1`
-if [[ "`uname`" == "Darwin" ]]; then
+if [ "`uname`" = "Linux" ]; then
     timestamp=`date -jf "%Y%m%d %H:%M:%S" "$build_date 23:59:59" +%s`
     size=`stat -f%z "$zip_path"`
 else

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -53,6 +53,8 @@
     <string name="menu_export_update">Εξαγωγή ενημέρωσης</string>
     <string name="menu_show_changelog">Εμφάνιση αλλαγών</string>
     <string name="menu_ab_perf_mode">Επιτάχυνση διαδικασίας ενημέρωσης</string>
+    <string name="menu_update_recovery">Ενημέρωση recovery</string>
+    <string name="toast_forced_update_recovery">Είναι αδύνατο να απενεργοποιήσετε τις ενημερώσεις Lineage Recovery σε αυτή τη συσκευή.</string>
     <string name="snack_updates_found">Βρέθηκαν νέες ενημερώσεις</string>
     <string name="snack_no_updates_found">Δεν βρέθηκαν νέες ενημερώσεις</string>
     <string name="snack_updates_check_failed">Ο έλεγχος για ενημερώσεις απέτυχε. Παρακαλώ ελέγξτε την σύνδεσή σας στο διαδίκτυο και προσπαθήστε αργότερα.</string>

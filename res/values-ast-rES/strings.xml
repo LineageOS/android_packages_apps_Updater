@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -51,6 +51,7 @@
     <string name="menu_export_update">Esportar anovamientu</string>
     <string name="menu_show_changelog">Amosar rexistru de cambeos</string>
     <string name="menu_ab_perf_mode">Priorizar el procesu d\'anovamientu</string>
+    <string name="toast_forced_update_recovery">Ye imposible desactivar los anovamientos del recovery de Lineage nesti preséu.</string>
     <string name="snack_updates_found">Alcontráronse anovamientos nuevos</string>
     <string name="snack_no_updates_found">Nun s\'alcontraron anovamientos</string>
     <string name="snack_updates_check_failed">Falló la comprobación d\'anovamientos. Comprueba la to conexón a Internet y volvi tentalo, por favor.</string>

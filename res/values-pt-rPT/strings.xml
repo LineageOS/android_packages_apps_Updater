@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -53,6 +53,8 @@
     <string name="menu_export_update">Exportar atualização</string>
     <string name="menu_show_changelog">Mostrar registo de alterações</string>
     <string name="menu_ab_perf_mode">Priorizar o processo de atualização</string>
+    <string name="menu_update_recovery">Atualizar recuperação</string>
+    <string name="toast_forced_update_recovery">Não é possível desativar as atualizações da recuperação Lineage neste dispositivo.</string>
     <string name="snack_updates_found">Não foram encontradas atualizações</string>
     <string name="snack_no_updates_found">Não foram encontradas novas atualizações</string>
     <string name="snack_updates_check_failed">A verificação de atualizações falhou. Por favor, verifique a sua ligação à internet e tente novamente.</string>

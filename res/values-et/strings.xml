@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@
     <string name="menu_auto_updates_check_interval_never">Mitte kunagi</string>
     <string name="menu_show_changelog">Näita muutuste nimekirja</string>
     <string name="menu_ab_perf_mode">Eelista uuendusprotsessi</string>
+    <string name="menu_update_recovery">Uuenda taastust</string>
     <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <plurals name="eta_seconds">
         <item quantity="one">1 sekund jäänud</item>

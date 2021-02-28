@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -25,10 +25,12 @@
     <string name="download_completed_notification">Sťahovanie dokončené</string>
     <string name="download_starting_notification">Spúšťam sťahovanie</string>
     <string name="update_failed_notification">Aktualizácia zlyhala</string>
+    <string name="installation_suspended_notification">Inštalácia bola pozastavená</string>
     <string name="new_updates_found_title">Nové aktualizácie</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Pozastaviť</string>
     <string name="resume_button">Obnoviť</string>
+    <string name="suspend_button">Pozastaviť</string>
     <string name="installing_update">Inštalácia balíka aktualizácií</string>
     <string name="installing_update_error">Chyba pri inštalácii</string>
     <string name="installing_update_finished">Aktualizácia nainštalovaná</string>
@@ -51,6 +53,8 @@
     <string name="menu_export_update">Export aktualizácie</string>
     <string name="menu_show_changelog">Zobraziť zoznam zmien</string>
     <string name="menu_ab_perf_mode">Uprednostňovať proces aktualizácie</string>
+    <string name="menu_update_recovery">Aktualizácia recovery</string>
+    <string name="toast_forced_update_recovery">Na tomto zariadení nie je možné zakázať aktualizácie oddielu Lineage recovery</string>
     <string name="snack_updates_found">Našli sa nové aktualizácie</string>
     <string name="snack_no_updates_found">Nenašli sa žiadne nové aktualizácie</string>
     <string name="snack_updates_check_failed">Kontrola aktualizácií zlyhala. Skontrolujte prosím vaše internetové pripojenie a skúste to znova neskôr.</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@
     <string name="menu_export_update">Update exportieren</string>
     <string name="menu_show_changelog">Changelog anzeigen</string>
     <string name="menu_ab_perf_mode">Updateprozess priorisieren</string>
+    <string name="menu_update_recovery">Recovery aktualisieren</string>
     <string name="snack_updates_found">Neue Updates gefunden</string>
     <string name="snack_no_updates_found">Keine neuen Updates gefunden</string>
     <string name="snack_updates_check_failed">Die Suche nach Updates ist fehlgeschlagen. Bitte überprüfen Sie die Internetverbindung und versuchen Sie es später erneut.</string>

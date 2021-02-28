@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -53,6 +53,8 @@
     <string name="menu_export_update">导出更新</string>
     <string name="menu_show_changelog">显示更新日志</string>
     <string name="menu_ab_perf_mode">更新进程优先</string>
+    <string name="menu_update_recovery">更新恢复</string>
+    <string name="toast_forced_update_recovery">在此设备上禁用 Lineage 恢复更新是不可能的。</string>
     <string name="snack_updates_found">找到新更新</string>
     <string name="snack_no_updates_found">没有找到新的更新</string>
     <string name="snack_updates_check_failed">检查更新失败。 请您检查您的网络连接并稍后重试。</string>
@@ -65,7 +67,7 @@
     <string name="header_last_updates_check">最后检查： <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
     <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> 的 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">正在验证更新</string>
     <string name="list_no_updates">未找到更新。要手动检查更新，请使用刷新按钮。</string>

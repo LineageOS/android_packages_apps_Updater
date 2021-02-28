@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -54,6 +54,8 @@ illetve, ha éppen tölt, akkor még <xliff:g id="percent_charging">%2$d</xliff:
     <string name="menu_export_update">A frissítés exportálása</string>
     <string name="menu_show_changelog">A változások listájának megjelenítése</string>
     <string name="menu_ab_perf_mode">Állítsa fontossági sorrendbe a frissítési folyamatot</string>
+    <string name="menu_update_recovery">Recovery-frissítés</string>
+    <string name="toast_forced_update_recovery">Ezen a készüléken nem lehet letiltani a Lineage Recovery frissítéseket.</string>
     <string name="snack_updates_found">Új frissítés érhető el</string>
     <string name="snack_no_updates_found">Nem található új frissítés</string>
     <string name="snack_updates_check_failed">Nem sikerült a frissítéskeresés. Ellenőrizze az internetkapcsolatát, majd próbálja újra.</string>

@@ -25,10 +25,12 @@
     <string name="download_completed_notification">Sťahovanie dokončené</string>
     <string name="download_starting_notification">Spúšťam sťahovanie</string>
     <string name="update_failed_notification">Aktualizácia zlyhala</string>
+    <string name="installation_suspended_notification">Inštalácia bola pozastavená</string>
     <string name="new_updates_found_title">Nové aktualizácie</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Pozastaviť</string>
     <string name="resume_button">Obnoviť</string>
+    <string name="suspend_button">Pozastaviť</string>
     <string name="installing_update">Inštalácia balíka aktualizácií</string>
     <string name="installing_update_error">Chyba pri inštalácii</string>
     <string name="installing_update_finished">Aktualizácia nainštalovaná</string>

@@ -38,7 +38,7 @@
     <string name="preparing_ota_first_boot">Erster Start wird vorbereitet</string>
     <string name="dialog_prepare_zip_message">Update wird vorbereitet</string>
     <string name="dialog_battery_low_title">Niedriger Akkustand</string>
-    <string name="dialog_battery_low_message_pct">Ihr Akkustand ist zu niedrig. Es werden mindestens <xliff:g id="percent_discharging">%1$d</xliff:g>%% Restkapazität (oder <xliff:g id="percent_charging">%2$d</xliff:g>%% mit angeschlossenem Ladegerät) benötigt, um fortzufahren.</string>
+    <string name="dialog_battery_low_message_pct">Dein Akkustand ist zu niedrig. Es werden mindestens <xliff:g id="percent_discharging">%1$d</xliff:g>%% Restkapazität (oder <xliff:g id="percent_charging">%2$d</xliff:g>%% mit angeschlossenem Ladegerät) benötigt, um fortzufahren.</string>
     <string name="reboot">Neustart</string>
     <string name="menu_refresh">Aktualisieren</string>
     <string name="menu_preferences">Voreinstellungen</string>

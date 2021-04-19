@@ -66,7 +66,7 @@ public class Utils {
     }
 
     public static File getExportPath(Context context) {
-        File dir = new File(Environment.getExternalStorageDirectory(),
+        File dir = new File(context.getExternalFilesDir(null),
                 context.getString(R.string.export_path));
         if (!dir.isDirectory()) {
             if (dir.exists() || !dir.mkdirs()) {

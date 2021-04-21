@@ -53,8 +53,8 @@
     <string name="menu_export_update">Экспорт обновлений</string>
     <string name="menu_show_changelog">Показать журнал изменений</string>
     <string name="menu_ab_perf_mode">Приоритет процесса обновления</string>
-    <string name="menu_update_recovery">Обновить Recovery</string>
-    <string name="toast_forced_update_recovery">Невозможно отключить обновления Lineage Recovery на этом устройстве.</string>
+    <string name="menu_update_recovery">Обновлять Recovery</string>
+    <string name="toast_forced_update_recovery">Отключить обновления Lineage Recovery на этом устройстве невозможно.</string>
     <string name="snack_updates_found">Доступно обновление</string>
     <string name="snack_no_updates_found">Обновлений не найдено</string>
     <string name="snack_updates_check_failed">Проверка обновлений не удалась. Проверьте подключение к интернету и повторите попытку.</string>
@@ -81,7 +81,7 @@
     <string name="confirm_delete_dialog_title">Удалить файл</string>
     <string name="confirm_delete_dialog_message">Удалить выбранный файл обновления?</string>
     <string name="apply_update_dialog_title">Применить обновление</string>
-    <string name="apply_update_dialog_message">Будет выполнено обновление до версии <xliff:g id="update_name">%1$s</xliff:g>.\n\nПри нажатии кнопки <xliff:g id="ok">%2$s</xliff:g> устройство будет перезапущено и переведено в режим восстановления для установки новой версии.\n\nПримечание: для этой функции необходим совместимый режим восстановления. При возникновении ошибки потребуется установить обновление вручную.</string>
+    <string name="apply_update_dialog_message">Будет выполнено обновление до версии <xliff:g id="update_name">%1$s</xliff:g>.\n\nПри нажатии кнопки <xliff:g id="ok">%2$s</xliff:g> устройство будет перезапущено в Recovery для установки новой версии.\n\nПримечание: для этой функции необходим совместимый Recovery. При возникновении ошибки потребуется установить обновление вручную.</string>
     <string name="apply_update_dialog_message_ab">Будет выполнено обновление до версии <xliff:g id="update_name">%1$s</xliff:g>.\n\nПри нажатии кнопки <xliff:g id="ok">%2$s</xliff:g> будет начата установка в фоновом режиме.\n\nПо завершении вам будет предложено перезапустить устройство.</string>
     <string name="cancel_installation_dialog_message">Отменить установку?</string>
     <string name="label_download_url">Ссылка для скачивания</string>

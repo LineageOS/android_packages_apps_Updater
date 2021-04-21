@@ -53,6 +53,8 @@
     <string name="menu_export_update">Vie päivitys</string>
     <string name="menu_show_changelog">Näytä muutosloki</string>
     <string name="menu_ab_perf_mode">Priorisoi päivitysprosessi</string>
+    <string name="menu_update_recovery">Päivitä recovery-tila</string>
+    <string name="toast_forced_update_recovery">Tällä laitteella ei voi poistaa Lineage Recovery-päivityksiä käytöstä.</string>
     <string name="snack_updates_found">Uusia päivityksiä löytyi</string>
     <string name="snack_no_updates_found">Uusia päivityksiä ei löytynyt</string>
     <string name="snack_updates_check_failed">Päivitysten tarkistaminen epäonnistui. Tarkista internet-yhteytesi ja yritä uudelleen.</string>

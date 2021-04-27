@@ -4,6 +4,8 @@
         <item name="colorPrimary">@color/theme_primary</item>
         <item name="colorPrimaryDark">@color/theme_primary_dark</item>
         <item name="colorAccent">@color/theme_accent</item>
+		<item name="fontFamily">@*android:string/config_bodyFontFamily</item>
+		<item name="android:windowBackground">@color/theme_background</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="android:windowLightStatusBar">@bool/theme_is_light</item>
         <item name="android:windowLightNavigationBar">@bool/theme_is_light</item>
@@ -17,10 +19,14 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar">
+	    <item name="colorPrimary">@color/color_action_bar_primary</item>
+		<item name="fontFamily">@*android:string/config_bodyFontFamily</item>
+	</style>
 
     <style name="TextAppearanceInverted" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/inverted</item>
+		<item name="fontFamily">@*android:string/config_bodyFontFamilyMedium</item>
     </style>
     <style name="TextAppearanceTransparent" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@android:color/transparent</item>

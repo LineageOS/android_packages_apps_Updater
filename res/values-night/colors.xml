@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="theme_primary">#212121</color>
-    <color name="theme_primary_dark">#1c1c1c</color>
+    <color name="theme_primary">@*android:color/primary_device_default_settings</color>
+    <color name="theme_primary_dark">@*android:color/primary_dark_device_default_settings</color>
     <color name="theme_accent">@*android:color/accent_device_default_dark</color>
-
+    <color name="theme_background">@color/theme_primary_dark</color>
+    <color name="color_action_bar_primary">@color/theme_background</color>
     <color name="inverted">#f5f5f5</color>
 </resources>

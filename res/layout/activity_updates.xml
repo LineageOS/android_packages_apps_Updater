@@ -22,7 +22,8 @@
             app:collapsedTitleTextAppearance="@style/TextAppearanceInverted"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleTextAppearance="@style/TextAppearanceTransparent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:scrimAnimationDuration="0">
 
             <RelativeLayout
                 android:layout_width="match_parent"

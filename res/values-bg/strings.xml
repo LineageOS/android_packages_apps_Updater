@@ -53,6 +53,8 @@
     <string name="menu_export_update">Експортиране на актуализация</string>
     <string name="menu_show_changelog">Покажи промените</string>
     <string name="menu_ab_perf_mode">Приоритет на процеса на актуализиране</string>
+    <string name="menu_update_recovery">Актуализиране на recovery</string>
+    <string name="toast_forced_update_recovery">Невъзможно е да деактивирате актуализациите на Lineage Recovery на това устройство.</string>
     <string name="snack_updates_found">Намерена е нова актуализация</string>
     <string name="snack_no_updates_found">Няма нови актуализации</string>
     <string name="snack_updates_check_failed">Проверката за актуализации се провали. Моля проверете връзката с интернет и опитайте отново по-късно.</string>

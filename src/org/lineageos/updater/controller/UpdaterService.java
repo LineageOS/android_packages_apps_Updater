@@ -15,6 +15,7 @@
  */
 package org.lineageos.updater.controller;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -271,8 +272,10 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
                 mNotificationBuilder.setAutoCancel(false);
-                startForeground(NOTIFICATION_ID, mNotificationBuilder.build());
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+
+                final Notification notification = mNotificationBuilder.build();
+                startForeground(NOTIFICATION_ID, notification);
+                mNotificationManager.notify(NOTIFICATION_ID, notification);
                 break;
             }
             case DOWNLOADING: {
@@ -286,7 +289,10 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
                 mNotificationBuilder.setAutoCancel(false);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+
+                final Notification notification = mNotificationBuilder.build();
+                startForeground(NOTIFICATION_ID, notification);
+                mNotificationManager.notify(NOTIFICATION_ID, notification);
                 break;
             }
             case PAUSED: {
@@ -337,7 +343,10 @@ public class UpdaterService extends Service {
                 String text = getString(R.string.verifying_download_notification);
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+
+                final Notification notification = mNotificationBuilder.build();
+                startForeground(NOTIFICATION_ID, notification);
+                mNotificationManager.notify(NOTIFICATION_ID, notification);
                 break;
             }
             case VERIFIED: {
@@ -386,8 +395,10 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
                 mNotificationBuilder.setAutoCancel(false);
-                startForeground(NOTIFICATION_ID, mNotificationBuilder.build());
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+
+                final Notification notification = mNotificationBuilder.build();
+                startForeground(NOTIFICATION_ID, notification);
+                mNotificationManager.notify(NOTIFICATION_ID, notification);
                 break;
             }
             case INSTALLED: {

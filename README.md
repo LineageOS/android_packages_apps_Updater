@@ -5,7 +5,7 @@ Simple application to download and apply OTA packages.
 
 Server requirements
 -------------------
-The app sends `GET` requests to the URL defined by the `updater_server_url`
+The app sends `GET` requests to the URL defined by the `config_updaterServerUrl`
 resource (or the `lineage.updater.uri` system property) and expects as response
 a JSON with the following structure:
 ```json

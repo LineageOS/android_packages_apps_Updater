@@ -14,6 +14,28 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <bool name="config_hideRecoveryUpdate">false</bool>
+
+    <!-- Directory where the update files will be downloaded and stored.
+         WARNING: The application can and will delete any unknown file. -->
+    <string name="config_downloadPath" translatable="false">/data/lineageos_updates/</string>
+
+    <!-- Directory where the downloads will be exported to.
+         The path is relative to the root of the external storage.-->
+    <string name="config_exportPath" translatable="false">LineageOS updates/</string>
+
+    <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
+    <string name="config_updaterServerUrl" translatable="false">https://download.lineageos.org/api/v1/{device}/{type}/{incr}</string>
+
+    <!-- URL, which gets launched in browser when user pressed on "Show Changelog" -->
+    <string name="config_menuChangelogUrl" translatable="false">https://download.lineageos.org/<xliff:g id="device_name">%1$s</xliff:g>/changes</string>
+
+    <!-- URL, which gets launched in browser to inform user why installing an update is blocked -->
+    <string name="config_blockedUpdateInfoUrl" translatable="false">http://wiki.lineageos.org/devices/<xliff:g id="device_name">%1$s</xliff:g>/upgrade</string>
 </resources>

@@ -63,12 +63,12 @@ public class Utils {
     }
 
     public static File getDownloadPath(Context context) {
-        return new File(context.getString(R.string.download_path));
+        return new File(context.getString(R.string.config_downloadPath));
     }
 
     public static File getExportPath(Context context) {
         File dir = new File(context.getExternalFilesDir(null),
-                context.getString(R.string.export_path));
+                context.getString(R.string.config_exportPath));
         if (!dir.isDirectory()) {
             if (dir.exists() || !dir.mkdirs()) {
                 throw new RuntimeException("Could not create directory");
@@ -159,7 +159,7 @@ public class Utils {
 
         String serverUrl = SystemProperties.get(Constants.PROP_UPDATER_URI);
         if (serverUrl.trim().isEmpty()) {
-            serverUrl = context.getString(R.string.updater_server_url);
+            serverUrl = context.getString(R.string.config_updaterServerUrl);
         }
 
         return serverUrl.replace("{device}", device)
@@ -170,13 +170,13 @@ public class Utils {
     public static String getUpgradeBlockedURL(Context context) {
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
                 SystemProperties.get(Constants.PROP_DEVICE));
-        return context.getString(R.string.blocked_update_info_url, device);
+        return context.getString(R.string.config_blockedUpdateInfoUrl, device);
     }
 
     public static String getChangelogURL(Context context) {
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
                 SystemProperties.get(Constants.PROP_DEVICE));
-        return context.getString(R.string.menu_changelog_url, device);
+        return context.getString(R.string.config_menuChangelogUrl, device);
     }
 
     public static void triggerUpdate(Context context, String downloadId) {

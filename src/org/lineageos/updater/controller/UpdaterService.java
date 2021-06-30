@@ -29,6 +29,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.text.format.Formatter;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
@@ -41,10 +42,12 @@ import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.model.Update;
 import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.IOException;
+import java.io.File;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 
@@ -60,6 +63,7 @@ public class UpdaterService extends Service {
 
     public static final String ACTION_INSTALL_SUSPEND = "action_install_suspend";
     public static final String ACTION_INSTALL_RESUME = "action_install_resume";
+    public static final String ACTION_FLASH_FILE = "action_flash_file";
 
     private static final String ONGOING_NOTIFICATION_CHANNEL =
             "ongoing_notification_channel";
@@ -77,7 +81,15 @@ public class UpdaterService extends Service {
     private NotificationManager mNotificationManager;
     private NotificationCompat.BigTextStyle mNotificationStyle;
 
-    private UpdaterController mUpdaterController;
+    private static UpdaterController mUpdaterController;
+
+    public static void startFlashFile(Context context, UpdateInfo update) {
+        mUpdaterController.addUpdate((Update)update);
+        Intent i = new Intent(context, UpdaterService.class);
+        i.setAction(ACTION_FLASH_FILE);
+        i.putExtra("filename", update.getFile().getName());
+        context.startService(i);
+    }
 
     @Override
     public void onCreate() {
@@ -234,6 +246,30 @@ public class UpdaterService extends Service {
                         mUpdaterController);
                 installer.reconnect();
                 installer.resume();
+            }
+        } else if (ACTION_FLASH_FILE.equals(intent.getAction())) {
+            String downloadId = intent.getStringExtra("filename");
+            mUpdaterController.verifyLocalUpdate(downloadId, mUpdaterController);
+            UpdateInfo update = mUpdaterController.getUpdate(downloadId);
+            if (update.getStatus() == UpdateStatus.VERIFICATION_FAILED) {
+                Toast.makeText(this, "Couldn't install uodate", Toast.LENGTH_SHORT).show();
+                return START_NOT_STICKY;
+            }
+            try {
+                if (Utils.isABUpdate(update.getFile())) {
+                    ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
+                            mUpdaterController);
+                    installer.install(downloadId);
+                } else {
+                    UpdateInstaller installer = UpdateInstaller.getInstance(this,
+                            mUpdaterController);
+                    installer.install(downloadId);
+                }
+            } catch (IOException e) {
+                Log.e(TAG, "Could not install update", e);
+                mUpdaterController.getActualUpdate(downloadId)
+                        .setStatus(UpdateStatus.INSTALLATION_FAILED);
+                mUpdaterController.notifyUpdateChange(downloadId);
             }
         }
         return ABUpdateInstaller.isInstallingUpdate(this) ? START_STICKY : START_NOT_STICKY;

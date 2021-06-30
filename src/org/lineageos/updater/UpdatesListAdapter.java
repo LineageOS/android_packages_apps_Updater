@@ -533,7 +533,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         menu.findItem(R.id.menu_delete_action).setVisible(canDelete);
         menu.findItem(R.id.menu_copy_url).setVisible(update.getAvailableOnline());
         menu.findItem(R.id.menu_export_update).setVisible(
-                update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED);
+                update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED && 
+                update.getType() != "local");
 
         popupMenu.setOnMenuItemClickListener(item -> {
             int itemId = item.getItemId();

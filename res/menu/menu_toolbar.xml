@@ -14,4 +14,7 @@
         android:id="@+id/menu_show_changelog"
         android:title="@string/menu_show_changelog"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_flash_local"
+        android:title="@string/menu_flash_local" />
 </menu>

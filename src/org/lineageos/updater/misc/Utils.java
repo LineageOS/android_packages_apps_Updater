@@ -43,6 +43,7 @@ import org.lineageos.updater.model.UpdateInfo;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -75,6 +76,10 @@ public class Utils {
         return dir;
     }
 
+    public static File getAbsolutePath(Context context, String fileName) {
+        return new File(context.getExternalFilesDir(null), fileName);
+    }
+
     public static File getCachedUpdateList(Context context) {
         return new File(context.getCacheDir(), "updates.json");
     }
@@ -90,6 +95,33 @@ public class Utils {
         update.setFileSize(object.getLong("size"));
         update.setDownloadUrl(object.getString("url"));
         update.setVersion(object.getString("version"));
+        return update;
+    }
+
+    public static Update parseLocalUpdate(String fileName) throws IOException {
+        Update update = new Update();
+        update.setFile(new File(fileName));
+        update.setType("local");
+        update.setFileSize(update.getFile().length());
+        String metadataPath = "META-INF/com/android/metadata";
+        try (ZipFile zip = new ZipFile(update.getFile())) {
+            ZipEntry entry = zip.getEntry(metadataPath);
+            if (entry == null) return null;
+            BufferedReader reader = new BufferedReader(new InputStreamReader(zip.getInputStream(entry)));
+            while (reader.ready()) {
+                String line = reader.readLine();
+                if (line.contains("timestamp")) {
+                    update.setTimestamp(Long.parseLong(line.split("=")[1]));
+                    break;
+                }
+            }
+            reader.close();
+            zip.close();
+            update.setName(update.getFile().getName());
+            update.setDownloadId(update.getName());
+            if (fileName.startsWith("lineage-")) update.setVersion(fileName.split("-")[1]);
+            else update.setVersion(SystemProperties.get("ro.lineage.build.version"));
+        }
         return update;
     }
 

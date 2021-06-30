@@ -63,6 +63,11 @@
 
     <string name="reboot">Reboot</string>
 
+    <string name="name">Name: </string>
+    <string name="size">Size: %1$s Mb</string>
+    <string name="build">Build: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g></string>
+    <string name="confirm">Confirm</string>
+
     <string name="menu_refresh">Refresh</string>
     <string name="menu_preferences">Preferences</string>
     <string name="menu_auto_updates_check">Auto updates check</string>
@@ -74,6 +79,8 @@
     <string name="menu_delete_update">Delete</string>
     <string name="menu_copy_url">Copy URL</string>
     <string name="menu_export_update">Export update</string>
+    <string name="menu_flash_local">Flash Local</string>
+    <string name="select_file_activity_title">Select ZIP file</string>
     <string name="menu_show_changelog">Show changelog</string>
     <string name="menu_changelog_url" translatable="false">https://download.lineageos.org/<xliff:g id="device_name">%1$s</xliff:g>/changes</string>
     <string name="menu_ab_perf_mode">Prioritize update process</string>

@@ -247,6 +247,25 @@ public class UpdaterController {
         };
     }
 
+    public void verifyLocalUpdate(String downloadId, UpdaterController mController) {
+        mVerifyingUpdates.add(downloadId);
+        Update update = mController.getActualUpdate(downloadId);
+        File file = update.getFile();
+        if (file.exists() && verifyPackage(file, true)) {
+            file.setReadable(true, false);
+            update.setPersistentStatus(UpdateStatus.Persistent.VERIFIED);
+            mUpdatesDbHelper.changeUpdateStatus(update);
+            update.setStatus(UpdateStatus.VERIFIED);
+        } else {
+            update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
+            mUpdatesDbHelper.removeUpdate(downloadId);
+            update.setProgress(0);
+            update.setStatus(UpdateStatus.VERIFICATION_FAILED);
+        }
+        mVerifyingUpdates.remove(downloadId);
+        notifyUpdateChange(downloadId);
+    }
+
     @SuppressLint("SetWorldReadable")
     private void verifyUpdateAsync(final String downloadId) {
         mVerifyingUpdates.add(downloadId);
@@ -255,7 +274,7 @@ public class UpdaterController {
             if (entry != null) {
                 Update update = entry.mUpdate;
                 File file = update.getFile();
-                if (file.exists() && verifyPackage(file)) {
+                if (file.exists() && verifyPackage(file, false)) {
                     //noinspection ResultOfMethodCallIgnored
                     file.setReadable(true, false);
                     update.setPersistentStatus(UpdateStatus.Persistent.VERIFIED);
@@ -273,14 +292,14 @@ public class UpdaterController {
         }).start();
     }
 
-    private boolean verifyPackage(File file) {
+    public boolean verifyPackage(File file, boolean localBuild) {
         try {
             android.os.RecoverySystem.verifyPackage(file, null, null);
             Log.e(TAG, "Verification successful");
             return true;
         } catch (Exception e) {
             Log.e(TAG, "Verification failed", e);
-            if (file.exists()) {
+            if (file.exists() && !localBuild) {
                 //noinspection ResultOfMethodCallIgnored
                 file.delete();
             } else {

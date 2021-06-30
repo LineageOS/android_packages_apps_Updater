@@ -21,17 +21,21 @@ import android.app.UiModeManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.icu.text.DateFormat;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.IBinder;
 import android.os.SystemProperties;
+import android.provider.DocumentsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -80,6 +84,7 @@ import java.util.UUID;
 public class UpdatesActivity extends UpdatesListActivity {
 
     private static final String TAG = "UpdatesActivity";
+    private static final int ACTIVITY_SELECT_FLASH_FILE = 1;
     private UpdaterService mUpdaterService;
     private BroadcastReceiver mBroadcastReceiver;
 
@@ -87,6 +92,7 @@ public class UpdatesActivity extends UpdatesListActivity {
 
     private View mRefreshIconView;
     private RotateAnimation mRefreshAnimation;
+    private AlertDialog mConfirmDialog;
 
     private boolean mIsTV;
 
@@ -228,20 +234,101 @@ public class UpdatesActivity extends UpdatesListActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    private void selectFile() {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.setType("application/zip");
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+        startActivityForResult(Intent.createChooser(intent,
+                    getResources().getString(R.string.select_file_activity_title)),
+                    ACTIVITY_SELECT_FLASH_FILE);
+
+    }
+
+    private boolean isExternalStorageDocument(Uri uri) {
+        return "com.android.externalstorage.documents".equals(uri.getAuthority());
+    }
+
+    private boolean isDownloadsDocument(Uri uri) {
+        return "com.android.providers.downloads.documents".equals(uri.getAuthority());
+    }
+
+    private String getPath(Uri uri) {
+        if (DocumentsContract.isDocumentUri(this, uri)) {
+            final String docId = DocumentsContract.getDocumentId(uri);
+            // ExternalStorageProvider
+            if (isExternalStorageDocument(uri)) {
+                Log.d("isExternalStorageDocument: %s", uri.getPath());
+                final String[] split = docId.split(":");
+                final String type = split[0];
+
+                if ("primary".equalsIgnoreCase(type)) {
+                    return getExternalFilesDir(null) + "/" + split[1];
+                }
+                if ("home".equalsIgnoreCase(type)) {
+                    return getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS) + "/" + split[1];
+                }
+            }
+            // DownloadsProvider
+            else if (isDownloadsDocument(uri)) {
+                Log.d("isDownloadsDocument: %s", uri.getPath());
+                String fileName = getFileNameColumn(uri);
+                if (fileName != null) {
+                    return getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + "/" + fileName;
+                }
+            }
+        }
+        return null;
+    }
+
+    private String getFileNameColumn(Uri uri) {
+        Cursor cursor = null;
+        try {
+            cursor = getContentResolver().query(uri, null, null, null, null);
+            while (cursor.moveToNext()) {
+                int index = cursor.getColumnIndexOrThrow("_display_name");
+                return cursor.getString(index);
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to resolve file name", e);
+        } finally {
+            if (cursor != null)
+                cursor.close();
+        }
+        return null;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == ACTIVITY_SELECT_FLASH_FILE && resultCode == UpdatesListActivity.RESULT_OK) {
+            Uri uri = data.getData();
+            Log.d("Try flash file: %s", uri.getPath());
+            showConfirmDialog(getPath(uri));
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
-        if (itemId == R.id.menu_refresh) {
-            downloadUpdatesList(true);
-            return true;
-        } else if (itemId == R.id.menu_preferences) {
-            showPreferencesDialog();
-            return true;
-        } else if (itemId == R.id.menu_show_changelog) {
-            Intent openUrl = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse(Utils.getChangelogURL(this)));
-            startActivity(openUrl);
-            return true;
+        switch (item.getItemId()) {
+            case R.id.menu_refresh: {
+                downloadUpdatesList(true);
+                return true;
+            }
+            case R.id.menu_flash_local: {
+                selectFile();
+                return true;
+            }
+            case R.id.menu_preferences: {
+                showPreferencesDialog();
+                return true;
+            }
+            case R.id.menu_show_changelog: {
+                Intent openUrl = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse(Utils.getChangelogURL(this)));
+                startActivity(openUrl);
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }
@@ -554,4 +641,38 @@ public class UpdatesActivity extends UpdatesListActivity {
                 })
                 .show();
     }
+
+    private void showConfirmDialog(String fileName) {
+        try {
+            UpdateInfo update = Utils.parseLocalUpdate(fileName);
+            long size = update.getFileSize() / (1024L * 1024L);
+            View view = LayoutInflater.from(this).inflate(R.layout.confirm_dialog, null);
+            TextView nameView = (TextView) view.findViewById(R.id.name);
+            nameView.setSelected(true);
+            nameView.setText(update.getFile().getName());
+            TextView sizeView = (TextView) view.findViewById(R.id.size);
+            sizeView.setText(getString(R.string.size, size));
+            TextView dateView = (TextView) view.findViewById(R.id.build);
+            dateView.setText(getString(R.string.build, StringGenerator.getDateLocalizedUTC(this,
+                DateFormat.LONG, update.getTimestamp())));
+            new AlertDialog.Builder(this)
+                   .setTitle(R.string.menu_flash_local)
+                   .setView(view)
+                   .setPositiveButton(getString(R.string.action_install), new DialogInterface.OnClickListener() {
+                       @Override
+                       public void onClick(DialogInterface dialog, int which) {
+                           UpdaterService.startFlashFile(UpdatesActivity.this, update);
+                       }
+                   })
+                   .setNegativeButton(getString(R.string.action_cancel), new DialogInterface.OnClickListener() {
+                       @Override
+                       public void onClick(DialogInterface dialog, int which) {
+                       }
+                   }).show();
+        } catch(IOException e) {
+            Log.e(TAG, "Couldn't install the update");
+            return;
+        }
+    }
+
 }

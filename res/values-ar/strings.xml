@@ -53,6 +53,8 @@
     <string name="menu_export_update">تصدير التحديث</string>
     <string name="menu_show_changelog">إظهار التغييرات</string>
     <string name="menu_ab_perf_mode">إعطاء الأولوية لعملية التحديث</string>
+    <string name="menu_update_recovery">تحديث وضع الاسترداد</string>
+    <string name="toast_forced_update_recovery">من المستحيل تعطيل تحديثات Lineage Recovery على هذا الجهاز</string>
     <string name="snack_updates_found">تم العثور على تحديثات جديدة</string>
     <string name="snack_no_updates_found">لا توجد تحديثات جديدة</string>
     <string name="snack_updates_check_failed">فشل التحقق من وجود تحديث. برجاء التحقق من اتصالك بالإنترنت وإعادة المحاولة لاحقًا.</string>

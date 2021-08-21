@@ -53,6 +53,8 @@
     <string name="menu_export_update">アップデートのエクスポート</string>
     <string name="menu_show_changelog">更新履歴の表示</string>
     <string name="menu_ab_perf_mode">更新プロセスを優先する</string>
+    <string name="menu_update_recovery">リカバリーを更新</string>
+    <string name="toast_forced_update_recovery">このデバイスでは Lineage Recovery のアップデートを無効にすることはできません。</string>
     <string name="snack_updates_found">アップデートが見つかりました</string>
     <string name="snack_no_updates_found">新しいアップデートはありません</string>
     <string name="snack_updates_check_failed">アップデートを確認できませんでした。インターネット接続を確認して、しばらくしてからもう一度お試しください。</string>

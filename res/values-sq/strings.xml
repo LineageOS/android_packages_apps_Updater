@@ -53,6 +53,8 @@
     <string name="menu_export_update">Eksporto përditësimin</string>
     <string name="menu_show_changelog">Shfaq ndryshimet</string>
     <string name="menu_ab_perf_mode">Jepi përparësi përditësimit</string>
+    <string name="menu_update_recovery">Përditëso rikuperimin</string>
+    <string name="toast_forced_update_recovery">Është e pamundur të mbyllni përditësimet e Rimëkëmbjes të Lineage në këtë pajisje.</string>
     <string name="snack_updates_found">Ka përditësime të reja</string>
     <string name="snack_no_updates_found">Nuk u gjet asnjë përditësim i ri</string>
     <string name="snack_updates_check_failed">Kontrolli për përditësim dështoi. Ju lutem kontrolloni për lidhjen me internet e më pas provoni sërish.</string>

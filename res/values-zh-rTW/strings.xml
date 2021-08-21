@@ -53,6 +53,8 @@
     <string name="menu_export_update">匯出更新</string>
     <string name="menu_show_changelog">顯示更新日誌</string>
     <string name="menu_ab_perf_mode">優先更新過程</string>
+    <string name="menu_update_recovery">更新 Recovery</string>
+    <string name="toast_forced_update_recovery">無法停用此裝置上的 Lineage Recovery 更新。</string>
     <string name="snack_updates_found">發現新的更新</string>
     <string name="snack_no_updates_found">沒有找到新的更新</string>
     <string name="snack_updates_check_failed">更新檢查失敗。請檢查您的網路連線並稍後重試。</string>

@@ -53,7 +53,7 @@
     <string name="menu_export_update">导出更新</string>
     <string name="menu_show_changelog">显示更新日志</string>
     <string name="menu_ab_perf_mode">更新进程优先</string>
-    <string name="menu_update_recovery">更新恢复</string>
+    <string name="menu_update_recovery">更新恢复模式</string>
     <string name="toast_forced_update_recovery">在此设备上禁用 Lineage 恢复更新是不可能的。</string>
     <string name="snack_updates_found">找到新更新</string>
     <string name="snack_no_updates_found">没有找到新的更新</string>

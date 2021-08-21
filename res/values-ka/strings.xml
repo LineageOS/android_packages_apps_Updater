@@ -18,9 +18,18 @@
     <string name="app_name">განმაახლებელი</string>
     <string name="display_name">განმაახლებელი</string>
     <string name="downloading_notification">ჩამოიტვირთება</string>
+    <string name="installation_suspended_notification">დაყენება გადაიდო</string>
     <string name="new_updates_found_title">ბოლო განახლებები</string>
     <string name="pause_button">შეჩერება</string>
     <string name="resume_button">გაგრძელება</string>
+    <string name="suspend_button">გადადება</string>
     <string name="dialog_battery_low_title">ბატარეა ჯდება</string>
+    <string name="menu_auto_updates_check_interval_daily">დღეში ერთხელ</string>
+    <string name="menu_auto_updates_check_interval_weekly">კვირაში ერთხელ</string>
+    <string name="menu_auto_updates_check_interval_monthly">თვეში ერთხელ</string>
+    <string name="menu_auto_updates_check_interval_never">არასდროს</string>
+    <string name="menu_update_recovery">აღმდგენის განახლება</string>
+    <string name="toast_forced_update_recovery">შეუძლებელია Lineage-აღმდგენის განახლებების გათიშვა, ამ მოწყობილობაზე.</string>
+    <string name="apply_update_dialog_message">თქვენ აპირებთ განაახლოთ <xliff:g id="update_name">%1$s</xliff:g> ვერსიაზე.\n\nთუ დააჭერთ ღილაკზე <xliff:g id="ok">%2$s</xliff:g>, მოწყობილობა ხელახლა ჩაირთვება აღმდგენ რეჟიმში განახლების დასაყენებლად.\n\nშენიშვნა: საჭიროებს თავსებად აღმდგენ გარსს, თუ არადა განახლებები ხელით იქნება დასაყენებელი.</string>
     <string name="new_updates_channel_title">ბოლო განახლებები</string>
 </resources>

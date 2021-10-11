@@ -134,7 +134,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         notificationBuilder.setSmallIcon(R.drawable.ic_system_update);
         Intent notificationIntent = new Intent(context, UpdatesActivity.class);
         PendingIntent intent = PendingIntent.getActivity(context, 0, notificationIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         notificationBuilder.setContentIntent(intent);
         notificationBuilder.setContentTitle(context.getString(R.string.new_updates_found_title));
         notificationBuilder.setAutoCancel(true);
@@ -145,7 +145,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     private static PendingIntent getRepeatingUpdatesCheckIntent(Context context) {
         Intent intent = new Intent(context, UpdatesCheckReceiver.class);
         intent.setAction(DAILY_CHECK_ACTION);
-        return PendingIntent.getBroadcast(context, 0, intent, 0);
+        return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
     }
 
     public static void updateRepeatingUpdatesCheck(Context context) {
@@ -177,7 +177,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     private static PendingIntent getUpdatesCheckIntent(Context context) {
         Intent intent = new Intent(context, UpdatesCheckReceiver.class);
         intent.setAction(ONESHOT_CHECK_ACTION);
-        return PendingIntent.getBroadcast(context, 0, intent, 0);
+        return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
     }
 
     public static void scheduleUpdatesCheck(Context context) {

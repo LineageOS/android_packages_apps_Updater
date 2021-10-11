@@ -65,7 +65,7 @@ public class UpdaterReceiver extends BroadcastReceiver {
 
         Intent notificationIntent = new Intent(context, UpdatesActivity.class);
         PendingIntent intent = PendingIntent.getActivity(context, 0, notificationIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         NotificationChannel notificationChannel = new NotificationChannel(
                 INSTALL_ERROR_NOTIFICATION_CHANNEL,

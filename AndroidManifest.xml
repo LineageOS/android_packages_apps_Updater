@@ -25,6 +25,7 @@
             android:name=".UpdatesActivity"
             android:excludeFromRecents="true"
             android:label="@string/display_name"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             android:launchMode="singleTop">
             <intent-filter android:priority="1">
@@ -50,7 +51,7 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".UpdatesCheckReceiver">
+        <receiver android:name=".UpdatesCheckReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>

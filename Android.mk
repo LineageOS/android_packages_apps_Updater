@@ -16,6 +16,7 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx.localbroadcastmanager_localbroadcastmanager \
     androidx.preference_preference \
     androidx.recyclerview_recyclerview \
+    SettingsLib
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res

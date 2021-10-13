@@ -12,18 +12,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        app:layout_behavior="org.lineageos.updater.ui.FlingBehavior">
+        android:outlineAmbientShadowColor="@android:color/transparent"
+        android:outlineSpotShadowColor="@android:color/transparent"
+        android:background="?android:attr/colorPrimary"
+        android:theme="@style/Theme.CollapsingToolbar.Settings">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:theme="@style/AppTheme.AppBarOverlay"
-            app:collapsedTitleTextAppearance="@style/TextAppearanceInverted"
-            app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleTextAppearance="@style/TextAppearanceTransparent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:scrimAnimationDuration="0">
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:forceApplySystemWindowInsetTop="true"
+            app:extraMultilineHeightEnabled="true"
+            app:contentScrim="@color/toolbar_collapsed"
+            app:maxLines="3"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:scrimAnimationDuration="50"
+            app:scrimVisibleHeightTrigger="@dimen/settingslib_scrim_visible_height_trigger"
+            app:statusBarScrim="@null"
+            app:titleCollapseMode="fade"
+            app:collapsedTitleTextAppearance="@style/CollapsingToolbarTitle.Collapsed"
+            app:expandedTitleTextAppearance="@style/CollapsingToolbarTitle.Expanded"
+            app:expandedTitleMarginStart="@dimen/expanded_title_margin_start"
+            app:expandedTitleMarginEnd="@dimen/expanded_title_margin_end"
+            app:toolbarId="@id/action_bar">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -72,8 +84,9 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:textColor="?android:attr/textColorPrimary"
-                app:layout_collapseMode="pin" />
+                android:theme="?android:attr/actionBarTheme"
+                android:transitionName="shared_element_view"
+                app:layout_collapseMode="pin"/>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 

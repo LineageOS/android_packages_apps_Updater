@@ -61,7 +61,7 @@
     <string name="snack_download_failed">Dh’fhàillig an luchdadh a-nuas. Thoir sùil air a’ cheangal ris an eadar-lìon agad is feuch ris a-rithist an ceann greis.</string>
     <string name="snack_download_verification_failed">Dh’fhàillig le dearbhadh an ùrachaidh.</string>
     <string name="snack_download_verified">Tha an luchdadh a-nuas deiseil.</string>
-    <string name="snack_update_not_installable">Chan urrainn dhut an t-ùrachadh seo a’ stàladh air an tionndadh làithreach agad.</string>
+    <string name="snack_update_not_installable">Chan urrainn dhut an t-ùrachadh seo a’ stàladh air an togail làithreach agad.</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
     <string name="header_last_updates_check">An sgrùdadh mu dheireadh: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>

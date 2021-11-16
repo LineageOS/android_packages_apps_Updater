@@ -21,6 +21,10 @@ import java.io.IOException;
 public interface DownloadClient {
 
     interface DownloadCallback {
+        /**
+         * Called when the server responded to our request.
+         * This does not mean, that the download is finished; check onSuccess and onFailure.
+         */
         void onResponse(Headers headers);
 
         void onSuccess();

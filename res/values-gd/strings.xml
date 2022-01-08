@@ -17,6 +17,16 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">An t-ùraichear</string>
     <string name="display_name">An t-ùraichear</string>
+    <!-- Directory where the update files will be downloaded and stored.
+         WARNING: The application can and will delete any unknown file. -->
+    <!-- Directory where the downloads will be exported to.
+         The path is relative to the root of the external storage.-->
+    <!--
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
     <string name="verification_failed_notification">Dh’fhàillig an dearbhadh</string>
     <string name="verifying_download_notification">A’ dearbhadh an ùrachaidh</string>
     <string name="downloading_notification">’Ga luchdadh a-nuas</string>

@@ -25,10 +25,12 @@
     <string name="download_completed_notification">Completóse la descarga</string>
     <string name="download_starting_notification">Aniciando descarga</string>
     <string name="update_failed_notification">Falló l\'anovamientu</string>
+    <string name="installation_suspended_notification">Suspendióse la instalación</string>
     <string name="new_updates_found_title">Anovamientos nuevos</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Posar</string>
     <string name="resume_button">Siguir</string>
+    <string name="suspend_button">Suspender</string>
     <string name="installing_update">Instalando\'l paquete d\'anovamientu</string>
     <string name="installing_update_error">Fallu d\'instalación</string>
     <string name="installing_update_finished">Instalóse l\'anovamientu</string>
@@ -36,20 +38,20 @@
     <string name="preparing_ota_first_boot">Tresnando\'l primer arranque</string>
     <string name="dialog_prepare_zip_message">Tresnáu preliminar del anovamientu</string>
     <string name="dialog_battery_low_title">Batería baxa</string>
-    <string name="dialog_battery_low_message_pct">El nivel de batería ta perbaxu, precises polo menos<xliff:g id="percent_discharging">%1$d</xliff:g>%% de batería pa siguir, <xliff:g id="percent_charging">%2$d</xliff:g>%% si ta en carga.</string>
+    <string name="dialog_battery_low_message_pct">El nivel de batería ye perbaxu, precises polo menos<xliff:g id="percent_discharging">%1$d</xliff:g>%% de batería pa siguir, <xliff:g id="percent_charging">%2$d</xliff:g>%% si ta en carga.</string>
     <string name="reboot">Reaniciar</string>
     <string name="menu_refresh">Refrescar</string>
     <string name="menu_preferences">Preferencies</string>
     <string name="menu_auto_updates_check">Comprobación automática d\'anovamientos</string>
     <string name="menu_auto_updates_check_interval_daily">Una vegada al día</string>
-    <string name="menu_auto_updates_check_interval_weekly">Una vegada por selmana</string>
+    <string name="menu_auto_updates_check_interval_weekly">Una vegada per selmana</string>
     <string name="menu_auto_updates_check_interval_monthly">Una vegada al mes</string>
     <string name="menu_auto_updates_check_interval_never">Enxamás</string>
     <string name="menu_auto_delete_updates">Desaniciar anovamientos al instalalos</string>
     <string name="menu_delete_update">Desaniciar</string>
     <string name="menu_copy_url">Copiar URL</string>
     <string name="menu_export_update">Esportar anovamientu</string>
-    <string name="menu_show_changelog">Amosar rexistru de cambeos</string>
+    <string name="menu_show_changelog">Amosar el rexistru de cambeos</string>
     <string name="menu_ab_perf_mode">Priorizar el procesu d\'anovamientu</string>
     <string name="snack_updates_found">Alcontráronse anovamientos nuevos</string>
     <string name="snack_no_updates_found">Nun s\'alcontraron anovamientos</string>
@@ -104,7 +106,6 @@
     <string name="menu_mobile_data_warning">Alvertencia de datos de móviles</string>
     <string name="blocked_update_dialog_title">Bloquióse l\'anovamientu</string>
     <string name="blocked_update_dialog_message">Esti anovamientu nun pue instalase usando l\'aplicación anovadora. Llei <xliff:g id="info_url">%1$s</xliff:g> pa más información, por favor.</string>
-    <string name="export_channel_title">Completáu de la esportación</string>
     <string name="new_updates_channel_title">Anovamientos nuevos</string>
     <string name="ongoing_channel_title">Descargues en cursu</string>
     <string name="update_failed_channel_title">Falló l\'anovamientu</string>

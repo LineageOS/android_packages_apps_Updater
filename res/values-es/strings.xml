@@ -63,6 +63,7 @@
     <string name="action_resume">Reanudar</string>
     <string name="action_install">Instalar</string>
     <string name="action_info">Información</string>
+    <string name="action_delete">Borrar</string>
     <string name="action_cancel">Cancelar</string>
     <string name="confirm_delete_dialog_title">Borrar archivo</string>
     <string name="confirm_delete_dialog_message">¿Borrar el archivo de actualización seleccionado?</string>

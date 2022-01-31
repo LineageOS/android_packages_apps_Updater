@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.lineageos.updater.controller;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -63,11 +64,7 @@ public class UpdaterController {
     private final File mDownloadRoot;
 
     private int mActiveDownloads = 0;
-    private Set<String> mVerifyingUpdates = new HashSet<>();
-
-    public static synchronized UpdaterController getInstance() {
-        return sUpdaterController;
-    }
+    private final Set<String> mVerifyingUpdates = new HashSet<>();
 
     protected static synchronized UpdaterController getInstance(Context context) {
         if (sUpdaterController == null) {
@@ -80,8 +77,8 @@ public class UpdaterController {
         mBroadcastManager = LocalBroadcastManager.getInstance(context);
         mUpdatesDbHelper = new UpdatesDbHelper(context);
         mDownloadRoot = Utils.getDownloadPath(context);
-        PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-        mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Updater");
+        PowerManager powerManager = context.getSystemService(PowerManager.class);
+        mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Updater:wakelock");
         mWakeLock.setReferenceCounted(false);
         mContext = context.getApplicationContext();
 
@@ -92,7 +89,7 @@ public class UpdaterController {
         }
     }
 
-    private class DownloadEntry {
+    private static class DownloadEntry {
         final Update mUpdate;
         DownloadClient mDownloadClient;
         private DownloadEntry(Update update) {
@@ -100,7 +97,7 @@ public class UpdaterController {
         }
     }
 
-    private Map<String, DownloadEntry> mDownloads = new HashMap<>();
+    private final Map<String, DownloadEntry> mDownloads = new HashMap<>();
 
     void notifyUpdateChange(String downloadId) {
         Intent intent = new Intent();
@@ -156,8 +153,12 @@ public class UpdaterController {
         return new DownloadClient.DownloadCallback() {
 
             @Override
-            public void onResponse(int statusCode, String url, DownloadClient.Headers headers) {
-                final Update update = mDownloads.get(downloadId).mUpdate;
+            public void onResponse(DownloadClient.Headers headers) {
+                final DownloadEntry entry = mDownloads.get(downloadId);
+                if (entry == null) {
+                    return;
+                }
+                final Update update = entry.mUpdate;
                 String contentLength = headers.get("Content-Length");
                 if (contentLength != null) {
                     try {
@@ -177,27 +178,33 @@ public class UpdaterController {
             }
 
             @Override
-            public void onSuccess(File destination) {
+            public void onSuccess() {
                 Log.d(TAG, "Download complete");
-                Update update = mDownloads.get(downloadId).mUpdate;
-                update.setStatus(UpdateStatus.VERIFYING);
-                removeDownloadClient(mDownloads.get(downloadId));
-                verifyUpdateAsync(downloadId);
-                notifyUpdateChange(downloadId);
-                tryReleaseWakelock();
+                DownloadEntry entry = mDownloads.get(downloadId);
+                if (entry != null) {
+                    Update update = entry.mUpdate;
+                    update.setStatus(UpdateStatus.VERIFYING);
+                    removeDownloadClient(entry);
+                    verifyUpdateAsync(downloadId);
+                    notifyUpdateChange(downloadId);
+                    tryReleaseWakelock();
+                }
             }
 
             @Override
             public void onFailure(boolean cancelled) {
-                Update update = mDownloads.get(downloadId).mUpdate;
                 if (cancelled) {
                     Log.d(TAG, "Download cancelled");
                     // Already notified
                 } else {
-                    Log.e(TAG, "Download failed");
-                    removeDownloadClient(mDownloads.get(downloadId));
-                    update.setStatus(UpdateStatus.PAUSED_ERROR);
-                    notifyUpdateChange(downloadId);
+                    DownloadEntry entry = mDownloads.get(downloadId);
+                    if (entry != null) {
+                        Update update = entry.mUpdate;
+                        Log.e(TAG, "Download failed");
+                        removeDownloadClient(entry);
+                        update.setStatus(UpdateStatus.PAUSED_ERROR);
+                        notifyUpdateChange(downloadId);
+                    }
                 }
                 tryReleaseWakelock();
             }
@@ -210,9 +217,12 @@ public class UpdaterController {
             private int mProgress = 0;
 
             @Override
-            public void update(long bytesRead, long contentLength, long speed, long eta,
-                    boolean done) {
-                Update update = mDownloads.get(downloadId).mUpdate;
+            public void update(long bytesRead, long contentLength, long speed, long eta) {
+                DownloadEntry entry = mDownloads.get(downloadId);
+                if (entry == null) {
+                    return;
+                }
+                Update update = entry.mUpdate;
                 if (contentLength <= 0) {
                     if (update.getFileSize() <= 0) {
                         return;
@@ -224,7 +234,7 @@ public class UpdaterController {
                     return;
                 }
                 final long now = SystemClock.elapsedRealtime();
-                int progress = Math.round(bytesRead * 100 / contentLength);
+                int progress = Math.round(bytesRead * 100f / contentLength);
                 if (progress != mProgress || mLastUpdate - now > MAX_REPORT_INTERVAL_MS) {
                     mProgress = progress;
                     mLastUpdate = now;
@@ -237,24 +247,29 @@ public class UpdaterController {
         };
     }
 
+    @SuppressLint("SetWorldReadable")
     private void verifyUpdateAsync(final String downloadId) {
         mVerifyingUpdates.add(downloadId);
         new Thread(() -> {
-            Update update = mDownloads.get(downloadId).mUpdate;
-            File file = update.getFile();
-            if (file.exists() && verifyPackage(file)) {
-                file.setReadable(true, false);
-                update.setPersistentStatus(UpdateStatus.Persistent.VERIFIED);
-                mUpdatesDbHelper.changeUpdateStatus(update);
-                update.setStatus(UpdateStatus.VERIFIED);
-            } else {
-                update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
-                mUpdatesDbHelper.removeUpdate(downloadId);
-                update.setProgress(0);
-                update.setStatus(UpdateStatus.VERIFICATION_FAILED);
+            DownloadEntry entry = mDownloads.get(downloadId);
+            if (entry != null) {
+                Update update = entry.mUpdate;
+                File file = update.getFile();
+                if (file.exists() && verifyPackage(file)) {
+                    //noinspection ResultOfMethodCallIgnored
+                    file.setReadable(true, false);
+                    update.setPersistentStatus(UpdateStatus.Persistent.VERIFIED);
+                    mUpdatesDbHelper.changeUpdateStatus(update);
+                    update.setStatus(UpdateStatus.VERIFIED);
+                } else {
+                    update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
+                    mUpdatesDbHelper.removeUpdate(downloadId);
+                    update.setProgress(0);
+                    update.setStatus(UpdateStatus.VERIFICATION_FAILED);
+                }
+                mVerifyingUpdates.remove(downloadId);
+                notifyUpdateChange(downloadId);
             }
-            mVerifyingUpdates.remove(downloadId);
-            notifyUpdateChange(downloadId);
         }).start();
     }
 
@@ -266,6 +281,7 @@ public class UpdaterController {
         } catch (Exception e) {
             Log.e(TAG, "Verification failed", e);
             if (file.exists()) {
+                //noinspection ResultOfMethodCallIgnored
                 file.delete();
             } else {
                 // The download was probably stopped. Exit silently
@@ -285,21 +301,12 @@ public class UpdaterController {
                 } else if (update.getFileSize() > 0) {
                     update.setStatus(UpdateStatus.PAUSED);
                     int progress = Math.round(
-                            update.getFile().length() * 100 / update.getFileSize());
+                            update.getFile().length() * 100f / update.getFileSize());
                     update.setProgress(progress);
                 }
                 break;
         }
         return true;
-    }
-
-    public void setUpdatesNotAvailableOnline(List<String> downloadIds) {
-        for (String downloadId : downloadIds) {
-            DownloadEntry update = mDownloads.get(downloadId);
-            if (update != null) {
-                update.mUpdate.setAvailableOnline(false);
-            }
-        }
     }
 
     public void setUpdatesAvailableOnline(List<String> downloadIds, boolean purgeList) {
@@ -327,9 +334,12 @@ public class UpdaterController {
         Log.d(TAG, "Adding download: " + updateInfo.getDownloadId());
         if (mDownloads.containsKey(updateInfo.getDownloadId())) {
             Log.d(TAG, "Download (" + updateInfo.getDownloadId() + ") already added");
-            Update updateAdded = mDownloads.get(updateInfo.getDownloadId()).mUpdate;
-            updateAdded.setAvailableOnline(availableOnline && updateAdded.getAvailableOnline());
-            updateAdded.setDownloadUrl(updateInfo.getDownloadUrl());
+            DownloadEntry entry = mDownloads.get(updateInfo.getDownloadId());
+            if (entry != null) {
+                Update updateAdded = entry.mUpdate;
+                updateAdded.setAvailableOnline(availableOnline && updateAdded.getAvailableOnline());
+                updateAdded.setDownloadUrl(updateInfo.getDownloadUrl());
+            }
             return false;
         }
         Update update = new Update(updateInfo);
@@ -344,12 +354,18 @@ public class UpdaterController {
         return true;
     }
 
-    public boolean startDownload(String downloadId) {
+    @SuppressLint("WakelockTimeout")
+    public void startDownload(String downloadId) {
         Log.d(TAG, "Starting " + downloadId);
         if (!mDownloads.containsKey(downloadId) || isDownloading(downloadId)) {
-            return false;
+            return;
         }
-        Update update = mDownloads.get(downloadId).mUpdate;
+        DownloadEntry entry = mDownloads.get(downloadId);
+        if (entry == null) {
+            Log.e(TAG, "Could not get download entry");
+            return;
+        }
+        Update update = entry.mUpdate;
         File destination = new File(mDownloadRoot, update.getName());
         if (destination.exists()) {
             destination = Utils.appendSequentialNumber(destination);
@@ -369,28 +385,33 @@ public class UpdaterController {
             Log.e(TAG, "Could not build download client");
             update.setStatus(UpdateStatus.PAUSED_ERROR);
             notifyUpdateChange(downloadId);
-            return false;
+            return;
         }
-        addDownloadClient(mDownloads.get(downloadId), downloadClient);
+        addDownloadClient(entry, downloadClient);
         update.setStatus(UpdateStatus.STARTING);
         notifyUpdateChange(downloadId);
         downloadClient.start();
         mWakeLock.acquire();
-        return true;
     }
 
-    public boolean resumeDownload(String downloadId) {
+    @SuppressLint("WakelockTimeout")
+    public void resumeDownload(String downloadId) {
         Log.d(TAG, "Resuming " + downloadId);
         if (!mDownloads.containsKey(downloadId) || isDownloading(downloadId)) {
-            return false;
+            return;
         }
-        Update update = mDownloads.get(downloadId).mUpdate;
+        DownloadEntry entry = mDownloads.get(downloadId);
+        if (entry == null) {
+            Log.e(TAG, "Could not get download entry");
+            return;
+        }
+        Update update = entry.mUpdate;
         File file = update.getFile();
         if (file == null || !file.exists()) {
             Log.e(TAG, "The destination file of " + downloadId + " doesn't exist, can't resume");
             update.setStatus(UpdateStatus.PAUSED_ERROR);
             notifyUpdateChange(downloadId);
-            return false;
+            return;
         }
         if (file.exists() && update.getFileSize() > 0 && file.length() >= update.getFileSize()) {
             Log.d(TAG, "File already downloaded, starting verification");
@@ -411,31 +432,31 @@ public class UpdaterController {
                 Log.e(TAG, "Could not build download client");
                 update.setStatus(UpdateStatus.PAUSED_ERROR);
                 notifyUpdateChange(downloadId);
-                return false;
+                return;
             }
-            addDownloadClient(mDownloads.get(downloadId), downloadClient);
+            addDownloadClient(entry, downloadClient);
             update.setStatus(UpdateStatus.STARTING);
             notifyUpdateChange(downloadId);
             downloadClient.resume();
             mWakeLock.acquire();
         }
-        return true;
     }
 
-    public boolean pauseDownload(String downloadId) {
+    public void pauseDownload(String downloadId) {
         Log.d(TAG, "Pausing " + downloadId);
         if (!isDownloading(downloadId)) {
-            return false;
+            return;
         }
 
         DownloadEntry entry = mDownloads.get(downloadId);
-        entry.mDownloadClient.cancel();
-        removeDownloadClient(entry);
-        entry.mUpdate.setStatus(UpdateStatus.PAUSED);
-        entry.mUpdate.setEta(0);
-        entry.mUpdate.setSpeed(0);
-        notifyUpdateChange(downloadId);
-        return true;
+        if (entry != null) {
+            entry.mDownloadClient.cancel();
+            removeDownloadClient(entry);
+            entry.mUpdate.setStatus(UpdateStatus.PAUSED);
+            entry.mUpdate.setEta(0);
+            entry.mUpdate.setSpeed(0);
+            notifyUpdateChange(downloadId);
+        }
     }
 
     private void deleteUpdateAsync(final Update update) {
@@ -448,30 +469,27 @@ public class UpdaterController {
         }).start();
     }
 
-    public boolean deleteUpdate(String downloadId) {
+    public void deleteUpdate(String downloadId) {
         Log.d(TAG, "Cancelling " + downloadId);
         if (!mDownloads.containsKey(downloadId) || isDownloading(downloadId)) {
-            return false;
+            return;
         }
-        Update update = mDownloads.get(downloadId).mUpdate;
-        update.setStatus(UpdateStatus.DELETED);
-        update.setProgress(0);
-        update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
-        deleteUpdateAsync(update);
+        DownloadEntry entry = mDownloads.get(downloadId);
+        if (entry != null) {
+            Update update = entry.mUpdate;
+            update.setStatus(UpdateStatus.DELETED);
+            update.setProgress(0);
+            update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
+            deleteUpdateAsync(update);
 
-        if (!update.getAvailableOnline()) {
-            Log.d(TAG, "Download no longer available online, removing");
-            mDownloads.remove(downloadId);
-            notifyUpdateDelete(downloadId);
-        } else {
-            notifyUpdateChange(downloadId);
+            if (!update.getAvailableOnline()) {
+                Log.d(TAG, "Download no longer available online, removing");
+                mDownloads.remove(downloadId);
+                notifyUpdateDelete(downloadId);
+            } else {
+                notifyUpdateChange(downloadId);
+            }
         }
-
-        return true;
-    }
-
-    public Set<String> getIds() {
-        return mDownloads.keySet();
     }
 
     public List<UpdateInfo> getUpdates() {
@@ -493,6 +511,7 @@ public class UpdaterController {
     }
 
     public boolean isDownloading(String downloadId) {
+        //noinspection ConstantConditions
         return mDownloads.containsKey(downloadId) &&
                 mDownloads.get(downloadId).mDownloadClient != null;
     }

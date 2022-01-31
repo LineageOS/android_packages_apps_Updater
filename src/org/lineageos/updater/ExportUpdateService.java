@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,11 +94,11 @@ public class ExportUpdateService extends Service {
     }
 
     private class ExportRunnable implements Runnable {
-        private File mSource;
-        private File mDestination;
-        private FileUtils.ProgressCallBack mProgressCallBack;
-        private Runnable mRunnableComplete;
-        private Runnable mRunnableFailed;
+        private final File mSource;
+        private final File mDestination;
+        private final FileUtils.ProgressCallBack mProgressCallBack;
+        private final Runnable mRunnableComplete;
+        private final Runnable mRunnableFailed;
 
         private ExportRunnable(File source, File destination,
                 FileUtils.ProgressCallBack progressCallBack,
@@ -131,13 +131,13 @@ public class ExportUpdateService extends Service {
         }
 
         private void cleanUp() {
+            //noinspection ResultOfMethodCallIgnored
             mDestination.delete();
         }
     }
 
     private void startExporting(File source, File destination) {
-        NotificationManager notificationManager =
-                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = getSystemService(NotificationManager.class);
         NotificationChannel notificationChannel = new NotificationChannel(
                 EXPORT_NOTIFICATION_CHANNEL,
                 getString(R.string.export_channel_title),

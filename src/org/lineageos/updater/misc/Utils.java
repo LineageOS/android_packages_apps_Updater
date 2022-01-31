@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Environment;
 import android.os.SystemProperties;
 import android.os.storage.StorageManager;
 import android.preference.PreferenceManager;
@@ -122,14 +121,14 @@ public class Utils {
             throws IOException, JSONException {
         List<UpdateInfo> updates = new ArrayList<>();
 
-        String json = "";
+        StringBuilder json = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             for (String line; (line = br.readLine()) != null;) {
-                json += line;
+                json.append(line);
             }
         }
 
-        JSONObject obj = new JSONObject(json);
+        JSONObject obj = new JSONObject(json.toString());
         JSONArray updatesList = obj.getJSONArray("response");
         for (int i = 0; i < updatesList.length(); i++) {
             if (updatesList.isNull(i)) {
@@ -186,15 +185,13 @@ public class Utils {
     }
 
     public static boolean isNetworkAvailable(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(
-                Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = context.getSystemService(ConnectivityManager.class);
         NetworkInfo info = cm.getActiveNetworkInfo();
         return !(info == null || !info.isConnected() || !info.isAvailable());
     }
 
     public static boolean isOnWifiOrEthernet(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(
-                Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = context.getSystemService(ConnectivityManager.class);
         NetworkInfo info = cm.getActiveNetworkInfo();
         return (info != null && (info.getType() == ConnectivityManager.TYPE_ETHERNET
                 || info.getType() == ConnectivityManager.TYPE_WIFI));
@@ -206,8 +203,6 @@ public class Utils {
      * @param oldJson old update list
      * @param newJson new update list
      * @return true if newJson has at least a compatible update not available in oldJson
-     * @throws IOException
-     * @throws JSONException
      */
     public static boolean checkForNewUpdates(File oldJson, File newJson)
             throws IOException, JSONException {
@@ -264,6 +259,7 @@ public class Utils {
             return;
         }
         for (File file : uncryptFiles) {
+            //noinspection ResultOfMethodCallIgnored
             file.delete();
         }
     }
@@ -273,7 +269,6 @@ public class Utils {
      * the user can't access and that might have stale files. This can happen if
      * the data of the application are wiped.
      *
-     * @param context
      */
     public static void cleanupDownloadsDir(Context context) {
         File downloadPath = getDownloadPath(context);
@@ -290,6 +285,7 @@ public class Utils {
                 lastUpdatePath != null) {
             File lastUpdate = new File(lastUpdatePath);
             if (lastUpdate.exists()) {
+                //noinspection ResultOfMethodCallIgnored
                 lastUpdate.delete();
                 // Remove the pref not to delete the file if re-downloaded
                 preferences.edit().remove(Constants.PREF_INSTALL_PACKAGE_PATH).apply();
@@ -319,6 +315,7 @@ public class Utils {
         for (File file : files) {
             if (!knownPaths.contains(file.getAbsolutePath())) {
                 Log.d(TAG, "Deleting " + file.getAbsolutePath());
+                //noinspection ResultOfMethodCallIgnored
                 file.delete();
             }
         }

@@ -16,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -90,7 +91,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:contentDescription="@null" />
             <Button
                 android:id="@id/update_action"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"

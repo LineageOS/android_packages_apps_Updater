@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ public class FileUtils {
     }
 
     private static class CallbackByteChannel implements ReadableByteChannel {
-        private ProgressCallBack mCallback;
-        private long mSize;
-        private ReadableByteChannel mReadableByteChannel;
+        private final ProgressCallBack mCallback;
+        private final long mSize;
+        private final ReadableByteChannel mReadableByteChannel;
         private long mSizeRead;
         private int mProgress;
 
@@ -86,6 +86,7 @@ public class FileUtils {
         } catch (IOException e) {
             Log.e(TAG, "Could not copy file", e);
             if (destFile.exists()) {
+                //noinspection ResultOfMethodCallIgnored
                 destFile.delete();
             }
             throw e;

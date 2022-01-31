@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,11 +82,11 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
         return db.insert(UpdateEntry.TABLE_NAME, null, values);
     }
 
-    public long addUpdateWithOnConflict(Update update, int conflictAlgorithm) {
+    public void addUpdateWithOnConflict(Update update, int conflictAlgorithm) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         fillContentValues(update, values);
-        return db.insertWithOnConflict(UpdateEntry.TABLE_NAME, null, values, conflictAlgorithm);
+        db.insertWithOnConflict(UpdateEntry.TABLE_NAME, null, values, conflictAlgorithm);
     }
 
     private static void fillContentValues(Update update, ContentValues values) {
@@ -99,52 +99,25 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
         values.put(UpdateEntry.COLUMN_NAME_SIZE, update.getFileSize());
     }
 
-    public boolean removeUpdate(String downloadId) {
+    public void removeUpdate(String downloadId) {
         SQLiteDatabase db = getWritableDatabase();
         String selection = UpdateEntry.COLUMN_NAME_DOWNLOAD_ID + " = ?";
         String[] selectionArgs = {downloadId};
-        return db.delete(UpdateEntry.TABLE_NAME, selection, selectionArgs) != 0;
+        db.delete(UpdateEntry.TABLE_NAME, selection, selectionArgs);
     }
 
-    public boolean removeUpdate(long rowId) {
-        SQLiteDatabase db = getWritableDatabase();
-        String selection = UpdateEntry._ID + " = " + rowId;
-        return db.delete(UpdateEntry.TABLE_NAME, selection, null) != 0;
-    }
-
-    public boolean changeUpdateStatus(Update update) {
+    public void changeUpdateStatus(Update update) {
         String selection = UpdateEntry.COLUMN_NAME_DOWNLOAD_ID + " = ?";
         String[] selectionArgs = {update.getDownloadId()};
-        return changeUpdateStatus(selection, selectionArgs, update.getPersistentStatus());
+        changeUpdateStatus(selection, selectionArgs, update.getPersistentStatus());
     }
 
-    public boolean changeUpdateStatus(long rowId, int status) {
-        String selection = UpdateEntry._ID + " = " + rowId;
-        return changeUpdateStatus(selection, null, status);
-    }
-
-    private boolean changeUpdateStatus(String selection, String[] selectionArgs,
-            int status) {
+    private void changeUpdateStatus(String selection, String[] selectionArgs,
+                                    int status) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(UpdateEntry.COLUMN_NAME_STATUS, status);
-        return db.update(UpdateEntry.TABLE_NAME, values, selection, selectionArgs) != 0;
-    }
-
-    public Update getUpdate(long rowId) {
-        String selection = UpdateEntry._ID + " = " + rowId;
-        return getUpdate(selection, null);
-    }
-
-    public Update getUpdate(String downloadId) {
-        String selection = UpdateEntry.COLUMN_NAME_DOWNLOAD_ID + " = ?";
-        String[] selectionArgs = {downloadId};
-        return getUpdate(selection, selectionArgs);
-    }
-
-    private Update getUpdate(String selection, String[] selectionArgs) {
-        List<Update> updates = getUpdates(selection, selectionArgs);
-        return updates != null ? updates.get(0) : null;
+        db.update(UpdateEntry.TABLE_NAME, values, selection, selectionArgs);
     }
 
     public List<Update> getUpdates() {

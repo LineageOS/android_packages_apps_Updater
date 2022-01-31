@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,27 +17,23 @@ package org.lineageos.updater.download;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 public interface DownloadClient {
 
     interface DownloadCallback {
-        void onResponse(int statusCode, String url, Headers headers);
+        void onResponse(Headers headers);
 
-        void onSuccess(File destination);
+        void onSuccess();
 
         void onFailure(boolean cancelled);
     }
 
     interface ProgressListener {
-        void update(long bytesRead, long contentLength, long speed, long eta, boolean done);
+        void update(long bytesRead, long contentLength, long speed, long eta);
     }
 
     interface Headers {
         String get(String name);
-
-        Map<String, List<String>> getAll();
     }
 
     /**

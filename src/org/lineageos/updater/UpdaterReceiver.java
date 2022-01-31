@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,8 +79,7 @@ public class UpdaterReceiver extends BroadcastReceiver {
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(buildInfo))
                 .setContentText(buildInfo);
 
-        NotificationManager nm = (NotificationManager) context.getSystemService(
-                Context.NOTIFICATION_SERVICE);
+        NotificationManager nm = context.getSystemService(NotificationManager.class);
         nm.createNotificationChannel(notificationChannel);
         nm.notify(0, builder.build());
     }
@@ -88,7 +87,7 @@ public class UpdaterReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if (ACTION_INSTALL_REBOOT.equals(intent.getAction())) {
-            PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            PowerManager pm = context.getSystemService(PowerManager.class);
             pm.reboot(null);
         } else if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);

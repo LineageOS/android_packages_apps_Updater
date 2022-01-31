@@ -29,7 +29,7 @@
             android:entries="@array/menu_auto_updates_check_interval_entries" />
     </LinearLayout>
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/preferences_auto_delete_updates"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
         android:text="@string/menu_auto_delete_updates"
         android:textSize="16sp" />
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/preferences_mobile_data_warning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
         android:text="@string/menu_mobile_data_warning"
         android:textSize="16sp" />
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/preferences_ab_perf_mode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
         android:text="@string/menu_ab_perf_mode"
         android:textSize="16sp" />
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/preferences_update_recovery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

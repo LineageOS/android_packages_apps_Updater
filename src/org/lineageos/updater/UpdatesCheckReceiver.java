@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,17 +84,17 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
             }
 
             @Override
-            public void onResponse(int statusCode, String url,
-                    DownloadClient.Headers headers) {
+            public void onResponse(DownloadClient.Headers headers) {
             }
 
             @Override
-            public void onSuccess(File destination) {
+            public void onSuccess() {
                 try {
                     if (json.exists() && Utils.checkForNewUpdates(json, jsonNew)) {
                         showNotification(context);
                         updateRepeatingUpdatesCheck(context);
                     }
+                    //noinspection ResultOfMethodCallIgnored
                     jsonNew.renameTo(json);
                     long currentMillis = System.currentTimeMillis();
                     preferences.edit()
@@ -123,8 +123,8 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     }
 
     private static void showNotification(Context context) {
-        NotificationManager notificationManager =
-                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = context.getSystemService(
+                NotificationManager.class);
         NotificationChannel notificationChannel = new NotificationChannel(
                 NEW_UPDATES_NOTIFICATION_CHANNEL,
                 context.getString(R.string.new_updates_channel_title),
@@ -134,7 +134,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         notificationBuilder.setSmallIcon(R.drawable.ic_system_update);
         Intent notificationIntent = new Intent(context, UpdatesActivity.class);
         PendingIntent intent = PendingIntent.getActivity(context, 0, notificationIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         notificationBuilder.setContentIntent(intent);
         notificationBuilder.setContentTitle(context.getString(R.string.new_updates_found_title));
         notificationBuilder.setAutoCancel(true);
@@ -145,7 +145,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     private static PendingIntent getRepeatingUpdatesCheckIntent(Context context) {
         Intent intent = new Intent(context, UpdatesCheckReceiver.class);
         intent.setAction(DAILY_CHECK_ACTION);
-        return PendingIntent.getBroadcast(context, 0, intent, 0);
+        return PendingIntent.getBroadcast(context, 0, intent,  PendingIntent.FLAG_IMMUTABLE);
     }
 
     public static void updateRepeatingUpdatesCheck(Context context) {
@@ -159,7 +159,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         }
 
         PendingIntent updateCheckIntent = getRepeatingUpdatesCheckIntent(context);
-        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        AlarmManager alarmMgr = context.getSystemService(AlarmManager.class);
         alarmMgr.setRepeating(AlarmManager.RTC, System.currentTimeMillis() +
                 Utils.getUpdateCheckInterval(context), Utils.getUpdateCheckInterval(context),
                 updateCheckIntent);
@@ -170,20 +170,20 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     }
 
     public static void cancelRepeatingUpdatesCheck(Context context) {
-        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        AlarmManager alarmMgr = context.getSystemService(AlarmManager.class);
         alarmMgr.cancel(getRepeatingUpdatesCheckIntent(context));
     }
 
     private static PendingIntent getUpdatesCheckIntent(Context context) {
         Intent intent = new Intent(context, UpdatesCheckReceiver.class);
         intent.setAction(ONESHOT_CHECK_ACTION);
-        return PendingIntent.getBroadcast(context, 0, intent, 0);
+        return PendingIntent.getBroadcast(context, 0, intent,  PendingIntent.FLAG_IMMUTABLE);
     }
 
     public static void scheduleUpdatesCheck(Context context) {
         long millisToNextCheck = AlarmManager.INTERVAL_HOUR * 2;
         PendingIntent updateCheckIntent = getUpdatesCheckIntent(context);
-        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        AlarmManager alarmMgr = context.getSystemService(AlarmManager.class);
         alarmMgr.set(AlarmManager.ELAPSED_REALTIME,
                 SystemClock.elapsedRealtime() + millisToNextCheck,
                 updateCheckIntent);
@@ -193,7 +193,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     }
 
     public static void cancelUpdatesCheck(Context context) {
-        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        AlarmManager alarmMgr = context.getSystemService(AlarmManager.class);
         alarmMgr.cancel(getUpdatesCheckIntent(context));
         Log.d(TAG, "Cancelling pending one-shot check");
     }

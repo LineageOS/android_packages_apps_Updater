@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2020 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.lineageos.updater;
 
+import android.annotation.SuppressLint;
 import android.app.UiModeManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -39,14 +40,13 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
-import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
@@ -92,10 +92,10 @@ public class UpdatesActivity extends UpdatesListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updates);
 
-        UiModeManager uiModeManager = (UiModeManager) getSystemService(UI_MODE_SERVICE);
+        UiModeManager uiModeManager = getSystemService(UiModeManager.class);
         mIsTV = uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION;
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         mAdapter = new UpdatesListAdapter(this);
         recyclerView.setAdapter(mAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
@@ -111,7 +111,7 @@ public class UpdatesActivity extends UpdatesListActivity {
                 if (UpdaterController.ACTION_UPDATE_STATUS.equals(intent.getAction())) {
                     String downloadId = intent.getStringExtra(UpdaterController.EXTRA_DOWNLOAD_ID);
                     handleDownloadStatusChange(downloadId);
-                    mAdapter.notifyDataSetChanged();
+                    mAdapter.notifyItemChanged(downloadId);
                 } else if (UpdaterController.ACTION_DOWNLOAD_PROGRESS.equals(intent.getAction()) ||
                         UpdaterController.ACTION_INSTALL_PROGRESS.equals(intent.getAction())) {
                     String downloadId = intent.getStringExtra(UpdaterController.EXTRA_DOWNLOAD_ID);
@@ -124,31 +124,34 @@ public class UpdatesActivity extends UpdatesListActivity {
         };
 
         if (!mIsTV) {
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            ActionBar actionBar = getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setDisplayShowTitleEnabled(false);
+                actionBar.setDisplayHomeAsUpEnabled(true);
+            }
         }
 
-        TextView headerTitle = (TextView) findViewById(R.id.header_title);
+        TextView headerTitle = findViewById(R.id.header_title);
         headerTitle.setText(getString(R.string.header_title_text,
                 BuildInfoUtils.getBuildVersion()));
 
         updateLastCheckedString();
 
-        TextView headerBuildVersion = (TextView) findViewById(R.id.header_build_version);
+        TextView headerBuildVersion = findViewById(R.id.header_build_version);
         headerBuildVersion.setText(
                 getString(R.string.header_android_version, Build.VERSION.RELEASE));
 
-        TextView headerBuildDate = (TextView) findViewById(R.id.header_build_date);
+        TextView headerBuildDate = findViewById(R.id.header_build_date);
         headerBuildDate.setText(StringGenerator.getDateLocalizedUTC(this,
                 DateFormat.LONG, BuildInfoUtils.getBuildDateTimestamp()));
 
         if (!mIsTV) {
             // Switch between header title and appbar title minimizing overlaps
             final CollapsingToolbarLayout collapsingToolbar =
-                    (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-            final AppBarLayout appBar = (AppBarLayout) findViewById(R.id.app_bar);
+                    findViewById(R.id.collapsing_toolbar);
+            final AppBarLayout appBar = findViewById(R.id.app_bar);
             appBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
                 boolean mIsShown = false;
 
@@ -175,18 +178,8 @@ public class UpdatesActivity extends UpdatesListActivity {
                 appBar.setExpanded(false);
             }
         } else {
-            findViewById(R.id.refresh).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    downloadUpdatesList(true);
-                }
-            });
-            findViewById(R.id.preferences).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    showPreferencesDialog();
-                }
-            });
+            findViewById(R.id.refresh).setOnClickListener(v -> downloadUpdatesList(true));
+            findViewById(R.id.preferences).setOnClickListener(v -> showPreferencesDialog());
         }
     }
 
@@ -222,21 +215,18 @@ public class UpdatesActivity extends UpdatesListActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_refresh: {
-                downloadUpdatesList(true);
-                return true;
-            }
-            case R.id.menu_preferences: {
-                showPreferencesDialog();
-                return true;
-            }
-            case R.id.menu_show_changelog: {
-                Intent openUrl = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(Utils.getChangelogURL(this)));
-                startActivity(openUrl);
-                return true;
-            }
+        int itemId = item.getItemId();
+        if (itemId == R.id.menu_refresh) {
+            downloadUpdatesList(true);
+            return true;
+        } else if (itemId == R.id.menu_preferences) {
+            showPreferencesDialog();
+            return true;
+        } else if (itemId == R.id.menu_show_changelog) {
+            Intent openUrl = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(Utils.getChangelogURL(this)));
+            startActivity(openUrl);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -247,7 +237,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         return true;
     }
 
-    private ServiceConnection mConnection = new ServiceConnection() {
+    private final ServiceConnection mConnection = new ServiceConnection() {
 
         @Override
         public void onServiceConnected(ComponentName className,
@@ -330,6 +320,7 @@ public class UpdatesActivity extends UpdatesListActivity {
             }
             // In case we set a one-shot check because of a previous failure
             UpdatesCheckReceiver.cancelUpdatesCheck(this);
+            //noinspection ResultOfMethodCallIgnored
             jsonNew.renameTo(json);
         } catch (IOException | JSONException e) {
             Log.e(TAG, "Could not read json", e);
@@ -356,12 +347,11 @@ public class UpdatesActivity extends UpdatesListActivity {
             }
 
             @Override
-            public void onResponse(int statusCode, String url,
-                    DownloadClient.Headers headers) {
+            public void onResponse(DownloadClient.Headers headers) {
             }
 
             @Override
-            public void onSuccess(File destination) {
+            public void onSuccess() {
                 runOnUiThread(() -> {
                     Log.d(TAG, "List downloaded");
                     processNewJson(jsonFile, jsonFileTmp, manualRefresh);
@@ -394,7 +384,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         String lastCheckString = getString(R.string.header_last_updates_check,
                 StringGenerator.getDateLocalized(this, DateFormat.LONG, lastCheck),
                 StringGenerator.getTimeLocalized(this, lastCheck));
-        TextView headerLastCheck = (TextView) findViewById(R.id.header_last_check);
+        TextView headerLastCheck = findViewById(R.id.header_last_check);
         headerLastCheck.setText(lastCheckString);
     }
 
@@ -451,14 +441,15 @@ public class UpdatesActivity extends UpdatesListActivity {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void showPreferencesDialog() {
         View view = LayoutInflater.from(this).inflate(R.layout.preferences_dialog, null);
         Spinner autoCheckInterval =
                 view.findViewById(R.id.preferences_auto_updates_check_interval);
-        Switch autoDelete = view.findViewById(R.id.preferences_auto_delete_updates);
-        Switch dataWarning = view.findViewById(R.id.preferences_mobile_data_warning);
-        Switch abPerfMode = view.findViewById(R.id.preferences_ab_perf_mode);
-        Switch updateRecovery = view.findViewById(R.id.preferences_update_recovery);
+        SwitchCompat autoDelete = view.findViewById(R.id.preferences_auto_delete_updates);
+        SwitchCompat dataWarning = view.findViewById(R.id.preferences_mobile_data_warning);
+        SwitchCompat abPerfMode = view.findViewById(R.id.preferences_ab_perf_mode);
+        SwitchCompat updateRecovery = view.findViewById(R.id.preferences_update_recovery);
 
         if (!Utils.isABDevice()) {
             abPerfMode.setVisibility(View.GONE);
@@ -471,7 +462,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         abPerfMode.setChecked(prefs.getBoolean(Constants.PREF_AB_PERF_MODE, false));
 
         if (getResources().getBoolean(R.bool.config_hideRecoveryUpdate)) {
-            // Hide the update feature if explicitely requested.
+            // Hide the update feature if explicitly requested.
             // Might be the case of A-only devices using prebuilt vendor images.
             updateRecovery.setVisibility(View.GONE);
         } else if (Utils.isRecoveryUpdateExecPresent()) {

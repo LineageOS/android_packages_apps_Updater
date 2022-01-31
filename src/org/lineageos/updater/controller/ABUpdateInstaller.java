@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@ class ABUpdateInstaller {
     private final Context mContext;
     private String mDownloadId;
 
-    private UpdateEngine mUpdateEngine;
+    private final UpdateEngine mUpdateEngine;
     private boolean mBound;
 
     private boolean mFinalizing;
@@ -130,11 +130,6 @@ class ABUpdateInstaller {
         return pref.getString(ABUpdateInstaller.PREF_INSTALLING_SUSPENDED_AB_ID, null) != null;
     }
 
-    static synchronized boolean isInstallingUpdateSuspended(Context context, String downloadId) {
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
-        return downloadId.equals(pref.getString(ABUpdateInstaller.PREF_INSTALLING_SUSPENDED_AB_ID, null));
-    }
-
     static synchronized boolean isWaitingForReboot(Context context, String downloadId) {
         String waitingId = PreferenceManager.getDefaultSharedPreferences(context)
                 .getString(Constants.PREF_NEEDS_REBOOT_ID, null);
@@ -155,10 +150,10 @@ class ABUpdateInstaller {
         return sInstance;
     }
 
-    public boolean install(String downloadId) {
+    public void install(String downloadId) {
         if (isInstallingUpdate(mContext)) {
             Log.e(TAG, "Already installing an update");
-            return false;
+            return;
         }
 
         mDownloadId = downloadId;
@@ -169,7 +164,7 @@ class ABUpdateInstaller {
             mUpdaterController.getActualUpdate(downloadId)
                     .setStatus(UpdateStatus.INSTALLATION_FAILED);
             mUpdaterController.notifyUpdateChange(downloadId);
-            return false;
+            return;
         }
 
         long offset;
@@ -194,7 +189,7 @@ class ABUpdateInstaller {
             mUpdaterController.getActualUpdate(mDownloadId)
                     .setStatus(UpdateStatus.INSTALLATION_FAILED);
             mUpdaterController.notifyUpdateChange(mDownloadId);
-            return false;
+            return;
         }
 
         if (!mBound) {
@@ -204,7 +199,7 @@ class ABUpdateInstaller {
                 mUpdaterController.getActualUpdate(downloadId)
                         .setStatus(UpdateStatus.INSTALLATION_FAILED);
                 mUpdaterController.notifyUpdateChange(downloadId);
-                return false;
+                return;
             }
         }
 
@@ -222,17 +217,16 @@ class ABUpdateInstaller {
                 .putString(PREF_INSTALLING_AB_ID, mDownloadId)
                 .apply();
 
-        return true;
     }
 
-    public boolean reconnect() {
+    public void reconnect() {
         if (!isInstallingUpdate(mContext)) {
             Log.e(TAG, "reconnect: Not installing any update");
-            return false;
+            return;
         }
 
         if (mBound) {
-            return true;
+            return;
         }
 
         mDownloadId = PreferenceManager.getDefaultSharedPreferences(mContext)
@@ -242,10 +236,8 @@ class ABUpdateInstaller {
         mBound = mUpdateEngine.bind(mUpdateEngineCallback);
         if (!mBound) {
             Log.e(TAG, "Could not bind");
-            return false;
         }
 
-        return true;
     }
 
     private void installationDone(boolean needsReboot) {
@@ -257,15 +249,15 @@ class ABUpdateInstaller {
                 .apply();
     }
 
-    public boolean cancel() {
+    public void cancel() {
         if (!isInstallingUpdate(mContext)) {
             Log.e(TAG, "cancel: Not installing any update");
-            return false;
+            return;
         }
 
         if (!mBound) {
             Log.e(TAG, "Not connected to update engine");
-            return false;
+            return;
         }
 
         mUpdateEngine.cancel();
@@ -275,22 +267,21 @@ class ABUpdateInstaller {
                 .setStatus(UpdateStatus.INSTALLATION_CANCELLED);
         mUpdaterController.notifyUpdateChange(mDownloadId);
 
-        return true;
     }
 
     public void setPerformanceMode(boolean enable) {
         mUpdateEngine.setPerformanceMode(enable);
     }
 
-    public boolean suspend() {
+    public void suspend() {
         if (!isInstallingUpdate(mContext)) {
             Log.e(TAG, "cancel: Not installing any update");
-            return false;
+            return;
         }
 
         if (!mBound) {
             Log.e(TAG, "Not connected to update engine");
-            return false;
+            return;
         }
 
         mUpdateEngine.suspend();
@@ -303,18 +294,17 @@ class ABUpdateInstaller {
                 .putString(PREF_INSTALLING_SUSPENDED_AB_ID, mDownloadId)
                 .apply();
 
-        return true;
     }
 
-    public boolean resume() {
+    public void resume() {
         if (!isInstallingUpdateSuspended(mContext)) {
             Log.e(TAG, "cancel: No update is suspended");
-            return false;
+            return;
         }
 
         if (!mBound) {
             Log.e(TAG, "Not connected to update engine");
-            return false;
+            return;
         }
 
         mUpdateEngine.resume();
@@ -329,6 +319,5 @@ class ABUpdateInstaller {
                 .remove(PREF_INSTALLING_SUSPENDED_AB_ID)
                 .apply();
 
-        return true;
     }
 }

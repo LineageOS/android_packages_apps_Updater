@@ -19,7 +19,6 @@ public enum UpdateStatus {
     UNKNOWN,
     STARTING,
     DOWNLOADING,
-    DOWNLOADED,
     PAUSED,
     PAUSED_ERROR,
     DELETED,

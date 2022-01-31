@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,7 +113,7 @@ class UpdateInstaller {
         Runnable copyUpdateRunnable = new Runnable() {
             private long mLastUpdate = -1;
 
-            FileUtils.ProgressCallBack mProgressCallBack = new FileUtils.ProgressCallBack() {
+            final FileUtils.ProgressCallBack mProgressCallBack = new FileUtils.ProgressCallBack() {
                 @Override
                 public void update(int progress) {
                     long now = SystemClock.elapsedRealtime();
@@ -137,12 +137,14 @@ class UpdateInstaller {
                                 .setStatus(UpdateStatus.INSTALLATION_CANCELLED);
                         mUpdaterController.getActualUpdate(update.getDownloadId())
                                 .setInstallProgress(0);
+                        //noinspection ResultOfMethodCallIgnored
                         uncryptFile.delete();
                     } else {
                         installPackage(uncryptFile, update.getDownloadId());
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "Could not copy update", e);
+                    //noinspection ResultOfMethodCallIgnored
                     uncryptFile.delete();
                     mUpdaterController.getActualUpdate(update.getDownloadId())
                             .setStatus(UpdateStatus.INSTALLATION_FAILED);

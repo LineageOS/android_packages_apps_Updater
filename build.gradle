@@ -1,12 +1,12 @@
 repositories {
     google()
-    jcenter()
+    mavenCentral()
 }
 
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {

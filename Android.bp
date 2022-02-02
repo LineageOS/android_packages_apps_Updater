@@ -1,0 +1,41 @@
+//
+
+android_app {
+    name: "Updater",
+
+    // Include SettingsLib and its dependencies
+    defaults: ["SettingsLibDefaults"],
+
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+
+    static_libs: [
+        "com.google.android.material_material",
+        "androidx.core_core",
+        "androidx.appcompat_appcompat",
+        "androidx.cardview_cardview",
+        "androidx.localbroadcastmanager_localbroadcastmanager",
+        "androidx.preference_preference",
+        "androidx.recyclerview_recyclerview",
+    ],
+
+    platform_apis: true,
+    privileged: true,
+    certificate: "platform",
+    system_ext_specific: true,
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+
+    required: ["privapp_whitelist_org.lineageos.updater.xml"],
+
+}
+
+prebuilt_etc {
+    name: "privapp_whitelist_org.lineageos.updater.xml",
+
+    system_ext_specific: true,
+    src: "privapp_whitelist_org.lineageos.updater.xml",
+    sub_dir: "permissions",
+
+}

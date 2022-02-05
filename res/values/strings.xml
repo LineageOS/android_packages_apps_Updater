@@ -152,4 +152,8 @@
     <string name="new_updates_channel_title">New updates</string>
     <string name="ongoing_channel_title">Ongoing downloads</string>
     <string name="update_failed_channel_title">Update failed</string>
+
+    <string name="info_dialog_title">Did you know?</string>
+    <string name="info_dialog_message">LineageOS updates are full installation packages. That means you can always install only the latest update, even if you skipped some in between!</string>
+    <string name="info_dialog_ok">Thanks for the info!</string>
 </resources>

@@ -16,6 +16,24 @@
       "message": "I am really unsure with this one since WRITE_EXTERNAL_STORAGE shouldn\u0027t work anymore, even with requestLegacyExternalStorage",
       "revId": "c6f1ba3a143439d6abb8737473576df8cbc4444b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da4f8e4f_e5830940",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-05T13:53:59Z",
+      "side": 1,
+      "message": "Looks like it still works. Maybe this is because it\u0027s because of `LOCAL_PRIVILEGED_MODULE`, don\u0027t know. I\u0027ll accept that it works without really knowing, why :P",
+      "parentUuid": "4692349d_2dd060f3",
+      "revId": "c6f1ba3a143439d6abb8737473576df8cbc4444b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

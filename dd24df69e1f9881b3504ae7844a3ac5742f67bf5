@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4aa372cf_87a39f05",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-06T18:54:44Z",
+      "side": 1,
+      "message": "PS2: Needed to downgrade 3 of the deps to an older state due to targetSdk 30",
+      "revId": "dd24df69e1f9881b3504ae7844a3ac5742f67bf5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -15,6 +15,9 @@
  */
 package org.lineageos.updater.misc;
 
+import android.content.ContentResolver;
+import android.net.Uri;
+import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
 import java.io.File;
@@ -89,6 +92,29 @@ public class FileUtils {
                 //noinspection ResultOfMethodCallIgnored
                 destFile.delete();
             }
+            throw e;
+        }
+    }
+
+    public static void copyFile(ContentResolver cr, File sourceFile, Uri destUri,
+                                ProgressCallBack progressCallBack)
+            throws IOException {
+        try (FileChannel sourceChannel = new FileInputStream(sourceFile).getChannel();
+             ParcelFileDescriptor pfd = cr.openFileDescriptor(destUri, "w");
+             FileChannel destChannel = new FileOutputStream(pfd.getFileDescriptor()).getChannel()) {
+            if (progressCallBack != null) {
+                ReadableByteChannel readableByteChannel = new CallbackByteChannel(sourceChannel,
+                        sourceFile.length(), progressCallBack);
+                destChannel.transferFrom(readableByteChannel, 0, sourceChannel.size());
+            } else {
+                destChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
+            }
+        } catch (IOException e) {
+            Log.e(TAG, "Could not copy file", e);
+            /*if (destFile.exists()) {
+                //noinspection ResultOfMethodCallIgnored
+                destFile.delete();
+            }*/
             throw e;
         }
     }

@@ -19,7 +19,9 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.IBinder;
 import android.os.SystemClock;
 import android.util.Log;
@@ -43,7 +45,7 @@ public class ExportUpdateService extends Service {
     public static final String ACTION_STOP_EXPORTING = "stop_exporting";
 
     public static final String EXTRA_SOURCE_FILE = "source_file";
-    public static final String EXTRA_DEST_FILE = "dest_file";
+    public static final String EXTRA_DEST_URI = "dest_uri";
 
     private static final String EXPORT_NOTIFICATION_CHANNEL =
             "export_notification_channel";
@@ -68,7 +70,7 @@ public class ExportUpdateService extends Service {
             }
             mIsExporting = true;
             File source = (File) intent.getSerializableExtra(EXTRA_SOURCE_FILE);
-            File destination = (File) intent.getSerializableExtra(EXTRA_DEST_FILE);
+            Uri destination = (Uri) intent.getParcelableExtra(EXTRA_DEST_URI);
             startExporting(source, destination);
         } else if (ACTION_STOP_EXPORTING.equals(intent.getAction())) {
             if (mIsExporting) {
@@ -94,15 +96,17 @@ public class ExportUpdateService extends Service {
     }
 
     private class ExportRunnable implements Runnable {
+        private ContentResolver mContentResolver;
         private final File mSource;
-        private final File mDestination;
+        private final Uri mDestination;
         private final FileUtils.ProgressCallBack mProgressCallBack;
         private final Runnable mRunnableComplete;
         private final Runnable mRunnableFailed;
 
-        private ExportRunnable(File source, File destination,
-                FileUtils.ProgressCallBack progressCallBack,
-                Runnable runnableComplete, Runnable runnableFailed) {
+        private ExportRunnable(ContentResolver cr, File source, Uri destination,
+                               FileUtils.ProgressCallBack progressCallBack,
+                               Runnable runnableComplete, Runnable runnableFailed) {
+            mContentResolver = cr;
             mSource = source;
             mDestination = destination;
             mProgressCallBack = progressCallBack;
@@ -113,7 +117,7 @@ public class ExportUpdateService extends Service {
         @Override
         public void run() {
             try {
-                FileUtils.copyFile(mSource, mDestination, mProgressCallBack);
+                FileUtils.copyFile(mContentResolver, mSource, mDestination, mProgressCallBack);
                 mIsExporting = false;
                 if (!mExportThread.isInterrupted()) {
                     Log.d(TAG, "Completed");
@@ -132,11 +136,11 @@ public class ExportUpdateService extends Service {
 
         private void cleanUp() {
             //noinspection ResultOfMethodCallIgnored
-            mDestination.delete();
+            //mDestination.delete();
         }
     }
 
-    private void startExporting(File source, File destination) {
+    private void startExporting(File source, Uri destination) {
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
         NotificationChannel notificationChannel = new NotificationChannel(
                 EXPORT_NOTIFICATION_CHANNEL,
@@ -149,7 +153,7 @@ public class ExportUpdateService extends Service {
         NotificationCompat.BigTextStyle notificationStyle = new NotificationCompat.BigTextStyle();
         notificationBuilder.setContentTitle(getString(R.string.dialog_export_title));
         notificationStyle.setBigContentTitle(getString(R.string.dialog_export_title));
-        notificationStyle.bigText(destination.getName());
+//        notificationStyle.bigText(destination.getName());
         notificationBuilder.setStyle(notificationStyle);
         notificationBuilder.setSmallIcon(R.drawable.ic_system_update);
         notificationBuilder.addAction(android.R.drawable.ic_media_pause,
@@ -183,7 +187,7 @@ public class ExportUpdateService extends Service {
             notificationBuilder.setContentTitle(
                     getString(R.string.notification_export_success));
             notificationBuilder.setProgress(0, 0, false);
-            notificationBuilder.setContentText(destination.getName());
+//            notificationBuilder.setContentText(destination.getName());
             notificationBuilder.mActions.clear();
             notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
             stopForeground(STOP_FOREGROUND_DETACH);
@@ -202,8 +206,8 @@ public class ExportUpdateService extends Service {
             stopForeground(STOP_FOREGROUND_DETACH);
         };
 
-        mExportRunnable = new ExportRunnable(source, destination, progressCallBack,
-                runnableComplete, runnableFailed);
+        mExportRunnable = new ExportRunnable(getContentResolver(), source, destination,
+                progressCallBack, runnableComplete, runnableFailed);
         mExportThread = new Thread(mExportRunnable);
         mExportThread.start();
     }

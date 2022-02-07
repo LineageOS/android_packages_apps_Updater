@@ -69,6 +69,7 @@ public class ExportUpdateService extends Service {
             File source = (File) intent.getSerializableExtra(EXTRA_SOURCE_FILE);
             Uri destination = intent.getParcelableExtra(EXTRA_DEST_URI);
             startExporting(source, destination);
+            Toast.makeText(this, R.string.toast_export_started, Toast.LENGTH_SHORT).show();
         } else {
             Log.e(TAG, "No action specified");
         }

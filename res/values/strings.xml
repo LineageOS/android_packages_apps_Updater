@@ -125,6 +125,7 @@
     <string name="notification_export_success">Update exported</string>
     <string name="notification_export_fail">Export error</string>
     <string name="toast_already_exporting">Already exporting an update</string>
+    <string name="toast_export_started">Export started</string>
 
     <plurals name="eta_seconds">
         <item quantity="one">1 second left</item>

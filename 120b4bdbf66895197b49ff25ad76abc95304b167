@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "008029ea_55918acc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-02-08T17:13:27Z",
+      "side": 1,
+      "message": "Michael / Joey / Luca, any idea what module \"UpdaterStudio\" was *used* for?",
+      "revId": "120b4bdbf66895197b49ff25ad76abc95304b167",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

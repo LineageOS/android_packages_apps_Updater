@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "731712c3_c7f35bac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-02-08T17:09:49Z",
+      "side": 1,
+      "message": "Gone. Question is what was that used for?",
+      "parentUuid": "9b123cfa_a326b3e9",
+      "revId": "64910f9d856232aba13d75de7960848a1d7808b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2505bfb8_77152693",

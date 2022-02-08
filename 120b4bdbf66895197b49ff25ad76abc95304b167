@@ -16,6 +16,24 @@
       "message": "Michael / Joey / Luca, any idea what module \"UpdaterStudio\" was *used* for?",
       "revId": "120b4bdbf66895197b49ff25ad76abc95304b167",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e3a9e34_fcb6346b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2022-02-08T18:06:17Z",
+      "side": 1,
+      "message": "It is used to compile it with Android Studio and got a working apk, as it uses hidden APIs (eg the UpdateEngine APIs are not public).",
+      "parentUuid": "008029ea_55918acc",
+      "revId": "120b4bdbf66895197b49ff25ad76abc95304b167",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

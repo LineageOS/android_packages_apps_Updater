@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b3a57c2_b70700e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2022-02-10T11:14:48Z",
+      "side": 1,
+      "message": "i remember we had some issues with the local update showing the currently installed version instead of the version which is going to be installed?",
+      "revId": "0c8158e385e0a7ff21b8326a5b28ccd0f04e7cf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c62f965c_1bd6755d",
+        "filename": "src/org/lineageos/updater/UpdateImporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2022-02-10T11:14:48Z",
+      "side": 1,
+      "message": "The secret behind typing the name properly is holding the key equal to the name while typing.",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 27
+      },
+      "revId": "0c8158e385e0a7ff21b8326a5b28ccd0f04e7cf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

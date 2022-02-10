@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cb86a5f0_5431a00b",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-02-10T09:59:38Z",
+      "side": 1,
+      "message": "Fits in a single line.",
+      "range": {
+        "startLine": 152,
+        "startChar": 0,
+        "endLine": 153,
+        "endChar": 58
+      },
+      "revId": "11c003b4e0d36f009e9a2acd6c9fe4a40f8e7128",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "92b6adc0_e8581467",
         "filename": "src/org/lineageos/updater/UpdatesCheckReceiver.java",
         "patchSetId": 6

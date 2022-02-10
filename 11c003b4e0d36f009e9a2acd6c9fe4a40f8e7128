@@ -22,6 +22,30 @@
       },
       "revId": "11c003b4e0d36f009e9a2acd6c9fe4a40f8e7128",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b1794b6_a48fe369",
+        "filename": "src/org/lineageos/updater/UpdatesCheckReceiver.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-02-10T09:42:50Z",
+      "side": 1,
+      "message": "Or preferably, backport https://github.com/LineageOS/android_packages_apps_Updater/commit/aed99e306c8ca3a356fb658cffc88a15a92db7e8.",
+      "parentUuid": "92b6adc0_e8581467",
+      "range": {
+        "startLine": 148,
+        "startChar": 62,
+        "endLine": 148,
+        "endChar": 63
+      },
+      "revId": "11c003b4e0d36f009e9a2acd6c9fe4a40f8e7128",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

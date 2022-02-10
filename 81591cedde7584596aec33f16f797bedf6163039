@@ -34,6 +34,24 @@
       "parentUuid": "6dc22ea4_a588e6d9",
       "revId": "81591cedde7584596aec33f16f797bedf6163039",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "875ccc05_7699fd2d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2022-02-10T10:07:52Z",
+      "side": 1,
+      "message": "My bad, I assumed Michael\u0027s commits were on 19.0 instead of 18.1, so I just git reset my local branch to the last commit of that chain and then applied my commits.\nAnyway, I tested them on 19.0 but they should work on 18.1 too",
+      "parentUuid": "b4f038bd_8b010a52",
+      "revId": "81591cedde7584596aec33f16f797bedf6163039",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

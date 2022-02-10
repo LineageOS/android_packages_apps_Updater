@@ -52,6 +52,24 @@
       "parentUuid": "b4f038bd_8b010a52",
       "revId": "81591cedde7584596aec33f16f797bedf6163039",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "754d3a6f_5cfa188e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-02-10T10:10:37Z",
+      "side": 1,
+      "message": "I had to rebase and fix conflicts. This chain compiles and I am going to test local updates.",
+      "parentUuid": "875ccc05_7699fd2d",
+      "revId": "81591cedde7584596aec33f16f797bedf6163039",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

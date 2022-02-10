@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac42e23d_5231dc67",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2022-02-10T08:01:56Z",
+      "side": 1,
+      "message": "I verified this works on axolotl (virtual a/b, dynamic partitions), but I couldn\u0027t try it for other cases (e.g. non-a/b devices)",
+      "revId": "9fb390566c9a55681c7b877cbad6759088ca04dd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

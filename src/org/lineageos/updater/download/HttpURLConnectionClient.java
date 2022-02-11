@@ -140,8 +140,20 @@ public class HttpURLConnectionClient implements DownloadClient {
             mResume = resume;
         }
 
-        private void calculateSpeed() {
+        private void calculateSpeed(boolean justResumed) {
             final long millis = SystemClock.elapsedRealtime();
+            if (justResumed) {
+                // If we don't start over with these after resumption, we get huge numbers for
+                // ETA since the delta will grow, resulting in a very low speed
+                mLastMillis = millis;
+                mSpeed = -1; // we don't want the moving avg with values from who knows when
+
+                // need to do this as well, otherwise the second time we call calculateSpeed(),
+                // the difference (mTotalBytesRead - mCurSampleBytes) will be larger than expected,
+                // resulting in a higher speed calculation
+                mCurSampleBytes = mTotalBytesRead;
+                return;
+            }
             final long delta = millis - mLastMillis;
             if (delta > 500) {
                 final long curSpeed = ((mTotalBytesRead - mCurSampleBytes) * 1000) / delta;
@@ -243,6 +255,7 @@ public class HttpURLConnectionClient implements DownloadClient {
 
         @Override
         public void run() {
+            boolean justResumed = false;
             try {
                 mClient.setInstanceFollowRedirects(!mUseDuplicateLinks);
                 mClient.connect();
@@ -256,6 +269,7 @@ public class HttpURLConnectionClient implements DownloadClient {
                 mCallback.onResponse(new Headers());
 
                 if (mResume && isPartialContentCode(responseCode)) {
+                    justResumed = true;
                     mTotalBytesRead = mDestination.length();
                     Log.d(TAG, "The server fulfilled the partial content request");
                 } else if (mResume || !isSuccessCode(responseCode)) {
@@ -274,8 +288,9 @@ public class HttpURLConnectionClient implements DownloadClient {
                     while (!isInterrupted() && (count = inputStream.read(b)) > 0) {
                         outputStream.write(b, 0, count);
                         mTotalBytesRead += count;
-                        calculateSpeed();
+                        calculateSpeed(justResumed);
                         calculateEta();
+                        justResumed = false; // otherwise we will never get speed and ETA again
                         if (mProgressListener != null) {
                             mProgressListener.update(mTotalBytesRead, mTotalBytes, mSpeed, mEta);
                         }

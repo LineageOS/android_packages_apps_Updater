@@ -48,25 +48,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <ProgressBar
-                    android:id="@+id/progress_bar"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="4sp"
+                    android:id="@+id/progress"
                     android:visibility="invisible"
-                    tools:progress="65"
-                    tools:visibility="visible" />
+                    tools:visibility="visible">
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4sp"
+                        tools:progress="65" />
+
+                    <TextView
+                        android:id="@+id/progress_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        tools:text="65%" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/progress_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/progress_bar"
+                    android:layout_below="@id/progress"
                     android:ellipsize="marquee"
                     android:singleLine="true"
                     android:visibility="invisible"
-                    tools:text="162 of 300 MB (3 minutes left) • 65%"
+                    tools:text="162 of 300 MB (3 minutes left)"
                     tools:visibility="visible" />
 
                 <TextView

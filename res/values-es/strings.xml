@@ -34,6 +34,7 @@
     <string name="finalizing_package">Finalizando instalación del paquete</string>
     <string name="preparing_ota_first_boot">Preparando para el primer arranque</string>
     <string name="dialog_prepare_zip_message">Preparación preliminar de la actualización</string>
+    <string name="dialog_battery_low_title">Batería baja</string>
     <string name="reboot">Reiniciar</string>
     <string name="menu_refresh">Actualizar</string>
     <string name="menu_preferences">Preferencias</string>
@@ -43,6 +44,7 @@
     <string name="menu_copy_url">Copiar URL</string>
     <string name="menu_export_update">Exportar actualización</string>
     <string name="menu_show_changelog">Mostrar registro de cambios</string>
+    <string name="toast_forced_update_recovery">Es imposible desactivar en este dispositivo las actualizaciones del Modo de Recuperación («Recovery») de Lineage.</string>
     <string name="snack_updates_found">Se encontraron nuevas actualizaciones</string>
     <string name="snack_no_updates_found">No se encontraron nuevas actualizaciones</string>
     <string name="snack_updates_check_failed">Error en la comprobación de actualizaciones. Por favor, verifique la conexión a Internet e inténtalo nuevamente.</string>
@@ -77,6 +79,14 @@
     <string name="notification_export_success">Actualización exportada</string>
     <string name="notification_export_fail">Error de exportación</string>
     <string name="toast_already_exporting">Ya se está exportando una actualización</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">Falta 1 segundo</item>
+        <item quantity="other">Faltan <xliff:g id="count">%d</xliff:g> segundos</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">Falta 1 minuto</item>
+        <item quantity="other">Faltan <xliff:g id="count">%d</xliff:g> minutos</item>
+    </plurals>
     <string name="update_on_mobile_data_title">Advertencia</string>
     <string name="update_on_mobile_data_message">Se descargará un paquete de actualización usando los datos móviles, que probablemente ocasione un alto consumo de datos. ¿Quieres continuar?</string>
     <string name="checkbox_mobile_data_warning">No mostrar de nuevo</string>

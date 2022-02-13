@@ -34,6 +34,7 @@
     <string name="finalizing_package">Finalizando instalación del paquete</string>
     <string name="preparing_ota_first_boot">Preparando para el primer arranque</string>
     <string name="dialog_prepare_zip_message">Preparación preliminar de la actualización</string>
+    <string name="dialog_battery_low_title">Batería baja</string>
     <string name="reboot">Reiniciar</string>
     <string name="menu_refresh">Actualizar</string>
     <string name="menu_preferences">Preferencias</string>
@@ -63,6 +64,7 @@
     <string name="action_resume">Reanudar</string>
     <string name="action_install">Instalar</string>
     <string name="action_info">Información</string>
+    <string name="action_delete">Borrar</string>
     <string name="action_cancel">Cancelar</string>
     <string name="confirm_delete_dialog_title">Borrar archivo</string>
     <string name="confirm_delete_dialog_message">¿Borrar el archivo de actualización seleccionado?</string>
@@ -76,6 +78,14 @@
     <string name="notification_export_success">Actualización exportada</string>
     <string name="notification_export_fail">Error de exportación</string>
     <string name="toast_already_exporting">Ya se está exportando una actualización</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">Falta 1 segundo</item>
+        <item quantity="other">Faltan <xliff:g id="count">%d</xliff:g> segundos</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">Falta 1 minuto</item>
+        <item quantity="other">Faltan <xliff:g id="count">%d</xliff:g> minutos</item>
+    </plurals>
     <string name="update_on_mobile_data_title">Advertencia</string>
     <string name="update_on_mobile_data_message">Se descargará un paquete de actualización usando los datos móviles, que probablemente ocasione un alto consumo de datos. ¿Quieres continuar?</string>
     <string name="checkbox_mobile_data_warning">No mostrar de nuevo</string>

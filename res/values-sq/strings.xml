@@ -41,7 +41,7 @@
     <string name="dialog_battery_low_message_pct">Niveli i baterië është shumë i ulët, për të vazhduar duhet të jetë të paktën <xliff:g id="percent_discharging">%1$d</xliff:g>%% e baterisë, ose <xliff:g id="percent_charging">%2$d</xliff:g>%% nëse po karikohet.</string>
     <string name="reboot">Rindiz</string>
     <string name="menu_refresh">Rifresko</string>
-    <string name="menu_preferences">Parapëlqime</string>
+    <string name="menu_preferences">Preferencat</string>
     <string name="menu_auto_updates_check">Kontroll automatik të përditësimeve</string>
     <string name="menu_auto_updates_check_interval_daily">Njëherë në ditë</string>
     <string name="menu_auto_updates_check_interval_weekly">Njëherë në javë</string>

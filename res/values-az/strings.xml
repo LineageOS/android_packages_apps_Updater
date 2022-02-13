@@ -20,7 +20,7 @@
     <string name="verification_failed_notification">Təsdiqləmə uğursuz oldu</string>
     <string name="verifying_download_notification">Yeniləmə təsdiqlənir</string>
     <string name="downloading_notification">Endirilir</string>
-    <string name="download_paused_notification">Endirilməyə fasilə verildi</string>
+    <string name="download_paused_notification">Endirməyə fasilə verildi</string>
     <string name="download_paused_error_notification">Endirmə xətası</string>
     <string name="download_completed_notification">Endirmə tamamlandı</string>
     <string name="download_starting_notification">Endirmə başladılır</string>

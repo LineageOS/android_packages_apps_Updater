@@ -66,7 +66,7 @@
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> – <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> à <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">A’ dearbhadh an ùrachaidh</string>
     <string name="list_no_updates">Cha deach ùrachadh a lorg. Airson sùil a thoirt airson ùrachaidhean a làimh, cleachd am putan “Ath-nuadhaich”.</string>
     <string name="action_download">Luchdaich a-nuas</string>
@@ -95,10 +95,10 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> diog air fhàgail</item>
     </plurals>
     <plurals name="eta_minutes">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> mhionaid air fhàgail</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> mhionaid air fhàgail</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> mionaidean air fhàgail</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> mionaid air fhàgail</item>
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> mhion. air fhàgail</item>
+        <item quantity="two"><xliff:g id="count">%d</xliff:g> mhion. air fhàgail</item>
+        <item quantity="few"><xliff:g id="count">%d</xliff:g> mion. air fhàgail</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> mion. air fhàgail</item>
     </plurals>
     <plurals name="eta_hours">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> uair a thìde air fhàgail</item>

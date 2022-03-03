@@ -33,6 +33,24 @@
       "message": "Also, add a meaningful commit message body, telling that this fixes the app crashing on ATV devices or something.",
       "revId": "361d7645130644086cdb04dce47d29ba733bb196",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffd418f6_c881ece7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21651
+      },
+      "writtenOn": "2022-03-03T20:09:41Z",
+      "side": 1,
+      "message": "I followed what was done earlier in same situation: I10fe453c5f14d1a0ca49b734df517047cb7ee802 . Also I think it should have been done in the original commit.",
+      "parentUuid": "3ebb5c8d_4c184565",
+      "revId": "361d7645130644086cdb04dce47d29ba733bb196",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

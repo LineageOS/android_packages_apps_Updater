@@ -16,6 +16,23 @@
       "message": "Why \"fixup\"?",
       "revId": "361d7645130644086cdb04dce47d29ba733bb196",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c78bd2c_034ac45f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-03-03T16:51:05Z",
+      "side": 1,
+      "message": "Also, add a meaningful commit message body, telling that this fixes the app crashing on ATV devices or something.",
+      "revId": "361d7645130644086cdb04dce47d29ba733bb196",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

@@ -59,8 +59,6 @@
     <string name="header_last_updates_check">Последњи пут проверено: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s </xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s </xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> од <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> од <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Верификација анжурирања</string>
     <string name="list_no_updates">Нема нових ажурирања. Да ручно провериш нова ажурирања користи дугме освежи.</string>
     <string name="action_download">Преузми</string>
@@ -73,8 +71,6 @@
     <string name="confirm_delete_dialog_title">Обриши фајл</string>
     <string name="confirm_delete_dialog_message">Избриши изабрани фајл за ажурирање?</string>
     <string name="apply_update_dialog_title">Примени ажурирање</string>
-    <string name="apply_update_dialog_message">Биће инсталирано <xliff:g id="update_name">%1$s</xliff:g>.\n\nАко додирнете <xliff:g id="ok">%2$s</xliff:g>, уређај ће се поново покренути у режим опоравка ради инсталације ажурирања.\n\nНапомена: За ову функцију је неопходан одговарајући режим опоравка или ћете морати да инсталирате ручно.</string>
-    <string name="apply_update_dialog_message_ab">Биће инсталирано <xliff:g id="update_name">%1$s</xliff:g>.\n\nАко додирнете <xliff:g id="ok">%2$s</xliff:g>, уређај ће почети инсталацијуу позадини.\n\nКада буде завршено биће понуђено рестартовање.</string>
     <string name="cancel_installation_dialog_message">Откажи инсталацију?</string>
     <string name="label_download_url">URL адреса за преузимање</string>
     <string name="toast_download_url_copied">URL Копиран</string>

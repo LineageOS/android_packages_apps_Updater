@@ -67,8 +67,6 @@
     <string name="header_last_updates_check">Kontrolli i fundit: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> e <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> e <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Duke verifikuar përditësimin</string>
     <string name="list_no_updates">Nuk ka përditësime të reja. Për të kërkuar manualisht për përditësime të reja, përdor butonin Rifresko.</string>
     <string name="action_download">Shkarko</string>
@@ -81,8 +79,6 @@
     <string name="confirm_delete_dialog_title">Fshi skedarin</string>
     <string name="confirm_delete_dialog_message">Dëshiron të fshish skedarin e zgjedhur të përditësimit?</string>
     <string name="apply_update_dialog_title">Apliko përditësimin</string>
-    <string name="apply_update_dialog_message">Ju po përditësoheni në <xliff:g id="update_name">%1$s</xliff:g>.\n\nNëse shtypni <xliff:g id="ok">%2$s</xliff:g>, telefoni do te rindizet ne Gjendjen Recovery për të instaluar përditesimin.\n\nShënim: Ky funksion kërkon nje Recovery të përshtatshem ose perditesimi do duhet të bëhet manualisht.</string>
-    <string name="apply_update_dialog_message_ab">Ju po përditësoheni në <xliff:g id="update_name">%1$s</xliff:g>.\n\nNëse zgjidhni <xliff:g id="ok">%2$s</xliff:g>, paisja do fillojë instalimin prapaskenë. \n\nSapo të përfundojë, ju do të pyeteni për të rindezur paisjen.</string>
     <string name="cancel_installation_dialog_message">Anullo instalimin?</string>
     <string name="label_download_url">Shkarko URL</string>
     <string name="toast_download_url_copied">URL u kopjua</string>

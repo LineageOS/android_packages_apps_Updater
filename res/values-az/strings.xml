@@ -67,8 +67,6 @@
     <string name="header_last_updates_check">Son yoxlama: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Yeniləmə təsdiqlənir</string>
     <string name="list_no_updates">Yeniləmə tapılmadı. Yeniləmələri əllə yoxlamaq üçün Təzələ düyməsindən istifadə edin.</string>
     <string name="action_download">Endir</string>
@@ -81,8 +79,6 @@
     <string name="confirm_delete_dialog_title">Faylı sil</string>
     <string name="confirm_delete_dialog_message">Seçilmiş yeniləmə faylı silinsin?</string>
     <string name="apply_update_dialog_title">Yeniləməni tətbiq et</string>
-    <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> yüksəldirsiniz.\n\n<xliff:g id="ok">%2$s</xliff:g> bassanız, cihaz yeniləməni quraşdırmaq üçün bərpa rejimində yenidən başlayacaq.\n\nQeyd: Bu özəlliyin uyğun bir Bərpa mühitinə ehtiyacı var və ya yeniləmələr əllə quraşdırılmalıdır.</string>
-    <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g> yüksəldirsiniz.\n\n<xliff:g id="ok">%2$s</xliff:g> düyməsinə bassanız, cihaz arxaplanda quraşdırılmağa başlıyacaq.\n\nƏməliyyat bitəndə, yenidən başladılmalıdır.</string>
     <string name="cancel_installation_dialog_message">Quraşdırmadan imtina edilsin?</string>
     <string name="label_download_url">Endirmə bağlantısı</string>
     <string name="toast_download_url_copied">Bağlantı kopyalandı</string>

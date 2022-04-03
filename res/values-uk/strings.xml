@@ -59,8 +59,6 @@
     <string name="confirm_delete_dialog_title">Видалити файл</string>
     <string name="confirm_delete_dialog_message">Видалити обраний файл оновлення?</string>
     <string name="apply_update_dialog_title">Застосувати оновлення</string>
-    <string name="apply_update_dialog_message">Ви збираєтесь оновитись на <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо Ви натиснете <xliff:g id="ok">%2$s</xliff:g>, пристрій перезавантажиться у Recovery для встановлення.\n\nПримітка: ця функція потребує сумісне Recovery, в іншому випадку оновлення необхідно встановити вручну.</string>
-    <string name="apply_update_dialog_message_ab">Ви збираєтесь оновитись на <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо ви натиснети на <xliff:g id="ok">%2$s</xliff:g>, пристрій почне встановлення у фоновому режимі.\n\nПісля встановлення вам буде запропоновано перезавантажити пристрій.</string>
     <string name="label_download_url">URL-адреса завантаження</string>
     <string name="toast_download_url_copied">URL-адресу скопійовано</string>
     <string name="dialog_export_title">Експорт оновлення</string>

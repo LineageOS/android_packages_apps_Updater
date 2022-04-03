@@ -17,60 +17,48 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Anovador</string>
     <string name="display_name">Anovador</string>
-    <string name="verification_failed_notification">Falló la verificación</string>
+    <string name="verification_failed_notification">La verificación falló</string>
     <string name="verifying_download_notification">Verificando l\'anovamientu</string>
-    <string name="downloading_notification">Baxando</string>
-    <string name="download_paused_notification">Descarga posada</string>
-    <string name="download_paused_error_notification">Fallu de descarga</string>
-    <string name="download_completed_notification">Completóse la descarga</string>
-    <string name="download_starting_notification">Aniciando descarga</string>
-    <string name="update_failed_notification">Falló l\'anovamientu</string>
+    <string name="downloading_notification">En descarga</string>
+    <string name="update_failed_notification">L\'anovamientu falló</string>
     <string name="installation_suspended_notification">Suspendióse la instalación</string>
-    <string name="new_updates_found_title">Anovamientos nuevos</string>
+    <string name="new_updates_found_title">Hai anovamientos</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Posar</string>
     <string name="resume_button">Siguir</string>
     <string name="suspend_button">Suspender</string>
     <string name="installing_update">Instalando\'l paquete d\'anovamientu</string>
-    <string name="installing_update_error">Fallu d\'instalación</string>
-    <string name="installing_update_finished">Instalóse l\'anovamientu</string>
     <string name="finalizing_package">Finando la instalación del paquete</string>
-    <string name="preparing_ota_first_boot">Tresnando\'l primer arranque</string>
-    <string name="dialog_prepare_zip_message">Tresnáu preliminar del anovamientu</string>
-    <string name="dialog_battery_low_title">Batería baxa</string>
-    <string name="dialog_battery_low_message_pct">El nivel de batería ye perbaxu, precises polo menos<xliff:g id="percent_discharging">%1$d</xliff:g>%% de batería pa siguir, <xliff:g id="percent_charging">%2$d</xliff:g>%% si ta en carga.</string>
-    <string name="reboot">Reaniciar</string>
-    <string name="menu_refresh">Refrescar</string>
+    <string name="preparing_ota_first_boot">Tresnando\'l primer arrinque</string>
+    <string name="dialog_battery_low_title">Queda poca batería</string>
+    <string name="dialog_battery_low_message_pct">El nivel de batería ye perbaxu, tien d\'haber polo menos un <xliff:g id="percent_discharging">%1$d</xliff:g>%% de batería pa siguir, <xliff:g id="percent_charging">%2$d</xliff:g>%% si ta en carga.</string>
     <string name="menu_preferences">Preferencies</string>
-    <string name="menu_auto_updates_check">Comprobación automática d\'anovamientos</string>
-    <string name="menu_auto_updates_check_interval_daily">Una vegada al día</string>
+    <string name="menu_auto_updates_check_interval_daily">Caldía</string>
     <string name="menu_auto_updates_check_interval_weekly">Una vegada per selmana</string>
-    <string name="menu_auto_updates_check_interval_monthly">Una vegada al mes</string>
+    <string name="menu_auto_updates_check_interval_monthly">Una vegada per mes</string>
     <string name="menu_auto_updates_check_interval_never">Enxamás</string>
-    <string name="menu_auto_delete_updates">Desaniciar anovamientos al instalalos</string>
     <string name="menu_delete_update">Desaniciar</string>
-    <string name="menu_copy_url">Copiar URL</string>
-    <string name="menu_export_update">Esportar anovamientu</string>
+    <string name="menu_copy_url">Copiar la URL</string>
+    <string name="menu_export_update">Esportar l\'anovamientu</string>
     <string name="menu_show_changelog">Amosar el rexistru de cambeos</string>
     <string name="menu_ab_perf_mode">Priorizar el procesu d\'anovamientu</string>
     <string name="menu_update_recovery">Anovar el recovery</string>
     <string name="toast_forced_update_recovery">Ye imposible desactivar los anovamientos del recovery de Lineage nesti preséu.</string>
-    <string name="snack_updates_found">Alcontráronse anovamientos nuevos</string>
-    <string name="snack_no_updates_found">Nun s\'alcontraron anovamientos</string>
-    <string name="snack_updates_check_failed">Falló la comprobación d\'anovamientos. Comprueba la to conexón a Internet y volvi tentalo, por favor.</string>
-    <string name="snack_download_failed">Falló la descarga. Comprueba la to conexón a Internet y volvi tentalo, por favor.</string>
-    <string name="snack_download_verification_failed">Falló la verificación del anovamientu.</string>
-    <string name="snack_download_verified">Descarga completada.</string>
-    <string name="snack_update_not_installable">Esti anovamientu nun pue instalase enriba de la compilación actual.</string>
+    <string name="snack_updates_found">Atopáronse anovamientos</string>
+    <string name="snack_no_updates_found">Nun s\'atopó nengún anovamientu</string>
+    <string name="snack_updates_check_failed">La comprobación d\'anovamientos falló. Comprueba la conexón a internet y volvi tentalo.</string>
+    <string name="snack_download_failed">La descarga falló. Comprueba la conexón a internet y volvi tentalo.</string>
+    <string name="snack_download_verification_failed">La comprobación d\'anovamientos falló</string>
+    <string name="snack_update_not_installable">Esti anovamientu nun se pue instalar sobre la versión actual.</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Anovamientu caberu\'l <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="header_last_updates_check">Última comprobación: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
-    <string name="list_verifying_update">Verificando anovamientu</string>
-    <string name="list_no_updates">Nun s\'alcontraron anovamientos. Pa comprobalos a mano, usa\'l botón Refrescar.</string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
+    <string name="list_verifying_update">Verificando l\'anovamientu</string>
+    <string name="list_no_updates">Nun s\'atopó nengún anovamientu. Pa comprobar manualmente si los hai, usa\'l botón «Refrescar».</string>
     <string name="action_download">Baxar</string>
     <string name="action_pause">Posar</string>
     <string name="action_resume">Siguir</string>
@@ -78,18 +66,12 @@
     <string name="action_info">Información</string>
     <string name="action_delete">Desaniciar</string>
     <string name="action_cancel">Encaboxar</string>
-    <string name="confirm_delete_dialog_title">Desaniciar ficheru</string>
-    <string name="confirm_delete_dialog_message">¿Desaniciar l\'anovamientu esbilláu?</string>
-    <string name="apply_update_dialog_title">Aplicar anovamientu</string>
-    <string name="apply_update_dialog_message">Tas a piques d\'anovar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi primes <xliff:g id="ok">%2$s</xliff:g>, el preséu va reaniciase solu al recovery pa instalar l\'anovamientu.\n\nNota: Esta carauterística rique un recovery compatible o los anovamientos van precisar instalase a mano.</string>
-    <string name="apply_update_dialog_message_ab">Tas a piques d\'anovar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi primes <xliff:g id="ok">%2$s</xliff:g>, el preséu va entamar la instalación de fondu.\n\nNamái acabar, va suxerísete reaniciar.</string>
-    <string name="cancel_installation_dialog_message">¿Encaboxar la instalación?</string>
-    <string name="label_download_url">URL de descarga</string>
+    <string name="confirm_delete_dialog_message">¿Quies desaniciar l\'anovamientu esbilláu?</string>
+    <string name="cancel_installation_dialog_message">¿Quies encaboxar la instalación?</string>
     <string name="toast_download_url_copied">Copióse la URL</string>
-    <string name="dialog_export_title">Esportando anovamientu</string>
+    <string name="dialog_export_title">Esportando l\'anovamientu</string>
     <string name="notification_export_success">Esportóse l\'anovamientu</string>
-    <string name="notification_export_fail">Fallu d\'esportación</string>
-    <string name="toast_already_exporting">Yá ta esportándose un anovamientu</string>
+    <string name="notification_export_fail">Fallu de la esportación</string>
     <plurals name="eta_seconds">
         <item quantity="one">Queda 1 segundu</item>
         <item quantity="other">Queden <xliff:g id="count">%d</xliff:g> segundos</item>
@@ -103,12 +85,11 @@
         <item quantity="other">Queden <xliff:g id="count">%d</xliff:g> hores</item>
     </plurals>
     <string name="update_on_mobile_data_title">Alvertencia</string>
-    <string name="update_on_mobile_data_message">Tas a piques de baxar un paquete d\'anovamientu usando los datos móviles que pue causar un usu altu de datos. ¿Prestaríate siguir?</string>
-    <string name="checkbox_mobile_data_warning">Nun amosar más</string>
-    <string name="menu_mobile_data_warning">Alvertencia de datos de móviles</string>
-    <string name="blocked_update_dialog_title">Bloquióse l\'anovamientu</string>
-    <string name="blocked_update_dialog_message">Esti anovamientu nun pue instalase usando l\'aplicación anovadora. Llei <xliff:g id="info_url">%1$s</xliff:g> pa más información, por favor.</string>
-    <string name="new_updates_channel_title">Anovamientos nuevos</string>
+    <string name="update_on_mobile_data_message">Tas a piques de baxar un paquete d\'anovamientu colos datos móviles que pue xenerar un usu altu de datos. ¿Quies siguir?</string>
+    <string name="checkbox_mobile_data_warning">Nun volver amosar</string>
+    <string name="blocked_update_dialog_message">Esti anovamientu nun se pue instalar con «Anovador».  Llei <xliff:g id="info_url">%1$s</xliff:g> pa consiguir más información.</string>
+    <string name="export_channel_title">Esportación completada</string>
+    <string name="new_updates_channel_title">Hai anovamientos</string>
     <string name="ongoing_channel_title">Descargues en cursu</string>
-    <string name="update_failed_channel_title">Falló l\'anovamientu</string>
+    <string name="update_failed_channel_title">Anovamientu fallíu</string>
 </resources>

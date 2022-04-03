@@ -67,8 +67,6 @@
     <string name="header_last_updates_check">Zuletzt geprüft: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> von <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> von <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Update wird geprüft</string>
     <string name="list_no_updates">Keine neuen Updates gefunden. Um manuell nach neuen Updates zu suchen, verwende die Schaltfläche \"Aktualisieren\".</string>
     <string name="action_download">Herunterladen</string>
@@ -81,8 +79,6 @@
     <string name="confirm_delete_dialog_title">Datei löschen</string>
     <string name="confirm_delete_dialog_message">Soll die ausgewählte Update-Datei gelöscht werden?</string>
     <string name="apply_update_dialog_title">Update installieren</string>
-    <string name="apply_update_dialog_message">Bereit zum Update auf <xliff:g id="update_name">%1$s</xliff:g>\n\nWenn du <xliff:g id="ok">%2$s</xliff:g> drückst, wird das Gerät im Recovery-Modus gestartet, um das Update durchzuführen.\n\nHinweis: Diese Funktion erfordert ein kompatibles Recovery-System, anderenfalls muss das Update manuell installiert werden.</string>
-    <string name="apply_update_dialog_message_ab">Bereit zum Update auf <xliff:g id="update_name">%1$s</xliff:g>\n\nWenn du <xliff:g id="ok">%2$s drückst</xliff:g>, beginnt das Gerät im Hintergrund mit der Installation\n\nSobald diese abgeschlossen ist, wirst du zum Neustart aufgefordert.</string>
     <string name="cancel_installation_dialog_message">Installation abbrechen?</string>
     <string name="label_download_url">Download URL</string>
     <string name="toast_download_url_copied">URL wurde kopiert</string>

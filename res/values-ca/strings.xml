@@ -67,8 +67,6 @@
     <string name="header_last_updates_check">Darrera comprovació: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">S\'està verificant l\'actualització</string>
     <string name="list_no_updates">No s\'han trobat noves actualitzacions. Per comprovar manualment si hi ha noves actualitzacions, utilitzeu el botó Refresca.</string>
     <string name="action_download">Baixa</string>
@@ -81,8 +79,6 @@
     <string name="confirm_delete_dialog_title">Esborra el fitxer</string>
     <string name="confirm_delete_dialog_message">Vols esborrar el fitxer d\'actualització seleccionat?</string>
     <string name="apply_update_dialog_title">Aplica l\'actualització</string>
-    <string name="apply_update_dialog_message">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu es reiniciarà en mode recuperació per instal·lar l\'actualització.\n\nNota: Aquesta funció requereix un «Recovery» compatible o les actualitzacions s\'hauran d\'instal·lar manualment.</string>
-    <string name="apply_update_dialog_message_ab">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu començarà a instal·lar en segon pla.\n\nUn cop completat, se\'t demanarà reiniciar.</string>
     <string name="cancel_installation_dialog_message">Voleu cancel·lar la instal·lació?</string>
     <string name="label_download_url">URL de baixada</string>
     <string name="toast_download_url_copied">URL copiada</string>

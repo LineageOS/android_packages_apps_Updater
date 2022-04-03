@@ -53,6 +53,8 @@
     <string name="menu_export_update">Allforio\'r diweddariad</string>
     <string name="menu_show_changelog">Dangos log newid</string>
     <string name="menu_ab_perf_mode">Blaenoriaethu\'r broses diweddaru</string>
+    <string name="menu_update_recovery">Adfer y modd diweddaru</string>
+    <string name="toast_forced_update_recovery">Mae\'n amhosibl analluogi diweddariadau Adfer Lineage ar y ddyfais hon.</string>
     <string name="snack_updates_found">Mae yna ddiweddariad(au) newydd</string>
     <string name="snack_no_updates_found">Ni chanfuwyd diweddariadau newydd</string>
     <string name="snack_updates_check_failed">Methodd gwiriad y diweddariad. Gwiria dy gysylltiad â\'r rhwydwaith a rhoi cynnig arall arni.</string>
@@ -65,8 +67,6 @@
     <string name="header_last_updates_check">Gwiriwyd diwethaf: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> o <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> o <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Yn dilysu\'r diweddariad</string>
     <string name="list_no_updates">Ni chanfuwyd diweddariadau newydd. I wirio am ddiweddariadau newydd dy hun, defnyddia\'r botwm ail-lwytho.</string>
     <string name="action_download">Lawrlwytho</string>
@@ -79,8 +79,6 @@
     <string name="confirm_delete_dialog_title">Dileu ffeil</string>
     <string name="confirm_delete_dialog_message">Dileu\'r ffeil diweddariad a ddewiswyd?</string>
     <string name="apply_update_dialog_title">Gosod diweddariad</string>
-    <string name="apply_update_dialog_message">Rwyt ar fin uwchraddio i <xliff:g id="update_name">%1$s</xliff:g>.\n\nOs wyt yn gwasgu <xliff:g id="ok">%2$s</xliff:g>, bydd y ddyfais yn ail-ddechrau ei hun i\'r modd adfer er mwyn gosod y diweddariad.\n\nNodyn: Mae ar y nodwedd hon angen Modd Adfer (Recovery) cydnaws er mwyn gosod diweddariadau yn awtomatig.</string>
-    <string name="apply_update_dialog_message_ab">Rwyt ar fin uwchraddio i <xliff:g id="update_name">%1$s</xliff:g>.\n\nOs wyt yn gwasgu <xliff:g id="ok">%2$s</xliff:g>, bydd y ddyfais yn dechrau\'r gosod yn y cefndir.\n\nPan fydd wedi\'i gwblhau, cei dy hysbysu i ailddechrau\'r system.</string>
     <string name="cancel_installation_dialog_message">Diddymu\'r gosod?</string>
     <string name="label_download_url">URL lawrlwytho</string>
     <string name="toast_download_url_copied">Copïwyd yr URL</string>

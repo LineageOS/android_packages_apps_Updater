@@ -17,19 +17,95 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">განმაახლებელი</string>
     <string name="display_name">განმაახლებელი</string>
+    <string name="verification_failed_notification">დამოწმება ვერ მოხერხდა</string>
+    <string name="verifying_download_notification">მიმდინარეობს განახლების დამოწმება</string>
     <string name="downloading_notification">ჩამოიტვირთება</string>
+    <string name="download_paused_notification">ჩამოტვირთვა შეჩერებულია</string>
+    <string name="download_paused_error_notification">ჩამოტვირთვის შეცდომა</string>
+    <string name="download_completed_notification">ჩამოტვირთვა დასრულებულია</string>
+    <string name="download_starting_notification">ჩამოტვირთვა იწყება</string>
+    <string name="update_failed_notification">განახლება ვერ მოხერხდა</string>
     <string name="installation_suspended_notification">დაყენება გადაიდო</string>
     <string name="new_updates_found_title">ბოლო განახლებები</string>
+    <string name="text_download_speed">%1$s, %2$s/წმ</string>
     <string name="pause_button">შეჩერება</string>
     <string name="resume_button">გაგრძელება</string>
     <string name="suspend_button">გადადება</string>
+    <string name="installing_update">ყენდება განახლების კრებული</string>
+    <string name="installing_update_error">შეცდომა დაყენებისას</string>
+    <string name="installing_update_finished">განახლება დაყენებულია</string>
+    <string name="finalizing_package">სრულდება კრებულის ჩადგმა</string>
+    <string name="preparing_ota_first_boot">მზადდება პირველი ჩატვირთვისთვის</string>
+    <string name="dialog_prepare_zip_message">წინასწარი მომზადება განახლებისთვის</string>
     <string name="dialog_battery_low_title">ბატარეა ჯდება</string>
+    <string name="dialog_battery_low_message_pct">ელემენტის მუხტი მეტად მცირეა, გასაგრძელებლად საჭიროა დამუხტული იყოს სულ მცირე <xliff:g id="percent_discharging">%1$d</xliff:g>%% ან <xliff:g id="percent_charging">%2$d</xliff:g>%% თუ იმუხტება.</string>
+    <string name="reboot">გადატვირთვა</string>
+    <string name="menu_refresh">განახლება</string>
+    <string name="menu_preferences">პარამეტრები</string>
+    <string name="menu_auto_updates_check">თვითგანახლების შემოწმება</string>
     <string name="menu_auto_updates_check_interval_daily">დღეში ერთხელ</string>
     <string name="menu_auto_updates_check_interval_weekly">კვირაში ერთხელ</string>
     <string name="menu_auto_updates_check_interval_monthly">თვეში ერთხელ</string>
     <string name="menu_auto_updates_check_interval_never">არასდროს</string>
+    <string name="menu_auto_delete_updates">განახლებების წაშლა დაყენების შემდეგ</string>
+    <string name="menu_delete_update">წაშლა</string>
+    <string name="menu_copy_url">ბმულის ასლი</string>
+    <string name="menu_export_update">განახლების გატანა</string>
+    <string name="menu_show_changelog">ცვლილებების ჩვენება</string>
+    <string name="menu_ab_perf_mode">განახლებისთვის უპირატესობის მინიჭება</string>
     <string name="menu_update_recovery">აღმდგენის განახლება</string>
     <string name="toast_forced_update_recovery">შეუძლებელია Lineage-აღმდგენის განახლებების გათიშვა, ამ მოწყობილობაზე.</string>
-    <string name="apply_update_dialog_message">თქვენ აპირებთ განაახლოთ <xliff:g id="update_name">%1$s</xliff:g> ვერსიაზე.\n\nთუ დააჭერთ ღილაკზე <xliff:g id="ok">%2$s</xliff:g>, მოწყობილობა ხელახლა ჩაირთვება აღმდგენ რეჟიმში განახლების დასაყენებლად.\n\nშენიშვნა: საჭიროებს თავსებად აღმდგენ გარსს, თუ არადა განახლებები ხელით იქნება დასაყენებელი.</string>
+    <string name="snack_updates_found">ნაპოვნია განახლებები</string>
+    <string name="snack_no_updates_found">განახლებები ვერ მოიძებნა</string>
+    <string name="snack_updates_check_failed">განახლებებზე შემოწმება ვერ მოხერხდა. გთხოვთ, გადაამოწმოთ თქვენი ინტერნეტკავშირი და მოგვიანებით სცადოთ ხელახლა.</string>
+    <string name="snack_download_failed">ჩამოტვირთვა ვერ მოხერხდა. გთხოვთ გადაამოწმოთ თქვენი ინტერნეტკავშირი და სცადოთ ხელახლა.</string>
+    <string name="snack_download_verification_failed">განახლების დამოწმება ვერ მოხერხდა.</string>
+    <string name="snack_download_verified">ჩამოტვირთვა დასრულებულია.</string>
+    <string name="snack_update_not_installable">განახლების ვერ დაყენდება მიმდინარე ანაწყობზე.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">ბოლო შემოწმება: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_verifying_update">განახლება მოწმდება</string>
+    <string name="list_no_updates">განახლებები ვერ მოიძებნა. განახლებებზე ხელით შესამოწმებლად, გამოიყენეთ განახლების ღილაკი.</string>
+    <string name="action_download">ჩამოტვირთვა</string>
+    <string name="action_pause">შეჩერება</string>
+    <string name="action_resume">გაგრძელება</string>
+    <string name="action_install">დაყენება</string>
+    <string name="action_info">მონაცემები</string>
+    <string name="action_delete">წაშლა</string>
+    <string name="action_cancel">გაუქმება</string>
+    <string name="confirm_delete_dialog_title">ფაილის წაშლა</string>
+    <string name="confirm_delete_dialog_message">წაიშალოს განახლების შერჩეული ფაილი?</string>
+    <string name="apply_update_dialog_title">განახლების ასახვა</string>
+    <string name="cancel_installation_dialog_message">გაუქმდეს დაყენება?</string>
+    <string name="label_download_url">ჩამოტვირთვის ბმული</string>
+    <string name="toast_download_url_copied">ბმულის ასლი აღებულია</string>
+    <string name="dialog_export_title">მიმდინარეობს განახლების გადატანა</string>
+    <string name="notification_export_success">განახლება გადატანილია</string>
+    <string name="notification_export_fail">შეცდომა გატანისას</string>
+    <string name="toast_already_exporting">განახლება უკვე გადატანილია</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">დარჩენილია 1 წამი</item>
+        <item quantity="other">დარჩენილია <xliff:g id="count">%d</xliff:g> წამი</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">დარჩენილია 1 წუთი</item>
+        <item quantity="other">დარჩენილია <xliff:g id="count">%d</xliff:g> წუთი</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">დარჩენილია 1 საათი</item>
+        <item quantity="other">დარჩენილია <xliff:g id="count">%d</xliff:g> საათი</item>
+    </plurals>
+    <string name="update_on_mobile_data_title">გაფრთხილება</string>
+    <string name="update_on_mobile_data_message">აპირებთ ჩამოტვირთოთ განახლება მობილური ინტერნეტით, რასაც შეიძლება მოჰყვეს დიდი ხარჯი. ნამდვილად გსურთ, განაგრძოთ?</string>
+    <string name="checkbox_mobile_data_warning">მომავალში ჩვენების გარეშე</string>
+    <string name="menu_mobile_data_warning">მობილური ინტერნეტის გაფრთხილება</string>
+    <string name="blocked_update_dialog_title">განახლება შეიზღუდა</string>
+    <string name="blocked_update_dialog_message">განახლების დაყენება ვერ ხერხდება გამნახლებელი აპით.  ვრცლად, გთხოვთ, იხილოთ <xliff:g id="info_url">%1$s</xliff:g>.</string>
+    <string name="export_channel_title">გადატანა დასრულებულია</string>
     <string name="new_updates_channel_title">ბოლო განახლებები</string>
+    <string name="ongoing_channel_title">მიმდინარე ჩამოტვირთვები</string>
+    <string name="update_failed_channel_title">განახლება ვერ მოხერხდა</string>
 </resources>

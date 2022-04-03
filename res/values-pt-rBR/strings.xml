@@ -65,8 +65,6 @@
     <string name="header_last_updates_check">Última verificação: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> às <xliff:g id="time" example="01:23">%2$s</xliff:g></string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Verificando atualização</string>
     <string name="list_no_updates">Não foram encontradas novas atualizações. Use o botão Atualizar para buscar por novas atualizações manualmente.</string>
     <string name="action_download">Baixar</string>
@@ -79,8 +77,6 @@
     <string name="confirm_delete_dialog_title">Excluir arquivo</string>
     <string name="confirm_delete_dialog_message">Excluir o arquivo de atualização selecionado?</string>
     <string name="apply_update_dialog_title">Instalar atualização</string>
-    <string name="apply_update_dialog_message">Você está prestes a atualizar para <xliff:g id="update_name">%1$s</xliff:g>.\n\nAo clicar em <xliff:g id="ok">%2$s</xliff:g>, o dispositivo reiniciará no modo de recuperação para instalar a atualização.\n\nÉ necessário ter uma Recuperação compatível, caso contrário as atualizações deverão ser instaladas manualmente.</string>
-    <string name="apply_update_dialog_message_ab">Você está prestes a atualizar para <xliff:g id="update_name">%1$s</xliff:g>.\n\nAo clicar em <xliff:g id="ok">%2$s</xliff:g>, o dispositivo iniciará a instalação em segundo plano.\n\nAo concluir, você será solicitado a reiniciar o dispositivo.</string>
     <string name="cancel_installation_dialog_message">Deseja cancelar a instalação?</string>
     <string name="label_download_url">URL de Download</string>
     <string name="toast_download_url_copied">URL copiado</string>

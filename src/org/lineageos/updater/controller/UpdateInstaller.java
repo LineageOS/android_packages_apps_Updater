@@ -31,6 +31,10 @@ import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.Files;
+import java.util.HashSet;
+import java.util.Set;
 
 class UpdateInstaller {
 
@@ -131,6 +135,15 @@ class UpdateInstaller {
                 try {
                     mCanCancel = true;
                     FileUtils.copyFile(update.getFile(), uncryptFile, mProgressCallBack);
+                    try {
+                        Set<PosixFilePermission> perms = new HashSet<>();
+                        perms.add(PosixFilePermission.OWNER_READ);
+                        perms.add(PosixFilePermission.OWNER_WRITE);
+                        perms.add(PosixFilePermission.OTHERS_READ);
+                        perms.add(PosixFilePermission.GROUP_READ);
+                        Files.setPosixFilePermissions(uncryptFile.toPath(), perms);
+                    } catch (IOException exception) {}
+
                     mCanCancel = false;
                     if (mPrepareUpdateThread.isInterrupted()) {
                         mUpdaterController.getActualUpdate(update.getDownloadId())

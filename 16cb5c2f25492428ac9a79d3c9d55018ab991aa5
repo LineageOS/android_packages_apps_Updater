@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db527f55_b547e74b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2022-04-24T17:46:51Z",
+      "side": 1,
+      "message": "I have verified that this fixes installing OTA updates on unofficial sagit builds (updatable apex enabled, not flattened and not compressed).",
+      "revId": "16cb5c2f25492428ac9a79d3c9d55018ab991aa5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

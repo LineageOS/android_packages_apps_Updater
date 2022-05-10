@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">ბოლო შემოწმება: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g>, სულ <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g>, სულ <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">განახლება მოწმდება</string>
     <string name="list_no_updates">განახლებები ვერ მოიძებნა. განახლებებზე ხელით შესამოწმებლად, გამოიყენეთ განახლების ღილაკი.</string>
     <string name="action_download">ჩამოტვირთვა</string>
@@ -79,6 +81,8 @@
     <string name="confirm_delete_dialog_title">ფაილის წაშლა</string>
     <string name="confirm_delete_dialog_message">წაიშალოს განახლების შერჩეული ფაილი?</string>
     <string name="apply_update_dialog_title">განახლების ასახვა</string>
+    <string name="apply_update_dialog_message">აპირებთ, ჩააყენოთ <xliff:g id="update_name">%1$s</xliff:g>.\n\nთუ დააჭერთ ღილაკზე <xliff:g id="ok">%2$s</xliff:g>, მოწყობილობა ხელახლა ჩაირთვება აღმდგენ რეჟიმში, განახლების დასაყენებლად.\n\nშენიშვნა: საჭიროებს თავსებად აღმდგენ გარსს, თუ არადა განახლებები ხელით იქნება დასაყენებელი.</string>
+    <string name="apply_update_dialog_message_ab">აპირებთ, ჩააყენოთ <xliff:g id="update_name">%1$s</xliff:g>.\n\nთუ დააჭერთ ღილაკზე <xliff:g id="ok">%2$s</xliff:g>, მოწყობილობა დაიწყებს დაყენებას ფონურად.\n\nდასრულებისას კი მოგთხოვთ გადატვირთვას.</string>
     <string name="cancel_installation_dialog_message">გაუქმდეს დაყენება?</string>
     <string name="label_download_url">ჩამოტვირთვის ბმული</string>
     <string name="toast_download_url_copied">ბმულის ასლი აღებულია</string>
@@ -86,6 +90,7 @@
     <string name="notification_export_success">განახლება გადატანილია</string>
     <string name="notification_export_fail">შეცდომა გატანისას</string>
     <string name="toast_already_exporting">განახლება უკვე გადატანილია</string>
+    <string name="toast_export_started">გატანა დაწყებულია</string>
     <plurals name="eta_seconds">
         <item quantity="one">დარჩენილია 1 წამი</item>
         <item quantity="other">დარჩენილია <xliff:g id="count">%d</xliff:g> წამი</item>
@@ -108,4 +113,7 @@
     <string name="new_updates_channel_title">ბოლო განახლებები</string>
     <string name="ongoing_channel_title">მიმდინარე ჩამოტვირთვები</string>
     <string name="update_failed_channel_title">განახლება ვერ მოხერხდა</string>
+    <string name="info_dialog_title">იცოდით?</string>
+    <string name="info_dialog_message">LineageOS-ის განახლებები სრულ კრებულებს წარმოადგენს. ეს კი ნიშნავს, რომ ყოველთვის შეგიძლიათ ჩააყენოთ ბოლო განახლება, ზოგიერთის გამოტოვების შემთხვევაშიც. </string>
+    <string name="info_dialog_ok">გმადლობთ, რომ მაცნობეთ!</string>
 </resources>

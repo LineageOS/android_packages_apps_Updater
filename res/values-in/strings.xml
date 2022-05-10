@@ -54,6 +54,7 @@
     <string name="menu_show_changelog">Tampilkan catatan perubahan</string>
     <string name="menu_ab_perf_mode">Prioritaskan proses pembaruan</string>
     <string name="menu_update_recovery">Perbarui Recovery</string>
+    <string name="toast_forced_update_recovery">Tidak mungkin untuk menonaktifkan pembaruan Lineage Recovery di perangkat ini.</string>
     <string name="snack_updates_found">Pembaruan baru ditemukan</string>
     <string name="snack_no_updates_found">Tidak ada pembaruan baru ditemukan</string>
     <string name="snack_updates_check_failed">Pemeriksaan pembaruan gagal. Silakan periksa koneksi Internet Anda dan coba lagi nanti.</string>
@@ -66,6 +67,8 @@
     <string name="header_last_updates_check">Terakhir diperiksa: <xliff:g id="date" example="1 January 1970">%1$s </xliff:g> (<xliff:g id="time" example="01:23">%2$s </xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Memverifikasi pembaruan</string>
     <string name="list_no_updates">Pembaruan tidak ditemukan. Untuk memeriksa pembaruan secara manual, gunakan tombol Segarkan.</string>
     <string name="action_download">Unduh</string>
@@ -78,6 +81,8 @@
     <string name="confirm_delete_dialog_title">Hapus berkas</string>
     <string name="confirm_delete_dialog_message">Hapus berkas pembaruan yang terpilih?</string>
     <string name="apply_update_dialog_title">Terapkan pembaruan</string>
+    <string name="apply_update_dialog_message">Anda akan memasang <xliff:g id="update_name">%1$s</xliff:g>.\n\nJika Anda menekan <xliff:g id="ok">%2$s</xliff:g>, perangkat akan mulai ulang sendiri dalam mode recovery untuk memasang pembaruan.\n\nPerhatian: Fitur ini memerlukan Recovery yang kompatibel atau pembaruan perlu dipasang secara manual.</string>
+    <string name="apply_update_dialog_message_ab">Anda akan memasang <xliff:g id="update_name">%1$s</xliff:g>.\n\nJika Anda menekan <xliff:g id="ok">%2$s</xliff:g>, perangkat akan mulai memasang di latar belakang.\n\nSetelah selesai, Anda akan diminta untuk memulai ulang perangkat.</string>
     <string name="cancel_installation_dialog_message">Batalkan pemasangan?</string>
     <string name="label_download_url">URL Unduh</string>
     <string name="toast_download_url_copied">URL disalin</string>
@@ -85,6 +90,7 @@
     <string name="notification_export_success">Pembaruan diekspor</string>
     <string name="notification_export_fail">Kesalahan saat mengekspor</string>
     <string name="toast_already_exporting">Sudah mengekspor pembaruan</string>
+    <string name="toast_export_started">Ekspor dimulai</string>
     <plurals name="eta_seconds">
         <item quantity="other"><xliff:g id="count">%d</xliff:g> detik tersisa</item>
     </plurals>
@@ -104,4 +110,7 @@
     <string name="new_updates_channel_title">Pembaruan baru</string>
     <string name="ongoing_channel_title">Unduhan sedang berlangsung</string>
     <string name="update_failed_channel_title">Pembaruan gagal</string>
+    <string name="info_dialog_title">Tahukah Anda?</string>
+    <string name="info_dialog_message">Pembaruan LineageOS adalah paket instalasi lengkap. Itu berarti Anda selalu dapat menginstal hanya pembaruan terbaru, bahkan jika Anda melewatkan beberapa di antaranya!</string>
+    <string name="info_dialog_ok">Terima kasih atas infonya!</string>
 </resources>

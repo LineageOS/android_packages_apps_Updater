@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">Darrera comprovació: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">S\'està verificant l\'actualització</string>
     <string name="list_no_updates">No s\'han trobat noves actualitzacions. Per comprovar manualment si hi ha noves actualitzacions, utilitzeu el botó Refresca.</string>
     <string name="action_download">Baixa</string>
@@ -86,6 +88,7 @@
     <string name="notification_export_success">Actualització exportada</string>
     <string name="notification_export_fail">Ha fallat l\'exportació</string>
     <string name="toast_already_exporting">Ja s\'està exportant una actualització</string>
+    <string name="toast_export_started">S\'ha iniciat l\'exportació</string>
     <plurals name="eta_seconds">
         <item quantity="one">Falta 1 segon</item>
         <item quantity="other">Falten <xliff:g id="count">%d</xliff:g> segons</item>
@@ -108,4 +111,5 @@
     <string name="new_updates_channel_title">Noves actualitzacions</string>
     <string name="ongoing_channel_title">Baixades en curs</string>
     <string name="update_failed_channel_title">Actualització fallida</string>
+    <string name="info_dialog_ok">Gràcies per la informació!</string>
 </resources>

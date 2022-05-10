@@ -15,11 +15,18 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">আধুনিকীকরণকারী</string>
+    <string name="display_name">আধুনিকীকরণকারী</string>
     <string name="verification_failed_notification">যাচাইকরণ ব্যর্থ হয়েছে</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">বিরাম</string>
     <string name="menu_update_recovery">রিকভারি আপডেট করুন</string>
     <string name="toast_forced_update_recovery">এই ডিভাইসে লিনিয়েজ রিকভারি এর আপডেট বন্ধ করা সম্ভব নয়</string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> এর <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) এর <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g></string>
+    <string name="apply_update_dialog_message">আপনি এখন <xliff:g id="update_name">%1$s</xliff:g> ইনস্টল করতে যাচ্ছেন। আপনি যদি <xliff:g id="ok">%2$s</xliff:g> বোতামে টিপ দেন, তাহলে ডিভাইসটি আপডেট করার জন্য রিকভারি মোডে চলে যাবে।\n\n এই কাজটি সম্পাদনের জন্য আপডেট সমর্থন করে এমন একটি রিকভারি লাগবে। তা না হলে আপডেটটি আপনার মেনুয়ালি ইনস্টল করতে হবে।</string>
+    <string name="apply_update_dialog_message_ab">আপনি এখন <xliff:g id="update_name">%1$s</xliff:g> ইনস্টল করতে যাচ্ছেন।\n\nআপনি যদি <xliff:g id="ok">%2$s</xliff:g> বোতামে টিপ দেন, তাহলে ডিভাইসটি ব্যাকগ্রাউন্ড এ ইনস্টল করতে থাকবে।\n\nআপডেটটি ইনস্টল করা শেষ হলে আপনাকে রিস্টার্ট করতে বলা হবে।</string>
+    <string name="toast_export_started">রপ্তানি করা শুরু হয়েছে</string>
     <plurals name="eta_seconds">
         <item quantity="one">১ সেকেন্ড বাকি</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> সেকেন্ড বাকি</item>
@@ -32,4 +39,7 @@
         <item quantity="one">১ ঘণ্টা বাকি</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ঘণ্টা বাকি</item>
     </plurals>
+    <string name="info_dialog_title">আপনি কি জানতেন?</string>
+    <string name="info_dialog_message">লিনিএজ ওএস এর আপডেট প্যাকেজে সকল ফাইল দেওয়া থাকে। অর্থাৎ আপনি মাঝের আপডেটগুলো ইনস্টল না করে শুধুমাত্র লেটেস্ট আপডেট ইনস্টল করতে পারবেন।</string>
+    <string name="info_dialog_ok">তথ্যটির জন্য ধন্যবাদ</string>
 </resources>

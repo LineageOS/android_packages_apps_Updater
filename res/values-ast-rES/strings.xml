@@ -49,6 +49,7 @@
     <string name="snack_updates_check_failed">La comprobación d\'anovamientos falló. Comprueba la conexón a internet y volvi tentalo.</string>
     <string name="snack_download_failed">La descarga falló. Comprueba la conexón a internet y volvi tentalo.</string>
     <string name="snack_download_verification_failed">La comprobación d\'anovamientos falló</string>
+    <string name="snack_download_verified">Completóse la descarga.</string>
     <string name="snack_update_not_installable">Esti anovamientu nun se pue instalar sobre la versión actual.</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
@@ -67,17 +68,21 @@
     <string name="action_delete">Desaniciar</string>
     <string name="action_cancel">Encaboxar</string>
     <string name="confirm_delete_dialog_message">¿Quies desaniciar l\'anovamientu esbilláu?</string>
+    <string name="apply_update_dialog_message">Tas a piques d\'instalar «<xliff:g id="update_name">%1$s</xliff:g>».\n\nSi primes «<xliff:g id="ok">%2$s</xliff:g>», el preséu va reaniciase y entrar nel mou recovery pa instalar l\'anovamientu.\n\nNota: esta función rique un recovery compatible o los anovamientos tienen que s\'instalar manualmente.</string>
+    <string name="apply_update_dialog_message_ab">Tas a piques d\'instalar «<xliff:g id="update_name">%1$s</xliff:g>».\n\nSi primes «<xliff:g id="ok">%2$s</xliff:g>», el preséu va comenzar la instalación en segundu planu.\n\nNamás acabar, el propiu preséu va suxerite que lu reanicies.</string>
     <string name="cancel_installation_dialog_message">¿Quies encaboxar la instalación?</string>
     <string name="toast_download_url_copied">Copióse la URL</string>
     <string name="dialog_export_title">Esportando l\'anovamientu</string>
     <string name="notification_export_success">Esportóse l\'anovamientu</string>
     <string name="notification_export_fail">Fallu de la esportación</string>
+    <string name="toast_already_exporting">Yá ta esportándose un anovamientu</string>
+    <string name="toast_export_started">Anicióse la esportación</string>
     <plurals name="eta_seconds">
         <item quantity="one">Queda 1 segundu</item>
         <item quantity="other">Queden <xliff:g id="count">%d</xliff:g> segundos</item>
     </plurals>
     <plurals name="eta_minutes">
-        <item quantity="one">Queda un 1 minutu</item>
+        <item quantity="one">Queda 1 minutu</item>
         <item quantity="other">Queden <xliff:g id="count">%d</xliff:g> minutos</item>
     </plurals>
     <plurals name="eta_hours">
@@ -87,9 +92,13 @@
     <string name="update_on_mobile_data_title">Alvertencia</string>
     <string name="update_on_mobile_data_message">Tas a piques de baxar un paquete d\'anovamientu colos datos móviles que pue xenerar un usu altu de datos. ¿Quies siguir?</string>
     <string name="checkbox_mobile_data_warning">Nun volver amosar</string>
+    <string name="blocked_update_dialog_title">Bloquióse l\'anovamientu</string>
     <string name="blocked_update_dialog_message">Esti anovamientu nun se pue instalar con «Anovador».  Llei <xliff:g id="info_url">%1$s</xliff:g> pa consiguir más información.</string>
     <string name="export_channel_title">Esportación completada</string>
     <string name="new_updates_channel_title">Hai anovamientos</string>
     <string name="ongoing_channel_title">Descargues en cursu</string>
     <string name="update_failed_channel_title">Anovamientu fallíu</string>
+    <string name="info_dialog_title">¿Sabíeslo?</string>
+    <string name="info_dialog_message">Los anovamientos de LineageOS son paquetes d\'instalación completos. Esto significa que siempres pues instalar l\'últimu anovamientu, ¡magar que saltares dalgún intermediu!</string>
+    <string name="info_dialog_ok">¡Gracies!</string>
 </resources>

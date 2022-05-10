@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">Поиск обновлений выполнялся <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> в <xliff:g id="time" example="01:23">%2$s</xliff:g></string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Проверка обновлений</string>
     <string name="list_no_updates">Обновлений не найдено. Чтобы проверить наличие обновлений вручную, используйте кнопку Обновить.</string>
     <string name="action_download">Скачать</string>
@@ -79,6 +81,8 @@
     <string name="confirm_delete_dialog_title">Удалить файл</string>
     <string name="confirm_delete_dialog_message">Удалить выбранный файл обновления?</string>
     <string name="apply_update_dialog_title">Применить обновление</string>
+    <string name="apply_update_dialog_message">Будет выполнена установка <xliff:g id="update_name">%1$s</xliff:g>.\n\nПри нажатии кнопки <xliff:g id="ok">%2$s</xliff:g> устройство будет перезапущено в режиме Recovery для установки новой версии.\n\nПримечание: для использования данной возможности необходим совместимый Recovery. При возникновении ошибки обновление потребуется установить вручную.</string>
+    <string name="apply_update_dialog_message_ab">Будет выполнена установка <xliff:g id="update_name">%1$s</xliff:g>.\n\nПри нажатии кнопки <xliff:g id="ok">%2$s</xliff:g> будет начата установка в фоновом режиме.\n\nПо завершении вам будет предложено перезапустить устройство.</string>
     <string name="cancel_installation_dialog_message">Отменить установку?</string>
     <string name="label_download_url">Ссылка для скачивания</string>
     <string name="toast_download_url_copied">URL скопирован в буфер обмена</string>
@@ -86,6 +90,7 @@
     <string name="notification_export_success">Обновление экспортировано</string>
     <string name="notification_export_fail">Ошибка экспорта</string>
     <string name="toast_already_exporting">Экспорт уже выполняется</string>
+    <string name="toast_export_started">Экспорт начат</string>
     <plurals name="eta_seconds">
         <item quantity="one">осталась <xliff:g id="count">%d</xliff:g> секунда</item>
         <item quantity="few">осталось <xliff:g id="count">%d</xliff:g> секунды</item>
@@ -114,4 +119,7 @@
     <string name="new_updates_channel_title">Доступны обновления</string>
     <string name="ongoing_channel_title">Текущие загрузки</string>
     <string name="update_failed_channel_title">Сбой обновления</string>
+    <string name="info_dialog_title">Знаете ли вы?</string>
+    <string name="info_dialog_message">Обновления LineageOS представляют собой полные установочные пакеты. Это означает, что вы всегда можете установить только последнее обновление, даже если вы пропустили некоторые из них!</string>
+    <string name="info_dialog_ok">Спасибо за информацию!</string>
 </resources>

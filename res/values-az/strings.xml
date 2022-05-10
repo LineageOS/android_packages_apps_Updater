@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">Son yoxlama: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Yeniləmə təsdiqlənir</string>
     <string name="list_no_updates">Yeniləmə tapılmadı. Yeniləmələri əllə yoxlamaq üçün Təzələ düyməsindən istifadə edin.</string>
     <string name="action_download">Endir</string>
@@ -79,6 +81,8 @@
     <string name="confirm_delete_dialog_title">Faylı sil</string>
     <string name="confirm_delete_dialog_message">Seçilmiş yeniləmə faylı silinsin?</string>
     <string name="apply_update_dialog_title">Yeniləməni tətbiq et</string>
+    <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> quraşdırırsınız.\n\n<xliff:g id="ok">%2$s</xliff:g> bassanız, cihaz yeniləməni quraşdırmaq üçün bərpa rejimində yenidən başlayacaq.\n\nQeyd: Bu özəlliyin uyğun bir Bərpa mühitinə ehtiyacı var və ya yeniləmələr əllə quraşdırılmalıdır.</string>
+    <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g> quraşdırırsınız.\n\n<xliff:g id="ok">%2$s</xliff:g> düyməsinə bassanız, cihaz arxaplanda quraşdırılmağa başlıyacaq.\n\nƏməliyyat bitəndə, yenidən başladılmalıdır.</string>
     <string name="cancel_installation_dialog_message">Quraşdırmadan imtina edilsin?</string>
     <string name="label_download_url">Endirmə bağlantısı</string>
     <string name="toast_download_url_copied">Bağlantı kopyalandı</string>
@@ -86,6 +90,7 @@
     <string name="notification_export_success">Yeniləmə köçürüldü</string>
     <string name="notification_export_fail">Köçürmə xətası</string>
     <string name="toast_already_exporting">Artıq bir yeniləmə köçürülür</string>
+    <string name="toast_export_started">İxrac başladı</string>
     <plurals name="eta_seconds">
         <item quantity="one">1 saniyə qaldı</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> saniyə qaldı</item>
@@ -108,4 +113,7 @@
     <string name="new_updates_channel_title">Ən son yeniləmələr</string>
     <string name="ongoing_channel_title">Davam edən endirmələr</string>
     <string name="update_failed_channel_title">Yeniləmə uğursuz oldu</string>
+    <string name="info_dialog_title">Bilirdiniz?</string>
+    <string name="info_dialog_message">LineageOS yeniləmələri tam quraşdırma paketləridir. Yəni, yeniləməni ötürsəniz belə, hər zaman yalnız son yeniləməni quraşdıra bilərsiniz!</string>
+    <string name="info_dialog_ok">Məlumat üçün təşəkkürlər!</string>
 </resources>

@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">Laatst gecontroleerd: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> van <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Update verifiëren</string>
     <string name="list_no_updates">Geen nieuwe updates gevonden. Gebruik de knop Vernieuwen om handmatig te controleren op nieuwe updates.</string>
     <string name="action_download">Downloaden</string>
@@ -79,6 +81,8 @@
     <string name="confirm_delete_dialog_title">Bestand verwijderen</string>
     <string name="confirm_delete_dialog_message">Geselecteerde update-bestand verwijderen?</string>
     <string name="apply_update_dialog_title">Update toepassen</string>
+    <string name="apply_update_dialog_message">U staat op het punt uw systeem bij te werken naar <xliff:g id="update_name">%1$s</xliff:g>.\n\nAls u op <xliff:g id="ok">%2$s</xliff:g> tikt, zal het apparaat herstarten naar recovery om de update te installeren.\n\nLet op: een compatibele recovery is vereist, anders moet de update handmatig worden geïnstalleerd.</string>
+    <string name="apply_update_dialog_message_ab">U staat op het punt om uw toestel bij te werken naar <xliff:g id="update_name">%1$s</xliff:g>.\n\nAls u op <xliff:g id="ok">%2$s</xliff:g> tikt, zal het apparaat de update op de achtergrond uitvoeren.\n\nZodra de installatie voltooid is, zal gevraagd worden om het apparaat te herstarten.</string>
     <string name="cancel_installation_dialog_message">Installatie annuleren?</string>
     <string name="label_download_url">Download-URL</string>
     <string name="toast_download_url_copied">URL gekopieerd</string>
@@ -86,6 +90,7 @@
     <string name="notification_export_success">Update geëxporteerd</string>
     <string name="notification_export_fail">Fout bij exporteren</string>
     <string name="toast_already_exporting">Er wordt al een update geëxporteerd</string>
+    <string name="toast_export_started">Exporteren is begonnen</string>
     <plurals name="eta_seconds">
         <item quantity="one">1 seconde resterend</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> seconden resterend</item>
@@ -108,4 +113,7 @@
     <string name="new_updates_channel_title">Nieuwe updates</string>
     <string name="ongoing_channel_title">Huidige downloads</string>
     <string name="update_failed_channel_title">Update mislukt</string>
+    <string name="info_dialog_title">Wist u dat?</string>
+    <string name="info_dialog_message">LineageOS updates zijn volledige installatiepakketten. Dat betekent dat u altijd alleen de nieuwste update hoeft te installeren, zelfs als u een paar updates overslaat!</string>
+    <string name="info_dialog_ok">Bedankt voor de informatie!</string>
 </resources>

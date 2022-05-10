@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">Kontrolli i fundit: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> nga <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> nga <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Duke verifikuar përditësimin</string>
     <string name="list_no_updates">Nuk ka përditësime të reja. Për të kërkuar manualisht për përditësime të reja, përdor butonin Rifresko.</string>
     <string name="action_download">Shkarko</string>
@@ -79,6 +81,8 @@
     <string name="confirm_delete_dialog_title">Fshi skedarin</string>
     <string name="confirm_delete_dialog_message">Dëshiron të fshish skedarin e zgjedhur të përditësimit?</string>
     <string name="apply_update_dialog_title">Apliko përditësimin</string>
+    <string name="apply_update_dialog_message">Jeni gati të instaloni <xliff:g id="update_name">%1$s</xliff:g>.\n\nNëse shtypni <xliff:g id="ok">%2$s</xliff:g>, pajisja do të riniset vetë në modalitetin e rikuperimit për të instaluar përditësimin.\n\nShënim: Ky funksion kërkon një Rikuperim të pajtueshëm ose përditësimet do të duhet të instalohen manualisht.</string>
+    <string name="apply_update_dialog_message_ab">Jeni gati të instaloni <xliff:g id="update_name">%1$s</xliff:g>.\n\nNëse shtypni <xliff:g id="ok">%2$s</xliff:g>, pajisja do të fillojë të instalohet në sfond.\n\nPasi të keni përfunduar, do t\'ju kërkohet të rindizni.</string>
     <string name="cancel_installation_dialog_message">Anullo instalimin?</string>
     <string name="label_download_url">Shkarko URL</string>
     <string name="toast_download_url_copied">URL u kopjua</string>
@@ -86,6 +90,7 @@
     <string name="notification_export_success">Përditësimi u eksportua</string>
     <string name="notification_export_fail">Problem në exportim</string>
     <string name="toast_already_exporting">Aktualisht po exporton një përditësim</string>
+    <string name="toast_export_started">Eksporti filloi</string>
     <plurals name="eta_seconds">
         <item quantity="one">1 sekondë e mbetur</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> sekonda të mbetura</item>
@@ -108,4 +113,7 @@
     <string name="new_updates_channel_title">Përditësime të reja</string>
     <string name="ongoing_channel_title">Shkarkimet në proces</string>
     <string name="update_failed_channel_title">Përditësimi dështoi</string>
+    <string name="info_dialog_title">A e dinit?</string>
+    <string name="info_dialog_message">Përditësimet e LineageOS janë paketa të plota instalimi. Kjo do të thotë që gjithmonë mund të instaloni vetëm përditësimin më të fundit, edhe nëse keni anashkaluar disa në mes!</string>
+    <string name="info_dialog_ok">Faleminderit për informacionin!</string>
 </resources>

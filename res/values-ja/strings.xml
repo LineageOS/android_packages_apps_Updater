@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">最終確認: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">アップデートを確認</string>
     <string name="list_no_updates">新しい更新はありません。新しい更新を手動で確認するには、更新ボタンを押してください。</string>
     <string name="action_download">ダウンロード</string>
@@ -79,6 +81,8 @@
     <string name="confirm_delete_dialog_title">ファイルを削除</string>
     <string name="confirm_delete_dialog_message">選択したアップデートファイルを削除しますか？</string>
     <string name="apply_update_dialog_title">アップデートを適用</string>
+    <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> をインストールしようとしています。\n\n<xliff:g id="ok">%2$s</xliff:g>を押すと、アップデートをインストールするために端末をリカバリーモードでに再起動します。\n\n注意: この機能には対応したリカバリーが必要です。なければ手動でインストールする必要があります。</string>
+    <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g> をインストールしようとしています。\n\n<xliff:g id="ok">%2$s</xliff:g>を押すと、バックグラウンドでインストールを開始します。\n\nインストールが完了したら、再起動を促すプロンプトが表示されます。</string>
     <string name="cancel_installation_dialog_message">インストールをキャンセルしますか？</string>
     <string name="label_download_url">ダウンロード URL</string>
     <string name="toast_download_url_copied">URL をコピーしました</string>
@@ -86,6 +90,7 @@
     <string name="notification_export_success">アップデートのエクスポート</string>
     <string name="notification_export_fail">エラー出力</string>
     <string name="toast_already_exporting">すでにアップデートをエクスポートしています。</string>
+    <string name="toast_export_started">エクスポートを開始しました</string>
     <plurals name="eta_seconds">
         <item quantity="other">残り<xliff:g id="count">%d</xliff:g>秒</item>
     </plurals>
@@ -105,4 +110,7 @@
     <string name="new_updates_channel_title">新しいアップデート</string>
     <string name="ongoing_channel_title">ダウンロード中</string>
     <string name="update_failed_channel_title">更新に失敗しました</string>
+    <string name="info_dialog_title">ご存知ですか?</string>
+    <string name="info_dialog_message">LineageOS のアップデートは完全なインストールパッケージです。つまり、いくつかのアップデートをスキップしても、最新のアップデートのみをインストールするだけで良いのです！</string>
+    <string name="info_dialog_ok">ありがとうございます！</string>
 </resources>

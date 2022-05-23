@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e60858b9_67ee97d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19612
+      },
+      "writtenOn": "2022-05-23T05:52:43Z",
+      "side": 1,
+      "message": "This commit is forward-port of my commit made here which fixes the aforementioned issue spotted in /e/OS while users upgrade their system.\n\nhttps://gitlab.e.foundation/e/os/android_packages_apps_Updater/-/commit/af32bf5b860332e78d37d0812238e2a3782ab7eb",
+      "revId": "418d464d148bd9476e14c5ae2ca915a32d8376d2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -84,8 +84,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     private AlertDialog infoDialog;
 
-    private UpdateInfo mToBeExported = null;
-
     private enum Action {
         DOWNLOAD,
         PAUSE,
@@ -549,7 +547,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                         mActivity.getString(R.string.toast_download_url_copied));
                 return true;
             } else if (itemId == R.id.menu_export_update) {
-                exportUpdate(update);
+                if (mActivity != null) {
+                    mActivity.exportUpdate(update);
+                }
                 return true;
             }
             return false;
@@ -557,39 +557,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         MenuPopupHelper helper = new MenuPopupHelper(wrapper, menu, anchor);
         helper.show();
-    }
-
-    private void exportUpdate(UpdateInfo update) {
-        if (mActivity == null) {
-            return;
-        }
-        mToBeExported = update;
-        ActivityResultLauncher<Intent> resultLauncher = mActivity.registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        Intent intent = result.getData();
-                        if (intent != null) {
-                            Uri uri = intent.getData();
-                            exportUpdate(uri);
-                        }
-                    }
-                });
-
-        Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        intent.setType("application/zip");
-        intent.putExtra(Intent.EXTRA_TITLE, update.getName());
-
-        resultLauncher.launch(intent);
-    }
-
-    private void exportUpdate(Uri uri) {
-        Intent intent = new Intent(mActivity, ExportUpdateService.class);
-        intent.setAction(ExportUpdateService.ACTION_START_EXPORTING);
-        intent.putExtra(ExportUpdateService.EXTRA_SOURCE_FILE, mToBeExported.getFile());
-        intent.putExtra(ExportUpdateService.EXTRA_DEST_URI, uri);
-        mActivity.startService(intent);
     }
 
     private void showInfoDialog() {

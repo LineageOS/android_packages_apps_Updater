@@ -16,6 +16,7 @@
 package org.lineageos.updater;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.UiModeManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -44,6 +45,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SwitchCompat;
@@ -86,6 +89,23 @@ public class UpdatesActivity extends UpdatesListActivity {
     private RotateAnimation mRefreshAnimation;
 
     private boolean mIsTV;
+
+    private UpdateInfo mToBeExported = null;
+    private final ActivityResultLauncher<Intent> mExportUpdate = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent intent = result.getData();
+                    if (intent != null) {
+                        Intent exportIntent = new Intent(this, ExportUpdateService.class);
+                        exportIntent.setAction(ExportUpdateService.ACTION_START_EXPORTING);
+                        exportIntent.putExtra(ExportUpdateService.EXTRA_SOURCE_FILE,
+                                mToBeExported.getFile());
+                        exportIntent.putExtra(ExportUpdateService.EXTRA_DEST_URI, intent.getData());
+                        startService(exportIntent);
+                    }
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -400,6 +420,18 @@ public class UpdatesActivity extends UpdatesListActivity {
                 showSnackbar(R.string.snack_download_verified, Snackbar.LENGTH_LONG);
                 break;
         }
+    }
+
+    @Override
+    public void exportUpdate(UpdateInfo update) {
+        mToBeExported = update;
+
+        Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("application/zip");
+        intent.putExtra(Intent.EXTRA_TITLE, update.getName());
+
+        mExportUpdate.launch(intent);
     }
 
     @Override

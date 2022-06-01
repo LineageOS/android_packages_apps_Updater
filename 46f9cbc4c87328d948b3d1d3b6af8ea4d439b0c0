@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83a13c0f_c5cefeaa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2022-06-01T06:17:27Z",
+      "side": 1,
+      "message": "Rebased onto 19.1 and added 2 more commits to the squash: https://review.lineageos.org/332089",
+      "revId": "46f9cbc4c87328d948b3d1d3b6af8ea4d439b0c0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

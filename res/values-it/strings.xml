@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">Ultima verifica: <xliff:g id="date" example="1 Gennaio 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="Luglio 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verifica aggiornamento</string>
     <string name="list_no_updates">Nessun nuovo aggiornamento trovato. Per controllare manualmente nuovi aggiornamenti, tocca il pulsante Aggiorna.</string>
     <string name="action_download">Download</string>
@@ -79,6 +81,8 @@
     <string name="confirm_delete_dialog_title">Elimina file</string>
     <string name="confirm_delete_dialog_message">Eliminare il file di aggiornamento selezionato?</string>
     <string name="apply_update_dialog_title">Applica aggiornamento</string>
+    <string name="apply_update_dialog_message">Stai per installare <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe premi <xliff:g id="ok">%2$s</xliff:g>, il dispositivo verrà riavviato in modalità recovery per installare l\'aggiornamento automaticamente.\n\nNota: questa funzione richiede una recovery compatibile, in caso contrario si dovrà procedere all\'installazione manualmente.</string>
+    <string name="apply_update_dialog_message_ab">Stai per installare <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe premi <xliff:g id="ok">%2$s</xliff:g>, il dispositivo inizierà l\'installazione in background.\n\nUna volta completato, ti verrà richiesto di riavviare il dispositivo.</string>
     <string name="cancel_installation_dialog_message">Annullare l\'installazione?</string>
     <string name="label_download_url">Download URL</string>
     <string name="toast_download_url_copied">URL copiato</string>
@@ -86,6 +90,7 @@
     <string name="notification_export_success">Aggiornamento esportato</string>
     <string name="notification_export_fail">Errore esportazione</string>
     <string name="toast_already_exporting">Esportazione aggiornamento già in corso</string>
+    <string name="toast_export_started">Esportazione avviata</string>
     <plurals name="eta_seconds">
         <item quantity="one">1 secondo rimanente</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> secondi rimanenti</item>
@@ -108,4 +113,7 @@
     <string name="new_updates_channel_title">Nuovi aggiornamenti</string>
     <string name="ongoing_channel_title">Download in corso</string>
     <string name="update_failed_channel_title">Aggiornamento fallito</string>
+    <string name="info_dialog_title">Lo sapevi?</string>
+    <string name="info_dialog_message">Gli aggiornamenti di LineageOS sono pacchetti d\'installazione completi. Questo significa che puoi sempre installare solo l\'ultimo aggiornamento, anche se ne hai saltati alcuni in precedenza!</string>
+    <string name="info_dialog_ok">Grazie per l\'informazione!</string>
 </resources>

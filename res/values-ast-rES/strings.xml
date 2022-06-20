@@ -20,6 +20,10 @@
     <string name="verification_failed_notification">La verificación falló</string>
     <string name="verifying_download_notification">Verificando l\'anovamientu</string>
     <string name="downloading_notification">En descarga</string>
+    <string name="download_paused_notification">La descarga ta en posa</string>
+    <string name="download_paused_error_notification">Fallu de la descarga</string>
+    <string name="download_completed_notification">Completóse la descarga</string>
+    <string name="download_starting_notification">Aniciando la descarga</string>
     <string name="update_failed_notification">L\'anovamientu falló</string>
     <string name="installation_suspended_notification">Suspendióse la instalación</string>
     <string name="new_updates_found_title">Hai anovamientos</string>
@@ -28,15 +32,22 @@
     <string name="resume_button">Siguir</string>
     <string name="suspend_button">Suspender</string>
     <string name="installing_update">Instalando\'l paquete d\'anovamientu</string>
+    <string name="installing_update_error">Fallu d\'instalación</string>
+    <string name="installing_update_finished">Instalóse l\'anovamientu</string>
     <string name="finalizing_package">Finando la instalación del paquete</string>
     <string name="preparing_ota_first_boot">Tresnando\'l primer arrinque</string>
+    <string name="dialog_prepare_zip_message">Tresnáu preliminar del anovamientu</string>
     <string name="dialog_battery_low_title">Queda poca batería</string>
     <string name="dialog_battery_low_message_pct">El nivel de batería ye perbaxu, tien d\'haber polo menos un <xliff:g id="percent_discharging">%1$d</xliff:g>%% de batería pa siguir, <xliff:g id="percent_charging">%2$d</xliff:g>%% si ta en carga.</string>
+    <string name="reboot">Reaniciar</string>
+    <string name="menu_refresh">Refrescar</string>
     <string name="menu_preferences">Preferencies</string>
+    <string name="menu_auto_updates_check">Comprobación d\'anovamientos</string>
     <string name="menu_auto_updates_check_interval_daily">Caldía</string>
     <string name="menu_auto_updates_check_interval_weekly">Una vegada per selmana</string>
     <string name="menu_auto_updates_check_interval_monthly">Una vegada per mes</string>
     <string name="menu_auto_updates_check_interval_never">Enxamás</string>
+    <string name="menu_auto_delete_updates">Desaniciar los anovamientos al instalalos</string>
     <string name="menu_delete_update">Desaniciar</string>
     <string name="menu_copy_url">Copiar la URL</string>
     <string name="menu_export_update">Esportar l\'anovamientu</string>
@@ -67,10 +78,13 @@
     <string name="action_info">Información</string>
     <string name="action_delete">Desaniciar</string>
     <string name="action_cancel">Encaboxar</string>
-    <string name="confirm_delete_dialog_message">¿Quies desaniciar l\'anovamientu esbilláu?</string>
-    <string name="apply_update_dialog_message">Tas a piques d\'instalar «<xliff:g id="update_name">%1$s</xliff:g>».\n\nSi primes «<xliff:g id="ok">%2$s</xliff:g>», el preséu va reaniciase y entrar nel mou recovery pa instalar l\'anovamientu.\n\nNota: esta función rique un recovery compatible o los anovamientos tienen que s\'instalar manualmente.</string>
+    <string name="confirm_delete_dialog_title">Desaniciu d\'un ficheru</string>
+    <string name="confirm_delete_dialog_message">¿Quies desaniciar l\'anovamientu seleicionáu?</string>
+    <string name="apply_update_dialog_title">Instalación d\'un anovamientu</string>
+    <string name="apply_update_dialog_message">Tas a piques d\'instalar «<xliff:g id="update_name">%1$s</xliff:g>».\n\nSi primes «<xliff:g id="ok">%2$s</xliff:g>», el preséu va reaniciase y entrar nel mou de recuperación pa instalar l\'anovamientu.\n\nNota: esta función rique un recovery compatible o los anovamientos tienen que s\'instalar manualmente.</string>
     <string name="apply_update_dialog_message_ab">Tas a piques d\'instalar «<xliff:g id="update_name">%1$s</xliff:g>».\n\nSi primes «<xliff:g id="ok">%2$s</xliff:g>», el preséu va comenzar la instalación en segundu planu.\n\nNamás acabar, el propiu preséu va suxerite que lu reanicies.</string>
     <string name="cancel_installation_dialog_message">¿Quies encaboxar la instalación?</string>
+    <string name="label_download_url">URL de la descarga</string>
     <string name="toast_download_url_copied">Copióse la URL</string>
     <string name="dialog_export_title">Esportando l\'anovamientu</string>
     <string name="notification_export_success">Esportóse l\'anovamientu</string>
@@ -92,6 +106,7 @@
     <string name="update_on_mobile_data_title">Alvertencia</string>
     <string name="update_on_mobile_data_message">Tas a piques de baxar un paquete d\'anovamientu colos datos móviles que pue xenerar un usu altu de datos. ¿Quies siguir?</string>
     <string name="checkbox_mobile_data_warning">Nun volver amosar</string>
+    <string name="menu_mobile_data_warning">Alvertir al usar la rede móvil</string>
     <string name="blocked_update_dialog_title">Bloquióse l\'anovamientu</string>
     <string name="blocked_update_dialog_message">Esti anovamientu nun se pue instalar con «Anovador».  Llei <xliff:g id="info_url">%1$s</xliff:g> pa consiguir más información.</string>
     <string name="export_channel_title">Esportación completada</string>

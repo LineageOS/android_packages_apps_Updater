@@ -44,8 +44,8 @@
     <string name="menu_preferences">Preferencies</string>
     <string name="menu_auto_updates_check">Comprobación d\'anovamientos</string>
     <string name="menu_auto_updates_check_interval_daily">Caldía</string>
-    <string name="menu_auto_updates_check_interval_weekly">Una vegada per selmana</string>
-    <string name="menu_auto_updates_check_interval_monthly">Una vegada per mes</string>
+    <string name="menu_auto_updates_check_interval_weekly">Selmanalmente</string>
+    <string name="menu_auto_updates_check_interval_monthly">Mensualmente</string>
     <string name="menu_auto_updates_check_interval_never">Enxamás</string>
     <string name="menu_auto_delete_updates">Desaniciar los anovamientos al instalalos</string>
     <string name="menu_delete_update">Desaniciar</string>

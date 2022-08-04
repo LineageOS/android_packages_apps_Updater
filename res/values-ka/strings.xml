@@ -54,7 +54,7 @@
     <string name="menu_show_changelog">ცვლილებების ჩვენება</string>
     <string name="menu_ab_perf_mode">განახლებისთვის უპირატესობის მინიჭება</string>
     <string name="menu_update_recovery">აღმდგენის განახლება</string>
-    <string name="toast_forced_update_recovery">შეუძლებელია Lineage-აღმდგენის განახლებების გათიშვა, ამ მოწყობილობაზე.</string>
+    <string name="toast_forced_update_recovery">ვერ გაითიშება Lineage-აღმდგენის განახლებები ამ მოწყობილობაზე.</string>
     <string name="snack_updates_found">ნაპოვნია განახლებები</string>
     <string name="snack_no_updates_found">განახლებები ვერ მოიძებნა</string>
     <string name="snack_updates_check_failed">განახლებებზე შემოწმება ვერ მოხერხდა. გთხოვთ, გადაამოწმოთ თქვენი ინტერნეტკავშირი და მოგვიანებით სცადოთ ხელახლა.</string>

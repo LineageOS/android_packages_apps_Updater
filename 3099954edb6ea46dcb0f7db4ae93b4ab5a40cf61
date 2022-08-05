@@ -89,6 +89,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4faa70e3_53dc9320",
+        "filename": "res/layout/confirm_dialog.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 19867
+      },
+      "writtenOn": "2022-08-05T17:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2acef605_0381436d",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fe8e3392_312b039e",
@@ -102,6 +120,24 @@
       "writtenOn": "2022-08-05T14:47:08Z",
       "side": 1,
       "message": ".",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7929bfb3_2e0876e8",
+        "filename": "res/layout/confirm_dialog.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 19867
+      },
+      "writtenOn": "2022-08-05T17:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe8e3392_312b039e",
       "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -141,6 +177,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6ba158a_0be19a1b",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 19867
+      },
+      "writtenOn": "2022-08-05T17:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f138da9_4efbf699",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e52797c_978749ef",
@@ -158,6 +212,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b22b67fa_d02ee527",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 19867
+      },
+      "writtenOn": "2022-08-05T17:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e52797c_978749ef",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a4ed8f48_80b95ae1",
@@ -171,6 +243,24 @@
       "writtenOn": "2022-08-05T14:47:08Z",
       "side": 1,
       "message": "update, use installing_update_error maybe",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d72ea86f_b8487932",
+        "filename": "src/org/lineageos/updater/controller/UpdaterService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 19867
+      },
+      "writtenOn": "2022-08-05T17:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4ed8f48_80b95ae1",
       "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

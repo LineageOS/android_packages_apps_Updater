@@ -92,6 +92,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c85e609c_b5cfdc2b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19867
+      },
+      "writtenOn": "2022-08-05T17:25:42Z",
+      "side": 1,
+      "message": "I actually don\u0027t know which is better for Updater either considering it as downloaded or flash directly. If Devs votes to Joey\u0027s patch it will surely abandon it.\nI tested this on a/b, virtual a/b and a-only.\nbut I see that change today, therefore I didn\u0027t tested that till now",
+      "parentUuid": "c220c4ee_1686c769",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2acef605_0381436d",
         "filename": "res/layout/confirm_dialog.xml",
         "patchSetId": 1

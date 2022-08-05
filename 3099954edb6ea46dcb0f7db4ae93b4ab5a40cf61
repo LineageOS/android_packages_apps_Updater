@@ -107,6 +107,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7f138da9_4efbf699",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 19867
+      },
+      "writtenOn": "2022-08-05T14:52:34Z",
+      "side": 1,
+      "message": "\u003e isn\u0027t getExternalStoragePublicDirectory deprecated since Q?. Use getExternalFilesDir\n\nokk",
+      "parentUuid": "428b203a_2340a1b6",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9e52797c_978749ef",
         "filename": "src/org/lineageos/updater/UpdatesActivity.java",
         "patchSetId": 1

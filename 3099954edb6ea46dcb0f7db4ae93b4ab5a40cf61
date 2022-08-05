@@ -16,6 +16,24 @@
       "message": "https://review.lineageos.org/c/LineageOS/android_packages_apps_Updater/+/332089\nisn\u0027t this the same thing?",
       "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76a39992_f16c5211",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19867
+      },
+      "writtenOn": "2022-08-05T14:27:04Z",
+      "side": 1,
+      "message": "I didn\u0027t checked that earlier, so created my own change. that one is making the local zip as downloaded zip mine one is flashing the as it is, that\u0027s the only change",
+      "parentUuid": "36224bd1_a1657d48",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

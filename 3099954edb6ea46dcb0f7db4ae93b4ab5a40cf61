@@ -34,6 +34,109 @@
       "parentUuid": "36224bd1_a1657d48",
       "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1bfb5499_6223d03d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-08-05T14:47:08Z",
+      "side": 1,
+      "message": "this one also requires extra permissions",
+      "parentUuid": "76a39992_f16c5211",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2acef605_0381436d",
+        "filename": "res/layout/confirm_dialog.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-08-05T14:47:08Z",
+      "side": 1,
+      "message": ".",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe8e3392_312b039e",
+        "filename": "res/layout/confirm_dialog.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-08-05T14:47:08Z",
+      "side": 1,
+      "message": ".",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "428b203a_2340a1b6",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-08-05T14:47:08Z",
+      "side": 1,
+      "message": "isn\u0027t getExternalStoragePublicDirectory deprecated since Q?. Use getExternalFilesDir",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e52797c_978749ef",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-08-05T14:47:08Z",
+      "side": 1,
+      "message": "Maybe not hardcode strings. use action_install and action_cancel strings instead",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4ed8f48_80b95ae1",
+        "filename": "src/org/lineageos/updater/controller/UpdaterService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-08-05T14:47:08Z",
+      "side": 1,
+      "message": "update, use installing_update_error maybe",
+      "revId": "3099954edb6ea46dcb0f7db4ae93b4ab5a40cf61",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

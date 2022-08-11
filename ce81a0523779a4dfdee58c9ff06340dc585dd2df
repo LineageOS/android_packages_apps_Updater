@@ -22,6 +22,30 @@
       },
       "revId": "ce81a0523779a4dfdee58c9ff06340dc585dd2df",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71792080_838d1ef5",
+        "filename": "src/org/lineageos/updater/UpdateImporter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-08-11T06:49:16Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "182c9875_c84f7946",
+      "range": {
+        "startLine": 148,
+        "startChar": 8,
+        "endLine": 148,
+        "endChar": 109
+      },
+      "revId": "ce81a0523779a4dfdee58c9ff06340dc585dd2df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

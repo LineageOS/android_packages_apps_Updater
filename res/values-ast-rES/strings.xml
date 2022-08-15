@@ -40,7 +40,7 @@
     <string name="dialog_battery_low_title">Queda poca batería</string>
     <string name="dialog_battery_low_message_pct">El nivel de batería ye perbaxu, tien d\'haber polo menos un <xliff:g id="percent_discharging">%1$d</xliff:g>%% de batería pa siguir, <xliff:g id="percent_charging">%2$d</xliff:g>%% si ta en carga.</string>
     <string name="reboot">Reaniciar</string>
-    <string name="menu_refresh">Refrescar</string>
+    <string name="menu_refresh">Anovar</string>
     <string name="menu_preferences">Preferencies</string>
     <string name="menu_auto_updates_check">Comprobación d\'anovamientos</string>
     <string name="menu_auto_updates_check_interval_daily">Caldía</string>
@@ -70,7 +70,7 @@
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verificando l\'anovamientu</string>
-    <string name="list_no_updates">Nun s\'atopó nengún anovamientu. Pa comprobar manualmente si los hai, usa\'l botón «Refrescar».</string>
+    <string name="list_no_updates">Nun s\'atopó nengún anovamientu. Pa comprobar manualmente si los hai, usa\'l botón «Anovar».</string>
     <string name="action_download">Baxar</string>
     <string name="action_pause">Posar</string>
     <string name="action_resume">Siguir</string>

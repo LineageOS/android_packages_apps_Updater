@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3b38f49_4589e306",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31640
+      },
+      "writtenOn": "2022-08-24T15:02:10Z",
+      "side": 1,
+      "message": "I appreciate this commit, because it took me a few hours to figure out why `make UpdaterStudio` wasn\u0027t working, before I found this commit where it was taken out (https://github.com/LineageOS/android_packages_apps_Updater/commit/4626490513e5b12d77fecc1ca419b835fe353bdf) but left the documentation alone. Thank you Althaf for doing something about it! Cheers 😎",
+      "revId": "fbf7b82e33ee739c1eb91745a5e50e4eca6e6982",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

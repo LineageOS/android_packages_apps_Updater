@@ -63,12 +63,12 @@
     <string name="snack_download_verified">Téléchargement terminé.</string>
     <string name="snack_update_not_installable">Cette mise à jour ne peut pas être installée sur votre version actuelle.</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Dernière vérification : <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
-    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
-    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> sur <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> sur <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="header_android_version">Android <xliff:g id="version" exemple="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Dernière vérification : <xliff:g id="date" exemple="1 janvier 1970">%1$s</xliff:g> (<xliff:g id="time" exemple="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" exemple="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" exemple="14.1">%1$s</xliff:g> - <xliff:g id="date" exemple="11 juillet 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" exemple="12.2">%1$s</xliff:g> sur <xliff:g id="filesize_without_unit" exemple="310 Mo">%2$s</xliff:g> • <xliff:g id="percentage" exemple="56">%3$s</xliff:g></string>
+    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" exemple="12.2">%1$s</xliff:g> sur <xliff:g id="filesize_without_unit" exemple="310 Mo">%2$s</xliff:g> (<xliff:g id="eta" exemple="temps restant : 3 minutes">%3$s</xliff:g>) • <xliff:g id="percentage" exemple="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Vérification de la mise à jour en cours</string>
     <string name="list_no_updates">Aucune nouvelle mise à jour trouvée. Pour vérifier manuellement la présence de mises à jour, utiliser le bouton Actualiser.</string>
     <string name="action_download">Télécharger</string>
@@ -90,6 +90,7 @@
     <string name="notification_export_success">Mise à jour exportée</string>
     <string name="notification_export_fail">Erreur lors de l\'exportation</string>
     <string name="toast_already_exporting">Une mise à jour est déjà en cours d\'export</string>
+    <string name="toast_export_started">L\'exportation a débuté</string>
     <plurals name="eta_seconds">
         <item quantity="one">temps restant : 1 seconde</item>
         <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> secondes</item>
@@ -112,4 +113,8 @@
     <string name="new_updates_channel_title">Nouvelles mises à jour</string>
     <string name="ongoing_channel_title">Téléchargements en cours</string>
     <string name="update_failed_channel_title">Échec de la mise à jour</string>
+    <string name="info_dialog_title">Le saviez-vous?</string>
+    <string name="info_dialog_message">Les mises à jour de LineageOS sont des paquets d'installation complets. Cela signifie que vous pouvez toujours installer uniquement la dernière mise à jour, même si vous en avez sauté quelques-unes entre-temps!</string>
+    <string name="info_dialog_ok">Merci pour cette information!</string>
+
 </resources>

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "156d41a7_a8ab3280",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2022-09-16T17:47:12Z",
+      "side": 1,
+      "message": "https://crowdin.com/project/lineageos",
+      "revId": "1d663520021aa2faf81ade5a1c83d4ddf2526402",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

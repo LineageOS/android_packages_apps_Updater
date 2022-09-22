@@ -25,12 +25,10 @@
     <string name="download_completed_notification">Overførsel fuldført</string>
     <string name="download_starting_notification">Starter overførsel</string>
     <string name="update_failed_notification">Opdatering fejlede</string>
-    <string name="installation_suspended_notification">Installation suspenderet</string>
     <string name="new_updates_found_title">Nye opdateringer</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Pause</string>
     <string name="resume_button">Genoptag</string>
-    <string name="suspend_button">Suspender</string>
     <string name="installing_update">Installerer opdateringspakke</string>
     <string name="installing_update_error">Installeringsfejl</string>
     <string name="installing_update_finished">Opdatering installeret</string>
@@ -89,18 +87,6 @@
     <string name="notification_export_fail">Eksportfejl</string>
     <string name="toast_already_exporting">Eksporterer allerede en opdatering</string>
     <string name="toast_export_started">Eksportering startet</string>
-    <plurals name="eta_seconds">
-        <item quantity="one">1 sekund tilbage</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> sekunder tilbage</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">1 minut tilbage</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> minutter tilbage</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">1 time tilbage</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> timer tilbage</item>
-    </plurals>
     <string name="update_on_mobile_data_title">Advarsel</string>
     <string name="update_on_mobile_data_message">Du er ved at hente en opdateringspakke vha. mobildata, hvilket sandsynligvis vil forårsage højt dataforbrug. Ønsker du at fortsætte?</string>
     <string name="checkbox_mobile_data_warning">Vis ikke igen</string>

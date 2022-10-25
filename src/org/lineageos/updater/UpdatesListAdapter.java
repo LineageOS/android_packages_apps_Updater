@@ -314,7 +314,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private void startDownloadWithWarning(final String downloadId) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mActivity);
         boolean warn = preferences.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true);
-        if (Utils.isOnWifiOrEthernet(mActivity) || !warn) {
+        if (Utils.isNetworkUnmetered(mActivity) || !warn) {
             mUpdaterController.startDownload(downloadId);
             return;
         }

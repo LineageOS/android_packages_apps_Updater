@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9c867cd_51abbec0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-10-26T07:02:24Z",
+      "side": 1,
+      "message": "Needed from A12 https://developer.android.com/training/scheduling/alarms#exact-permission-declare",
+      "revId": "d9b89e7ae5ce0d508559239b6adb79c6c6aea7a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

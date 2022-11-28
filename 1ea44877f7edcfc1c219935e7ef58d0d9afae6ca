@@ -22,6 +22,30 @@
       },
       "revId": "1ea44877f7edcfc1c219935e7ef58d0d9afae6ca",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6895494_72301706",
+        "filename": "src/org/lineageos/updater/UpdatesListAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-11-28T17:51:11Z",
+      "side": 1,
+      "message": "we should also change the mobile data warning strings to metered. we can set wifi as metered.",
+      "parentUuid": "a916c22e_be25f403",
+      "range": {
+        "startLine": 317,
+        "startChar": 12,
+        "endLine": 317,
+        "endChar": 56
+      },
+      "revId": "1ea44877f7edcfc1c219935e7ef58d0d9afae6ca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

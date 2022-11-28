@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2022 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -140,10 +140,10 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> hours left</item>
     </plurals>
 
-    <string name="update_on_mobile_data_title">Warning</string>
-    <string name="update_on_mobile_data_message">You\'re about to download an update package using mobile data which is likely going to cause high data usage. Would you like to proceed?</string>
-    <string name="checkbox_mobile_data_warning">Do not show again</string>
-    <string name="menu_mobile_data_warning">Mobile data warning</string>
+    <string name="update_over_metered_connection_title">Warning</string>
+    <string name="update_over_metered_connection_message">You\'re about to download an update package over a metered connection which is likely going to cause high data usage. Would you like to proceed?</string>
+    <string name="checkbox_metered_connection_warning">Do not show again</string>
+    <string name="menu_metered_connection_warning">Metered connection warning</string>
 
     <string name="blocked_update_dialog_title">Update blocked</string>
     <string name="blocked_update_dialog_message">This update cannot be installed using the updater app.  Please read <xliff:g id="info_url">%1$s</xliff:g> for more information.</string>

@@ -191,11 +191,9 @@ public class Utils {
         return !(info == null || !info.isConnected() || !info.isAvailable());
     }
 
-    public static boolean isOnWifiOrEthernet(Context context) {
+    public static boolean isNetworkMetered(Context context) {
         ConnectivityManager cm = context.getSystemService(ConnectivityManager.class);
-        NetworkInfo info = cm.getActiveNetworkInfo();
-        return (info != null && (info.getType() == ConnectivityManager.TYPE_ETHERNET
-                || info.getType() == ConnectivityManager.TYPE_WIFI));
+        return cm.isActiveNetworkMetered();
     }
 
     /**

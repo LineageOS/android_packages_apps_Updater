@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2022 The LineageOS Project
+ * Copyright (C) 2017-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -191,11 +191,9 @@ public class Utils {
         return !(info == null || !info.isConnected() || !info.isAvailable());
     }
 
-    public static boolean isOnWifiOrEthernet(Context context) {
+    public static boolean isNetworkMetered(Context context) {
         ConnectivityManager cm = context.getSystemService(ConnectivityManager.class);
-        NetworkInfo info = cm.getActiveNetworkInfo();
-        return (info != null && (info.getType() == ConnectivityManager.TYPE_ETHERNET
-                || info.getType() == ConnectivityManager.TYPE_WIFI));
+        return cm.isActiveNetworkMetered();
     }
 
     /**

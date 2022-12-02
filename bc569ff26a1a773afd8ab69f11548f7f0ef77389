@@ -22,6 +22,30 @@
       },
       "revId": "bc569ff26a1a773afd8ab69f11548f7f0ef77389",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "109ce041_40c8eb98",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-12-02T11:22:30Z",
+      "side": 1,
+      "message": "\u0027Metered network\u0027 would be better",
+      "parentUuid": "f698d5c8_f6e6fb60",
+      "range": {
+        "startLine": 144,
+        "startChar": 117,
+        "endLine": 144,
+        "endChar": 127
+      },
+      "revId": "bc569ff26a1a773afd8ab69f11548f7f0ef77389",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

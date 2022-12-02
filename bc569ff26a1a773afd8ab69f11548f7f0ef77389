@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f698d5c8_f6e6fb60",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-12-02T11:04:41Z",
+      "side": 1,
+      "message": "I was unsure what would fit better, network or connection.",
+      "range": {
+        "startLine": 144,
+        "startChar": 117,
+        "endLine": 144,
+        "endChar": 127
+      },
+      "revId": "bc569ff26a1a773afd8ab69f11548f7f0ef77389",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

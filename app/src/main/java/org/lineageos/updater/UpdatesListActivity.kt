@@ -13,20 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.updater.model;
+package org.lineageos.updater
 
-public interface UpdateBaseInfo {
-    String getName();
+import androidx.appcompat.app.AppCompatActivity
+import org.lineageos.updater.model.UpdateInfo
 
-    String getDownloadId();
-
-    long getTimestamp();
-
-    String getType();
-
-    String getVersion();
-
-    String getDownloadUrl();
-
-    long getFileSize();
+abstract class UpdatesListActivity : AppCompatActivity() {
+    abstract fun exportUpdate(update: UpdateInfo)
+    abstract fun showSnackbar(stringId: Int, duration: Int)
 }

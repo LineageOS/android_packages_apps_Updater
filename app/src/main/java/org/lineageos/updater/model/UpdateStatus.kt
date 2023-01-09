@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.updater.model;
+package org.lineageos.updater.model
 
-public enum UpdateStatus {
+enum class UpdateStatus {
     UNKNOWN,
     STARTING,
     DOWNLOADING,
@@ -31,9 +31,9 @@ public enum UpdateStatus {
     INSTALLATION_CANCELLED,
     INSTALLATION_SUSPENDED;
 
-    public static final class Persistent {
-        public static final int UNKNOWN = 0;
-        public static final int INCOMPLETE = 1;
-        public static final int VERIFIED = 2;
+    object Persistent {
+        const val UNKNOWN = 0
+        const val INCOMPLETE = 1
+        const val VERIFIED = 2
     }
 }

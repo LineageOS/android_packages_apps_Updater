@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.updater.misc;
+package org.lineageos.updater.model
 
-import android.os.SystemProperties;
+import java.io.File
 
-public final class BuildInfoUtils {
-
-    private BuildInfoUtils() {
-    }
-
-    public static long getBuildDateTimestamp() {
-        return SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0);
-    }
-
-    public static String getBuildVersion() {
-        return SystemProperties.get(Constants.PROP_BUILD_VERSION);
-    }
+interface UpdateInfo : UpdateBaseInfo {
+    val status: UpdateStatus
+    val persistentStatus: Int
+    val file: File?
+    val progress: Int
+    val eta: Long
+    val speed: Long
+    val installProgress: Int
+    val availableOnline: Boolean
+    val finalizing: Boolean
 }

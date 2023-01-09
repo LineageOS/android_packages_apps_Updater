@@ -13,28 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.updater.model;
+package org.lineageos.updater.misc
 
-import java.io.File;
+import android.os.SystemProperties
 
-public interface UpdateInfo extends UpdateBaseInfo {
-    UpdateStatus getStatus();
-
-    int getPersistentStatus();
-
-    File getFile();
-
-    long getFileSize();
-
-    int getProgress();
-
-    long getEta();
-
-    long getSpeed();
-
-    int getInstallProgress();
-
-    boolean getAvailableOnline();
-
-    boolean getFinalizing();
+object BuildInfoUtils {
+    val buildDateTimestamp: Long
+        get() = SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)
+    val buildVersion: String
+        get() = SystemProperties.get(Constants.PROP_BUILD_VERSION)
 }

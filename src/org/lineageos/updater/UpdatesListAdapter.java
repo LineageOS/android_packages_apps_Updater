@@ -529,7 +529,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         ContextThemeWrapper wrapper = new ContextThemeWrapper(mActivity,
                 R.style.AppTheme_PopupMenuOverlapAnchor);
         PopupMenu popupMenu = new PopupMenu(wrapper, anchor, Gravity.NO_GRAVITY,
-                R.attr.actionOverflowMenuStyle, 0);
+                com.android.internal.R.attr.actionOverflowMenuStyle, 0);
         popupMenu.inflate(R.menu.menu_action_mode);
 
         MenuBuilder menu = (MenuBuilder) popupMenu.getMenu();

@@ -17,11 +17,8 @@
 android_app {
     name: "Updater",
 
-    // Include SettingsLib and its dependencies
-    defaults: ["SettingsLibDefaults"],
-
     srcs: ["src/**/*.java"],
-    resource_dirs: ["res"],
+    resource_dirs: ["res", "res_bool"],
 
     static_libs: [
         "com.google.android.material_material",

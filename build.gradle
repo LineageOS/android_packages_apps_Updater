@@ -10,7 +10,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.1'
+        classpath 'com.android.tools.build:gradle:8.0.2'
     }
 }
 
@@ -21,13 +21,12 @@ keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     defaultConfig {
-        minSdkVersion 27
-        targetSdkVersion 31
+        minSdkVersion 28
+        targetSdkVersion 33
     }
-
 
     sourceSets {
         main {
@@ -50,17 +49,20 @@ android {
             storePassword keystoreProperties['storePassword']
         }
     }
+
     lint {
         ignore 'ProtectedPermissions', 'ExtraTranslation', 'ImpliedQuantity', 'MissingQuantity', 'MissingTranslation'
     }
+
+    namespace 'org.lineageos.updater'
 }
 
 dependencies {
     compileOnly fileTree(dir: 'system_libs/', include: ['*.jar'])
 
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.preference:preference:1.1.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
 }

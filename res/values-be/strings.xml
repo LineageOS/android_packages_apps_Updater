@@ -15,10 +15,14 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="installation_suspended_notification">Усталяванне прыпынена</string>
+    <string name="installing_update">Усталяванне пакета з абнаўленнем</string>
+    <string name="installing_update_error">Памылка ўсталявання</string>
     <string name="menu_auto_delete_updates">Выдаліць файлы абнаўлення пасля ўсталявання</string>
     <string name="menu_copy_url">Скапіяваць URL-адрас</string>
     <string name="menu_export_update">Экспартаванне абнаўлення</string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> з <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
+    <string name="action_info">Інфармацыя</string>
     <string name="confirm_delete_dialog_message">Выдаліць выбраны файл абнаўлення?</string>
     <string name="dialog_export_title">Экспартаванне абнаўлення</string>
     <string name="toast_export_started">Пачалося экспартаванне</string>

@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f32283ba_156589f8",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-02-14T15:38:40Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "958922f1_81027607",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-02-14T15:38:40Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91215fa7_b08ddc05",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesCheckReceiver.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-02-14T15:38:40Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c00e3c22_45dd52f0",
+        "filename": "app/src/main/java/org/lineageos/updater/controller/UpdaterController.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-02-14T15:38:40Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "255ca98b_6ba19dd7",
+        "filename": "app/src/main/java/org/lineageos/updater/controller/UpdaterController.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-02-14T15:38:40Z",
+      "side": 1,
+      "message": "newline at end",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b8e3cae_db0368ef",
+        "filename": "app/src/main/java/org/lineageos/updater/misc/Utils.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-02-14T15:38:40Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

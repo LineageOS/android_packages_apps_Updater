@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "920377ac_f220ba87",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-02-15T22:36:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f32283ba_156589f8",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "958922f1_81027607",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-02-14T15:38:40Z",
       "side": 1,
       "message": "line length",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b4cfb95_5dcef1ae",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-02-15T22:36:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "958922f1_81027607",
       "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -52,6 +88,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6eabc07d_5841c85e",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesCheckReceiver.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-02-15T22:36:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91215fa7_b08ddc05",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c00e3c22_45dd52f0",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-02-14T15:38:40Z",
       "side": 1,
       "message": "line length",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "665e6785_28849d6c",
+        "filename": "app/src/main/java/org/lineageos/updater/controller/UpdaterController.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-02-15T22:36:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c00e3c22_45dd52f0",
       "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -86,6 +158,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "981517dd_c4cc689b",
+        "filename": "app/src/main/java/org/lineageos/updater/controller/UpdaterController.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-02-15T22:36:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "255ca98b_6ba19dd7",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9b8e3cae_db0368ef",
@@ -99,6 +189,24 @@
       "writtenOn": "2023-02-14T15:38:40Z",
       "side": 1,
       "message": "line length",
+      "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76395aaf_3cab76ba",
+        "filename": "app/src/main/java/org/lineageos/updater/misc/Utils.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-02-15T22:36:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b8e3cae_db0368ef",
       "revId": "1cdc2b3c0f554984ea767a54093b2845ddb15281",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

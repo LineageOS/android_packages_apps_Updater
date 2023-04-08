@@ -187,6 +187,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     update.getFinalizing() ?
                             R.string.finalizing_package :
                             R.string.preparing_ota_first_boot);
+            String percentage = NumberFormat.getPercentInstance().format(
+                    update.getInstallProgress() / 100.f);
+            viewHolder.mPercentage.setText(percentage);
             viewHolder.mProgressBar.setIndeterminate(false);
             viewHolder.mProgressBar.setProgress(update.getInstallProgress());
         } else if (mUpdaterController.isVerifyingUpdate(downloadId)) {

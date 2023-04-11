@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7b26ad0_77bb4cad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14010
+      },
+      "writtenOn": "2023-04-11T15:29:13Z",
+      "side": 1,
+      "message": "I still need to test this extensively, but with this patch I was able to update mata to a newer build without seeing a mismatch between the progress bar and the percentage\u0027s TextView. This issue has also been reported here: https://gitlab.com/LineageOS/issues/android/-/issues/4830",
+      "revId": "768bbb87fb1dcc35199903923a61dca72a16ab97",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

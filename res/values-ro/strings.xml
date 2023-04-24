@@ -67,8 +67,8 @@
     <string name="header_last_updates_check">Ultima verificare: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> din <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> din <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> din <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> din <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verificare actualizare</string>
     <string name="list_no_updates">Nicio actualizare nouă găsită. Pentru a verifica manual pentru noi actualizări, utilizați butonul Reîmprospătare.</string>
     <string name="action_download">Descărcați</string>
@@ -81,8 +81,8 @@
     <string name="confirm_delete_dialog_title">Ștergeți fișierul</string>
     <string name="confirm_delete_dialog_message">Șterge fișierul de actualizare selectat?</string>
     <string name="apply_update_dialog_title">Aplicaţi actualizarea</string>
-    <string name="apply_update_dialog_message">Sunteți pe cale de a face upgrade la <xliff:g id="update_name">%1$s</xliff:g>.\n\nDacă apăsați <xliff:g id="ok">%2$s</xliff:g>, dispozitivul se va restarta în modul de recuperare pentru a instala actualizarea.\n\nNotă: Această caracteristică necesită o Recuperare compatibilă sau actualizările vor trebui să fie instalate manual.</string>
-    <string name="apply_update_dialog_message_ab">Sunteți pe cale de a face upgrade la <xliff:g id="update_name">%1$s</xliff:g>.\n\nDacă apăsați <xliff:g id="ok">%2$s</xliff:g>, dispozitivul va începe instalarea în fundal.\n\nOdată finalizată, veți fi anunțat(ă) să reporniți telefonul.</string>
+    <string name="apply_update_dialog_message">Sunteți pe cale să instalați <xliff:g id="update_name">%1$s</xliff:g>.\n\nDacă apăsați <xliff:g id="ok">%2$s</xliff:g>, dispozitivul va reporni în modul recuperare pentru a instala actualizarea.\n\nNotă: Această caracteristică necesită un Recovery compatibil ori actualizările vor trebui instalate manual.</string>
+    <string name="apply_update_dialog_message_ab">Sunteți pe cale să instalați <xliff:g id="update_name">%1$s</xliff:g>.\n\nDacă apăsați <xliff:g id="ok">%2$s</xliff:g>, dispozitivul va începe instalarea în fundal.\n\nOdată terminată, vi se va solicita să reporniți dispozitivul.</string>
     <string name="cancel_installation_dialog_message">Revocaţi instalarea?</string>
     <string name="label_download_url">Descărcați URL-ul</string>
     <string name="toast_download_url_copied">URL copiat</string>
@@ -90,6 +90,7 @@
     <string name="notification_export_success">Actualizare exportată</string>
     <string name="notification_export_fail">Eroare de export</string>
     <string name="toast_already_exporting">Se exportează deja o actualizare</string>
+    <string name="toast_export_started">Export inițiat</string>
     <plurals name="eta_seconds">
         <item quantity="one">1 secundă rămasă</item>
         <item quantity="few"><xliff:g id="count">%d</xliff:g> (de) secunde rămase</item>
@@ -115,4 +116,7 @@
     <string name="new_updates_channel_title">Actualizări noi</string>
     <string name="ongoing_channel_title">Descărcări în desfășurare</string>
     <string name="update_failed_channel_title">Actualizare eșuată</string>
+    <string name="info_dialog_title">Știai că?</string>
+    <string name="info_dialog_message">Actualizările LineageOS sunt pachete complete de instalare. Acest lucru înseamnă că întotdeauna puteți instala doar ultima actualizare, chiar dacă ați sărit unele dintre ele!</string>
+    <string name="info_dialog_ok">Mulțumesc pentru informații!</string>
 </resources>

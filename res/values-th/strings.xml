@@ -61,8 +61,6 @@
     <string name="snack_download_verified">ดาวน์โหลดเสร็จสมบูรณ์</string>
     <string name="snack_update_not_installable">การอัปเดตนี้ไม่สามารถติดตั้งบนบิลด์ปัจจุบัน</string>
     <string name="header_last_updates_check">ตรวจสอบล่าสุด: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> ของ <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> สำหรับ <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">กำลังตรวจสอบการอัปเดต</string>
     <string name="list_no_updates">ไม่พบการอัปเดตใหม่ หากต้องการตรวจสอบการอัปเดตใหม่ด้วยตนเองให้ใช้ปุ่มรีเฟรช</string>
     <string name="action_download">ดาวน์โหลด</string>
@@ -75,8 +73,6 @@
     <string name="confirm_delete_dialog_title">ลบไฟล์</string>
     <string name="confirm_delete_dialog_message">ลบไฟล์การอัปเดตที่เลือกไว้หรือไม่</string>
     <string name="apply_update_dialog_title">ใช้การอัปเดต</string>
-    <string name="apply_update_dialog_message">คุณกำลังจะอัปเกรดเป็น <xliff:g id="update_name">%1$s</xliff:g>.\n\nถ้าคุณกด <xliff:g id="ok">%2$s</xliff:g>, อุปกรณ์จะเริ่มต้นใหม่ในโหมดกู้คืนเพื่อติดตั้งไฟล์อัปเดต\n\nหมายเหตุ: ฟีเจอร์นี้ต้องการระบบกู้คืนที่ถูกรองรับ ไม่งั้นผู้ใช้จะต้องติดตั้งการอัปเดตด้วยตนเอง</string>
-    <string name="apply_update_dialog_message_ab">คุณกำลังจะอัปเกรดเป็น <xliff:g id="update_name">%1$s</xliff:g>.\n\nถ้าคุณกด <xliff:g id="ok">%2$s</xliff:g>, อุปกรณ์จะเริ่มติดตั้งในพื้นหลัง\n\nเมื่อเสร็จสิ้นคุณจะได้รับแจ้งให้รีบูต</string>
     <string name="cancel_installation_dialog_message">ยกเลิกการติดตั้งหรือไม่</string>
     <string name="label_download_url">ดาวน์โหลด URL</string>
     <string name="toast_download_url_copied">คัดลอก URL แล้ว</string>

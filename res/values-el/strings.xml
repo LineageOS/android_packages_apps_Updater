@@ -67,8 +67,8 @@
     <string name="header_last_updates_check">Τελευταίος έλεγχος: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Επαλήθευση ενημέρωσης</string>
     <string name="list_no_updates">Δεν βρέθηκαν νέες ενημερώσεις. Για να ελέγξετε χειροκίνητα για νέες ενημερώσεις, χρησιμοποιήστε το πλήκτρο Ανανέωσης.</string>
     <string name="action_download">Λήψη</string>
@@ -81,8 +81,8 @@
     <string name="confirm_delete_dialog_title">Διαγραφή αρχείου</string>
     <string name="confirm_delete_dialog_message">Διαγραφή του επιλεγμένου αρχείου ενημέρωσης;</string>
     <string name="apply_update_dialog_title">Εφαρμογή ενημέρωσης</string>
-    <string name="apply_update_dialog_message">Πρόκειται να αναβαθμίσετε σε <xliff:g id="update_name">%1$s</xliff:g>.\n\nΑν πατήσετε <xliff:g id="ok">%2$s</xliff:g>, η συσκευή θα κάνει επανεκκίνηση σε λειτουργία recovery για να εγκατασταθεί η ενημέρωση.\n\nΣημείωση: Αυτή η λειτουργία απαιτεί μια συμβατή recovery αλλιώς η ενημέρωση θα πρέπει να εγκατασταθεί χειροκίνητα.</string>
-    <string name="apply_update_dialog_message_ab">Πρόκειται να αναβαθμίσετε σε <xliff:g id="update_name">%1$s</xliff:g>.\n\nΕάν πατήσετε <xliff:g id="ok">%2$s</xliff:g>, η συσκευή θα ξεκινήσει την εγκατάσταση στο παρασκήνιο.\n\nΌταν ολοκληρωθεί, θα σας ζητηθεί να κάνετε επανεκκίνηση.</string>
+    <string name="apply_update_dialog_message">Πρόκειται να εγκαταστήσετε το <xliff:g id="update_name">%1$s</xliff:g>.\n\nΑν πατήσετε <xliff:g id="ok">%2$s</xliff:g>, η συσκευή θα κάνει επανεκκίνηση σε λειτουργία recovery για να εγκατασταθεί η ενημέρωση.\n\nΣημείωση: Αυτή η λειτουργία απαιτεί μια συμβατή recovery αλλιώς η ενημέρωση θα πρέπει να εγκατασταθεί χειροκίνητα.</string>
+    <string name="apply_update_dialog_message_ab">Πρόκειται να εγκαταστήσετε το <xliff:g id="update_name">%1$s</xliff:g>.\n\nΕάν πατήσετε <xliff:g id="ok">%2$s</xliff:g>, η συσκευή θα ξεκινήσει την εγκατάσταση στο παρασκήνιο.\n\nΌταν ολοκληρωθεί, θα σας ζητηθεί να κάνετε επανεκκίνηση.</string>
     <string name="cancel_installation_dialog_message">Ακύρωση της εγκατάστασης;</string>
     <string name="label_download_url">Λήψη συνδέσμου</string>
     <string name="toast_download_url_copied">Ο σύνδεσμος αντιγράφηκε</string>
@@ -90,6 +90,7 @@
     <string name="notification_export_success">Η ενημέρωση εξάχθηκε</string>
     <string name="notification_export_fail">Σφάλμα εξαγωγής</string>
     <string name="toast_already_exporting">Εξάγεται ήδη μία ενημέρωση</string>
+    <string name="toast_export_started">Η εξαγωγή ξεκίνησε</string>
     <plurals name="eta_seconds">
         <item quantity="one">απομένει 1 δευτερόλεπτο</item>
         <item quantity="other">απομένουν <xliff:g id="count">%d</xliff:g> δευτερόλεπτα</item>
@@ -112,4 +113,7 @@
     <string name="new_updates_channel_title">Νέες ενημερώσεις</string>
     <string name="ongoing_channel_title">Λήψεις σε εξέλιξη</string>
     <string name="update_failed_channel_title">Η ενημέρωση απέτυχε</string>
+    <string name="info_dialog_title">Το γνωρίζατε;</string>
+    <string name="info_dialog_message">Οι ενημερώσεις LineageOS είναι πλήρη πακέτα εγκατάστασης. Αυτό σημαίνει ότι μπορείτε πάντα να εγκαταστήσετε μόνο την πιο πρόσφατη ενημέρωση, ακόμα κι αν παραλείψατε κάποια ενδιάμεσα!</string>
+    <string name="info_dialog_ok">Ευχαριστώ για τις πληροφορίες!</string>
 </resources>

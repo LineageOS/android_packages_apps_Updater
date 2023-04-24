@@ -67,8 +67,6 @@
     <string name="header_last_updates_check">آخر تحقق: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> من <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">جارٍ التحقق من التحديث</string>
     <string name="list_no_updates">لا توجد تحديثات جديدة. للبحث عن تحديثات جديدة يدويًا، استخدم الزر تحديث.</string>
     <string name="action_download">تنزيل</string>
@@ -81,8 +79,6 @@
     <string name="confirm_delete_dialog_title">حذف الملف</string>
     <string name="confirm_delete_dialog_message">حذف ملف التحديث المحدد؟</string>
     <string name="apply_update_dialog_title">تطبيق التحديث</string>
-    <string name="apply_update_dialog_message">أنت على وشك الترقية إلى <xliff:g id="update_name">%1$s</xliff:g>.\n\nإذا قمت بالضغط على <xliff:g id="ok">%2$s</xliff:g>، سيقوم الجهاز بإعادة تشغيل نفسه في وضع الاستعادة لتثبيت التحديث.\n\nملاحظة: هذه الميزة تتطلب مسترد متوافق أو سيلزم تثبيت التحديثات يدويًا.</string>
-    <string name="apply_update_dialog_message_ab">أنت على وشك الترقية إلى <xliff:g id="update_name">%1$s</xliff:g>.\n\nعند الضغط على <xliff:g id="ok">%2$s</xliff:g>، وسوف يبدأ الجهاز بالتثبيت في الخلفية.\n\nحتى الانتهاء، وسوف يتم مطالبتك بإعادة التشغيل.</string>
     <string name="cancel_installation_dialog_message">إلغاء التثبيت؟</string>
     <string name="label_download_url">عنوان التنزيل</string>
     <string name="toast_download_url_copied">تم نسخ الرابط</string>

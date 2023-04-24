@@ -67,8 +67,6 @@
     <string name="header_last_updates_check">Posledná kontrola: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Overujem aktualizáciu</string>
     <string name="list_no_updates">Neboli nájdené žiadne nové aktualizácie. Ak chcete ručne vyhľadať nové aktualizácie, použite tlačítko Aktualizovať.</string>
     <string name="action_download">Stiahnuť</string>
@@ -81,8 +79,6 @@
     <string name="confirm_delete_dialog_title">Vymazať súbor</string>
     <string name="confirm_delete_dialog_message">Vymazať vybraný súbor aktualizácie?</string>
     <string name="apply_update_dialog_title">Aplikovať aktualizáciu</string>
-    <string name="apply_update_dialog_message">Idete aktualizovať na <xliff:g id="update_name">%1$s</xliff:g>.\n\nAk stlačíte <xliff:g id="ok">%2$s</xliff:g>, zariadenie sa reštartuje do recovery režimu na inštaláciu aktualizácie.\n\nPoznámka: Táto funkcia vyžaduje kompatibilné Recovery alebo treba aktualizácie nainštalovať ručne.</string>
-    <string name="apply_update_dialog_message_ab">Idete aktualizovať na <xliff:g id="update_name">%1$s</xliff:g>.\n\nAk stlačíte <xliff:g id="ok">%2$s</xliff:g>, zariadenie začne inštaláciu v pozadí.\n\nPo ukončení budete vyzvaný na reštart.</string>
     <string name="cancel_installation_dialog_message">Zrušiť inštaláciu?</string>
     <string name="label_download_url">URL adresa</string>
     <string name="toast_download_url_copied">URL skopírované</string>

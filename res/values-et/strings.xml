@@ -15,6 +15,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Uuendaja</string>
+    <string name="display_name">Uuendaja</string>
     <string name="installation_suspended_notification">Installimine peatati</string>
     <string name="suspend_button">Peata</string>
     <string name="dialog_battery_low_title">Madal akutase</string>
@@ -27,7 +29,6 @@
     <string name="menu_ab_perf_mode">Eelista uuendusprotsessi</string>
     <string name="menu_update_recovery">Uuenda taastust</string>
     <string name="toast_forced_update_recovery">Lineage Recovery taastevärskendusi pole selles seadmes võimalik keelata.</string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <plurals name="eta_seconds">
         <item quantity="one">1 sekund jäänud</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> sekundit jäänud</item>

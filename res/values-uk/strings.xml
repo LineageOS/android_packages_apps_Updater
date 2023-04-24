@@ -34,13 +34,22 @@
     <string name="finalizing_package">Завершення встановлення</string>
     <string name="preparing_ota_first_boot">Підготовка до першого завантаження</string>
     <string name="dialog_prepare_zip_message">Підготовка оновлення</string>
+    <string name="dialog_battery_low_title">Низький заряд батареї</string>
     <string name="reboot">Перезавантаження</string>
     <string name="menu_refresh">Оновити</string>
-    <string name="menu_auto_updates_check">Автоматична перевірка оновлень</string>
+    <string name="menu_preferences">Параметри</string>
+    <string name="menu_auto_updates_check">Автоперевірка оновлень</string>
+    <string name="menu_auto_updates_check_interval_daily">Щодня</string>
+    <string name="menu_auto_updates_check_interval_weekly">Щотижня</string>
+    <string name="menu_auto_updates_check_interval_monthly">Щомісяця</string>
+    <string name="menu_auto_updates_check_interval_never">Ніколи</string>
     <string name="menu_auto_delete_updates">Видалити файли оновлення після інсталяції</string>
     <string name="menu_delete_update">Видалити</string>
     <string name="menu_copy_url">Копіювати URL</string>
     <string name="menu_export_update">Експорт оновлення</string>
+    <string name="menu_show_changelog">Журнал змін</string>
+    <string name="menu_update_recovery">Оновити режим відновлення</string>
+    <string name="toast_forced_update_recovery">Неможливо вимкнути оновлення режиму відновлення Lineage на цьому пристрої.</string>
     <string name="snack_updates_found">Знайдено оновлення</string>
     <string name="snack_no_updates_found">Оновлень не знайдено</string>
     <string name="snack_updates_check_failed">Перевірка оновлення не вдалася. Будь-ласка перевірте з’єднання з мережею і спробуйте ще раз.</string>
@@ -53,19 +62,40 @@
     <string name="header_last_updates_check">Остання перевірка: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Перевірка оновлення</string>
     <string name="list_no_updates">Оновлень не знайдено. Щоб вручну перевірити наявність оновлень, натисніть кнопку Оновити.</string>
     <string name="action_download">Завантажити</string>
+    <string name="action_install">Встановити</string>
+    <string name="action_cancel">Скасувати</string>
     <string name="confirm_delete_dialog_title">Видалити файл</string>
     <string name="confirm_delete_dialog_message">Видалити обраний файл оновлення?</string>
     <string name="apply_update_dialog_title">Застосувати оновлення</string>
-    <string name="apply_update_dialog_message">Ви збираєтесь оновитись на <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо Ви натиснете <xliff:g id="ok">%2$s</xliff:g>, пристрій перезавантажиться у Recovery для встановлення.\n\nПримітка: ця функція потребує сумісне Recovery, в іншому випадку оновлення необхідно встановити вручну.</string>
-    <string name="apply_update_dialog_message_ab">Ви збираєтесь оновитись на <xliff:g id="update_name">%1$s</xliff:g>.\n\nЯкщо ви натиснети на <xliff:g id="ok">%2$s</xliff:g>, пристрій почне встановлення у фоновому режимі.\n\nПісля встановлення вам буде запропоновано перезавантажити пристрій.</string>
+    <string name="apply_update_dialog_message">Ви збираєтеся встановити <xliff:g id="update_name">%1$s</xliff:g>.\n\nНатисніть <xliff:g id="ok">%2$s</xliff:g>, щоб пристрій перезапустився в режимі відновлення й встановив оновлення.\n\nУвага: цій функції потрібен сумісний режим відновлення, інакше оновлення доведеться встановити вручну.</string>
+    <string name="cancel_installation_dialog_message">Скасувати встановлення?</string>
     <string name="label_download_url">URL-адреса завантаження</string>
     <string name="toast_download_url_copied">URL-адресу скопійовано</string>
     <string name="dialog_export_title">Експорт оновлення</string>
     <string name="notification_export_success">Оновлення експортовано</string>
     <string name="notification_export_fail">Помилка експорту</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">ще секунда</item>
+        <item quantity="few">ще <xliff:g id="count">%d</xliff:g> секунди</item>
+        <item quantity="many">ще <xliff:g id="count">%d</xliff:g> секунд</item>
+        <item quantity="other">ще <xliff:g id="count">%d</xliff:g> секунд</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">ще хвилина</item>
+        <item quantity="few">ще <xliff:g id="count">%d</xliff:g> хвилини</item>
+        <item quantity="many">ще <xliff:g id="count">%d</xliff:g> хвилин</item>
+        <item quantity="other">ще <xliff:g id="count">%d</xliff:g> хвилин</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">ще година</item>
+        <item quantity="few">ще <xliff:g id="count">%d</xliff:g> години</item>
+        <item quantity="many">ще <xliff:g id="count">%d</xliff:g> годин</item>
+        <item quantity="other">ще <xliff:g id="count">%d</xliff:g> годин</item>
+    </plurals>
     <string name="update_on_mobile_data_title">Попередження</string>
     <string name="update_on_mobile_data_message">Ви збираєтесь завантажити пакет оновлень за допомогою мобільних даних, що ймовірно призведе до високого використання мобільного трафіку. Хочете продовжити?</string>
     <string name="checkbox_mobile_data_warning">Не показувати знову</string>

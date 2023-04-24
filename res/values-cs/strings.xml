@@ -67,8 +67,8 @@
     <string name="header_last_updates_check">Poslední kontrola: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z(e) <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z(e) <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Ověření aktualizace</string>
     <string name="list_no_updates">Nebyly nalezeny žádné nové aktualizace. Chcete-li ručně vyhledat nové aktualizace, použijte tlačítko „Obnovit“.</string>
     <string name="action_download">Stáhnout</string>
@@ -81,8 +81,8 @@
     <string name="confirm_delete_dialog_title">Smazat soubor</string>
     <string name="confirm_delete_dialog_message">Smazat zvolený soubor aktualizace?</string>
     <string name="apply_update_dialog_title">Použít aktualizaci</string>
-    <string name="apply_update_dialog_message">Chystáte se aktualizovat na <xliff:g id="update_name">%1$s</xliff:g>.\n\nPokud stisknete <xliff:g id="ok">%2$s</xliff:g>, telefon se restartuje do režimu Recovery, kde budete pokračovat v instalaci aktualizace.\n\nPoznámka: tato funkce vyžaduje nainstalovaný kompatibilní režim Recovery nebo je nutné instalaci provést ručně.</string>
-    <string name="apply_update_dialog_message_ab">Chystáte se aktualizovat na <xliff:g id="update_name">%1$s</xliff:g>.\n\nPokud stisknete <xliff:g id="ok">%2$s</xliff:g>, spustí se instalace na pozadí.\n\nPo dokončení budete vyzváni k restartu.</string>
+    <string name="apply_update_dialog_message">Chystáte se instalovat <xliff:g id="update_name">%1$s</xliff:g>.\n\nPokud stisknete <xliff:g id="ok">%2$s</xliff:g>, telefon se restartuje do režimu Recovery, kde budete pokračovat v instalaci aktualizace.\n\nPoznámka: tato funkce vyžaduje nainstalovaný kompatibilní režim Recovery nebo je nutné instalaci provést ručně.</string>
+    <string name="apply_update_dialog_message_ab">Chystáte se instalovat <xliff:g id="update_name">%1$s</xliff:g>.\n\nPokud stisknete <xliff:g id="ok">%2$s</xliff:g>, spustí se instalace na pozadí.\n\nPo dokončení budete vyzváni k restartu.</string>
     <string name="cancel_installation_dialog_message">Zrušit instalaci?</string>
     <string name="label_download_url">URL stažení</string>
     <string name="toast_download_url_copied">URL zkopírována</string>
@@ -90,6 +90,7 @@
     <string name="notification_export_success">Aktualizace exportována</string>
     <string name="notification_export_fail">Chyba exportu</string>
     <string name="toast_already_exporting">Aktualizace se již exportuje</string>
+    <string name="toast_export_started">Export byl zahájen</string>
     <plurals name="eta_seconds">
         <item quantity="one">Zbývá 1 sekunda</item>
         <item quantity="few">Zbývají <xliff:g id="count">%d</xliff:g> sekundy</item>
@@ -118,4 +119,7 @@
     <string name="new_updates_channel_title">Nové aktualizace</string>
     <string name="ongoing_channel_title">Probíhající stahování</string>
     <string name="update_failed_channel_title">Aktualizace se nezdařila</string>
+    <string name="info_dialog_title">Věděli jste, že…</string>
+    <string name="info_dialog_message">Aktualizace LineageOS jsou plné instalační balíčky. To znamená, že můžete vždy nainstalovat pouze nejnovější aktualizaci, a\u00a0je možné některé z\u00a0nich zcela přeskočit!</string>
+    <string name="info_dialog_ok">Děkujeme za informace!</string>
 </resources>

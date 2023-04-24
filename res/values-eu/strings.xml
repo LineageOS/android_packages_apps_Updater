@@ -56,7 +56,6 @@
     <string name="snack_updates_found">Eguneraketa berriak aurkitu dira</string>
     <string name="snack_no_updates_found">Ez da eguneraketa berririk aurkitu</string>
     <string name="snack_updates_check_failed">Eguneraketa bilaketak huts egin du. Interneterako konexioa egiaztatu eta berriro saiatu, mesedez.</string>
-    <string name="snack_download_failed">Deskargak huts egin du. Egiaztatu Interneterako konexioa eta saiatu berriro.</string>
     <string name="snack_download_verification_failed">Eguneraketaren egiaztaketak huts egin du.</string>
     <string name="snack_download_verified">Deskarga osatuta.</string>
     <string name="snack_update_not_installable">Eguneraketa hau ezin da instalatu uneko konpilazioaren gainean.</string>
@@ -65,8 +64,6 @@
     <string name="header_last_updates_check">Azken egiaztaketa: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Eguneraketa egiaztatzen</string>
     <string name="list_no_updates">Ez da eguneraketa berririk aurkitu. Eguneraketak eskuz egiaztatzeko, erabili freskatze botoia.</string>
     <string name="action_download">Deskargatu</string>
@@ -79,8 +76,6 @@
     <string name="confirm_delete_dialog_title">Ezabatu fitxategia</string>
     <string name="confirm_delete_dialog_message">Ezabatu hautatutako eguneraketa fitxategia?</string>
     <string name="apply_update_dialog_title">Aplikatu eguneraketa</string>
-    <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g>. bertsioa instalatzera zoaz.\n\n <xliff:g id="ok">%2$s</xliff:g> sakatzean, gailua berreskuratze moduan berrabiaraziko da eguneraketa instalatzeko.\n\nOharra: Berreskuratze aplikazio bateragarri bat behar du ezaugarri honek, bestela eguneraketak eskuz instalatu beharko dira.</string>
-    <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g> bertsioa instalatzera zoaz.\n\n<xliff:g id="ok">%2$s</xliff:g> sakatzean, gailua atzeko planoan hasiko da eguneratzen.\n\nBehin bukatuta berrabiaraztea eskatuko zaizu.</string>
     <string name="cancel_installation_dialog_message">Ezeztatu instalazioa?</string>
     <string name="label_download_url">Deskargaren URL-s</string>
     <string name="toast_download_url_copied">URL-a kopiatuta</string>

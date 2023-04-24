@@ -62,8 +62,6 @@
     <string name="confirm_delete_dialog_title">Izbriši datoteku</string>
     <string name="confirm_delete_dialog_message">Želite li izbrisati odabranu datoteku ažuriranja?</string>
     <string name="apply_update_dialog_title">Primjeni ažuriranje</string>
-    <string name="apply_update_dialog_message">Ažurirat ćete svoj sustav na <xliff:g id="filename">%1$s</xliff:g>.\n\nAko pritisnete <xliff:g id="ok">%2$s</xliff:g>, uređaj će se sam ponovno pokrenuti u načinu oporavka kako bi instalirao ažuriranje.\n\nNapomena: ova značajka zahtijeva kompatibilan Oporavak. U suprotnome će se ažuriranja morati instalirati ručno.</string>
-    <string name="apply_update_dialog_message_ab">Spremate se ažurirati na <xliff:g id="filename">%1$s </xliff:g>.\n\nAko dodirnete <xliff:g id="ok">%2$s</xliff:g>, uređaj će započeti instalaciju u pozadini.\n\nKad se završi, trebati ćete ponovno pokrenuti uređaj.</string>
     <string name="cancel_installation_dialog_message">Prekinuti instalaciju?</string>
     <string name="label_download_url">Preuzmi URL</string>
     <string name="toast_download_url_copied">URL kopiran</string>

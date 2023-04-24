@@ -31,12 +31,12 @@
     <string name="pause_button">Pausa</string>
     <string name="resume_button">Riprendi</string>
     <string name="suspend_button">Sospendi</string>
-    <string name="installing_update">Installazione del pacchetto aggiornamento</string>
+    <string name="installing_update">Installazione del pacchetto d\'aggiornamento</string>
     <string name="installing_update_error">Errore d\'installazione</string>
     <string name="installing_update_finished">Aggiornamento installato</string>
-    <string name="finalizing_package">Finalizzalizzazione del pachetto d\'installazione in corso</string>
+    <string name="finalizing_package">Finalizzalizzazione dell\'installazione del pacchetto</string>
     <string name="preparing_ota_first_boot">Preparazione per il primo avvio</string>
-    <string name="dialog_prepare_zip_message">Preparazione aggiornamento preliminare</string>
+    <string name="dialog_prepare_zip_message">Preparazione preliminare dell\'aggiornamento</string>
     <string name="dialog_battery_low_title">Batteria scarica</string>
     <string name="dialog_battery_low_message_pct">Il livello della batteria è troppo basso, è necessario almeno il <xliff:g id="percent_discharging">%1$d</xliff:g>%% di batteria per continuare, oppure il <xliff:g id="percent_charging">%2$d</xliff:g>%% se il dispositivo è in carica.</string>
     <string name="reboot">Riavvia</string>
@@ -55,7 +55,7 @@
     <string name="menu_ab_perf_mode">Agg. con priorità</string>
     <string name="menu_update_recovery">Aggiornamento recovery</string>
     <string name="toast_forced_update_recovery">Impossibile disabilitare l\'aggiornamento di Lineage Recovery su questo dispositivo</string>
-    <string name="snack_updates_found">Nessun aggiornamento trovato</string>
+    <string name="snack_updates_found">Aggiornamenti trovati</string>
     <string name="snack_no_updates_found">Nessun nuovo aggiornamento trovato</string>
     <string name="snack_updates_check_failed">La verifica di aggiornamenti è fallita. Controlla la connessione ad internet e riprova più tardi.</string>
     <string name="snack_download_failed">Il download dell\'aggiornamento è fallito. Controlla la connessione ad internet e riprova più tardi.</string>

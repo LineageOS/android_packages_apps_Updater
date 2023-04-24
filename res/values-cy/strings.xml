@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">Gwiriwyd diwethaf: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> o <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> o <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Yn dilysu\'r diweddariad</string>
     <string name="list_no_updates">Ni chanfuwyd diweddariadau newydd. I wirio am ddiweddariadau newydd dy hun, defnyddia\'r botwm ail-lwytho.</string>
     <string name="action_download">Lawrlwytho</string>
@@ -79,6 +81,8 @@
     <string name="confirm_delete_dialog_title">Dileu ffeil</string>
     <string name="confirm_delete_dialog_message">Dileu\'r ffeil diweddariad a ddewiswyd?</string>
     <string name="apply_update_dialog_title">Gosod diweddariad</string>
+    <string name="apply_update_dialog_message">Rwyt ar fin osod <xliff:g id="update_name">%1$s</xliff:g>.\n\nOs wyt yn gwasgu <xliff:g id="ok">%2$s</xliff:g>, bydd y ddyfais yn ail-ddechrau ei hun i\'r modd adfer er mwyn gosod y diweddariad.\n\nNodyn: Mae ar y nodwedd hon angen Modd Adfer (Recovery) cydnaws er mwyn gosod diweddariadau yn awtomatig.</string>
+    <string name="apply_update_dialog_message_ab">Rwyt ar fin osod <xliff:g id="update_name">%1$s</xliff:g>.\n\nOs wyt yn gwasgu <xliff:g id="ok">%2$s</xliff:g>, bydd y ddyfais yn dechrau\'r gosod yn y cefndir.\n\nPan fydd wedi\'i gwblhau, cei dy hysbysu i ailddechrau\'r system.</string>
     <string name="cancel_installation_dialog_message">Diddymu\'r gosod?</string>
     <string name="label_download_url">URL lawrlwytho</string>
     <string name="toast_download_url_copied">Copïwyd yr URL</string>
@@ -86,6 +90,7 @@
     <string name="notification_export_success">Allforiwyd y diweddariad</string>
     <string name="notification_export_fail">Gwall allforio</string>
     <string name="toast_already_exporting">Eisoes yn allforio diweddariad</string>
+    <string name="toast_export_started">Wedi dechrau allforio</string>
     <plurals name="eta_seconds">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> eiliadau yn weddill</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> eiliad yn weddill</item>
@@ -120,4 +125,7 @@
     <string name="new_updates_channel_title">Diweddariadau newydd</string>
     <string name="ongoing_channel_title">Llwythi sy\'n parhau</string>
     <string name="update_failed_channel_title">Methodd y diweddariad</string>
+    <string name="info_dialog_title">A wyddet ti?</string>
+    <string name="info_dialog_message">Mae diweddariadau LineageOS yn becynnau gosod llawn, felly mae o hyd yn bosib gosod y diweddariad diweddaraf, hyd yn oed os wyt wedi neidio ambell ddiweddariad ers y diwethaf!</string>
+    <string name="info_dialog_ok">Diolch am y wybodaeth!</string>
 </resources>

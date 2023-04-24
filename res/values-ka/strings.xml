@@ -86,10 +86,10 @@
     <string name="cancel_installation_dialog_message">გაუქმდეს დაყენება?</string>
     <string name="label_download_url">ჩამოტვირთვის ბმული</string>
     <string name="toast_download_url_copied">ბმულის ასლი აღებულია</string>
-    <string name="dialog_export_title">მიმდინარეობს განახლების გადატანა</string>
-    <string name="notification_export_success">განახლება გადატანილია</string>
+    <string name="dialog_export_title">განახლება ცალკე შეინახება</string>
+    <string name="notification_export_success">განახლება გატანილია ფაილში</string>
     <string name="notification_export_fail">შეცდომა გატანისას</string>
-    <string name="toast_already_exporting">განახლება უკვე გადატანილია</string>
+    <string name="toast_already_exporting">გატანა უკვე მიმდინარეობს</string>
     <string name="toast_export_started">გატანა დაწყებულია</string>
     <plurals name="eta_seconds">
         <item quantity="one">დარჩენილია 1 წამი</item>

@@ -57,8 +57,8 @@
     <string name="toast_forced_update_recovery">Bu cihazda Lineage Bərpa güncəlləmələrini sıradan çıxartmaq mümkün deyil.</string>
     <string name="snack_updates_found">Yeni güncəlləmə tapıldı</string>
     <string name="snack_no_updates_found">Yeni güncəlləmə tapılmadı</string>
-    <string name="snack_updates_check_failed">Güncəlləmə yoxlanışı uğursuz oldu. Zəhmət olmasa internet bağlantısını yoxlayın və daha sonra yenidən sınayın.</string>
-    <string name="snack_download_failed">Endirmə uğursuz oldu. Zəhmət olmasa internet bağlantısını yoxlayıb yenidən cəhd edin.</string>
+    <string name="snack_updates_check_failed">Güncəlləmə yoxlanışı uğursuz oldu. Zəhmət olmasa internet bağlantısını yoxlayıb daha sonra yenidən sınayın.</string>
+    <string name="snack_download_failed">Endirmə uğursuz oldu. Zəhmət olmasa internet bağlantısını yoxlayıb yenidən sınayın.</string>
     <string name="snack_download_verification_failed">Güncəlləmə təsdiqləməsi uğursuz oldu.</string>
     <string name="snack_download_verified">Endirmə tamamlandı.</string>
     <string name="snack_update_not_installable">Bu güncəlləmə hazırkı quruluşun üzərinə quraşdırıla bilməz.</string>

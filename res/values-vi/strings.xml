@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">Lần kiểm tra cuối: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> của <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> của <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Đang xác thực bản cập nhật</string>
     <string name="list_no_updates">Không có bản cập nhật mới được tìm thấy. Để tự động kiểm tra các bản cập nhật mới, sử dụng nút Làm mới.</string>
     <string name="action_download">Tải xuống</string>
@@ -79,6 +81,8 @@
     <string name="confirm_delete_dialog_title">Xoá tập tin</string>
     <string name="confirm_delete_dialog_message">Xóa các tập tin cập nhật được chọn?</string>
     <string name="apply_update_dialog_title">Áp dụng cập nhật</string>
+    <string name="apply_update_dialog_message">Bạn sắp cài đặt <xliff:g id="update_name">%1$s</xliff:g>.\n\nNếu bạn nhấn <xliff:g id="ok">%2$s</xliff:g>, thiết bị sẽ tự khởi động lại ở chế độ khôi phục để cài đặt bản cập nhật.\n\nLưu ý: Tính năng này yêu cầu Trình phục hồi tương thích hoặc các bản cập nhật sẽ cần được cài đặt theo cách thủ công.</string>
+    <string name="apply_update_dialog_message_ab">Bạn sắp cài đặt <xliff:g id="update_name">%1$s</xliff:g>.\n\nNếu bạn nhấn <xliff:g id="ok">%2$s</xliff:g>, thiết bị sẽ bắt đầu cài đặt trong nền.\n\nSau khi hoàn tất, bạn sẽ được nhắc khởi động lại.</string>
     <string name="cancel_installation_dialog_message">Huỷ cài đặt?</string>
     <string name="label_download_url">Tải xuống URL</string>
     <string name="toast_download_url_copied">Đã sao chép URL</string>
@@ -86,6 +90,7 @@
     <string name="notification_export_success">Đã xuất bản cập nhật</string>
     <string name="notification_export_fail">Lỗi xuất</string>
     <string name="toast_already_exporting">Đã xuất một bản cập nhật</string>
+    <string name="toast_export_started">Đã bắt đầu xuất</string>
     <plurals name="eta_seconds">
         <item quantity="other">Còn lại <xliff:g id="count">%d</xliff:g> giây</item>
     </plurals>
@@ -105,4 +110,7 @@
     <string name="new_updates_channel_title">Bản cập nhật mới</string>
     <string name="ongoing_channel_title">Đang tải xuống</string>
     <string name="update_failed_channel_title">Cập nhật thất bại</string>
+    <string name="info_dialog_title">Bạn có biết?</string>
+    <string name="info_dialog_message">Bản cập nhật LineageOS là gói cài đặt đầy đủ. Điều đó có nghĩa là bạn luôn có thể chỉ cài đặt bản cập nhật mới nhất, ngay cả khi bạn đã bỏ qua một số bản cập nhật ở giữa!</string>
+    <string name="info_dialog_ok">Cảm ơn bạn đã thông tin!</string>
 </resources>

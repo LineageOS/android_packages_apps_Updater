@@ -52,7 +52,7 @@
     <string name="menu_copy_url">Kopiraj URL</string>
     <string name="menu_export_update">Izvozi posodobitev</string>
     <string name="menu_show_changelog">Prikaži dnevnik sprememb</string>
-    <string name="menu_ab_perf_mode">Daj prednost posodobitvenemu procesu</string>
+    <string name="menu_ab_perf_mode">Daj prednost posodobitvenemu postopku</string>
     <string name="menu_update_recovery">Posodobi obnovitev</string>
     <string name="toast_forced_update_recovery">Ni mogoče onemogočiti posodobitev obnovitve Lineage na tej napravi.</string>
     <string name="snack_updates_found">Najdene nove posodobitve</string>
@@ -67,8 +67,8 @@
     <string name="header_last_updates_check">Zadnje preverjanje: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Preverjanje posodobitve</string>
     <string name="list_no_updates">Ni najdenih novih posodobitev. Za ročno preverjanje novih posodobitev, uporabite gumb Osveži.</string>
     <string name="action_download">Prenesi</string>
@@ -81,8 +81,8 @@
     <string name="confirm_delete_dialog_title">Izbriši datoteko</string>
     <string name="confirm_delete_dialog_message">Izbriši izbrano posodobitveno datoteko?</string>
     <string name="apply_update_dialog_title">Uveljavi posodobitev</string>
-    <string name="apply_update_dialog_message">Ste pred nadgradnjo na <xliff:g id="update_name">%1$s</xliff:g>.\n\nČe pritisnete <xliff:g id="ok">%2$s</xliff:g>, se bo naprava vnovično zagnala v obnovitvenem načinu, da se namesti posodobitev.\n\nOpomba: Ta značilnost zahteva združljivo Obnovitev ali pa boste morali posodobitve namestiti ročno.</string>
-    <string name="apply_update_dialog_message_ab">Ste pred nadgradnjo na <xliff:g id="update_name">%1$s</xliff:g>.\n\nČe pritisnete na <xliff:g id="ok">%2$s</xliff:g>, bo naprava začela nameščanje v ozadju.\n\nOb zaključku boste pozvani k vnovičnemu zagonu.</string>
+    <string name="apply_update_dialog_message">Ste pred namestitvijo <xliff:g id="update_name">%1$s</xliff:g>.\n\nČe pritisnete <xliff:g id="ok">%2$s</xliff:g>, se bo naprava vnovično zagnala v obnovitveni način, da namesti posodobitev.\n\nOpomba: Ta značilnost zahteva združljivo Obnovitev ali pa bodo morale posodobitve biti nameščene ročno.</string>
+    <string name="apply_update_dialog_message_ab">Ste pred namestitvijo <xliff:g id="update_name">%1$s</xliff:g>.\n\nČe pritisnete <xliff:g id="ok">%2$s</xliff:g>, bo naprava začela nameščanje v ozadju.\n\nOb zaključku boste pozvani k vnovičnemu zagonu.</string>
     <string name="cancel_installation_dialog_message">Prekliči nameščanje?</string>
     <string name="label_download_url">URL prenosa</string>
     <string name="toast_download_url_copied">URL kopiran</string>
@@ -90,6 +90,7 @@
     <string name="notification_export_success">Posodobitev izvožena</string>
     <string name="notification_export_fail">Napaka pri izvozu</string>
     <string name="toast_already_exporting">Posodobitev se že izvaža</string>
+    <string name="toast_export_started">Začetek izvoza</string>
     <plurals name="eta_seconds">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> sekunda preostala</item>
         <item quantity="two"><xliff:g id="count">%d</xliff:g> sekundi preostali</item>
@@ -118,4 +119,7 @@
     <string name="new_updates_channel_title">Nove posodobitve</string>
     <string name="ongoing_channel_title">Prenosi v teku</string>
     <string name="update_failed_channel_title">Posodobitev je spodletela</string>
+    <string name="info_dialog_title">Ali ste vedeli?</string>
+    <string name="info_dialog_message">LineageOS posodobitve so polni namestitveni paketi. To pomeni, da lahko vedno namestite samo zadnjo posodobitev tudi, če ste jih vmes nekaj preskočili!</string>
+    <string name="info_dialog_ok">Hvala za informacije!</string>
 </resources>

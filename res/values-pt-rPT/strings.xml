@@ -67,8 +67,8 @@
     <string name="header_last_updates_check">Última verificação: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">A verificar atualização</string>
     <string name="list_no_updates">Não foram encontradas novas atualizações. Para verificar novas atualizações manualmente, use o botão Atualizar.</string>
     <string name="action_download">Transferir</string>
@@ -82,7 +82,7 @@
     <string name="confirm_delete_dialog_message">Deseja eliminar o ficheiro de atualizações selecionado?</string>
     <string name="apply_update_dialog_title">Aplicar atualização</string>
     <string name="apply_update_dialog_message">Está prestes a atualizar para <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe carregar em<xliff:g id="ok">%2$s</xliff:g>, o dispositivo irá reiniciar no modo de recuperação para instalar a atualização.\n\nNota: É necessária uma Recuperação compatível, caso contrário as atualizações terão de ser instaladas manualmente.</string>
-    <string name="apply_update_dialog_message_ab">Está prestes a atualizar para <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe selecionar <xliff:g id="ok">%2$s</xliff:g>, o dispositivo irá iniciar a instalação em plano de fundo.\n\nUma vez concluída, ser-lhe-á pedido que reinicie o dispositivo.</string>
+    <string name="apply_update_dialog_message_ab">Está prestes a atualizar para <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe selecionar <xliff:g id="ok">%2$s</xliff:g>, o dispositivo irá iniciar a instalação em segundo plano.\n\nUma vez concluída, ser-lhe-á pedido que reinicie o dispositivo.</string>
     <string name="cancel_installation_dialog_message">Cancelar a instalação?</string>
     <string name="label_download_url">URL de transferência</string>
     <string name="toast_download_url_copied">URL copiado</string>
@@ -90,6 +90,7 @@
     <string name="notification_export_success">Atualização exportada</string>
     <string name="notification_export_fail">Erro de exportação</string>
     <string name="toast_already_exporting">Já está a exportar uma atualização</string>
+    <string name="toast_export_started">Exportação iniciada</string>
     <plurals name="eta_seconds">
         <item quantity="one">1 segundo restante</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> segundos restantes</item>
@@ -112,4 +113,7 @@
     <string name="new_updates_channel_title">Novas atualizações</string>
     <string name="ongoing_channel_title">Transferências em curso</string>
     <string name="update_failed_channel_title">A atualização falhou</string>
+    <string name="info_dialog_title">Sabias que?</string>
+    <string name="info_dialog_message">As atualizações do LineageOS são pacotes de instalação completa. Isso significa que podes  instalar apenas a última atualização, mesmo que tenhas ignorado alguns deles!</string>
+    <string name="info_dialog_ok">Obrigado pela informação!</string>
 </resources>

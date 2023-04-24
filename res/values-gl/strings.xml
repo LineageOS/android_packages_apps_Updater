@@ -67,8 +67,6 @@
     <string name="header_last_updates_check">Última comprobación: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new">restan <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
     <string name="list_verifying_update">Comprobando actualización</string>
     <string name="list_no_updates">Non se atoparon novas actualizacións. Para buscar manualmente, preme no botón Actualizar.</string>
     <string name="action_download">Descarga</string>
@@ -81,8 +79,6 @@
     <string name="confirm_delete_dialog_title">Eliminar ficheiro</string>
     <string name="confirm_delete_dialog_message">Eliminar o ficheiro de actualización seleccionado?</string>
     <string name="apply_update_dialog_title">Aplicar a actualización</string>
-    <string name="apply_update_dialog_message">Procederase a actualizar <xliff:g id="update_name">%1$s</xliff:g>.\n\nAo premer en <xliff:g id="ok">%2$s</xliff:g>, reiniciarase no modo recuperación para instalar a actualización.\n\nAviso: Esta función require dunha recuperación compatible ou as actualizacións precisarán de se instalar manualmente.</string>
-    <string name="apply_update_dialog_message_ab">Actualizaráse a <xliff:g id="update_name">%1$s</xliff:g>.\n\n Se pulsase <xliff:g id="ok">%2$s</xliff:g>, o dispositivo comezará a instalar en segundo plano.\n\nUnha vez terminado o proceso, pediráselle que reinicie.</string>
     <string name="cancel_installation_dialog_message">Cancelar a instalación?</string>
     <string name="label_download_url">URL da descarga</string>
     <string name="toast_download_url_copied">URL copiado</string>

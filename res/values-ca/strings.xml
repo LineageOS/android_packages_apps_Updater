@@ -67,8 +67,8 @@
     <string name="header_last_updates_check">Darrera comprovació: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">S\'està verificant l\'actualització</string>
     <string name="list_no_updates">No s\'han trobat noves actualitzacions. Per comprovar manualment si hi ha noves actualitzacions, utilitzeu el botó Refresca.</string>
     <string name="action_download">Baixa</string>
@@ -81,8 +81,8 @@
     <string name="confirm_delete_dialog_title">Esborra el fitxer</string>
     <string name="confirm_delete_dialog_message">Vols esborrar el fitxer d\'actualització seleccionat?</string>
     <string name="apply_update_dialog_title">Aplica l\'actualització</string>
-    <string name="apply_update_dialog_message">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu es reiniciarà en mode recuperació per instal·lar l\'actualització.\n\nNota: Aquesta funció requereix un «Recovery» compatible o les actualitzacions s\'hauran d\'instal·lar manualment.</string>
-    <string name="apply_update_dialog_message_ab">Estàs a punt d\'actualitzar a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi prems <xliff:g id="ok">%2$s</xliff:g>, el dispositiu començarà a instal·lar en segon pla.\n\nUn cop completat, se\'t demanarà reiniciar.</string>
+    <string name="apply_update_dialog_message">Esteu a punt d\'instal·lar <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi premeu <xliff:g id="ok">%2$s</xliff:g>, el dispositiu es reiniciarà en el mode recuperació per a instal·lar l\'actualització.\n\nNota: Aquesta funció requereix un Recuperador compatible o les actualitzacions hauran de ser instal·lades manualment.</string>
+    <string name="apply_update_dialog_message_ab">Esteu a punt d\'instal·lar <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi premeu <xliff:g id="ok">%2$s</xliff:g>, el dispositiu començarà a instal·lar-ho en segon pla.\n\nUna vegada completat, se us demanarà que el reinicieu.</string>
     <string name="cancel_installation_dialog_message">Voleu cancel·lar la instal·lació?</string>
     <string name="label_download_url">URL de baixada</string>
     <string name="toast_download_url_copied">URL copiada</string>
@@ -90,6 +90,7 @@
     <string name="notification_export_success">Actualització exportada</string>
     <string name="notification_export_fail">Ha fallat l\'exportació</string>
     <string name="toast_already_exporting">Ja s\'està exportant una actualització</string>
+    <string name="toast_export_started">S\'ha iniciat l\'exportació</string>
     <plurals name="eta_seconds">
         <item quantity="one">Falta 1 segon</item>
         <item quantity="other">Falten <xliff:g id="count">%d</xliff:g> segons</item>
@@ -112,4 +113,7 @@
     <string name="new_updates_channel_title">Noves actualitzacions</string>
     <string name="ongoing_channel_title">Baixades en curs</string>
     <string name="update_failed_channel_title">Actualització fallida</string>
+    <string name="info_dialog_title">Ho sabies?</string>
+    <string name="info_dialog_message">Les actualitzacions de LineageOS són paquets d\'instal·lació complets. Açò significa que sempre pots instal·lar únicament l\'última actualització, encara que t\'hagis saltat alguna actualització per entremig.</string>
+    <string name="info_dialog_ok">Gràcies per la informació!</string>
 </resources>

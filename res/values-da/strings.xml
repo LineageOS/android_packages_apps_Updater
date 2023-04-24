@@ -15,8 +15,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="verification_failed_notification">Verifikation mislykkedes</string>
-    <string name="verifying_download_notification">Verificerer opdatering</string>
+    <string name="app_name">Opdatering</string>
+    <string name="display_name">Opdatering</string>
+    <string name="verification_failed_notification">Bekræftelse fejlede</string>
+    <string name="verifying_download_notification">Bekræfter opdatering</string>
     <string name="downloading_notification">Henter</string>
     <string name="download_paused_notification">Overførsel på pause</string>
     <string name="download_paused_error_notification">Overførselsfejl</string>
@@ -47,6 +49,7 @@
     <string name="menu_delete_update">Slet</string>
     <string name="menu_copy_url">Kopiér URL</string>
     <string name="menu_export_update">Eksportér opdatering</string>
+    <string name="menu_show_changelog">Vis ændringslog</string>
     <string name="menu_ab_perf_mode">Prioritér opdateringsproces</string>
     <string name="menu_update_recovery">Opdatér gendannelse</string>
     <string name="toast_forced_update_recovery">Det er umuligt at deaktivere Lineage Gendannelse opdateringer på denne enhed.</string>
@@ -59,11 +62,12 @@
     <string name="snack_update_not_installable">Denne opdatering kan ikke installeres ovenpå det nuværende build.</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Sidst tjekket: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="header_last_updates_check">Sidst kontrolleret: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> af <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
-    <string name="list_verifying_update">Verificerer opdatering</string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> af <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> af <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
+    <string name="list_verifying_update">Bekræfter opdatering</string>
     <string name="list_no_updates">Ingen nye opdateringer fundet. Brug Genopfrisk-knappen, for manuel kontrol af nye opdateringer.</string>
     <string name="action_download">Hent</string>
     <string name="action_pause">Pause</string>
@@ -75,8 +79,8 @@
     <string name="confirm_delete_dialog_title">Slet fil</string>
     <string name="confirm_delete_dialog_message">Slet den valgte opdateringsfil?</string>
     <string name="apply_update_dialog_title">Anvend opdatering</string>
-    <string name="apply_update_dialog_message">Du er ved at opgradere til <xliff:g id="update_name">%1$s</xliff:g>.\n\nHvis du trykker på <xliff:g id="ok">%2$s</xliff:g>, vil enheden genstarte sig selv i gendannelsestilstand, for at installere opdateringen.\n\nBemærk: Denne funktion kræver en kompatibel Gendannelse, ellers vil opdateringer skulle installeres manuelt.</string>
-    <string name="apply_update_dialog_message_ab">Du er ved at opgradere til <xliff:g id="update_name">%1$s </xliff:g>.\n\nHvis du trykker på <xliff:g id="ok">%2$s</xliff:g>, vil enheden begynde at installere i baggrunden.\n\nSå snart den er færdig, vil du blive bedt om at genstarte.</string>
+    <string name="apply_update_dialog_message">Du er ved at installere <xliff:g id="update_name">%1$s</xliff:g>. \n\n Hvis du trykker <xliff:g id="ok">%2$s</xliff:g>, enheden vil genstarte i gendannelsestilstand for at installere opdateringen.\n\nNoter: Denne funktion kræver en kompitabel gendannelse eller opdateing vil have brug for at blive installeret manuelt.</string>
+    <string name="apply_update_dialog_message_ab">Du er ved at installere <xliff:g id="update_name">%1$s</xliff:g>.\n\n Hvis du trykker <xliff:g id="ok">%2$s</xliff:g>, vil enheden begynde at installere i baggrunden.\n\n Når færdig, vil du blive spurgt om at genstarte.</string>
     <string name="cancel_installation_dialog_message">Afbryd installeringen?</string>
     <string name="label_download_url">Hent URL</string>
     <string name="toast_download_url_copied">URL kopieret</string>
@@ -84,6 +88,7 @@
     <string name="notification_export_success">Opdatering eksporteret</string>
     <string name="notification_export_fail">Eksportfejl</string>
     <string name="toast_already_exporting">Eksporterer allerede en opdatering</string>
+    <string name="toast_export_started">Eksportering startet</string>
     <string name="update_on_mobile_data_title">Advarsel</string>
     <string name="update_on_mobile_data_message">Du er ved at hente en opdateringspakke vha. mobildata, hvilket sandsynligvis vil forårsage højt dataforbrug. Ønsker du at fortsætte?</string>
     <string name="checkbox_mobile_data_warning">Vis ikke igen</string>
@@ -94,4 +99,7 @@
     <string name="new_updates_channel_title">Nye opdateringer</string>
     <string name="ongoing_channel_title">Igangværende Downloads</string>
     <string name="update_failed_channel_title">Opdatering fejlede</string>
+    <string name="info_dialog_title">Vidste du?</string>
+    <string name="info_dialog_message">LineageOS opdateringer er komplette installationspakker. Det betyder, at du altid kun kan installere den seneste opdatering, selv om du har sprunget nogle over!</string>
+    <string name="info_dialog_ok">Tak for info!</string>
 </resources>

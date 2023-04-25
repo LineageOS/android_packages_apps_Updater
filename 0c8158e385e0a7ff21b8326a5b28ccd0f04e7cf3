@@ -39,6 +39,30 @@
       },
       "revId": "0c8158e385e0a7ff21b8326a5b28ccd0f04e7cf3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d89bc772_628fc3a0",
+        "filename": "src/org/lineageos/updater/UpdateImporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 32630
+      },
+      "writtenOn": "2023-04-25T17:07:35Z",
+      "side": 1,
+      "message": "\u003e The secret behind typing the name properly is holding the key equal to the name while typing.",
+      "parentUuid": "c62f965c_1bd6755d",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 27
+      },
+      "revId": "0c8158e385e0a7ff21b8326a5b28ccd0f04e7cf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

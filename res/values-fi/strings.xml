@@ -108,4 +108,6 @@
     <string name="new_updates_channel_title">Uudet päivitykset</string>
     <string name="ongoing_channel_title">Käynnissä olevat lataukset</string>
     <string name="update_failed_channel_title">Päivitys epäonnistui</string>
+    <string name="info_dialog_title">Tiesitkö?</string>
+    <string name="info_dialog_message">LineageOS-päivitykset ovat täydellisiä asennuspaketteja, jonka ansiosta voit aina asentaa vain viimeisimmän päivityksen, vaikka ohittaisitkin välillä joitakin versioita!</string>
 </resources>

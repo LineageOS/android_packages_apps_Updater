@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -96,10 +96,8 @@
         <item quantity="many">ще <xliff:g id="count">%d</xliff:g> годин</item>
         <item quantity="other">ще <xliff:g id="count">%d</xliff:g> годин</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Попередження</string>
-    <string name="update_on_mobile_data_message">Ви збираєтесь завантажити пакет оновлень за допомогою мобільних даних, що ймовірно призведе до високого використання мобільного трафіку. Хочете продовжити?</string>
-    <string name="checkbox_mobile_data_warning">Не показувати знову</string>
-    <string name="menu_mobile_data_warning">Попередження про мобільні дані</string>
+    <string name="update_over_metered_network_title">Попередження</string>
+    <string name="checkbox_metered_network_warning">Не показувати знову</string>
     <string name="blocked_update_dialog_title">Оновлення заблоковане</string>
     <string name="blocked_update_dialog_message">Це оновлення не можна інсталювати за допомогою штатного оновлювача.  Будь ласка, прочитайте <xliff:g id="info_url">%1$s</xliff:g> для отримання додаткової інформації.</string>
     <string name="new_updates_channel_title">Нові оновлення</string>

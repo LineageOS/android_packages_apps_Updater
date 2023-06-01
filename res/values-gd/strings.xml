@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -104,10 +104,8 @@
         <item quantity="few"><xliff:g id="count">%d</xliff:g> uairean a thìde air fhàgail</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> uair a thìde air fhàgail</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Rabhadh</string>
-    <string name="update_on_mobile_data_message">Tha thu an impis pacaid ùrachaidh a luchdadh a-nuas le dàta mobile agus caithidh sin tòrr dàta gun teagamh. A bheil thu airson leantainn air adhart?</string>
-    <string name="checkbox_mobile_data_warning">Na seall seo a-rithist</string>
-    <string name="menu_mobile_data_warning">Rabhadh mu dhàta mobile</string>
+    <string name="update_over_metered_network_title">Rabhadh</string>
+    <string name="checkbox_metered_network_warning">Na seall seo a-rithist</string>
     <string name="blocked_update_dialog_title">Chaidh an t-ùrachadh a bhacadh</string>
     <string name="blocked_update_dialog_message">Cha ghabh an t-ùrachadh seo stàladh le aplacaid an ùraicheir. Leugh <xliff:g id="info_url">%1$s</xliff:g> airson barrachd fiosrachaidh.</string>
     <string name="export_channel_title">Coileanadh an às-phortaidh</string>

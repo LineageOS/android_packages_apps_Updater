@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -95,10 +95,8 @@
     <plurals name="eta_hours">
         <item quantity="other">還剩 <xliff:g id="count">%d</xliff:g> 小時</item>
     </plurals>
-    <string name="update_on_mobile_data_title">警告</string>
-    <string name="update_on_mobile_data_message">下載的更新檔案有可能會使用較高的行動數據，您要繼續嗎？</string>
-    <string name="checkbox_mobile_data_warning">不再顯示</string>
-    <string name="menu_mobile_data_warning">行動數據警告</string>
+    <string name="update_over_metered_network_title">警告</string>
+    <string name="checkbox_metered_network_warning">不再顯示</string>
     <string name="blocked_update_dialog_title">更新已被封鎖</string>
     <string name="blocked_update_dialog_message">無法使用更新應用程式安裝此更新。 有關詳細資訊，請閱讀 <xliff:g id="info_url">%1$s </xliff:g> 。</string>
     <string name="export_channel_title">匯出完成</string>

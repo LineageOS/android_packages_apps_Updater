@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -96,10 +96,8 @@
         <item quantity="many"><xliff:g id="count">%d</xliff:g> שעות נותרו</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> שעות נותרו</item>
     </plurals>
-    <string name="update_on_mobile_data_title">אזהרה</string>
-    <string name="update_on_mobile_data_message">אתה עומד להוריד חבילת עדכונים באמצעות האינטרנט הסלולרי שסביר להניח יגרום לבזבוז חלק גדול מחבילת הגלישה שלך. להמשיך?</string>
-    <string name="checkbox_mobile_data_warning">אל תציג שוב</string>
-    <string name="menu_mobile_data_warning">אזהרת אינטרנט סלולרי</string>
+    <string name="update_over_metered_network_title">אזהרה</string>
+    <string name="checkbox_metered_network_warning">אל תציג שוב</string>
     <string name="blocked_update_dialog_title">העדכון חסום</string>
     <string name="blocked_update_dialog_message">אין אפשרות להתקין עדכון זה באמצעות יישום המעדכן.  תוכל לקרוא בקישור <xliff:g id="info_url">%1$s</xliff:g> לקבלת מידע נוסף.</string>
     <string name="export_channel_title">השלמת הייצוא</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -106,10 +106,10 @@
         <item quantity="few"><xliff:g id="count">%d</xliff:g> (de) ore rămase</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> (de) ore rămase</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Avertizare</string>
-    <string name="update_on_mobile_data_message">Sunteți pe cale de a descărca un pachet de actualizare folosind datele mobile care, probabil, vor provoca o utilizare mare de date. Doriţi să continuaţi?</string>
-    <string name="checkbox_mobile_data_warning">Nu mai afişa</string>
-    <string name="menu_mobile_data_warning">Avertizare de date mobile</string>
+    <string name="update_over_metered_network_title">Avertizare</string>
+    <string name="update_over_metered_network_message">Sunteți pe cale să descărcați un pachet de actualizare printr-o rețea contorizată care va cauza probabil un consum ridicat de date. Doriți să continuați?</string>
+    <string name="checkbox_metered_network_warning">Nu mai afişa</string>
+    <string name="menu_metered_network_warning">Avertizare rețea contorizată</string>
     <string name="blocked_update_dialog_title">Actualizare blocată</string>
     <string name="blocked_update_dialog_message">Această actualizare nu poate fi instalată folosind aplicația actualizator.  Vă rugăm să citiţi <xliff:g id="info_url">%1$s</xliff:g> pentru mai multe informaţii.</string>
     <string name="export_channel_title">Completare export</string>

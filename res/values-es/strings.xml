@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -84,10 +84,8 @@
         <item quantity="one">Falta 1 minuto</item>
         <item quantity="other">Faltan <xliff:g id="count">%d</xliff:g> minutos</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Advertencia</string>
-    <string name="update_on_mobile_data_message">Se descargará un paquete de actualización usando los datos móviles, que probablemente ocasione un alto consumo de datos. ¿Quieres continuar?</string>
-    <string name="checkbox_mobile_data_warning">No mostrar de nuevo</string>
-    <string name="menu_mobile_data_warning">Advertencia de datos móviles</string>
+    <string name="update_over_metered_network_title">Advertencia</string>
+    <string name="checkbox_metered_network_warning">No mostrar de nuevo</string>
     <string name="blocked_update_dialog_title">Actualización bloqueada</string>
     <string name="blocked_update_dialog_message">Esta actualización no puede instalarse usando la aplicación «Actualizador».  Lea <xliff:g id="info_url">%1$s</xliff:g> para más información.</string>
     <string name="export_channel_title">Exportación finalizada</string>

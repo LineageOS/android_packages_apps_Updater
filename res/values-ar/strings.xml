@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -110,10 +110,8 @@
         <item quantity="many"><xliff:g id="count">%d</xliff:g> ساعات متبقية</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ساعات متبقية</item>
     </plurals>
-    <string name="update_on_mobile_data_title">تنبيه</string>
-    <string name="update_on_mobile_data_message">أنت على وشك أن تقوم بتنزيل حزمة تحديث باستخدام البيانات مما سيتسبب في استخدام عالي للبيانات. هل تريد المتابعة؟</string>
-    <string name="checkbox_mobile_data_warning">لا تظهر هذا مجدداً</string>
-    <string name="menu_mobile_data_warning">تحذير البيانات</string>
+    <string name="update_over_metered_network_title">تنبيه</string>
+    <string name="checkbox_metered_network_warning">لا تظهر هذا مجدداً</string>
     <string name="blocked_update_dialog_title">التحديث محظور</string>
     <string name="blocked_update_dialog_message">لا يمكن تثبيت التحديث باستخدام تطبيق المُحدث. برجاء قراءة <xliff:g id="info_url">%1$s </xliff:g> للحصول على مزيد من المعلومات.</string>
     <string name="export_channel_title">اكتمال التصدير</string>

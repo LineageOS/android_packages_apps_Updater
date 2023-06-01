@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -103,10 +103,10 @@
         <item quantity="one">1 saat qaldı</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> saat qaldı</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Xəbərdarlıq</string>
-    <string name="update_on_mobile_data_message">Böyük ehtimalla mobil internet istifadə edərək yüksək verilənlər istifadəsinə səbəb olacaq güncəlləmə paketi endirirsiniz. Davam etmək istəyirsiniz?</string>
-    <string name="checkbox_mobile_data_warning">Təkrar göstərmə</string>
-    <string name="menu_mobile_data_warning">Mobil internet xəbərdarlığı</string>
+    <string name="update_over_metered_network_title">Xəbərdarlıq</string>
+    <string name="update_over_metered_network_message">Ölçülən bir şəbəkə üzərindən böyük ehtimalla yüksək data istifadəsinə səbəb olacaq bir güncəlləmə paketi endirmək üzrəsiniz. Davam etmək istəyirsiniz?</string>
+    <string name="checkbox_metered_network_warning">Təkrar göstərmə</string>
+    <string name="menu_metered_network_warning">Ölçülən şəbəkə xəbərdarlığı</string>
     <string name="blocked_update_dialog_title">Güncəlləmə əngəlləndi</string>
     <string name="blocked_update_dialog_message">Bu güncəlləmə, tətbiq güncəlləyici istifadə edilərək quraşdırıla bilməz. Ətraflı məlumat üçün zəhmət olmasa <xliff:g id="info_url">%1$s</xliff:g> ünvanını oxuyun.</string>
     <string name="export_channel_title">Köçürmə tamamlandı</string>

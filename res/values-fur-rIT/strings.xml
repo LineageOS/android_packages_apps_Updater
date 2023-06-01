@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -103,10 +103,10 @@
         <item quantity="one">E mancje 1 ore</item>
         <item quantity="other">A mancjin <xliff:g id="count">%d</xliff:g> oris</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Atenzion</string>
-    <string name="update_on_mobile_data_message">Tu stâs par discjariâ un pachet di inzornament doprant i dâts mobii, chest al podarès puartâ a consumâ une vore di dâts pes conessions a consum. Procedi?</string>
-    <string name="checkbox_mobile_data_warning">No sta mostrâ plui</string>
-    <string name="menu_mobile_data_warning">Avîs utilizazion dâs mobii</string>
+    <string name="update_over_metered_network_title">Atenzion</string>
+    <string name="update_over_metered_network_message">Tu stâs par discjariâ un pachet di inzornament doprant une rêt a consum, chest al podarès puartâ a consumâ une vore di dâts. Procedi?</string>
+    <string name="checkbox_metered_network_warning">No sta mostrâ plui</string>
+    <string name="menu_metered_network_warning">Avîs di rêt a consum</string>
     <string name="blocked_update_dialog_title">Inzornament blocât</string>
     <string name="blocked_update_dialog_message">Nol è pussibil instalâ chest inzornament cu la aplicazion di inzornament.  Lei <xliff:g id="info_url">%1$s</xliff:g> par vê plui informazions.</string>
     <string name="export_channel_title">Completament de esportazion</string>

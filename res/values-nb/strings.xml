@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -74,10 +74,8 @@
     <string name="notification_export_success">Oppdatering eksportert</string>
     <string name="notification_export_fail">Eksporteringsfeil</string>
     <string name="toast_already_exporting">Eksporterer allerede en oppdatering</string>
-    <string name="update_on_mobile_data_title">Advarsel</string>
-    <string name="update_on_mobile_data_message">Du er i ferd med å laste ned en oppdateringspakke ved bruk av mobildata, noe som antagelig vil forårsake høy databruk. Ønsker du å fortsette?</string>
-    <string name="checkbox_mobile_data_warning">Ikke vis igjen</string>
-    <string name="menu_mobile_data_warning">Advarsel for mobildata</string>
+    <string name="update_over_metered_network_title">Advarsel</string>
+    <string name="checkbox_metered_network_warning">Ikke vis igjen</string>
     <string name="blocked_update_dialog_title">Oppdatering blokkert</string>
     <string name="blocked_update_dialog_message">Denne oppdateringen kan ikke installeres med oppdateringsappen. Les <xliff:g id="info_url">%1$s</xliff:g> for mer informasjon.</string>
     <string name="new_updates_channel_title">Nye oppdateringer</string>

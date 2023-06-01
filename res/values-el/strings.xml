@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -103,10 +103,10 @@
         <item quantity="one">απομένει 1 ώρα</item>
         <item quantity="other">απομένουν <xliff:g id="count">%d</xliff:g> ώρες</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Προσοχή</string>
-    <string name="update_on_mobile_data_message">Είστε έτοιμοι να κατεβάσετε ένα πακέτο ενημέρωσης χρησιμοποιώντας δεδομένα κινητής τηλεφωνίας το οποίο είναι πιθανό να προκαλέσει υψηλή χρήση δεδομένων. Θα θέλατε να συνεχίσετε;</string>
-    <string name="checkbox_mobile_data_warning">Να μην εμφανιστεί ξανά</string>
-    <string name="menu_mobile_data_warning">Προειδοποίηση δεδομένων κινητής τηλ.</string>
+    <string name="update_over_metered_network_title">Προσοχή</string>
+    <string name="update_over_metered_network_message">Είστε έτοιμοι να κατεβάσετε ένα πακέτο ενημέρωσης χρησιμοποιώντας ένα δίκτυο με ογκοχρέωση δεδομένων το οποίο είναι πιθανό να προκαλέσει υψηλή χρήση δεδομένων. Θα θέλατε να συνεχίσετε;</string>
+    <string name="checkbox_metered_network_warning">Να μην εμφανιστεί ξανά</string>
+    <string name="menu_metered_network_warning">Προειδοποίηση ογκοχρέωσης δικτύου</string>
     <string name="blocked_update_dialog_title">Η ενημέρωση μπλοκαρίστηκε</string>
     <string name="blocked_update_dialog_message">Αυτή η ενημέρωση δεν μπορεί να εγκατασταθεί χρησιμοποιώντας την εφαρμογή ενημέρωσης.  Παρακαλούμε διαβάστε το <xliff:g id="info_url">%1$s </xliff:g> για περισσότερες πληροφορίες.</string>
     <string name="export_channel_title">Ολοκλήρωση εξαγωγής</string>

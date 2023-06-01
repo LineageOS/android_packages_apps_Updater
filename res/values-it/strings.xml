@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@
     <string name="installing_update">Installazione del pacchetto aggiornamento</string>
     <string name="installing_update_error">Errore d\'installazione</string>
     <string name="installing_update_finished">Aggiornamento installato</string>
-    <string name="finalizing_package">Finalizzalizzazione del pachetto d\'installazione in corso</string>
+    <string name="finalizing_package">Finalizzazione dell\'installazione del pacchetto</string>
     <string name="preparing_ota_first_boot">Preparazione per il primo avvio</string>
-    <string name="dialog_prepare_zip_message">Preparazione aggiornamento preliminare</string>
+    <string name="dialog_prepare_zip_message">Preparazione preliminare dell\'aggiornamento</string>
     <string name="dialog_battery_low_title">Batteria scarica</string>
     <string name="dialog_battery_low_message_pct">Il livello della batteria è troppo basso, è necessario almeno il <xliff:g id="percent_discharging">%1$d</xliff:g>%% di batteria per continuare, oppure il <xliff:g id="percent_charging">%2$d</xliff:g>%% se il dispositivo è in carica.</string>
     <string name="reboot">Riavvia</string>
@@ -103,10 +103,10 @@
         <item quantity="one">1 ora rimanente</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ore rimanenti</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Attenzione</string>
-    <string name="update_on_mobile_data_message">Stai per scaricare un aggiornamento utilizzando i dati mobili, ciò potrebbe comportare un utilizzo elevato di dati. Vuoi procedere?</string>
-    <string name="checkbox_mobile_data_warning">Non mostrare di nuovo</string>
-    <string name="menu_mobile_data_warning">Avviso utilizzo dati mobili</string>
+    <string name="update_over_metered_network_title">Attenzione</string>
+    <string name="update_over_metered_network_message">Stai per scaricare un aggiornamento tramite una rete a consumo, ciò probabilmente comporterà un elevato traffico di dati. Vuoi procedere?</string>
+    <string name="checkbox_metered_network_warning">Non mostrare di nuovo</string>
+    <string name="menu_metered_network_warning">Avviso di rete a consumo</string>
     <string name="blocked_update_dialog_title">Aggiornamento bloccato</string>
     <string name="blocked_update_dialog_message">Questo aggiornamento non può essere installato usando l\'app updater.  Si prega di leggere <xliff:g id="info_url">%1$s</xliff:g> per ulteriori informazioni.</string>
     <string name="export_channel_title">Completamento esportazione</string>

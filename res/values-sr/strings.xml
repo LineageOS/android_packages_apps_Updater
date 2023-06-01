@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -93,10 +93,8 @@
         <item quantity="few">преостало <xliff:g id="count">%d</xliff:g> сата</item>
         <item quantity="other">преостало <xliff:g id="count">%d</xliff:g> сати</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Упозорење</string>
-    <string name="update_on_mobile_data_message">Преузећете пакет ажурирања користећи мобилну интернет везу што ће вероватно прузроковати високу употребу мобилног интернета. Желите ли да наставите?</string>
-    <string name="checkbox_mobile_data_warning">Не приказуј поново</string>
-    <string name="menu_mobile_data_warning">Упозорење мобилних података</string>
+    <string name="update_over_metered_network_title">Упозорење</string>
+    <string name="checkbox_metered_network_warning">Не приказуј поново</string>
     <string name="blocked_update_dialog_title">Ажурирање је блокирано</string>
     <string name="blocked_update_dialog_message">Ово ажурирање се не може инсталирати апликацијом Ажурирање. Прочитај <xliff:g id="info_url">%1$s</xliff:g> за више информација.</string>
     <string name="export_channel_title">Извоз завршен</string>

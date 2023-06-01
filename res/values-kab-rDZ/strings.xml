@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -76,9 +76,8 @@
     <string name="dialog_export_title">Asifeḍ n lqem</string>
     <string name="notification_export_success">Lqem ittwasifeḍ</string>
     <string name="notification_export_fail">Tuccḍa g usifeḍ</string>
-    <string name="update_on_mobile_data_title">Ɣur-k</string>
-    <string name="checkbox_mobile_data_warning">Ur tuɣaleḍ ara ad itsekneḍ</string>
-    <string name="menu_mobile_data_warning">Alɣu n isefka izirazen</string>
+    <string name="update_over_metered_network_title">Ɣur-k</string>
+    <string name="checkbox_metered_network_warning">Ur tuɣaleḍ ara ad itsekneḍ</string>
     <string name="blocked_update_dialog_title">Lqem iwḥel</string>
     <string name="blocked_update_dialog_message">A leqqem agi ur izmir ara ad-ibded s usnas n usefrak n-lqem. Ttxil-ek ɣer <xliff:g id="info_url">%1$s</xliff:g> i ugar talɣut.</string>
     <string name="new_updates_channel_title">Ileqman imaynuten</string>

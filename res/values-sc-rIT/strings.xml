@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@
     <string name="action_info">Informatziones</string>
     <string name="action_delete">Iscantzella</string>
     <string name="action_cancel">Annulla</string>
-    <string name="update_on_mobile_data_title">Atentzione</string>
+    <string name="update_over_metered_network_title">Atentzione</string>
     <string name="new_updates_channel_title">Agiornamentos noos</string>
     <string name="update_failed_channel_title">Agiornamentu fallidu</string>
 </resources>

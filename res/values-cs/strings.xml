@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -109,10 +109,8 @@
         <item quantity="many">Zbývá <xliff:g id="count">%d</xliff:g> hodin</item>
         <item quantity="other">Zbývá <xliff:g id="count">%d</xliff:g> hodin</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Varování</string>
-    <string name="update_on_mobile_data_message">Chystáte se stáhnout aktualizaci pomocí mobilních dat, což pravděpodobně zapříčiní vysoké využití dat. Přejete si pokračovat?</string>
-    <string name="checkbox_mobile_data_warning">Znovu nezobrazovat</string>
-    <string name="menu_mobile_data_warning">Upozornění mobilních dat</string>
+    <string name="update_over_metered_network_title">Varování</string>
+    <string name="checkbox_metered_network_warning">Znovu nezobrazovat</string>
     <string name="blocked_update_dialog_title">Aktualizace zablokována</string>
     <string name="blocked_update_dialog_message">Tuto aktualizaci nelze nainstalovat pomocí aplikace aktualizace.  Přečtěte si <xliff:g id="info_url">%1$s </xliff:g> pro další informace.</string>
     <string name="export_channel_title">Dokončení exportu</string>

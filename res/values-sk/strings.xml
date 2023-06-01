@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -104,10 +104,8 @@
         <item quantity="many">Zostáva <xliff:g id="count">%d</xliff:g> hodín</item>
         <item quantity="other">Zostáva <xliff:g id="count">%d</xliff:g> hodín</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Upozornenie</string>
-    <string name="update_on_mobile_data_message">Chystáte sa stiahnuť aktualizáciu pomocou mobilných dát, čo pravdepodobne zapríčiní veľký prenos mobilných dát. Prajete si pokračovať?</string>
-    <string name="checkbox_mobile_data_warning">Nabudúce nezobrazovať</string>
-    <string name="menu_mobile_data_warning">Upozornenie mobilných dát</string>
+    <string name="update_over_metered_network_title">Upozornenie</string>
+    <string name="checkbox_metered_network_warning">Nabudúce nezobrazovať</string>
     <string name="blocked_update_dialog_title">Aktualizácia bola zablokovaná</string>
     <string name="blocked_update_dialog_message">Táto aktualizácia sa nedá nainštalovať pomocou aplikácie aktualizátora.  Prečítajte si <xliff:g id="info_url">%1$s </xliff:g> pre viac informácií.</string>
     <string name="export_channel_title">Dokončenie exportu</string>

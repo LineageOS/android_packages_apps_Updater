@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -69,10 +69,8 @@
     <string name="notification_export_success">Ažuriranje je izvezeno</string>
     <string name="notification_export_fail">Pogreška izvoza</string>
     <string name="toast_already_exporting">Ažuriranje se već izvozi</string>
-    <string name="update_on_mobile_data_title">Upozorenje</string>
-    <string name="update_on_mobile_data_message">Upravo ćete preuzeti paket ažuriranja pomoću mobilnih podataka koji će vjerojatno uzrokovati visoku upotrebu podataka. Želite li nastaviti?</string>
-    <string name="checkbox_mobile_data_warning">Ne prikazuj ponovno</string>
-    <string name="menu_mobile_data_warning">Upozorenje o mobilnim podacima</string>
+    <string name="update_over_metered_network_title">Upozorenje</string>
+    <string name="checkbox_metered_network_warning">Ne prikazuj ponovno</string>
     <string name="blocked_update_dialog_title">Ažuriranje je blokirano</string>
     <string name="blocked_update_dialog_message">Ovo se ažuriranje ne može instalirati pomoću aplikacije za ažuriranje.  Molimo pročitajte <xliff:g id="info_url">%1$s</xliff:g> za više informacija.</string>
     <string name="export_channel_title">Kraj izvoza</string>

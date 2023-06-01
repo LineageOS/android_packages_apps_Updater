@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -103,10 +103,10 @@
         <item quantity="one">დარჩენილია 1 საათი</item>
         <item quantity="other">დარჩენილია <xliff:g id="count">%d</xliff:g> საათი</item>
     </plurals>
-    <string name="update_on_mobile_data_title">გაფრთხილება</string>
-    <string name="update_on_mobile_data_message">აპირებთ ჩამოტვირთოთ განახლება მობილური ინტერნეტით, რასაც შეიძლება მოჰყვეს დიდი ხარჯი. ნამდვილად გსურთ, განაგრძოთ?</string>
-    <string name="checkbox_mobile_data_warning">მომავალში ჩვენების გარეშე</string>
-    <string name="menu_mobile_data_warning">მობილური ინტერნეტის გაფრთხილება</string>
+    <string name="update_over_metered_network_title">გაფრთხილება</string>
+    <string name="update_over_metered_network_message">აპირებთ ჩამოტვირთოთ განახლების კრებული შეზღუდული ინტერნეტით, რასაც შეიძლება მოჰყვეს დიდი ხარჯი. ნამდვილად გსურთ, განაგრძოთ?</string>
+    <string name="checkbox_metered_network_warning">მომავალში ჩვენების გარეშე</string>
+    <string name="menu_metered_network_warning">შეზღუდული ქსელის გაფრთხილება</string>
     <string name="blocked_update_dialog_title">განახლება შეიზღუდა</string>
     <string name="blocked_update_dialog_message">განახლების დაყენება ვერ ხერხდება გამნახლებელი აპით.  ვრცლად, გთხოვთ, იხილოთ <xliff:g id="info_url">%1$s</xliff:g>.</string>
     <string name="export_channel_title">გადატანა დასრულებულია</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -109,10 +109,8 @@
         <item quantity="many">осталось <xliff:g id="count">%d</xliff:g> часов</item>
         <item quantity="other">осталось <xliff:g id="count">%d</xliff:g> часов</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Предупреждение</string>
-    <string name="update_on_mobile_data_message">Скачивание обновления по мобильной сети расходует большой объем трафика и может привести к непредвиденным расходам. Продолжить?</string>
-    <string name="checkbox_mobile_data_warning">Не показывать это сообщение</string>
-    <string name="menu_mobile_data_warning">Предупрежд. о моб. данных</string>
+    <string name="update_over_metered_network_title">Предупреждение</string>
+    <string name="checkbox_metered_network_warning">Не показывать это сообщение</string>
     <string name="blocked_update_dialog_title">Обновление заблокировано</string>
     <string name="blocked_update_dialog_message">Эту сборку нельзя установить с помощью встроенной системы обновления. Для получения дополнительной информации ознакомьтесь с <xliff:g id="info_url">%1$s</xliff:g>.</string>
     <string name="export_channel_title">Экспорт завершен</string>

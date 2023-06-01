@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -103,10 +103,10 @@
         <item quantity="one">1 orë e mbetur</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> orë të mbetura</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Paralajmërim</string>
-    <string name="update_on_mobile_data_message">Jo po shkarkoni një paketë përditësimi duke përodur internetin e kartës, e cila do konsumojë shumë internet. Dëshironi të vazhdoni?</string>
-    <string name="checkbox_mobile_data_warning">Mos e shfaq përsëri</string>
-    <string name="menu_mobile_data_warning">Paralajmërim për përdorim nga rrjeti telefonik</string>
+    <string name="update_over_metered_network_title">Paralajmërim</string>
+    <string name="update_over_metered_network_message">Jeni gati të shkarkoni një paketë përditësimi përmes një rrjeti të matur, i cili ka të ngjarë të shkaktojë përdorim të lartë të të dhënave. Dëshironi të vazhdoni?</string>
+    <string name="checkbox_metered_network_warning">Mos e shfaq përsëri</string>
+    <string name="menu_metered_network_warning">Paralajmërim i rrjetit me matës</string>
     <string name="blocked_update_dialog_title">Përditësimi është bllokuar</string>
     <string name="blocked_update_dialog_message">Ky përditësim nuk mund të instalohet me app e përditësuesit. Për më shumë informacion ju lutem lexoni <xliff:g id="info_url">%1$s</xliff:g>.</string>
     <string name="export_channel_title">Eksporto përfundimin</string>

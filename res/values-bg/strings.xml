@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -98,10 +98,8 @@
         <item quantity="one">остава 1 час</item>
         <item quantity="other">остават <xliff:g id="count">%d</xliff:g> часа</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Внимание</string>
-    <string name="update_on_mobile_data_message">На път сте да изтеглите пакет за актуализиране, използвайки мобилни данни, което вероятно ще доведе до високо използване на данните. Искате ли да продължите?</string>
-    <string name="checkbox_mobile_data_warning">Не показвай отново</string>
-    <string name="menu_mobile_data_warning">Предупреждение за мобилни данни</string>
+    <string name="update_over_metered_network_title">Внимание</string>
+    <string name="checkbox_metered_network_warning">Не показвай отново</string>
     <string name="blocked_update_dialog_title">Актуализацията е блокирана</string>
     <string name="blocked_update_dialog_message">Тази актуализация не може да бъде инсталирана посредством приложението за актуализации. Моля прочетете <xliff:g id="info_url">%1$s</xliff:g> за повече информация.</string>
     <string name="export_channel_title">Експортирането приключи</string>

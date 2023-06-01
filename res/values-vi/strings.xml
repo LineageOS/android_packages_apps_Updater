@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -100,10 +100,8 @@
     <plurals name="eta_hours">
         <item quantity="other">Còn lại <xliff:g id="count">%d</xliff:g> giờ</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Cảnh báo</string>
-    <string name="update_on_mobile_data_message">Bạn sắp tải xuống một gói cập nhật sử dụng dữ liệu di động có khả năng gây ra việc sử dụng dữ liệu cao. Bạn có muốn tiến hành không?</string>
-    <string name="checkbox_mobile_data_warning">Không hiện lại</string>
-    <string name="menu_mobile_data_warning">Cảnh báo dữ liệu di động</string>
+    <string name="update_over_metered_network_title">Cảnh báo</string>
+    <string name="checkbox_metered_network_warning">Không hiện lại</string>
     <string name="blocked_update_dialog_title">Cập nhật bị chặn</string>
     <string name="blocked_update_dialog_message">Bản cập nhật này không thể được cài đặt bằng ứng dụng trình cập nhật. Vui lòng đọc <xliff:g id="info_url">%1$s</xliff:g> để biết thêm thông tin.</string>
     <string name="export_channel_title">Hoàn thành xuất</string>

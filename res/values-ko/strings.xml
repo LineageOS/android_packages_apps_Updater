@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -100,10 +100,8 @@
     <plurals name="eta_hours">
         <item quantity="other"><xliff:g id="count">%d</xliff:g>시간 남음</item>
     </plurals>
-    <string name="update_on_mobile_data_title">경고</string>
-    <string name="update_on_mobile_data_message">모바일 데이터를 사용하여 업데이트 패키지를 다운로드하려 합니다. 데이터를 매우 많이 사용하게 될 수 있습니다. 정말 계속하시겠습니까?</string>
-    <string name="checkbox_mobile_data_warning">다시 보지 않기</string>
-    <string name="menu_mobile_data_warning">모바일 데이터 경고</string>
+    <string name="update_over_metered_network_title">경고</string>
+    <string name="checkbox_metered_network_warning">다시 보지 않기</string>
     <string name="blocked_update_dialog_title">업데이트 차단됨</string>
     <string name="blocked_update_dialog_message">이 업데이트는 업데이터 앱으로 설치할 수 없습니다. 자세한 정보는 <xliff:g id="info_url">%1$s</xliff:g> 페이지를 참고하세요.</string>
     <string name="export_channel_title">내보내기 완료</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -103,10 +103,10 @@
         <item quantity="one">Falta 1 hora</item>
         <item quantity="other">Falten <xliff:g id="count">%d</xliff:g> hores</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Advertència</string>
-    <string name="update_on_mobile_data_message">Estàs a punt de baixar un paquet d\'actualització amb dades mòbils que probablement generarà un alt ús de dades. Voleu continuar?</string>
-    <string name="checkbox_mobile_data_warning">No ho tornis a mostrar</string>
-    <string name="menu_mobile_data_warning">Avís d\'ús de dades</string>
+    <string name="update_over_metered_network_title">Advertència</string>
+    <string name="update_over_metered_network_message">Esteu a punt de baixar un paquet d\'actualització a través d\'una xarxa mesurada que és probable que provoqui un ús elevat de dades. Voleu continuar?</string>
+    <string name="checkbox_metered_network_warning">No ho tornis a mostrar</string>
+    <string name="menu_metered_network_warning">Avís de xarxa mesurada</string>
     <string name="blocked_update_dialog_title">Actualització bloquejada</string>
     <string name="blocked_update_dialog_message">Aquesta actualització no es pot instal·lar mitjançant l\'aplicació actualitzador. Per obtenir més informació, llegiu <xliff:g id="info_url">%1$s</xliff:g>.</string>
     <string name="export_channel_title">Exportació completada</string>

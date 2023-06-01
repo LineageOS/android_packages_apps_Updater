@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> van <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> van <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Update verifiëren</string>
     <string name="list_no_updates">Geen nieuwe updates gevonden. Gebruik de knop Vernieuwen om handmatig te controleren op nieuwe updates.</string>
     <string name="action_download">Downloaden</string>
@@ -103,10 +103,10 @@
         <item quantity="one">1 uur resterend</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> uur resterend</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Let op</string>
-    <string name="update_on_mobile_data_message">U staat op het punt een update te downloaden via mobiele gegevens, wat tot een hoog gegevensgebruik kan leiden. Wilt u verder gaan?</string>
-    <string name="checkbox_mobile_data_warning">Niet opnieuw tonen</string>
-    <string name="menu_mobile_data_warning">Waarschuwing mobiele gegevens</string>
+    <string name="update_over_metered_network_title">Let op</string>
+    <string name="update_over_metered_network_message">U staat op het punt om een updatepakket te downloaden via een netwerk met datalimiet, wat waarschijnlijk een hoog gegevensgebruik zal veroorzaken. Wilt u doorgaan?</string>
+    <string name="checkbox_metered_network_warning">Niet opnieuw tonen</string>
+    <string name="menu_metered_network_warning">Waarschuwing gemeten netwerk</string>
     <string name="blocked_update_dialog_title">Update geblokkeerd</string>
     <string name="blocked_update_dialog_message">Deze update kan niet worden geïnstalleerd met behulp van de updater-app. Lees <xliff:g id="info_url">%1$s</xliff:g> voor meer informatie.</string>
     <string name="export_channel_title">Exporteren voltooid</string>

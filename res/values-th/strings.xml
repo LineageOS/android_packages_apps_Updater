@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -89,10 +89,8 @@
     <plurals name="eta_hours">
         <item quantity="other">เหลือ <xliff:g id="count">%d</xliff:g> ชั่วโมง</item>
     </plurals>
-    <string name="update_on_mobile_data_title">คำเตือน</string>
-    <string name="update_on_mobile_data_message">คุณกำลังจะดาวน์โหลดแพ็คเกจการอัปเดตโดยใช้ข้อมูลมือถือซึ่งมีโอกาสที่จะทำให้เกิดการใช้ข้อมูลสูง คุณต้องการดำเนินการต่อหรือไม่</string>
-    <string name="checkbox_mobile_data_warning">ไม่ต้องแสดงอีก</string>
-    <string name="menu_mobile_data_warning">คำเตือนการใช้งานข้อมูลมือถือ</string>
+    <string name="update_over_metered_network_title">คำเตือน</string>
+    <string name="checkbox_metered_network_warning">ไม่ต้องแสดงอีก</string>
     <string name="blocked_update_dialog_title">การอัปเดตถูกปิดกั้น</string>
     <string name="blocked_update_dialog_message">ไม่สามารถติดตั้งอัปเดตนี้ด้วยแอปอัปเดต  กรุณาอ่านที่ <xliff:g id="info_url">%1$s</xliff:g> สำหรับข้อมูลเพิ่มเติม</string>
     <string name="export_channel_title">ส่งออกเสร็จสมบูรณ์</string>

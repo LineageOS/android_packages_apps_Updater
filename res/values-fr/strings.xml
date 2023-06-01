@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -103,10 +103,10 @@
         <item quantity="one">temps restant : 1 heure</item>
         <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> heures</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Avertissement</string>
-    <string name="update_on_mobile_data_message">Vous êtes sur le point de télécharger un paquet de mise à jour via les données mobiles qui pourrait représenter un volume de données important. Voulez-vous tout de même procéder au téléchargement ?</string>
-    <string name="checkbox_mobile_data_warning">Ne plus afficher</string>
-    <string name="menu_mobile_data_warning">Avertissement d\'usage des données mobiles</string>
+    <string name="update_over_metered_network_title">Avertissement</string>
+    <string name="update_over_metered_network_message">Vous êtes sur le point de télécharger une mise à jour via les données mobiles qui pourrait représenter un volume de données important. Voulez-vous continuer ?</string>
+    <string name="checkbox_metered_network_warning">Ne plus afficher</string>
+    <string name="menu_metered_network_warning">Avertissement de réseau forfaitaire</string>
     <string name="blocked_update_dialog_title">Mise à jour bloquée</string>
     <string name="blocked_update_dialog_message">Cette mise à jour ne peut pas être installée en utilisant le gestionnaire de mise à jour.  Veuillez lire <xliff:g id="info_url">%1$s</xliff:g> pour plus d’information.</string>
     <string name="export_channel_title">Fin de l\'exportation</string>

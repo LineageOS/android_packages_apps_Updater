@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -53,6 +53,8 @@
     <string name="menu_export_update">Wyślij aktualizację</string>
     <string name="menu_show_changelog">Pokaż listę zmian</string>
     <string name="menu_ab_perf_mode">Nadaj wyższy priorytet procesowi aktualizacji</string>
+    <string name="menu_update_recovery">Aktualizuj Recovery</string>
+    <string name="toast_forced_update_recovery">Nie można wyłączyć aktualizacji Lineage Recovery na tym urządzeniu.</string>
     <string name="snack_updates_found">Znaleziono nowe aktualizacje</string>
     <string name="snack_no_updates_found">Nie znaleziono nowych aktualizacji</string>
     <string name="snack_updates_check_failed">Sprawdzanie aktualizacji nie powiodło się. Sprawdź połączenie z Internetem i spróbuj ponownie.</string>
@@ -65,6 +67,8 @@
     <string name="header_last_updates_check">Ostatnio sprawdzane: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Sprawdzanie aktualizacji</string>
     <string name="list_no_updates">Nie znaleziono nowych aktualizacji. Aby ręcznie sprawdzić dostępność nowych aktualizacji, użyj przycisku Odśwież.</string>
     <string name="action_download">Pobierz</string>
@@ -77,6 +81,8 @@
     <string name="confirm_delete_dialog_title">Usuń plik</string>
     <string name="confirm_delete_dialog_message">Usunąć wybrany plik aktualizacji?</string>
     <string name="apply_update_dialog_title">Zastosuj aktualizację</string>
+    <string name="apply_update_dialog_message">Zamierzasz zainstalować <xliff:g id="update_name">%1$s</xliff:g>.\n\nJeśli naciśniesz <xliff:g id="ok">%2$s</xliff:g>, urządzenie uruchomi się ponownie w trybie Recovery, aby zainstalować aktualizację.\n\nUwaga: Ta funkcja wymaga kompatybilnego Recovery lub aktualizacje będą musiały być zainstalowane ręcznie.</string>
+    <string name="apply_update_dialog_message_ab">Zamierzasz zainstalować <xliff:g id="update_name">%1$s</xliff:g>.\n\nJeśli naciśniesz <xliff:g id="ok">%2$s</xliff:g>, urządzenie rozpocznie instalację w tle.\n\nPo zakończeniu, zostanie wyświetlony komunikat, aby uruchomić urządzenie ponownie.</string>
     <string name="cancel_installation_dialog_message">Anulować instalację?</string>
     <string name="label_download_url">Pobierz adres URL</string>
     <string name="toast_download_url_copied">Skopiowano adres URL</string>
@@ -84,6 +90,7 @@
     <string name="notification_export_success">Aktualizacja wysłana</string>
     <string name="notification_export_fail">Błąd wysyłania</string>
     <string name="toast_already_exporting">Aktualizacja jest już wysyłana</string>
+    <string name="toast_export_started">Rozpoczęto eksportowanie</string>
     <plurals name="eta_seconds">
         <item quantity="one">Pozostała 1 sekunda</item>
         <item quantity="few">Pozostały <xliff:g id="count">%d</xliff:g> sekundy</item>
@@ -102,14 +109,17 @@
         <item quantity="many">Pozostało <xliff:g id="count">%d</xliff:g> godzin</item>
         <item quantity="other">Pozostało <xliff:g id="count">%d</xliff:g> godzin</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Ostrzeżenie</string>
-    <string name="update_on_mobile_data_message">Zamierzasz pobrać pakiet aktualizacji przy użyciu sieci komórkowej co spowoduje duże zużycie transferu danych. Czy chcesz kontynuować?</string>
-    <string name="checkbox_mobile_data_warning">Nie pokazuj ponownie</string>
-    <string name="menu_mobile_data_warning">Ostrzeżenie o danych komórkowych</string>
+    <string name="update_over_metered_network_title">Ostrzeżenie</string>
+    <string name="update_over_metered_network_message">Zamierzasz pobrać pakiet aktualizacji za pomocą sieci komórkowej, co prawdopodobnie spowoduje wysokie zużycie danych. Czy chcesz kontynuować?</string>
+    <string name="checkbox_metered_network_warning">Nie pokazuj ponownie</string>
+    <string name="menu_metered_network_warning">Ostrzeżenie o sieci z pomiarem</string>
     <string name="blocked_update_dialog_title">Aktualizacja zablokowana</string>
     <string name="blocked_update_dialog_message">Tej aktualizacji nie można zainstalować przy użyciu aplikacji aktualizacji.  Zapoznaj się z <xliff:g id="info_url">%1$s </xliff:g> aby uzyskać więcej informacji.</string>
     <string name="export_channel_title">Eksport zakończony</string>
     <string name="new_updates_channel_title">Nowe aktualizacje</string>
     <string name="ongoing_channel_title">Trwające pobieranie</string>
     <string name="update_failed_channel_title">Aktualizacja nie powiodła się</string>
+    <string name="info_dialog_title">Czy wiesz, że?</string>
+    <string name="info_dialog_message">Aktualizacje LineageOS to pełne pakiety instalacyjne. Oznacza to, że zawsze możesz zainstalować tylko najnowszą aktualizację, nawet jeśli poprzednie zostały pominięte!</string>
+    <string name="info_dialog_ok">Dziękujemy za informację!</string>
 </resources>

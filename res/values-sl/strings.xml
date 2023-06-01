@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -109,10 +109,10 @@
         <item quantity="few"><xliff:g id="count">%d</xliff:g> ure preostale</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ur preostalo</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Opozorilo</string>
-    <string name="update_on_mobile_data_message">Ste pred prenosom posodobitvenega paketa z uporabo mobilnih podatkov, kar bo verjetno povzročilo visoko porabo podatkov. Ali želite nadaljevati?</string>
-    <string name="checkbox_mobile_data_warning">Ne prikaži ponovno</string>
-    <string name="menu_mobile_data_warning">Opozorilo mobilnih podatkov</string>
+    <string name="update_over_metered_network_title">Opozorilo</string>
+    <string name="update_over_metered_network_message">Ste pred prenosom posodobitvenega paketa prek merjenega omrežja, kar bo verjetno povzročilo visoko porabo podatkov. Ali želite nadaljevati?</string>
+    <string name="checkbox_metered_network_warning">Ne prikaži ponovno</string>
+    <string name="menu_metered_network_warning">Opozorilo merjenega omrežja</string>
     <string name="blocked_update_dialog_title">Posodobitev blokirana</string>
     <string name="blocked_update_dialog_message">Te posodobitve ni mogoče namestiti z uporabo aplikacije za posodabljanje. Za več informacij preberite <xliff:g id="info_url">%1$s</xliff:g>.</string>
     <string name="export_channel_title">Zaključek izvoza</string>

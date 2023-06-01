@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -103,10 +103,8 @@
         <item quantity="one">noch 1 Stunde</item>
         <item quantity="other">noch <xliff:g id="count">%d</xliff:g> Stunden</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Achtung</string>
-    <string name="update_on_mobile_data_message">Du bist dabei ein Software-Update über das Mobilfunknetz herunterzuladen, was zu einem hohen Datenverbrauch führen kann. Möchtest du fortfahren?</string>
-    <string name="checkbox_mobile_data_warning">Nicht wieder anzeigen</string>
-    <string name="menu_mobile_data_warning">Mobildaten-Warnung</string>
+    <string name="update_over_metered_network_title">Achtung</string>
+    <string name="checkbox_metered_network_warning">Nicht wieder anzeigen</string>
     <string name="blocked_update_dialog_title">Update blockiert</string>
     <string name="blocked_update_dialog_message">Dieses Update kann mit der Updater-App nicht installiert werden. Für weitere Informationen lies bitte <xliff:g id="info_url">%1$s </xliff:g>.</string>
     <string name="export_channel_title">Export abgeschlossen</string>

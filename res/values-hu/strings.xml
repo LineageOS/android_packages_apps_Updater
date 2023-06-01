@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -104,10 +104,8 @@ illetve, ha éppen tölt, akkor még <xliff:g id="percent_charging">%2$d</xliff:
         <item quantity="one">1 óra van hátra</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> óra van hátra</item>
     </plurals>
-    <string name="update_on_mobile_data_title">Figyelmeztetés</string>
-    <string name="update_on_mobile_data_message">A frissítés mobiladat-forgalom használatával fog letöltődni, ami magas mobiladat-használatot eredményezhet. Szeretné folytatni?</string>
-    <string name="checkbox_mobile_data_warning">Ne jelenjen meg többet</string>
-    <string name="menu_mobile_data_warning">Mobiladat-használati figyelmeztetés</string>
+    <string name="update_over_metered_network_title">Figyelmeztetés</string>
+    <string name="checkbox_metered_network_warning">Ne jelenjen meg többet</string>
     <string name="blocked_update_dialog_title">A frissítés blokkolva</string>
     <string name="blocked_update_dialog_message">Ez a frissítés nem telepíthető a Frissítés alkalmazással. További információért olvassa el a következőt: <xliff:g id="info_url">%1$s</xliff:g></string>
     <string name="export_channel_title">Exportálás-véglegesítés</string>

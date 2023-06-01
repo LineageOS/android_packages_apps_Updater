@@ -68,7 +68,7 @@
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> van <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> van <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Update verifiëren</string>
     <string name="list_no_updates">Geen nieuwe updates gevonden. Gebruik de knop Vernieuwen om handmatig te controleren op nieuwe updates.</string>
     <string name="action_download">Downloaden</string>

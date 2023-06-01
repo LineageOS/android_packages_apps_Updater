@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2017-2020 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Uppfærslustýring</string>
+    <string name="display_name">Uppfærslustýring</string>
+    <string name="verification_failed_notification">Sannvottun mistókst</string>
+    <string name="verifying_download_notification">Yfirfer uppfærslu</string>
+    <string name="downloading_notification">Sæki gögn</string>
+    <string name="download_paused_notification">Niðurhal í bið</string>
+    <string name="download_paused_error_notification">Villa við að sækja gögn</string>
+    <string name="download_completed_notification">Niðurhali  lokið</string>
+    <string name="download_starting_notification">Byrja niðurhal</string>
+    <string name="update_failed_notification">Uppfærsla mistókst</string>
+    <string name="installation_suspended_notification">Uppsetning sett í bið</string>
+    <string name="new_updates_found_title">Nýjar uppfærslur</string>
+    <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="pause_button">Í bið</string>
+    <string name="resume_button">Halda áfram</string>
+    <string name="suspend_button">Setja í bið</string>
+    <string name="installing_update">Set inn uppfærslupakka</string>
+    <string name="installing_update_error">Villa í uppsetningu</string>
+    <string name="installing_update_finished">Uppfærsla uppsett</string>
+    <string name="finalizing_package">Lýk uppsetningu á pakka</string>
+    <string name="preparing_ota_first_boot">Undirbý fyrstu ræsingu</string>
+    <string name="dialog_prepare_zip_message">Undirbúningur forstillinga uppfærslu</string>
+    <string name="dialog_battery_low_title">Lítil hleðsla á rafhlöðu</string>
+    <string name="dialog_battery_low_message_pct">Hleðslan á rafhlöðunni er of lítil, þú þarft a.m.k. <xliff:g id="percent_discharging">%1$d</xliff:g>%% hleðslu til að halda áfram, <xliff:g id="percent_charging">%2$d</xliff:g>%% ef í hleðslu.</string>
+    <string name="reboot">Endurræsa</string>
+    <string name="menu_refresh">Endurlesa</string>
+    <string name="menu_preferences">Kjörstillingar</string>
+    <string name="menu_auto_updates_check">Sjálfvirk athugun með uppfærslur</string>
+    <string name="menu_auto_updates_check_interval_daily">Einu sinni á dag</string>
+    <string name="menu_auto_updates_check_interval_weekly">Einu sinni í viku</string>
+    <string name="menu_auto_updates_check_interval_monthly">Einu sinni í mánuði</string>
+    <string name="menu_auto_updates_check_interval_never">Aldrei</string>
+    <string name="menu_auto_delete_updates">Eyða uppfærslupökkum þegar þeir hafa verið settir inn</string>
+    <string name="menu_delete_update">Eyða</string>
+    <string name="menu_copy_url">Afrita slóð</string>
+    <string name="menu_export_update">Flytja út uppfærslu</string>
+    <string name="menu_show_changelog">Birta breytingaannál</string>
+    <string name="menu_ab_perf_mode">Setja uppfærsluferli í forgang</string>
+    <string name="menu_update_recovery">Uppfæra endurheimtingu</string>
+    <string name="snack_updates_found">Nýjar uppfærslur fundust</string>
+    <string name="snack_no_updates_found">Engar nýjar uppfærslur fundust</string>
+    <string name="snack_updates_check_failed">Athugun með uppfærslur mistókst. Skoðaðu internettenginguna og reyndu aftur síðar.</string>
+    <string name="snack_download_failed">Niðurhal mistókst. Athugaðu internettenginguna og reyndu aftur síðar.</string>
+    <string name="snack_download_verification_failed">Sannvottun uppfærslu mistókst.</string>
+    <string name="snack_download_verified">Niðurhali er lokið.</string>
+    <string name="snack_update_not_installable">Þessa uppfærslu er ekki gægt að setja upp á þessari byggingarútgáfu.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Síðast kannað: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
+    <string name="list_verifying_update">Yfirfer uppfærslu</string>
+    <string name="list_no_updates">Engar nýjar uppfærslur fundust. Til að athuga handvirkt með nýjar uppfærslur, notaðu Endurlesa-hnappinn.</string>
+    <string name="action_download">Sækja</string>
+    <string name="action_pause">Í bið</string>
+    <string name="action_resume">Halda áfram</string>
+    <string name="action_install">Setja upp</string>
+    <string name="action_info">Upplýsingar</string>
+    <string name="action_delete">Eyða</string>
+    <string name="action_cancel">Hætta við</string>
+    <string name="confirm_delete_dialog_title">Eyða skrá</string>
+    <string name="confirm_delete_dialog_message">Eyða valdri uppfærsluskrá?</string>
+    <string name="apply_update_dialog_title">Virkja uppfærslu</string>
+    <string name="apply_update_dialog_message">Þú ert í þann mund að setja upp <xliff:g id="update_name">%1$s</xliff:g>.\n\nEf þú ýtir á <xliff:g id="ok">%2$s</xliff:g>, mun tækið endurræsa sig í endurheimtuham til að setja inn uppfærsluna.\n\nAthugaðu: Þessi eiginleiki krefst þess að til staðar séu samhæfð endurheimtugögn því annars þarf að setja uppfærslurnar inn handvirkt.</string>
+    <string name="apply_update_dialog_message_ab">Þú ert í þann mund að setja upp <xliff:g id="update_name">%1$s</xliff:g>.\n\nEf þú ýtir á <xliff:g id="ok">%2$s</xliff:g>, mun tækið hefja uppfærsluna í bakgrunnsferli.\n\nÞegar henni er lokið færðu beiðni um að endurræsa.</string>
+    <string name="cancel_installation_dialog_message">Hætta við uppsetningu?</string>
+    <string name="label_download_url">Niðurhalsslóð</string>
+    <string name="toast_download_url_copied">URL-slóð afrituð</string>
+    <string name="dialog_export_title">Flytja út uppfærslu</string>
+    <string name="notification_export_success">Uppfærsla flutt út</string>
+    <string name="notification_export_fail">Villa við útflutning</string>
+    <string name="toast_already_exporting">Þegar að flytja út uppfærslu</string>
+    <string name="toast_export_started">Útflutningur hafinn</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">1 sekúnda eftir</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> sekúndur eftir</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">1 mínúta eftir</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> mínútur eftir</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">1 klukkustund eftir</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> klukkustundir eftir</item>
+    </plurals>
+    <string name="update_on_mobile_data_title">Aðvörun</string>
+    <string name="update_on_mobile_data_message">Þú ert í þann mund að uppfæra pakka með því að nota farsímagagnatengingu og gæti það valdið mikilli gagnanotkun. Viltu halda áfram?</string>
+    <string name="checkbox_mobile_data_warning">Ekki sýna aftur</string>
+    <string name="menu_mobile_data_warning">Aðvörun vegna farsímagagna</string>
+    <string name="blocked_update_dialog_title">Lokað á uppfærslu</string>
+    <string name="blocked_update_dialog_message">Þessa uppfærslu er ekki hægt að setja inn með uppfærsluforritinu.  Skoðaðu <xliff:g id="info_url">%1$s</xliff:g> til að fá frekari upplýsingar.</string>
+    <string name="export_channel_title">Klárun útflutnings</string>
+    <string name="new_updates_channel_title">Nýjar uppfærslur</string>
+    <string name="ongoing_channel_title">Niðurhal í gangi</string>
+    <string name="update_failed_channel_title">Uppfærsla mistókst</string>
+    <string name="info_dialog_title">Vissir þú?</string>
+    <string name="info_dialog_message">Uppfærslur á LineageOS eru alltaf heilir uppsetningapakkar. Það þýðir að þú getur alltaf sett einungis upp nýjustu uppfærsluna, jafnvel þótt þú hafir sleppt einhverjum uppfærslum í millitíðinni!</string>
+    <string name="info_dialog_ok">Takk fyrir upplýsingarnar!</string>
+</resources>

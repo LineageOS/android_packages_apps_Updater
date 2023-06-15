@@ -106,6 +106,7 @@
     <string name="update_over_metered_network_title">Alvertencia</string>
     <string name="update_over_metered_network_message">Tas a piques de baxar un paquete d\'anovamientu pente una rede midida, lo que probablemente vaiga xenerar un usu altu de datos. ¿Quies siguir?</string>
     <string name="checkbox_metered_network_warning">Nun volver amosar</string>
+    <string name="menu_metered_network_warning">Alvertencia de rede midida</string>
     <string name="blocked_update_dialog_title">Bloquióse l\'anovamientu</string>
     <string name="blocked_update_dialog_message">Esti anovamientu nun se pue instalar con «Anovador».  Llei <xliff:g id="info_url">%1$s</xliff:g> pa consiguir más información.</string>
     <string name="export_channel_title">Esportación completada</string>

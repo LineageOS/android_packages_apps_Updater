@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">آخر تحقق: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> من <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> من <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">جارٍ التحقق من التحديث</string>
     <string name="list_no_updates">لا توجد تحديثات جديدة. للبحث عن تحديثات جديدة يدويًا، استخدم الزر تحديث.</string>
     <string name="action_download">تنزيل</string>
@@ -79,6 +81,8 @@
     <string name="confirm_delete_dialog_title">حذف الملف</string>
     <string name="confirm_delete_dialog_message">حذف ملف التحديث المحدد؟</string>
     <string name="apply_update_dialog_title">تطبيق التحديث</string>
+    <string name="apply_update_dialog_message">أنت على وشك تثبيت <xliff:g id="update_name">%1$s</xliff:g>.\n\nإذا قمت بالضغط على <xliff:g id="ok">%2$s</xliff:g>، سيعاد تشغيل الجهاز بنفسه في وضع الاستعادة لتثبيت التحديث.\n\nملاحظة: هذه الميزة تتطلب مسترد متوافق أو سيلزم تثبيت التحديثات يدويًا.</string>
+    <string name="apply_update_dialog_message_ab">أنت على وشك تثبيت <xliff:g id="update_name">%1$s</xliff:g>.\n\nعند الضغط على <xliff:g id="ok">%2$s</xliff:g>، وسوف يبدأ الجهاز بالتثبيت في الخلفية.\n\nعندما ينتهي، ستُطالب بإعادة التشغيل.</string>
     <string name="cancel_installation_dialog_message">إلغاء التثبيت؟</string>
     <string name="label_download_url">عنوان التنزيل</string>
     <string name="toast_download_url_copied">تم نسخ الرابط</string>
@@ -86,6 +90,7 @@
     <string name="notification_export_success">تم تصدير التحديث</string>
     <string name="notification_export_fail">خطأ في التصدير</string>
     <string name="toast_already_exporting">جاري تصدير تحديث بالفعل</string>
+    <string name="toast_export_started">بدأ التصدير</string>
     <plurals name="eta_seconds">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> ثانية متبقية</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> ثانية متبقية</item>
@@ -111,11 +116,16 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ساعات متبقية</item>
     </plurals>
     <string name="update_over_metered_network_title">تنبيه</string>
+    <string name="update_over_metered_network_message">أنت على وشك تنزيل حُزْمَة التحديث عبر شبكة مقيدة التي من المحتمل أن تسبب استخداما عاليا للبيانات. هل ترغب في المتابعة؟</string>
     <string name="checkbox_metered_network_warning">لا تظهر هذا مجدداً</string>
+    <string name="menu_metered_network_warning">تحذير شبكة مقننة</string>
     <string name="blocked_update_dialog_title">التحديث محظور</string>
     <string name="blocked_update_dialog_message">لا يمكن تثبيت التحديث باستخدام تطبيق المُحدث. برجاء قراءة <xliff:g id="info_url">%1$s </xliff:g> للحصول على مزيد من المعلومات.</string>
     <string name="export_channel_title">اكتمال التصدير</string>
     <string name="new_updates_channel_title">تحديثات جديدة</string>
     <string name="ongoing_channel_title">التنزيلات الحالية</string>
     <string name="update_failed_channel_title">فشل التحديث</string>
+    <string name="info_dialog_title">هل كنت تعلم؟  </string>
+    <string name="info_dialog_message">تحديثات LineageOS هي حزم تثبيت كاملة. وهذا يعني أنه يمكنك دائماً تثبيت أحدث إصدار فقط، حتى إذا كنت قد تخطيت بعض الإصدارات السابقة!</string>
+    <string name="info_dialog_ok">شكرًا على المعلومة!</string>
 </resources>

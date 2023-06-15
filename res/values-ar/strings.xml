@@ -67,6 +67,8 @@
     <string name="header_last_updates_check">آخر تحقق: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> من <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> من <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">جارٍ التحقق من التحديث</string>
     <string name="list_no_updates">لا توجد تحديثات جديدة. للبحث عن تحديثات جديدة يدويًا، استخدم الزر تحديث.</string>
     <string name="action_download">تنزيل</string>
@@ -86,6 +88,7 @@
     <string name="notification_export_success">تم تصدير التحديث</string>
     <string name="notification_export_fail">خطأ في التصدير</string>
     <string name="toast_already_exporting">جاري تصدير تحديث بالفعل</string>
+    <string name="toast_export_started">بدأ التصدير</string>
     <plurals name="eta_seconds">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> ثانية متبقية</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> ثانية متبقية</item>
@@ -120,4 +123,6 @@
     <string name="new_updates_channel_title">تحديثات جديدة</string>
     <string name="ongoing_channel_title">التنزيلات الحالية</string>
     <string name="update_failed_channel_title">فشل التحديث</string>
+    <string name="info_dialog_title">هل كنت تعلم؟  </string>
+    <string name="info_dialog_ok">شكرًا على المعلومة!</string>
 </resources>

@@ -532,11 +532,15 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 R.attr.actionOverflowMenuStyle, 0);
         popupMenu.inflate(R.menu.menu_action_mode);
 
+        boolean shouldShowDelete = canDelete;
+        boolean isVerified = update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED;
+        if (isVerified && !Utils.canInstall(update) && !update.getAvailableOnline()) {
+            shouldShowDelete = false;
+        }
         MenuBuilder menu = (MenuBuilder) popupMenu.getMenu();
-        menu.findItem(R.id.menu_delete_action).setVisible(canDelete);
+        menu.findItem(R.id.menu_delete_action).setVisible(shouldShowDelete);
         menu.findItem(R.id.menu_copy_url).setVisible(update.getAvailableOnline());
-        menu.findItem(R.id.menu_export_update).setVisible(
-                update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED);
+        menu.findItem(R.id.menu_export_update).setVisible(isVerified);
 
         popupMenu.setOnMenuItemClickListener(item -> {
             int itemId = item.getItemId();

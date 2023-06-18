@@ -31,7 +31,7 @@
                 android:paddingBottom="16dp"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="56sp"
-                tools:text="LineageOS\n18.1" />
+                tools:text="LineageOS\n20" />
 
             <TextView
                 android:id="@+id/header_build_version"
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="14sp"
-                tools:text="Android 11"/>
+                tools:text="Android 13"/>
 
             <TextView
                 android:id="@+id/header_build_date"
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="14sp"
-                tools:text="2022-01-01"/>
+                tools:text="1970-01-01"/>
 
             <TextView
                 android:id="@+id/header_last_check"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="14sp"
-                tools:text="Last checked: 2022-01-01"/>
+                tools:text="Last checked: 1970-01-01"/>
 
         </LinearLayout>
         <LinearLayout
@@ -116,7 +116,8 @@
             android:clipToPadding="false"
             android:paddingBottom="5dp"
             android:scrollbars="vertical"
-            android:layout_gravity="end" />
+            android:layout_gravity="end"
+            tools:listitem="@layout/update_item_view"/>
 
         <ProgressBar
             android:id="@+id/refresh_progress"

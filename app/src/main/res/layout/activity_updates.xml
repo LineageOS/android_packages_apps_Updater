@@ -2,6 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -53,7 +54,8 @@
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="16dp"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="56sp" />
+                    android:textSize="56sp"
+                    tools:text="LineageOS\n20"/>
 
                 <TextView
                     android:id="@+id/header_build_version"
@@ -61,7 +63,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_title"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:text="Android 13"/>
 
                 <TextView
                     android:id="@+id/header_build_date"
@@ -69,7 +72,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_build_version"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:text="1970-01-01"/>
 
                 <TextView
                     android:id="@+id/header_last_check"
@@ -78,7 +82,8 @@
                     android:layout_below="@id/header_build_date"
                     android:layout_marginTop="8dp"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:text="Last checked: 1970-01-01"/>
             </RelativeLayout>
 
             <androidx.appcompat.widget.Toolbar
@@ -113,5 +118,6 @@
         android:clipToPadding="false"
         android:paddingBottom="5dp"
         android:scrollbars="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/update_item_view" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

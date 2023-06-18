@@ -8,8 +8,11 @@
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
     android:nextFocusRight="@+id/update_action"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
     app:cardBackgroundColor="@color/tv_card_background"
-    app:cardCornerRadius="0dp"
+    app:cardCornerRadius="16dp"
     app:contentPadding="16dp">
 
     <LinearLayout
@@ -82,7 +85,7 @@
                     android:ellipsize="marquee"
                     android:singleLine="true"
                     android:visibility="invisible"
-                    tools:text="162 of 300 MB (3 minutes left)"
+                    tools:text="162 of 1.1GB (3 minutes left)"
                     tools:visibility="visible" />
 
                 <TextView

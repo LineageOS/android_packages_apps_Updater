@@ -8,8 +8,11 @@
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
     android:nextFocusRight="@+id/update_action"
-    app:cardCornerRadius="0dp"
-    app:contentPadding="16dp">
+    app:cardCornerRadius="16dp"
+    app:contentPadding="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,7 +37,7 @@
                 android:paddingBottom="8sp"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="16sp"
-                tools:text="LineageOS 15.1" />
+                tools:text="LineageOS 20" />
 
             <TextView
                 android:id="@+id/build_date"
@@ -42,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:textSize="14sp"
-                tools:text="29 February 2018" />
+                tools:text="18 June 2023" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -81,7 +84,7 @@
                     android:ellipsize="marquee"
                     android:singleLine="true"
                     android:visibility="invisible"
-                    tools:text="162 of 300 MB (3 minutes left)"
+                    tools:text="162 of 1.1 GB (3 minutes left)"
                     tools:visibility="visible" />
 
                 <TextView
@@ -90,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="8sp"
                     android:singleLine="true"
-                    tools:text="300 MB"
+                    tools:text="1.1 GB"
                     tools:visibility="invisible" />
             </RelativeLayout>
         </LinearLayout>

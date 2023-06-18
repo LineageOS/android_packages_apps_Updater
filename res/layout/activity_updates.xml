@@ -39,6 +39,7 @@
             app:toolbarId="@id/action_bar">
 
             <RelativeLayout
+                android:id="@+id/header_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="86dp"
@@ -54,7 +55,8 @@
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="16dp"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="56sp" />
+                    android:textSize="56sp"
+                    tools:text="LineageOS\n20"/>
 
                 <TextView
                     android:id="@+id/header_build_version"
@@ -62,7 +64,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_title"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:text="Android 13"/>
 
                 <TextView
                     android:id="@+id/header_build_date"
@@ -70,7 +73,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_build_version"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:text="01.01.1970"/>
 
                 <TextView
                     android:id="@+id/header_last_check"
@@ -79,7 +83,8 @@
                     android:layout_below="@id/header_build_date"
                     android:layout_marginTop="8dp"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:text="Last checked: 01.01.1970"/>
             </RelativeLayout>
 
             <androidx.appcompat.widget.Toolbar

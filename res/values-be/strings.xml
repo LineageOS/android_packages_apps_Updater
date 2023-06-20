@@ -15,16 +15,35 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="download_paused_error_notification">Памылка спампоўвання</string>
     <string name="installation_suspended_notification">Усталяванне прыпынена</string>
+    <string name="new_updates_found_title">Новыя абнаўленні</string>
+    <string name="text_download_speed">%1$s, %2$s/с</string>
     <string name="installing_update">Усталяванне пакета з абнаўленнем</string>
     <string name="installing_update_error">Памылка ўсталявання</string>
+    <string name="menu_auto_updates_check">Аўтаматычная праверка абнаўленняў</string>
+    <string name="menu_auto_updates_check_interval_never">Ніколі</string>
     <string name="menu_auto_delete_updates">Выдаліць файлы абнаўлення пасля ўсталявання</string>
+    <string name="menu_delete_update">Выдаліць</string>
     <string name="menu_copy_url">Скапіяваць URL-адрас</string>
     <string name="menu_export_update">Экспартаванне абнаўлення</string>
-    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> з <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
+    <string name="snack_no_updates_found">Абнаўленні не знойдзены</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_last_updates_check">Апошняя праверка: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_no_updates">Новыя абнаўленні не знойдзены. Каб праверыць абнаўленні ўручную, націсніце кнопку Абнавіць.</string>
+    <string name="action_download">Спампаваць</string>
+    <string name="action_install">Усталяваць</string>
     <string name="action_info">Інфармацыя</string>
+    <string name="action_delete">Выдаліць</string>
+    <string name="confirm_delete_dialog_title">Выдаліць файл</string>
     <string name="confirm_delete_dialog_message">Выдаліць выбраны файл абнаўлення?</string>
+    <string name="apply_update_dialog_title">Ужыць абнаўленне</string>
+    <string name="label_download_url">URL-адрасы спамповак</string>
     <string name="dialog_export_title">Экспартаванне абнаўлення</string>
     <string name="toast_export_started">Пачалося экспартаванне</string>
+    <string name="checkbox_metered_network_warning">Больш не паказваць</string>
+    <string name="new_updates_channel_title">Новыя абнаўленні</string>
     <string name="info_dialog_title">Ці ведалі вы што?</string>
 </resources>

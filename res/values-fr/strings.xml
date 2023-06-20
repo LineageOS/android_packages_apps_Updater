@@ -104,7 +104,7 @@
         <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> heures</item>
     </plurals>
     <string name="update_over_metered_network_title">Avertissement</string>
-    <string name="update_over_metered_network_message">Vous êtes sur le point de télécharger une mise à jour via les données mobiles qui pourrait représenter un volume de données important. Voulez-vous continuer ?</string>
+    <string name="update_over_metered_network_message">Vous allez télécharger une mise à jour nécessitant un important volume de données en utilisant un réseau forfaitaire. Souhaitez-vous continuer ?</string>
     <string name="checkbox_metered_network_warning">Ne plus afficher</string>
     <string name="menu_metered_network_warning">Avertissement de réseau forfaitaire</string>
     <string name="blocked_update_dialog_title">Mise à jour bloquée</string>

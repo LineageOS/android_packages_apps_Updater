@@ -16,6 +16,24 @@
       "message": "potential usecases:\n- enable auto deleting updates for devices with limited storage\n- always enable a/b perf mode for high end devices",
       "revId": "eaeb5a9356856bd44f2a8854dc4882b9b435d2c4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96e3a62a_75709ff3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-23T13:37:35Z",
+      "side": 1,
+      "message": "Regarding perf mode, you may do that automatically with performance class?\n\nThe same could be said with older updates, you could check for used storage percentage or something like that",
+      "parentUuid": "3618408f_2ea67bce",
+      "revId": "eaeb5a9356856bd44f2a8854dc4882b9b435d2c4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

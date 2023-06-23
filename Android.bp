@@ -37,9 +37,6 @@ android_app {
     privileged: true,
     certificate: "platform",
     system_ext_specific: true,
-    optimize: {
-        proguard_flags_files: ["proguard.flags"],
-    },
 
     required: [
         "privapp_whitelist_org.lineageos.updater",

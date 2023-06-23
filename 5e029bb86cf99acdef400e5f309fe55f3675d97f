@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8946fda6_ea76d6bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-06-23T14:15:03Z",
+      "side": 1,
+      "message": "FlingBehavior got removed but the proguard rule was missing.",
+      "revId": "5e029bb86cf99acdef400e5f309fe55f3675d97f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

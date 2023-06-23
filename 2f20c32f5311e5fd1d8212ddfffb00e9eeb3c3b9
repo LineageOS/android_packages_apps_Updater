@@ -16,6 +16,29 @@
       "message": "Might not be useful but uploading as reference",
       "revId": "2f20c32f5311e5fd1d8212ddfffb00e9eeb3c3b9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60298e80_8a2e141f",
+        "filename": "res/values/config.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-23T14:33:07Z",
+      "side": 1,
+      "message": "config_onlyShowLatestUpdate",
+      "range": {
+        "startLine": 21,
+        "startChar": 16,
+        "endLine": 21,
+        "endChar": 46
+      },
+      "revId": "2f20c32f5311e5fd1d8212ddfffb00e9eeb3c3b9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

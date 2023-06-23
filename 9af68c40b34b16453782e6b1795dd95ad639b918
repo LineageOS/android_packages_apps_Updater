@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d398bf60_348a5847",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-06-23T12:43:54Z",
+      "side": 1,
+      "message": "Are these needed for something special?\n\nOtherwise removing them would make it easier to support gradle usecases.",
+      "revId": "9af68c40b34b16453782e6b1795dd95ad639b918",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

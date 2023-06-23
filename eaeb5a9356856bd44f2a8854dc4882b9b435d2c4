@@ -34,6 +34,24 @@
       "parentUuid": "3618408f_2ea67bce",
       "revId": "eaeb5a9356856bd44f2a8854dc4882b9b435d2c4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "322a152f_91415d3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-06-23T14:56:34Z",
+      "side": 1,
+      "message": "Yes, you are right.\n\nThough i am not sure if that is even helpful anymore, besides having a central place to define defaults.\n\nIf you think this is helpful, i can implement it properly :)",
+      "parentUuid": "96e3a62a_75709ff3",
+      "revId": "eaeb5a9356856bd44f2a8854dc4882b9b435d2c4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

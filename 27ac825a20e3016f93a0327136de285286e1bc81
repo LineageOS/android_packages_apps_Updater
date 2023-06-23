@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1d8de82_d575f2fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-06-23T13:58:01Z",
+      "side": 1,
+      "message": "I got these locally, in case you want to add them as well :)",
+      "revId": "27ac825a20e3016f93a0327136de285286e1bc81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82825350_0f305223",
+        "filename": "res/layout/activity_updates.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-06-23T13:58:01Z",
+      "side": 1,
+      "message": "android:textSize\u003d\"56sp\"\ntools:text\u003d\"Lineage 20\" /\u003e",
+      "range": {
+        "startLine": 57,
+        "startChar": 20,
+        "endLine": 57,
+        "endChar": 46
+      },
+      "revId": "27ac825a20e3016f93a0327136de285286e1bc81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea566132_d9cf418e",
+        "filename": "res/layout/activity_updates.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-06-23T13:58:01Z",
+      "side": 1,
+      "message": "android:textSize\u003d\"12sp\"\ntools:text\u003d\"Android 13\" /\u003e",
+      "range": {
+        "startLine": 65,
+        "startChar": 20,
+        "endLine": 65,
+        "endChar": 46
+      },
+      "revId": "27ac825a20e3016f93a0327136de285286e1bc81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4593c9de_6d8ad7e4",
+        "filename": "res/layout/activity_updates.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-06-23T13:58:01Z",
+      "side": 1,
+      "message": "android:textSize\u003d\"12sp\"\ntools:text\u003d\"June 18, 2023\" /\u003e",
+      "range": {
+        "startLine": 73,
+        "startChar": 20,
+        "endLine": 73,
+        "endChar": 46
+      },
+      "revId": "27ac825a20e3016f93a0327136de285286e1bc81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06a1d785_71eebe57",
+        "filename": "res/layout/activity_updates.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-06-23T13:58:01Z",
+      "side": 1,
+      "message": "android:textSize\u003d\"12sp\"\ntools:text\u003d\"Last checked: January 1, 1970 (1:00 AM)\" /\u003e",
+      "range": {
+        "startLine": 82,
+        "startChar": 20,
+        "endLine": 82,
+        "endChar": 46
+      },
+      "revId": "27ac825a20e3016f93a0327136de285286e1bc81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3618408f_2ea67bce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-06-23T13:16:51Z",
+      "side": 1,
+      "message": "potential usecases:\n- enable auto deleting updates for devices with limited storage\n- always enable a/b perf mode for high end devices",
+      "revId": "eaeb5a9356856bd44f2a8854dc4882b9b435d2c4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

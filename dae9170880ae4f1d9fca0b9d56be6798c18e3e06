@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf88b843_a8269c41",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-06-23T13:22:30Z",
+      "side": 1,
+      "message": "Some people got confused regarding what to select to be up to date.\n\nLater on we have changed the OTA server to just return a single update, which is the current version + 1 to support incremental OTAs.\n\nSoooo, not sure if this change is useful or helpful, but might be for some downstream projects.",
+      "revId": "dae9170880ae4f1d9fca0b9d56be6798c18e3e06",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

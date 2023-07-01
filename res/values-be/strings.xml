@@ -21,12 +21,18 @@
     <string name="text_download_speed">%1$s, %2$s/с</string>
     <string name="installing_update">Усталяванне пакета з абнаўленнем</string>
     <string name="installing_update_error">Памылка ўсталявання</string>
+    <string name="preparing_ota_first_boot">Падрыхтоўка да першага запуску</string>
+    <string name="dialog_prepare_zip_message">Падрыхтоўка абнаўлення</string>
+    <string name="reboot">Перазапуск</string>
+    <string name="menu_refresh">Абнавiць</string>
     <string name="menu_auto_updates_check">Аўтаматычная праверка абнаўленняў</string>
+    <string name="menu_auto_updates_check_interval_monthly">Штомесяц</string>
     <string name="menu_auto_updates_check_interval_never">Ніколі</string>
     <string name="menu_auto_delete_updates">Выдаліць файлы абнаўлення пасля ўсталявання</string>
     <string name="menu_delete_update">Выдаліць</string>
     <string name="menu_copy_url">Скапіяваць URL-адрас</string>
     <string name="menu_export_update">Экспартаванне абнаўлення</string>
+    <string name="menu_ab_perf_mode">Прыярытэт працэсу абнаўлення</string>
     <string name="snack_no_updates_found">Абнаўленні не знойдзены</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
     <string name="header_last_updates_check">Апошняя праверка: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
@@ -45,5 +51,6 @@
     <string name="toast_export_started">Пачалося экспартаванне</string>
     <string name="checkbox_mobile_data_warning">Больш не паказваць</string>
     <string name="new_updates_channel_title">Новыя абнаўленні</string>
+    <string name="ongoing_channel_title">Бягучыя спампоўкі</string>
     <string name="info_dialog_title">Ці ведалі вы што?</string>
 </resources>

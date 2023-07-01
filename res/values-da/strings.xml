@@ -25,10 +25,12 @@
     <string name="download_completed_notification">Overførsel fuldført</string>
     <string name="download_starting_notification">Starter overførsel</string>
     <string name="update_failed_notification">Opdatering fejlede</string>
+    <string name="installation_suspended_notification">Installation suspenderet</string>
     <string name="new_updates_found_title">Nye opdateringer</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Pause</string>
     <string name="resume_button">Genoptag</string>
+    <string name="suspend_button">Suspendér</string>
     <string name="installing_update">Installerer opdateringspakke</string>
     <string name="installing_update_error">Installeringsfejl</string>
     <string name="installing_update_finished">Opdatering installeret</string>
@@ -42,6 +44,8 @@
     <string name="menu_preferences">Præferencer</string>
     <string name="menu_auto_updates_check">Auto-opdateringskontrol</string>
     <string name="menu_auto_updates_check_interval_daily">Én gang dagligt</string>
+    <string name="menu_auto_updates_check_interval_weekly">En gang om ugen</string>
+    <string name="menu_auto_updates_check_interval_monthly">En gang om måneden</string>
     <string name="menu_auto_updates_check_interval_never">Aldrig</string>
     <string name="menu_auto_delete_updates">Slet opdateringer, når installeret</string>
     <string name="menu_delete_update">Slet</string>
@@ -88,7 +92,9 @@
     <string name="toast_already_exporting">Eksporterer allerede en opdatering</string>
     <string name="toast_export_started">Eksportering startet</string>
     <string name="update_over_metered_network_title">Advarsel</string>
+    <string name="update_over_metered_network_message">Du er ved at downloade en opdateringspakke over målingstilsluttet netværk, hvilket med stor sandsynlighed kan give højt data forbrug. Vil du gerne fortsætte?</string>
     <string name="checkbox_metered_network_warning">Vis ikke igen</string>
+    <string name="menu_metered_network_warning">Målingstilsluttet netværks advarsel</string>
     <string name="blocked_update_dialog_title">Opdatering blokeret</string>
     <string name="blocked_update_dialog_message">Denne opdatering kan ikke installeres over opdatering-app\'en. Læs venligst <xliff:g id="info_url">%1$s</xliff:g> for mere information.</string>
     <string name="export_channel_title">Eksport fuldførelse</string>

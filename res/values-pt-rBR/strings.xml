@@ -98,6 +98,7 @@
     </plurals>
     <string name="update_over_metered_network_title">Aviso</string>
     <string name="checkbox_metered_network_warning">Não mostrar novamente</string>
+    <string name="menu_metered_network_warning">Aviso de rede limitada</string>
     <string name="blocked_update_dialog_title">Atualização bloqueada</string>
     <string name="blocked_update_dialog_message">Esta atualização não pode ser instalada pelo Atualizador. Leia <xliff:g id="info_url">%1$s</xliff:g> para obter mais informações.</string>
     <string name="export_channel_title">Exportação concluída</string>

@@ -224,7 +224,8 @@ public class UpdatesActivity extends UpdatesListActivity {
         super.onStart();
         Intent intent = new Intent(this, UpdaterService.class);
         startService(intent);
-        bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+        bindService(intent, mConnection,
+                Context.BIND_AUTO_CREATE | Context.BIND_ALMOST_PERCEPTIBLE);
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(UpdaterController.ACTION_UPDATE_STATUS);

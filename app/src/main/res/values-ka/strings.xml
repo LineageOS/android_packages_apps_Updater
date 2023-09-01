@@ -116,4 +116,10 @@
     <string name="info_dialog_title">იცოდით?</string>
     <string name="info_dialog_message">LineageOS-ის განახლებები სრულ კრებულებს წარმოადგენს. ეს კი ნიშნავს, რომ ყოველთვის შეგიძლიათ ჩააყენოთ ბოლო განახლება, ზოგიერთის გამოტოვების შემთხვევაშიც. </string>
     <string name="info_dialog_ok">გმადლობთ, რომ მაცნობეთ!</string>
+    <string name="local_update_import">ადგილობრივად განახლება</string>
+    <string name="local_update_import_progress">ადგილობრივი განახლების შემოტანა\u2026</string>
+    <string name="local_update_import_success">%1$s შემოტანილია. გსურთ, დააყენოთ?</string>
+    <string name="local_update_import_failure">ადგილობრივი განახლების შემოტანა ვერ მოხერხდა</string>
+    <string name="local_update_import_install">დაყენება</string>
+    <string name="local_update_name">ადგილობრივი განახლება</string>
 </resources>

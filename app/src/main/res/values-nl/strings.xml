@@ -116,4 +116,10 @@
     <string name="info_dialog_title">Wist u dat?</string>
     <string name="info_dialog_message">LineageOS updates zijn volledige installatiepakketten. Dat betekent dat u altijd alleen de nieuwste update hoeft te installeren, zelfs als u een paar updates overslaat!</string>
     <string name="info_dialog_ok">Bedankt voor de informatie!</string>
+    <string name="local_update_import">Lokale update</string>
+    <string name="local_update_import_progress">Importeer lokale update\u2026</string>
+    <string name="local_update_import_success">%1$s is geïmporteerd. Wilt u het installeren?</string>
+    <string name="local_update_import_failure">Importeren van lokale update is mislukt</string>
+    <string name="local_update_import_install">Installeer</string>
+    <string name="local_update_name">Lokale update</string>
 </resources>

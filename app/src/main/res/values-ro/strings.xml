@@ -119,4 +119,10 @@
     <string name="info_dialog_title">Știai că?</string>
     <string name="info_dialog_message">Actualizările LineageOS sunt pachete complete de instalare. Acest lucru înseamnă că întotdeauna puteți instala doar ultima actualizare, chiar dacă ați sărit unele dintre ele!</string>
     <string name="info_dialog_ok">Mulțumesc pentru informații!</string>
+    <string name="local_update_import">Actualizare locală</string>
+    <string name="local_update_import_progress">Importare actualizare locală\u2026</string>
+    <string name="local_update_import_success">%1$s a fost importată. Doriți să o instalați?</string>
+    <string name="local_update_import_failure">Eroare la importarea actualizării locale</string>
+    <string name="local_update_import_install">Instalați</string>
+    <string name="local_update_name">Actualizare locală</string>
 </resources>

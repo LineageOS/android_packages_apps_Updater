@@ -116,4 +116,10 @@
     <string name="info_dialog_title">Bilirdiniz?</string>
     <string name="info_dialog_message">LineageOS yeniləmələri tam quraşdırma paketləridir. Yəni, yeniləməni ötürsəniz belə, hər zaman yalnız son yeniləməni quraşdıra bilərsiniz!</string>
     <string name="info_dialog_ok">Məlumat üçün təşəkkürlər!</string>
+    <string name="local_update_import">Yerli güncəlləmə</string>
+    <string name="local_update_import_progress">Yerli güncəlləmə daxilə köçürülür\u2026</string>
+    <string name="local_update_import_success">%1$s daxilə köçürüldü. Quraşdırmaq istəyirsiniz?</string>
+    <string name="local_update_import_failure">Yerli güncəlləmə daxilə köçürülmədi</string>
+    <string name="local_update_import_install">Quraşdır</string>
+    <string name="local_update_name">Yerli güncəlləmə</string>
 </resources>

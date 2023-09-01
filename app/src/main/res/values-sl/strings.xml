@@ -122,4 +122,10 @@
     <string name="info_dialog_title">Ali ste vedeli?</string>
     <string name="info_dialog_message">LineageOS posodobitve so polni namestitveni paketi. To pomeni, da lahko vedno namestite samo zadnjo posodobitev tudi, če ste jih vmes nekaj preskočili!</string>
     <string name="info_dialog_ok">Hvala za informacije!</string>
+    <string name="local_update_import">Lokalna posodobitev</string>
+    <string name="local_update_import_progress">Uvažanje lokalne posodobitve \u2026</string>
+    <string name="local_update_import_success">%1$s je bila uvožena. Ali jo želite namestiti?</string>
+    <string name="local_update_import_failure">Uvoz lokalne posodobitve je spodletel</string>
+    <string name="local_update_import_install">Namesti</string>
+    <string name="local_update_name">Lokalna posodobitev</string>
 </resources>

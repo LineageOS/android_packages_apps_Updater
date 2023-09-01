@@ -122,4 +122,10 @@
     <string name="info_dialog_title">Знаете ли вы?</string>
     <string name="info_dialog_message">Обновления LineageOS представляют собой полные установочные пакеты. Это означает, что вы всегда можете установить только последнее обновление, даже если вы пропустили некоторые из них!</string>
     <string name="info_dialog_ok">Спасибо за информацию!</string>
+    <string name="local_update_import">Локальное обновление</string>
+    <string name="local_update_import_progress">Импорт локального обновления\u2026</string>
+    <string name="local_update_import_success">Обновление %1$s было импортировано. Установить его?</string>
+    <string name="local_update_import_failure">Не удалось импортировать локальное обновление</string>
+    <string name="local_update_import_install">Установить</string>
+    <string name="local_update_name">Локальное обновление</string>
 </resources>

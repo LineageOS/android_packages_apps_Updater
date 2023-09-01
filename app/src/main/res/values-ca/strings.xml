@@ -116,4 +116,10 @@
     <string name="info_dialog_title">Ho sabies?</string>
     <string name="info_dialog_message">Les actualitzacions de LineageOS són paquets d\'instal·lació complets. Açò significa que sempre pots instal·lar únicament l\'última actualització, encara que t\'hagis saltat alguna actualització per entremig.</string>
     <string name="info_dialog_ok">Gràcies per la informació!</string>
+    <string name="local_update_import">Actualització local</string>
+    <string name="local_update_import_progress">S\'està important l\'actualització local\u2026</string>
+    <string name="local_update_import_success">S\'ha importat %1$s. Ho voleu instal·lar?</string>
+    <string name="local_update_import_failure">No s\'ha pogut importar l\'actualització local</string>
+    <string name="local_update_import_install">Instal·la</string>
+    <string name="local_update_name">Actualització local</string>
 </resources>

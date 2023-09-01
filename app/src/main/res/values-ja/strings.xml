@@ -113,4 +113,10 @@
     <string name="info_dialog_title">ご存知ですか?</string>
     <string name="info_dialog_message">LineageOS のアップデートは完全なインストールパッケージです。つまり、いくつかのアップデートをスキップしても、最新のアップデートのみをインストールするだけで良いのです！</string>
     <string name="info_dialog_ok">ありがとうございます！</string>
+    <string name="local_update_import">ローカルアップデート</string>
+    <string name="local_update_import_progress">ローカルアップデートをインポート中\u2026</string>
+    <string name="local_update_import_success">%1$s をインポートしました。インストールしますか？</string>
+    <string name="local_update_import_failure">ローカルアップデートのインポートに失敗しました</string>
+    <string name="local_update_import_install">インストール</string>
+    <string name="local_update_name">ローカルアップデート</string>
 </resources>

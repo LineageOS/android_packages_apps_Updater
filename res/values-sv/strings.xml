@@ -22,6 +22,7 @@
     <string name="download_paused_error_notification">Nedladdningsfel</string>
     <string name="download_completed_notification">Nedladdning slutförd</string>
     <string name="download_starting_notification">Påbörjar nedladdning</string>
+    <string name="update_failed_notification">Uppdateringen misslyckades</string>
     <string name="new_updates_found_title">Nya uppdateringar</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Pausa</string>
@@ -67,6 +68,18 @@
     <string name="notification_export_success">Uppdatering exporterad</string>
     <string name="notification_export_fail">Exporteringsfel</string>
     <string name="toast_export_started">Exportering startad</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">1 sekund kvar</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> sekunder kvar</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">1 minut kvar</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> minuter kvar</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">1 timme kvar</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> timmar kvar</item>
+    </plurals>
     <string name="update_on_mobile_data_title">Varning</string>
     <string name="update_on_mobile_data_message">Du är på väg att ladda ner en uppdatering över mobilnätet vilket troligtvis kommer att orsaka hög dataanvändning. Vill du fortsätta?</string>
     <string name="checkbox_mobile_data_warning">Visa inte igen</string>

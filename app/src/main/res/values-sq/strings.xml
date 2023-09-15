@@ -116,4 +116,10 @@
     <string name="info_dialog_title">A e dinit?</string>
     <string name="info_dialog_message">Përditësimet e LineageOS janë paketa të plota instalimi. Kjo do të thotë që gjithmonë mund të instaloni vetëm përditësimin më të fundit, edhe nëse keni anashkaluar disa në mes!</string>
     <string name="info_dialog_ok">Faleminderit për informacionin!</string>
+    <string name="local_update_import">Përditësim lokal</string>
+    <string name="local_update_import_progress">Përditësimi lokal po importohet\u2026</string>
+    <string name="local_update_import_success">%1$s është importuar. Dëshiron ta instalosh?</string>
+    <string name="local_update_import_failure">Importimi i përditësimit lokal dështoi</string>
+    <string name="local_update_import_install">Instalo</string>
+    <string name="local_update_name">Përditësim lokal</string>
 </resources>

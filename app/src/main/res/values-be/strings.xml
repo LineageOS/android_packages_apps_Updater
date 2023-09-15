@@ -53,4 +53,8 @@
     <string name="new_updates_channel_title">Новыя абнаўленні</string>
     <string name="ongoing_channel_title">Бягучыя спампоўкі</string>
     <string name="info_dialog_title">Ці ведалі вы што?</string>
+    <string name="local_update_import">Лакальнае абнаўленне</string>
+    <string name="local_update_import_failure">Не ўдалося імпартаваць лакальнае абнаўленне</string>
+    <string name="local_update_import_install">Усталяваць</string>
+    <string name="local_update_name">Лакальнае абнаўленне</string>
 </resources>

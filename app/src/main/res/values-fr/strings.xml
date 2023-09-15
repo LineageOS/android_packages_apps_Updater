@@ -118,6 +118,7 @@
     <string name="info_dialog_ok">Merci pour l\'information !</string>
     <string name="local_update_import">Mise à jour locale</string>
     <string name="local_update_import_progress">Importation de la mise à jour locale\u2026</string>
+    <string name="local_update_import_success">%1$s a été importée. Voulez-vous l\'installer ?</string>
     <string name="local_update_import_failure">Impossible d\'importer la mise à jour locale</string>
     <string name="local_update_import_install">Installer</string>
     <string name="local_update_name">Mise à jour locale</string>

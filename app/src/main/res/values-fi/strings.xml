@@ -108,4 +108,10 @@
     <string name="update_failed_channel_title">Päivitys epäonnistui</string>
     <string name="info_dialog_title">Tiesitkö?</string>
     <string name="info_dialog_message">LineageOS-päivitykset ovat täydellisiä asennuspaketteja, jonka ansiosta voit aina asentaa vain viimeisimmän päivityksen, vaikka ohittaisitkin välillä joitakin versioita!</string>
+    <string name="local_update_import">Paikallinen päivitys</string>
+    <string name="local_update_import_progress">Tuodaan paikallista päivitystä\u2026</string>
+    <string name="local_update_import_success">%1$s on tuotu. Haluatko asentaa sen?</string>
+    <string name="local_update_import_failure">Paikallisen päivityksen tuonti epäonnistui</string>
+    <string name="local_update_import_install">Asenna</string>
+    <string name="local_update_name">Paikallinen päivitys</string>
 </resources>

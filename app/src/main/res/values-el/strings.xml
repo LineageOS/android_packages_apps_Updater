@@ -116,4 +116,10 @@
     <string name="info_dialog_title">Το γνωρίζατε;</string>
     <string name="info_dialog_message">Οι ενημερώσεις LineageOS είναι πλήρη πακέτα εγκατάστασης. Αυτό σημαίνει ότι μπορείτε πάντα να εγκαταστήσετε μόνο την πιο πρόσφατη ενημέρωση, ακόμα κι αν παραλείψατε κάποια ενδιάμεσα!</string>
     <string name="info_dialog_ok">Ευχαριστώ για τις πληροφορίες!</string>
+    <string name="local_update_import">Τοπική ενημέρωση</string>
+    <string name="local_update_import_progress">Εισαγωγή τοπικής ενημέρωσης\u2026</string>
+    <string name="local_update_import_success">%1$s έχει εισαχθεί. Θέλετε να τo εγκαταστήσετε;</string>
+    <string name="local_update_import_failure">Αποτυχία εισαγωγής τοπικής ενημέρωσης</string>
+    <string name="local_update_import_install">Εγκατάσταση</string>
+    <string name="local_update_name">Τοπική ενημέρωση</string>
 </resources>

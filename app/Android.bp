@@ -20,6 +20,7 @@ android_app {
     system_ext_specific: true,
 
     static_libs: [
+        // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.core_core-ktx",
         "androidx.appcompat_appcompat",
         "androidx.cardview_cardview",

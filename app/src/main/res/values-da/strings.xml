@@ -91,6 +91,18 @@
     <string name="notification_export_fail">Eksportfejl</string>
     <string name="toast_already_exporting">Eksporterer allerede en opdatering</string>
     <string name="toast_export_started">Eksportering startet</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">1 sekund tilbage</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> sekunder tilbage</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">1 minut tilbage</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> minutter tilbage</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">1 time tilbage</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> timer tilbage</item>
+    </plurals>
     <string name="update_over_metered_network_title">Advarsel</string>
     <string name="update_over_metered_network_message">Du er ved at downloade en opdateringspakke over målingstilsluttet netværk, hvilket med stor sandsynlighed kan give højt data forbrug. Vil du gerne fortsætte?</string>
     <string name="checkbox_metered_network_warning">Vis ikke igen</string>
@@ -104,4 +116,10 @@
     <string name="info_dialog_title">Vidste du?</string>
     <string name="info_dialog_message">LineageOS opdateringer er komplette installationspakker. Det betyder, at du altid kun kan installere den seneste opdatering, selv om du har sprunget nogle over!</string>
     <string name="info_dialog_ok">Tak for info!</string>
+    <string name="local_update_import">Lokal opdatering</string>
+    <string name="local_update_import_progress">Importerer lokal opdatering\u2026</string>
+    <string name="local_update_import_success">%1$s er blevet importeret. Vil du installere det?</string>
+    <string name="local_update_import_failure">Import af lokal opdatering mislykkedes</string>
+    <string name="local_update_import_install">Installér</string>
+    <string name="local_update_name">Lokal opdatering</string>
 </resources>

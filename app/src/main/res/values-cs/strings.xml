@@ -110,7 +110,9 @@
         <item quantity="other">Zbývá <xliff:g id="count">%d</xliff:g> hodin</item>
     </plurals>
     <string name="update_over_metered_network_title">Varování</string>
+    <string name="update_over_metered_network_message">Chystáte se stáhnout aktualizaci skrze měřenou síť, což pravděpodobně zapříčiní vysoké využití dat. Chcete pokračovat?</string>
     <string name="checkbox_metered_network_warning">Znovu nezobrazovat</string>
+    <string name="menu_metered_network_warning">Upozornění na měřenou síť</string>
     <string name="blocked_update_dialog_title">Aktualizace zablokována</string>
     <string name="blocked_update_dialog_message">Tuto aktualizaci nelze nainstalovat pomocí aplikace aktualizace.  Přečtěte si <xliff:g id="info_url">%1$s </xliff:g> pro další informace.</string>
     <string name="export_channel_title">Dokončení exportu</string>
@@ -120,4 +122,10 @@
     <string name="info_dialog_title">Věděli jste, že…</string>
     <string name="info_dialog_message">Aktualizace LineageOS jsou plné instalační balíčky. To znamená, že můžete vždy nainstalovat pouze nejnovější aktualizaci, a\u00a0je možné některé z\u00a0nich zcela přeskočit!</string>
     <string name="info_dialog_ok">Děkujeme za informace!</string>
+    <string name="local_update_import">Místní aktualizace</string>
+    <string name="local_update_import_progress">Probíhá import místní aktualizace\u2026</string>
+    <string name="local_update_import_success">%1$s byla importována. Chcete ji nainstalovat?</string>
+    <string name="local_update_import_failure">Nepodařilo se importovat místní aktualizaci</string>
+    <string name="local_update_import_install">Instalovat</string>
+    <string name="local_update_name">Místní aktualizace</string>
 </resources>

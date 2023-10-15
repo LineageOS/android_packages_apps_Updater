@@ -17,8 +17,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Güncəlləyici</string>
     <string name="display_name">Güncəlləyici</string>
-    <string name="verification_failed_notification">Təsdiqləmə uğursuz oldu</string>
-    <string name="verifying_download_notification">Güncəlləmə təsdiqlənir</string>
+    <string name="verification_failed_notification">Doğrulama uğursuz oldu</string>
+    <string name="verifying_download_notification">Güncəlləmə doğrulanır</string>
     <string name="downloading_notification">Endirilir</string>
     <string name="download_paused_notification">Endirməyə fasilə verildi</string>
     <string name="download_paused_error_notification">Endirmə xətası</string>
@@ -53,13 +53,13 @@
     <string name="menu_export_update">Güncəlləməni xaricə köçür</string>
     <string name="menu_show_changelog">Dəyişiklik jurnalını göstər</string>
     <string name="menu_ab_perf_mode">Üstünlüyü güncəlləmə prosesinə ver</string>
-    <string name="menu_update_recovery">Bərpa rejimini güncəllə</string>
-    <string name="toast_forced_update_recovery">Bu cihazda Lineage Bərpa güncəlləmələrini sıradan çıxartmaq mümkün deyil.</string>
+    <string name="menu_update_recovery">Geri qaytarma rejimini güncəllə</string>
+    <string name="toast_forced_update_recovery">Bu cihazda Lineage Geri qaytarma güncəlləmələrini sıradan çıxartmaq mümkün deyil.</string>
     <string name="snack_updates_found">Yeni güncəlləmə tapıldı</string>
     <string name="snack_no_updates_found">Yeni güncəlləmə tapılmadı</string>
-    <string name="snack_updates_check_failed">Güncəlləmə yoxlanışı uğursuz oldu. Zəhmət olmasa internet bağlantısını yoxlayıb daha sonra yenidən sınayın.</string>
-    <string name="snack_download_failed">Endirmə uğursuz oldu. Zəhmət olmasa internet bağlantısını yoxlayıb yenidən sınayın.</string>
-    <string name="snack_download_verification_failed">Güncəlləmə təsdiqləməsi uğursuz oldu.</string>
+    <string name="snack_updates_check_failed">Güncəlləmə yoxlanışı uğursuz oldu. Lütfən internet bağlantınızı yoxlayıb daha sonra yenidən sınayın.</string>
+    <string name="snack_download_failed">Endirmə uğursuz oldu. Lütfən internet bağlantınızı yoxlayıb yenidən sınayın.</string>
+    <string name="snack_download_verification_failed">Güncəlləmə doğrulaması uğursuz oldu.</string>
     <string name="snack_download_verified">Endirmə tamamlandı.</string>
     <string name="snack_update_not_installable">Bu güncəlləmə hazırkı quruluşun üzərinə quraşdırıla bilməz.</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
@@ -69,7 +69,7 @@
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
-    <string name="list_verifying_update">Güncəlləmə təsdiqlənir</string>
+    <string name="list_verifying_update">Güncəlləmə doğrulanır</string>
     <string name="list_no_updates">Yeni güncəlləmə tapılmadı. Yeni güncəlləmələri əllə yoxlamaq üçün Təzələ düyməsini istifadə edin.</string>
     <string name="action_download">Endir</string>
     <string name="action_pause">Fasilə ver</string>
@@ -81,7 +81,7 @@
     <string name="confirm_delete_dialog_title">Faylı sil</string>
     <string name="confirm_delete_dialog_message">Seçilmiş güncəlləmə faylı silinsin?</string>
     <string name="apply_update_dialog_title">Güncəlləməni tətbiq et</string>
-    <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> quraşdırırsınız.\n\n<xliff:g id="ok">%2$s</xliff:g> bassanız, cihaz yeniləməni quraşdırmaq üçün bərpa rejimində yenidən başlayacaq.\n\nQeyd: Bu özəlliyin uyğun bir Bərpa mühitinə ehtiyacı var və ya yeniləmələr əllə quraşdırılmalıdır.</string>
+    <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> quraşdırırsınız.\n\n<xliff:g id="ok">%2$s</xliff:g> bassanız, cihaz yeniləməni quraşdırmaq üçün geri qaytarma rejimində yenidən başlayacaq.\n\nQeyd: Bu özəlliyin uyğun bir Geri qaytarma mühitinə ehtiyacı var və ya yeniləmələr əllə quraşdırılmalıdır.</string>
     <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g> quraşdırırsınız.\n\n<xliff:g id="ok">%2$s</xliff:g> düyməsinə bassanız, cihaz arxaplanda quraşdırılmağa başlıyacaq.\n\nƏməliyyat bitəndə, yenidən başladılmalıdır.</string>
     <string name="cancel_installation_dialog_message">Quraşdırmadan imtina edilsin?</string>
     <string name="label_download_url">Endirmə bağlantısı</string>
@@ -108,7 +108,7 @@
     <string name="checkbox_metered_network_warning">Təkrar göstərmə</string>
     <string name="menu_metered_network_warning">Ölçülən şəbəkə xəbərdarlığı</string>
     <string name="blocked_update_dialog_title">Güncəlləmə əngəlləndi</string>
-    <string name="blocked_update_dialog_message">Bu güncəlləmə, tətbiq güncəlləyici istifadə edilərək quraşdırıla bilməz. Ətraflı məlumat üçün zəhmət olmasa <xliff:g id="info_url">%1$s</xliff:g> ünvanını oxuyun.</string>
+    <string name="blocked_update_dialog_message">Bu güncəlləmə, tətbiq güncəlləyici istifadə edilərək quraşdırıla bilməz. Ətraflı məlumat üçün lütfən <xliff:g id="info_url">%1$s</xliff:g> ünvanını oxuyun.</string>
     <string name="export_channel_title">Köçürmə tamamlandı</string>
     <string name="new_updates_channel_title">Yeni güncəlləmələr</string>
     <string name="ongoing_channel_title">Davam edən endirmələr</string>

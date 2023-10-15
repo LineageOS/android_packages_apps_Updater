@@ -71,7 +71,7 @@
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verifica aggiornamento</string>
     <string name="list_no_updates">Nessun nuovo aggiornamento trovato. Per controllare manualmente nuovi aggiornamenti, tocca il pulsante Aggiorna.</string>
-    <string name="action_download">Download</string>
+    <string name="action_download">Scarica</string>
     <string name="action_pause">Pausa</string>
     <string name="action_resume">Riprendi</string>
     <string name="action_install">Installa</string>
@@ -108,7 +108,7 @@
     <string name="checkbox_metered_network_warning">Non mostrare di nuovo</string>
     <string name="menu_metered_network_warning">Avviso di rete a consumo</string>
     <string name="blocked_update_dialog_title">Aggiornamento bloccato</string>
-    <string name="blocked_update_dialog_message">Questo aggiornamento non può essere installato usando l\'app updater.  Si prega di leggere <xliff:g id="info_url">%1$s</xliff:g> per ulteriori informazioni.</string>
+    <string name="blocked_update_dialog_message">Questo aggiornamento non può essere installato usando l\'app Aggiornamenti.  Si prega di leggere <xliff:g id="info_url">%1$s</xliff:g> per ulteriori informazioni.</string>
     <string name="export_channel_title">Completamento esportazione</string>
     <string name="new_updates_channel_title">Nuovi aggiornamenti</string>
     <string name="ongoing_channel_title">Download in corso</string>

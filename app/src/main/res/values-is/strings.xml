@@ -54,6 +54,8 @@
     <string name="menu_show_changelog">Birta breytingaannál</string>
     <string name="menu_ab_perf_mode">Setja uppfærsluferli í forgang</string>
     <string name="menu_update_recovery">Uppfæra endurheimtingu</string>
+    <string name="toast_forced_update_recovery">Ekki er hægt að gera uppfærslur á endurheimtingu LineageOS óvirkar á þessu
+ tæki.</string>
     <string name="snack_updates_found">Nýjar uppfærslur fundust</string>
     <string name="snack_no_updates_found">Engar nýjar uppfærslur fundust</string>
     <string name="snack_updates_check_failed">Athugun með uppfærslur mistókst. Skoðaðu internettenginguna og reyndu aftur síðar.</string>
@@ -116,4 +118,9 @@
     <string name="info_dialog_title">Vissir þú?</string>
     <string name="info_dialog_message">Uppfærslur á LineageOS eru alltaf heilir uppsetningapakkar. Það þýðir að þú getur alltaf sett einungis upp nýjustu uppfærsluna, jafnvel þótt þú hafir sleppt einhverjum uppfærslum í millitíðinni!</string>
     <string name="info_dialog_ok">Takk fyrir upplýsingarnar!</string>
+    <string name="local_update_import">Staðbundin uppfærsla</string>
+    <string name="local_update_import_progress">Flyt inn staðbundna uppfærslu\u2026</string>
+    <string name="local_update_import_success">%1$s hefur verið flutt inn. Viltu setja hana upp?</string>
+    <string name="local_update_import_failure">Mistókst að flytja inn staðbundna uppfærslu</string>
+    <string name="local_update_name">Staðbundin uppfærsla</string>
 </resources>

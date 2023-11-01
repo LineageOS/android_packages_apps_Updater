@@ -116,4 +116,10 @@
     <string name="info_dialog_title">Savevistu?</string>
     <string name="info_dialog_message">I inzornaments di LineageOS a son pachets di instalazion complets. Chest al significhe che tu puedis simpri instalâ l\'ultin inzornament, ancje se prime tu\'nd âs saltât cualchidun!</string>
     <string name="info_dialog_ok">Graciis pe informazion!</string>
+    <string name="local_update_import">Inzornament locâl</string>
+    <string name="local_update_import_progress">Daûr a impuartâ l\'inzornament locâl\u2026</string>
+    <string name="local_update_import_success">%1$s al è stât impuartât. Desideristu instalâlu?</string>
+    <string name="local_update_import_failure">Importazion inzornament locâl falide</string>
+    <string name="local_update_import_install">Instale</string>
+    <string name="local_update_name">Inzornament locâl</string>
 </resources>

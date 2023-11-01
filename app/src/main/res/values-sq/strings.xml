@@ -104,7 +104,7 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> orë të mbetura</item>
     </plurals>
     <string name="update_over_metered_network_title">Paralajmërim</string>
-    <string name="update_over_metered_network_message">Jeni gati të shkarkoni një paketë përditësimi përmes një rrjeti të matur, i cili ka të ngjarë të shkaktojë përdorim të lartë të të dhënave. Dëshironi të vazhdoni?</string>
+    <string name="update_over_metered_network_message">Jeni gati të shkarkoni një paketë përditësimi përmes një rrjeti celular, i cili ka të ngjarë të shkaktojë përdorim të lartë të të dhënave. Dëshironi të vazhdoni?</string>
     <string name="checkbox_metered_network_warning">Mos e shfaq përsëri</string>
     <string name="menu_metered_network_warning">Paralajmërim i rrjetit me matës</string>
     <string name="blocked_update_dialog_title">Përditësimi është bllokuar</string>

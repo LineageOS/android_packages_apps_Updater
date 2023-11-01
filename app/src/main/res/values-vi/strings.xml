@@ -101,7 +101,9 @@
         <item quantity="other">Còn lại <xliff:g id="count">%d</xliff:g> giờ</item>
     </plurals>
     <string name="update_over_metered_network_title">Cảnh báo</string>
+    <string name="update_over_metered_network_message">Bạn sắp tải xuống gói cập nhật qua mạng được đo lường, điều này có thể sẽ gây ra việc sử dụng dữ liệu cao. Bạn có muốn tiếp tục không?</string>
     <string name="checkbox_metered_network_warning">Không hiện lại</string>
+    <string name="menu_metered_network_warning">Cảnh báo mạng được đo lường</string>
     <string name="blocked_update_dialog_title">Cập nhật bị chặn</string>
     <string name="blocked_update_dialog_message">Bản cập nhật này không thể được cài đặt bằng ứng dụng trình cập nhật. Vui lòng đọc <xliff:g id="info_url">%1$s</xliff:g> để biết thêm thông tin.</string>
     <string name="export_channel_title">Hoàn thành xuất</string>
@@ -111,4 +113,10 @@
     <string name="info_dialog_title">Bạn có biết?</string>
     <string name="info_dialog_message">Bản cập nhật LineageOS là gói cài đặt đầy đủ. Điều đó có nghĩa là bạn luôn có thể chỉ cài đặt bản cập nhật mới nhất, ngay cả khi bạn đã bỏ qua một số bản cập nhật ở giữa!</string>
     <string name="info_dialog_ok">Cảm ơn bạn đã thông tin!</string>
+    <string name="local_update_import">Cập nhật cục bộ</string>
+    <string name="local_update_import_progress">Đang nhập bản cập nhật cục bộ\u2026</string>
+    <string name="local_update_import_success">%1$s đã được nhập. Bạn có muốn cài đặt nó không?</string>
+    <string name="local_update_import_failure">Không nhập được bản cập nhật cục bộ</string>
+    <string name="local_update_import_install">Cài đặt</string>
+    <string name="local_update_name">Cập nhật cục bộ</string>
 </resources>

@@ -116,7 +116,9 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> awr yn weddill</item>
     </plurals>
     <string name="update_over_metered_network_title">Rhybudd</string>
+    <string name="update_over_metered_network_message">Rwyt ar fin lawrlwytho pecyn diweddaru gyda llawer o ddata dros rwydwaith mesuredig. Wyt ti am barhau?</string>
     <string name="checkbox_metered_network_warning">Peidio â dangos eto</string>
+    <string name="menu_metered_network_warning">Rhybudd rhwydwaith mesuredig</string>
     <string name="blocked_update_dialog_title">Rhwystrwyd y diweddariad</string>
     <string name="blocked_update_dialog_message">Ni ellir gosod y diweddariad hwn gyda\'r ap diweddarydd. Gweler <xliff:g id="info_url">%1$s</xliff:g> am wybodaeth bellach.</string>
     <string name="export_channel_title">Cwblhawyd allforio</string>
@@ -126,4 +128,10 @@
     <string name="info_dialog_title">A wyddet ti?</string>
     <string name="info_dialog_message">Mae diweddariadau LineageOS yn becynnau gosod llawn, felly mae o hyd yn bosib gosod y diweddariad diweddaraf, hyd yn oed os wyt wedi neidio ambell ddiweddariad ers y diwethaf!</string>
     <string name="info_dialog_ok">Diolch am y wybodaeth!</string>
+    <string name="local_update_import">Diweddariad lleol</string>
+    <string name="local_update_import_progress">Yn mewnforio diweddariad lleol\u2026</string>
+    <string name="local_update_import_success">%1$s wedi ei fewnforio. Wyt ti am ei osod?</string>
+    <string name="local_update_import_failure">Methwyd â mewnforio diweddariad lleol</string>
+    <string name="local_update_import_install">Gosod</string>
+    <string name="local_update_name">Diweddariad lleol</string>
 </resources>

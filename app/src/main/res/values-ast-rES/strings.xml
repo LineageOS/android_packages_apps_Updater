@@ -119,5 +119,6 @@
     <string name="local_update_import">Anovamientu llocal</string>
     <string name="local_update_import_progress">Importando l\'anovamientu llocal\u2026</string>
     <string name="local_update_import_success">Importóse «%1$s». ¿Quies instalar l\'anovamientu?</string>
+    <string name="local_update_import_install">Instalar</string>
     <string name="local_update_name">Anovamientu llocal</string>
 </resources>

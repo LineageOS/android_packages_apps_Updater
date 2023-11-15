@@ -113,4 +113,10 @@
     <string name="info_dialog_title">알고 계신가요?</string>
     <string name="info_dialog_message">LineageOS 업데이트는 전체 설치 패키지입니다. 중간에 몇 개 버전을 건너뛰었더라도 가장 최신 버전만 설치하면 됩니다!</string>
     <string name="info_dialog_ok">정보 감사합니다!</string>
+    <string name="local_update_import">로컬 업데이트</string>
+    <string name="local_update_import_progress">로컬 업데이트 가져오는 중\u2026</string>
+    <string name="local_update_import_success">%1$s 업데이트를 가져왔습니다. 설치하시겠습니까?</string>
+    <string name="local_update_import_failure">로컬 업데이트를 가져오지 못했습니다.</string>
+    <string name="local_update_import_install">설치</string>
+    <string name="local_update_name">로컬 업데이트</string>
 </resources>

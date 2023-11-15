@@ -116,4 +116,10 @@
     <string name="info_dialog_title">Schon gewusst?</string>
     <string name="info_dialog_message">LineageOS-Updates sind vollständige Installationspakete. Das bedeutet, dass du immer nur das neueste Update installieren zu brauchst, auch wenn du zwischendurch welche übersprungen hast!</string>
     <string name="info_dialog_ok">Danke für die Information!</string>
+    <string name="local_update_import">Lokales Update</string>
+    <string name="local_update_import_progress">Lokales Update wird importiert\u2026</string>
+    <string name="local_update_import_success">%1$s wurde importiert. Möchtest du es installieren?</string>
+    <string name="local_update_import_failure">Fehler beim Importieren des lokalen Updates</string>
+    <string name="local_update_import_install">Installieren</string>
+    <string name="local_update_name">Lokales Update</string>
 </resources>

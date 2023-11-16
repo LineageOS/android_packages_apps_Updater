@@ -16,6 +16,24 @@
       "message": "Not covered by any valid cases to mark this as system exempted. I think special case or data sync will suit better.",
       "revId": "404ad5df2176ddf75dc418465181756dd0ba9164",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7461b04f_6e25d2a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28963
+      },
+      "writtenOn": "2023-11-16T16:17:24Z",
+      "side": 1,
+      "message": "You\u0027re right, switched to special use, as data sync doesn\u0027t look enough in this case.",
+      "parentUuid": "9fc83bb7_fb0468d0",
+      "revId": "404ad5df2176ddf75dc418465181756dd0ba9164",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.RECOVERY" />
     <uses-permission android:name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
 
     <application
         android:allowBackup="false"
@@ -43,8 +44,18 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".controller.UpdaterService" />
-        <service android:name=".ExportUpdateService" />
+        <service
+            android:name=".controller.UpdaterService"
+            android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="updater"/>
+        </service>
+        <service
+            android:name=".ExportUpdateService"
+            android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="updater"/>
+        </service>
 
         <receiver android:name=".UpdaterReceiver" android:exported="false">
             <intent-filter>

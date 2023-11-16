@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fc83bb7_fb0468d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19612
+      },
+      "writtenOn": "2023-11-16T11:40:01Z",
+      "side": 1,
+      "message": "Not covered by any valid cases to mark this as system exempted. I think special case or data sync will suit better.",
+      "revId": "404ad5df2176ddf75dc418465181756dd0ba9164",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

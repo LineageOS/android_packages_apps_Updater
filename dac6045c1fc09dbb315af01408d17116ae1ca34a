@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c987c415_bc022d65",
+        "filename": "app/src/main/AndroidManifest.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2023-11-16T20:48:27Z",
+      "side": 1,
+      "message": "Alphabetical sort",
+      "revId": "dac6045c1fc09dbb315af01408d17116ae1ca34a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fcb8cc0_8d45f1c9",
+        "filename": "app/src/main/java/org/lineageos/updater/ExportUpdateService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2023-11-16T20:48:27Z",
+      "side": 1,
+      "message": "100 chars",
+      "revId": "dac6045c1fc09dbb315af01408d17116ae1ca34a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "615328ec_744d3b24",
+        "filename": "app/src/main/java/org/lineageos/updater/controller/UpdaterService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2023-11-16T20:48:27Z",
+      "side": 1,
+      "message": "100 chars",
+      "revId": "dac6045c1fc09dbb315af01408d17116ae1ca34a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "887311c0_3a9146a8",
+        "filename": "app/src/main/java/org/lineageos/updater/controller/UpdaterService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2023-11-16T20:48:27Z",
+      "side": 1,
+      "message": "100 chars",
+      "revId": "dac6045c1fc09dbb315af01408d17116ae1ca34a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

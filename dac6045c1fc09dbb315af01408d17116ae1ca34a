@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "43249865_cb3dbaa8",
+        "filename": "app/src/main/AndroidManifest.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 28963
+      },
+      "writtenOn": "2023-11-16T21:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c987c415_bc022d65",
+      "revId": "dac6045c1fc09dbb315af01408d17116ae1ca34a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fcb8cc0_8d45f1c9",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-11-16T20:48:27Z",
       "side": 1,
       "message": "100 chars",
+      "revId": "dac6045c1fc09dbb315af01408d17116ae1ca34a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d663c5c2_a6bc159e",
+        "filename": "app/src/main/java/org/lineageos/updater/ExportUpdateService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 28963
+      },
+      "writtenOn": "2023-11-16T21:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fcb8cc0_8d45f1c9",
       "revId": "dac6045c1fc09dbb315af01408d17116ae1ca34a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -52,6 +88,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "90ef1c96_85609d92",
+        "filename": "app/src/main/java/org/lineageos/updater/controller/UpdaterService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 28963
+      },
+      "writtenOn": "2023-11-16T21:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "615328ec_744d3b24",
+      "revId": "dac6045c1fc09dbb315af01408d17116ae1ca34a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "887311c0_3a9146a8",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-11-16T20:48:27Z",
       "side": 1,
       "message": "100 chars",
+      "revId": "dac6045c1fc09dbb315af01408d17116ae1ca34a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94f50523_422742e0",
+        "filename": "app/src/main/java/org/lineageos/updater/controller/UpdaterService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 28963
+      },
+      "writtenOn": "2023-11-16T21:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "887311c0_3a9146a8",
       "revId": "dac6045c1fc09dbb315af01408d17116ae1ca34a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

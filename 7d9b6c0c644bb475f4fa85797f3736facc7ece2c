@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae6301d9_86e20c86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-11-26T19:53:21Z",
+      "side": 1,
+      "message": "the property isn\u0027t strictly needed, that\u0027s form Google play, anyways+2",
+      "revId": "7d9b6c0c644bb475f4fa85797f3736facc7ece2c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

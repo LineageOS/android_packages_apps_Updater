@@ -7,6 +7,10 @@
         android:title="@string/menu_refresh"
         app:showAsAction="ifRoom" />
     <item
+    	android:id="@+id/menu_local_update"
+        android:title="@string/local_update_import"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/menu_preferences"
         android:title="@string/menu_preferences"
         app:showAsAction="never" />

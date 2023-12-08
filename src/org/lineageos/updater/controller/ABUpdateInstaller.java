@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2022 The LineageOS Project
+ * Copyright (C) 2017-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -159,6 +159,10 @@ class ABUpdateInstaller {
         mDownloadId = downloadId;
 
         File file = mUpdaterController.getActualUpdate(mDownloadId).getFile();
+        install(file, downloadId);
+    }
+
+    public void install(File file, String downloadId) {
         if (!file.exists()) {
             Log.e(TAG, "The given update doesn't exist");
             mUpdaterController.getActualUpdate(downloadId)

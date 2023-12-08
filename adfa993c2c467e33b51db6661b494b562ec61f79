@@ -1,4 +1,96 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c12a80f_8a6de4c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T14:28:08Z",
+      "side": 1,
+      "message": "Here are some identified changes, to prevent this change from being abandoned on this branch.",
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "243898dd_5125c158",
+        "filename": "src/org/lineageos/updater/UpdateImporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T14:28:08Z",
+      "side": 1,
+      "message": "Add : parcelDescriptor.close();\n\nSource : https://review.lineageos.org/c/LineageOS/android_packages_apps_Updater/+/352641 (patch set 5)",
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9787da4e_91a979a8",
+        "filename": "src/org/lineageos/updater/UpdateImporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T14:28:08Z",
+      "side": 1,
+      "message": "update.setVersion(String.format(\"%s (%s)\", name, buildDate));\n\nSource : https://review.lineageos.org/c/LineageOS/android_packages_apps_Updater/+/352641",
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41a73a76_1048f210",
+        "filename": "src/org/lineageos/updater/UpdateImporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T14:28:08Z",
+      "side": 1,
+      "message": "Change : try (final ZipFile zip \u003d new ZipFile(file)) {\n\nSource : https://review.lineageos.org/c/LineageOS/android_packages_apps_Updater/+/352641 (patch set 5)",
+      "range": {
+        "startLine": 210,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 50
+      },
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae9b182b_590d3394",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T14:28:08Z",
+      "side": 1,
+      "message": ".setMessage(getString(R.string.local_update_import_success, update.getVersion()))\n\nSource : https://review.lineageos.org/c/LineageOS/android_packages_apps_Updater/+/352641",
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ],
   "submitRequirementResults": []
 }

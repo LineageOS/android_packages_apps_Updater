@@ -54,6 +54,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d387e29c_7b775cda",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T16:42:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db94fdfe_c0f67224",
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "243898dd_5125c158",
@@ -71,6 +89,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cf252a1_9731f54d",
+        "filename": "src/org/lineageos/updater/UpdateImporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T16:42:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "243898dd_5125c158",
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9787da4e_91a979a8",
@@ -84,6 +120,24 @@
       "writtenOn": "2023-12-08T14:28:08Z",
       "side": 1,
       "message": "update.setVersion(String.format(\"%s (%s)\", name, buildDate));\n\nSource : https://review.lineageos.org/c/LineageOS/android_packages_apps_Updater/+/352641",
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01ea057e_d10424b9",
+        "filename": "src/org/lineageos/updater/UpdateImporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T16:42:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9787da4e_91a979a8",
       "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -111,6 +165,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "11448ade_2240fa8d",
+        "filename": "src/org/lineageos/updater/UpdateImporter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T16:42:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41a73a76_1048f210",
+      "range": {
+        "startLine": 210,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 50
+      },
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ae9b182b_590d3394",
@@ -124,6 +202,24 @@
       "writtenOn": "2023-12-08T14:28:08Z",
       "side": 1,
       "message": ".setMessage(getString(R.string.local_update_import_success, update.getVersion()))\n\nSource : https://review.lineageos.org/c/LineageOS/android_packages_apps_Updater/+/352641",
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33df8b92_a67b13c9",
+        "filename": "src/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T16:42:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae9b182b_590d3394",
       "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

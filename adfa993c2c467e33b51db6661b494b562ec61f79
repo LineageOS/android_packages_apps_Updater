@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "61417feb_f5367210",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-12-08T14:37:30Z",
+      "side": 1,
+      "message": "There are no devices shipping 19.1 anymore.\n\nhttps://github.com/LineageOS/hudson/blob/main/lineage-build-targets",
+      "parentUuid": "3c12a80f_8a6de4c5",
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "243898dd_5125c158",
         "filename": "src/org/lineageos/updater/UpdateImporter.java",
         "patchSetId": 3

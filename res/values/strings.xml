@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 The LineageOS Project
+     Copyright (C) 2017-2023 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -157,4 +157,11 @@
     <string name="info_dialog_title">Did you know?</string>
     <string name="info_dialog_message">LineageOS updates are full installation packages. That means you can always install only the latest update, even if you skipped some in between!</string>
     <string name="info_dialog_ok">Thanks for the info!</string>
+
+    <string name="local_update_import">Local update</string>
+    <string name="local_update_import_progress">Importing local update\u2026</string>
+    <string name="local_update_import_success">%1$s has been imported. Do you want to install it?</string>
+    <string name="local_update_import_failure">Failed to import local update</string>
+    <string name="local_update_import_install">Install</string>
+    <string name="local_update_name">Local update</string>
 </resources>

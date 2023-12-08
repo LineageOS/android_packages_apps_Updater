@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "db94fdfe_c0f67224",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T14:51:08Z",
+      "side": 1,
+      "message": "Yes, of course, I understand. However, I continue to build LineageOS 19.1 for my device and want to keep using it, not having the time and energy to transition it to version 20. I have tested this change based on https://review.lineageos.org/c/LineageOS/android_packages_apps_Updater/+/352641, and it works well (And I am unable to push this change independently due to this change)",
+      "parentUuid": "61417feb_f5367210",
+      "revId": "adfa993c2c467e33b51db6661b494b562ec61f79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "243898dd_5125c158",
         "filename": "src/org/lineageos/updater/UpdateImporter.java",
         "patchSetId": 3

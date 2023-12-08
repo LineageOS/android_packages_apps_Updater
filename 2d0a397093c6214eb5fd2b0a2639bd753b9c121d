@@ -16,6 +16,23 @@
       "message": "Seems to be working well.",
       "revId": "2d0a397093c6214eb5fd2b0a2639bd753b9c121d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5ece058_581a0098",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-12-08T13:29:48Z",
+      "side": 1,
+      "message": "- Authorship wrong\n- Use the same Change-Id if it\u0027s the same change",
+      "revId": "2d0a397093c6214eb5fd2b0a2639bd753b9c121d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

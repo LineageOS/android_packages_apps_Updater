@@ -50,6 +50,24 @@
       "message": "- Use same commit message as well",
       "revId": "2d0a397093c6214eb5fd2b0a2639bd753b9c121d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76e8e3eb_24115b6b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28134
+      },
+      "writtenOn": "2023-12-08T14:24:36Z",
+      "side": 1,
+      "message": "I can\u0027t use the same Change-Id (error 409). I will leave comments on the abandoned commit of this branch with the same Change-Id",
+      "parentUuid": "a5ece058_581a0098",
+      "revId": "2d0a397093c6214eb5fd2b0a2639bd753b9c121d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c84010b_ec569e6c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-12-08T20:46:37Z",
+      "side": 1,
+      "message": "19.1 is dead, this is merged on 20, please do a follow up commit on 20 if you want to do anything new.",
+      "revId": "c97fb5f4fcc657bcddda3a72e172a3b475988d28",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

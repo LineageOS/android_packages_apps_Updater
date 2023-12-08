@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "115ae86e_bbbdc319",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-12-08T16:44:27Z",
+      "side": 1,
+      "message": "The changes to copyright are not correct since the stuff you applied is stuff that was in the original commit already - not warranting an update of the date",
+      "revId": "283494a991a9953f12cab59161d64d8180c5e314",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

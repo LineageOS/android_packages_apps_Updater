@@ -114,7 +114,7 @@
     <string name="checkbox_mobile_data_warning">Nie pokazuj ponownie</string>
     <string name="menu_mobile_data_warning">Ostrzeżenie o danych komórkowych</string>
     <string name="blocked_update_dialog_title">Aktualizacja zablokowana</string>
-    <string name="blocked_update_dialog_message">Tej aktualizacji nie można zainstalować przy użyciu aplikacji aktualizacji.  Zapoznaj się z <xliff:g id="info_url">%1$s </xliff:g> aby uzyskać więcej informacji.</string>
+    <string name="blocked_update_dialog_message">Tej aktualizacji nie można zainstalować przy użyciu aplikacji \"Aktualizator\".  Zapoznaj się z <xliff:g id="info_url">%1$s </xliff:g>, aby uzyskać więcej informacji.</string>
     <string name="export_channel_title">Eksport zakończony</string>
     <string name="new_updates_channel_title">Nowe aktualizacje</string>
     <string name="ongoing_channel_title">Trwające pobieranie</string>

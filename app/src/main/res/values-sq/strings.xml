@@ -28,7 +28,7 @@
     <string name="installation_suspended_notification">Instalimi u pezullua</string>
     <string name="new_updates_found_title">Përditësime të reja</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">Pusho</string>
+    <string name="pause_button">Ndalo</string>
     <string name="resume_button">Rinis</string>
     <string name="suspend_button">Pezullu</string>
     <string name="installing_update">Duke instaluar paketën e përditësimit</string>

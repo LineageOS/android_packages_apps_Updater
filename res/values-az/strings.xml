@@ -104,7 +104,7 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> saat qaldı</item>
     </plurals>
     <string name="update_on_mobile_data_title">Xəbərdarlıq</string>
-    <string name="update_on_mobile_data_message">Böyük ehtimalla mobil internet istifadə edərək yüksək verilənlər istifadəsinə səbəb olacaq güncəlləmə paketi endirirsiniz. Davam etmək istəyirsiniz?</string>
+    <string name="update_on_mobile_data_message">Böyük ehtimalla mobil internet istifadə edərək yüksək internet istifadəsinə səbəb olacaq güncəlləmə paketi endirirsiniz. Davam etmək istəyirsiniz?</string>
     <string name="checkbox_mobile_data_warning">Təkrar göstərmə</string>
     <string name="menu_mobile_data_warning">Mobil internet xəbərdarlığı</string>
     <string name="blocked_update_dialog_title">Güncəlləmə əngəlləndi</string>

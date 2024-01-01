@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# SPDX-FileCopyrightText: 2018-2020 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
 updates_dir=/data/lineageos_updates
 
 if [ ! -f "$1" ]; then

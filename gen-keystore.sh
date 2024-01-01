@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2017-2018 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
 if [ $# -ne 4 ]; then
     echo "Usage: `basename $0` PRIVATE_KEY CERTIFICATE \\"
     echo "          KEY_ALIAS OUTPUT_KEYSTORE_PATH"

@@ -1,0 +1,32 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Updater
+Upstream-Contact: The LineageOS Project
+Source: https://github.com/LineageOS/android_packages_apps_Updater
+
+Files: .gitignore
+Copyright: 2023 The LineageOS Project
+License: Apache-2.0
+
+Files: app/.gitignore
+Copyright: 2017 The LineageOS Project
+License: Apache-2.0
+
+Files: gradle/wrapper/*
+Copyright: 2007-2023 Gradle, Inc.
+License: Apache-2.0
+
+Files: gradlew*
+Copyright: 2007-2023 Gradle, Inc.
+License: Apache-2.0
+
+Files: README.md
+Copyright: 2018 The LineageOS Project
+License: Apache-2.0
+
+Files: keystore.properties.sample
+Copyright: 2017 The LineageOS Project
+License: Apache-2.0
+
+Files: .idea/* *.gradle *.properties
+Copyright: 2023 The LineageOS Project
+License: Apache-2.0

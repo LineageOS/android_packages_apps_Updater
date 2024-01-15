@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2023 The LineageOS Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Updater</string>
@@ -106,7 +95,7 @@
     <string name="update_over_metered_network_title">Achtung</string>
     <string name="update_over_metered_network_message">Du bist dabei ein Software-Update über ein getaktetes Netzwerk herunterzuladen, was zu einem hohen Datenverbrauch führen kann. Möchtest du fortfahren?</string>
     <string name="checkbox_metered_network_warning">Nicht wieder anzeigen</string>
-    <string name="menu_metered_network_warning">Achtung getaktetes Netzwerk</string>
+    <string name="menu_metered_network_warning">Warnen bei getakteter Verbindung</string>
     <string name="blocked_update_dialog_title">Update blockiert</string>
     <string name="blocked_update_dialog_message">Dieses Update kann mit der Updater-App nicht installiert werden. Für weitere Informationen lies bitte <xliff:g id="info_url">%1$s </xliff:g>.</string>
     <string name="export_channel_title">Export abgeschlossen</string>

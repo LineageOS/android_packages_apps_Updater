@@ -52,7 +52,7 @@
     <string name="menu_copy_url">Kopiraj URL</string>
     <string name="menu_export_update">Izvozi posodobitev</string>
     <string name="menu_show_changelog">Prikaži dnevnik sprememb</string>
-    <string name="menu_ab_perf_mode">Daj prednost posodobitvenemu procesu</string>
+    <string name="menu_ab_perf_mode">Daj prednost posodobitvenemu postopku</string>
     <string name="snack_updates_found">Najdene nove posodobitve</string>
     <string name="snack_no_updates_found">Ni najdenih novih posodobitev</string>
     <string name="snack_updates_check_failed">Preverjanje za posodobitve je spodletelo. Preverite svojo internetno povezavo in poskusite znova kasneje.</string>

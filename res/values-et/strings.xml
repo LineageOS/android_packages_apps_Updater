@@ -15,6 +15,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Uuendaja</string>
+    <string name="display_name">Uuendaja</string>
     <string name="installation_suspended_notification">Installimine peatati</string>
     <string name="suspend_button">Peata</string>
     <string name="dialog_battery_low_title">Madal akutase</string>

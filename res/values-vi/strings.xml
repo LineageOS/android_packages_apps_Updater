@@ -25,10 +25,12 @@
     <string name="download_completed_notification">Tải xuống hoàn tất</string>
     <string name="download_starting_notification">Đang bắt đầu tải xuống</string>
     <string name="update_failed_notification">Cập nhật thất bại</string>
+    <string name="installation_suspended_notification">Cài đặt đã ngừng</string>
     <string name="new_updates_found_title">Bản cập nhật mới</string>
     <string name="text_download_speed">%1$s, %2$s/giây</string>
     <string name="pause_button">Tạm dừng</string>
     <string name="resume_button">Tiếp tục</string>
+    <string name="suspend_button">Tạm dừng</string>
     <string name="installing_update">Đang cài đặt gói cập nhật</string>
     <string name="installing_update_error">Lỗi cài đặt</string>
     <string name="installing_update_finished">Đã cài đặt bản cập nhật</string>
@@ -41,6 +43,10 @@
     <string name="menu_refresh">Làm mới</string>
     <string name="menu_preferences">Tùy chỉnh</string>
     <string name="menu_auto_updates_check">Tự động kiểm tra bản cập nhật</string>
+    <string name="menu_auto_updates_check_interval_daily">Mỗi ngày một lần</string>
+    <string name="menu_auto_updates_check_interval_weekly">Mỗi tuần một lần</string>
+    <string name="menu_auto_updates_check_interval_monthly">Mỗi tháng một lần</string>
+    <string name="menu_auto_updates_check_interval_never">Không bao giờ</string>
     <string name="menu_auto_delete_updates">Xóa bản cập nhật khi cài đặt hoàn tất</string>
     <string name="menu_delete_update">Xóa</string>
     <string name="menu_copy_url">Sao chép URL</string>

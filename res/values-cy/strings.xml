@@ -79,7 +79,7 @@
     <string name="confirm_delete_dialog_title">Dileu ffeil</string>
     <string name="confirm_delete_dialog_message">Dileu\'r ffeil diweddariad a ddewiswyd?</string>
     <string name="apply_update_dialog_title">Gosod diweddariad</string>
-    <string name="apply_update_dialog_message">Rwyt ar fin uwchraddio i <xliff:g id="update_name">%1$s</xliff:g>.\n\nOs wyt yn gwasgu <xliff:g id="ok">%2$s</xliff:g>, bydd y ddyfais yn ail-ddechrau ei hun i\'r modd adfer er mwyn gosod y diweddariad.\n\nNodyn: Mae ar y nodwedd hon angen Modd Adfer (Recovery) cydnaws er mwyn gosod diweddariadau yn awtomatig.</string>
+    <string name="apply_update_dialog_message">Rwyt ar fin uwchraddio i <xliff:g id="update_name">%1$s</xliff:g>.\n\nOs wyt yn gwasgu <xliff:g id="ok">%2$s</xliff:g>, bydd y ddyfais yn ail-ddechrau ei hun i\'r modd adfer er mwyn gosod y diweddariad.\n\nNodyn: Mae ar y nodwedd hon angen Dull Adfer (recovery) cydnaws er mwyn gosod diweddariadau yn awtomatig.</string>
     <string name="apply_update_dialog_message_ab">Rwyt ar fin uwchraddio i <xliff:g id="update_name">%1$s</xliff:g>.\n\nOs wyt yn gwasgu <xliff:g id="ok">%2$s</xliff:g>, bydd y ddyfais yn dechrau\'r gosod yn y cefndir.\n\nPan fydd wedi\'i gwblhau, cei dy hysbysu i ailddechrau\'r system.</string>
     <string name="cancel_installation_dialog_message">Diddymu\'r gosod?</string>
     <string name="label_download_url">URL lawrlwytho</string>

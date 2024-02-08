@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Inzornaments</string>
+    <string name="display_name">Inzornaments</string>
+    <string name="verification_failed_notification">Verifiche falide</string>
+    <string name="verifying_download_notification">Verifiche inzornaments</string>
+    <string name="downloading_notification">Daûr a discjariâ</string>
+    <string name="download_paused_notification">Discjariament in pause</string>
+    <string name="download_paused_error_notification">Erôr tal discjariâ</string>
+    <string name="download_completed_notification">Discjariament completât</string>
+    <string name="download_starting_notification">Daûr a scomençâ il discjariament</string>
+    <string name="update_failed_notification">Inzornament falît</string>
+    <string name="installation_suspended_notification">Instalazion sospindude</string>
+    <string name="new_updates_found_title">Gnûfs inzornaments</string>
+    <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="pause_button">Pause</string>
+    <string name="resume_button">Ripie</string>
+    <string name="suspend_button">Sospint</string>
+    <string name="installing_update">Instalazion dal pachet di inzornament</string>
+    <string name="installing_update_error">Erôr di instalazion</string>
+    <string name="installing_update_finished">Inzornament instalât</string>
+    <string name="finalizing_package">Daûr a completâ la instalazion dal pachet</string>
+    <string name="preparing_ota_first_boot">Preparazion pal prin inviament</string>
+    <string name="dialog_prepare_zip_message">Preparazion dal inzornament preliminâr</string>
+    <string name="dialog_battery_low_title">Batarie basse</string>
+    <string name="dialog_battery_low_message_pct">Il nivel de batarie al è masse bas, tu scugnis vê almancul il <xliff:g id="percent_discharging">%1$d</xliff:g>%% par continuâ, <xliff:g id="percent_charging">%2$d</xliff:g>%% se e je in cjame.</string>
+    <string name="reboot">Torne invie</string>
+    <string name="menu_refresh">Torne cjame</string>
+    <string name="menu_preferences">Preferencis</string>
+    <string name="menu_auto_updates_check">Ricercje inzornaments in automatic</string>
+    <string name="menu_auto_updates_check_interval_daily">Une volte par dì</string>
+    <string name="menu_auto_updates_check_interval_weekly">Une volte par setemane</string>
+    <string name="menu_auto_updates_check_interval_monthly">Une volte par mês</string>
+    <string name="menu_auto_updates_check_interval_never">Mai</string>
+    <string name="menu_auto_delete_updates">Elimine i inzornaments se instalâts</string>
+    <string name="menu_delete_update">Elimine</string>
+    <string name="menu_copy_url">Copie l\'URL</string>
+    <string name="menu_export_update">Espuarte inzornament</string>
+    <string name="menu_show_changelog">Mostre regjisti modifichis</string>
+    <string name="menu_ab_perf_mode">Inzornaments cun prioritât</string>
+    <string name="snack_updates_found">Cjatâts gnûfs inzornaments</string>
+    <string name="snack_no_updates_found">Nissun gnûf inzornament cjatât</string>
+    <string name="snack_updates_check_failed">La verifiche di gnûfs inzornaments e je falide. Controle la conession internet e torne prove plui indenant.</string>
+    <string name="snack_download_failed">Il discjariament dal inzornament al è falît. Controle la conession a internet e torne prove plui indenant.</string>
+    <string name="snack_download_verification_failed">Verifiche dal inzornament falide.</string>
+    <string name="snack_download_verified">Discjariament completât.</string>
+    <string name="snack_update_not_installable">Nol è pussibil instalâ chest inzornament sore di cheste version.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Ultime verifiche: <xliff:g id="date" example="2 di Zenâr dal 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="Lui 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> • <xliff:g id="percentage" example="56">%3$s</xliff:g></string>
+    <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_verifying_update">Verifiche inzornament</string>
+    <string name="list_no_updates">Nissun gnûf inzornament cjatât. Par controlâ a man i gnûfs inzornaments, tocje il boton Inzorne.</string>
+    <string name="action_download">Discjame</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Ripie</string>
+    <string name="action_install">Instale</string>
+    <string name="action_info">Informazions</string>
+    <string name="action_delete">Elimine</string>
+    <string name="action_cancel">Anule</string>
+    <string name="confirm_delete_dialog_title">Elimine file</string>
+    <string name="confirm_delete_dialog_message">Eliminâ il file di inzornament selezionât?</string>
+    <string name="apply_update_dialog_title">Apliche inzornament</string>
+    <string name="apply_update_dialog_message">Tu stâs par inzornâ a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe tu frachis <xliff:g id="ok">%2$s</xliff:g>, il dispositîf al tornarà a inviâsi in modalitât recovery par instalâ in automatic l\'inzornament.\n\nNote: Cheste funzion e domande une Recovery compatibile, in câs contrari tu varâs di procedi ae instalazion manuâl.</string>
+    <string name="apply_update_dialog_message_ab">Tu stâs par inzornâ a <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe tu frachis <xliff:g id="ok">%2$s</xliff:g>, il dispositîf al scomençarà la instalazion in sotfont.\n\nUne volte completade, ti vignarà domandât di tornâ a inviâ il dispositîf.</string>
+    <string name="cancel_installation_dialog_message">Anulâ la instalazion?</string>
+    <string name="label_download_url">URL dal discjariament</string>
+    <string name="toast_download_url_copied">URL copiât</string>
+    <string name="dialog_export_title">Esportazion inzornament</string>
+    <string name="notification_export_success">Inzornament espuartât</string>
+    <string name="notification_export_fail">Erôr de esportazion</string>
+    <string name="toast_already_exporting">Si sta za espuartant un inzornament</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">Al mancje 1 secont</item>
+        <item quantity="other">A mancjin <xliff:g id="count">%d</xliff:g> seconts</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">Al mancje 1 minût</item>
+        <item quantity="other">A mancjin <xliff:g id="count">%d</xliff:g> minûts</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">E mancje 1 ore</item>
+        <item quantity="other">A mancjin <xliff:g id="count">%d</xliff:g> oris</item>
+    </plurals>
+    <string name="update_on_mobile_data_title">Atenzion</string>
+    <string name="update_on_mobile_data_message">Tu stâs par discjariâ un pachet di inzornament doprant i dâts mobii, chest al podarès puartâ a consumâ une vore di dâts pes conessions a consum. Procedi?</string>
+    <string name="checkbox_mobile_data_warning">No sta mostrâ plui</string>
+    <string name="menu_mobile_data_warning">Avîs utilizazion dâs mobii</string>
+    <string name="blocked_update_dialog_title">Inzornament blocât</string>
+    <string name="blocked_update_dialog_message">Nol è pussibil instalâ chest inzornament cu la aplicazion di inzornament.  Lei <xliff:g id="info_url">%1$s</xliff:g> par vê plui informazions.</string>
+    <string name="export_channel_title">Completament de esportazion</string>
+    <string name="new_updates_channel_title">Gnûfs inzornaments</string>
+    <string name="ongoing_channel_title">Discjariaments in vore</string>
+    <string name="update_failed_channel_title">Inzornament falît</string>
+</resources>

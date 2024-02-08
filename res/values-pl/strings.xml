@@ -38,7 +38,7 @@
     <string name="preparing_ota_first_boot">Przygotowanie do pierwszego uruchomienia</string>
     <string name="dialog_prepare_zip_message">Przygotowanie wstępne aktualizacji</string>
     <string name="dialog_battery_low_title">Niskim poziom baterii</string>
-    <string name="dialog_battery_low_message_pct">Poziom naładowania baterii jest zbyt niski, musisz mieć co najmniej <xliff:g id="percent_discharging">%1$d</xliff:g>% baterii lub <xliff:g id="percent_charging">%2$d</xliff:g>% w trakcie ładowania.</string>
+    <string name="dialog_battery_low_message_pct">Poziom naładowania baterii jest zbyt niski, musisz mieć co najmniej <xliff:g id="percent_discharging">%1$d</xliff:g>%% baterii lub <xliff:g id="percent_charging">%2$d</xliff:g>%% w trakcie ładowania.</string>
     <string name="reboot">Uruchom ponownie</string>
     <string name="menu_refresh">Odśwież</string>
     <string name="menu_preferences">Ustawienia</string>
@@ -111,7 +111,7 @@
     <string name="checkbox_mobile_data_warning">Nie pokazuj ponownie</string>
     <string name="menu_mobile_data_warning">Ostrzeżenie o danych komórkowych</string>
     <string name="blocked_update_dialog_title">Aktualizacja zablokowana</string>
-    <string name="blocked_update_dialog_message">Tej aktualizacji nie można zainstalować przy użyciu aplikacji aktualizacji.  Zapoznaj się z <xliff:g id="info_url">%1$s </xliff:g> aby uzyskać więcej informacji.</string>
+    <string name="blocked_update_dialog_message">Tej aktualizacji nie można zainstalować przy użyciu aplikacji \"Aktualizator\".  Zapoznaj się z <xliff:g id="info_url">%1$s </xliff:g>, aby uzyskać więcej informacji.</string>
     <string name="export_channel_title">Eksport zakończony</string>
     <string name="new_updates_channel_title">Nowe aktualizacje</string>
     <string name="ongoing_channel_title">Trwające pobieranie</string>

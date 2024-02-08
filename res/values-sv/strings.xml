@@ -22,8 +22,10 @@
     <string name="download_paused_error_notification">Nedladdningsfel</string>
     <string name="download_completed_notification">Nedladdning slutförd</string>
     <string name="download_starting_notification">Påbörjar nedladdning</string>
+    <string name="update_failed_notification">Uppdateringen misslyckades</string>
     <string name="new_updates_found_title">Nya uppdateringar</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="pause_button">Pausa</string>
     <string name="resume_button">Återuppta</string>
     <string name="installing_update">Installerar uppdateringspaketet</string>
     <string name="installing_update_error">Installationsfel</string>
@@ -42,6 +44,7 @@
     <string name="snack_updates_found">Nya uppdateringar hittades</string>
     <string name="snack_no_updates_found">Inga nya uppdateringar hittades</string>
     <string name="snack_download_verified">Nedladdningen är slutförd.</string>
+    <string name="snack_update_not_installable">Uppdateringen kan inte installeras över den nuvarande versionen.</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
     <string name="header_last_updates_check">Senaste kontrollen utfördes: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
@@ -59,9 +62,24 @@
     <string name="confirm_delete_dialog_title">Ta bort fil</string>
     <string name="label_download_url">Nedladdningsadress</string>
     <string name="toast_download_url_copied">Webbadressen har kopierats</string>
+    <string name="notification_export_success">Uppdatering exporterad</string>
     <string name="notification_export_fail">Exporteringsfel</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">1 sekund kvar</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> sekunder kvar</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">1 minut kvar</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> minuter kvar</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">1 timme kvar</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> timmar kvar</item>
+    </plurals>
     <string name="update_on_mobile_data_title">Varning</string>
+    <string name="update_on_mobile_data_message">Du är på väg att ladda ner en uppdatering över mobilnätet vilket troligtvis kommer att orsaka hög dataanvändning. Vill du fortsätta?</string>
     <string name="checkbox_mobile_data_warning">Visa inte igen</string>
+    <string name="menu_mobile_data_warning">Mobildatavarning</string>
     <string name="export_channel_title">Export slutförd</string>
     <string name="new_updates_channel_title">Nya uppdateringar</string>
     <string name="ongoing_channel_title">Pågående nedladdningar</string>

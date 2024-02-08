@@ -79,8 +79,8 @@
     <string name="confirm_delete_dialog_title">Sguab às am faidhle</string>
     <string name="confirm_delete_dialog_message">A bheil thu airson faidhle an ùrachaidh a thagh thu a sguabadh às?</string>
     <string name="apply_update_dialog_title">Cuir an t-ùrachadh an sàs</string>
-    <string name="apply_update_dialog_message">Tha thu an impis àrdachadh gu <xliff:g id="update_name">%1$s</xliff:g>.\n\nMa bhrùthas tu <xliff:g id="ok">%2$s</xliff:g>, nì an t-uidheam ath-thòiseachadh sa mhodh aisig airson an t-ùrachadh a stàladh.\n\nAn aire: Tha feum air gleus aisig co-chòrdail no feumaidh tu an t-ùrachadh a stàladh a làimh.</string>
-    <string name="apply_update_dialog_message_ab">Tha thu an impis àrdachadh gu <xliff:g id="update_name">%1$s</xliff:g>.\n\nMa bhrùthas tu <xliff:g id="ok">%2$s</xliff:g>, tòisichidh an t-uidheam air an stàladh sa chùlaibh.\n\nNuair a bhios e deiseil, thèid ath-thòiseachadh iarraidh ort.</string>
+    <string name="apply_update_dialog_message">Tha thu an impis àrdachadh gu <xliff:g id="update_name">%1$s</xliff:g>.\n\nMa bhrùthas tu “<xliff:g id="ok">%2$s</xliff:g>”, nì an t-uidheam ath-thòiseachadh sa mhodh aisig airson an t-ùrachadh a stàladh.\n\nAn aire: Tha feum air gleus aisig co-chòrdail no feumaidh tu an t-ùrachadh a stàladh a làimh.</string>
+    <string name="apply_update_dialog_message_ab">Tha thu an impis àrdachadh gu <xliff:g id="update_name">%1$s</xliff:g>.\n\nMa bhrùthas tu “<xliff:g id="ok">%2$s</xliff:g>”, tòisichidh an t-uidheam air an stàladh sa chùlaibh.\n\nNuair a bhios e deiseil, thèid ath-thòiseachadh iarraidh ort.</string>
     <string name="cancel_installation_dialog_message">An sguir thu dhen stàladh?</string>
     <string name="label_download_url">Luchdaich a-nuas URL</string>
     <string name="toast_download_url_copied">Chaidh lethbhreac dhen URL a dhèanamh</string>

@@ -18,6 +18,7 @@
     <string name="app_name">Uuendaja</string>
     <string name="display_name">Uuendaja</string>
     <string name="installation_suspended_notification">Installimine peatati</string>
+    <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="suspend_button">Peata</string>
     <string name="dialog_battery_low_title">Madal akutase</string>
     <string name="dialog_battery_low_message_pct">Akutase on liiga madal, jätkamiseks on vaja akut vähemalt <xliff:g id="percent_discharging">%1$d</xliff:g>%%, laadimise korral <xliff:g id="percent_charging">%2$d</xliff:g>%%.</string>

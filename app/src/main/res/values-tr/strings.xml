@@ -104,7 +104,9 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> saat kaldı</item>
     </plurals>
     <string name="update_over_metered_network_title">Uyarı</string>
+    <string name="update_over_metered_network_message">Mobil veri kullanarak, büyük olasılıkla yüksek veri kullanımına yol açacak bir güncelleme paketi indirmek üzeresiniz. Devam etmek ister misiniz?</string>
     <string name="checkbox_metered_network_warning">Tekrar gösterme</string>
+    <string name="menu_metered_network_warning">Mobil veri uyarısı</string>
     <string name="blocked_update_dialog_title">Güncelleme engellendi</string>
     <string name="blocked_update_dialog_message">Bu güncelleme, güncelleyici uygulaması kullanılarak kurulamaz. Daha fazla bilgi için lütfen  <xliff:g id="info_url">%1$s</xliff:g> adresini okuyun.</string>
     <string name="export_channel_title">Dışa aktarma tamamlandı</string>
@@ -114,4 +116,10 @@
     <string name="info_dialog_title">Biliyor musun?</string>
     <string name="info_dialog_message">LineageOS güncellemeleri tam yükleme paketleridir. Bu demektir ki güncelleme atlamış olsanız bile her zaman sadece son güncellemeyi kurabilirsiniz!</string>
     <string name="info_dialog_ok">Bilgi için teşekkürler!</string>
+    <string name="local_update_import">Yerel güncelleme</string>
+    <string name="local_update_import_progress">Yerel güncelleme içe aktarılıyor</string>
+    <string name="local_update_import_success">1$s içe aktarıldı. Yüklemek istiyor musunuz?</string>
+    <string name="local_update_import_failure">Yerel güncelleme içe aktarılamadı</string>
+    <string name="local_update_import_install">Yükle</string>
+    <string name="local_update_name">Yerel güncelleme</string>
 </resources>

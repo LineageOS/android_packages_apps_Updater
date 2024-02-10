@@ -81,7 +81,7 @@
     <string name="confirm_delete_dialog_title">Faylı sil</string>
     <string name="confirm_delete_dialog_message">Seçilmiş güncəlləmə faylı silinsin?</string>
     <string name="apply_update_dialog_title">Güncəlləməni tətbiq et</string>
-    <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> quraşdırırsınız.\n\n<xliff:g id="ok">%2$s</xliff:g> bassanız, cihaz yeniləməni quraşdırmaq üçün geri qaytarma rejimində yenidən başlayacaq.\n\nQeyd: Bu özəlliyin uyğun bir Geri qaytarma mühitinə ehtiyacı var və ya yeniləmələr əllə quraşdırılmalıdır.</string>
+    <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> quraşdırırsınız.\n\n<xliff:g id="ok">%2$s</xliff:g> bassanız, cihaz güncəlləməni quraşdırmaq üçün geri qaytarma rejimində yenidən başlayacaq.\n\nQeyd: Bu özəlliyin uyumlu bir Geri qaytarma mühitinə ehtiyacı var və ya güncəlləmələr əllə quraşdırılmalıdır.</string>
     <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g> quraşdırırsınız.\n\n<xliff:g id="ok">%2$s</xliff:g> düyməsinə bassanız, cihaz arxaplanda quraşdırılmağa başlıyacaq.\n\nƏməliyyat bitəndə, yenidən başladılmalıdır.</string>
     <string name="cancel_installation_dialog_message">Quraşdırmadan imtina edilsin?</string>
     <string name="label_download_url">Endirmə bağlantısı</string>
@@ -114,7 +114,7 @@
     <string name="ongoing_channel_title">Davam edən endirmələr</string>
     <string name="update_failed_channel_title">Güncəlləmə uğursuz oldu</string>
     <string name="info_dialog_title">Bilirdiniz?</string>
-    <string name="info_dialog_message">LineageOS yeniləmələri tam quraşdırma paketləridir. Yəni, yeniləməni ötürsəniz belə, hər zaman yalnız son yeniləməni quraşdıra bilərsiniz!</string>
+    <string name="info_dialog_message">LineageOS güncəlləmələri tam quraşdırma paketləridir. Yəni, güncəlləməni ötürsəniz belə, hər zaman yalnız son güncəlləməni quraşdıra bilərsiniz!</string>
     <string name="info_dialog_ok">Məlumat üçün təşəkkürlər!</string>
     <string name="local_update_import">Yerli güncəlləmə</string>
     <string name="local_update_import_progress">Yerli güncəlləmə daxilə köçürülür\u2026</string>

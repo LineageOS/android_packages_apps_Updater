@@ -27,7 +27,7 @@
     <string name="preparing_ota_first_boot">მზადდება პირველი ჩატვირთვისთვის</string>
     <string name="dialog_prepare_zip_message">წინასწარი მომზადება განახლებისთვის</string>
     <string name="dialog_battery_low_title">ბატარეა ჯდება</string>
-    <string name="dialog_battery_low_message_pct">ელემენტის მუხტი მეტად მცირეა, გასაგრძელებლად საჭიროა დამუხტული იყოს სულ მცირე <xliff:g id="percent_discharging">%1$d</xliff:g>%% ან <xliff:g id="percent_charging">%2$d</xliff:g>%% თუ იმუხტება.</string>
+    <string name="dialog_battery_low_message_pct">მუხტის დონე მეტად მცირეა, საჭიროა დამუხტული იყოს არანაკლებ <xliff:g id="percent_discharging">%1$d</xliff:g>%% ან <xliff:g id="percent_charging">%2$d</xliff:g>%% შეერთდეს სატენზე.</string>
     <string name="reboot">გადატვირთვა</string>
     <string name="menu_refresh">განახლება</string>
     <string name="menu_preferences">პარამეტრები</string>

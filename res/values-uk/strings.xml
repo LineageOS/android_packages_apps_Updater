@@ -38,7 +38,7 @@
     <string name="reboot">Перезавантаження</string>
     <string name="menu_refresh">Оновити</string>
     <string name="menu_preferences">Параметри</string>
-    <string name="menu_auto_updates_check">Автоматична перевірка оновлень</string>
+    <string name="menu_auto_updates_check">Автоперевірка оновлень</string>
     <string name="menu_auto_updates_check_interval_daily">Щодня</string>
     <string name="menu_auto_updates_check_interval_weekly">Щотижня</string>
     <string name="menu_auto_updates_check_interval_monthly">Щомісяця</string>

@@ -43,9 +43,9 @@
     <string name="menu_refresh">Genopfrisk</string>
     <string name="menu_preferences">Præferencer</string>
     <string name="menu_auto_updates_check">Auto-opdateringskontrol</string>
-    <string name="menu_auto_updates_check_interval_daily">Én gang dagligt</string>
-    <string name="menu_auto_updates_check_interval_weekly">En gang om ugen</string>
-    <string name="menu_auto_updates_check_interval_monthly">En gang om måneden</string>
+    <string name="menu_auto_updates_check_interval_daily">Dagligt</string>
+    <string name="menu_auto_updates_check_interval_weekly">Ugenligt</string>
+    <string name="menu_auto_updates_check_interval_monthly">Månedligt</string>
     <string name="menu_auto_updates_check_interval_never">Aldrig</string>
     <string name="menu_auto_delete_updates">Slet opdateringer, når installeret</string>
     <string name="menu_delete_update">Slet</string>

@@ -15,9 +15,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">আধুনিকীকরণকারী</string>
-    <string name="display_name">আধুনিকীকরণকারী</string>
+    <string name="app_name">আপডেটার</string>
+    <string name="display_name">আপডেটার</string>
     <string name="verification_failed_notification">যাচাইকরণ ব্যর্থ হয়েছে</string>
+    <string name="download_starting_notification">ডাউনলোড শুরু হচ্ছে</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">বিরাম</string>
     <string name="menu_update_recovery">রিকভারি আপডেট করুন</string>

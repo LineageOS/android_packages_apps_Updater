@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+ * SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 package org.lineageos.updater;
@@ -51,6 +51,9 @@ import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
@@ -464,6 +467,12 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     .setMessage(message)
                     .setPositiveButton(android.R.string.ok, null);
         }
+        if (isScratchMounted()) {
+            return new AlertDialog.Builder(mActivity)
+                    .setTitle(R.string.dialog_scratch_mounted_title)
+                    .setMessage(R.string.dialog_scratch_mounted_message)
+                    .setPositiveButton(android.R.string.ok, null);
+        }
         UpdateInfo update = mUpdaterController.getUpdate(downloadId);
         int resId;
         try {
@@ -597,5 +606,20 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 mActivity.getResources().getInteger(R.integer.battery_ok_percentage_charging) :
                 mActivity.getResources().getInteger(R.integer.battery_ok_percentage_discharging);
         return percent >= required;
+    }
+
+    private static boolean isScratchMounted() {
+        File file = new File("/proc/mounts");
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.split(" ")[1].equals("/mnt/scratch")) {
+                    return true;
+                }
+            }
+        } catch (IOException e) {
+            return false;
+        }
+        return false;
     }
 }

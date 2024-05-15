@@ -94,7 +94,9 @@ illetve, ha éppen tölt, akkor még <xliff:g id="percent_charging">%2$d</xliff:
         <item quantity="other"><xliff:g id="count">%d</xliff:g> óra van hátra</item>
     </plurals>
     <string name="update_over_metered_network_title">Figyelmeztetés</string>
+    <string name="update_over_metered_network_message">Úgy tűnik mobiladat-forgalmat használva kíván letölteni egy nagyméretű frissítési csomagot, ami nagy költséggel járhat. Biztos benne hogy engedélyezi ezt?</string>
     <string name="checkbox_metered_network_warning">Ne jelenjen meg többet</string>
+    <string name="menu_metered_network_warning">Mobiladat-költség figyelmeztetés</string>
     <string name="blocked_update_dialog_title">A frissítés blokkolva</string>
     <string name="blocked_update_dialog_message">Ez a frissítés nem telepíthető a Frissítés alkalmazással. További információért olvassa el a következőt: <xliff:g id="info_url">%1$s</xliff:g></string>
     <string name="export_channel_title">Exportálás-véglegesítés</string>
@@ -104,4 +106,10 @@ illetve, ha éppen tölt, akkor még <xliff:g id="percent_charging">%2$d</xliff:
     <string name="info_dialog_title">Tudta Ön?</string>
     <string name="info_dialog_message">A LineageOS frissítései teljes telepítőcsomagok. Ez azt jelenti, hogy mindig elég a legfrissebb csomagot telepítenie, nem baj ha korábban kihagyott párat!</string>
     <string name="info_dialog_ok">Köszönet az információért!</string>
+    <string name="local_update_import">Helyi frissítés</string>
+    <string name="local_update_import_progress">Helyi frissítés importálása\u2026</string>
+    <string name="local_update_import_success">%1$s importálva lett. Kívánja telepíteni?</string>
+    <string name="local_update_import_failure">Nem sikerült importálni a helyi frissítést</string>
+    <string name="local_update_import_install">Telepítés</string>
+    <string name="local_update_name">Helyi frissítés</string>
 </resources>

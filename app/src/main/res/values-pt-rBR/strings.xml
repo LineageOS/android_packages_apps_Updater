@@ -42,6 +42,8 @@
     <string name="menu_export_update">Exportar atualização</string>
     <string name="menu_show_changelog">Mostrar alterações</string>
     <string name="menu_ab_perf_mode">Priorizar o processo de atualização</string>
+    <string name="menu_update_recovery">Atualizar a recuperação</string>
+    <string name="toast_forced_update_recovery">Não é possível desativar as atualizações do Lineage Recovery neste dispositivo.</string>
     <string name="snack_updates_found">Nova atualização disponível</string>
     <string name="snack_no_updates_found">Não foram encontradas novas atualizações</string>
     <string name="snack_updates_check_failed">Falha ao procurar por atualizações. Verifique sua conexão com a internet e tente novamente.</string>
@@ -54,6 +56,8 @@
     <string name="header_last_updates_check">Última verificação: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> às <xliff:g id="time" example="01:23">%2$s</xliff:g></string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verificando atualização</string>
     <string name="list_no_updates">Não foram encontradas novas atualizações. Use o botão Atualizar para buscar por novas atualizações manualmente.</string>
     <string name="action_download">Baixar</string>
@@ -66,6 +70,8 @@
     <string name="confirm_delete_dialog_title">Excluir arquivo</string>
     <string name="confirm_delete_dialog_message">Excluir o arquivo de atualização selecionado?</string>
     <string name="apply_update_dialog_title">Instalar atualização</string>
+    <string name="apply_update_dialog_message">Você está prestes a instalar <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe você pressionar <xliff:g id="ok">%2$s</xliff:g>, o dispositivo será reiniciado no modo de recuperação para instalar a atualização.\n\nObservação: Esse recurso requer uma recuperação compatível ou as atualizações precisarão ser instaladas manualmente.</string>
+    <string name="apply_update_dialog_message_ab">Você está prestes a instalar <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe você pressionar <xliff:g id="ok">%2$s</xliff:g>, a instalação do dispositivo começará em segundo plano.\n\nDepois de concluído, você será solicitado a reiniciar o dispositivo.</string>
     <string name="cancel_installation_dialog_message">Deseja cancelar a instalação?</string>
     <string name="label_download_url">URL de Download</string>
     <string name="toast_download_url_copied">URL copiado</string>
@@ -73,6 +79,7 @@
     <string name="notification_export_success">Atualização exportada</string>
     <string name="notification_export_fail">Falha ao exportar</string>
     <string name="toast_already_exporting">Uma atualização já está sendo exportada</string>
+    <string name="toast_export_started">Exportação iniciada</string>
     <plurals name="eta_seconds">
         <item quantity="one">1 segundo restante</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> segundos restantes</item>
@@ -86,6 +93,7 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> horas restantes</item>
     </plurals>
     <string name="update_over_metered_network_title">Aviso</string>
+    <string name="update_over_metered_network_message">Você está prestes a baixar um pacote de atualização usando os dados móveis, o que provavelmente causará um alto consumo de dados. Deseja continuar?</string>
     <string name="checkbox_metered_network_warning">Não mostrar novamente</string>
     <string name="menu_metered_network_warning">Aviso de rede limitada</string>
     <string name="blocked_update_dialog_title">Atualização bloqueada</string>
@@ -95,5 +103,12 @@
     <string name="ongoing_channel_title">Downloads em andamento</string>
     <string name="update_failed_channel_title">Falha ao atualizar</string>
     <string name="info_dialog_title">Você sabia?</string>
+    <string name="info_dialog_message">As atualizações do LineageOS são pacotes de instalação completos. Isso significa que você sempre pode instalar apenas a atualização mais recente, mesmo que você tenha ignorado versões anteriores!</string>
     <string name="info_dialog_ok">Agradecemos o seu comentário!</string>
+    <string name="local_update_import">Atualização local</string>
+    <string name="local_update_import_progress">Importando atualização local\u2026</string>
+    <string name="local_update_import_success">%1$s foi importado. Você quer instalá-lo?</string>
+    <string name="local_update_import_failure">Falha ao importar a atualização local</string>
+    <string name="local_update_import_install">Instalar</string>
+    <string name="local_update_name">Atualização local</string>
 </resources>

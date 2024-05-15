@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2023 The LineageOS Project
+     Copyright (C) 2017-2024 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -39,6 +39,12 @@
     <string name="dialog_prepare_zip_message">预备更新准备</string>
     <string name="dialog_battery_low_title">低电量</string>
     <string name="dialog_battery_low_message_pct">电量过低，您需要至少 <xliff:g id="percent_discharging">%1$d</xliff:g>%% 的电量才能继续；如果正在充电，则需要 <xliff:g id="percent_charging">%2$d</xliff:g>%% 的电量才能继续。</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        请运行以下命令来重新安装更新：\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
+    <string name="dialog_scratch_mounted_title">无法在使用OverlayFS挂载的情况下安装更新</string>
     <string name="reboot">重新启动</string>
     <string name="menu_refresh">刷新</string>
     <string name="menu_preferences">首选项</string>

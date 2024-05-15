@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2023 The LineageOS Project
+     Copyright (C) 2017-2024 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -39,6 +39,12 @@
     <string name="dialog_prepare_zip_message">Preparació preliminar de l\'actualització</string>
     <string name="dialog_battery_low_title">Bateria baixa</string>
     <string name="dialog_battery_low_message_pct">El nivell de la bateria és massa baix, necessiteu com a mínim <xliff:g id="percent_discharging">%1$d</xliff:g>%% de bateria per continuar, <xliff:g id="percent_charging">%2$d</xliff:g>%% si el dispositiu s\'està carregant.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        Executeu les ordres següents i torneu a provar l\'actualització:\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
+    <string name="dialog_scratch_mounted_title">No es pot instal·lar l\'actualització amb l\'OverlayFS muntat</string>
     <string name="reboot">Reinicia</string>
     <string name="menu_refresh">Recarrega</string>
     <string name="menu_preferences">Preferències</string>

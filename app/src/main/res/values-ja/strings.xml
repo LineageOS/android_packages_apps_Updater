@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2023 The LineageOS Project
+     Copyright (C) 2017-2024 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -39,6 +39,12 @@
     <string name="dialog_prepare_zip_message">予備のアップデート準備</string>
     <string name="dialog_battery_low_title">バッテリー残量少</string>
     <string name="dialog_battery_low_message_pct">バッテリー残量が不足しています。続行するには<xliff:g id="percent_discharging">%1$d</xliff:g>%%、充電時は<xliff:g id="percent_charging">%2$d</xliff:g>%%のバッテリー残量が必要です。</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        以下のコマンドを実行し、アップデートを再試行してください:\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
+    <string name="dialog_scratch_mounted_title">OverlayFS マウント済みの場合アップデートはインストールできません</string>
     <string name="reboot">再起動</string>
     <string name="menu_refresh">再読み込み</string>
     <string name="menu_preferences">設定</string>

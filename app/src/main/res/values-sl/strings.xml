@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2023 The LineageOS Project
+     Copyright (C) 2017-2024 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -39,6 +39,12 @@
     <string name="dialog_prepare_zip_message">Predhodna priprava posodobitve</string>
     <string name="dialog_battery_low_title">Nizko stanje baterije</string>
     <string name="dialog_battery_low_message_pct">Raven napolnjenosti baterije je prenizka, potrebnih je vsaj <xliff:g id="percent_discharging">%1$d</xliff:g>%% baterije za nadaljevanje, <xliff:g id="percent_charging">%2$d</xliff:g>%% med polnjenjem.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        Izvedite naslednje ukaze in poskusite ponovno posodobiti:\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
+    <string name="dialog_scratch_mounted_title">Posodobitve ni mogoče namestiti s priklopljenim OverlayFS</string>
     <string name="reboot">Vnovično zaženi</string>
     <string name="menu_refresh">Osveži</string>
     <string name="menu_preferences">Nastavitve</string>

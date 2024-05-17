@@ -18,6 +18,23 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ca6dad6_a7652270",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-05-17T14:33:03Z",
+      "side": 1,
+      "message": "we can\u0027t do any better i think",
+      "revId": "e8c3593a117cbb927ece0ff53db529c7277e609e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7db63ad8_5279b6a3",
@@ -31,6 +48,24 @@
       "writtenOn": "2024-05-14T17:49:24Z",
       "side": 1,
       "message": "for reference: all places that call installationDone(true) have a valid download id already set.",
+      "revId": "e8c3593a117cbb927ece0ff53db529c7277e609e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c58e725_b29b61f2",
+        "filename": "app/src/main/java/org/lineageos/updater/controller/ABUpdateInstaller.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-05-17T14:33:03Z",
+      "side": 1,
+      "message": "looks correct",
+      "parentUuid": "7db63ad8_5279b6a3",
       "revId": "e8c3593a117cbb927ece0ff53db529c7277e609e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

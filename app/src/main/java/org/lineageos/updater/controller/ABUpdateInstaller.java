@@ -22,9 +22,11 @@ import android.os.UpdateEngine;
 import android.os.UpdateEngineCallback;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.preference.PreferenceManager;
 
+import org.lineageos.updater.R;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.Update;
@@ -210,7 +212,13 @@ class ABUpdateInstaller {
 
         boolean enableABPerfMode = PreferenceManager.getDefaultSharedPreferences(mContext)
                 .getBoolean(Constants.PREF_AB_PERF_MODE, false);
-        mUpdateEngine.setPerformanceMode(enableABPerfMode);
+        try {
+            mUpdateEngine.setPerformanceMode(enableABPerfMode);
+        } catch (ServiceSpecificException e) {
+            // When CFQ is disabled, setting performance mode fails
+            Toast.makeText(mContext, R.string.enable_performance_mode_failed, Toast.LENGTH_SHORT)
+                    .show();
+        }
 
         String zipFileUri = "file://" + file.getAbsolutePath();
         try {

@@ -173,4 +173,6 @@
     <string name="local_update_import_failure">Failed to import local update</string>
     <string name="local_update_import_install">Install</string>
     <string name="local_update_name">Local update</string>
+
+    <string name="enable_performance_mode_failed">Failed to enable performance mode</string>
 </resources>

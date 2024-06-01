@@ -101,7 +101,9 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> jam tersisa</item>
     </plurals>
     <string name="update_over_metered_network_title">Peringatan</string>
+    <string name="update_over_metered_network_message">Anda akan mengunduh paket pembaruan melalui jaringan terukur yang kemungkinan besar akan menyebabkan penggunaan data yang tinggi. Apakah Anda ingin melanjutkan?</string>
     <string name="checkbox_metered_network_warning">Jangan tampilkan lagi</string>
+    <string name="menu_metered_network_warning">Peringatan jaringan terukur</string>
     <string name="blocked_update_dialog_title">Pembaruan diblokir</string>
     <string name="blocked_update_dialog_message">Pembaruan ini tidak dapat dipasang menggunakan aplikasi pembaruan. Baca <xliff:g id="info_url">%1$s</xliff:g> untuk informasi lebih lanjut.</string>
     <string name="export_channel_title">Penyelesaian ekspor</string>
@@ -111,4 +113,10 @@
     <string name="info_dialog_title">Tahukah Anda?</string>
     <string name="info_dialog_message">Pembaruan LineageOS adalah paket instalasi lengkap. Itu berarti Anda selalu dapat menginstal hanya pembaruan terbaru, bahkan jika Anda melewatkan beberapa di antaranya!</string>
     <string name="info_dialog_ok">Terima kasih atas infonya!</string>
+    <string name="local_update_import">Pembaruan lokal</string>
+    <string name="local_update_import_progress">Mengimpor pembaruan lokal\u2026</string>
+    <string name="local_update_import_success">%1$s telah diimpor. Apakah Anda ingin menginstalnya?</string>
+    <string name="local_update_import_failure">Gagal mengimpor pembaruan lokal</string>
+    <string name="local_update_import_install">Instal</string>
+    <string name="local_update_name">Pembaruan lokal</string>
 </resources>

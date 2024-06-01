@@ -20,6 +20,12 @@
     <string name="pause_button">Pàusa</string>
     <string name="resume_button">Sighi</string>
     <string name="installing_update_finished">Agiornamentu installadu</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        Esecuta is cumandos imbenientes e torra a atualizare:\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
+    <string name="dialog_scratch_mounted_title">Impossìbile installare s\'atualizatzione cun su OverlayFS montadu</string>
     <string name="reboot">Torra a allùghere</string>
     <string name="menu_preferences">Preferèntzias</string>
     <string name="menu_delete_update">Iscantzella</string>

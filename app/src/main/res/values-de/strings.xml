@@ -39,6 +39,12 @@
     <string name="dialog_prepare_zip_message">Update wird vorbereitet</string>
     <string name="dialog_battery_low_title">Niedriger Akkustand</string>
     <string name="dialog_battery_low_message_pct">Dein Akkustand ist zu niedrig. Es werden mindestens <xliff:g id="percent_discharging">%1$d</xliff:g>%% Restkapazität (oder <xliff:g id="percent_charging">%2$d</xliff:g>%% mit angeschlossenem Ladegerät) benötigt, um fortzufahren.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        Bitte führe die folgenden Befehle aus und versuche anschließend das Update erneut durchzuführen:\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
+    <string name="dialog_scratch_mounted_title">Update kann nicht installiert werden, wenn OverlayFS eingebunden ist</string>
     <string name="reboot">Neustart</string>
     <string name="menu_refresh">Aktualisieren</string>
     <string name="menu_preferences">Einstellungen</string>

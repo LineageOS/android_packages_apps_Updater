@@ -39,6 +39,11 @@
     <string name="dialog_prepare_zip_message">Parapërgatitje për përditësimin</string>
     <string name="dialog_battery_low_title">Bateria e ulët</string>
     <string name="dialog_battery_low_message_pct">Niveli i baterië është shumë i ulët, për të vazhduar duhet të jetë të paktën <xliff:g id="percent_discharging">%1$d</xliff:g>%% e baterisë, ose <xliff:g id="percent_charging">%2$d</xliff:g>%% nëse po karikohet.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[Ju lutemi ekzekutoni komandat e mëposhtme dhe riprovoni përditësimin:\n
+         • rrënjë adb\n
+         • adb enable-verity\n
+         • rindezje adb]]></string>
+    <string name="dialog_scratch_mounted_title">Përditësimi nuk mund të instalohet me OverlayFS të montuar</string>
     <string name="reboot">Rindiz</string>
     <string name="menu_refresh">Rifresko</string>
     <string name="menu_preferences">Preferencat</string>

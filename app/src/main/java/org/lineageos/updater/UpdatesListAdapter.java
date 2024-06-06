@@ -24,9 +24,11 @@ import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.PowerManager;
 import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
+import android.text.style.URLSpan;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -585,11 +587,17 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private void showInfoDialog() {
+        String upgradeBlockedURL = Utils.getUpgradeBlockedURL(mActivity);
         String messageString = String.format(StringGenerator.getCurrentLocale(mActivity),
                 mActivity.getString(R.string.blocked_update_dialog_message),
-                Utils.getUpgradeBlockedURL(mActivity));
+                upgradeBlockedURL);
         SpannableString message = new SpannableString(messageString);
-        Linkify.addLinks(message, Linkify.WEB_URLS);
+        int index = TextUtils.indexOf(message, upgradeBlockedURL);
+        message.setSpan(
+                new URLSpan(upgradeBlockedURL),
+                index,
+                index + upgradeBlockedURL.length(),
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         if (infoDialog != null) {
             infoDialog.dismiss();
         }

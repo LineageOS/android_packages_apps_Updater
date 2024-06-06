@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "55a9ef1e_24bb6105",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2024-06-06T09:19:52Z",
+      "side": 1,
+      "message": "adding the trailing / to the url would also work and is probably more correct since the url is supposed to have it?",
+      "revId": "819e57e782d07814cabd1d58fcfb57a1c6d6a765",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -16,6 +16,23 @@
       "message": "Maybe a more meaningful message could be better here. Open to suggestions",
       "revId": "06e702e0529a4666074b0c600c7200fbe2aad92f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12f9d1eb_1b906c5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 22465
+      },
+      "writtenOn": "2024-06-11T11:51:43Z",
+      "side": 1,
+      "message": "As a suggestion, maybe try enabling the perf mode at first when the Updater is started, and if it throws an exception, directly hide the menu entry for the perf mode?",
+      "revId": "06e702e0529a4666074b0c600c7200fbe2aad92f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

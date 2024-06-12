@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4476c30e_d3622ffa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2024-06-12T13:44:13Z",
+      "side": 1,
+      "message": "Updated code to support. Path.of() is not available for 13 and 12.",
+      "revId": "957300e2bac3a61ad778423ab656cba3b828f783",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

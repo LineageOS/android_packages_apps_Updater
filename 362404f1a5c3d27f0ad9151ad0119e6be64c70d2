@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b31c2e08_9a559b4b",
+        "filename": "app/src/main/java/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2024-06-12T01:52:10Z",
+      "side": 1,
+      "message": "Don\u0027t really know if this should be part of this functions responsibility. But also seems pointless to execute this manually every time after we check whether performance mode works.",
+      "range": {
+        "startLine": 366,
+        "startChar": 0,
+        "endLine": 369,
+        "endChar": 13
+      },
+      "revId": "362404f1a5c3d27f0ad9151ad0119e6be64c70d2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

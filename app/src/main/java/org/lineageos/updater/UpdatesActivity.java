@@ -586,16 +586,16 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         SwitchCompat abPerfMode = view.findViewById(R.id.preferences_ab_perf_mode);
         SwitchCompat updateRecovery = view.findViewById(R.id.preferences_update_recovery);
 
-        if (!Utils.isABDevice()) {
-            abPerfMode.setVisibility(View.GONE);
-        }
-
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         autoCheckInterval.setSelection(Utils.getUpdateCheckSetting(this));
         autoDelete.setChecked(prefs.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false));
         meteredNetworkWarning.setChecked(prefs.getBoolean(Constants.PREF_METERED_NETWORK_WARNING,
                 prefs.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true)));
         abPerfMode.setChecked(prefs.getBoolean(Constants.PREF_AB_PERF_MODE, false));
+
+        if (!Utils.isABPerfModeAvailable(mUpdaterService, abPerfMode.isChecked())) {
+            abPerfMode.setVisibility(View.GONE);
+        }
 
         if (getResources().getBoolean(R.bool.config_hideRecoveryUpdate)) {
             // Hide the update feature if explicitly requested.
@@ -645,8 +645,9 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                         UpdatesCheckReceiver.cancelUpdatesCheck(this);
                     }
 
-                    if (Utils.isABDevice()) {
-                        boolean enableABPerfMode = abPerfMode.isChecked();
+                    boolean enableABPerfMode = abPerfMode.isChecked();
+
+                    if (Utils.isABPerfModeAvailable(mUpdaterService, enableABPerfMode)) {
                         mUpdaterService.getUpdaterController().setPerformanceMode(enableABPerfMode);
                     }
                     if (Utils.isRecoveryUpdateExecPresent()) {

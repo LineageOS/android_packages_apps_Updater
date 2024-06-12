@@ -25,6 +25,7 @@ import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import android.os.ServiceSpecificException;
 import android.os.SystemProperties;
 import android.os.storage.StorageManager;
 import android.util.Log;
@@ -356,6 +357,20 @@ public class Utils {
 
     public static boolean isABDevice() {
         return SystemProperties.getBoolean(Constants.PROP_AB_DEVICE, false);
+    }
+
+    public static boolean isABPerfModeAvailable(UpdaterService updaterService, Boolean defaultVal) {
+        try {
+            // Generically enable performance mode to determine whether this works
+            updaterService.getUpdaterController().setPerformanceMode(true);
+            // Restore actual value
+            if (!defaultVal) {
+                updaterService.getUpdaterController().setPerformanceMode(false);
+            }
+            return true;
+        } catch (ServiceSpecificException e) {
+            return false;
+        }
     }
 
     public static boolean isABUpdate(ZipFile zipFile) {

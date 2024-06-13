@@ -412,15 +412,6 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setOngoing(false);
                 mNotificationBuilder.setAutoCancel(true);
                 mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
-
-                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-                boolean deleteUpdate = pref.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false);
-                boolean isLocal = Update.LOCAL_ID.equals(update.getDownloadId());
-                // Always delete local updates
-                if (deleteUpdate || isLocal) {
-                    mUpdaterController.deleteUpdate(update.getDownloadId());
-                }
-
                 tryStopSelf();
                 break;
             }

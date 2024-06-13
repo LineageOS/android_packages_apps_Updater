@@ -28,10 +28,12 @@ import android.os.SystemProperties;
 import androidx.core.app.NotificationCompat;
 import androidx.preference.PreferenceManager;
 
+import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.model.Update;
 
 import java.text.DateFormat;
 
@@ -92,6 +94,16 @@ public class UpdaterReceiver extends BroadcastReceiver {
             pm.reboot(null);
         } else if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+            UpdaterController updaterController = UpdaterController.getInstance(context);
+            String installedUpdateId = pref.getString(Constants.PREF_NEEDS_REBOOT_ID, null);
+            boolean deleteUpdate = pref.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false);
+            boolean isLocal = Update.LOCAL_ID.equals(installedUpdateId);
+
+            // Always delete local updates
+            if (installedUpdateId != null && (deleteUpdate || isLocal)) {
+                updaterController.deleteUpdate(installedUpdateId);
+            }
+
             pref.edit().remove(Constants.PREF_NEEDS_REBOOT_ID).apply();
 
             if (shouldShowUpdateFailedNotification(context)) {

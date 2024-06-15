@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -28,6 +28,12 @@
     <string name="dialog_prepare_zip_message">Préparation de la mise à jour préliminaire</string>
     <string name="dialog_battery_low_title">Batterie faible</string>
     <string name="dialog_battery_low_message_pct">Le niveau de batterie est trop faible. Pour continuer, vous devez avoir au moins <xliff:g id="percent_discharging">%1$d</xliff:g> %% de batterie restante, ou <xliff:g id="percent_charging">%2$d</xliff:g> %% si l\'appareil est en charge.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        Merci d\'exécuter les commandes suivantes et de retenter la mise à jour :\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
+    <string name="dialog_scratch_mounted_title">Impossible d\'installer la mise à jour avec OverlayFS monté</string>
     <string name="reboot">Redémarrer</string>
     <string name="menu_refresh">Actualiser</string>
     <string name="menu_preferences">Préférences</string>

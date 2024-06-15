@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -28,6 +28,11 @@
     <string name="dialog_prepare_zip_message">Update voorbereiden</string>
     <string name="dialog_battery_low_title">Batterij bijna leeg</string>
     <string name="dialog_battery_low_message_pct">Uw batterijniveau is te laag, u moet op zijn minst <xliff:g id="percent_discharging">%1$d</xliff:g>%% batterijcapaciteit hebben om door te gaan of <xliff:g id="percent_charging">%2$d</xliff:g>%% tijdens het opladen.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[Voer deze opdrachten uit en probeer opnieuw te updaten:\n
+• adb root\n
+• adb enable-verity\n
+• adb reboot]]></string>
+    <string name="dialog_scratch_mounted_title">Kan update niet installeren met OverlayFS gekoppeld</string>
     <string name="reboot">Herstarten</string>
     <string name="menu_refresh">Vernieuwen</string>
     <string name="menu_preferences">Instellingen</string>

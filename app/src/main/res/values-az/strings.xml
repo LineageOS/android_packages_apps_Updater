@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -28,6 +28,12 @@
     <string name="dialog_prepare_zip_message">Güncəlləməyə ilkin hazırlıq</string>
     <string name="dialog_battery_low_title">Zəif batareya</string>
     <string name="dialog_battery_low_message_pct">Batareya səviyyəsi çox aşağıdır, davam etmək üçün ən az <xliff:g id="percent_discharging">%1$d</xliff:g>%% olmalıdır, <xliff:g id="percent_charging">%2$d</xliff:g>%% dolur.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        Lütfən aşağıdakı əmrləri işə salın və yenidən güncəlləməyə çalışın:\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
+    <string name="dialog_scratch_mounted_title">OverlayFS taxılı ikən güncəlləmə quraşdırıla bilmir</string>
     <string name="reboot">Yenidən başlat</string>
     <string name="menu_refresh">Təzələ</string>
     <string name="menu_preferences">Tərcihlər</string>

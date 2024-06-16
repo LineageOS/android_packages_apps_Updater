@@ -8,6 +8,7 @@
         <item name="android:windowLightStatusBar">@bool/theme_is_light</item>
         <item name="android:windowLightNavigationBar">@bool/theme_is_light</item>
         <item name="android:windowBackground">@color/background</item>
+        <item name="alertDialogTheme">@style/AppTheme.AlertDialogTheme</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -31,5 +32,9 @@
         <item name="android:overlapAnchor">true</item>
         <item name="android:dropDownVerticalOffset">8dp</item>
         <item name="android:dropDownHorizontalOffset">-16dp</item>
+    </style>
+
+    <style name="AppTheme.AlertDialogTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="dialogCornerRadius">16dp</item>
     </style>
 </resources>

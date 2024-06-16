@@ -16,6 +16,23 @@
       "message": "adding the trailing / to the url would also work and is probably more correct since the url is supposed to have it?",
       "revId": "819e57e782d07814cabd1d58fcfb57a1c6d6a765",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e9f8e0e_244176d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2024-06-16T11:48:57Z",
+      "side": 1,
+      "message": "alternatively and/or additionally: https://review.lineageos.org/c/LineageOS/android_packages_apps_Updater/+/394592",
+      "revId": "819e57e782d07814cabd1d58fcfb57a1c6d6a765",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea9c25fb_54ae4cf8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-06-23T10:07:19Z",
+      "side": 1,
+      "message": "don\u0027t do that, add an aidl interface that checks it for you and router the logic trough that\nI think libprocessgroup has a C API that tells you if setting profiles is supported",
+      "revId": "f7e71fe5a39378508120a39ec2df18f2c36d3d9e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

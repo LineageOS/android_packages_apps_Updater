@@ -70,6 +70,30 @@
       },
       "revId": "362404f1a5c3d27f0ad9151ad0119e6be64c70d2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a77cca97_aac3fe83",
+        "filename": "app/src/main/java/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 23886
+      },
+      "writtenOn": "2024-06-23T07:36:01Z",
+      "side": 1,
+      "message": "Eventually got around to testing this. Confirmed that setPerformanceMode(false) doesn\u0027t trigger this crash, only setPerformanceMode(true) will. So unfortunately we have to keep this small quirk here.",
+      "parentUuid": "9df493bc_86e9106a",
+      "range": {
+        "startLine": 366,
+        "startChar": 0,
+        "endLine": 369,
+        "endChar": 13
+      },
+      "revId": "362404f1a5c3d27f0ad9151ad0119e6be64c70d2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

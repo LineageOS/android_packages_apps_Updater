@@ -63,13 +63,10 @@ import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.ViewHolder> {
 
@@ -478,7 +475,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     .setMessage(message)
                     .setPositiveButton(android.R.string.ok, null);
         }
-        if (isScratchMounted()) {
+        if (Utils.isScratchMounted()) {
             return new AlertDialog.Builder(mActivity)
                     .setTitle(R.string.dialog_scratch_mounted_title)
                     .setMessage(R.string.dialog_scratch_mounted_message)
@@ -617,13 +614,5 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 mActivity.getResources().getInteger(R.integer.battery_ok_percentage_charging) :
                 mActivity.getResources().getInteger(R.integer.battery_ok_percentage_discharging);
         return percent >= required;
-    }
-
-    private static boolean isScratchMounted() {
-        try (Stream<String> lines = Files.lines(Path.of("/proc/mounts"))) {
-            return lines.anyMatch(x -> x.split(" ")[1].equals("/mnt/scratch"));
-        } catch (IOException e) {
-            return false;
-        }
     }
 }

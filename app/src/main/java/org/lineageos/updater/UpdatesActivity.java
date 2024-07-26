@@ -284,7 +284,15 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             startActivity(openUrl);
             return true;
         } else if (itemId == R.id.menu_local_update) {
-            mUpdateImporter.openImportPicker();
+            if (Utils.isScratchMounted()) {
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.dialog_scratch_mounted_title)
+                        .setMessage(R.string.dialog_scratch_mounted_message)
+                        .setPositiveButton(android.R.string.ok, null)
+                        .show();
+            } else {
+                mUpdateImporter.openImportPicker();
+            }
             return true;
         }
         return super.onOptionsItemSelected(item);

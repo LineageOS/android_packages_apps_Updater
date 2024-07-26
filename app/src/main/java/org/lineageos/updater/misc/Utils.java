@@ -46,12 +46,15 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import java.util.stream.Stream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -423,5 +426,14 @@ public class Utils {
         }
         // Lineage 20 and up should only be integer values (we don't have minor versions anymore)
         return (floatVersion >= 20) ? String.valueOf((int)floatVersion) : version;
+    }
+
+    public static boolean isScratchMounted() {
+        try (Stream<String> lines = Files.lines(Path.of("/proc/mounts"))) {
+            return lines.anyMatch(x -> x.split(" ")[1].equals("/mnt/scratch"));
+        } catch (IOException e) {
+            Log.e(TAG, "Could not check whether scratch partition is mounted", e);
+            return false;
+        }
     }
 }

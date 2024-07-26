@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e41d1c87_21b03279",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2024-07-26T17:45:13Z",
+      "side": 1,
+      "message": "Uploaded before i forget about it, this is not compile tested in source tree but via Android Studio.",
+      "revId": "58686b25ec86a4b5184b86b60a57e057c61d0010",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

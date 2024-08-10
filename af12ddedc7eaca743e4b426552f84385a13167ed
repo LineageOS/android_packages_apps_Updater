@@ -16,6 +16,23 @@
       "message": "The check for the url is so we can distinguish between ppl with their own update servers. Didn\u0027t see a way not to hardcode \"lineageos.org\" there, so this wouldn\u0027t work on derivatives changing their updater url and someone running their own builds of that",
       "revId": "af12ddedc7eaca743e4b426552f84385a13167ed",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bac6108d_0569f48c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6360
+      },
+      "writtenOn": "2024-08-10T20:07:20Z",
+      "side": 1,
+      "message": "This seems unnecessary. How does this add value to LOS official?",
+      "revId": "af12ddedc7eaca743e4b426552f84385a13167ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

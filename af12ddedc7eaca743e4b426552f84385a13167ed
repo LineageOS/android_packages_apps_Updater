@@ -33,6 +33,24 @@
       "message": "This seems unnecessary. How does this add value to LOS official?",
       "revId": "af12ddedc7eaca743e4b426552f84385a13167ed",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c3bc454_01bbcef3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2024-08-10T20:16:12Z",
+      "side": 1,
+      "message": "It adds value to maintainers of LineageOS which in turn is of value for the userbase ;) You can just skip it for your own copy\u0026pasting",
+      "parentUuid": "bac6108d_0569f48c",
+      "revId": "af12ddedc7eaca743e4b426552f84385a13167ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

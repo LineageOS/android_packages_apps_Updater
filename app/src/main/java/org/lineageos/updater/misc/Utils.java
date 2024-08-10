@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2023 The LineageOS Project
+ * Copyright (C) 2017-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -395,7 +395,8 @@ public class Utils {
     }
 
     public static boolean isUpdateCheckEnabled(Context context) {
-        return getUpdateCheckSetting(context) != Constants.AUTO_UPDATES_CHECK_INTERVAL_NEVER;
+        return getUpdateCheckSetting(context) != Constants.AUTO_UPDATES_CHECK_INTERVAL_NEVER
+                && shouldShowUpdates(context);
     }
 
     public static long getUpdateCheckInterval(Context context) {
@@ -423,5 +424,16 @@ public class Utils {
         }
         // Lineage 20 and up should only be integer values (we don't have minor versions anymore)
         return (floatVersion >= 20) ? String.valueOf((int)floatVersion) : version;
+    }
+
+    public static boolean shouldShowUpdates(Context context) {
+        String type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).toLowerCase(Locale.ROOT);
+        String serverUrl = getServerURL(context);
+
+        if ("unofficial".equals(type) && serverUrl.contains("lineageos.org")) {
+            return false;
+        }
+
+        return true;
     }
 }

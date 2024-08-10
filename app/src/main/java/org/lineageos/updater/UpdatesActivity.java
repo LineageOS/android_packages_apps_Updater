@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2023 The LineageOS Project
+ * Copyright (C) 2017-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -223,7 +223,11 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 appBar.setExpanded(false);
             }
         } else {
-            findViewById(R.id.refresh).setOnClickListener(v -> downloadUpdatesList(true));
+            View refresh = findViewById(R.id.refresh);
+            if (!Utils.shouldShowUpdates(this)) {
+                refresh.setVisibility(View.GONE);
+            }
+            refresh.setOnClickListener(v -> downloadUpdatesList(true));
             findViewById(R.id.preferences).setOnClickListener(v -> showPreferencesDialog());
         }
     }
@@ -266,6 +270,10 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        if (!Utils.shouldShowUpdates(this)) {
+            MenuItem item = menu.findItem(R.id.menu_refresh);
+            item.setVisible(false);
+        }
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -588,6 +596,10 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
         if (!Utils.isABDevice()) {
             abPerfMode.setVisibility(View.GONE);
+        }
+        if (!Utils.shouldShowUpdates(this)) {
+            View parent = (View) autoCheckInterval.getParent();
+            parent.setVisibility(View.GONE);
         }
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);

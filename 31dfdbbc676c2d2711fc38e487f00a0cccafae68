@@ -16,6 +16,24 @@
       "message": "i don\u0027t get why this would be helpful ever",
       "revId": "31dfdbbc676c2d2711fc38e487f00a0cccafae68",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffa871c4_256b93bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2024-08-11T10:54:12Z",
+      "side": 1,
+      "message": "It\u0027s removing useless options, preventing the default once-per-week update check to a server that won\u0027t serve updates to you, ever, including from any unofficials by xda ppl without update servers (most)",
+      "parentUuid": "0d6ef5c5_410611bd",
+      "revId": "31dfdbbc676c2d2711fc38e487f00a0cccafae68",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

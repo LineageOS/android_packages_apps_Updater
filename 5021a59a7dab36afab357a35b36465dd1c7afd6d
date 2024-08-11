@@ -52,6 +52,24 @@
       "parentUuid": "7835621c_11e2c39c",
       "revId": "5021a59a7dab36afab357a35b36465dd1c7afd6d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "951dc57a_8238a8f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2024-08-11T11:45:19Z",
+      "side": 1,
+      "message": "If you have update checks, you have a server url being set, don\u0027t you? Therefore this patch won\u0027t do anything against the checks",
+      "parentUuid": "879acb62_f4eb4cde",
+      "revId": "5021a59a7dab36afab357a35b36465dd1c7afd6d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

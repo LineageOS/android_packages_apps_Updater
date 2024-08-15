@@ -118,7 +118,7 @@
     <string name="info_dialog_ok">Bilgi için teşekkürler!</string>
     <string name="local_update_import">Yerel güncelleme</string>
     <string name="local_update_import_progress">Yerel güncelleme içe aktarılıyor</string>
-    <string name="local_update_import_success">1$s içe aktarıldı. Yüklemek istiyor musunuz?</string>
+    <string name="local_update_import_success">%1$s içe aktarıldı. Yüklemek istiyor musunuz?</string>
     <string name="local_update_import_failure">Yerel güncelleme içe aktarılamadı</string>
     <string name="local_update_import_install">Yükle</string>
     <string name="local_update_name">Yerel güncelleme</string>

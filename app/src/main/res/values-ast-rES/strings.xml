@@ -120,7 +120,7 @@
     <string name="ongoing_channel_title">Descargues en cursu</string>
     <string name="update_failed_channel_title">Anovamientu fallíu</string>
     <string name="info_dialog_title">¿Sabíeslo?</string>
-    <string name="info_dialog_message">Los anovamientos de LineageOS son paquetes d\'instalación completos. Esto significa que siempres pues instalar l\'últimu anovamientu, ¡magar que saltares dalgún intermediu!</string>
+    <string name="info_dialog_message">Los anovamientos de LineageOS son paquetes d\'instalación completos. Esto significa que siempre pues instalar l\'últimu anovamientu, ¡magar que saltares dalgún intermediu!</string>
     <string name="info_dialog_ok">¡Gracies!</string>
     <string name="local_update_import">Anovamientu llocal</string>
     <string name="local_update_import_progress">Importando l\'anovamientu llocal\u2026</string>

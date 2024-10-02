@@ -282,7 +282,7 @@ public class HttpURLConnectionClient implements DownloadClient {
                         InputStream inputStream = mClient.getInputStream();
                         OutputStream outputStream = new FileOutputStream(mDestination, mResume)
                 ) {
-                    mTotalBytes = mClient.getContentLength() + mTotalBytesRead;
+                    mTotalBytes = mClient.getContentLengthLong() + mTotalBytesRead;
                     byte[] b = new byte[8192];
                     int count;
                     while (!isInterrupted() && (count = inputStream.read(b)) > 0) {

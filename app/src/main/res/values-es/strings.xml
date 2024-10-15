@@ -38,7 +38,7 @@
     <string name="menu_refresh">Actualizar</string>
     <string name="menu_preferences">Preferencias</string>
     <string name="menu_auto_updates_check">Comprobación de actualizaciones automática</string>
-    <string name="menu_auto_updates_check_interval_daily">Diario</string>
+    <string name="menu_auto_updates_check_interval_daily">Diaria</string>
     <string name="menu_auto_updates_check_interval_weekly">Semanal</string>
     <string name="menu_auto_updates_check_interval_monthly">Mensual</string>
     <string name="menu_auto_updates_check_interval_never">Nunca</string>
@@ -95,7 +95,7 @@
         <item quantity="other">Faltan <xliff:g id="count">%d</xliff:g> minutos</item>
     </plurals>
     <plurals name="eta_hours">
-        <item quantity="one">1 hora restante</item>
+        <item quantity="one">Queda 1 hora</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> horas restantes</item>
     </plurals>
     <string name="update_over_metered_network_title">Advertencia</string>

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3573cfd4_3ff7c140",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2024-11-08T14:38:24Z",
+      "side": 1,
+      "message": "There\u0027s probably a better way to fix this issue. (https://imgur.com/a/jx2Q7LP)",
+      "revId": "9e145a4861ed62debf510b35cbb496165845f580",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

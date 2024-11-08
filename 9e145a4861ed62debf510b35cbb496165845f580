@@ -16,6 +16,24 @@
       "message": "There\u0027s probably a better way to fix this issue. (https://imgur.com/a/jx2Q7LP)",
       "revId": "9e145a4861ed62debf510b35cbb496165845f580",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab041b89_d30609e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29742
+      },
+      "writtenOn": "2024-11-08T14:56:26Z",
+      "side": 1,
+      "message": "This actually works with older versions of GApps and with GApps 14 for 15. However in some newer versions of GApps there are packages that override the updater function making it undetectable.",
+      "parentUuid": "3573cfd4_3ff7c140",
+      "revId": "9e145a4861ed62debf510b35cbb496165845f580",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

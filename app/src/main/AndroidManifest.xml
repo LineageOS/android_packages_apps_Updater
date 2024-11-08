@@ -30,7 +30,7 @@
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             android:launchMode="singleTop">
-            <intent-filter android:priority="1">
+            <intent-filter android:priority="1000">
                 <action android:name="android.settings.SYSTEM_UPDATE_SETTINGS" />
 
                 <category android:name="android.intent.category.DEFAULT" />

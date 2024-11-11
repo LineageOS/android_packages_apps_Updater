@@ -52,6 +52,24 @@
       "parentUuid": "ab041b89_d30609e0",
       "revId": "9e145a4861ed62debf510b35cbb496165845f580",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff64f4d7_de673ac7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29742
+      },
+      "writtenOn": "2024-11-11T11:21:28Z",
+      "side": 1,
+      "message": "Confirmed working on newer gapps.",
+      "parentUuid": "5f73d74f_5041110d",
+      "revId": "9e145a4861ed62debf510b35cbb496165845f580",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

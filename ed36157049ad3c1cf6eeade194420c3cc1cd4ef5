@@ -70,6 +70,24 @@
       "parentUuid": "6f36ad15_068aab99",
       "revId": "ed36157049ad3c1cf6eeade194420c3cc1cd4ef5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b86bbd7d_7ad0fc50",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2024-11-19T12:51:20Z",
+      "side": 1,
+      "message": "yea BUILD_NUMBER does the trick",
+      "parentUuid": "d9618ba3_32fce697",
+      "revId": "ed36157049ad3c1cf6eeade194420c3cc1cd4ef5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []

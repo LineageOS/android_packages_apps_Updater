@@ -1,4 +1,22 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ef16fc1_ba223c18",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2024-11-19T03:09:36Z",
+      "side": 1,
+      "message": "Are there any additional data migration required? I built w/ this change but the issue persists.\n\n`pm dump org.lineageos.updater` gives:\n```\nDUMP OF SERVICE package:\nActivity Resolver Table:\n  Non-Data Actions:\n      ...\n      android.settings.SYSTEM_UPDATE_SETTINGS:\n        8206078 org.lineageos.updater/.UpdatesActivity filter 7fdd351\n          Action: \"android.settings.SYSTEM_UPDATE_SETTINGS\"\n          Category: \"android.intent.category.DEFAULT\"\n          mPriority\u003d1, mOrder\u003d0, mHasStaticPartialTypes\u003dfalse, mHasDynamicPartialTypes\u003dfalse\n```\nwhere mPriority\u003d1 rather than 2.",
+      "revId": "ed36157049ad3c1cf6eeade194420c3cc1cd4ef5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ],
   "submitRequirementResults": []
 }

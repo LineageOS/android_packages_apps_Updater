@@ -24,6 +24,7 @@ fi
 zip_path_device=$updates_dir/`basename "$zip_path"`
 if adb shell test -f "$zip_path_device"; then
     echo "$zip_path_device exists already"
+    adb unroot
     exit 1
 fi
 

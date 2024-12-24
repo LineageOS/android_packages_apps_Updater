@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bb65674_9e69ea7c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-24T13:16:32Z",
+      "side": 1,
+      "message": "Hopefully this is fine, I worry QPR2 will need new GMS",
+      "revId": "a07c2fc48e5dac0bd1e1e09ee84856941684269f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

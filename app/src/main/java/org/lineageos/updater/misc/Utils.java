@@ -112,7 +112,7 @@ public class Utils {
         return true;
     }
 
-    private static boolean compareVersions(String a, String b) {
+    private static boolean compareVersions(String a, String b, boolean allowMajorUpgrades) {
         try {
             int majorA = Integer.parseInt(a.split("\\.")[0]);
             int minorA = Integer.parseInt(a.split("\\.")[1]);
@@ -120,7 +120,16 @@ public class Utils {
             int majorB = Integer.parseInt(b.split("\\.")[0]);
             int minorB = Integer.parseInt(b.split("\\.")[1]);
 
-            return majorA == majorB && minorA >= minorB;
+            if (allowMajorUpgrades) {
+                if (majorA > majorB || (majorA == majorB && minorA >= minorB)) {
+                    return true;
+                }
+            } else {
+                if (majorA == majorB && minorA >= minorB) {
+                    return true;
+                }
+            }
+            return false;
         } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
             return false;
         }
@@ -129,8 +138,9 @@ public class Utils {
     public static boolean canInstall(UpdateBaseInfo update) {
         return (SystemProperties.getBoolean(Constants.PROP_UPDATER_ALLOW_DOWNGRADING, false) ||
                 update.getTimestamp() > SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) &&
-                compareVersions(
-                        update.getVersion(), SystemProperties.get(Constants.PROP_BUILD_VERSION));
+                compareVersions(update.getVersion(),
+                        SystemProperties.get(Constants.PROP_BUILD_VERSION),
+                        SystemProperties.getBoolean(Constants.PROP_ALLOW_MAJOR_UPGRADES, false));
     }
 
     public static List<UpdateInfo> parseJson(File file, boolean compatibleOnly)

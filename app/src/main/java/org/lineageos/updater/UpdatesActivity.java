@@ -181,7 +181,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
         TextView headerTitle = findViewById(R.id.header_title);
         headerTitle.setText(getString(R.string.header_title_text,
-                Utils.getDisplayVersion(BuildInfoUtils.getBuildVersion())));
+                BuildInfoUtils.getBuildVersion()));
 
         updateLastCheckedString();
 

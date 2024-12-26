@@ -441,10 +441,4 @@ public class Utils {
     public static boolean isRecoveryUpdateExecPresent() {
         return new File(Constants.UPDATE_RECOVERY_EXEC).exists();
     }
-
-    public static String getDisplayVersion(String version) {
-        float floatVersion = Float.parseFloat(version);
-        // Lineage 20 and up should only be integer values (we don't have minor versions anymore)
-        return (floatVersion >= 20) ? String.valueOf((int)floatVersion) : version;
-    }
 }

@@ -68,6 +68,24 @@
       "message": "not related to this change but something we might want to think about...",
       "revId": "a07c2fc48e5dac0bd1e1e09ee84856941684269f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9004330c_51b4ceaf",
+        "filename": "app/src/main/java/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-12-26T10:34:12Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "814459f6_d9a7e91b",
+      "revId": "a07c2fc48e5dac0bd1e1e09ee84856941684269f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

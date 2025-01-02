@@ -17,7 +17,6 @@ package org.lineageos.updater;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.app.UiModeManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -110,8 +109,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             });
 
     private UpdateImporter mUpdateImporter;
-    @SuppressWarnings("deprecation")
-    private ProgressDialog importDialog;
+    private AlertDialog importDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -304,14 +302,18 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     }
 
     @Override
-    @SuppressWarnings("deprecation")
     public void onImportStarted() {
         if (importDialog != null && importDialog.isShowing()) {
             importDialog.dismiss();
         }
 
-        importDialog = ProgressDialog.show(this, getString(R.string.local_update_import),
-                getString(R.string.local_update_import_progress), true, false);
+        importDialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.local_update_import)
+                .setView(R.layout.progress_dialog)
+                .setCancelable(false)
+                .create();
+
+        importDialog.show();
     }
 
     @Override

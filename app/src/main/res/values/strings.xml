@@ -173,4 +173,7 @@
     <string name="local_update_import_failure">Failed to import local update</string>
     <string name="local_update_import_install">Install</string>
     <string name="local_update_name">Local update</string>
+
+    <string name="welcome_title">Welcome</string>
+    <string name="welcome_message">Before you start, please note that you can always install the latest available update when there are multiple available and you can safely remove old updates to free storage.</string>
 </resources>

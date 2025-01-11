@@ -145,6 +145,12 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 } else if (UpdaterController.ACTION_UPDATE_REMOVED.equals(intent.getAction())) {
                     String downloadId = intent.getStringExtra(UpdaterController.EXTRA_DOWNLOAD_ID);
                     mAdapter.removeItem(downloadId);
+                    List<UpdateInfo> sortedUpdates =
+                            mUpdaterService.getUpdaterController().getUpdates();
+                    if (sortedUpdates.isEmpty()) {
+                        findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
+                        findViewById(R.id.recycler_view).setVisibility(View.GONE);
+                    }
                 }
             }
         };

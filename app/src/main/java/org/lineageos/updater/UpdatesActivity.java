@@ -230,6 +230,8 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             findViewById(R.id.refresh).setOnClickListener(v -> downloadUpdatesList(true));
             findViewById(R.id.preferences).setOnClickListener(v -> showPreferencesDialog());
         }
+
+        maybeShowWelcomeMessage();
     }
 
     @Override
@@ -663,6 +665,21 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                                 String.valueOf(enableRecoveryUpdate));
                     }
                 })
+                .show();
+    }
+
+    private void maybeShowWelcomeMessage() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean alreadySeen = preferences.getBoolean(Constants.HAS_SEEN_WELCOME_MESSAGE, false);
+        if (alreadySeen) {
+            return;
+        }
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.welcome_title)
+                .setMessage(R.string.welcome_message)
+                .setPositiveButton(R.string.info_dialog_ok, (dialog, which) -> preferences.edit()
+                        .putBoolean(Constants.HAS_SEEN_WELCOME_MESSAGE, true)
+                        .apply())
                 .show();
     }
 }

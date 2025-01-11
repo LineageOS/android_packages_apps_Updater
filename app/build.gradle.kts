@@ -81,6 +81,7 @@ android {
             }
         }
     }
+    namespace = "org.lineageos.updater"
 }
 
 dependencies {

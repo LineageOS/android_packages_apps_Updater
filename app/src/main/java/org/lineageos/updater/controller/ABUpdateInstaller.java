@@ -256,7 +256,6 @@ class ABUpdateInstaller {
     }
 
     private void installationDone(boolean needsReboot) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         String id = needsReboot ? mDownloadId : null;
         PreferenceManager.getDefaultSharedPreferences(mContext).edit()
                 .putString(Constants.PREF_NEEDS_REBOOT_ID, id)

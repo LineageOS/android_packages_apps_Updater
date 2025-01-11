@@ -19,15 +19,6 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
-
-    <style name="TextAppearanceInverted" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textColor">@color/inverted</item>
-    </style>
-    <style name="TextAppearanceTransparent" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textColor">@android:color/transparent</item>
-    </style>
-
     <style name="AppTheme.PopupMenuOverlapAnchor">
         <item name="android:overlapAnchor">true</item>
         <item name="android:dropDownVerticalOffset">8dp</item>

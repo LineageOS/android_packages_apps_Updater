@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcc88d39_7cc0c336",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-02-17T06:50:03Z",
+      "side": 1,
+      "message": "scratch deletion won\u0027t work on A/B, payload.bin formatting and brillo_update and all - there\u0027s no *.list files that would cover this in an A/B package. So sadly yeah, we have to leave the Updater warning at least.",
+      "revId": "f71fc20f9c9302a288503f03c3eb939ffcdde4ff",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -16,6 +16,23 @@
       "message": "Works with:\n\nProp set in system_ext/build.prop\n\nFrom 21.0 (w/ this picked, and the 3 dep commits picked back there as well) to 22.1.\n\nThis is useful for those of us who build in GMS and /could/ just OTA from one version to another.\n\nOr on the flip side, for those who /don\u0027t/ use GMS at all.",
       "revId": "5391f7b387425ca3b9098821fad0eabf19bc3c5d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9402ee98_7e31df58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-02-17T22:25:03Z",
+      "side": 1,
+      "message": "per a question from Luca, to state it outright, this can only be set by `root`, so general numb-nuts user can\u0027t enable it, they\u0027d need to intentionally enable adb root, then do so.",
+      "revId": "5391f7b387425ca3b9098821fad0eabf19bc3c5d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

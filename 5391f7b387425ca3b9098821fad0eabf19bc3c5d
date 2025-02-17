@@ -50,6 +50,24 @@
       "message": "per Luca\u0027s comment, not needed, good thought. there is no case this wouldn\u0027t be true lol",
       "revId": "5391f7b387425ca3b9098821fad0eabf19bc3c5d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32865b1a_fed21447",
+        "filename": "app/src/main/java/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-02-17T22:42:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "424954ae_c5c73ed9",
+      "revId": "5391f7b387425ca3b9098821fad0eabf19bc3c5d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

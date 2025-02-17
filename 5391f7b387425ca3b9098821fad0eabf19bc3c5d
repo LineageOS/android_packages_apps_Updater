@@ -33,6 +33,23 @@
       "message": "per a question from Luca, to state it outright, this can only be set by `root`, so general numb-nuts user can\u0027t enable it, they\u0027d need to intentionally enable adb root, then do so.",
       "revId": "5391f7b387425ca3b9098821fad0eabf19bc3c5d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "424954ae_c5c73ed9",
+        "filename": "app/src/main/java/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-02-17T22:31:13Z",
+      "side": 1,
+      "message": "per Luca\u0027s comment, not needed, good thought. there is no case this wouldn\u0027t be true lol",
+      "revId": "5391f7b387425ca3b9098821fad0eabf19bc3c5d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

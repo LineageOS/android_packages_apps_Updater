@@ -16,6 +16,23 @@
       "message": "going to re-verify after the logic change",
       "revId": "9d8a0ee018684f3b62b3b409c3596b8f62f46689",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8c69b45_eafdbd0f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-17T22:42:34Z",
+      "side": 1,
+      "message": "Given it works with only root I think that\u0027s fine to have.\nLogic checks out now",
+      "revId": "9d8a0ee018684f3b62b3b409c3596b8f62f46689",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

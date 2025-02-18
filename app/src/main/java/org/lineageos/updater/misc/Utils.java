@@ -121,9 +121,8 @@ public class Utils {
             int minorB = Integer.parseInt(b.split("\\.")[1]);
 
             // Return early and allow if we allow major version upgrades
-            return (allowMajorUpgrades && majorA > majorB) || (majorA == majorB && minorA >= minorB)
-
-            return majorA == majorB && minorA >= minorB;
+            return (allowMajorUpgrades && majorA > majorB) 
+                    || (majorA == majorB && minorA >= minorB);
         } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
             return false;
         }

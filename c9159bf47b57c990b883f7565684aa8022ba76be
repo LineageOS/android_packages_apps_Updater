@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fbc61c6_3634e6e7",
+        "filename": "app/src/main/java/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-02-18T05:19:25Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "19302942_f14509b1",
+      "revId": "c9159bf47b57c990b883f7565684aa8022ba76be",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "07c4bb41_39a4aa84",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-02-18T05:17:38Z",
       "side": 0,
       "message": "remove this",
+      "revId": "c9159bf47b57c990b883f7565684aa8022ba76be",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "356454c5_f8c85e3c",
+        "filename": "app/src/main/java/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-02-18T05:19:25Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "07c4bb41_39a4aa84",
       "revId": "c9159bf47b57c990b883f7565684aa8022ba76be",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

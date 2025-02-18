@@ -478,7 +478,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     .setMessage(message)
                     .setPositiveButton(android.R.string.ok, null);
         }
-        if (isScratchMounted()) {
+        if (isScratchMounted() && Utils.isABUpdate(update.getFile())) {
             return new AlertDialog.Builder(mActivity)
                     .setTitle(R.string.dialog_scratch_mounted_title)
                     .setMessage(R.string.dialog_scratch_mounted_message)

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5272e5b_3ee645a2",
+        "filename": "app/src/main/java/org/lineageos/updater/misc/Utils.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-02-18T00:48:21Z",
+      "side": 1,
+      "message": "could probably use the getboolean call here directly, but whatever",
+      "revId": "bceaadbc7d7376d89aa9db5874af45ddb7e8bc84",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

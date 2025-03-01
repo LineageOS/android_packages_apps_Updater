@@ -76,6 +76,51 @@
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> از <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> از <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">در حال تایید به‌روزرسانی</string>
+    <string name="list_no_updates">هیچ به‌روز رسانی جدیدی پیدا نشد. برای بررسی دستی به‌روز رسانی‌ها، از دکمهٔ تازه‌سازی استفاده کنید.</string>
+    <string name="action_download">بارگیری</string>
+    <string name="action_pause">مکث</string>
+    <string name="action_resume">ادامه</string>
+    <string name="action_install">نصب</string>
+    <string name="action_info">اطلاعات</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_cancel">لغو</string>
+    <string name="confirm_delete_dialog_title">حذف فایل</string>
+    <string name="confirm_delete_dialog_message">آیا فایل نسخه به روز حذف شود؟</string>
+    <string name="apply_update_dialog_title">انجام به‌روزرسانی</string>
+    <string name="apply_update_dialog_message">شما در حال نصب &lt;xliff:g id="update_name"&gt;%1$s&lt;/xliff:g&gt; هستید.\n\nاگر &lt;xliff:g id="ok"&gt;%2$s&lt;/xliff را فشار دهید: g&gt;، دستگاه برای نصب به‌روزرسانی، خود را در حالت بازیابی مجدد راه‌اندازی می‌کند.\n\nتوجه: این ویژگی به یک بازیابی سازگار نیاز دارد یا به‌روزرسانی‌ها باید به صورت دستی نصب شوند.</string>
+    <string name="apply_update_dialog_message_ab">شما در حال نصب &lt;xliff:g id="update_name"&gt;%1$s&lt;/xliff:g&gt; هستید.\n\nاگر &lt;xliff:g id="ok"&gt;%2$s&lt;/xliff را فشار دهید: g&gt;، دستگاه شروع به نصب در پس‌زمینه می‌کند.\n\nپس از تکمیل، از شما خواسته می‌شود راه‌اندازی مجدد کنید.</string>
+    <string name="cancel_installation_dialog_message">لغو نصب می‌کنید؟</string>
+    <string name="label_download_url">نشانی بارگیری</string>
+    <string name="toast_download_url_copied">نشانی رونوشت شد</string>
+    <string name="dialog_export_title">صادر کردن نسخه به‌روز</string>
+    <string name="notification_export_success">نسخه به‌روز صادر شد</string>
+    <string name="notification_export_fail">خطا در صادر کردن</string>
+    <string name="toast_already_exporting">قبلا به‌روزرسانی صادر شده</string>
+    <string name="toast_export_started">صادرات آغاز شد</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">۱ ثانیه مانده</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ثانیه مانده</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">1 دقیقه مانده است</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> دقیقه مانده</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">۱ ساعت مانده</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ساعت مانده</item>
+    </plurals>
+    <string name="update_over_metered_network_title">هشدار</string>
+    <string name="update_over_metered_network_message">شما در حال بارگیری یک بسته بروز رسانی بر روی یک شبکه محدود شده یا سیم کارت هستید که احتمالا ممکن است باعث مصرف داده زیاد می شود. آیا می خواهید ادامه بدهید؟</string>
+    <string name="checkbox_metered_network_warning">دوباره نشان داده نشود</string>
+    <string name="menu_metered_network_warning">هشدار شبکه محدود شده</string>
+    <string name="blocked_update_dialog_title">بروز رسانی مسدود شد</string>
+    <string name="blocked_update_dialog_message">این به‌روزرسانی با استفاده از برنامه بروز کننده قابل نصب نیست. لطفاً برای اطلاعات بیشتر <xliff:g id="info_url">%1$s</xliff:g> را بخوانید.</string>
+    <string name="export_channel_title">تکمیل صادرات</string>
+    <string name="new_updates_channel_title">به‌‎روزرسانی‎‌های تازه</string>
+    <string name="ongoing_channel_title">بارگیری های جاری</string>
+    <string name="update_failed_channel_title">به‌روز رسانی شکست خورد</string>
+    <string name="info_dialog_title">آیا می‌دانستید؟</string>
+    <string name="info_dialog_message">به روز رسانی های LineageOS بسته های نصب کامل هستند. این بدان معناست که همیشه می‌توانید فقط آخرین به‌روزرسانی را نصب کنید، حتی اگر برخی از آن‌ها را در این بین رد کرده باشید!</string>
     <string name="info_dialog_ok">از اطلاعات شما سپاسگذاریم!</string>
     <string name="local_update_import">به‌روزرسانی داخلی</string>
     <string name="local_update_import_progress">وارد کردن به‌روزرسانی محلی\u2026</string>

@@ -39,7 +39,7 @@
     <string name="dialog_prepare_zip_message">முதற்நிலை இற்றை ஏற்படுத்துதல்</string>
     <string name="dialog_battery_low_title">குறைந்த மின்கலம்</string>
     <string name="dialog_battery_low_message_pct">மின்கல நிலை மிகக்குறைவு; தொடர குறைந்தது  <xliff:g id="percent_discharging">%1$d</xliff:g>%% மின்கலமாவது தேவை, மின்னூட்டலெனில், <xliff:g id="percent_charging">%2$d</xliff:g>%% மின்கலம் தேவை.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        பின்வரும் கட்டளைகளை இயக்கிய அப்புறம், இற்றையை மீண்டும் முயல்க:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[        பின்வரும் கட்டளைகளை இயக்கிய அப்புறம், இற்றையை மீண்டும் முயலவும்:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -63,8 +63,8 @@
     <string name="toast_forced_update_recovery">Lineage மீட்டெடுப்பு இற்றைகளை முடக்குவது, இக்கருவியில் இயலாது.</string>
     <string name="snack_updates_found">புதிய இற்றைகள் கிடைத்தன</string>
     <string name="snack_no_updates_found">புதிய இற்றைகள் எவையும் கிடைக்கவில்லை</string>
-    <string name="snack_updates_check_failed">இற்றைச் சோதனை தோல்வியுற்றது; உங்கள் இணைய இணைப்பைச் சரிபார்த்த பிறகு, மீண்டும் முயற்சி செய்க.</string>
-    <string name="snack_download_failed">பதிவிறக்கம் தோல்வியுற்றது; உங்கள் இணைய இணைப்பைச் சரிபார்த்த பிறகு, மீண்டும் முயற்சி செய்க.</string>
+    <string name="snack_updates_check_failed">இற்றைச் சோதனை தோல்வியுற்றது; உங்கள் இணைய இணைப்பைச் சரிபார்த்த பிறகு, மீண்டும் முயற்சி செய்யவும்.</string>
+    <string name="snack_download_failed">பதிவிறக்கம் தோல்வியுற்றது; உங்கள் இணைய இணைப்பைச் சரிபார்த்த பிறகு, மீண்டும் முயற்சி செய்யவும்.</string>
     <string name="snack_download_verification_failed">இற்றை சரிபார்ப்பு தோல்வியுற்றது.</string>
     <string name="snack_download_verified">பதிவிறக்கம் முடிவுற்றது.</string>
     <string name="snack_update_not_installable">தற்போதைய கட்டமைப்பின் மீது, இந்த இற்றையை நிறுவ முடியாது.</string>
@@ -114,7 +114,7 @@
     <string name="checkbox_metered_network_warning">மீண்டும் காட்ட வேண்டாம்</string>
     <string name="menu_metered_network_warning">வரம்பிட்ட பிணைய எச்சரிக்கை</string>
     <string name="blocked_update_dialog_title">இற்றை தடுக்கப்பட்டது</string>
-    <string name="blocked_update_dialog_message">இற்றைநர் செயலியைப் பயன்படுத்தி இவ்விற்றையை நிறுவ முடியாது. மேலும், தெரிவிப்புக்கு <xliff:g id="info_url">%1$s</xliff:g> இதைப் படிக்க.</string>
+    <string name="blocked_update_dialog_message">இற்றைநர் செயலியைப் பயன்படுத்தி இவ்விற்றையை நிறுவ முடியாது. மேலும், தெரிவிப்புக்கு <xliff:g id="info_url">%1$s</xliff:g> இதைப் படிக்கவும்.</string>
     <string name="export_channel_title">ஏற்றுமதி நிறைவுறல்</string>
     <string name="new_updates_channel_title">புதிய இற்றைகள்</string>
     <string name="ongoing_channel_title">நடப்புப் பதிவிறக்கங்கள்</string>

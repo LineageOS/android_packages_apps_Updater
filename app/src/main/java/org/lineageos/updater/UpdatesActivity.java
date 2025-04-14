@@ -335,8 +335,8 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 .setMessage(getString(R.string.local_update_import_success, update.getVersion()))
                 .setPositiveButton(R.string.local_update_import_install, (dialog, which) -> {
                     mAdapter.addItem(update.getDownloadId());
-                    // Update UI
-                    getUpdatesList();
+                    // Update UI for cases when internet access is restored.
+                    downloadUpdatesList();
                     Utils.triggerUpdate(this, update.getDownloadId());
                 })
                 .setNegativeButton(android.R.string.cancel, (dialog, which) -> deleteUpdate.run())
@@ -390,20 +390,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             }
             mAdapter.setData(updateIds);
             mAdapter.notifyDataSetChanged();
-        }
-    }
-
-    private void getUpdatesList() {
-        File jsonFile = Utils.getCachedUpdateList(this);
-        if (jsonFile.exists()) {
-            try {
-                loadUpdatesList(jsonFile);
-                Log.d(TAG, "Cached list parsed");
-            } catch (IOException | JSONException e) {
-                Log.e(TAG, "Error while parsing json list", e);
-            }
-        } else {
-            downloadUpdatesList();
         }
     }
 

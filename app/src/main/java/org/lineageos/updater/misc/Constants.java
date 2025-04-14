@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2023 The LineageOS Project
+ * Copyright (C) 2017-2025 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ public final class Constants {
     public static final String UNCRYPT_FILE_EXT = ".uncrypt";
 
     public static final String PROP_AB_DEVICE = "ro.build.ab_update";
+    public static final String PROP_AB_OTA_PARTITIONS = "ro.product.ab_ota_partitions";
     public static final String PROP_ALLOW_MAJOR_UPGRADES = "lineage.updater.allow_major_upgrades";
     public static final String PROP_BUILD_DATE = "ro.build.date.utc";
     public static final String PROP_BUILD_VERSION = "ro.lineage.build.version";

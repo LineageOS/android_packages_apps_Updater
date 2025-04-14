@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2023 The LineageOS Project
+ * Copyright (C) 2017-2025 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.Configuration;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.icu.text.DateFormat;
 import android.net.Uri;
 import android.os.Build;
@@ -39,9 +39,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -89,12 +86,24 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     private BroadcastReceiver mBroadcastReceiver;
 
     private UpdatesListAdapter mAdapter;
+    private final ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName className,
+                                       IBinder service) {
+            UpdaterService.LocalBinder binder = (UpdaterService.LocalBinder) service;
+            mUpdaterService = binder.getService();
+            mAdapter.setUpdaterController(mUpdaterService.getUpdaterController());
+            getUpdatesList();
+        }
 
-    private View mRefreshIconView;
-    private RotateAnimation mRefreshAnimation;
-
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            mAdapter.setUpdaterController(null);
+            mUpdaterService = null;
+            mAdapter.notifyDataSetChanged();
+        }
+    };
     private boolean mIsTV;
-
     private UpdateInfo mToBeExported = null;
     private final ActivityResultLauncher<Intent> mExportUpdate = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -107,7 +116,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                     }
                 }
             });
-
     private UpdateImporter mUpdateImporter;
     private AlertDialog importDialog;
 
@@ -217,17 +225,11 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 }
             });
 
-            mRefreshAnimation = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f,
-                    Animation.RELATIVE_TO_SELF, 0.5f);
-            mRefreshAnimation.setInterpolator(new LinearInterpolator());
-            mRefreshAnimation.setDuration(1000);
-
             if (!Utils.hasTouchscreen(this)) {
                 // This can't be collapsed without a touchscreen
                 appBar.setExpanded(false);
             }
         } else {
-            findViewById(R.id.refresh).setOnClickListener(v -> downloadUpdatesList(true));
             findViewById(R.id.preferences).setOnClickListener(v -> showPreferencesDialog());
         }
 
@@ -278,10 +280,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
-        if (itemId == R.id.menu_refresh) {
-            downloadUpdatesList(true);
-            return true;
-        } else if (itemId == R.id.menu_preferences) {
+        if (itemId == R.id.menu_preferences) {
             showPreferencesDialog();
             return true;
         } else if (itemId == R.id.menu_show_changelog) {
@@ -359,25 +358,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 .show();
     }
 
-    private final ServiceConnection mConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName className,
-                IBinder service) {
-            UpdaterService.LocalBinder binder = (UpdaterService.LocalBinder) service;
-            mUpdaterService = binder.getService();
-            mAdapter.setUpdaterController(mUpdaterService.getUpdaterController());
-            getUpdatesList();
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName componentName) {
-            mAdapter.setUpdaterController(null);
-            mUpdaterService = null;
-            mAdapter.notifyDataSetChanged();
-        }
-    };
-
-    private void loadUpdatesList(File jsonFile, boolean manualRefresh)
+    private void loadUpdatesList(File jsonFile)
             throws IOException, JSONException {
         Log.d(TAG, "Adding remote updates");
         UpdaterController controller = mUpdaterService.getUpdaterController();
@@ -390,12 +371,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             updatesOnline.add(update.getDownloadId());
         }
         controller.setUpdatesAvailableOnline(updatesOnline, true);
-
-        if (manualRefresh) {
-            showSnackbar(
-                    newUpdates ? R.string.snack_updates_found : R.string.snack_no_updates_found,
-                    Snackbar.LENGTH_SHORT);
-        }
 
         List<String> updateIds = new ArrayList<>();
         List<UpdateInfo> sortedUpdates = controller.getUpdates();
@@ -418,19 +393,18 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         File jsonFile = Utils.getCachedUpdateList(this);
         if (jsonFile.exists()) {
             try {
-                loadUpdatesList(jsonFile, false);
+                loadUpdatesList(jsonFile);
                 Log.d(TAG, "Cached list parsed");
             } catch (IOException | JSONException e) {
                 Log.e(TAG, "Error while parsing json list", e);
             }
-        } else {
-            downloadUpdatesList(false);
         }
+        downloadUpdatesList();
     }
 
-    private void processNewJson(File json, File jsonNew, boolean manualRefresh) {
+    private void processNewJson(File json, File jsonNew) {
         try {
-            loadUpdatesList(jsonNew, manualRefresh);
+            loadUpdatesList(jsonNew);
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
             long millis = System.currentTimeMillis();
             preferences.edit().putLong(Constants.PREF_LAST_UPDATE_CHECK, millis).apply();
@@ -449,7 +423,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         }
     }
 
-    private void downloadUpdatesList(final boolean manualRefresh) {
+    private void downloadUpdatesList() {
         final File jsonFile = Utils.getCachedUpdateList(this);
         final File jsonFileTmp = new File(jsonFile.getAbsolutePath() + UUID.randomUUID());
         String url = Utils.getServerURL(this);
@@ -463,7 +437,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                     if (!cancelled) {
                         showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
                     }
-                    refreshAnimationStop();
                 });
             }
 
@@ -475,8 +448,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             public void onSuccess() {
                 runOnUiThread(() -> {
                     Log.d(TAG, "List downloaded");
-                    processNewJson(jsonFile, jsonFileTmp, manualRefresh);
-                    refreshAnimationStop();
+                    processNewJson(jsonFile, jsonFileTmp);
                 });
             }
         };
@@ -494,7 +466,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             return;
         }
 
-        refreshAnimationStart();
         downloadClient.start();
     }
 
@@ -551,39 +522,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     @Override
     public void showSnackbar(int stringId, int duration) {
         Snackbar.make(findViewById(R.id.main_container), stringId, duration).show();
-    }
-
-    private void refreshAnimationStart() {
-        if (!mIsTV) {
-            if (mRefreshIconView == null) {
-                mRefreshIconView = findViewById(R.id.menu_refresh);
-            }
-            if (mRefreshIconView != null) {
-                mRefreshAnimation.setRepeatCount(Animation.INFINITE);
-                mRefreshIconView.startAnimation(mRefreshAnimation);
-                mRefreshIconView.setEnabled(false);
-            }
-        } else {
-            findViewById(R.id.recycler_view).setVisibility(View.GONE);
-            findViewById(R.id.no_new_updates_view).setVisibility(View.GONE);
-            findViewById(R.id.refresh_progress).setVisibility(View.VISIBLE);
-        }
-    }
-
-    private void refreshAnimationStop() {
-        if (!mIsTV) {
-            if (mRefreshIconView != null) {
-                mRefreshAnimation.setRepeatCount(0);
-                mRefreshIconView.setEnabled(true);
-            }
-        } else {
-            findViewById(R.id.refresh_progress).setVisibility(View.GONE);
-            if (mAdapter.getItemCount() > 0) {
-                findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
-            } else {
-                findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
-            }
-        }
     }
 
     @SuppressLint("ClickableViewAccessibility")

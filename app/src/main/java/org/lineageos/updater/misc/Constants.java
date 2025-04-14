@@ -56,7 +56,7 @@ public final class Constants {
     public static final String PREF_INSTALL_NOTIFIED = "install_notified";
 
     public static final String UPDATE_RECOVERY_EXEC = "/vendor/bin/install-recovery.sh";
-    public static final String UPDATE_RECOVERY_PROPERTY = "persist.vendor.recovery_update";
+    public static final String UPDATE_RECOVERY_PROP = "persist.vendor.recovery_update";
 
     public static final String HAS_SEEN_INFO_DIALOG = "has_seen_info_dialog";
     public static final String HAS_SEEN_WELCOME_MESSAGE = "has_seen_welcome_message";

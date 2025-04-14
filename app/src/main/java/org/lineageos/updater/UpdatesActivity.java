@@ -41,12 +41,10 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -546,32 +544,11 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 prefs.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true)));
         abPerfMode.setChecked(prefs.getBoolean(Constants.PREF_AB_PERF_MODE, false));
 
-        if (getResources().getBoolean(R.bool.config_hideRecoveryUpdate)) {
-            // Hide the update feature if explicitly requested.
-            // Might be the case of A-only devices using prebuilt vendor images.
-            updateRecovery.setVisibility(View.GONE);
-        } else if (Utils.isRecoveryUpdateExecPresent()) {
+        if (Utils.isRecoveryUpdateExecPresent()) {
+            updateRecovery.setVisibility(View.VISIBLE);
+            // Obtain and apply the user preference from SetupWizard.
             updateRecovery.setChecked(
                     SystemProperties.getBoolean(Constants.UPDATE_RECOVERY_PROPERTY, false));
-        } else {
-            // There is no recovery updater script in the device, so the feature is considered
-            // forcefully enabled, just to avoid users to be confused and complain that
-            // recovery gets overwritten. That's the case of A/B and recovery-in-boot devices.
-            updateRecovery.setChecked(true);
-            updateRecovery.setOnTouchListener(new View.OnTouchListener() {
-                private Toast forcedUpdateToast = null;
-
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    if (forcedUpdateToast != null) {
-                        forcedUpdateToast.cancel();
-                    }
-                    forcedUpdateToast = Toast.makeText(getApplicationContext(),
-                            getString(R.string.toast_forced_update_recovery), Toast.LENGTH_SHORT);
-                    forcedUpdateToast.show();
-                    return true;
-                }
-            });
         }
 
         new AlertDialog.Builder(this)

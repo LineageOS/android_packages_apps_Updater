@@ -424,4 +424,9 @@ public class Utils {
     public static boolean isRecoveryUpdateExecPresent() {
         return new File(Constants.UPDATE_RECOVERY_EXEC).exists();
     }
+
+    public static boolean isRecoveryInPartitionsList() {
+        String partitions = SystemProperties.get(Constants.PROP_AB_OTA_PARTITIONS, "");
+        return partitions.contains("recovery");
+    }
 }

@@ -539,7 +539,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 prefs.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true)));
         abPerfMode.setChecked(prefs.getBoolean(Constants.PREF_AB_PERF_MODE, false));
 
-        if (getResources().getBoolean(R.bool.config_hideRecoveryUpdate)) {
+        if (!Utils.isRecoveryInPartitionsList()) {
             // Hide the update feature if explicitly requested.
             // Might be the case of A-only devices using prebuilt vendor images.
             updateRecovery.setVisibility(View.GONE);

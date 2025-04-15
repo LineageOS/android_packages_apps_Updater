@@ -28,7 +28,6 @@
     <string name="installation_suspended_notification">Uppsetning sett í bið</string>
     <string name="new_updates_found_title">Nýjar uppfærslur</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">Í bið</string>
     <string name="resume_button">Halda áfram</string>
     <string name="suspend_button">Setja í bið</string>
     <string name="installing_update">Set inn uppfærslupakka</string>
@@ -73,7 +72,6 @@
     <string name="list_verifying_update">Yfirfer uppfærslu</string>
     <string name="list_no_updates">Engar nýjar uppfærslur fundust. Til að athuga handvirkt með nýjar uppfærslur, notaðu Endurlesa-hnappinn.</string>
     <string name="action_download">Sækja</string>
-    <string name="action_pause">Í bið</string>
     <string name="action_resume">Halda áfram</string>
     <string name="action_install">Setja upp</string>
     <string name="action_info">Upplýsingar</string>

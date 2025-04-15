@@ -39,6 +39,12 @@
     <string name="dialog_prepare_zip_message">Предварителна подготовка на актуализацията</string>
     <string name="dialog_battery_low_title">Изтощена батерия</string>
     <string name="dialog_battery_low_message_pct">Нивото на батерията е прекалено ниско, необходимо е най-малко <xliff:g id="percent_discharging">%1$d</xliff:g>%% за да продължите, <xliff:g id="percent_charging">%2$d</xliff:g>%%.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        Моля, изпълнeте следните команди и опитайте отново\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
+    <string name="dialog_scratch_mounted_title">Актулизацията не може да се инсталира с монтиран OverflayFS</string>
     <string name="reboot">Рестартиране</string>
     <string name="menu_refresh">Опресняване</string>
     <string name="menu_preferences">Настройки</string>
@@ -67,6 +73,8 @@
     <string name="header_last_updates_check">Последна проверка: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> от <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> от  <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Проверка на актуализацията</string>
     <string name="list_no_updates">Не са намерени нови актуализации. За да проверите ръчно за нови актуализации, използвайте бутона за обновяване.</string>
     <string name="action_download">Изтегли</string>
@@ -79,6 +87,8 @@
     <string name="confirm_delete_dialog_title">Изтриване на файл</string>
     <string name="confirm_delete_dialog_message">Да бъде ли изтрит файлът на избраната актуализация?</string>
     <string name="apply_update_dialog_title">Приложи актуализацията</string>
+    <string name="apply_update_dialog_message">На път сте да актуализирате до <xliff:g id="update_name">%1$s</xliff:g>.\n\nАко натиснете <xliff:g id="ok">%2$s</xliff:g>, устройството ще се рестартира в режим на възстановяване, за да инсталира актуализацията.\n\nЗабележка: Тази функция се нуждае от съвместим режим на възстановяване или актулизациите ще трябва да се инсталират ръчно.</string>
+    <string name="apply_update_dialog_message_ab">На път сте да актуализирате до <xliff:g id="update_name">%1$s</xliff:g>.\n\nАко натиснете <xliff:g id="ok">%2$s</xliff:g>, устройството ще започне инсталацията на заден фон.\n\nКогато е готово ще бъдете попитани за рестартиране.</string>
     <string name="cancel_installation_dialog_message">Анулиране на инсталирането?</string>
     <string name="label_download_url">Изтеглете URL</string>
     <string name="toast_download_url_copied">URL Копиран</string>
@@ -86,6 +96,7 @@
     <string name="notification_export_success">Актуализацията е експортирана</string>
     <string name="notification_export_fail">Грешка при експортиране</string>
     <string name="toast_already_exporting">Вече изнася актуализация</string>
+    <string name="toast_export_started">Експортирането започна</string>
     <plurals name="eta_seconds">
         <item quantity="one">остава 1 секунда</item>
         <item quantity="other">остават <xliff:g id="count">%d</xliff:g> секунди</item>
@@ -99,11 +110,22 @@
         <item quantity="other">остават <xliff:g id="count">%d</xliff:g> часа</item>
     </plurals>
     <string name="update_over_metered_network_title">Внимание</string>
+    <string name="update_over_metered_network_message">На път сте да изтеглите пакет за актуализиране, използвайки мобилна връзка, което може ще доведе до прекомерно използване на мобилни данни. Искате ли да продължите?</string>
     <string name="checkbox_metered_network_warning">Не показвай отново</string>
+    <string name="menu_metered_network_warning">Платена / ограничена мрежа</string>
     <string name="blocked_update_dialog_title">Актуализацията е блокирана</string>
     <string name="blocked_update_dialog_message">Тази актуализация не може да бъде инсталирана посредством приложението за актуализации. Моля прочетете <xliff:g id="info_url">%1$s</xliff:g> за повече информация.</string>
     <string name="export_channel_title">Експортирането приключи</string>
     <string name="new_updates_channel_title">Нови актуализации</string>
     <string name="ongoing_channel_title">Текущи изтегляния</string>
     <string name="update_failed_channel_title">Актуализацията прекратена</string>
+    <string name="info_dialog_title">Знаете ли че?</string>
+    <string name="info_dialog_message">LineageOS актуализациите са цялостни инсталационни пакети, което означава че можеш да инсталираш само последната актулизация, дори ако си пропуснал някоя междувременно!</string>
+    <string name="info_dialog_ok">Благодаря Ви за информацията!</string>
+    <string name="local_update_import">Локална актуализация</string>
+    <string name="local_update_import_progress">Импортиране на локална актуализация</string>
+    <string name="local_update_import_success">%1$s беше импортирано. Искате ли да продължите с инсталацията?</string>
+    <string name="local_update_import_failure">Неуспешно импортиране на локална актуализация</string>
+    <string name="local_update_import_install">Инсталирай</string>
+    <string name="local_update_name">Локална актуализация</string>
 </resources>

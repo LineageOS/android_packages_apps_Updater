@@ -41,7 +41,6 @@
     <string name="list_no_updates">Новыя абнаўленні не знойдзены. Каб праверыць абнаўленні ўручную, націсніце кнопку Абнавіць.</string>
     <string name="action_download">Спампаваць</string>
     <string name="action_install">Усталяваць</string>
-    <string name="action_info">Інфармацыя</string>
     <string name="action_delete">Выдаліць</string>
     <string name="confirm_delete_dialog_title">Выдаліць файл</string>
     <string name="confirm_delete_dialog_message">Выдаліць выбраны файл абнаўлення?</string>

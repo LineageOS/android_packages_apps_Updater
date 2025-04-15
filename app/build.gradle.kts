@@ -87,14 +87,14 @@ android {
 dependencies {
     compileOnly(fileTree(mapOf("dir" to "../system_libs", "include" to listOf("*.jar"))))
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.core:core-ktx:1.16.0")
+    implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("androidx.cardview:cardview:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
     implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.1.0")
-    implementation("androidx.preference:preference:1.2.0")
-    implementation("androidx.recyclerview:recyclerview:1.2.1")
-    implementation("com.google.android.material:material:1.9.0-alpha01")
+    implementation("androidx.preference:preference-ktx:1.2.1")
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
+    implementation("com.google.android.material:material:1.12.0")
 }
 
 configure<GenerateBpPluginExtension> {

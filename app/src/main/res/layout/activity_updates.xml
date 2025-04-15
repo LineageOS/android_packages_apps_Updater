@@ -15,7 +15,7 @@
         android:fitsSystemWindows="true"
         android:outlineAmbientShadowColor="@android:color/transparent"
         android:outlineSpotShadowColor="@android:color/transparent"
-        android:background="?android:attr/colorPrimary"
+        android:background="@android:color/transparent"
         android:theme="@style/Theme.CollapsingToolbar.Settings">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -56,7 +56,7 @@
                     android:paddingBottom="16dp"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="56sp"
-                    tools:text="LineageOS\n20"/>
+                    tools:text="LineageOS\n22.2"/>
 
                 <TextView
                     android:id="@+id/header_build_version"
@@ -65,7 +65,7 @@
                     android:layout_below="@id/header_title"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp"
-                    tools:text="Android 13"/>
+                    tools:text="Android 15"/>
 
                 <TextView
                     android:id="@+id/header_build_date"

@@ -27,6 +27,10 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.icu.text.DateFormat;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkRequest;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -46,6 +50,7 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -84,6 +89,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     private static final String TAG = "UpdatesActivity";
     private UpdaterService mUpdaterService;
     private BroadcastReceiver mBroadcastReceiver;
+    private ConnectivityManager.NetworkCallback mNetworkCallback;
 
     private UpdatesListAdapter mAdapter;
 
@@ -254,6 +260,11 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         if (mUpdaterService != null) {
             unbindService(mConnection);
         }
+        if (mNetworkCallback != null) {
+            ConnectivityManager cm = getSystemService(ConnectivityManager.class);
+            cm.unregisterNetworkCallback(mNetworkCallback);
+            mNetworkCallback = null;
+        }
         super.onStop();
     }
 
@@ -335,8 +346,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 .setMessage(getString(R.string.local_update_import_success, update.getVersion()))
                 .setPositiveButton(R.string.local_update_import_install, (dialog, which) -> {
                     mAdapter.addItem(update.getDownloadId());
-                    // Update UI for cases when internet access is restored.
-                    downloadUpdatesList();
                     Utils.triggerUpdate(this, update.getDownloadId());
                 })
                 .setNegativeButton(android.R.string.cancel, (dialog, which) -> deleteUpdate.run())
@@ -428,6 +437,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                     if (!cancelled) {
                         showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
                     }
+                    registerNetworkCallback();
                 });
             }
 
@@ -610,5 +620,24 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                         .putBoolean(Constants.HAS_SEEN_WELCOME_MESSAGE, true)
                         .apply())
                 .show();
+    }
+
+    private void registerNetworkCallback() {
+        if (mNetworkCallback != null) {
+            Log.e(TAG, "Network callback already registered. Skipping.");
+            return;
+        }
+        ConnectivityManager cm = getSystemService(ConnectivityManager.class);
+        NetworkRequest request = new NetworkRequest.Builder()
+                .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                .addCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)
+                .build();
+        mNetworkCallback = new ConnectivityManager.NetworkCallback() {
+            @Override
+            public void onAvailable(@NonNull Network network) {
+                runOnUiThread(() -> downloadUpdatesList());
+            }
+        };
+        cm.registerNetworkCallback(request, mNetworkCallback);
     }
 }

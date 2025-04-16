@@ -196,6 +196,7 @@ public class Utils {
         context.startService(intent);
     }
 
+    @Deprecated
     public static boolean isNetworkAvailable(Context context) {
         ConnectivityManager cm = context.getSystemService(ConnectivityManager.class);
         Network activeNetwork = cm.getActiveNetwork();

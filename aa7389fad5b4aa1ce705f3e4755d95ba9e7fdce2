@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f50519a_24503e47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-04-16T18:17:29Z",
+      "side": 1,
+      "message": "Since you made that method useless in the previous change, remove it there as well",
+      "revId": "aa7389fad5b4aa1ce705f3e4755d95ba9e7fdce2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

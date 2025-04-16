@@ -27,6 +27,10 @@ import android.content.res.Configuration;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.icu.text.DateFormat;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkRequest;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -335,8 +339,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 .setMessage(getString(R.string.local_update_import_success, update.getVersion()))
                 .setPositiveButton(R.string.local_update_import_install, (dialog, which) -> {
                     mAdapter.addItem(update.getDownloadId());
-                    // Update UI for cases when internet access is restored.
-                    downloadUpdatesList();
                     Utils.triggerUpdate(this, update.getDownloadId());
                 })
                 .setNegativeButton(android.R.string.cancel, (dialog, which) -> deleteUpdate.run())
@@ -428,6 +430,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                     if (!cancelled) {
                         showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
                     }
+                    registerNetworkCallback();
                 });
             }
 
@@ -610,5 +613,21 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                         .putBoolean(Constants.HAS_SEEN_WELCOME_MESSAGE, true)
                         .apply())
                 .show();
+    }
+
+    private void registerNetworkCallback() {
+        ConnectivityManager cm = getSystemService(ConnectivityManager.class);
+        NetworkRequest request = new NetworkRequest.Builder()
+            .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+            .addCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)
+            .build();
+        ConnectivityManager.NetworkCallback callback = new ConnectivityManager.NetworkCallback() {
+            @Override
+            public void onAvailable(Network network) {
+                cm.unregisterNetworkCallback(this);
+                runOnUiThread(() -> downloadUpdatesList());
+            }
+        };
+        cm.registerNetworkCallback(request, callback);
     }
 }

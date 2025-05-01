@@ -23,7 +23,6 @@
     <string name="installing_update_error">Памылка ўсталявання</string>
     <string name="preparing_ota_first_boot">Падрыхтоўка да першага запуску</string>
     <string name="dialog_prepare_zip_message">Падрыхтоўка абнаўлення</string>
-    <string name="reboot">Перазапуск</string>
     <string name="menu_refresh">Абнавiць</string>
     <string name="menu_auto_updates_check">Аўтаматычная праверка абнаўленняў</string>
     <string name="menu_auto_updates_check_interval_monthly">Штомесяц</string>
@@ -38,7 +37,6 @@
     <string name="header_last_updates_check">Апошняя праверка: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_no_updates">Новыя абнаўленні не знойдзены. Каб праверыць абнаўленні ўручную, націсніце кнопку Абнавіць.</string>
     <string name="action_download">Спампаваць</string>
     <string name="action_install">Усталяваць</string>
     <string name="action_delete">Выдаліць</string>

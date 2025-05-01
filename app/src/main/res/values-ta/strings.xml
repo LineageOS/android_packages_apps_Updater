@@ -102,8 +102,8 @@
         <item quantity="other">இன்னும் <xliff:g id="count">%d</xliff:g> நொடி</item>
     </plurals>
     <plurals name="eta_minutes">
-        <item quantity="one">இன்னும் ஒரு நுணுத்தம்</item>
-        <item quantity="other">இன்னும் <xliff:g id="count">%d</xliff:g> நுணுத்தம்</item>
+        <item quantity="one">இன்னும் ஒரு நிமிடம்</item>
+        <item quantity="other">இன்னும் <xliff:g id="count">%d</xliff:g> நிமிடம்</item>
     </plurals>
     <plurals name="eta_hours">
         <item quantity="one">இன்னும் ஒரு மணிநேரம்</item>

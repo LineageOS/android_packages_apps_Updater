@@ -34,16 +34,16 @@
     <string name="installing_update">Installerer opdateringspakke</string>
     <string name="installing_update_error">Installeringsfejl</string>
     <string name="installing_update_finished">Opdatering installeret</string>
-    <string name="finalizing_package">Fuldfører pakkeinstallering</string>
-    <string name="preparing_ota_first_boot">Forbereder på første opstart</string>
-    <string name="dialog_prepare_zip_message">Indledende opdateringsforberedelse</string>
+    <string name="finalizing_package">Fuldfører pakkeinstallation</string>
+    <string name="preparing_ota_first_boot">Forbereder første opstart</string>
+    <string name="dialog_prepare_zip_message">Forbereder opdatering</string>
     <string name="dialog_battery_low_title">Lavt batteriniveau</string>
-    <string name="dialog_battery_low_message_pct">Du har for lidt strøm på dit batteri. Du skal mindst bruge <xliff:g id="percent_discharging">%1$d</xliff:g>%% for at installere opdateringen, <xliff:g id="percent_charging">%2$d</xliff:g>%% hvis din enhed oplader.</string>
+    <string name="dialog_battery_low_message_pct">Dit batteri har for lidt strøm. Du skal mindst bruge <xliff:g id="percent_discharging">%1$d</xliff:g>%% for at installere opdateringen, <xliff:g id="percent_charging">%2$d</xliff:g>%% hvis din enhed oplader.</string>
     <string name="reboot">Genstart</string>
     <string name="menu_refresh">Genopfrisk</string>
-    <string name="menu_preferences">Præferencer</string>
+    <string name="menu_preferences">Indstillinger</string>
     <string name="menu_auto_updates_check">Auto-opdateringskontrol</string>
-    <string name="menu_auto_updates_check_interval_daily">Én gang dagligt</string>
+    <string name="menu_auto_updates_check_interval_daily">En gang dagligt</string>
     <string name="menu_auto_updates_check_interval_weekly">En gang om ugen</string>
     <string name="menu_auto_updates_check_interval_monthly">En gang om måneden</string>
     <string name="menu_auto_updates_check_interval_never">Aldrig</string>
@@ -61,7 +61,7 @@
     <string name="snack_download_failed">Overførslen fejlede. Kontrollér venligst din internetforbindelse og prøv igen senere.</string>
     <string name="snack_download_verification_failed">Opdateringsbekræftelsen fejlede.</string>
     <string name="snack_download_verified">Overførsel fuldført.</string>
-    <string name="snack_update_not_installable">Denne opdatering kan ikke installeres ovenpå det nuværende build.</string>
+    <string name="snack_update_not_installable">Denne opdatering kan ikke anvendes ovenpå det nuværende installation.</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
     <string name="header_last_updates_check">Sidst kontrolleret: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
@@ -75,14 +75,14 @@
     <string name="action_pause">Pause</string>
     <string name="action_resume">Genoptag</string>
     <string name="action_install">Installér</string>
-    <string name="action_info">Info</string>
+    <string name="action_info">Information</string>
     <string name="action_delete">Slet</string>
     <string name="action_cancel">Afbryd</string>
     <string name="confirm_delete_dialog_title">Slet fil</string>
     <string name="confirm_delete_dialog_message">Slet den valgte opdateringsfil?</string>
-    <string name="apply_update_dialog_title">Anvend opdatering</string>
-    <string name="apply_update_dialog_message">Du er ved at installere <xliff:g id="update_name">%1$s</xliff:g>. \n\n Hvis du trykker <xliff:g id="ok">%2$s</xliff:g>, enheden vil genstarte i gendannelsestilstand for at installere opdateringen.\n\nNoter: Denne funktion kræver en kompitabel gendannelse eller opdateing vil have brug for at blive installeret manuelt.</string>
-    <string name="apply_update_dialog_message_ab">Du er ved at installere <xliff:g id="update_name">%1$s</xliff:g>.\n\n Hvis du trykker <xliff:g id="ok">%2$s</xliff:g>, vil enheden begynde at installere i baggrunden.\n\n Når færdig, vil du blive spurgt om at genstarte.</string>
+    <string name="apply_update_dialog_title">Installér opdatering</string>
+    <string name="apply_update_dialog_message">Du er ved at installere <xliff:g id="update_name">%1$s</xliff:g>. \n\n Hvis du trykker <xliff:g id="ok">%2$s</xliff:g>, vil enheden genstarte i gendannelsestilstand for at installere opdateringen.\n\nNoter: Denne funktion kræver en kompatibel gendannelse, ellers skal opdateingen installeres manuelt.</string>
+    <string name="apply_update_dialog_message_ab">Du er ved at installere <xliff:g id="update_name">%1$s</xliff:g>.\n\n Hvis du trykker <xliff:g id="ok">%2$s</xliff:g>, vil enheden begynde at installere i baggrunden.\n\n Når den er færdig, vil du blive spurgt om at genstarte.</string>
     <string name="cancel_installation_dialog_message">Afbryd installeringen?</string>
     <string name="label_download_url">Hent URL</string>
     <string name="toast_download_url_copied">URL kopieret</string>
@@ -115,7 +115,7 @@
     <string name="update_failed_channel_title">Opdatering fejlede</string>
     <string name="info_dialog_title">Vidste du?</string>
     <string name="info_dialog_message">LineageOS opdateringer er komplette installationspakker. Det betyder, at du altid kun kan installere den seneste opdatering, selv om du har sprunget nogle over!</string>
-    <string name="info_dialog_ok">Tak for info!</string>
+    <string name="info_dialog_ok">Tak for informationen!</string>
     <string name="local_update_import">Lokal opdatering</string>
     <string name="local_update_import_progress">Importerer lokal opdatering\u2026</string>
     <string name="local_update_import_success">%1$s er blevet importeret. Vil du installere det?</string>

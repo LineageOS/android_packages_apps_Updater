@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc0fe392_eab9171a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-13T14:41:15Z",
+      "side": 1,
+      "message": "translations are submitted via https://translate.lineageos.org/",
+      "revId": "2838b4fb778803f6a9ad898ebf67f4e0cf253d2e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

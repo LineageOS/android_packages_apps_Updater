@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb60f316_856dd3cf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32442
+      },
+      "writtenOn": "2025-05-14T10:34:25Z",
+      "side": 1,
+      "message": "This will break \"Update recovery\" option on non-AB devices with prebuilt vendor",
+      "revId": "768c7ecba7835230625658bbdd1f5b955281e13f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

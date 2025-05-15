@@ -53,8 +53,8 @@
     <string name="menu_auto_updates_check_interval_weekly">Semanalmente</string>
     <string name="menu_auto_updates_check_interval_monthly">Mensalmente</string>
     <string name="menu_auto_updates_check_interval_never">Nunca</string>
-    <string name="menu_auto_delete_updates">Excluir pacotes já instalados</string>
-    <string name="menu_delete_update">Excluir</string>
+    <string name="menu_auto_delete_updates">Apagar pacotes já instalados</string>
+    <string name="menu_delete_update">Apagar</string>
     <string name="menu_copy_url">Copiar URL</string>
     <string name="menu_export_update">Exportar atualização</string>
     <string name="menu_show_changelog">Mostrar alterações</string>
@@ -82,10 +82,10 @@
     <string name="action_resume">Retomar</string>
     <string name="action_install">Instalar</string>
     <string name="action_info">Informações</string>
-    <string name="action_delete">Excluir</string>
+    <string name="action_delete">Apagar</string>
     <string name="action_cancel">Cancelar</string>
-    <string name="confirm_delete_dialog_title">Excluir arquivo</string>
-    <string name="confirm_delete_dialog_message">Excluir o arquivo de atualização selecionado?</string>
+    <string name="confirm_delete_dialog_title">Apagar arquivo</string>
+    <string name="confirm_delete_dialog_message">Apagar o arquivo de atualização selecionado?</string>
     <string name="apply_update_dialog_title">Instalar atualização</string>
     <string name="apply_update_dialog_message">Você está prestes a instalar <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe você pressionar <xliff:g id="ok">%2$s</xliff:g>, o dispositivo será reiniciado no modo de recuperação para instalar a atualização.\n\nObservação: Esse recurso requer uma recuperação compatível ou as atualizações precisarão ser instaladas manualmente.</string>
     <string name="apply_update_dialog_message_ab">Você está prestes a instalar <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe você pressionar <xliff:g id="ok">%2$s</xliff:g>, a instalação do dispositivo começará em segundo plano.\n\nDepois de concluído, você será solicitado a reiniciar o dispositivo.</string>

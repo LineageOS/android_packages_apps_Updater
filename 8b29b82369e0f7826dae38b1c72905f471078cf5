@@ -16,6 +16,23 @@
       "message": "Remove from SetupWizard too and also delete related selinux rules.",
       "revId": "8b29b82369e0f7826dae38b1c72905f471078cf5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89539564_8a7cb417",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-05-31T11:57:03Z",
+      "side": 1,
+      "message": "Translations are synced, no need to remove any",
+      "revId": "8b29b82369e0f7826dae38b1c72905f471078cf5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

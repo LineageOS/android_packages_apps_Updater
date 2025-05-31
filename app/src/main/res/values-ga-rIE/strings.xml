@@ -59,8 +59,6 @@
     <string name="menu_export_update">Easpórtáil nuashonrú</string>
     <string name="menu_show_changelog">Taispeáin loga na n-athruithe</string>
     <string name="menu_ab_perf_mode">Tabhair tosaíocht don phróiseas nuashonraithe</string>
-    <string name="menu_update_recovery">Nuashonraigh aisghabháil</string>
-    <string name="toast_forced_update_recovery">Tá sé dodhéanta nuashonruithe Lineage Recovery a dhíchumasú ar an ngléas seo.</string>
     <string name="snack_updates_found">Nuashonruithe nua aimsithe</string>
     <string name="snack_no_updates_found">Níor aimsíodh aon nuashonruithe nua</string>
     <string name="snack_updates_check_failed">Theip ar an tseiceáil nuashonraithe. Seiceáil do cheangal idirlín agus bain triail eile as ar ball.</string>

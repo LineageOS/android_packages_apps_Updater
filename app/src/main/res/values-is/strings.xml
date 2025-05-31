@@ -52,9 +52,6 @@
     <string name="menu_export_update">Flytja út uppfærslu</string>
     <string name="menu_show_changelog">Birta breytingaannál</string>
     <string name="menu_ab_perf_mode">Setja uppfærsluferli í forgang</string>
-    <string name="menu_update_recovery">Uppfæra endurheimtingu</string>
-    <string name="toast_forced_update_recovery">Ekki er hægt að gera uppfærslur á endurheimtingu LineageOS óvirkar á þessu
- tæki.</string>
     <string name="snack_updates_found">Nýjar uppfærslur fundust</string>
     <string name="snack_no_updates_found">Engar nýjar uppfærslur fundust</string>
     <string name="snack_updates_check_failed">Athugun með uppfærslur mistókst. Skoðaðu internettenginguna og reyndu aftur síðar.</string>

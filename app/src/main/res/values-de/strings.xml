@@ -59,8 +59,6 @@
     <string name="menu_export_update">Update exportieren</string>
     <string name="menu_show_changelog">Changelog anzeigen</string>
     <string name="menu_ab_perf_mode">Updateprozess priorisieren</string>
-    <string name="menu_update_recovery">Recovery aktualisieren</string>
-    <string name="toast_forced_update_recovery">Es ist nicht möglich, die Updates vom Lineage-Recovery auf diesem Gerät zu deaktivieren.</string>
     <string name="snack_updates_found">Neue Updates gefunden</string>
     <string name="snack_no_updates_found">Keine neuen Updates gefunden</string>
     <string name="snack_updates_check_failed">Die Suche nach Updates ist fehlgeschlagen. Bitte überprüfe die Internetverbindung und versuche es später erneut.</string>

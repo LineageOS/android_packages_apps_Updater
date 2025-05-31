@@ -47,7 +47,6 @@
     <string name="menu_delete_update">Kkes</string>
     <string name="menu_copy_url">Nɣel URL</string>
     <string name="menu_export_update">Sifeḍ lqem</string>
-    <string name="menu_update_recovery">Leqqem aḥraz</string>
     <string name="snack_updates_found">Llan ileqman imaynuten</string>
     <string name="snack_no_updates_found">Ulac ileqman imaynuten</string>
     <string name="snack_updates_check_failed">Icceḍ usenqed n uleqqem. Txilek senqed tuqqna-k γer internet sakin ɛreḍ tikelt nniḍen ticki.</string>

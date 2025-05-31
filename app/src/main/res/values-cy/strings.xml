@@ -53,8 +53,6 @@
     <string name="menu_export_update">Allforio\'r diweddariad</string>
     <string name="menu_show_changelog">Dangos log newid</string>
     <string name="menu_ab_perf_mode">Blaenoriaethu\'r broses diweddaru</string>
-    <string name="menu_update_recovery">Adfer y modd diweddaru</string>
-    <string name="toast_forced_update_recovery">Mae\'n amhosibl analluogi diweddariadau Adfer Lineage ar y ddyfais hon.</string>
     <string name="snack_updates_found">Mae yna ddiweddariad(au) newydd</string>
     <string name="snack_no_updates_found">Ni chanfuwyd diweddariadau newydd</string>
     <string name="snack_updates_check_failed">Methodd gwiriad y diweddariad. Gwiria dy gysylltiad â\'r rhwydwaith a rhoi cynnig arall arni.</string>

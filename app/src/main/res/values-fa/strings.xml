@@ -59,8 +59,6 @@
     <string name="menu_export_update">صادر کردن نسخه‌ی بروز</string>
     <string name="menu_show_changelog">نمایش تغییرات</string>
     <string name="menu_ab_perf_mode">به روز رسانی با اولویت بالا</string>
-    <string name="menu_update_recovery">به‌روز رسانی ریکاوری</string>
-    <string name="toast_forced_update_recovery">غیرفعال کردن به روزرسانی های ریکاوری Lineage در این دستگاه غیرممکن است.</string>
     <string name="snack_updates_found">نسخه های جدید یافت شد</string>
     <string name="snack_no_updates_found">به‌روزرسانی جدیدی یافت نشد</string>
     <string name="snack_updates_check_failed">بررسی نسخه به روز انجام نشد. اتصال اینترنت خود را بررسی و دوباره سعی کنید.</string>

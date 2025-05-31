@@ -59,8 +59,6 @@
     <string name="menu_export_update">Exportar atualização</string>
     <string name="menu_show_changelog">Mostrar alterações</string>
     <string name="menu_ab_perf_mode">Priorizar o processo de atualização</string>
-    <string name="menu_update_recovery">Atualizar recuperação</string>
-    <string name="toast_forced_update_recovery">Não é possível desativar as atualizações do Lineage Recovery neste dispositivo.</string>
     <string name="snack_updates_found">Novas atualizações disponíveis</string>
     <string name="snack_no_updates_found">Não foram encontradas novas atualizações</string>
     <string name="snack_updates_check_failed">Falha ao buscar atualizações. Verifique sua conexão com a internet e tente novamente.</string>

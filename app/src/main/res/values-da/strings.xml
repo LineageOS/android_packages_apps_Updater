@@ -53,8 +53,6 @@
     <string name="menu_export_update">Eksportér opdatering</string>
     <string name="menu_show_changelog">Vis ændringslog</string>
     <string name="menu_ab_perf_mode">Prioritér opdateringsproces</string>
-    <string name="menu_update_recovery">Opdatér gendannelse</string>
-    <string name="toast_forced_update_recovery">Det er umuligt at deaktivere Lineage Gendannelse opdateringer på denne enhed.</string>
     <string name="snack_updates_found">Nye opdateringer fundet</string>
     <string name="snack_no_updates_found">Ingen nye opdateringer fundet</string>
     <string name="snack_updates_check_failed">Opdateringskontrollen fejlede. Kontrollér venligst din internetforbindelse og prøv igen senere.</string>

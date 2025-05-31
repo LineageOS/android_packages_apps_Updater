@@ -59,8 +59,6 @@
     <string name="menu_export_update">Espuarte inzornament</string>
     <string name="menu_show_changelog">Mostre regjisti modifichis</string>
     <string name="menu_ab_perf_mode">Inzornaments cun prioritât</string>
-    <string name="menu_update_recovery">Inzorne Recovery</string>
-    <string name="toast_forced_update_recovery">Nol è pussibil disativâ i inzornaments di Lineage Recovery su chest dispositîf.</string>
     <string name="snack_updates_found">Cjatâts gnûfs inzornaments</string>
     <string name="snack_no_updates_found">Nissun gnûf inzornament cjatât</string>
     <string name="snack_updates_check_failed">La verifiche di gnûfs inzornaments e je falide. Controle la conession internet e torne prove plui indenant.</string>

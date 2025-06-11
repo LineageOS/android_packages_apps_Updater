@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d6eb61d_24061d3b",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-06-11T20:55:50Z",
+      "side": 0,
+      "message": "Can be removed.",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 28
+      },
+      "revId": "4bcdaf42234d51e884e10742c27bc82e00d3cc90",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

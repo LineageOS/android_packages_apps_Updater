@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3aa18054_da8d7e0c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2025-06-15T14:58:39Z",
+      "side": 1,
+      "message": "Abandoned because the same idea is squashed onto \nhttps://review.lineageos.org/c/LineageOS/android_packages_apps_Updater/+/427435",
+      "revId": "f15858ab6ef01d442500c08dd73413420c565fcf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -110,7 +110,7 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> saat qaldı</item>
     </plurals>
     <string name="update_over_metered_network_title">Xəbərdarlıq</string>
-    <string name="update_over_metered_network_message">Ölçülən bir şəbəkə üzərindən böyük ehtimalla yüksək data istifadəsinə səbəb olacaq bir güncəlləmə paketi endirmək üzrəsiniz. Davam etmək istəyirsiniz?</string>
+    <string name="update_over_metered_network_message">Ölçülən bir şəbəkə üzərindən böyük ehtimalla yüksək veri istifadəsinə səbəb olacaq bir güncəlləmə paketi endirmək üzrəsiniz. Davam etmək istəyirsiniz?</string>
     <string name="checkbox_metered_network_warning">Təkrar göstərmə</string>
     <string name="menu_metered_network_warning">Ölçülən şəbəkə xəbərdarlığı</string>
     <string name="blocked_update_dialog_title">Güncəlləmə əngəlləndi</string>

@@ -25,28 +25,41 @@
     <string name="download_completed_notification">ההורדה הושלמה</string>
     <string name="download_starting_notification">מתחיל להוריד</string>
     <string name="update_failed_notification">העדכון נכשל</string>
+    <string name="installation_suspended_notification">ההתקנה הושהתה</string>
     <string name="new_updates_found_title">עדכונים חדשים</string>
-    <string name="text_download_speed">%2$s,%1$s לשניה</string>
-    <string name="pause_button">השהה</string>
+    <string name="text_download_speed">%1$s, %2$s לשניה</string>
+    <string name="pause_button">השהייה</string>
     <string name="resume_button">המשך</string>
+    <string name="suspend_button">מושהה</string>
     <string name="installing_update">מתקין חבילת עדכון</string>
     <string name="installing_update_error">ההתקנה נכשלה</string>
     <string name="installing_update_finished">העדכון הותקן</string>
-    <string name="finalizing_package">משלים את התקנת החבילה</string>
+    <string name="finalizing_package">סיום התקנת החבילה</string>
     <string name="preparing_ota_first_boot">מתכונן להפעלה ראשונה</string>
     <string name="dialog_prepare_zip_message">מתכונן להתקנת העדכון</string>
     <string name="dialog_battery_low_title">סוללה חלשה</string>
-    <string name="dialog_battery_low_message_pct">הסוללה חלשה מדי, אתה צריך לפחות <xliff:g id="percent_discharging">%1$d</xliff:g>%% אחוזים בשביל להמשיך ו־<xliff:g id="percent_charging">%2$d</xliff:g>%% אחוזים אם המכשיר בטעינה.</string>
+    <string name="dialog_battery_low_message_pct">רמת הסוללה נמוכה מדי, נדרשים <xliff:g id="percent_discharging">%1$d</xliff:g>%% לפחות כדי להמשיך, או <xliff:g id="percent_charging">%2$d</xliff:g>%% אם ההתקן בטעינה.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        נא להריץ את הפקודות הבאות, ולנסות שוב לעדכן:\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot]]></string>
+    <string name="dialog_scratch_mounted_title">לא ניתן להתקין עדכון כאשר OverlayFS פעיל</string>
     <string name="reboot">הפעלה מחדש</string>
     <string name="menu_refresh">ריענון</string>
     <string name="menu_preferences">העדפות</string>
     <string name="menu_auto_updates_check">בדיקת עדכונים אוטומטית</string>
+    <string name="menu_auto_updates_check_interval_daily">פעם ביום</string>
+    <string name="menu_auto_updates_check_interval_weekly">פעם בשבוע</string>
+    <string name="menu_auto_updates_check_interval_monthly">פעם בחודש</string>
+    <string name="menu_auto_updates_check_interval_never">אף פעם</string>
     <string name="menu_auto_delete_updates">מחק קובצי עדכון לאחר התקנתם</string>
-    <string name="menu_delete_update">מחק</string>
-    <string name="menu_copy_url">העתק כתובת אינטרנט</string>
+    <string name="menu_delete_update">מחיקה</string>
+    <string name="menu_copy_url">העתק כתובת אתר</string>
     <string name="menu_export_update">יצא עדכון</string>
-    <string name="menu_show_changelog">הצג רשימת שינויים</string>
-    <string name="menu_ab_perf_mode">תעדף תהליכי עדכון</string>
+    <string name="menu_show_changelog">הצגת רשימת שינויים</string>
+    <string name="menu_ab_perf_mode">תיעדוף תהליכי עדכון</string>
+    <string name="menu_update_recovery">עדכון ה-Recovery</string>
+    <string name="toast_forced_update_recovery">לא ניתן לבטל את יכולת השחזור של Lineage בהתקן זה.</string>
     <string name="snack_updates_found">נמצאו עדכונים חדשים</string>
     <string name="snack_no_updates_found">לא נמצאו עדכונים חדשים</string>
     <string name="snack_updates_check_failed">בדיקת העדכונים נכשלה. בדוק את החיבור שלך לאינטרנט ונסה שוב מאוחר יותר.</string>
@@ -59,18 +72,22 @@
     <string name="header_last_updates_check">בדיקה אחרונה: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> מתוך <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> מתוך <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">מאמת עדכון</string>
     <string name="list_no_updates">לא נמצאו עדכונים חדשים. בכדי לבדוק אם יש עדכונים חדשים, לחץ על רענון.</string>
-    <string name="action_download">הורד</string>
-    <string name="action_pause">השהה</string>
+    <string name="action_download">הורדה</string>
+    <string name="action_pause">השהייה</string>
     <string name="action_resume">המשך</string>
-    <string name="action_install">התקן</string>
+    <string name="action_install">התקנה</string>
     <string name="action_info">מידע</string>
     <string name="action_delete">מחיקה</string>
     <string name="action_cancel">ביטול</string>
-    <string name="confirm_delete_dialog_title">מחק קובץ</string>
+    <string name="confirm_delete_dialog_title">מחיקת קובץ</string>
     <string name="confirm_delete_dialog_message">למחוק את קבצי העדכון שנבחרו?</string>
-    <string name="apply_update_dialog_title">החל עדכון</string>
+    <string name="apply_update_dialog_title">החלת עדכון</string>
+    <string name="apply_update_dialog_message">תכף תחל התקנת <xliff:g id="update_name">%1$s</xliff:g>.\n\nבלחיצה על <xliff:g id="ok">%2$s</xliff:g>, ההתקן יופעל מחדש אל מצב התאוששות (Recovery) לצורך התקנת העדכון.\n\nהערה: תכונה זו דורשת Recovery תואם או שיהיה צורך להתקין עדכונים ידנית.</string>
+    <string name="apply_update_dialog_message_ab">תכף תחל התקנת <xliff:g id="update_name">%1$s</xliff:g>.\n\nבלחיצה על <xliff:g id="ok">%2$s</xliff:g>, ההתקן יחל להתקין ברקע.\n\nלאחר השלמת הפעולה יידרש לאתחל את ההתקן.</string>
     <string name="cancel_installation_dialog_message">לבטל את ההתקנה?</string>
     <string name="label_download_url">כתובת ההורדה</string>
     <string name="toast_download_url_copied">הכתובת הועתקה</string>
@@ -78,6 +95,7 @@
     <string name="notification_export_success">העדכון ייוצא בהצלחה</string>
     <string name="notification_export_fail">שגיאה בייצוא</string>
     <string name="toast_already_exporting">כבר באמצע ייצוא עדכון</string>
+    <string name="toast_export_started">הייצוא החל</string>
     <plurals name="eta_seconds">
         <item quantity="one">שניה אחת נותרה</item>
         <item quantity="two"><xliff:g id="count">%d</xliff:g> שניות נותרו</item>
@@ -97,11 +115,22 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> שעות נותרו</item>
     </plurals>
     <string name="update_over_metered_network_title">אזהרה</string>
+    <string name="update_over_metered_network_message">בכוונתך להוריד חבילת עדכון דרך רשת מדודה, מה שסביר להניח שיגרום לשימוש גבוה בנתונים. האם ברצונך להמשיך?</string>
     <string name="checkbox_metered_network_warning">אל תציג שוב</string>
+    <string name="menu_metered_network_warning">אזהרת רשת מדודה</string>
     <string name="blocked_update_dialog_title">העדכון חסום</string>
-    <string name="blocked_update_dialog_message">אין אפשרות להתקין עדכון זה באמצעות יישום המעדכן.  תוכל לקרוא בקישור <xliff:g id="info_url">%1$s</xliff:g> לקבלת מידע נוסף.</string>
+    <string name="blocked_update_dialog_message">אין אפשרות להתקין עדכון זה באמצעות יישום המעדכן.  נא לקרוא את <xliff:g id="info_url">%1$s</xliff:g> למידע נוסף.</string>
     <string name="export_channel_title">השלמת הייצוא</string>
     <string name="new_updates_channel_title">עדכונים חדשים</string>
-    <string name="ongoing_channel_title">הורדות בפעולה</string>
+    <string name="ongoing_channel_title">הורדות פעילות</string>
     <string name="update_failed_channel_title">העדכון נכשל</string>
+    <string name="info_dialog_title">הידעת?</string>
+    <string name="info_dialog_message">עדכוני LineageOS הם חבילות התקנה מלאות. המשמעות היא שתמיד ניתן להתקין רק את העדכון האחרון, גם אם דילגת על חלק מהעדכונים!</string>
+    <string name="info_dialog_ok">תודה על המידע!</string>
+    <string name="local_update_import">עדכון מקומי</string>
+    <string name="local_update_import_progress">ייבוא עדכון מקומי\u2026</string>
+    <string name="local_update_import_success">ייבוא %1$s הושלם. האם ברצונך להתקין אותו?</string>
+    <string name="local_update_import_failure">ייבוא עדכון מקומי נכשל</string>
+    <string name="local_update_import_install">התקנה</string>
+    <string name="local_update_name">עדכון מקומי</string>
 </resources>

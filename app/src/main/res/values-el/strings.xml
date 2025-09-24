@@ -128,4 +128,6 @@
     <string name="local_update_import_failure">Αποτυχία εισαγωγής τοπικής ενημέρωσης</string>
     <string name="local_update_import_install">Εγκατάσταση</string>
     <string name="local_update_name">Τοπική ενημέρωση</string>
+    <string name="welcome_title">Καλώς ορίσατε</string>
+    <string name="welcome_message">Όταν υπάρχουν πολλές διαθέσιμες ενημερώσεις, δε χρειάζεται να τις εγκαταστήσετε όλες με τη σειρά. Μπορείτε να εγκαταστήσετε την πιο πρόσφατη και στη συνέχεια να διαγράψετε τις προηγούμενες για να απελευθερώσετε αποθηκευτικό χώρο.</string>
 </resources>

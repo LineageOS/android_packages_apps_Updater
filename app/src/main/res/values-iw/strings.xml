@@ -30,7 +30,7 @@
     <string name="text_download_speed">%1$s, %2$s לשניה</string>
     <string name="pause_button">השהייה</string>
     <string name="resume_button">המשך</string>
-    <string name="suspend_button">השעייה</string>
+    <string name="suspend_button">מושהה</string>
     <string name="installing_update">מתקין חבילת עדכון</string>
     <string name="installing_update_error">ההתקנה נכשלה</string>
     <string name="installing_update_finished">העדכון הותקן</string>
@@ -58,7 +58,7 @@
     <string name="menu_export_update">יצא עדכון</string>
     <string name="menu_show_changelog">הצגת רשימת שינויים</string>
     <string name="menu_ab_perf_mode">תיעדוף תהליכי עדכון</string>
-    <string name="menu_update_recovery">עדכון ה־Recovery</string>
+    <string name="menu_update_recovery">עדכון ה-Recovery</string>
     <string name="toast_forced_update_recovery">לא ניתן לבטל את יכולת השחזור של Lineage בהתקן זה.</string>
     <string name="snack_updates_found">נמצאו עדכונים חדשים</string>
     <string name="snack_no_updates_found">לא נמצאו עדכונים חדשים</string>

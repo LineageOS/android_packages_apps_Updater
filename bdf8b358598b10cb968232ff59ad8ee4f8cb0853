@@ -16,6 +16,24 @@
       "message": "Callback is never unregistered",
       "revId": "bdf8b358598b10cb968232ff59ad8ee4f8cb0853",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79ccc630_8e0f02bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2025-09-25T09:03:09Z",
+      "side": 1,
+      "message": "Fixed the issue where the callback is not unregistered when the user goes out of the Updater without establishing connectivity.",
+      "parentUuid": "500c1095_52d82ea6",
+      "revId": "bdf8b358598b10cb968232ff59ad8ee4f8cb0853",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

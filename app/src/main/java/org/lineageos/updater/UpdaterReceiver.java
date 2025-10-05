@@ -17,6 +17,7 @@ import android.os.SystemProperties;
 import androidx.core.app.NotificationCompat;
 import androidx.preference.PreferenceManager;
 
+import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
@@ -31,18 +32,15 @@ public class UpdaterReceiver extends BroadcastReceiver {
     private static final String INSTALL_ERROR_NOTIFICATION_CHANNEL =
             "install_error_notification_channel";
 
-    private static boolean shouldShowUpdateFailedNotification(Context context) {
+    private static boolean isUpdateSuccessful(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-
-        // We can't easily detect failed re-installations
-        if (preferences.getBoolean(Constants.PREF_INSTALL_AGAIN, false) ||
-                preferences.getBoolean(Constants.PREF_INSTALL_NOTIFIED, false)) {
-            return false;
-        }
 
         long buildTimestamp = SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0);
         long lastBuildTimestamp = preferences.getLong(Constants.PREF_INSTALL_OLD_TIMESTAMP, -1);
-        return buildTimestamp == lastBuildTimestamp;
+        // We can't easily detect failed re-installations.
+        boolean isReinstall = preferences.getBoolean(Constants.PREF_INSTALL_AGAIN, false);
+
+        return isReinstall || buildTimestamp != lastBuildTimestamp;
     }
 
     private static void showUpdateFailedNotification(Context context) {
@@ -80,9 +78,18 @@ public class UpdaterReceiver extends BroadcastReceiver {
             pm.reboot(null);
         } else if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+            String downloadId = pref.getString(Constants.PREF_NEEDS_REBOOT_ID, null);
             pref.edit().remove(Constants.PREF_NEEDS_REBOOT_ID).apply();
 
-            if (shouldShowUpdateFailedNotification(context)) {
+            if (downloadId != null && isUpdateSuccessful(context)) {
+                Intent cleanupIntent = new Intent(context, UpdaterService.class);
+                cleanupIntent.setAction(UpdaterService.ACTION_POST_REBOOT_CLEANUP);
+                cleanupIntent.putExtra(UpdaterService.EXTRA_DOWNLOAD_ID, downloadId);
+                context.startService(cleanupIntent);
+            }
+
+            if (!pref.getBoolean(Constants.PREF_INSTALL_NOTIFIED, false)
+                    && !isUpdateSuccessful(context)) {
                 pref.edit().putBoolean(Constants.PREF_INSTALL_NOTIFIED, true).apply();
                 showUpdateFailedNotification(context);
             }

@@ -28,6 +28,7 @@ import android.os.SystemProperties;
 import androidx.core.app.NotificationCompat;
 import androidx.preference.PreferenceManager;
 
+import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
@@ -96,6 +97,11 @@ public class UpdaterReceiver extends BroadcastReceiver {
             if (shouldShowUpdateFailedNotification(context)) {
                 pref.edit().putBoolean(Constants.PREF_INSTALL_NOTIFIED, true).apply();
                 showUpdateFailedNotification(context);
+            } else {
+                // The update was successful, so trigger the cleanup.
+                Intent cleanupIntent = new Intent(context, UpdaterService.class);
+                cleanupIntent.setAction(UpdaterService.ACTION_POST_REBOOT_CLEANUP);
+                context.startService(cleanupIntent);
             }
         }
     }

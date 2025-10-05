@@ -64,11 +64,14 @@ public class UpdaterService extends Service {
 
     private static final String ONGOING_NOTIFICATION_CHANNEL =
             "ongoing_notification_channel";
+    private static final String POST_INSTALL_NOTIFICATION_CHANNEL =
+            "post_install_notification_channel";
 
     public static final int DOWNLOAD_RESUME = 0;
     public static final int DOWNLOAD_PAUSE = 1;
 
     private static final int NOTIFICATION_ID = 10;
+    private static final int POST_INSTALL_NOTIFICATION_ID = 11;
 
     private final IBinder mBinder = new LocalBinder();
     private boolean mHasClients;
@@ -92,6 +95,13 @@ public class UpdaterService extends Service {
                 getString(R.string.ongoing_channel_title),
                 NotificationManager.IMPORTANCE_LOW);
         mNotificationManager.createNotificationChannel(notificationChannel);
+
+        NotificationChannel postInstallChannel = new NotificationChannel(
+                POST_INSTALL_NOTIFICATION_CHANNEL,
+                getString(R.string.installing_update_finished),
+                NotificationManager.IMPORTANCE_HIGH);
+        mNotificationManager.createNotificationChannel(postInstallChannel);
+
         mNotificationBuilder = new NotificationCompat.Builder(this,
                 ONGOING_NOTIFICATION_CHANNEL);
         mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
@@ -396,20 +406,21 @@ public class UpdaterService extends Service {
                 break;
             }
             case INSTALLED: {
-                stopForeground(STOP_FOREGROUND_DETACH);
-                mNotificationBuilder.mActions.clear();
-                mNotificationBuilder.setStyle(null);
-                mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
-                mNotificationBuilder.setProgress(0, 0, false);
+                stopForeground(STOP_FOREGROUND_REMOVE);
+                mNotificationManager.cancel(NOTIFICATION_ID);
+
+                NotificationCompat.Builder rebootNotificationBuilder =
+                        new NotificationCompat.Builder(this, POST_INSTALL_NOTIFICATION_CHANNEL);
                 String text = getString(R.string.installing_update_finished);
-                mNotificationBuilder.setContentText(text);
-                mNotificationBuilder.addAction(R.drawable.ic_system_update,
-                        getString(R.string.reboot),
-                        getRebootPendingIntent());
-                mNotificationBuilder.setTicker(text);
-                mNotificationBuilder.setOngoing(false);
-                mNotificationBuilder.setAutoCancel(true);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                rebootNotificationBuilder.setSmallIcon(R.drawable.ic_system_update)
+                        .setContentTitle(text)
+                        .setContentText(getString(R.string.reboot_to_complete_update))
+                        .addAction(R.drawable.ic_system_update,
+                                getString(R.string.reboot_now),
+                                getRebootPendingIntent())
+                        .setOngoing(true)
+                        .setAutoCancel(false);
+                mNotificationManager.notify(POST_INSTALL_NOTIFICATION_ID, rebootNotificationBuilder.build());
 
                 SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
                 boolean deleteUpdate = pref.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false);

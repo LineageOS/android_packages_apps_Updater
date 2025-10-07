@@ -297,6 +297,7 @@ public class UpdaterService extends Service {
             }
             case DOWNLOADING: {
                 String text = getString(R.string.downloading_notification);
+                mNotificationBuilder.mActions.clear();
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setStyle(mNotificationStyle);
                 mNotificationBuilder.setSmallIcon(android.R.drawable.stat_sys_download);

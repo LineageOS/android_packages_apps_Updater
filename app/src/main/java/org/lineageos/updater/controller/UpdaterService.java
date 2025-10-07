@@ -160,6 +160,10 @@ public class UpdaterService extends Service {
     @Override
     public void onDestroy() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mBroadcastReceiver);
+        if (mNotificationManager != null) {
+            mNotificationManager.cancel(NOTIFICATION_ID);
+            mNotificationManager.cancel(POST_INSTALL_NOTIFICATION_ID);
+        }
         super.onDestroy();
     }
 

@@ -143,8 +143,6 @@ public class UpdateImporter {
 
     private Update buildLocalUpdate(File file) {
         final long timeStamp = getTimeStamp(file);
-        final String buildDate = StringGenerator.getDateLocalizedUTC(
-                activity, DateFormat.MEDIUM, timeStamp);
         final String name = activity.getString(R.string.local_update_name);
         final Update update = new Update();
         update.setAvailableOnline(false);
@@ -155,7 +153,7 @@ public class UpdateImporter {
         update.setTimestamp(timeStamp);
         update.setStatus(UpdateStatus.VERIFIED);
         update.setPersistentStatus(UpdateStatus.Persistent.VERIFIED);
-        update.setVersion(String.format("%s (%s)", name, buildDate));
+        update.setVersion(name);
         return update;
     }
 

@@ -67,6 +67,7 @@
     <string name="list_no_updates">Оновлень не знайдено. Щоб вручну перевірити наявність оновлень, натисніть кнопку Оновити.</string>
     <string name="action_download">Завантажити</string>
     <string name="action_install">Встановити</string>
+    <string name="action_delete">Видалити</string>
     <string name="action_cancel">Скасувати</string>
     <string name="confirm_delete_dialog_title">Видалити файл</string>
     <string name="confirm_delete_dialog_message">Видалити обраний файл оновлення?</string>

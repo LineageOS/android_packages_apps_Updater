@@ -27,10 +27,6 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.icu.text.DateFormat;
-import android.net.ConnectivityManager;
-import android.net.Network;
-import android.net.NetworkCapabilities;
-import android.net.NetworkRequest;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -48,7 +44,6 @@ import android.widget.TextView;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -68,7 +63,6 @@ import com.google.android.material.snackbar.Snackbar;
 import org.json.JSONException;
 import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterService;
-import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
@@ -79,14 +73,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class UpdatesActivity extends UpdatesListActivity implements UpdateImporter.Callbacks {
 
     private static final String TAG = "UpdatesActivity";
     private UpdaterService mUpdaterService;
     private BroadcastReceiver mBroadcastReceiver;
-    private ConnectivityManager.NetworkCallback mNetworkCallback;
 
     private UpdatesListAdapter mAdapter;
 
@@ -257,11 +249,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         if (mUpdaterService != null) {
             unbindService(mConnection);
         }
-        if (mNetworkCallback != null) {
-            ConnectivityManager cm = getSystemService(ConnectivityManager.class);
-            cm.unregisterNetworkCallback(mNetworkCallback);
-            mNetworkCallback = null;
-        }
         super.onStop();
     }
 
@@ -428,75 +415,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 Log.e(TAG, "Error while parsing json list", e);
             }
         }
-        downloadUpdatesList();
-    }
-
-    private void processNewJson(File json, File jsonNew) {
-        try {
-            loadUpdatesList(jsonNew);
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-            long millis = System.currentTimeMillis();
-            preferences.edit().putLong(Constants.PREF_LAST_UPDATE_CHECK, millis).apply();
-            updateLastCheckedString();
-            if (json.exists() && Utils.isUpdateCheckEnabled(this) &&
-                    Utils.checkForNewUpdates(json, jsonNew)) {
-                UpdatesCheckReceiver.updateRepeatingUpdatesCheck(this);
-            }
-            // In case we set a one-shot check because of a previous failure
-            UpdatesCheckReceiver.cancelUpdatesCheck(this);
-            //noinspection ResultOfMethodCallIgnored
-            jsonNew.renameTo(json);
-        } catch (IOException | JSONException e) {
-            Log.e(TAG, "Could not read json", e);
-            showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
-        }
-    }
-
-    private void downloadUpdatesList() {
-        final File jsonFile = Utils.getCachedUpdateList(this);
-        final File jsonFileTmp = new File(jsonFile.getAbsolutePath() + UUID.randomUUID());
-        String url = Utils.getServerURL(this);
-        Log.d(TAG, "Checking " + url);
-
-        DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
-            @Override
-            public void onFailure(final boolean cancelled) {
-                Log.e(TAG, "Could not download updates list");
-                runOnUiThread(() -> {
-                    if (!cancelled) {
-                        showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
-                    }
-                    registerNetworkCallback();
-                });
-            }
-
-            @Override
-            public void onResponse(DownloadClient.Headers headers) {
-            }
-
-            @Override
-            public void onSuccess() {
-                runOnUiThread(() -> {
-                    Log.d(TAG, "List downloaded");
-                    processNewJson(jsonFile, jsonFileTmp);
-                });
-            }
-        };
-
-        final DownloadClient downloadClient;
-        try {
-            downloadClient = new DownloadClient.Builder()
-                    .setUrl(url)
-                    .setDestination(jsonFileTmp)
-                    .setDownloadCallback(callback)
-                    .build();
-        } catch (IOException exception) {
-            Log.e(TAG, "Could not build download client");
-            showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
-            return;
-        }
-
-        downloadClient.start();
+        UpdatesCheckWorker.runImmediateCheck(this);
     }
 
     private void updateLastCheckedString() {
@@ -596,10 +515,9 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                             .apply();
 
                     if (Utils.isUpdateCheckEnabled(this)) {
-                        UpdatesCheckReceiver.scheduleRepeatingUpdatesCheck(this);
+                        UpdatesCheckWorker.schedule(this);
                     } else {
-                        UpdatesCheckReceiver.cancelRepeatingUpdatesCheck(this);
-                        UpdatesCheckReceiver.cancelUpdatesCheck(this);
+                        UpdatesCheckWorker.cancel(this);
                     }
 
                     if (Utils.isABDevice()) {
@@ -628,24 +546,5 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                         .putBoolean(Constants.HAS_SEEN_WELCOME_MESSAGE, true)
                         .apply())
                 .show();
-    }
-
-    private void registerNetworkCallback() {
-        if (mNetworkCallback != null) {
-            Log.e(TAG, "Network callback already registered. Skipping.");
-            return;
-        }
-        ConnectivityManager cm = getSystemService(ConnectivityManager.class);
-        NetworkRequest request = new NetworkRequest.Builder()
-                .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-                .addCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)
-                .build();
-        mNetworkCallback = new ConnectivityManager.NetworkCallback() {
-            @Override
-            public void onAvailable(@NonNull Network network) {
-                runOnUiThread(() -> downloadUpdatesList());
-            }
-        };
-        cm.registerNetworkCallback(request, mNetworkCallback);
     }
 }

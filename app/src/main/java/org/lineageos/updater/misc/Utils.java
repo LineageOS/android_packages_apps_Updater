@@ -15,7 +15,6 @@
  */
 package org.lineageos.updater.misc;
 
-import android.app.AlarmManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -23,8 +22,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
-import android.net.Network;
-import android.net.NetworkCapabilities;
 import android.os.SystemProperties;
 import android.os.storage.StorageManager;
 import android.util.Log;
@@ -52,6 +49,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -194,23 +192,6 @@ public class Utils {
         intent.setAction(UpdaterService.ACTION_INSTALL_UPDATE);
         intent.putExtra(UpdaterService.EXTRA_DOWNLOAD_ID, downloadId);
         context.startService(intent);
-    }
-
-    @Deprecated
-    public static boolean isNetworkAvailable(Context context) {
-        ConnectivityManager cm = context.getSystemService(ConnectivityManager.class);
-        Network activeNetwork = cm.getActiveNetwork();
-        NetworkCapabilities networkCapabilities = cm.getNetworkCapabilities(activeNetwork);
-        if (networkCapabilities != null &&
-                networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
-                networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)) {
-            return networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
-                    || networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
-                    || networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_USB)
-                    || networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_VPN)
-                    || networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
-        }
-        return false;
     }
 
     public static boolean isNetworkMetered(Context context) {
@@ -413,12 +394,12 @@ public class Utils {
     public static long getUpdateCheckInterval(Context context) {
         switch (Utils.getUpdateCheckSetting(context)) {
             case Constants.AUTO_UPDATES_CHECK_INTERVAL_DAILY:
-                return AlarmManager.INTERVAL_DAY;
+                return TimeUnit.DAYS.toMillis(1);
             case Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY:
             default:
-                return AlarmManager.INTERVAL_DAY * 7;
+                return TimeUnit.DAYS.toMillis(7);
             case Constants.AUTO_UPDATES_CHECK_INTERVAL_MONTHLY:
-                return AlarmManager.INTERVAL_DAY * 30;
+                return TimeUnit.DAYS.toMillis(30);
         }
     }
 

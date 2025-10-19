@@ -28,6 +28,9 @@ public final class Constants {
     public static final int AUTO_UPDATES_CHECK_INTERVAL_WEEKLY = 2;
     public static final int AUTO_UPDATES_CHECK_INTERVAL_MONTHLY = 3;
 
+    public static final int NOTIFICATION_ID_NEW_UPDATES = 1;
+    public static final String NOTIFICATION_CHANNEL_NEW_UPDATES = "notification_channel_new_updates";
+
     public static final String PREF_LAST_UPDATE_CHECK = "last_update_check";
     public static final String PREF_AUTO_UPDATES_CHECK_INTERVAL = "auto_updates_check_interval";
     public static final String PREF_AUTO_DELETE_UPDATES = "auto_delete_updates";

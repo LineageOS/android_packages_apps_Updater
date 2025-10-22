@@ -425,4 +425,12 @@ public class Utils {
     public static boolean isRecoveryUpdateExecPresent() {
         return new File(Constants.UPDATE_RECOVERY_EXEC).exists();
     }
+
+    public static long getBuildDateTimestamp() {
+        return SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0);
+    }
+
+    public static String getBuildVersion() {
+        return SystemProperties.get(Constants.PROP_BUILD_VERSION);
+    }
 }

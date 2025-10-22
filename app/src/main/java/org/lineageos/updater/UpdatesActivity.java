@@ -67,7 +67,6 @@ import org.json.JSONException;
 import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.download.DownloadClient;
-import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
@@ -183,7 +182,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
         TextView headerTitle = findViewById(R.id.header_title);
         headerTitle.setText(getString(R.string.header_title_text,
-                BuildInfoUtils.getBuildVersion()));
+                Utils.getBuildVersion()));
 
         updateLastCheckedString();
 
@@ -193,7 +192,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
         TextView headerBuildDate = findViewById(R.id.header_build_date);
         headerBuildDate.setText(StringGenerator.getDateLocalizedUTC(this,
-                DateFormat.LONG, BuildInfoUtils.getBuildDateTimestamp()));
+                DateFormat.LONG, Utils.getBuildDateTimestamp()));
 
         if (!mIsTV) {
             // Switch between header title and appbar title minimizing overlaps

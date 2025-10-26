@@ -324,6 +324,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
     @Override
     public void onImportCompleted(Update update) {
+        UpdaterController controller = mUpdaterService.getUpdaterController();
         if (importDialog != null) {
             importDialog.dismiss();
             importDialog = null;
@@ -338,7 +339,21 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             return;
         }
 
-        mAdapter.notifyDataSetChanged();
+        List<String> updateIds = new ArrayList<>();
+        List<UpdateInfo> sortedUpdates = controller.getUpdates();
+        if (sortedUpdates.isEmpty()) {
+            findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
+            findViewById(R.id.recycler_view).setVisibility(View.GONE);
+        } else {
+            findViewById(R.id.no_new_updates_view).setVisibility(View.GONE);
+            findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
+            sortedUpdates.sort((u1, u2) -> Long.compare(u2.getTimestamp(), u1.getTimestamp()));
+            for (UpdateInfo updateInfo : sortedUpdates) {
+                updateIds.add(updateInfo.getDownloadId());
+            }
+            mAdapter.setData(updateIds);
+            mAdapter.notifyDataSetChanged();
+        }
 
         final Runnable deleteUpdate = () -> UpdaterController.getInstance(this)
                 .deleteUpdate(update.getDownloadId());
@@ -347,7 +362,12 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 .setTitle(R.string.local_update_import)
                 .setMessage(getString(R.string.local_update_import_success, update.getVersion()))
                 .setPositiveButton(R.string.local_update_import_install, (dialog, which) -> {
-                    mAdapter.addItem(update.getDownloadId());
+                    if (controller.isInstallingUpdate()) {
+                        return;
+                    }
+                    // The item is already in the adapter, just trigger the installation.
+                    // The broadcast receiver will handle updating the UI to show progress.
+
                     // Update UI
                     getUpdatesList();
                     Utils.triggerUpdate(this, update.getDownloadId());

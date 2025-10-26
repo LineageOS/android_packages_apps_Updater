@@ -28,6 +28,17 @@ public final class Constants {
     public static final int AUTO_UPDATES_CHECK_INTERVAL_WEEKLY = 2;
     public static final int AUTO_UPDATES_CHECK_INTERVAL_MONTHLY = 3;
 
+    public static final int NOTIFICATION_ID_EXPORT_UPDATE = 16;
+    public static final int NOTIFICATION_ID_INSTALL_ERROR = 0;
+    public static final int NOTIFICATION_ID_NEW_UPDATES = 1;
+    public static final int NOTIFICATION_ID_ONGOING = 10;
+    public static final int NOTIFICATION_ID_POST_INSTALL = 11;
+    public static final String NOTIFICATION_CHANNEL_EXPORT_UPDATE = "notification_channel_export_update";
+    public static final String NOTIFICATION_CHANNEL_INSTALL_ERROR = "notification_channel_install_error";
+    public static final String NOTIFICATION_CHANNEL_NEW_UPDATES = "notification_channel_new_updates";
+    public static final String NOTIFICATION_CHANNEL_ONGOING = "notification_channel_ongoing";
+    public static final String NOTIFICATION_CHANNEL_POST_INSTALL = "notification_channel_post_install";
+
     public static final String PREF_LAST_UPDATE_CHECK = "last_update_check";
     public static final String PREF_AUTO_UPDATES_CHECK_INTERVAL = "auto_updates_check_interval";
     public static final String PREF_AUTO_DELETE_UPDATES = "auto_delete_updates";

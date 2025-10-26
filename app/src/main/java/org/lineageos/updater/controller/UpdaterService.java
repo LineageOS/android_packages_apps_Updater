@@ -15,6 +15,11 @@
  */
 package org.lineageos.updater.controller;
 
+import static org.lineageos.updater.misc.Constants.NOTIFICATION_CHANNEL_ONGOING;
+import static org.lineageos.updater.misc.Constants.NOTIFICATION_CHANNEL_POST_INSTALL;
+import static org.lineageos.updater.misc.Constants.NOTIFICATION_ID_ONGOING;
+import static org.lineageos.updater.misc.Constants.NOTIFICATION_ID_POST_INSTALL;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -64,16 +69,8 @@ public class UpdaterService extends Service {
 
     public static final String ACTION_POST_REBOOT_CLEANUP = "action_post_reboot_cleanup";
 
-    private static final String ONGOING_NOTIFICATION_CHANNEL =
-            "ongoing_notification_channel";
-    private static final String POST_INSTALL_NOTIFICATION_CHANNEL =
-            "post_install_notification_channel";
-
     public static final int DOWNLOAD_RESUME = 0;
     public static final int DOWNLOAD_PAUSE = 1;
-
-    private static final int NOTIFICATION_ID = 10;
-    private static final int POST_INSTALL_NOTIFICATION_ID = 11;
 
     private final IBinder mBinder = new LocalBinder();
     private boolean mHasClients;
@@ -93,19 +90,19 @@ public class UpdaterService extends Service {
 
         mNotificationManager = getSystemService(NotificationManager.class);
         NotificationChannel notificationChannel = new NotificationChannel(
-                ONGOING_NOTIFICATION_CHANNEL,
+                NOTIFICATION_CHANNEL_ONGOING,
                 getString(R.string.ongoing_channel_title),
                 NotificationManager.IMPORTANCE_LOW);
         mNotificationManager.createNotificationChannel(notificationChannel);
 
         NotificationChannel postInstallChannel = new NotificationChannel(
-                POST_INSTALL_NOTIFICATION_CHANNEL,
+                NOTIFICATION_CHANNEL_POST_INSTALL,
                 getString(R.string.installing_update_finished),
                 NotificationManager.IMPORTANCE_HIGH);
         mNotificationManager.createNotificationChannel(postInstallChannel);
 
         mNotificationBuilder = new NotificationCompat.Builder(this,
-                ONGOING_NOTIFICATION_CHANNEL);
+                NOTIFICATION_CHANNEL_ONGOING);
         mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
         mNotificationBuilder.setShowWhen(false);
         mNotificationStyle = new NotificationCompat.BigTextStyle();
@@ -142,7 +139,7 @@ public class UpdaterService extends Service {
                         mNotificationBuilder.setExtras(null);
                         UpdateInfo update = mUpdaterController.getUpdate(downloadId);
                         if (update.getStatus() != UpdateStatus.INSTALLED) {
-                            mNotificationManager.cancel(NOTIFICATION_ID);
+                            mNotificationManager.cancel(NOTIFICATION_ID_ONGOING);
                         }
                     }
                 }
@@ -161,8 +158,8 @@ public class UpdaterService extends Service {
     public void onDestroy() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mBroadcastReceiver);
         if (mNotificationManager != null) {
-            mNotificationManager.cancel(NOTIFICATION_ID);
-            mNotificationManager.cancel(POST_INSTALL_NOTIFICATION_ID);
+            mNotificationManager.cancel(NOTIFICATION_ID_ONGOING);
+            mNotificationManager.cancel(NOTIFICATION_ID_POST_INSTALL);
         }
         super.onDestroy();
     }
@@ -279,7 +276,7 @@ public class UpdaterService extends Service {
             case DELETED: {
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationBuilder.setOngoing(false);
-                mNotificationManager.cancel(NOTIFICATION_ID);
+                mNotificationManager.cancel(NOTIFICATION_ID_ONGOING);
                 tryStopSelf();
                 break;
             }
@@ -294,9 +291,9 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
                 mNotificationBuilder.setAutoCancel(false);
-                startForeground(NOTIFICATION_ID, mNotificationBuilder.build(),
+                startForeground(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build(),
                         ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
                 break;
             }
             case DOWNLOADING: {
@@ -311,7 +308,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
                 mNotificationBuilder.setAutoCancel(false);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
                 break;
             }
             case PAUSED: {
@@ -329,7 +326,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
                 mNotificationBuilder.setAutoCancel(false);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
                 tryStopSelf();
                 break;
             }
@@ -349,7 +346,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
                 mNotificationBuilder.setAutoCancel(false);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
                 tryStopSelf();
                 break;
             }
@@ -362,7 +359,7 @@ public class UpdaterService extends Service {
                 String text = getString(R.string.verifying_download_notification);
                 mNotificationStyle.bigText(text);
                 mNotificationBuilder.setTicker(text);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
                 break;
             }
             case VERIFIED: {
@@ -375,7 +372,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
                 mNotificationBuilder.setAutoCancel(true);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
                 tryStopSelf();
                 break;
             }
@@ -389,7 +386,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
                 mNotificationBuilder.setAutoCancel(true);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
                 tryStopSelf();
                 break;
             }
@@ -411,17 +408,17 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
                 mNotificationBuilder.setAutoCancel(false);
-                startForeground(NOTIFICATION_ID, mNotificationBuilder.build(),
+                startForeground(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build(),
                         ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
                 break;
             }
             case INSTALLED: {
                 stopForeground(STOP_FOREGROUND_REMOVE);
-                mNotificationManager.cancel(NOTIFICATION_ID);
+                mNotificationManager.cancel(NOTIFICATION_ID_ONGOING);
 
                 NotificationCompat.Builder rebootNotificationBuilder =
-                        new NotificationCompat.Builder(this, POST_INSTALL_NOTIFICATION_CHANNEL);
+                        new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_POST_INSTALL);
                 String text = getString(R.string.installing_update_finished);
                 rebootNotificationBuilder.setSmallIcon(R.drawable.ic_system_update)
                         .setContentTitle(text)
@@ -431,7 +428,7 @@ public class UpdaterService extends Service {
                                 getRebootPendingIntent())
                         .setOngoing(true)
                         .setAutoCancel(false);
-                mNotificationManager.notify(POST_INSTALL_NOTIFICATION_ID, rebootNotificationBuilder.build());
+                mNotificationManager.notify(NOTIFICATION_ID_POST_INSTALL, rebootNotificationBuilder.build());
 
                 tryStopSelf();
                 break;
@@ -446,7 +443,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(false);
                 mNotificationBuilder.setAutoCancel(true);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
                 tryStopSelf();
                 break;
             }
@@ -470,7 +467,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setTicker(text);
                 mNotificationBuilder.setOngoing(true);
                 mNotificationBuilder.setAutoCancel(false);
-                mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+                mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
                 tryStopSelf();
                 break;
             }
@@ -491,7 +488,7 @@ public class UpdaterService extends Service {
         mNotificationStyle.bigText(
                 getString(R.string.text_download_speed, eta, speed));
 
-        mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+        mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
     }
 
     private void handleInstallProgress(UpdateInfo update) {
@@ -505,7 +502,7 @@ public class UpdaterService extends Service {
                 update.getFinalizing() ?
                         getString(R.string.finalizing_package) :
                         getString(R.string.preparing_ota_first_boot));
-        mNotificationManager.notify(NOTIFICATION_ID, mNotificationBuilder.build());
+        mNotificationManager.notify(NOTIFICATION_ID_ONGOING, mNotificationBuilder.build());
     }
 
     private void setNotificationTitle(UpdateInfo update) {

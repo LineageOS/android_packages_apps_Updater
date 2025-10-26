@@ -338,7 +338,9 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             return;
         }
 
-        mAdapter.notifyDataSetChanged();
+        mAdapter.addItem(update.getDownloadId());
+        findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
+        findViewById(R.id.no_new_updates_view).setVisibility(View.GONE);
 
         final Runnable deleteUpdate = () -> UpdaterController.getInstance(this)
                 .deleteUpdate(update.getDownloadId());
@@ -347,9 +349,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 .setTitle(R.string.local_update_import)
                 .setMessage(getString(R.string.local_update_import_success, update.getVersion()))
                 .setPositiveButton(R.string.local_update_import_install, (dialog, which) -> {
-                    mAdapter.addItem(update.getDownloadId());
-                    // Update UI
-                    getUpdatesList();
                     Utils.triggerUpdate(this, update.getDownloadId());
                 })
                 .setNegativeButton(android.R.string.cancel, (dialog, which) -> deleteUpdate.run())

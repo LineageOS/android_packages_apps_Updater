@@ -16,6 +16,24 @@
       "message": "Am I blind or is nothing including this?",
       "revId": "9c2d53ccd7df917d007b6e29770ff444f46983fc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b663e1c_5335e9ef",
+        "filename": "app/libs/Android.bp",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2025-10-30T11:58:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e390b45_0dcdba6a",
+      "revId": "9c2d53ccd7df917d007b6e29770ff444f46983fc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

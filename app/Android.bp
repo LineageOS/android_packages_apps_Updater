@@ -26,6 +26,10 @@ android_app {
         "SystemUpdater",
     ],
 
+    plugins: [
+        "androidx.room_room-compiler-plugin",
+    ],
+
     static_libs: [
         // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.core_core-ktx",
@@ -35,6 +39,8 @@ android_app {
         "androidx.localbroadcastmanager_localbroadcastmanager",
         "androidx.preference_preference",
         "androidx.recyclerview_recyclerview",
+        "androidx.room_room-ktx",
+        "androidx.room_room-runtime",
         "androidx.work_work-runtime",
         "com.google.android.material_material",
         "Updater_com.squareup.okhttp3_okhttp",

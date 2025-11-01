@@ -33,11 +33,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.lineageos.updater.R;
-import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.model.Update;
 import org.lineageos.updater.model.UpdateBaseInfo;
 import org.lineageos.updater.model.UpdateInfo;
+import org.lineageos.updater.UpdateDao;
+import org.lineageos.updater.UpdateEntity;
+import org.lineageos.updater.UpdatesDatabase;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -265,8 +267,10 @@ public class Utils {
 
         // Ideally the database is empty when we get here
         List<String> knownPaths = new ArrayList<>();
-        try (UpdatesDbHelper dbHelper = new UpdatesDbHelper(context)) {
-            for (UpdateInfo update : dbHelper.getUpdates()) {
+        UpdateDao dao = UpdatesDatabase.Companion.getInstance(context).updateDao();
+        for (UpdateEntity entity : dao.getUpdates()) {
+            UpdateInfo update = UpdatesDatabase.toModel(entity);
+            if (update.getFile() != null) {
                 knownPaths.add(update.getFile().getAbsolutePath());
             }
         }

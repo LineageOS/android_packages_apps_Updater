@@ -33,6 +33,7 @@ android_app {
         "androidx.preference_preference",
         "androidx.recyclerview_recyclerview",
         "com.google.android.material_material",
+        "Updater_com.squareup.okhttp3_okhttp",
     ],
 
     optimize: {

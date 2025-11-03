@@ -33,18 +33,27 @@ android_app {
 
     static_libs: [
         // DO NOT EDIT THIS SECTION MANUALLY
-        "androidx.core_core-ktx",
         "androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
+        "androidx.core_core-ktx",
+        "androidx.graphics_graphics-shapes",
+        "androidx.lifecycle_lifecycle-runtime",
+        "androidx.lifecycle_lifecycle-runtime-ktx",
         "androidx.lifecycle_lifecycle-viewmodel-ktx",
+        "androidx.lifecycle_lifecycle-viewmodel-savedstate",
         "androidx.localbroadcastmanager_localbroadcastmanager",
         "androidx.preference_preference",
         "androidx.recyclerview_recyclerview",
         "androidx.room_room-ktx",
         "androidx.room_room-runtime",
+        "androidx.room_room-runtime",
+        "androidx.savedstate_savedstate",
+        "androidx.sqlite_sqlite",
+        "androidx.sqlite_sqlite-framework",
         "androidx.work_work-runtime",
         "com.google.android.material_material",
         "Updater_com.squareup.okhttp3_okhttp",
+        "kotlin-stdlib",
     ],
 
     optimize: {

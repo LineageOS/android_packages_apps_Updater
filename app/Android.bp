@@ -10,7 +10,10 @@ android_app {
     // Include SettingsLib and its dependencies
     defaults: ["SettingsLibDefaults"],
 
-    srcs: ["src/main/java/**/*.java"],
+    srcs: [
+        "src/main/java/**/*.java",
+        "src/main/java/**/*.kt",
+    ],
     resource_dirs: ["src/main/res"],
     manifest: "src/main/AndroidManifest.xml",
 
@@ -32,6 +35,7 @@ android_app {
         "androidx.localbroadcastmanager_localbroadcastmanager",
         "androidx.preference_preference",
         "androidx.recyclerview_recyclerview",
+        "androidx.work_work-runtime",
         "com.google.android.material_material",
         "Updater_com.squareup.okhttp3_okhttp",
     ],

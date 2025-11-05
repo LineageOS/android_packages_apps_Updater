@@ -63,7 +63,6 @@ import com.google.android.material.snackbar.Snackbar;
 import org.json.JSONException;
 import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterService;
-import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
@@ -74,7 +73,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class UpdatesActivity extends UpdatesListActivity implements UpdateImporter.Callbacks {
 
@@ -115,6 +113,8 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             });
     private UpdateImporter mUpdateImporter;
     private AlertDialog importDialog;
+    private SharedPreferences prefs;
+    private SharedPreferences.OnSharedPreferenceChangeListener mPrefListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -192,6 +192,12 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         headerTitle.setText(getString(R.string.header_title_text,
                 Utils.getBuildVersion()));
 
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        mPrefListener = (sharedPreferences, key) -> {
+            if (Constants.PREF_LAST_UPDATE_CHECK.equals(key)) {
+                runOnUiThread(this::updateLastCheckedString);
+            }
+        };
         updateLastCheckedString();
 
         TextView headerBuildVersion = findViewById(R.id.header_build_version);
@@ -246,6 +252,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         intentFilter.addAction(UpdaterController.ACTION_INSTALL_PROGRESS);
         intentFilter.addAction(UpdaterController.ACTION_UPDATE_REMOVED);
         LocalBroadcastManager.getInstance(this).registerReceiver(mBroadcastReceiver, intentFilter);
+        prefs.registerOnSharedPreferenceChangeListener(mPrefListener);
     }
 
     @Override
@@ -265,6 +272,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         if (mUpdaterService != null) {
             unbindService(mConnection);
         }
+        prefs.unregisterOnSharedPreferenceChangeListener(mPrefListener);
         super.onStop();
     }
 
@@ -416,80 +424,11 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 Log.e(TAG, "Error while parsing json list", e);
             }
         }
-        downloadUpdatesList();
-    }
-
-    private void processNewJson(File json, File jsonNew) {
-        try {
-            loadUpdatesList(jsonNew);
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-            long millis = System.currentTimeMillis();
-            preferences.edit().putLong(Constants.PREF_LAST_UPDATE_CHECK, millis).apply();
-            updateLastCheckedString();
-            if (json.exists() && Utils.isUpdateCheckEnabled(this) &&
-                    Utils.checkForNewUpdates(json, jsonNew)) {
-                UpdatesCheckReceiver.updateRepeatingUpdatesCheck(this);
-            }
-            // In case we set a one-shot check because of a previous failure
-            UpdatesCheckReceiver.cancelUpdatesCheck(this);
-            //noinspection ResultOfMethodCallIgnored
-            jsonNew.renameTo(json);
-        } catch (IOException | JSONException e) {
-            Log.e(TAG, "Could not read json", e);
-            showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
-        }
-    }
-
-    private void downloadUpdatesList() {
-        final File jsonFile = Utils.getCachedUpdateList(this);
-        final File jsonFileTmp = new File(jsonFile.getAbsolutePath() + UUID.randomUUID());
-        String url = Utils.getServerURL(this);
-        Log.d(TAG, "Checking " + url);
-
-        DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
-            @Override
-            public void onFailure(final boolean cancelled) {
-                Log.e(TAG, "Could not download updates list");
-                runOnUiThread(() -> {
-                    if (!cancelled) {
-                        showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
-                    }
-                });
-            }
-
-            @Override
-            public void onResponse(DownloadClient.Headers headers) {
-            }
-
-            @Override
-            public void onSuccess() {
-                runOnUiThread(() -> {
-                    Log.d(TAG, "List downloaded");
-                    processNewJson(jsonFile, jsonFileTmp);
-                });
-            }
-        };
-
-        final DownloadClient downloadClient;
-        try {
-            downloadClient = new DownloadClient.Builder()
-                    .setUrl(url)
-                    .setDestination(jsonFileTmp)
-                    .setDownloadCallback(callback)
-                    .build();
-        } catch (IOException exception) {
-            Log.e(TAG, "Could not build download client");
-            showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
-            return;
-        }
-
-        downloadClient.start();
+        UpdatesCheckWorker.runImmediateCheck(this);
     }
 
     private void updateLastCheckedString() {
-        final SharedPreferences preferences =
-                PreferenceManager.getDefaultSharedPreferences(this);
-        long lastCheck = preferences.getLong(Constants.PREF_LAST_UPDATE_CHECK, -1) / 1000;
+        long lastCheck = prefs.getLong(Constants.PREF_LAST_UPDATE_CHECK, -1) / 1000;
         String lastCheckString = getString(R.string.header_last_updates_check,
                 StringGenerator.getDateLocalized(this, DateFormat.LONG, lastCheck),
                 StringGenerator.getTimeLocalized(this, lastCheck));
@@ -555,8 +494,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             abPerfMode.setVisibility(View.GONE);
         }
 
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        autoCheckInterval.setSelection(Utils.getUpdateCheckSetting(this));
+        autoCheckInterval.setSelection(UpdatesCheckWorker.getUpdateCheckSetting(this));
         autoDelete.setChecked(prefs.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false));
         meteredNetworkWarning.setChecked(prefs.getBoolean(Constants.PREF_METERED_NETWORK_WARNING,
                 prefs.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true)));
@@ -582,12 +520,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                             .putBoolean(Constants.PREF_AB_PERF_MODE, abPerfMode.isChecked())
                             .apply();
 
-                    if (Utils.isUpdateCheckEnabled(this)) {
-                        UpdatesCheckReceiver.scheduleRepeatingUpdatesCheck(this);
-                    } else {
-                        UpdatesCheckReceiver.cancelRepeatingUpdatesCheck(this);
-                        UpdatesCheckReceiver.cancelUpdatesCheck(this);
-                    }
+                    UpdatesCheckWorker.updateSchedule(this);
 
                     if (Utils.isABDevice()) {
                         boolean enableABPerfMode = abPerfMode.isChecked();
@@ -603,15 +536,14 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     }
 
     private void maybeShowWelcomeMessage() {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean alreadySeen = preferences.getBoolean(Constants.HAS_SEEN_WELCOME_MESSAGE, false);
+        boolean alreadySeen = prefs.getBoolean(Constants.HAS_SEEN_WELCOME_MESSAGE, false);
         if (alreadySeen) {
             return;
         }
         new AlertDialog.Builder(this)
                 .setTitle(R.string.welcome_title)
                 .setMessage(R.string.welcome_message)
-                .setPositiveButton(R.string.info_dialog_ok, (dialog, which) -> preferences.edit()
+                .setPositiveButton(R.string.info_dialog_ok, (dialog, which) -> prefs.edit()
                         .putBoolean(Constants.HAS_SEEN_WELCOME_MESSAGE, true)
                         .apply())
                 .show();

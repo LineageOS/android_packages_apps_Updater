@@ -170,11 +170,8 @@ class UpdatesCheckWorker(
                 Constants.PROP_NEXT_DEVICE, SystemProperties.get(Constants.PROP_DEVICE)
             )
             val incremental = SystemProperties.get(Constants.PROP_BUILD_VERSION_INCREMENTAL)
-            var serverUrl = SystemProperties.get(Constants.PROP_UPDATER_URI)
+            val serverUrl = context.getString(R.string.updater_server_url)
             val type = SystemProperties.get(Constants.PROP_RELEASE_TYPE).lowercase(Locale.ROOT)
-            if (serverUrl.trim().isEmpty()) {
-                serverUrl = context.getString(R.string.updater_server_url)
-            }
             return serverUrl
                 .replace("{device}", device)
                 .replace("{type}", type)

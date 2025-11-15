@@ -129,4 +129,5 @@ Dëshironi të vazhdoni?</string>
     <string name="local_update_import_failure">Importimi i përditësimit lokal dështoi</string>
     <string name="local_update_import_install">Instalo</string>
     <string name="local_update_name">Përditësim lokal</string>
+    <string name="welcome_title">Mirësevini</string>
 </resources>

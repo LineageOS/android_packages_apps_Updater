@@ -263,6 +263,15 @@ class ABUpdateInstaller {
                 .apply();
     }
 
+    public void cleanup() {
+        int errorCode = mUpdateEngine.cleanupAppliedPayload();
+        if (errorCode == UpdateEngine.ErrorCodeConstants.SUCCESS) {
+            Log.i(TAG, "A/B payload cleanup successful");
+        } else {
+            Log.e(TAG, "A/B payload cleanup failed: " + errorCode);
+        }
+    }
+
     public void cancel() {
         if (!isInstallingUpdate(mContext)) {
             Log.e(TAG, "cancel: Not installing any update");

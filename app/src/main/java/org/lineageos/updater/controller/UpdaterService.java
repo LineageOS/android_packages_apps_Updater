@@ -564,5 +564,12 @@ public class UpdaterService extends Service {
         if (deleteUpdate || isLocal) {
             mUpdaterController.deleteUpdate(downloadId);
         }
+        if (Utils.isABDevice()) {
+            new Thread(() -> {
+                ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
+                        mUpdaterController);
+                installer.cleanup();
+            }).start();
+        }
     }
 }

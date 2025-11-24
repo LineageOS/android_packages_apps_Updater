@@ -333,11 +333,6 @@ public class Utils {
         Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show();
     }
 
-    public static boolean isEncrypted(Context context, File file) {
-        StorageManager sm = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
-        return sm.isEncrypted(file);
-    }
-
     public static boolean isRecoveryUpdateExecPresent() {
         return new File(Constants.UPDATE_RECOVERY_EXEC).exists();
     }

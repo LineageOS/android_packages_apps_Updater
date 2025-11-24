@@ -209,18 +209,6 @@ public class Utils {
         throw new IllegalArgumentException("The given entry was not found");
     }
 
-    public static void removeUncryptFiles(File downloadPath) {
-        File[] uncryptFiles = downloadPath.listFiles(
-                (dir, name) -> name.endsWith(Constants.UNCRYPT_FILE_EXT));
-        if (uncryptFiles == null) {
-            return;
-        }
-        for (File file : uncryptFiles) {
-            //noinspection ResultOfMethodCallIgnored
-            file.delete();
-        }
-    }
-
     /**
      * Cleanup the download directory, which is assumed to be a privileged location
      * the user can't access and that might have stale files. This can happen if
@@ -230,8 +218,6 @@ public class Utils {
     public static void cleanupDownloadsDir(Context context) {
         File downloadPath = getDownloadPath(context);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-
-        removeUncryptFiles(downloadPath);
 
         long buildTimestamp = SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0);
         long prevTimestamp = preferences.getLong(Constants.PREF_INSTALL_OLD_TIMESTAMP, 0);

@@ -47,8 +47,6 @@ public final class Constants {
     public static final String PREF_MOBILE_DATA_WARNING = "pref_mobile_data_warning";
     public static final String PREF_NEEDS_REBOOT_ID = "needs_reboot_id";
 
-    public static final String UNCRYPT_FILE_EXT = ".uncrypt";
-
     public static final String PROP_AB_DEVICE = "ro.build.ab_update";
     public static final String PROP_ALLOW_MAJOR_UPGRADES = "lineage.updater.allow_major_upgrades";
     public static final String PROP_BUILD_DATE = "ro.build.date.utc";

@@ -16,6 +16,24 @@
       "message": "Sometimes the user may choose to never update. In such circumstances, they would set their auto update preference to \"NEVER\". They\u0027d be confused to see an update being displayed when opening the Updater. I think the preference should be renamed from \"Auto Updates check\" to \"Updates check interval\".",
       "revId": "8c4f6a401fb5ea59a54d7ca1677fb2ba5d6a37e3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e1d6250_15f53f25",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2025-11-24T09:46:28Z",
+      "side": 1,
+      "message": "Addressed in Ia51eadb42b324943f611a5ee0c133314bdc37eff . Maybe i am overthinking about renaming the preference.",
+      "parentUuid": "79ba8568_b036b1b3",
+      "revId": "8c4f6a401fb5ea59a54d7ca1677fb2ba5d6a37e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

@@ -16,6 +16,24 @@
       "message": "I’m not sure how accurate this update check interval will be. Also, if the app gets killed, it won’t trigger update checks afaik, unlike alarmManager.",
       "revId": "5018c1ff7b41d45daa37f23262e449a60fedeb00",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de6daaa7_a22b8d46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2025-11-24T07:41:28Z",
+      "side": 1,
+      "message": "In my opinion its best keep using alarmManager",
+      "parentUuid": "3dc1aaf7_a0467ba9",
+      "revId": "5018c1ff7b41d45daa37f23262e449a60fedeb00",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

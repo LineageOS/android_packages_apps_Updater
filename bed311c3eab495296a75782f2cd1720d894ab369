@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1072b4ee_3c6b18cd",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesDatabase.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2025-11-24T07:45:00Z",
+      "side": 1,
+      "message": "move to a different dir or file?",
+      "revId": "bed311c3eab495296a75782f2cd1720d894ab369",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5215eebb_c55c9bda",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesDatabase.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2025-11-24T07:45:00Z",
+      "side": 1,
+      "message": "same for this, move",
+      "revId": "bed311c3eab495296a75782f2cd1720d894ab369",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

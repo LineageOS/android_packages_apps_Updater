@@ -122,4 +122,6 @@
     <string name="local_update_import_failure">ადგილობრივი განახლების შემოტანა ვერ მოხერხდა</string>
     <string name="local_update_import_install">დაყენება</string>
     <string name="local_update_name">ადგილობრივი განახლება</string>
+    <string name="welcome_title">მოგესალმებით</string>
+    <string name="welcome_message">გთხოვთ გაითვალისწინოთ, როცა მრავალი განახლებაა ხელმისაწვდომი, არაა აუცილებელი მათი სათითაოდ დაყენება, ყოველთვის შეგიძლიათ, ჩადგათ პირდაპირ უახლესი, შემდეგ კი უსაფრთხოდ წაშალოთ ძველები ადგილის გამოსათავისუფლებლად.</string>
 </resources>

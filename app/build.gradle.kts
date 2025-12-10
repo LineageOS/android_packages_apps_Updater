@@ -86,7 +86,7 @@ android {
 
 dependencies {
     compileOnly(fileTree(mapOf("dir" to "../system_libs", "include" to listOf("*.jar"))))
-
+    annotationProcessor("androidx.room:room-compiler:2.8.4")
     implementation("androidx.core:core-ktx:1.17.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.cardview:cardview:1.0.0")
@@ -94,6 +94,8 @@ dependencies {
     implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.1.0")
     implementation("androidx.preference:preference:1.2.0")
     implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation("androidx.room:room-ktx:2.8.4")
+    implementation("androidx.room:room-runtime:2.8.4")
     implementation("androidx.work:work-runtime:2.11.0")
     implementation("com.google.android.material:material:1.9.0-alpha01")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")

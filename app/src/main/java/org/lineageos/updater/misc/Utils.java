@@ -20,13 +20,18 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.os.SystemProperties;
 import android.os.storage.StorageManager;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 
 import org.json.JSONArray;
@@ -129,7 +134,7 @@ public class Utils {
 
         StringBuilder json = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            for (String line; (line = br.readLine()) != null;) {
+            for (String line; (line = br.readLine()) != null; ) {
                 json.append(line);
             }
         }
@@ -164,7 +169,7 @@ public class Utils {
     public static String getChangelogURL(Context context) {
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
                 SystemProperties.get(Constants.PROP_DEVICE));
-        return context.getString(R.string.menu_changelog_url, device);
+        return context.getString(R.string.url_changelog, device);
     }
 
     public static void triggerUpdate(Context context, String downloadId) {
@@ -182,7 +187,7 @@ public class Utils {
     /**
      * Get the offset to the compressed data of a file inside the given zip
      *
-     * @param zipFile input zip file
+     * @param zipFile   input zip file
      * @param entryPath full path of the entry
      * @return the offset of the compressed, or -1 if not found
      * @throws IllegalArgumentException if the given entry is not found
@@ -320,10 +325,6 @@ public class Utils {
         return isAB;
     }
 
-    public static boolean hasTouchscreen(Context context) {
-        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN);
-    }
-
     public static void addToClipboard(Context context, String label, String text,
                                       String toastMessage) {
         ClipboardManager clipboard = (ClipboardManager) context.getSystemService(
@@ -348,5 +349,38 @@ public class Utils {
 
     public static String getBuildVersion() {
         return SystemProperties.get(Constants.PROP_BUILD_VERSION);
+    }
+
+
+    public static void maybeShowInfoDialog(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        if (preferences.getBoolean(Constants.HAS_SEEN_INFO_DIALOG, false)) {
+            return;
+        }
+
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(android.R.attr.alertDialogTheme, typedValue, true);
+        Context themedContext = new ContextThemeWrapper(context, typedValue.resourceId);
+
+        View view = LayoutInflater.from(themedContext).inflate(R.layout.checkbox_view, null);
+        CheckBox checkBox = view.findViewById(R.id.checkbox);
+        View okButton = view.findViewById(R.id.button);
+
+        AlertDialog dialog = new AlertDialog.Builder(context)
+                .setTitle(R.string.info_dialog_title)
+                .setMessage(R.string.info_dialog_message)
+                .setView(view)
+                .create();
+
+        okButton.setOnClickListener(v -> {
+            if (checkBox.isChecked()) {
+                preferences.edit()
+                        .putBoolean(Constants.HAS_SEEN_INFO_DIALOG, true)
+                        .apply();
+            }
+            dialog.dismiss();
+        });
+
+        dialog.show();
     }
 }

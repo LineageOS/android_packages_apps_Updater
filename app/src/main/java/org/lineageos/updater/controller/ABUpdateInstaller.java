@@ -260,6 +260,7 @@ class ABUpdateInstaller {
         PreferenceManager.getDefaultSharedPreferences(mContext).edit()
                 .putString(Constants.PREF_NEEDS_REBOOT_ID, id)
                 .remove(PREF_INSTALLING_AB_ID)
+                .remove(PREF_INSTALLING_SUSPENDED_AB_ID)
                 .apply();
     }
 

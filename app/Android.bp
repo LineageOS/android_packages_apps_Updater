@@ -51,6 +51,7 @@ android_app {
         "androidx.sqlite_sqlite",
         "androidx.sqlite_sqlite-framework",
         "androidx.work_work-runtime",
+        "Updater_com.airbnb.android_lottie",
         "com.google.android.material_material",
         "Updater_com.squareup.okhttp3_okhttp",
         "kotlin-stdlib",

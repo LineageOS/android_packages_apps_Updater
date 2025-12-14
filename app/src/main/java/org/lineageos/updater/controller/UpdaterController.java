@@ -553,4 +553,17 @@ public class UpdaterController {
         }
         ABUpdateInstaller.getInstance(mContext, this).setPerformanceMode(enable);
     }
+
+    public void pauseInstall(String downloadId) {
+        ABUpdateInstaller.getInstance(mContext, this).suspend();
+    }
+
+    public void resumeInstall(String downloadId) {
+        ABUpdateInstaller.getInstance(mContext, this).resume();
+    }
+
+    public boolean isInstallingUpdateSuspended(String downloadId) {
+        return ABUpdateInstaller.isInstallingUpdateSuspended(mContext) &&
+                isInstallingUpdate(downloadId);
+    }
 }

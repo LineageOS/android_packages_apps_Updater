@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SettingsLibEntityHeaderContent"
+    android:layout_width="match_parent"
+    android:background="@drawable/header_background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/entity_header_icon"
+        style="@style/SettingsLibEntityHeaderIcon"
+        android:layout_marginTop="@dimen/settingslib_expressive_space_small1"
+        android:layout_marginBottom="@dimen/settingslib_expressive_space_small1"
+        tools:src="@drawable/ic_verified" />
+
+    <TextView
+        android:id="@+id/entity_header_title"
+        style="@style/TextAppearance.EntityHeaderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="April 1, 2025" />
+
+    <TextView
+        android:id="@+id/entity_header_summary"
+        style="@style/TextAppearance.EntityHeaderSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Android 16\n|\nLineageOS 23.2" />
+
+    <TextView
+        android:id="@+id/entity_header_security_patch_level"
+        style="@style/TextAppearance.EntityHeaderSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Android security update:\nFebruary 5, 2025" />
+
+    <TextView
+        android:id="@+id/entity_header_second_summary"
+        style="@style/TextAppearance.EntityHeaderSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Last checked:\nApril 1, 2024 12:00 PM" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/settingslib_expressive_space_small1"
+        android:layout_marginEnd="@dimen/settingslib_expressive_space_small1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/show_changelog_button"
+            style="@style/SettingsLibButtonStyle.Expressive.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_margin="@dimen/settingslib_expressive_space_small1"
+            android:layout_weight="1"
+            android:text="@string/action_show_changelog" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/report_issue_button"
+            style="@style/SettingsLibButtonStyle.Expressive.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_margin="@dimen/settingslib_expressive_space_small1"
+            android:layout_weight="1"
+            android:text="@string/action_report_issue" />
+
+    </LinearLayout>
+
+</LinearLayout>

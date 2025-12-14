@@ -42,10 +42,16 @@ public final class Constants {
     public static final String PREF_LAST_UPDATE_CHECK = "last_update_check";
     public static final String PREF_AUTO_UPDATES_CHECK_INTERVAL = "auto_updates_check_interval";
     public static final String PREF_AUTO_DELETE_UPDATES = "auto_delete_updates";
+    public static final String HAS_SEEN_INFO_DIALOG = "has_seen_info_dialog";
     public static final String PREF_AB_PERF_MODE = "ab_perf_mode";
     public static final String PREF_METERED_NETWORK_WARNING = "pref_metered_network_warning";
     public static final String PREF_MOBILE_DATA_WARNING = "pref_mobile_data_warning";
     public static final String PREF_NEEDS_REBOOT_ID = "needs_reboot_id";
+    public static final String PREF_UPDATE_RECOVERY = "update_recovery";
+    public static final String PREF_FILTER_MODE = "filter_mode";
+    public static final int FILTER_MODE_ALL = 0;
+    public static final int FILTER_MODE_LATEST = 1;
+    public static final int FILTER_MODE_DOWNLOADED = 2;
 
     public static final String UNCRYPT_FILE_EXT = ".uncrypt";
 
@@ -68,7 +74,4 @@ public final class Constants {
 
     public static final String UPDATE_RECOVERY_EXEC = "/vendor/bin/install-recovery.sh";
     public static final String UPDATE_RECOVERY_PROPERTY = "persist.vendor.recovery_update";
-
-    public static final String HAS_SEEN_INFO_DIALOG = "has_seen_info_dialog";
-    public static final String HAS_SEEN_WELCOME_MESSAGE = "has_seen_welcome_message";
 }

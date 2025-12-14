@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2019-2025 The LineageOS Project
+<?xml version="1.0" encoding="utf-8"?><!--
+     Copyright (C) 2025 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,11 +13,14 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-    <string-array name="pref_auto_updates_check_interval_entries" translatable="false">
-        <item>@string/pref_auto_updates_check_interval_never</item>
-        <item>@string/pref_auto_updates_check_interval_daily</item>
-        <item>@string/pref_auto_updates_check_interval_weekly</item>
-        <item>@string/pref_auto_updates_check_interval_monthly</item>
-    </string-array>
-</resources>
+<!-- Based on wallpaper_picker_entry_background.xml from WallpaperPicker2 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/settingslib_colorSurface" />
+    <corners
+        android:bottomLeftRadius="28dp"
+        android:bottomRightRadius="28dp"
+        android:topLeftRadius="42dp"
+        android:topRightRadius="42dp" />
+    <padding
+        android:bottom="8dp" />
+</shape>

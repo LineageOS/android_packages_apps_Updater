@@ -27,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:indeterminate="true"
+        android:theme="@style/Theme.AppCompat.DayNight"
         app:indicatorColor="?android:attr/colorAccent"/>
 
     <TextView
@@ -35,6 +36,5 @@
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
         android:text="@string/local_update_import_progress"
-        android:textColor="?android:attr/textColorPrimary"
-        android:textSize="16sp" />
+        style="@style/TextAppearance.SettingsLib.BodyLarge" />
 </LinearLayout>

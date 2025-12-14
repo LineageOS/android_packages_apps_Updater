@@ -27,6 +27,12 @@ import android.os.storage.StorageManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 
 import org.json.JSONArray;
@@ -164,7 +170,7 @@ public class Utils {
     public static String getChangelogURL(Context context) {
         String device = SystemProperties.get(Constants.PROP_NEXT_DEVICE,
                 SystemProperties.get(Constants.PROP_DEVICE));
-        return context.getString(R.string.menu_changelog_url, device);
+        return context.getString(R.string.url_changelog, device);
     }
 
     public static void triggerUpdate(Context context, String downloadId) {
@@ -348,5 +354,31 @@ public class Utils {
 
     public static String getBuildVersion() {
         return SystemProperties.get(Constants.PROP_BUILD_VERSION);
+    }
+
+
+    public static void maybeShowInfoDialog(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean alreadySeen = preferences.getBoolean(Constants.HAS_SEEN_INFO_DIALOG, false);
+        if (alreadySeen) {
+            return;
+        }
+
+        View view = LayoutInflater.from(context).inflate(R.layout.checkbox_view, null);
+        CheckBox checkBox = view.findViewById(R.id.checkbox);
+        checkBox.setText(R.string.checkbox_metered_network_warning);
+
+        new AlertDialog.Builder(context)
+                .setTitle(R.string.info_dialog_title)
+                .setMessage(R.string.info_dialog_message)
+                .setView(view)
+                .setPositiveButton(R.string.info_dialog_ok, (dialog, which) -> {
+                    if (checkBox.isChecked()) {
+                        preferences.edit()
+                                .putBoolean(Constants.HAS_SEEN_INFO_DIALOG, true)
+                                .apply();
+                    }
+                })
+                .show();
     }
 }

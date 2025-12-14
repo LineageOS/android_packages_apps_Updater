@@ -7,4 +7,7 @@
     <color name="toolbar_collapsed">@android:color/system_neutral1_700</color>
 
     <color name="inverted">#f5f5f5</color>
+    
+    <color name="ic_alert_color">@color/palette_list_dark_mode_color_orange</color>
+    <color name="ic_verified_color">@color/palette_list_dark_mode_color_green</color>
 </resources>

@@ -79,7 +79,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private List<String> mDownloadIds;
     private String mSelectedDownload;
     private UpdaterController mUpdaterController;
-    private final UpdatesListActivity mActivity;
+    private final UpdatesActivity mActivity;
 
     private AlertDialog infoDialog;
 
@@ -123,7 +123,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         }
     }
 
-    public UpdatesListAdapter(UpdatesListActivity activity) {
+    public UpdatesListAdapter(UpdatesActivity activity) {
         mActivity = activity;
 
         TypedValue tv = new TypedValue();
@@ -180,10 +180,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         } else if (mUpdaterController.isInstallingUpdate(downloadId)) {
             setButtonAction(viewHolder.mAction, Action.CANCEL_INSTALLATION, downloadId, true);
             boolean notAB = !mUpdaterController.isInstallingABUpdate();
-            viewHolder.mProgressText.setText(notAB ? R.string.dialog_prepare_zip_message :
-                    update.getFinalizing() ?
-                            R.string.finalizing_package :
-                            R.string.preparing_ota_first_boot);
+            viewHolder.mProgressText.setText(notAB ? R.string.dialog_prepare_zip_message
+                    : update.getFinalizing() ? R.string.finalizing_package : R.string.preparing_ota_first_boot);
             String percentage = NumberFormat.getPercentInstance().format(
                     update.getInstallProgress() / 100.f);
             viewHolder.mPercentage.setText(percentage);
@@ -381,7 +379,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     }
                 } : null;
             }
-            break;
+                break;
             case INSTALL: {
                 button.setText(R.string.action_install);
                 button.setEnabled(enabled);
@@ -399,25 +397,25 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     }
                 } : null;
             }
-            break;
+                break;
             case INFO: {
                 button.setText(R.string.action_info);
                 button.setEnabled(enabled);
                 clickListener = enabled ? view -> showInfoDialog() : null;
             }
-            break;
+                break;
             case DELETE: {
                 button.setText(R.string.action_delete);
                 button.setEnabled(enabled);
                 clickListener = enabled ? view -> getDeleteDialog(downloadId).show() : null;
             }
-            break;
+                break;
             case CANCEL_INSTALLATION: {
                 button.setText(R.string.action_cancel);
                 button.setEnabled(enabled);
                 clickListener = enabled ? view -> getCancelInstallationDialog().show() : null;
             }
-            break;
+                break;
             case REBOOT: {
                 button.setText(R.string.reboot);
                 button.setEnabled(enabled);
@@ -426,7 +424,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     pm.reboot(null);
                 } : null;
             }
-            break;
+                break;
             default:
                 clickListener = null;
         }
@@ -608,9 +606,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         int percent = Math.round(100.f * intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 100) /
                 intent.getIntExtra(BatteryManager.EXTRA_SCALE, 100));
         int plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0);
-        int required = (plugged & BATTERY_PLUGGED_ANY) != 0 ?
-                mActivity.getResources().getInteger(R.integer.battery_ok_percentage_charging) :
-                mActivity.getResources().getInteger(R.integer.battery_ok_percentage_discharging);
+        int required = (plugged & BATTERY_PLUGGED_ANY) != 0
+                ? mActivity.getResources().getInteger(R.integer.battery_ok_percentage_charging)
+                : mActivity.getResources().getInteger(R.integer.battery_ok_percentage_discharging);
         return percent >= required;
     }
 

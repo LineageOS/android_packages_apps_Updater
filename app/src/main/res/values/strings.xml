@@ -16,7 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Updater</string>
-    <string name="display_name">Updater</string>
+
+    <!-- The display name is matched with system_update_settings_list_item_title
+         resource from the Settings app for consistent user experience. -->
+    <string name="display_name">System updates</string>
 
     <!-- Directory where the update files will be downloaded and stored.
          WARNING: The application can and will delete any unknown file. -->
@@ -32,7 +35,8 @@
           {type} - Build type
           {incr} - Incremental version
     -->
-    <string name="updater_server_url" translatable="false">https://download.lineageos.org/api/v1/{device}/{type}/{incr}</string>
+    <string name="updater_server_url" translatable="false">
+        https://download.lineageos.org/api/v1/{device}/{type}/{incr}</string>
 
     <string name="verification_failed_notification">Verification failed</string>
     <string name="verifying_download_notification">Verifying update</string>
@@ -60,7 +64,9 @@
     <string name="reboot_to_complete_update">Reboot to complete the update</string>
     <string name="dialog_prepare_zip_message">Preliminary update preparation</string>
     <string name="dialog_battery_low_title">Low battery</string>
-    <string name="dialog_battery_low_message_pct">The battery level is too low, you need at least <xliff:g id="percent_discharging">%1$d</xliff:g>%% of the battery to continue, <xliff:g id="percent_charging">%2$d</xliff:g>%% if charging.</string>
+    <string name="dialog_battery_low_message_pct">The battery level is too low, you need at least <xliff:g
+            id="percent_discharging">%1$d</xliff:g>%% of the battery to continue, <xliff:g
+            id="percent_charging">%2$d</xliff:g>%% if charging.</string>
     <string name="dialog_scratch_mounted_message">
         <![CDATA[
         Please run the following commands and retry the update:\n
@@ -80,34 +86,60 @@
     <string name="menu_auto_updates_check_interval_daily">Once a day</string>
     <string name="menu_auto_updates_check_interval_weekly">Once a week</string>
     <string name="menu_auto_updates_check_interval_monthly">Once a month</string>
+    <string name="menu_auto_updates_check_interval">Periodically check for updates</string>
+    <string name="menu_general_section">General</string>
     <string name="menu_auto_updates_check_interval_never">Never</string>
-    <string name="menu_auto_delete_updates">Delete updates when installed</string>
+    <string name="auto_updates_check_interval_daily_button">Daily</string>
+    <string name="auto_updates_check_interval_weekly_button">Weekly</string>
+    <string name="auto_updates_check_interval_monthly_button">Monthly</string>
+    <string name="menu_auto_delete_updates">Auto-delete updates</string>
     <string name="menu_delete_update">Delete</string>
     <string name="menu_copy_url">Copy URL</string>
     <string name="menu_export_update">Export update</string>
-    <string name="menu_show_changelog">Show changelog</string>
-    <string name="menu_changelog_url" translatable="false">https://download.lineageos.org/<xliff:g id="device_name">%1$s</xliff:g>/changes</string>
+    <string name="menu_show_changelog">View recent changes</string>
+    <string name="menu_changelog_url" translatable="false">https://download.lineageos.org/<xliff:g
+            id="device_name">%1$s</xliff:g>/changes</string>
     <string name="menu_ab_perf_mode">Prioritize update process</string>
     <string name="menu_update_recovery">Update recovery</string>
+    <string name="menu_auto_updates_check_interval_summary">Check for new updates in the background</string>
+    <string name="menu_auto_delete_updates_summary">Remove downloaded updates after installation</string>
+    <string name="menu_metered_network_warning_summary">Warn before downloading over mobile data</string>
+    <string name="menu_ab_perf_mode_summary">Speed up updates at the cost of device performance</string>
+    <string name="menu_update_recovery_summary">Update recovery partition with system updates</string>
 
-    <string name="snack_updates_found">New updates found</string>
-    <string name="snack_no_updates_found">No new updates found</string>
-    <string name="snack_updates_check_failed">The update check failed. Please check your internet connection and try again later.</string>
+    <string name="snack_updates_found">New update(s) available</string>
+    <string name="snack_no_updates_found">No new updates available</string>
+    <string name="snack_updates_check_failed">The update check failed. Please check your internet
+        connection and try again later.</string>
 
-    <string name="snack_download_failed">The download failed. Please check your internet connection and try again later.</string>
+    <string name="snack_download_failed">The download failed. Please check your internet connection
+        and try again later.</string>
     <string name="snack_download_verification_failed">The update verification failed.</string>
     <string name="snack_download_verified">Download completed.</string>
 
-    <string name="snack_update_not_installable">This update can\'t be installed on top of the current build.</string>
+    <string name="snack_update_not_installable">This update can\'t be installed on top of the
+        current build.</string>
 
-    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_title_text">LineageOS %1$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Last checked: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="header_build_version_combined">Android <xliff:g id="android_version" example="16">
+        %2$s</xliff:g> | LineageOS <xliff:g id="lineage_version" example="23.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Last checked: <xliff:g id="date"
+            example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>
+        )</string>
+
+    <string name="header_title_updates_unavailable">No new system updates available</string>
+    <string name="header_title_updates_available">New system updates available</string>
+    <string name="header_title_installing">Installing system update</string>
 
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
-    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
-    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
-    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g>
+        - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">
+        %1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit"
+            example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">
+        %2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verifying update</string>
     <string name="list_no_updates">No new updates found.</string>
 
@@ -123,8 +155,13 @@
     <string name="confirm_delete_dialog_message">Delete the selected update file?</string>
 
     <string name="apply_update_dialog_title">Apply update</string>
-    <string name="apply_update_dialog_message">You are about to install <xliff:g id="update_name">%1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will restart itself in recovery mode to install the update.\n\nNote: This feature requires a compatible Recovery or updates will need to be installed manually.</string>
-    <string name="apply_update_dialog_message_ab">You are about to install <xliff:g id="update_name">%1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will begin installing in the background.\n\nOnce completed, you will be prompted to reboot.</string>
+    <string name="apply_update_dialog_message">You are about to install <xliff:g id="update_name">
+        %1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will restart
+        itself in recovery mode to install the update.\n\nNote: This feature requires a compatible
+        Recovery or updates will need to be installed manually.</string>
+    <string name="apply_update_dialog_message_ab">You are about to install <xliff:g id="update_name">
+        %1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will begin
+        installing in the background.\n\nOnce completed, you will be prompted to reboot.</string>
 
     <string name="cancel_installation_dialog_message">Cancel the installation?</string>
 
@@ -151,13 +188,17 @@
     </plurals>
 
     <string name="update_over_metered_network_title">Warning</string>
-    <string name="update_over_metered_network_message">You\'re about to download an update package over a metered network which is likely going to cause high data usage. Would you like to proceed?</string>
+    <string name="update_over_metered_network_message">You\'re about to download an update package
+        over a metered network which is likely going to cause high data usage. Would you like to
+        proceed?</string>
     <string name="checkbox_metered_network_warning">Do not show again</string>
     <string name="menu_metered_network_warning">Metered network warning</string>
 
     <string name="blocked_update_dialog_title">Update blocked</string>
-    <string name="blocked_update_dialog_message">This update cannot be installed using the updater app.  Please read <xliff:g id="info_url">%1$s</xliff:g> for more information.</string>
-    <string name="blocked_update_info_url" translatable="false">https://wiki.lineageos.org/devices/<xliff:g id="device_name">%1$s</xliff:g>/upgrade/</string>
+    <string name="blocked_update_dialog_message">This update cannot be installed using the updater
+        app. Please read <xliff:g id="info_url">%1$s</xliff:g> for more information.</string>
+    <string name="blocked_update_info_url" translatable="false">https://wiki.lineageos.org/devices/<xliff:g
+            id="device_name">%1$s</xliff:g>/upgrade/</string>
 
     <string name="export_channel_title">Export completion</string>
     <string name="new_updates_channel_title">New updates</string>
@@ -165,10 +206,11 @@
     <string name="update_failed_channel_title">Update failed</string>
 
     <string name="info_dialog_title">Did you know?</string>
-    <string name="info_dialog_message">LineageOS updates are full installation packages. That means you can always install only the latest update, even if you skipped some in between!</string>
+    <string name="info_dialog_message">LineageOS updates are full installation packages. That means
+        you can always install only the latest update, even if you skipped some in between!</string>
     <string name="info_dialog_ok">Thanks for the info!</string>
 
-    <string name="local_update_import">Local update</string>
+    <string name="local_update_import">Install from storage</string>
     <string name="local_update_import_progress">Importing local update\u2026</string>
     <string name="local_update_import_success">%1$s has been imported. Do you want to install it?</string>
     <string name="local_update_import_failure">Failed to import local update</string>
@@ -176,5 +218,7 @@
     <string name="local_update_name">Local update</string>
 
     <string name="welcome_title">Welcome</string>
-    <string name="welcome_message">Please note that when multiple updates are available, there is no need to go update-by-update, you can always install the latest one directly, and then safely delete old updates to free up storage space.</string>
+    <string name="welcome_message">Please note that when multiple updates are available, there is no
+        need to go update-by-update, you can always install the latest one directly, and then safely
+        delete old updates to free up storage space.</string>
 </resources>

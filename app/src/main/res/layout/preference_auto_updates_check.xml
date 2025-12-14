@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.button.MaterialButtonToggleGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/button_group"
+    style="Widget.Material3Expressive.MaterialButtonGroup.Connected"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="?android:attr/listPreferredItemPaddingStart"
+    android:layout_marginEnd="?android:attr/listPreferredItemPaddingEnd"
+    android:theme="@style/Theme.Material3.DayNight"
+    app:selectionRequired="true"
+    app:singleSelection="true">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_day"
+        style="@style/SettingsLibButtonStyle.Expressive.Tonal.Large"
+        android:layout_weight="1"
+        android:text="@string/auto_updates_check_interval_daily_button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_week"
+        style="@style/SettingsLibButtonStyle.Expressive.Tonal.Large"
+        android:layout_weight="1"
+        android:text="@string/auto_updates_check_interval_weekly_button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_month"
+        style="@style/SettingsLibButtonStyle.Expressive.Tonal.Large"
+        android:layout_weight="1"
+        android:text="@string/auto_updates_check_interval_monthly_button" />
+
+</com.google.android.material.button.MaterialButtonToggleGroup>

@@ -4,13 +4,11 @@
     <item
         android:id="@+id/menu_local_update"
         android:title="@string/local_update_import"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_sd_card"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_preferences"
         android:title="@string/menu_preferences"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/menu_show_changelog"
-        android:title="@string/menu_show_changelog"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_settings_accent"
+        app:showAsAction="ifRoom" />
 </menu>

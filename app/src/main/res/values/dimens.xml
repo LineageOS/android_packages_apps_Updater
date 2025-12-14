@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2019 The LineageOS Project
+<!-- Copyright (C) 2009 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,17 +13,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+
 <resources>
-    <string-array name="menu_auto_updates_check_interval_entries" translatable="false">
-        <item>@string/menu_auto_updates_check_interval_never</item>
-        <item>@string/menu_auto_updates_check_interval_daily</item>
-        <item>@string/menu_auto_updates_check_interval_weekly</item>
-        <item>@string/menu_auto_updates_check_interval_monthly</item>
-    </string-array>
-    <string-array name="menu_auto_updates_check_interval_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
+    <!-- ActionBar contentInsetStart -->
+    <dimen name="actionbar_contentInsetStart">16dp</dimen>
+    <dimen name="actionbar_subsettings_contentInsetStart">72dp</dimen>
 </resources>

@@ -16,7 +16,7 @@
 
     <application
         android:dataExtractionRules="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_system_update"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
@@ -43,6 +43,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".UpdaterPreferences"
+            android:label="@string/display_name"
+            android:parentActivityName=".UpdatesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <service
             android:name=".controller.UpdaterService"

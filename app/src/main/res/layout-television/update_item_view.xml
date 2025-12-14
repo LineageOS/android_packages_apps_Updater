@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:focusable="true"
-    android:foreground="?attr/selectableItemBackground"
+    android:foreground="?android:attr/selectableItemBackground"
     android:nextFocusRight="@+id/update_action"
     android:layout_marginTop="8dp"
     android:layout_marginStart="8dp"

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@style/Theme.SubSettingsBase.Expressive">
+        <!-- Redefine the ActionBar style for contentInsetStart -->
+        <item name="android:actionBarStyle">@style/Widget.ActionBar.SubSettings</item>
+
+        <!-- Bridge AppCompat attributes to Android framework attributes for compatibility -->
+        <item name="actionMenuTextAppearance">?android:attr/actionMenuTextAppearance</item>
+        <item name="actionMenuTextColor">?android:attr/actionMenuTextColor</item>
+        <item name="colorAccent">?android:attr/colorAccent</item>
+        <item name="homeAsUpIndicator">?android:attr/homeAsUpIndicator</item>
+
+        <!-- Ensure Toolbar works with AppCompat -->
+        <item name="actionBarTheme">?android:attr/actionBarTheme</item>
+        <item name="actionBarSize">?android:attr/actionBarSize</item>
+
+        <!-- Apply custom Toolbar style to match Settings inset -->
+        <item name="toolbarStyle">@style/Widget.Updater.Toolbar</item>
+        <item name="android:toolbarStyle">@style/Widget.Updater.Toolbar</item>
+
+        <!-- Fix action button spacing and size -->
+        <item name="itemPadding">16dp</item> <!-- For internal ActionMenuView usage -->
+        <item name="actionButtonStyle">@style/Widget.Updater.ActionButton</item>
+        <item name="android:actionButtonStyle">@style/Widget.Updater.ActionButton</item>
+    </style>
+
+    <style name="NoActionBar" parent="AppTheme">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorSurface">@color/settingslib_colorSurface</item>
+    </style>
+</resources>

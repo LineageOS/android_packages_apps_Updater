@@ -18,7 +18,7 @@ val keystoreProperties = Properties().apply {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "org.lineageos.updater"
@@ -26,6 +26,27 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
+    }
+
+    sourceSets {
+        getByName("main") {
+            val settingsLib = file("../../../../frameworks/base/packages/SettingsLib")
+            val parentRes = File(settingsLib, "res")
+            val subModuleRes = settingsLib.listFiles()
+                ?.filter { it.isDirectory }
+                ?.map { File(it, "res") }
+                ?: emptyList()
+            val allExternalRes = (subModuleRes + parentRes).filter { it.exists() }
+            res.srcDirs(allExternalRes)
+
+            val subModuleJava = settingsLib.listFiles()
+                ?.filter { it.isDirectory }
+                ?.map { File(it, "src") }
+                ?: emptyList()
+            val parentJava = File(settingsLib, "src")
+            val allExternalJava = (subModuleJava + parentJava).filter { it.exists() }
+            java.srcDirs(allExternalJava)
+        }
     }
 
     buildFeatures {
@@ -91,6 +112,7 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.work.runtime)
+    implementation(libs.lottie)
     implementation(libs.material)
     implementation(libs.okhttp)
 }

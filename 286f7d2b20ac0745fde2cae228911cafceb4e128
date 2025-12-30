@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fac4fb5_d69b182a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2025-12-30T03:08:39Z",
+      "side": 1,
+      "message": "https://developer.android.com/develop/background-work/background-tasks/persistent\n\nIt mentions that the AlarmManager is only meant for alarms. I think our use-case is harmless if the check is delayed. Moreover, we have the flexibility to repeat checks automatically in cased of a failed update check.\n\nIn my opinion, the biggest issue is timing the update check closest to the build release ie weekly. For instance, currently if the user runs an immediate check, the scheduled check is re-scheduled a week from the time of the immediate check which can lead to lapses in reliability.",
+      "revId": "286f7d2b20ac0745fde2cae228911cafceb4e128",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

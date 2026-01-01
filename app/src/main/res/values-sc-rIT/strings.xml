@@ -15,11 +15,30 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Atualizadore</string>
+    <string name="display_name">Atualizadore</string>
+    <string name="verification_failed_notification">Verìfica faddida</string>
+    <string name="verifying_download_notification">Verìfica de s\'atualizatzione in cursu</string>
+    <string name="downloading_notification">Iscarrigamentu in cursu</string>
+    <string name="download_paused_notification">Iscarrigamentu in pàusa</string>
+    <string name="download_paused_error_notification">Errore in s\'iscarrigamentu</string>
+    <string name="download_completed_notification">Iscarrigamentu cumpletadu</string>
+    <string name="download_starting_notification">Aviende s\'iscarrigamentu</string>
     <string name="update_failed_notification">Agiornamentu fallidu</string>
+    <string name="installation_suspended_notification">Installatzione suspèndida</string>
     <string name="new_updates_found_title">Agiornamentos noos</string>
+    <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">Pàusa</string>
     <string name="resume_button">Sighi</string>
+    <string name="suspend_button">Suspende</string>
+    <string name="installing_update">Installende su pachete de atualizatzione</string>
+    <string name="installing_update_error">Errore in s\'installatzione</string>
     <string name="installing_update_finished">Agiornamentu installadu</string>
+    <string name="finalizing_package">Finalizatzione de s\'installatzione de su pachete in cursu</string>
+    <string name="preparing_ota_first_boot">Preparatzione de su primu aviu in cursu</string>
+    <string name="dialog_prepare_zip_message">Preparatzione preliminare de s\'atualizatzione</string>
+    <string name="dialog_battery_low_title">Bateria bassa</string>
+    <string name="dialog_battery_low_message_pct">Su livellu de bateria est tropu bassu, ti serbit a su mìnimu <xliff:g id="percent_discharging">%1$d</xliff:g>%% de sa bateria pro sighire, <xliff:g id="percent_charging">%2$d</xliff:g>%% si su dispositivu est in càrriga.</string>
     <string name="dialog_scratch_mounted_message"><![CDATA[        Esecuta is cumandos imbenientes e torra a atualizare:\n
         • adb root\n
         • adb enable-verity\n
@@ -27,8 +46,37 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">Impossìbile installare s\'atualizatzione cun su OverlayFS montadu</string>
     <string name="reboot">Torra a allùghere</string>
+    <string name="menu_refresh">Atualiza</string>
     <string name="menu_preferences">Preferèntzias</string>
+    <string name="menu_auto_updates_check">Controlla is atualizatziones in automàticu</string>
+    <string name="menu_auto_updates_check_interval_daily">Una borta a sa die</string>
+    <string name="menu_auto_updates_check_interval_weekly">Una borta a sa chida</string>
+    <string name="menu_auto_updates_check_interval_monthly">Una borta a su mese</string>
+    <string name="menu_auto_updates_check_interval_never">Mai</string>
+    <string name="menu_auto_delete_updates">Cantzella is atualizatziones una borta installadas</string>
     <string name="menu_delete_update">Iscantzella</string>
+    <string name="menu_copy_url">Còpia s\'URL</string>
+    <string name="menu_export_update">Esporta s\'atualizatzione</string>
+    <string name="menu_show_changelog">Mustra su registru de modìficas</string>
+    <string name="menu_ab_perf_mode">Prioriza su protzessu de atualizatzione</string>
+    <string name="menu_update_recovery">Atualiza su recuperadore</string>
+    <string name="toast_forced_update_recovery">Non faghet a disativare is atualizatziones de su recuperadore de Lineage in custu dispositivu.</string>
+    <string name="snack_updates_found">Atualizatziones noas agatadas</string>
+    <string name="snack_no_updates_found">Nissuna atualizatzione noa agatada</string>
+    <string name="snack_updates_check_failed">Controllu de atualizatzione faddidu. Controlla sa connessione a internet e torra a proare a pustis.</string>
+    <string name="snack_download_failed">Iscarrigamentu faddidu. Controlla sa connessione a internet e torra a proare a pustis.</string>
+    <string name="snack_download_verification_failed">Verìfica de atualizatzione faddida.</string>
+    <string name="snack_download_verified">Iscarrigamentu cumpletadu.</string>
+    <string name="snack_update_not_installable">Custa atualizatzione non podet èssere installada in pitzus de sa compilatzione atuale.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Ùrtimu controllu: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
+    <string name="list_verifying_update">Verìfica de s\'atualizatzione in cursu</string>
+    <string name="list_no_updates">Nissuna atualizatzione noa agatada. Pro nde chircare a manu, imprea su butone Atualiza.</string>
     <string name="action_download">Iscàrriga</string>
     <string name="action_pause">Pàusa</string>
     <string name="action_resume">Sighi</string>
@@ -36,7 +84,36 @@
     <string name="action_info">Informatziones</string>
     <string name="action_delete">Iscantzella</string>
     <string name="action_cancel">Annulla</string>
+    <string name="confirm_delete_dialog_title">Cantzella s\'archìviu</string>
+    <string name="confirm_delete_dialog_message">Boles cantzellare s\'archìviu de atualizatzione seletzionadu?</string>
+    <string name="apply_update_dialog_title">Àplica s\'atualizatzione</string>
+    <string name="cancel_installation_dialog_message">Boles annullare s\'installatzione?</string>
+    <string name="label_download_url">URL de iscarrigamentu</string>
+    <string name="toast_download_url_copied">URL copiadu</string>
+    <string name="dialog_export_title">Esportatzione de s\'atualizatzione in cursu</string>
+    <string name="notification_export_success">Atualizatzione esportada</string>
+    <string name="notification_export_fail">Esportatzione faddida</string>
+    <string name="toast_already_exporting">Esportatzione giai in cursu de un\'àtera atualizatzione</string>
+    <string name="toast_export_started">Esportatzione cumintzada</string>
     <string name="update_over_metered_network_title">Atentzione</string>
+    <string name="update_over_metered_network_message">Ses acanta de iscarrigare unu pachete de atualizatzione imperende una rete de consumu, e custu podet cumportare un\'impreu artu de datos. Boles sighire?</string>
+    <string name="checkbox_metered_network_warning">No ddu torres a mustrare</string>
+    <string name="menu_metered_network_warning">Avisu de rete de consumu</string>
+    <string name="blocked_update_dialog_title">Atualizatzione blocada</string>
+    <string name="blocked_update_dialog_message">Custa atualizatzione non podet èssere installada pro mèdiu de s\'aplicatzione atualizadore. Leghe <xliff:g id="info_url">%1$s</xliff:g> pro àteras informatziones.</string>
+    <string name="export_channel_title">Esportatzione cumpletada</string>
     <string name="new_updates_channel_title">Agiornamentos noos</string>
+    <string name="ongoing_channel_title">Iscarrigamentos in cursu</string>
     <string name="update_failed_channel_title">Agiornamentu fallidu</string>
+    <string name="info_dialog_title">Dd\'ischias?</string>
+    <string name="info_dialog_message">Is atualizatziones de LineageOS sunt pachetes de installatzione cumpletos. Custu bolet nàrrere chi podes installare semper s\'ùrtima atualizatzione isceti, fintzas si nd\'as brincada calicuna.</string>
+    <string name="info_dialog_ok">Gràtzias de is informatziones!</string>
+    <string name="local_update_import">Atualizatzione locale</string>
+    <string name="local_update_import_progress">Importatzione de s\'atualizatzione locale in cursu\u2026</string>
+    <string name="local_update_import_success">%1$s importadu. Ddu boles installare?</string>
+    <string name="local_update_import_failure">Errore in s\'importatzione de s\'atualizatzione locale</string>
+    <string name="local_update_import_install">Installa</string>
+    <string name="local_update_name">Atualizatzione locale</string>
+    <string name="welcome_title">Ti donamus sa benebènnida</string>
+    <string name="welcome_message">Tene contu chi cando nch\'at prus atualizatziones a disponimentu, non nch\'at bisòngiu de ddas installare una a sa borta: podes semper installare s\'ùrtima e, pustis, cantzellare is atualizatziones betzas pro liberare ispàtziu.</string>
 </resources>

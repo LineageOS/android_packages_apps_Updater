@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bdbbf6d_62da7577",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "The \"and more\" should be a separate patch",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bfba0871_c6f06289",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Line length",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f60223d9_c0bddfad",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Length",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb7d4da7_819a1b2b",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Length",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "257a64c7_6f199218",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Spaces",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a18211ea_c1460de2",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Length",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89ee6c20_bf6901db",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Length",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08555fcd_5602f00b",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Length",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2023448_23ea455f",
+        "filename": "app/src/main/java/org/lineageos/updater/controller/UpdaterService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Unrelated to md3e",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79519ecf_061c3ee7",
+        "filename": "app/src/main/java/org/lineageos/updater/misc/Constants.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Moving these does nothing, also not md3e related",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fcb6cd6_ed3b3f5b",
+        "filename": "app/src/main/res/layout/updater_header.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Newline at end",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6e2dcb5_73a3f486",
+        "filename": "app/src/main/res/menu/menu_updates.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Newline at end",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f470523c_d34883f7",
+        "filename": "app/src/main/res/values-night/colors.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 1,
+      "message": "Remove spaces",
+      "revId": "9935a8cef6db16a6fe1a99358873536149ae7041",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

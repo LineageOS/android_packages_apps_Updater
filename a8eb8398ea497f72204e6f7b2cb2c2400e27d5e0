@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fbf1e5c_3b606180",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 0,
+      "message": "Moving and renaming of this method is ok but not md3e related and thus a separate change",
+      "revId": "a8eb8398ea497f72204e6f7b2cb2c2400e27d5e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dfdf844_fbd50848",
+        "filename": "app/src/main/java/org/lineageos/updater/controller/UpdaterService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2026-01-06T23:21:29Z",
+      "side": 0,
+      "message": "Because of translations, dont rename string variables - otherwise all have to be translated again in all languages. While these names might be better, there is less benefit than added effort\nComment valid for all strings, wont comment more",
+      "revId": "a8eb8398ea497f72204e6f7b2cb2c2400e27d5e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

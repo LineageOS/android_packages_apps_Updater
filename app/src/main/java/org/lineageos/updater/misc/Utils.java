@@ -25,7 +25,6 @@ import android.net.ConnectivityManager;
 import android.os.SystemProperties;
 import android.os.storage.StorageManager;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.preference.PreferenceManager;
 
@@ -324,13 +323,11 @@ public class Utils {
         return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN);
     }
 
-    public static void addToClipboard(Context context, String label, String text,
-                                      String toastMessage) {
+    public static void addToClipboard(Context context, String label, String text) {
         ClipboardManager clipboard = (ClipboardManager) context.getSystemService(
                 Context.CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText(label, text);
         clipboard.setPrimaryClip(clip);
-        Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show();
     }
 
     public static boolean isEncrypted(Context context, File file) {

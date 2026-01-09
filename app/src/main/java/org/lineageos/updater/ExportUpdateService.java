@@ -15,6 +15,9 @@
  */
 package org.lineageos.updater;
 
+import static org.lineageos.updater.misc.Constants.NOTIFICATION_CHANNEL_EXPORT_UPDATE;
+import static org.lineageos.updater.misc.Constants.NOTIFICATION_ID_EXPORT_UPDATE;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.Service;
@@ -28,7 +31,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
-
 import org.lineageos.updater.misc.FileUtils;
 
 import java.io.File;
@@ -39,15 +41,10 @@ public class ExportUpdateService extends Service {
 
     private static final String TAG = "ExportUpdateService";
 
-    private static final int NOTIFICATION_ID = 16;
-
     public static final String ACTION_START_EXPORTING = "start_exporting";
 
     public static final String EXTRA_SOURCE_FILE = "source_file";
     public static final String EXTRA_DEST_URI = "dest_uri";
-
-    private static final String EXPORT_NOTIFICATION_CHANNEL =
-            "export_notification_channel";
 
     private volatile boolean mIsExporting = false;
 
@@ -126,13 +123,13 @@ public class ExportUpdateService extends Service {
         final String fileName = FileUtils.queryName(getContentResolver(), destination);
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
         NotificationChannel notificationChannel = new NotificationChannel(
-                EXPORT_NOTIFICATION_CHANNEL,
+                NOTIFICATION_CHANNEL_EXPORT_UPDATE,
                 getString(R.string.export_channel_title),
                 NotificationManager.IMPORTANCE_LOW);
         notificationManager.createNotificationChannel(notificationChannel);
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this,
-                EXPORT_NOTIFICATION_CHANNEL);
+                NOTIFICATION_CHANNEL_EXPORT_UPDATE);
         NotificationCompat.BigTextStyle notificationStyle = new NotificationCompat.BigTextStyle();
         notificationBuilder.setContentTitle(getString(R.string.dialog_export_title));
         notificationStyle.setBigContentTitle(getString(R.string.dialog_export_title));
@@ -150,16 +147,16 @@ public class ExportUpdateService extends Service {
                     String percent = NumberFormat.getPercentInstance().format(progress / 100.f);
                     notificationStyle.setSummaryText(percent);
                     notificationBuilder.setProgress(100, progress, false);
-                    notificationManager.notify(NOTIFICATION_ID,
+                    notificationManager.notify(NOTIFICATION_ID_EXPORT_UPDATE,
                             notificationBuilder.build());
                     mLastUpdate = now;
                 }
             }
         };
 
-        startForeground(NOTIFICATION_ID, notificationBuilder.build(),
+        startForeground(NOTIFICATION_ID_EXPORT_UPDATE, notificationBuilder.build(),
                 ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
-        notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
+        notificationManager.notify(NOTIFICATION_ID_EXPORT_UPDATE, notificationBuilder.build());
 
         Runnable runnableComplete = () -> {
             notificationStyle.setSummaryText(null);
@@ -169,7 +166,7 @@ public class ExportUpdateService extends Service {
                     getString(R.string.notification_export_success));
             notificationBuilder.setProgress(0, 0, false);
             notificationBuilder.setContentText(fileName);
-            notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
+            notificationManager.notify(NOTIFICATION_ID_EXPORT_UPDATE, notificationBuilder.build());
             stopForeground(STOP_FOREGROUND_DETACH);
         };
 
@@ -181,7 +178,7 @@ public class ExportUpdateService extends Service {
                     getString(R.string.notification_export_fail));
             notificationBuilder.setProgress(0, 0, false);
             notificationBuilder.setContentText(null);
-            notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
+            notificationManager.notify(NOTIFICATION_ID_EXPORT_UPDATE, notificationBuilder.build());
             stopForeground(STOP_FOREGROUND_DETACH);
         };
 

@@ -46,9 +46,6 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
     private static final String DAILY_CHECK_ACTION = "daily_check_action";
     private static final String ONESHOT_CHECK_ACTION = "oneshot_check_action";
 
-    private static final String NEW_UPDATES_NOTIFICATION_CHANNEL =
-            "new_updates_notification_channel";
-
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
@@ -126,11 +123,11 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         NotificationManager notificationManager = context.getSystemService(
                 NotificationManager.class);
         NotificationChannel notificationChannel = new NotificationChannel(
-                NEW_UPDATES_NOTIFICATION_CHANNEL,
+                Constants.NOTIFICATION_CHANNEL_NEW_UPDATES,
                 context.getString(R.string.new_updates_channel_title),
                 NotificationManager.IMPORTANCE_LOW);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context,
-                NEW_UPDATES_NOTIFICATION_CHANNEL);
+                Constants.NOTIFICATION_CHANNEL_NEW_UPDATES);
         notificationBuilder.setSmallIcon(R.drawable.ic_system_update);
         Intent notificationIntent = new Intent(context, UpdatesActivity.class);
         PendingIntent intent = PendingIntent.getActivity(context, 0, notificationIntent,
@@ -139,7 +136,7 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
         notificationBuilder.setContentTitle(context.getString(R.string.new_updates_found_title));
         notificationBuilder.setAutoCancel(true);
         notificationManager.createNotificationChannel(notificationChannel);
-        notificationManager.notify(0, notificationBuilder.build());
+        notificationManager.notify(Constants.NOTIFICATION_ID_NEW_UPDATES, notificationBuilder.build());
     }
 
     private static PendingIntent getRepeatingUpdatesCheckIntent(Context context) {

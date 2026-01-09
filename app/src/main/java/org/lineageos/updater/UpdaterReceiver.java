@@ -39,9 +39,6 @@ public class UpdaterReceiver extends BroadcastReceiver {
     public static final String ACTION_INSTALL_REBOOT =
             "org.lineageos.updater.action.INSTALL_REBOOT";
 
-    private static final String INSTALL_ERROR_NOTIFICATION_CHANNEL =
-            "install_error_notification_channel";
-
     private static boolean shouldShowUpdateFailedNotification(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
@@ -68,11 +65,11 @@ public class UpdaterReceiver extends BroadcastReceiver {
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         NotificationChannel notificationChannel = new NotificationChannel(
-                INSTALL_ERROR_NOTIFICATION_CHANNEL,
+                Constants.NOTIFICATION_CHANNEL_INSTALL_ERROR,
                 context.getString(R.string.update_failed_channel_title),
                 NotificationManager.IMPORTANCE_LOW);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
-                INSTALL_ERROR_NOTIFICATION_CHANNEL)
+                Constants.NOTIFICATION_CHANNEL_INSTALL_ERROR)
                 .setContentIntent(intent)
                 .setSmallIcon(R.drawable.ic_system_update)
                 .setContentTitle(context.getString(R.string.update_failed_notification))
@@ -81,7 +78,7 @@ public class UpdaterReceiver extends BroadcastReceiver {
 
         NotificationManager nm = context.getSystemService(NotificationManager.class);
         nm.createNotificationChannel(notificationChannel);
-        nm.notify(0, builder.build());
+        nm.notify(Constants.NOTIFICATION_ID_INSTALL_ERROR, builder.build());
     }
 
     @Override

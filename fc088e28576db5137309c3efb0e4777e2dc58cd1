@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70808381_10c62a73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-01-09T02:01:50Z",
+      "side": 1,
+      "message": "Switch to MD3E with a dedicated preferences page makes this change irrelevant.",
+      "revId": "fc088e28576db5137309c3efb0e4777e2dc58cd1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

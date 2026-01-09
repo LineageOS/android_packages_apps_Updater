@@ -563,8 +563,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             } else if (itemId == R.id.menu_copy_url) {
                 Utils.addToClipboard(mActivity,
                         mActivity.getString(R.string.label_download_url),
-                        update.getDownloadUrl(),
-                        mActivity.getString(R.string.toast_download_url_copied));
+                        update.getDownloadUrl());
                 return true;
             } else if (itemId == R.id.menu_export_update) {
                 if (mActivity != null) {

@@ -127,7 +127,6 @@
     <string name="cancel_installation_dialog_message">Cancel the installation?</string>
 
     <string name="label_download_url">Download URL</string>
-    <string name="toast_download_url_copied">URL Copied</string>
 
     <string name="dialog_export_title">Exporting update</string>
     <string name="notification_export_success">Update exported</string>

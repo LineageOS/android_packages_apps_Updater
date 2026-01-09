@@ -7,25 +7,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_container"
+    style="@style/SettingsLibEntityHeader"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false"
-    android:fitsSystemWindows="true"
     android:orientation="horizontal"
-    android:padding="16dp"
-    android:weightSum="2">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <RelativeLayout
-        android:id="@+id/header_container"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:fillViewport="true">
 
         <LinearLayout
-            android:id="@+id/header_top_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <include layout="@layout/updater_header" />
@@ -75,85 +71,37 @@
 
                 </com.google.android.material.chip.ChipGroup>
             </HorizontalScrollView>
-        </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/header_bottom_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/menu_local_update"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_sd_card"
-                android:text="@string/action_local_update" />
-
-            <Button
-                android:id="@+id/preferences"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_settings_accent"
-                android:text="@string/action_preferences" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/header_bottom_container"
-            android:layout_below="@id/header_top_container"
-            android:gravity="center">
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/lottie_check_animation"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                app:lottie_autoPlay="false"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/update_check_failed" />
-        </LinearLayout>
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
-    </RelativeLayout>
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottie_check_animation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    app:lottie_autoPlay="false"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/update_check_failed" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <Space
         android:layout_width="@dimen/settingslib_expressive_space_small1"
         android:layout_height="match_parent" />
 
-    <FrameLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:paddingBottom="5dp"
-            android:scrollbars="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/update_item_view" />
-
-        <ProgressBar
-            android:id="@+id/refresh_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="gone" />
-
-        <View
-            android:id="@+id/no_new_updates_view"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:visibility="gone" />
-
-    </FrameLayout>
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="false"
+        android:paddingBottom="@dimen/settingslib_expressive_space_small1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/update_item_view" />
 </LinearLayout>

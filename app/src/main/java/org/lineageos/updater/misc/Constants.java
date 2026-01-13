@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2023 The LineageOS Project
+ * Copyright (C) 2017-2026 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,6 @@ public final class Constants {
     public static final String PREF_AUTO_DELETE_UPDATES = "auto_delete_updates";
     public static final String PREF_AB_PERF_MODE = "ab_perf_mode";
     public static final String PREF_METERED_NETWORK_WARNING = "pref_metered_network_warning";
-    public static final String PREF_MOBILE_DATA_WARNING = "pref_mobile_data_warning";
     public static final String PREF_NEEDS_REBOOT_ID = "needs_reboot_id";
 
     public static final String UNCRYPT_FILE_EXT = ".uncrypt";

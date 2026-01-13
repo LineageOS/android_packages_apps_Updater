@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2025 The LineageOS Project
+ * Copyright (C) 2017-2026 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -329,22 +328,11 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             return;
         }
 
-        View checkboxView = LayoutInflater.from(mActivity).inflate(R.layout.checkbox_view, null);
-        CheckBox checkbox = checkboxView.findViewById(R.id.checkbox);
-        checkbox.setText(R.string.checkbox_metered_network_warning);
-
         new AlertDialog.Builder(mActivity)
                 .setTitle(R.string.update_over_metered_network_title)
                 .setMessage(R.string.update_over_metered_network_message)
-                .setView(checkboxView)
                 .setPositiveButton(R.string.action_download,
                         (dialog, which) -> {
-                            if (checkbox.isChecked()) {
-                                preferences.edit()
-                                        .putBoolean(Constants.PREF_METERED_NETWORK_WARNING, false)
-                                        .apply();
-                                mActivity.supportInvalidateOptionsMenu();
-                            }
                             mUpdaterController.startDownload(downloadId);
                         })
                 .setNegativeButton(android.R.string.cancel, null)

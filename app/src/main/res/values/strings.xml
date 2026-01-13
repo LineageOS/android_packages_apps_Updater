@@ -149,7 +149,6 @@
 
     <string name="update_over_metered_network_title">Warning</string>
     <string name="update_over_metered_network_message">You\'re about to download an update package over a metered network which is likely going to cause high data usage. Would you like to proceed?</string>
-    <string name="checkbox_metered_network_warning">Do not show again</string>
     <string name="menu_metered_network_warning">Metered network warning</string>
 
     <string name="blocked_update_dialog_title">Update blocked</string>

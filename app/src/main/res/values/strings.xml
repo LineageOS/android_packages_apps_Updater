@@ -81,7 +81,6 @@
     <string name="menu_auto_updates_check_interval_never">Never</string>
     <string name="menu_auto_delete_updates">Delete updates when installed</string>
     <string name="menu_delete_update">Delete</string>
-    <string name="menu_copy_url">Copy URL</string>
     <string name="menu_export_update">Export update</string>
     <string name="menu_show_changelog">Show changelog</string>
     <string name="menu_changelog_url" translatable="false">https://download.lineageos.org/<xliff:g id="device_name">%1$s</xliff:g>/changes</string>
@@ -116,7 +115,6 @@
     <string name="action_install">Install</string>
     <string name="action_info">Info</string>
     <string name="action_delete">Delete</string>
-    <string name="action_cancel">Cancel</string>
 
     <string name="confirm_delete_dialog_title">Delete file</string>
     <string name="confirm_delete_dialog_message">Delete the selected update file?</string>

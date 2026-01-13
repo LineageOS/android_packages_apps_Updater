@@ -401,7 +401,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             }
             break;
             case CANCEL_INSTALLATION: {
-                button.setText(R.string.action_cancel);
+                button.setText(android.R.string.cancel);
                 button.setEnabled(enabled);
                 clickListener = enabled ? view -> getCancelInstallationDialog().show() : null;
             }

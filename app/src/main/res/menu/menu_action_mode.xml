@@ -8,5 +8,5 @@
         android:title="@string/menu_delete_update" />
     <item
         android:id="@+id/menu_copy_url"
-        android:title="@string/menu_copy_url" />
+        android:title="@android:string/copyUrl" />
 </menu>

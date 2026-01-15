@@ -283,10 +283,6 @@ class ABUpdateInstaller {
 
     }
 
-    public void setPerformanceMode(boolean enable) {
-        mUpdateEngine.setPerformanceMode(enable);
-    }
-
     public void suspend() {
         if (!isInstallingUpdate(mContext)) {
             Log.e(TAG, "cancel: Not installing any update");

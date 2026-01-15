@@ -44,6 +44,13 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".PreferencesActivity"
+            android:label="@string/display_name"
+            android:parentActivityName=".UpdatesActivity"
+            android:theme="@style/Theme.SubSettingsBase.Expressive">
+        </activity>
+
         <service
             android:name=".controller.UpdaterService"
             android:foregroundServiceType="specialUse">

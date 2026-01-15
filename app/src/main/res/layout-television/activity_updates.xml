@@ -67,23 +67,14 @@
                 tools:text="Last checked: 1970-01-01"/>
 
         </LinearLayout>
-        <LinearLayout
+        <Button
+            android:id="@+id/preferences"
+            android:drawableStart="@drawable/ic_menu_preferences"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:weightSum="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/preferences"
-                android:drawableStart="@drawable/ic_menu_preferences"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/menu_preferences"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
-
-        </LinearLayout>
+            android:text="@string/menu_preferences"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
     </RelativeLayout>
 
     <RelativeLayout

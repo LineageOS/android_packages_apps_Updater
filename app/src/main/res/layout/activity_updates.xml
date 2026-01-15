@@ -77,10 +77,19 @@
                     tools:text="1970-01-01"/>
 
                 <TextView
-                    android:id="@+id/header_last_check"
+                    android:id="@+id/header_security_patch_level"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_build_date"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp"
+                    tools:text="Android security update: December 1, 2025"/>
+
+                <TextView
+                    android:id="@+id/header_last_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/header_security_patch_level"
                     android:layout_marginTop="8dp"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp"

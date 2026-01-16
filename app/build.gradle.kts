@@ -1,26 +1,13 @@
 import java.util.Properties
-import org.lineageos.generatebp.GenerateBpPlugin
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.lineageos.generatebp.GenerateBpPluginExtension
 import org.lineageos.generatebp.models.Module
 
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.lineageos.generatebp)
 }
 
-apply {
-    plugin<GenerateBpPlugin>()
-}
-
-buildscript {
-    repositories {
-        maven("https://raw.githubusercontent.com/lineage-next/gradle-generatebp/v1.2/.m2")
-    }
-
-    dependencies {
-        classpath("org.lineageos:gradle-generatebp:+")
-    }
-}
 
 val keystorePropertiesFile = rootProject.file("keystore.properties")
 val keystoreProperties = Properties().apply {
@@ -30,7 +17,7 @@ val keystoreProperties = Properties().apply {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "org.lineageos.updater"
@@ -46,7 +33,7 @@ android {
             setProguardFiles(
                 listOf(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                    "proguard.flags"
                 )
             )
         }
@@ -57,12 +44,14 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_21)
+        }
     }
 
     signingConfigs {
@@ -86,19 +75,21 @@ android {
 
 dependencies {
     compileOnly(fileTree(mapOf("dir" to "../system_libs", "include" to listOf("*.jar"))))
-
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.cardview:cardview:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-    implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.1.0")
-    implementation("androidx.preference:preference:1.2.0")
-    implementation("androidx.recyclerview:recyclerview:1.2.1")
-    implementation("com.google.android.material:material:1.9.0-alpha01")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.cardview)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.localbroadcastmanager)
+    implementation(libs.androidx.preference)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.material)
 }
 
 configure<GenerateBpPluginExtension> {
     targetSdk.set(android.defaultConfig.targetSdk!!)
+    minSdk.set(android.defaultConfig.minSdk!!)
+    versionCode.set(android.defaultConfig.versionCode!!)
+    versionName.set(android.defaultConfig.versionName!!)
     availableInAOSP.set { module: Module ->
         when {
             module.group.startsWith("androidx") -> true

@@ -111,13 +111,28 @@
                 android:layout_gravity="end"
                 android:padding="8dp"
                 android:contentDescription="@null" />
-            <Button
-                android:id="@id/update_action"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                tools:text="Pause" />
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@id/update_action"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    tools:text="Pause" />
+
+                <Button
+                    android:id="@+id/update_cancel"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@android:string/cancel" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -82,6 +82,7 @@ dependencies {
     implementation(libs.androidx.localbroadcastmanager)
     implementation(libs.androidx.preference)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.lottie)
     implementation(libs.material)
 }
 

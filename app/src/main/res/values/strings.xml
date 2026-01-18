@@ -25,6 +25,15 @@
          WARNING: The application can and will delete any unknown file. -->
     <string name="download_path" translatable="false">/data/lineageos_updates/</string>
 
+    <!-- Header -->
+    <string name="show_changelog">Recent changes</string>
+    <string name="report_issues">Report issues</string>
+
+    <!-- Filters -->
+    <string name="all">All</string>
+    <string name="latest">Latest</string>
+    <string name="downloaded">Downloaded</string>
+
     <!-- Directory where the downloads will be exported to.
          The path is relative to the root of the external storage.-->
     <string name="export_path" translatable="false">LineageOS updates/</string>
@@ -49,11 +58,11 @@
     <string name="update_failed_notification">Update failed</string>
     <string name="installation_suspended_notification">Installation suspended</string>
 
-    <string name="new_updates_found_title">New updates</string>
+    <string name="new_updates_found_title">New updates found</string>
 
     <string name="text_download_speed">%1$s, %2$s/s</string>
 
-    <string name="installing_update">Installing update package</string>
+    <string name="installing_update">Installing system update</string>
     <string name="installing_update_error">Install error</string>
     <string name="installing_update_finished">Update installed</string>
     <string name="finalizing_package">Finalizing package installation</string>
@@ -72,6 +81,7 @@
     <string name="dialog_scratch_mounted_title">Cannot install update with OverlayFS mounted</string>
 
     <string name="reboot">Reboot</string>
+    <string name="reboot_to_complete_update">Reboot to complete the update</string>
 
     <string name="menu_refresh">Refresh</string>
     <string name="menu_preferences">Preferences</string>
@@ -88,6 +98,7 @@
     <string name="menu_export_update">Export update</string>
     <string name="menu_show_changelog">Show changelog</string>
     <string name="menu_changelog_url" translatable="false">https://download.lineageos.org/<xliff:g id="device_name">%1$s</xliff:g>/changes</string>
+    <string name="report_issue_url" translatable="false">https://gitlab.com/LineageOS/issues/android/-/issues</string>
     <string name="menu_metered_network_warning_summary">Warn before downloading over mobile data</string>
     <string name="menu_ab_perf_mode">Prioritize update process</string>
     <string name="menu_ab_perf_mode_summary">Speed up updates at the cost of device performance</string>
@@ -95,8 +106,9 @@
     <string name="menu_update_recovery_summary">Update recovery partition along with the OS</string>
 
     <string name="snack_updates_found">New updates found</string>
-    <string name="snack_no_updates_found">No new updates found</string>
+    <string name="snack_no_updates_found">No updates found</string>
     <string name="snack_updates_check_failed">The update check failed. Please check your internet connection and try again later.</string>
+    <string name="check_internet_connection">Please check your internet connection</string>
 
     <string name="snack_download_failed">The download failed. Please check your internet connection and try again later.</string>
     <string name="snack_download_verification_failed">The update verification failed.</string>
@@ -105,16 +117,16 @@
     <string name="snack_update_not_installable">This update can\'t be installed on top of the current build.</string>
 
     <string name="header_android_security_update">Android security update: <xliff:g id="patch" example="January 1, 1970">%1$s</xliff:g></string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_lineage_version"><xliff:g id="version" example="23.2">%1$s</xliff:g></string>
     <string name="header_last_updates_check">Last checked: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
 
-    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
-    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="23.2">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="23.2">%1$s</xliff:g> - <xliff:g id="date" example="January 11, 2026">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verifying update</string>
-    <string name="list_no_updates">No new updates found.</string>
+    <string name="list_no_updates">No updates found.</string>
 
     <string name="action_download">Download</string>
     <string name="action_pause">Pause</string>

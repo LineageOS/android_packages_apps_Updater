@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_local_update"
+        android:icon="@drawable/ic_sd_card"
+        android:iconTint="?android:attr/colorControlNormal"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/local_update_name"/>
+    <item
+        android:id="@+id/menu_preferences"
+        android:icon="@drawable/ic_settings_accent"
+        android:iconTint="?android:attr/colorControlNormal"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menu_preferences"/>
+</menu>

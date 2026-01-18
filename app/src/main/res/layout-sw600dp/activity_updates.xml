@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_container"
+    style="@style/SettingsLibEntityHeader"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:weightSum="2">
+
+    <RelativeLayout
+        android:id="@+id/header_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/header_top_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/updater_header"
+                android:nextFocusRight="@+id/filter_scroll_view" />
+
+            <include
+                android:id="@+id/network_warning_card"
+                layout="@layout/settingslib_expressive_preference_card"
+                android:nextFocusRight="@+id/filter_scroll_view"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Space
+        android:layout_width="@dimen/settingslib_expressive_space_small1"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <include
+            android:id="@+id/filter_scroll_view"
+            layout="@layout/updater_filter_chips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nextFocusLeft="@+id/header_icon"
+            android:nextFocusDown="@+id/recycler_view"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_check_animation"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filter_scroll_view"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/update_check_failed" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:descendantFocusability="afterDescendants"
+            android:focusable="true"
+            android:nextFocusLeft="@+id/header_icon"
+            android:nextFocusUp="@+id/filter_scroll_view"
+            android:paddingBottom="@dimen/settingslib_expressive_space_small1"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filter_scroll_view"
+            tools:itemCount="5"
+            tools:listitem="@layout/update_item_view" />
+
+        <ProgressBar
+            android:id="@+id/refresh_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

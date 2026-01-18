@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!--
+     Design reference:
+     settings_entity_header.xml
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SettingsLibEntityHeaderContent"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:background="@drawable/header_background">
+
+    <ImageView
+        android:id="@+id/header_icon"
+        style="@style/SettingsLibEntityHeaderIcon"
+        android:layout_marginTop="@dimen/settingslib_expressive_space_small1"
+        android:layout_marginBottom="@dimen/settingslib_expressive_space_small1"
+        android:importantForAccessibility="no"
+        tools:src="@drawable/settingslib_expressive_icon_level_low" />
+
+    <TextView
+        android:id="@+id/header_build_date"
+        style="@style/SettingsLibEntityHeaderTitle"
+        tools:text="February 1, 2026" />
+
+    <TextView
+        android:id="@+id/header_build_version"
+        style="@style/TextAppearance.EntityHeaderSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Android 16\n|\nLineageOS 23.2" />
+
+    <TextView
+        android:id="@+id/header_security_patch_level"
+        style="@style/TextAppearance.EntityHeaderSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Android security update:\nFebruary 1, 2026" />
+
+    <TextView
+        android:id="@+id/header_last_check"
+        style="@style/TextAppearance.EntityHeaderSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Last checked:\nFebruary 1, 2026 12:00 PM"
+        tools:textColor="@color/settingslib_colorBackgroundLevel_low" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/settingslib_expressive_space_small1">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/show_changelog_button"
+            style="@style/SettingsLibButtonStyle.Expressive.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/show_changelog" />
+
+        <Space
+            android:layout_width="@dimen/settingslib_expressive_space_extrasmall4"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/report_issue_button"
+            style="@style/SettingsLibButtonStyle.Expressive.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/report_issues" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -588,7 +588,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .setPositiveButton(android.R.string.ok,
                         (dialog, which) -> {
                             Utils.triggerUpdate(mActivity, downloadId);
-                            maybeShowInfoDialog();
                         })
                 .setNegativeButton(android.R.string.cancel, null);
     }
@@ -604,21 +603,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                             mActivity.startService(intent);
                         })
                 .setNegativeButton(android.R.string.cancel, null);
-    }
-
-    private void maybeShowInfoDialog() {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mActivity);
-        boolean alreadySeen = preferences.getBoolean(Constants.PREF_HAS_SEEN_INFO_DIALOG, false);
-        if (alreadySeen) {
-            return;
-        }
-        new AlertDialog.Builder(mActivity)
-                .setTitle(R.string.info_dialog_title)
-                .setMessage(R.string.info_dialog_message)
-                .setPositiveButton(R.string.info_dialog_ok, (dialog, which) -> preferences.edit()
-                        .putBoolean(Constants.PREF_HAS_SEEN_INFO_DIALOG, true)
-                        .apply())
-                .show();
     }
 
     private void showInfoDialog() {

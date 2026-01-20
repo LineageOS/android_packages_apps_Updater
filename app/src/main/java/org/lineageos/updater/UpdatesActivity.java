@@ -117,7 +117,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
     private static final String STATE_CURRENT_FILTER = "current_filter";
 
-    private FilterMode mCurrentFilter = FilterMode.ALL;
+    private FilterMode mCurrentFilter = FilterMode.LATEST;
     private List<String> mAllUpdateIds;
     private boolean mIsCollapsed = false;
     private ImageView mStatusIcon;
@@ -129,7 +129,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
         if (savedInstanceState != null) {
             mCurrentFilter = FilterMode.values()[savedInstanceState.getInt(STATE_CURRENT_FILTER,
-                    FilterMode.ALL.ordinal())];
+                    FilterMode.LATEST.ordinal())];
         }
 
         mUpdateImporter = new UpdateImporter(this, this);
@@ -170,7 +170,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         setTitle(R.string.display_name);
 
         setupHeaderButtons();
-        maybeShowWelcomeMessage();
         Objects.requireNonNull(getAppBarLayout()).post(() ->
                 getAppBarLayout().setExpanded(true, false));
 
@@ -575,15 +574,15 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         Chip filterDownloaded = findViewById(R.id.filter_downloaded);
 
         switch (mCurrentFilter) {
+            case ALL:
+                filterAll.setChecked(true);
+                break;
             case DOWNLOADED:
                 filterDownloaded.setChecked(true);
                 break;
             case LATEST:
-                filterLatest.setChecked(true);
-                break;
-            case ALL:
             default:
-                filterAll.setChecked(true);
+                filterLatest.setChecked(true);
                 break;
         }
 
@@ -778,21 +777,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     @Override
     public void showToast(int stringId, int duration) {
         Toast.makeText(this, stringId, duration).show();
-    }
-
-    private void maybeShowWelcomeMessage() {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean alreadySeen = preferences.getBoolean(Constants.PREF_HAS_SEEN_WELCOME_MESSAGE, false);
-        if (alreadySeen) {
-            return;
-        }
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.welcome_title)
-                .setMessage(R.string.welcome_message)
-                .setPositiveButton(R.string.info_dialog_ok, (dialog, which) -> preferences.edit()
-                        .putBoolean(Constants.PREF_HAS_SEEN_WELCOME_MESSAGE, true)
-                        .apply())
-                .show();
     }
     private void setRefreshActionState(boolean busy) {
         View refreshButton = findViewById(R.id.refresh_button);

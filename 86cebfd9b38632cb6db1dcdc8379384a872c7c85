@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a86f65da_ac79eab8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-01-28T17:25:54Z",
+      "side": 1,
+      "message": "While I didn\u0027t go over the actual change, this seems to big.\nI already see mConnectivityManager introduction for network updates that doesn\u0027t have much to do with the redesign.\n\nI know it\u0027s lots of work but can you split some? At least I know if I\u0027m checking actual UI changes or something else",
+      "revId": "86cebfd9b38632cb6db1dcdc8379384a872c7c85",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

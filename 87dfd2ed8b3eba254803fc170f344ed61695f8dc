@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb4be36e_7cfff9e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-01-28T17:18:27Z",
+      "side": 1,
+      "message": "No, manual refresh is \"important\".\nPlease preserve it, I agree with auto-refresh on enter etc, but the user should still be able to force a refresh.\n\nFeel free to remove the progress/animation of it (that seems overkill) but keep it",
+      "revId": "87dfd2ed8b3eba254803fc170f344ed61695f8dc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

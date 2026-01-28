@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "140d67e9_ff07d4c6",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-01-28T17:08:26Z",
+      "side": 1,
+      "message": "why not simply extend loadUpdatesList() to include the local import id?\nYou\u0027d simply call it here instead of manually updating the UI",
+      "range": {
+        "startLine": 341,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 72
+      },
+      "revId": "f804937e235f661d7d0f511f07a7c8a5908bf80c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0fe06a51_0ec52682",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-01-28T17:08:26Z",
+      "side": 1,
+      "message": "why not if importId !\u003d string { updateIds.add(importId) }",
+      "revId": "f804937e235f661d7d0f511f07a7c8a5908bf80c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

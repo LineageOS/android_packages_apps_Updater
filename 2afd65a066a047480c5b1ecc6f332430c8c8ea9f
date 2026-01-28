@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b4d0bfd1_edfa1d8b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-01-28T17:21:24Z",
+      "side": 1,
+      "message": "Unresolving",
+      "parentUuid": "1a64083e_78c07b5b",
+      "revId": "2afd65a066a047480c5b1ecc6f332430c8c8ea9f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c3aae15e_af1039c2",
         "filename": "app/src/main/res/drawable/ic_calendar_view_day.xml",
         "patchSetId": 1

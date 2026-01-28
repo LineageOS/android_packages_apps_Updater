@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4bc1e819_9e77757c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-01-28T17:00:51Z",
+      "side": 1,
+      "message": "There\u0027s probably better ways to fix this without changing behaviour, but I think removing the file after boot makes sense.\nThe only thing I\u0027d change is to only remove the file on successfull install, so wrap it under !shouldShouldUpdateFailedNotication (and rename it to something saner)",
+      "revId": "9007732fed89e2c49d7104542e4c4e3a2bb3020e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

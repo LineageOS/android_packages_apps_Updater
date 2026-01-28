@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9140e38_a5e11c67",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-01-28T17:12:04Z",
+      "side": 1,
+      "message": "meh, I\u0027d avoid introducing kotlin just for this...",
+      "revId": "55dcb179b07deb8b831fa856b52c928e43d066df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

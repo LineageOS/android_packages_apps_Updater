@@ -194,6 +194,10 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         headerBuildDate.setText(StringGenerator.getDateLocalizedUTC(this,
                 DateFormat.LONG, DeviceInfoUtils.getBuildDateTimestamp()));
 
+        TextView headerSecurityPatch = findViewById(R.id.header_security_patch_level);
+        headerSecurityPatch.setText(getString(R.string.header_android_security_update,
+                DeviceInfoUtils.getSecurityPatch()));
+
         if (!mIsTV) {
             // Switch between header title and appbar title minimizing overlaps
             final CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar);

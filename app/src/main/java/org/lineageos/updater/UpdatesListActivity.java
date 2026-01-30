@@ -15,11 +15,11 @@
  */
 package org.lineageos.updater;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 import org.lineageos.updater.model.UpdateInfo;
 
-public abstract class UpdatesListActivity extends AppCompatActivity {
+public abstract class UpdatesListActivity extends CollapsingToolbarBaseActivity {
     public abstract void exportUpdate(UpdateInfo update);
-    public abstract void showSnackbar(int stringId, int duration);
+    public abstract void showToast(int stringId, int duration);
 }

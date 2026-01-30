@@ -9,6 +9,7 @@ localbroadcastmanager = "1.1.0"
 material = "1.9.0-alpha01"
 preference = "1.2.0"
 recyclerview = "1.2.1"
+generateBp = "+"
 
 [libraries]
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -24,3 +25,4 @@ material = { group = "com.google.android.material", name = "material", version.r
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+lineageos-generatebp = { id = "org.lineageos.generatebp", version.ref = "generateBp" }

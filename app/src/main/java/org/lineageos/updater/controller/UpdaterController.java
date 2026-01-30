@@ -27,7 +27,6 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.download.DownloadClient;
-import org.lineageos.updater.misc.DeviceInfoUtils;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.Update;
 import org.lineageos.updater.model.UpdateInfo;
@@ -548,13 +547,6 @@ public class UpdaterController {
 
     public boolean isWaitingForReboot(String downloadId) {
         return ABUpdateInstaller.isWaitingForReboot(mContext, downloadId);
-    }
-
-    public void setPerformanceMode(boolean enable) {
-        if (!DeviceInfoUtils.isABDevice()) {
-            return;
-        }
-        ABUpdateInstaller.getInstance(mContext, this).setPerformanceMode(enable);
     }
 
     private void pauseActiveDownloads() {

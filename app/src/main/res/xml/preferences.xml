@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SPDX-FileCopyrightText: The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/display_name">
+
+    <PreferenceCategory
+        android:title="@string/menu_preferences">
+
+        <SwitchPreferenceCompat
+            android:key="periodic_check_enabled"
+            android:title="@string/menu_auto_updates_check"
+            android:summary="@string/menu_auto_updates_check_summary"
+            android:defaultValue="true" />
+
+        <com.android.settingslib.widget.SegmentedButtonPreference
+            android:key="periodic_check_interval"
+            android:dependency="periodic_check_enabled"
+            android:persistent="false"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="auto_delete_updates"
+            android:title="@string/menu_auto_delete_updates"
+            android:summary="@string/menu_auto_delete_updates_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pref_metered_network_warning"
+            android:title="@string/menu_metered_network_warning"
+            android:summary="@string/menu_metered_network_warning_summary"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="ab_perf_mode"
+            android:title="@string/menu_ab_perf_mode"
+            android:summary="@string/menu_ab_perf_mode_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="update_recovery"
+            android:title="@string/menu_update_recovery"
+            android:summary="@string/menu_update_recovery_summary"
+            android:persistent="false"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

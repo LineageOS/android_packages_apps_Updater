@@ -2,4 +2,7 @@
 <resources>
     <integer name="battery_ok_percentage_charging">20</integer>
     <integer name="battery_ok_percentage_discharging">30</integer>
+
+    <!-- Default periodic check interval. Values: 1=Daily, 2=Weekly, 3=Monthly -->
+    <integer name="def_periodic_check_interval">2</integer>
 </resources>

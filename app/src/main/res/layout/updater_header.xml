@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!--
+     Design reference:
+     settings_entity_header.xml
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SettingsLibEntityHeaderContent">
+
+    <TextView
+        android:id="@+id/header_build_date"
+        style="@style/SettingsLibEntityHeaderTitle"
+        android:textSize="@dimen/settingslib_collapsing_toolbar_expanded_title_size"
+        android:fontFamily="sans-serif-light"
+        tools:text="February 1, 2026"
+        tools:ignore="SpUsage" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/settingslib_expressive_space_small1"
+            android:layout_marginBottom="@dimen/settingslib_expressive_space_small1"
+            android:background="?android:attr/listDivider"
+            android:importantForAccessibility="no" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="24dp"
+                android:baselineAlignBottom="true"
+                android:importantForAccessibility="no"
+                android:scaleType="fitCenter"
+                android:src="@drawable/lineage_mark_teal_tight"
+                app:tint="?attr/colorPrimary" />
+
+            <TextView
+                android:id="@+id/header_lineage_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-light"
+                android:includeFontPadding="false"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="@dimen/settingslib_collapsing_toolbar_expanded_title_size"
+                tools:text="23.2"
+                tools:ignore="SpUsage" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="?android:attr/listDivider"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:id="@+id/header_android_version"
+                style="@style/TextAppearance.EntityHeaderSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="?android:attr/textColorPrimary"
+                tools:text="Android 16" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/settingslib_expressive_space_small1"
+            android:layout_marginBottom="@dimen/settingslib_expressive_space_small1"
+            android:background="?android:attr/listDivider"
+            android:importantForAccessibility="no" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/header_security_patch_level"
+            style="@style/TextAppearance.EntityHeaderSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Android security update:\nFebruary 1, 2026" />
+
+        <TextView
+            android:id="@+id/header_last_check"
+            style="@style/TextAppearance.EntityHeaderSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Last checked:\nFebruary 1, 2026 12:00 PM"
+            tools:textColor="@color/settingslib_colorBackgroundLevel_low" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/settingslib_expressive_space_small1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/refresh_button"
+        style="@style/SettingsLibButtonStyle.Expressive.Tonal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_for_updates"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/brand_accent" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/settingslib_expressive_space_small1" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/show_changelog_button"
+            style="@style/SettingsLibButtonStyle.Expressive.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/show_changelog"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@color/brand_accent" />
+
+        <Space
+            android:layout_width="@dimen/settingslib_expressive_space_small1"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/report_issue_button"
+            style="@style/SettingsLibButtonStyle.Expressive.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/report_issues"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@color/brand_accent" />
+
+    </LinearLayout>
+</LinearLayout>

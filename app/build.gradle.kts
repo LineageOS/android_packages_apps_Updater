@@ -1,10 +1,10 @@
 import java.util.Properties
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.lineageos.generatebp.GenerateBpPluginExtension
 import org.lineageos.generatebp.models.Module
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.lineageos.generatebp)
 }
 
@@ -42,13 +42,19 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+    buildFeatures {
+        buildConfig = true
     }
 
-    kotlinOptions {
-        jvmTarget = "11"
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_21)
+        }
     }
 
     signingConfigs {

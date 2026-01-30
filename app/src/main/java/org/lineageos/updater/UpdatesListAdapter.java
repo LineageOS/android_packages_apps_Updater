@@ -510,7 +510,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     private void maybeShowInfoDialog() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mActivity);
-        boolean alreadySeen = preferences.getBoolean(Constants.HAS_SEEN_INFO_DIALOG, false);
+        boolean alreadySeen = preferences.getBoolean(Constants.PREF_HAS_SEEN_INFO_DIALOG, false);
         if (alreadySeen) {
             return;
         }
@@ -518,7 +518,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .setTitle(R.string.info_dialog_title)
                 .setMessage(R.string.info_dialog_message)
                 .setPositiveButton(R.string.info_dialog_ok, (dialog, which) -> preferences.edit()
-                        .putBoolean(Constants.HAS_SEEN_INFO_DIALOG, true)
+                        .putBoolean(Constants.PREF_HAS_SEEN_INFO_DIALOG, true)
                         .apply())
                 .show();
     }

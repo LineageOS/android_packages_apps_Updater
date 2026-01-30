@@ -23,14 +23,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.PowerManager;
-import android.os.SystemProperties;
 
 import androidx.core.app.NotificationCompat;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.updater.controller.UpdaterService;
-import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
+import org.lineageos.updater.misc.DeviceInfoUtils;
 import org.lineageos.updater.misc.StringGenerator;
 
 import java.text.DateFormat;
@@ -46,7 +45,7 @@ public class UpdaterReceiver extends BroadcastReceiver {
     private static boolean isUpdateSuccessful(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
-        long buildTimestamp = SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0);
+        long buildTimestamp = DeviceInfoUtils.getBuildDateTimestamp();
         long lastBuildTimestamp = preferences.getLong(Constants.PREF_INSTALL_OLD_TIMESTAMP, -1);
         // We can't easily detect failed re-installations.
         boolean isReinstall = preferences.getBoolean(Constants.PREF_INSTALL_AGAIN, false);
@@ -59,7 +58,7 @@ public class UpdaterReceiver extends BroadcastReceiver {
         String buildDate = StringGenerator.getDateLocalizedUTC(context,
                 DateFormat.MEDIUM, preferences.getLong(Constants.PREF_INSTALL_NEW_TIMESTAMP, 0));
         String buildInfo = context.getString(R.string.list_build_version_date,
-                BuildInfoUtils.getBuildVersion(), buildDate);
+                DeviceInfoUtils.getBuildVersion(), buildDate);
 
         Intent notificationIntent = new Intent(context, UpdatesActivity.class);
         PendingIntent intent = PendingIntent.getActivity(context, 0, notificationIntent,

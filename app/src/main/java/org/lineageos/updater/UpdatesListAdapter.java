@@ -15,7 +15,6 @@ import android.text.format.Formatter;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +33,8 @@ import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.android.settingslib.utils.ColorUtil;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -118,10 +119,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     public UpdatesListAdapter(UpdatesListActivity activity) {
         mActivity = activity;
-
-        TypedValue tv = new TypedValue();
-        mActivity.getTheme().resolveAttribute(android.R.attr.disabledAlpha, tv, true);
-        mAlphaDisabledValue = tv.getFloat();
+        mAlphaDisabledValue = ColorUtil.getDisabledAlpha(mActivity);
     }
 
     @NonNull

@@ -92,6 +92,8 @@ dependencies {
 configure<GenerateBpPluginExtension> {
     targetSdk.set(android.defaultConfig.targetSdk!!)
     minSdk.set(android.defaultConfig.minSdk!!)
+    versionCode.set(android.defaultConfig.versionCode!!)
+    versionName.set(android.defaultConfig.versionName!!)
     availableInAOSP.set { module: Module ->
         when {
             module.group.startsWith("androidx") -> true

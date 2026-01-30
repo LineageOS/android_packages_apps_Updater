@@ -206,7 +206,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mProgressText.setText(R.string.list_verifying_update);
             viewHolder.mProgressBar.setIndeterminate(true);
         } else {
-            setButtonAction(viewHolder.mAction, Action.RESUME, downloadId, true);
+            setButtonAction(viewHolder.mAction, Action.RESUME, downloadId,
+                    Utils.isNetworkAvailable(mActivity));
             String downloaded = Formatter.formatShortFileSize(mActivity,
                     update.getFile().length());
             String total = Formatter.formatShortFileSize(mActivity, update.getFileSize());
@@ -251,7 +252,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         } else {
             viewHolder.mMenu.setOnClickListener(getClickListener(update, false, viewHolder.mMenu));
             boolean canDownload = !mUpdaterController.isVerifyingUpdate(downloadId)
-                    && !mUpdaterController.isInstallingUpdate(downloadId);
+                    && !mUpdaterController.isInstallingUpdate(downloadId)
+                    && Utils.isNetworkAvailable(mActivity);
             setButtonAction(viewHolder.mAction, Action.DOWNLOAD, downloadId, canDownload);
         }
         String fileSize = Formatter.formatShortFileSize(mActivity, update.getFileSize());

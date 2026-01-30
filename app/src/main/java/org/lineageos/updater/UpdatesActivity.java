@@ -26,6 +26,10 @@ import android.content.res.Configuration;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.icu.text.DateFormat;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkRequest;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -41,6 +45,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
@@ -87,6 +92,10 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     private RotateAnimation mRefreshAnimation;
 
     private boolean mIsTV;
+
+    private ConnectivityManager mConnectivityManager;
+    private ConnectivityManager.NetworkCallback mNetworkCallback;
+    private boolean mIsCheckingForUpdates = false;
 
     private UpdateInfo mToBeExported = null;
     private final ActivityResultLauncher<Intent> mExportUpdate = registerForActivityResult(
@@ -245,6 +254,8 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         intentFilter.addAction(UpdaterController.ACTION_INSTALL_PROGRESS);
         intentFilter.addAction(UpdaterController.ACTION_UPDATE_REMOVED);
         LocalBroadcastManager.getInstance(this).registerReceiver(mBroadcastReceiver, intentFilter);
+
+        registerNetworkCallback();
     }
 
     @Override
@@ -261,6 +272,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     @Override
     public void onStop() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mBroadcastReceiver);
+        unregisterNetworkCallback();
         if (mUpdaterService != null) {
             unbindService(mConnection);
         }
@@ -292,6 +304,60 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void registerNetworkCallback() {
+        if (mNetworkCallback != null) {
+            return;
+        }
+
+        mConnectivityManager = getSystemService(ConnectivityManager.class);
+        if (mConnectivityManager != null) {
+            mNetworkCallback = new ConnectivityManager.NetworkCallback() {
+                @Override
+                public void onCapabilitiesChanged(@NonNull Network network,
+                                                  @NonNull NetworkCapabilities capabilities) {
+                    runOnUiThread(() -> {
+                        boolean isNetworkValidated =
+                                capabilities.hasCapability(
+                                        NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
+                                        capabilities.hasCapability(
+                                                NetworkCapabilities.NET_CAPABILITY_VALIDATED);
+                        if (isNetworkValidated) {
+                            downloadUpdatesList(false);
+                        }
+                    });
+                }
+            };
+            NetworkRequest request = new NetworkRequest.Builder()
+                    .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                    .addCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)
+                    .build();
+            mConnectivityManager.registerNetworkCallback(request, mNetworkCallback);
+        }
+    }
+
+    private void unregisterNetworkCallback() {
+        if (mConnectivityManager != null && mNetworkCallback != null) {
+            try {
+                mConnectivityManager.unregisterNetworkCallback(mNetworkCallback);
+            } catch (IllegalArgumentException e) {
+                // Callback was not registered
+            }
+            mNetworkCallback = null;
+        }
+    }
+
+    private boolean isNetworkValidated() {
+        if (mConnectivityManager == null) {
+            return false;
+        }
+        Network activeNetwork = mConnectivityManager.getActiveNetwork();
+        NetworkCapabilities networkCapabilities =
+                mConnectivityManager.getNetworkCapabilities(activeNetwork);
+        return networkCapabilities != null &&
+                networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
+                networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED);
     }
 
     @Override
@@ -421,7 +487,8 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             } catch (IOException | JSONException e) {
                 Log.e(TAG, "Error while parsing json list", e);
             }
-        } else {
+        }
+        if (isNetworkValidated()) {
             downloadUpdatesList(false);
         }
     }
@@ -449,6 +516,10 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     }
 
     private void downloadUpdatesList(final boolean manualRefresh) {
+        if (mIsCheckingForUpdates) {
+            return;
+        }
+        mIsCheckingForUpdates = true;
         final File jsonFile = Utils.getCachedUpdateList(this);
         final File jsonFileTmp = new File(jsonFile.getAbsolutePath() + UUID.randomUUID());
         String url = Utils.getServerURL(this);
@@ -459,6 +530,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             public void onFailure(final boolean cancelled) {
                 Log.e(TAG, "Could not download updates list");
                 runOnUiThread(() -> {
+                    mIsCheckingForUpdates = false;
                     if (!cancelled) {
                         showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
                     }
@@ -473,6 +545,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             @Override
             public void onSuccess() {
                 runOnUiThread(() -> {
+                    mIsCheckingForUpdates = false;
                     Log.d(TAG, "List downloaded");
                     processNewJson(jsonFile, jsonFileTmp, manualRefresh);
                     refreshAnimationStop();
@@ -489,6 +562,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                     .build();
         } catch (IOException exception) {
             Log.e(TAG, "Could not build download client");
+            mIsCheckingForUpdates = false;
             showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
             return;
         }

@@ -395,7 +395,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                     Snackbar.LENGTH_SHORT);
         }
 
-        List<String> updateIds = new ArrayList<>();
         List<UpdateInfo> sortedUpdates = controller.getUpdates();
         if (sortedUpdates.isEmpty()) {
             findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
@@ -404,12 +403,13 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             findViewById(R.id.no_new_updates_view).setVisibility(View.GONE);
             findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
             sortedUpdates.sort((u1, u2) -> Long.compare(u2.getTimestamp(), u1.getTimestamp()));
-            for (UpdateInfo update : sortedUpdates) {
-                updateIds.add(update.getDownloadId());
-            }
-            mAdapter.setData(updateIds);
-            mAdapter.notifyDataSetChanged();
         }
+        List<String> updateIds = new ArrayList<>();
+        for (UpdateInfo update : sortedUpdates) {
+            updateIds.add(update.getDownloadId());
+        }
+        mAdapter.setData(updateIds);
+        mAdapter.notifyDataSetChanged();
     }
 
     private void getUpdatesList() {

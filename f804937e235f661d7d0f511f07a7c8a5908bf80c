@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d9238e0_48844af4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-01-31T16:27:50Z",
+      "side": 1,
+      "message": "The part with changing the visibility of the view is removed with the app redesign. Perhaps it\u0027s okay to manually handle the views here. Or if you\u0027d like, I can put this after the redesign change. Let me know if you have different ideas.",
+      "revId": "f804937e235f661d7d0f511f07a7c8a5908bf80c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "140d67e9_ff07d4c6",

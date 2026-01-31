@@ -16,6 +16,23 @@
       "message": "I don\u0027t think this is worth doing props are fast enough.\nIn any case split the security patch change",
       "revId": "29e624bd888f636668d43c74585812d029d4437c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d3ccc7b_b8e67d62",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-01-31T16:28:56Z",
+      "side": 1,
+      "message": "The reason behind collating the security patch change is because we use it from\n\nhttps://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/packages/SettingsLib/src/com/android/settingslib/DeviceInfoUtils.java;l\u003d164-179\n\nI\u0027ve separated it nevertheless.",
+      "revId": "29e624bd888f636668d43c74585812d029d4437c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

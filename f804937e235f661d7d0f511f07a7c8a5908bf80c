@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1dbd8ba_983c4a02",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-02-01T08:53:43Z",
+      "side": 1,
+      "message": "Do that then, this kind of \"useless\" transitive changes are just churn",
+      "parentUuid": "7d9238e0_48844af4",
+      "revId": "f804937e235f661d7d0f511f07a7c8a5908bf80c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "140d67e9_ff07d4c6",

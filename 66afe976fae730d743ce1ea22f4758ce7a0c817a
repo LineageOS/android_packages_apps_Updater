@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d45e94e0_782f8305",
+        "filename": "gradle/libs.versions.toml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-02-01T08:56:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da286e82_55a29f96",
+      "revId": "66afe976fae730d743ce1ea22f4758ce7a0c817a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d29bffe_52477bca",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-01-28T17:14:35Z",
       "side": 1,
       "message": "Can you update genbp first and then do the other gradle changes? (or viceversa)",
+      "revId": "66afe976fae730d743ce1ea22f4758ce7a0c817a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf4e00ed_c7fb5df1",
+        "filename": "settings.gradle.kts",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-02-01T08:56:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d29bffe_52477bca",
       "revId": "66afe976fae730d743ce1ea22f4758ce7a0c817a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

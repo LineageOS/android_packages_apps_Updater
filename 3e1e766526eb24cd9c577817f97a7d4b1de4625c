@@ -16,6 +16,24 @@
       "message": "The fonts are from https://fonts.google.com/icons",
       "revId": "3e1e766526eb24cd9c577817f97a7d4b1de4625c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2ab6876_66acaa3f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-02-01T09:03:46Z",
+      "side": 1,
+      "message": "\u003c!--\n     SPDX-FileCopyrightText: Material Design Authors / Google LLC\n     SPDX-License-Identifier: Apache-2.0\n--\u003e\n\nUse this instead, matches what we do elsewhere",
+      "parentUuid": "b6da8888_de8650f3",
+      "revId": "3e1e766526eb24cd9c577817f97a7d4b1de4625c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

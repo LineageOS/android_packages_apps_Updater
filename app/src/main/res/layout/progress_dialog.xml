@@ -3,27 +3,29 @@
      SPDX-FileCopyrightText: The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:padding="24dp">
+    android:padding="@dimen/settingslib_expressive_space_small4">
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Widget.Material3.CircularProgressIndicator"
+        android:layout_width="@dimen/settingslib_expressive_space_medium4"
+        android:layout_height="@dimen/settingslib_expressive_space_medium4"
+        android:layout_gravity="center"
         android:indeterminate="true"
-        app:indicatorColor="?android:attr/colorAccent"/>
+        android:scaleType="centerInside"
+        android:theme="@style/Theme.Material3.DynamicColors.DayNight" />
 
     <TextView
+        android:id="@android:id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/settingslib_expressive_space_small1"
         android:text="@string/local_update_import_progress"
-        android:textColor="?android:attr/textColorPrimary"
-        android:textSize="16sp" />
+        android:textAppearance="@style/TextAppearance.SettingsLib.BodyLarge"
+        android:textColor="@color/settingslib_text_color_secondary" />
 </LinearLayout>

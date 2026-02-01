@@ -9,7 +9,6 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
@@ -163,10 +162,6 @@ public class Utils {
 
     public static String getUpgradeBlockedURL(Context context) {
         return context.getString(R.string.blocked_update_info_url, DeviceInfoUtils.getDevice());
-    }
-
-    public static String getChangelogURL(Context context) {
-        return context.getString(R.string.menu_changelog_url, DeviceInfoUtils.getDevice());
     }
 
     public static void triggerUpdate(Context context, String downloadId) {
@@ -355,10 +350,6 @@ public class Utils {
         boolean isAB = isABUpdate(zipFile);
         zipFile.close();
         return isAB;
-    }
-
-    public static boolean hasTouchscreen(Context context) {
-        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN);
     }
 
     public static void addToClipboard(Context context, String label, String text) {

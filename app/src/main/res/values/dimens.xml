@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Mapped to SettingsLibCollapsingToolbarTitle.Expanded (36dp) -->
+    <dimen name="settingslib_collapsing_toolbar_expanded_title_size">36dp</dimen>
+    <dimen name="toolbar_icon_size">48dp</dimen>
+</resources>

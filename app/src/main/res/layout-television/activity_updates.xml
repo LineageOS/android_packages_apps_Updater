@@ -132,13 +132,5 @@
             android:layout_gravity="end"
             tools:listitem="@layout/update_item_view"/>
 
-        <ProgressBar
-            android:id="@+id/refresh_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:visibility="gone"/>
-
     </RelativeLayout>
 </LinearLayout>

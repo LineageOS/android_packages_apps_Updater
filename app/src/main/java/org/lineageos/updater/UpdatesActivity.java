@@ -4,7 +4,6 @@
  */
 package org.lineageos.updater;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.UiModeManager;
 import android.content.BroadcastReceiver;
@@ -26,9 +25,6 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -47,6 +43,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 
+import com.android.settingslib.spa.framework.theme.SettingsOpacity;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.snackbar.Snackbar;
@@ -64,6 +61,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class UpdatesActivity extends UpdatesListActivity implements UpdateImporter.Callbacks {
@@ -73,9 +71,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     private BroadcastReceiver mBroadcastReceiver;
 
     private UpdatesListAdapter mAdapter;
-
-    private View mRefreshIconView;
-    private RotateAnimation mRefreshAnimation;
+    private Menu mMenu;
 
     private boolean mIsTV;
 
@@ -205,11 +201,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 }
             });
 
-            mRefreshAnimation = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f,
-                    Animation.RELATIVE_TO_SELF, 0.5f);
-            mRefreshAnimation.setInterpolator(new LinearInterpolator());
-            mRefreshAnimation.setDuration(1000);
-
             if (!Utils.hasTouchscreen(this)) {
                 // This can't be collapsed without a touchscreen
                 appBar.setExpanded(false);
@@ -260,6 +251,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        mMenu = menu;
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -451,7 +443,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                     if (!cancelled) {
                         showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
                     }
-                    refreshAnimationStop();
+                    setRefreshEnabled(true);
                 });
             }
 
@@ -464,7 +456,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 runOnUiThread(() -> {
                     Log.d(TAG, "List downloaded");
                     processNewJson(jsonFile, jsonFileTmp, manualRefresh);
-                    refreshAnimationStop();
+                    setRefreshEnabled(true);
                 });
             }
         };
@@ -482,8 +474,25 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             return;
         }
 
-        refreshAnimationStart();
+        setRefreshEnabled(false);
         downloadClient.start();
+    }
+
+    private void setRefreshEnabled(boolean enabled) {
+        if (!mIsTV) {
+            if (mMenu != null) {
+                MenuItem item = mMenu.findItem(R.id.menu_refresh);
+                item.setEnabled(enabled);
+                Objects.requireNonNull(item.getIcon()).setAlpha(enabled ? 255
+                        : (int) (255 * SettingsOpacity.Disabled));
+            }
+        } else {
+            View refreshButton = findViewById(R.id.refresh);
+            if (refreshButton != null) {
+                refreshButton.setEnabled(enabled);
+                refreshButton.setAlpha(enabled ? 1f : SettingsOpacity.Disabled);
+            }
+        }
     }
 
     private void updateLastCheckedString() {
@@ -541,40 +550,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         Snackbar.make(findViewById(R.id.main_container), stringId, duration).show();
     }
 
-    private void refreshAnimationStart() {
-        if (!mIsTV) {
-            if (mRefreshIconView == null) {
-                mRefreshIconView = findViewById(R.id.menu_refresh);
-            }
-            if (mRefreshIconView != null) {
-                mRefreshAnimation.setRepeatCount(Animation.INFINITE);
-                mRefreshIconView.startAnimation(mRefreshAnimation);
-                mRefreshIconView.setEnabled(false);
-            }
-        } else {
-            findViewById(R.id.recycler_view).setVisibility(View.GONE);
-            findViewById(R.id.no_new_updates_view).setVisibility(View.GONE);
-            findViewById(R.id.refresh_progress).setVisibility(View.VISIBLE);
-        }
-    }
-
-    private void refreshAnimationStop() {
-        if (!mIsTV) {
-            if (mRefreshIconView != null) {
-                mRefreshAnimation.setRepeatCount(0);
-                mRefreshIconView.setEnabled(true);
-            }
-        } else {
-            findViewById(R.id.refresh_progress).setVisibility(View.GONE);
-            if (mAdapter.getItemCount() > 0) {
-                findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
-            } else {
-                findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
-            }
-        }
-    }
-
-    @SuppressLint("ClickableViewAccessibility")
     private void showPreferencesDialog() {
         View view = LayoutInflater.from(this).inflate(R.layout.preferences_dialog, null);
         Spinner autoCheckInterval = view.findViewById(R.id.preferences_auto_updates_check_interval);

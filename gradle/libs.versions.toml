@@ -4,10 +4,14 @@
 #
 
 [versions]
+activity-compose = "1.9.3"
 agp = "9.0.0"
 appcompat = "1.7.1"
 cardview = "1.0.0"
+compose-material3 = "1.4.0-alpha16"
+compose-runtime = "1.9.0-beta01"
 core = "1.17.0"
+kotlin = "2.2.0" # external/kotlinc/build.txt
 lifecycle = "2.10.0-alpha04"
 localbroadcastmanager = "1.1.0"
 material = "1.14.0-alpha02"
@@ -16,9 +20,15 @@ recyclerview = "1.4.0"
 generateBp = "+"
 
 [libraries]
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "compose-material3" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "compose-runtime" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose-runtime" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose-runtime" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core" }
+androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 androidx-localbroadcastmanager = { group = "androidx.localbroadcastmanager", name = "localbroadcastmanager", version.ref = "localbroadcastmanager" }
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
@@ -27,4 +37,5 @@ material = { group = "com.google.android.material", name = "material", version.r
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 lineageos-generatebp = { id = "org.lineageos.generatebp", version.ref = "generateBp" }

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2017-2024 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Oppdatering</string>
+    <string name="display_name">Oppdatering</string>
+    <string name="verification_failed_notification">Klarte ikkje stadfesta</string>
+    <string name="verifying_download_notification">Stadfestar oppdatering</string>
+    <string name="downloading_notification">Lastar ned</string>
+    <string name="download_paused_notification">Nedlastinga er sett på pause</string>
+    <string name="download_paused_error_notification">Feil ved nedlasting</string>
+    <string name="download_completed_notification">Nedlastinga er ferdig</string>
+    <string name="download_starting_notification">Startar nedlasting</string>
+    <string name="update_failed_notification">Klarte ikkje oppdatera</string>
+    <string name="installation_suspended_notification">Installasjonen er stansa</string>
+    <string name="new_updates_found_title">Nye oppdateringar</string>
+    <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="pause_button">Pause</string>
+    <string name="resume_button">Hald fram</string>
+    <string name="suspend_button">Stopp</string>
+    <string name="installing_update">Installerer oppdatering</string>
+    <string name="installing_update_error">Klarte ikkje å installera</string>
+    <string name="installing_update_finished">Oppdateringa er lagt inn</string>
+    <string name="finalizing_package">Fullfører installasjonen</string>
+    <string name="preparing_ota_first_boot">Førebur fyrste oppstart</string>
+    <string name="dialog_prepare_zip_message">Gjer klart for oppdatering</string>
+    <string name="dialog_battery_low_title">Lite straum på batteriet</string>
+    <string name="dialog_battery_low_message_pct">Batterinivået er for lågt. Du treng minst <xliff:g id="percent_discharging">%1$d</xliff:g> %% batteri for å halda fram, eller <xliff:g id="percent_charging">%2$d</xliff:g> %% om du ladar.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        Køyr desse kommandoane og prøv oppdateringa på nytt:\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
+    <string name="dialog_scratch_mounted_title">Kan ikkje installera oppdatering når OverlayFS er montert</string>
+    <string name="reboot">Start på nytt</string>
+    <string name="menu_refresh">Oppdater</string>
+    <string name="menu_preferences">Innstillingar</string>
+    <string name="menu_auto_updates_check">Automatisk oppdateringssjekk</string>
+    <string name="menu_auto_updates_check_interval_daily">Ein gong om dagen</string>
+    <string name="menu_auto_updates_check_interval_weekly">Ein gong i veka</string>
+    <string name="menu_auto_updates_check_interval_monthly">Ein gong i månaden</string>
+    <string name="menu_auto_updates_check_interval_never">Aldri</string>
+    <string name="menu_auto_delete_updates">Slett oppdateringar etter installasjon</string>
+    <string name="menu_delete_update">Slett</string>
+    <string name="menu_copy_url">Kopier nettadresse</string>
+    <string name="menu_export_update">Eksporter oppdatering</string>
+    <string name="menu_show_changelog">Vis endringslogg</string>
+    <string name="menu_ab_perf_mode">Prioriter oppdateringsprosessen</string>
+    <string name="menu_update_recovery">Oppdater gjenoppretting</string>
+    <string name="toast_forced_update_recovery">Det går ikkje an å slå av oppdateringar for Lineage-gjenoppretting på denne eininga.</string>
+    <string name="snack_updates_found">Fann nye oppdateringar</string>
+    <string name="snack_no_updates_found">Fann ingen nye oppdateringar</string>
+    <string name="snack_updates_check_failed">Klarte ikkje å sjå etter oppdateringar. Kontroller internettsambandet og prøv på nytt seinare. </string>
+    <string name="snack_download_failed">Klarte ikkje å lasta ned. Kontroller internettsambandet og prøv på nytt seinare.</string>
+    <string name="snack_download_verification_failed">Klarte ikkje å stadfesta oppdateringa.</string>
+    <string name="snack_download_verified">Nedlastinga er ferdig.</string>
+    <string name="snack_update_not_installable">Denne oppdateringa kan ikkje installerast oppå den noverande versjonen.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Sist sjekka: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> av <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> av <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
+    <string name="list_verifying_update">Stadfestar oppdatering</string>
+    <string name="list_no_updates">Fann ingen nye oppdateringar. Bruk Oppdater-knappen for å sjekka manuelt.</string>
+    <string name="action_download">Last ned</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Hald fram</string>
+    <string name="action_install">Installer</string>
+    <string name="action_info">Info</string>
+    <string name="action_delete">Slett</string>
+    <string name="action_cancel">Avbryt</string>
+    <string name="confirm_delete_dialog_title">Slett fil</string>
+    <string name="confirm_delete_dialog_message">Vil du sletta den valde oppdateringsfila?</string>
+    <string name="apply_update_dialog_title">Installer oppdatering</string>
+    <string name="apply_update_dialog_message">Du er i ferd med å installera <xliff:g id="update_name">%1$s</xliff:g>.\n\nOm du trykkjer på <xliff:g id="ok">%2$s</xliff:g>, vil eininga starta på nytt i gjenopprettingsmodus for å installera oppdateringa.\n\nMerk: Denne funksjonen krev ein kompatibel gjenopprettingsmodus, elles må oppdateringar installerast manuelt.</string>
+    <string name="apply_update_dialog_message_ab">Du er i ferd med å installera <xliff:g id="update_name">%1$s</xliff:g>.\n\nOm du trykkjer på <xliff:g id="ok">%2$s</xliff:g>, vil eininga byrja å installera i bakgrunnen.\n\nNår installasjonen er ferdig, får du varsel om å starta på nytt.</string>
+    <string name="cancel_installation_dialog_message">Vil du avbryta installasjonen?</string>
+    <string name="label_download_url">URL for nedlasting</string>
+    <string name="toast_download_url_copied">URL er kopiert</string>
+    <string name="dialog_export_title">Eksporterer oppdatering</string>
+    <string name="notification_export_success">Oppdateringa er eksportert</string>
+    <string name="notification_export_fail">Feil ved eksport</string>
+    <string name="toast_already_exporting">Eksporterer alt ei oppdatering</string>
+    <string name="toast_export_started">Eksport starta</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">1 sekund att</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> sekund att</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">1 minutt att</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> minutt att</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">1 time att</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> timar att</item>
+    </plurals>
+    <string name="update_over_metered_network_title">Åtvaring</string>
+    <string name="update_over_metered_network_message">Du er i ferd med å lasta ned ei oppdatering over eit nettverk med datagrense. Dette kan bruka mykje data. Vil du halda fram?</string>
+    <string name="checkbox_metered_network_warning">Ikkje vis att</string>
+    <string name="menu_metered_network_warning">Åtvaring om nettverk med datagrense</string>
+    <string name="blocked_update_dialog_title">Oppdateringa er sperra</string>
+    <string name="blocked_update_dialog_message">Denne oppdateringa kan ikkje installerast med denne appen. Les <xliff:g id="info_url">%1$s</xliff:g> for meir informasjon.</string>
+    <string name="export_channel_title">Fullføring av eksport</string>
+    <string name="new_updates_channel_title">Nye oppdateringar</string>
+    <string name="ongoing_channel_title">Pågåande nedlastingar</string>
+    <string name="update_failed_channel_title">Klarte ikkje å oppdatera</string>
+    <string name="info_dialog_title">Visste du dette?</string>
+    <string name="info_dialog_message">Oppdateringar for LineageOS er fullstendige installasjonspakkar. Det tyder at du alltid kan installera berre den nyaste oppdateringa, sjølv om du har hoppa over nokre tidlegare!</string>
+    <string name="info_dialog_ok">Takk for infoen!</string>
+    <string name="local_update_import">Lokal oppdatering</string>
+    <string name="local_update_import_progress">Importerer lokal oppdatering\u2026</string>
+    <string name="local_update_import_success">%1$s er importert. Vil du installera ho?</string>
+    <string name="local_update_import_failure">Klarte ikkje å importera lokal oppdatering</string>
+    <string name="local_update_import_install">Installer</string>
+    <string name="local_update_name">Lokal oppdatering</string>
+    <string name="welcome_title">Velkomen</string>
+    <string name="welcome_message">Hugs at du ikkje treng å installera éi og éi oppdatering viss det finst fleire. Du kan alltid installera den nyaste direkte, og deretter trygt sletta dei gamle for å frigjera lagringsplass.</string>
+</resources>

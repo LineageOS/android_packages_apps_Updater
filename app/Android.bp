@@ -41,7 +41,6 @@ android_app {
     static_libs: [
         // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.activity_activity-compose",
-        "androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
         "androidx.compose.animation_animation",
         "androidx.compose.animation_animation-core",

@@ -22,3 +22,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# SettingsLib transitively bundles android.app.admin.flags classes that are
+# also provided by the platform framework; suppress the duplicate-class warnings.
+-dontwarn android.app.admin.flags.**

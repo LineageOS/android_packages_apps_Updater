@@ -11,11 +11,13 @@ import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -30,12 +32,14 @@ import com.android.settingslib.spa.framework.compose.NavControllerWrapper
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import com.android.settingslib.spa.widget.scaffold.MoreOptionsAction
 import com.android.settingslib.spa.widget.scaffold.SettingsScaffold
+import org.lineageos.updater.data.UpdateStatus
 import org.lineageos.updater.preferences.PreferencesActivity
 
 abstract class UpdatesScaffoldActivity : ComponentActivity() {
 
     private var legacyView: View? = null
     private val refreshEnabled = mutableStateOf(true)
+    private val viewModel: UpdatesViewModel by viewModels { UpdatesViewModel.factory(application) }
 
     protected fun setRefreshEnabled(enabled: Boolean) {
         refreshEnabled.value = enabled
@@ -58,8 +62,24 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
             }
             CompositionLocalProvider(LocalNavController provides navController) {
                 SettingsTheme {
+                    val uiState by viewModel.uiState.collectAsState()
+                    val updates = uiState.updates
+                    val titleText = when {
+                        updates.any { it.status == UpdateStatus.UPDATED_NEED_REBOOT } ->
+                            stringResource(R.string.installing_update_finished)
+
+                        updates.any { it.status == UpdateStatus.INSTALLATION_FAILED } ->
+                            stringResource(R.string.installing_update_error)
+
+                        updates.any {
+                            it.status == UpdateStatus.INSTALLING ||
+                                    it.status == UpdateStatus.INSTALLATION_SUSPENDED
+                        } -> stringResource(R.string.installing_update)
+
+                        else -> stringResource(R.string.display_name)
+                    }
                     SettingsScaffold(
-                        title = stringResource(R.string.display_name),
+                        title = titleText,
                         actions = {
                             val enabled by refreshEnabled
 

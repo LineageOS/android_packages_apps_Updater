@@ -70,20 +70,6 @@
         android:paddingEnd="16dp"
         android:paddingStart="16dp">
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/no_new_updates_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="46dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/list_no_updates"
-                android:textColor="?android:textColorSecondary" />
-        </androidx.core.widget.NestedScrollView>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"

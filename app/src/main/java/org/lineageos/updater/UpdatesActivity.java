@@ -18,7 +18,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -98,12 +97,6 @@ public class UpdatesActivity extends UpdatesScaffoldActivity implements UpdateIm
                 } else if (UpdaterController.ACTION_UPDATE_REMOVED.equals(intent.getAction())) {
                     String downloadId = intent.getStringExtra(UpdaterController.EXTRA_DOWNLOAD_ID);
                     mAdapter.removeItem(downloadId);
-                    List<Update> sortedUpdates =
-                            mUpdaterService.getUpdaterController().getUpdates();
-                    if (sortedUpdates.isEmpty()) {
-                        findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
-                        findViewById(R.id.recycler_view).setVisibility(View.GONE);
-                    }
                 }
             }
         };
@@ -279,16 +272,8 @@ public class UpdatesActivity extends UpdatesScaffoldActivity implements UpdateIm
             updateIds.add(update.getDownloadId());
         }
         controller.setUpdatesAvailableOnline(updateIds, true);
-
-        if (updates.isEmpty()) {
-            findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
-            findViewById(R.id.recycler_view).setVisibility(View.GONE);
-        } else {
-            findViewById(R.id.no_new_updates_view).setVisibility(View.GONE);
-            findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
-            mAdapter.setData(updateIds);
-            mAdapter.notifyDataSetChanged();
-        }
+        mAdapter.setData(updateIds);
+        mAdapter.notifyDataSetChanged();
     }
 
     private void updateLastCheckedString(long timestamp) {

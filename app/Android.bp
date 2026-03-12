@@ -70,6 +70,7 @@ android_app {
         "androidx.savedstate_savedstate-compose",
         "androidx.sqlite_sqlite",
         "androidx.sqlite_sqlite-framework",
+        "androidx.work_work-runtime-ktx",
         "com.google.android.material_material",
         "kotlin-stdlib",
     ],

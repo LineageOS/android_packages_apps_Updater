@@ -23,6 +23,8 @@ class UpdaterApplication : Application() {
             override val pageProviderRepository = lazy {
                 SettingsPageProviderRepository(emptyList())
             }
+
+            override val isSpaExpressiveEnabled = true
         })
         NotificationHelper(this).setUpNotificationChannels()
     }

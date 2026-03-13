@@ -8,7 +8,7 @@
 java_library_static {
     name: "Updater_io.ktor_ktor-client-android",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -22,7 +22,7 @@ java_import {
     name: "Updater_io.ktor_ktor-client-android-jvm",
     jars: ["io/ktor/ktor-client-android-jvm/3.4.1/ktor-client-android-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -38,7 +38,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-client-content-negotiation",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -52,7 +52,7 @@ java_import {
     name: "Updater_io.ktor_ktor-client-content-negotiation-jvm",
     jars: ["io/ktor/ktor-client-content-negotiation-jvm/3.4.1/ktor-client-content-negotiation-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -69,7 +69,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-client-core",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -83,7 +83,7 @@ java_import {
     name: "Updater_io.ktor_ktor-client-core-jvm",
     jars: ["io/ktor/ktor-client-core-jvm/3.4.1/ktor-client-core-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -103,7 +103,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-events",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -117,7 +117,7 @@ java_import {
     name: "Updater_io.ktor_ktor-events-jvm",
     jars: ["io/ktor/ktor-events-jvm/3.4.1/ktor-events-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -133,7 +133,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-http",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -146,7 +146,7 @@ java_library_static {
 java_library_static {
     name: "Updater_io.ktor_ktor-http-cio",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -160,7 +160,7 @@ java_import {
     name: "Updater_io.ktor_ktor-http-cio-jvm",
     jars: ["io/ktor/ktor-http-cio-jvm/3.4.1/ktor-http-cio-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -179,7 +179,7 @@ java_import {
     name: "Updater_io.ktor_ktor-http-jvm",
     jars: ["io/ktor/ktor-http-jvm/3.4.1/ktor-http-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -196,7 +196,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-io",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -210,7 +210,7 @@ java_import {
     name: "Updater_io.ktor_ktor-io-jvm",
     jars: ["io/ktor/ktor-io-jvm/3.4.1/ktor-io-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -226,7 +226,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-network",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -240,7 +240,7 @@ java_import {
     name: "Updater_io.ktor_ktor-network-jvm",
     jars: ["io/ktor/ktor-network-jvm/3.4.1/ktor-network-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -256,7 +256,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-serialization",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -270,7 +270,7 @@ java_import {
     name: "Updater_io.ktor_ktor-serialization-jvm",
     jars: ["io/ktor/ktor-serialization-jvm/3.4.1/ktor-serialization-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -286,7 +286,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-serialization-kotlinx",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -299,7 +299,7 @@ java_library_static {
 java_library_static {
     name: "Updater_io.ktor_ktor-serialization-kotlinx-json",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -313,7 +313,7 @@ java_import {
     name: "Updater_io.ktor_ktor-serialization-kotlinx-json-jvm",
     jars: ["io/ktor/ktor-serialization-kotlinx-json-jvm/3.4.1/ktor-serialization-kotlinx-json-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -331,7 +331,7 @@ java_import {
     name: "Updater_io.ktor_ktor-serialization-kotlinx-jvm",
     jars: ["io/ktor/ktor-serialization-kotlinx-jvm/3.4.1/ktor-serialization-kotlinx-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -348,7 +348,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-sse",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -362,7 +362,7 @@ java_import {
     name: "Updater_io.ktor_ktor-sse-jvm",
     jars: ["io/ktor/ktor-sse-jvm/3.4.1/ktor-sse-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -378,7 +378,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-utils",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -392,7 +392,7 @@ java_import {
     name: "Updater_io.ktor_ktor-utils-jvm",
     jars: ["io/ktor/ktor-utils-jvm/3.4.1/ktor-utils-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -409,7 +409,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-websocket-serialization",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -423,7 +423,7 @@ java_import {
     name: "Updater_io.ktor_ktor-websocket-serialization-jvm",
     jars: ["io/ktor/ktor-websocket-serialization-jvm/3.4.1/ktor-websocket-serialization-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -439,7 +439,7 @@ java_import {
 java_library_static {
     name: "Updater_io.ktor_ktor-websockets",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -453,7 +453,7 @@ java_import {
     name: "Updater_io.ktor_ktor-websockets-jvm",
     jars: ["io/ktor/ktor-websockets-jvm/3.4.1/ktor-websockets-jvm-3.4.1.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -470,7 +470,7 @@ java_import {
 java_library_static {
     name: "Updater_org.jetbrains.kotlinx_kotlinx-io-bytestring",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -484,7 +484,7 @@ java_import {
     name: "Updater_org.jetbrains.kotlinx_kotlinx-io-bytestring-jvm",
     jars: ["org/jetbrains/kotlinx/kotlinx-io-bytestring-jvm/0.8.2/kotlinx-io-bytestring-jvm-0.8.2.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -497,7 +497,7 @@ java_import {
 java_library_static {
     name: "Updater_org.jetbrains.kotlinx_kotlinx-io-core",
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -511,7 +511,7 @@ java_import {
     name: "Updater_org.jetbrains.kotlinx_kotlinx-io-core-jvm",
     jars: ["org/jetbrains/kotlinx/kotlinx-io-core-jvm/0.8.2/kotlinx-io-core-jvm-0.8.2.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -526,7 +526,7 @@ java_import {
     name: "Updater_org.slf4j_slf4j-api",
     jars: ["org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar"],
     sdk_version: "33",
-    min_sdk_version: "32",
+    min_sdk_version: "33",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",

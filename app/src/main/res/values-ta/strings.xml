@@ -17,47 +17,47 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">இற்றையம்</string>
     <string name="display_name">இற்றையம்</string>
-    <string name="verification_failed_notification">சரிபார்த்தல் தோல்வியுற்றது</string>
-    <string name="verifying_download_notification">இற்றையைச் சரிபார்க்கிறது</string>
-    <string name="downloading_notification">பதிவிறக்குகிறது</string>
+    <string name="verification_failed_notification">சரிபார்த்தல் தோல்வியடைந்தது</string>
+    <string name="verifying_download_notification">இற்றைச் சரிபார்ப்பு நடைபெறுகிறது</string>
+    <string name="downloading_notification">பதிவிறக்கப்படுக்கிறது</string>
     <string name="download_paused_notification">பதிவிறக்கம் இடைநிறுத்தப்பட்டது</string>
-    <string name="download_paused_error_notification">பதிவிறக்கப் பிழை</string>
-    <string name="download_completed_notification">பதிவிறக்கம் முடிவுற்றது</string>
+    <string name="download_paused_error_notification">பதிவிறக்கத்தில் பிழை</string>
+    <string name="download_completed_notification">பதிவிறக்கம் நிறைவடைந்தது</string>
     <string name="download_starting_notification">பதிவிறக்கம் தொடங்குகிறது</string>
-    <string name="update_failed_notification">இற்றை தோல்வியுற்றது</string>
-    <string name="installation_suspended_notification">நிறுவல் இடைநீக்கப்பட்டது</string>
+    <string name="update_failed_notification">இற்றை தோல்வியடைந்தது</string>
+    <string name="installation_suspended_notification">நிறுவல் நிறுத்திவைக்கப்பட்டுள்ளது</string>
     <string name="new_updates_found_title">புதிய இற்றைகள்</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="pause_button">இடைநிறுத்துக</string>
     <string name="resume_button">தொடர்க</string>
     <string name="suspend_button">நிறுத்திவைக்க</string>
-    <string name="installing_update">இற்றைத் தொகுப்பு நிறுவுகிறது</string>
-    <string name="installing_update_error">நிறுவு பிழை</string>
+    <string name="installing_update">இற்றைத் தொகுப்பு நிறுவப்படுகிறது</string>
+    <string name="installing_update_error">நிறுவலில் பிழை</string>
     <string name="installing_update_finished">இற்றை நிறுவப்பட்டது</string>
-    <string name="finalizing_package">தொகுப்பு நிறுவலை இறுதிப்படுத்துகிறது</string>
-    <string name="preparing_ota_first_boot">முதற்தொடக்கத்திற்கு ஏற்படுத்துகிறது</string>
-    <string name="dialog_prepare_zip_message">முதற்நிலை இற்றை ஏற்படுத்துதல்</string>
-    <string name="dialog_battery_low_title">குறைந்த மின்கலம்</string>
-    <string name="dialog_battery_low_message_pct">மின்கல நிலை மிகக்குறைவு; தொடர குறைந்தது  <xliff:g id="percent_discharging">%1$d</xliff:g>%% மின்கலமாவது தேவை, மின்னூட்டலெனில், <xliff:g id="percent_charging">%2$d</xliff:g>%% மின்கலம் தேவை.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        பின்வரும் கட்டளைகளை இயக்கிய அப்புறம், இற்றையை மீண்டும் முயலவும்:\n
+    <string name="finalizing_package">நிறுவல் தொகுப்பை இறுதி செய்கிறது</string>
+    <string name="preparing_ota_first_boot">முதற்தொடக்கத்திற்கு ஆயத்தப்படுத்துகிறது</string>
+    <string name="dialog_prepare_zip_message">முதற்கட்ட இற்றை ஆயத்தம்</string>
+    <string name="dialog_battery_low_title">மின்கல ஆற்றல் குறைவு</string>
+    <string name="dialog_battery_low_message_pct">மின்கல ஆற்றல் மிகக்குறைவாக உள்ளது; தொடர குறைந்தது  <xliff:g id="percent_discharging">%1$d</xliff:g>%% மின்சாரம் தேவை. மின்னேற்றத்தில் இருப்பின்,  <xliff:g id="percent_charging">%2$d</xliff:g>%% மின்சாரம் தேவை.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        பின்வரும் கட்டளைகளை இயக்கி, இற்றையை மீண்டும் முயலவும்:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
         ]]></string>
-    <string name="dialog_scratch_mounted_title">OverlayFS ஏற்றப்பட்ட இற்றையை நிறுவ முடியாது</string>
-    <string name="reboot">மறு இயக்கம்</string>
-    <string name="menu_refresh">புதுக்குக</string>
-    <string name="menu_preferences">முன்விருப்பம்</string>
+    <string name="dialog_scratch_mounted_title">OverlayFS பொருந்திய நிலையில் இற்றையை நிறுவ இயலாது</string>
+    <string name="reboot">மறுதொடக்கம்</string>
+    <string name="menu_refresh">புதுப்பிக்க</string>
+    <string name="menu_preferences">விருப்பத்தேர்வுகள்</string>
     <string name="menu_auto_updates_check">தன்னியக்க இற்றைச் சரிபார்ப்பு</string>
     <string name="menu_auto_updates_check_interval_daily">நாள் ஒரு முறை</string>
-    <string name="menu_auto_updates_check_interval_weekly">கிழமை ஒரு முறை</string>
-    <string name="menu_auto_updates_check_interval_monthly">திங்கள் ஒரு முறை</string>
-    <string name="menu_auto_updates_check_interval_never">என்றுமில்லை</string>
-    <string name="menu_auto_delete_updates">நிறுவப்பட்டபோது இற்றைகளை நீக்குக</string>
+    <string name="menu_auto_updates_check_interval_weekly">வாரம் ஒரு முறை</string>
+    <string name="menu_auto_updates_check_interval_monthly">மாதம் ஒரு முறை</string>
+    <string name="menu_auto_updates_check_interval_never">வேண்டாம்</string>
+    <string name="menu_auto_delete_updates">நிறுவியபின் இற்றைக்கோப்புகளை நீக்குக</string>
     <string name="menu_delete_update">நீக்குக</string>
     <string name="menu_copy_url">உரலியை நகலெடுக்க</string>
     <string name="menu_export_update">இற்றையை ஏற்றுமதி செய்க</string>
-    <string name="menu_show_changelog">மாற்றுக்குறிப்பைக் காட்டுக</string>
+    <string name="menu_show_changelog">மாற்றப் பதிவுகளைக் காட்டுக</string>
     <string name="menu_ab_perf_mode">இற்றைச் செயற்முறையை முன்னுரிமை அளிக்க</string>
     <string name="menu_update_recovery">மீட்டெடுப்பை இற்றைப்படுத்துக</string>
     <string name="toast_forced_update_recovery">Lineage மீட்டெடுப்பு இற்றைகளை முடக்குவது, இக்கருவியில் இயலாது.</string>
@@ -129,5 +129,5 @@
     <string name="local_update_import_install">நிறுவுக</string>
     <string name="local_update_name">உற்றிட இற்றை</string>
     <string name="welcome_title">நல்வரவு</string>
-    <string name="welcome_message">இற்றைகள் பல கிடைக்கும்போது, ​​ஒவ்வொன்றாகச் செல்ல வேண்டியதில்லை என்பதை நினைவில் கொள்ளவும், நீர் எப்போதும் மிகப்பிந்தியதை நேரடியாக நிறுவலாம், பிறகு சேமிப்பிடத்தை விடுவிக்கப் பழைய இற்றைகளைப் பாதுகாப்பாக நீக்கலாம்.</string>
+    <string name="welcome_message">பல இற்றைகள் கிடைக்கும்போது, ஒவ்வொன்றாக நிறுவ வேண்டியதில்லை; நீர் எப்போதும் அண்மைக்கால இற்றையை நேரடியாக நிறுவலாம். பின், சேமிப்பிடத்தை மீட்கப் பழைய இற்றைகளைப் பாதுகாப்பாக நீக்கலாம்.</string>
 </resources>

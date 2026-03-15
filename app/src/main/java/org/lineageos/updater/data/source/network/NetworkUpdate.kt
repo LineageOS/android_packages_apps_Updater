@@ -9,6 +9,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import org.lineageos.updater.data.Update
 
+@Suppress("PROVIDED_RUNTIME_TOO_LOW")
 @Serializable
 data class NetworkUpdate(
     @SerialName("datetime") val timestamp: Long,
@@ -20,6 +21,7 @@ data class NetworkUpdate(
     @SerialName("version") val version: String,
 )
 
+@Suppress("PROVIDED_RUNTIME_TOO_LOW")
 @Serializable
 data class NetworkUpdateResponse(
     @SerialName("response") val updates: List<NetworkUpdate>,

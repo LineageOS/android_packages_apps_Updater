@@ -11,6 +11,7 @@ cardview = "1.0.0"
 compose-material3 = "1.4.0-alpha16"
 compose-runtime = "1.9.0-beta01"
 core = "1.17.0"
+datastore = "1.1.4"
 kotlin = "2.2.0" # external/kotlinc/build.txt
 ktor = "3.4.1"
 lifecycle = "2.10.0-alpha04"
@@ -31,6 +32,7 @@ androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose-runtime" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose-runtime" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core" }
+androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }

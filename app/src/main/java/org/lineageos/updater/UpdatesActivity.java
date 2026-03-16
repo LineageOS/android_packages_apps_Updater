@@ -132,13 +132,6 @@ public class UpdatesActivity extends UpdatesScaffoldActivity implements UpdateIm
             updateLastCheckedString(state.getLastCheckedTimestamp());
             setRefreshEnabled(NetworkMonitor.getInstance(this).getCurrentNetworkState().isOnline()
                     && !state.isCheckingForUpdates());
-            if (!state.isCheckingForUpdates() && state.getErrorMessage() == null) {
-                showToast(
-                        state.getUpdates().isEmpty()
-                                ? R.string.snack_no_updates_found
-                                : R.string.snack_updates_found,
-                        Toast.LENGTH_SHORT);
-            }
             if (state.getErrorMessage() != null) {
                 showToast(R.string.snack_updates_check_failed, Toast.LENGTH_LONG);
                 mViewModel.errorMessageShown();

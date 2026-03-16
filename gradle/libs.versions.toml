@@ -12,6 +12,7 @@ compose-material3 = "1.4.0-alpha16"
 compose-runtime = "1.9.0-beta01"
 core = "1.17.0"
 kotlin = "2.2.0" # external/kotlinc/build.txt
+ktor = "3.4.1"
 lifecycle = "2.10.0-alpha04"
 localbroadcastmanager = "1.1.0"
 material = "1.14.0-alpha02"
@@ -39,6 +40,10 @@ androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview"
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "work" }
+ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]

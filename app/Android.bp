@@ -73,6 +73,10 @@ android_app {
         "androidx.sqlite_sqlite-framework",
         "androidx.work_work-runtime-ktx",
         "com.google.android.material_material",
+        "Updater_io.ktor_ktor-client-android",
+        "Updater_io.ktor_ktor-client-content-negotiation",
+        "Updater_io.ktor_ktor-client-core",
+        "Updater_io.ktor_ktor-serialization-kotlinx-json",
         "kotlin-stdlib",
     ],
 

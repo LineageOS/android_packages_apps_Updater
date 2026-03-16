@@ -12,6 +12,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.androidx.room)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.lineageos.generatebp)
 }
 
@@ -88,6 +89,17 @@ room {
     schemaDirectory("$projectDir/schemas")
 }
 
+// Exclude artifacts that should not appear as generated Soong runtime modules.
+configurations.all {
+    // Ktor does not need the Java 8 compatibility bridge on Android.
+    exclude(group = "org.jetbrains.kotlinx", module = "kotlinx-coroutines-jdk8")
+    // BOMs are metadata-only artifacts, not runtime jars for generated Soong static_libs.
+    // external/kotlinx.coroutines/kotlinx-coroutines-bom
+    // external/kotlinx.serialization/bom
+    exclude(group = "org.jetbrains.kotlinx", module = "kotlinx-coroutines-bom")
+    exclude(group = "org.jetbrains.kotlinx", module = "kotlinx-serialization-bom")
+}
+
 dependencies {
     compileOnly(fileTree(mapOf("dir" to "../system_libs", "include" to listOf("*.jar"))))
 
@@ -109,6 +121,8 @@ dependencies {
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.ktor.client.android)
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.material)
 
     annotationProcessor(libs.androidx.room.compiler)
@@ -122,6 +136,16 @@ configure<GenerateBpPluginExtension> {
     availableInAOSP.set { module: Module ->
         when {
             module.group.startsWith("androidx") -> true
+
+            // This module does not expose an Android Soong module.
+            // external/kotlinx.coroutines/integration/kotlinx-coroutines-slf4j
+            module.group == "org.jetbrains.kotlinx" &&
+                    module.name.startsWith("kotlinx-coroutines-slf4j") -> false
+
+            // These artifacts are not provided by the platform.
+            module.group == "org.jetbrains.kotlinx" &&
+                    module.name.startsWith("kotlinx-io") -> false
+
             module.group.startsWith("org.jetbrains") -> true
             module.group == "com.google.android.material" -> true
             module.group == "com.google.errorprone" -> true

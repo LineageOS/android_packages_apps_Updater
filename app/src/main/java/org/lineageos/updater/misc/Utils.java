@@ -180,18 +180,10 @@ public class Utils {
 
     public static boolean isNetworkAvailable(Context context) {
         ConnectivityManager cm = context.getSystemService(ConnectivityManager.class);
-        Network activeNetwork = cm.getActiveNetwork();
-        NetworkCapabilities networkCapabilities = cm.getNetworkCapabilities(activeNetwork);
-        if (networkCapabilities != null &&
-                networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
-                networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)) {
-            return networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
-                    || networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
-                    || networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_USB)
-                    || networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_VPN)
-                    || networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
-        }
-        return false;
+        NetworkCapabilities networkCapabilities = cm.getNetworkCapabilities(cm.getActiveNetwork());
+        return networkCapabilities != null
+                && networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                && networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED);
     }
 
     public static boolean isNetworkMetered(Context context) {

@@ -5,12 +5,17 @@
 
 package org.lineageos.updater.data.source.local
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import org.lineageos.updater.data.Update
 import org.lineageos.updater.data.UpdateStatus
 
 class UpdatesLocalDataSource(private val updateDao: UpdateDao) {
 
     fun getUpdates(): List<Update> = updateDao.getUpdates().map { it.toUpdate() }
+
+    fun observeUpdates(): Flow<List<Update>> =
+        updateDao.observeUpdates().map { it.map(UpdateEntity::toUpdate) }
 
     fun addUpdate(update: Update) {
         updateDao.insertOrReplace(update.toEntity())

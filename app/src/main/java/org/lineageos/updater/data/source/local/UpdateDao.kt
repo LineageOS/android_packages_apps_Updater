@@ -9,6 +9,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 /**
  * DAO for the updates table.
@@ -27,4 +28,7 @@ interface UpdateDao {
 
     @Query("SELECT * FROM updates ORDER BY timestamp DESC")
     fun getUpdates(): List<UpdateEntity>
+
+    @Query("SELECT * FROM updates ORDER BY timestamp DESC")
+    fun observeUpdates(): Flow<List<UpdateEntity>>
 }

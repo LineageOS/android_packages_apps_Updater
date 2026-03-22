@@ -22,6 +22,7 @@ import org.json.JSONException;
 import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.util.NetworkMonitor;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,7 +57,9 @@ public class UpdatesCheckReceiver extends BroadcastReceiver {
             scheduleRepeatingUpdatesCheck(context);
         }
 
-        if (!Utils.isNetworkAvailable(context)) {
+        NetworkMonitor networkMonitor =
+                ((UpdaterApplication) context.getApplicationContext()).getNetworkMonitor();
+        if (!networkMonitor.getCurrentNetworkState().isOnline()) {
             Log.d(TAG, "Network not available, scheduling new check");
             scheduleUpdatesCheck(context);
             return;

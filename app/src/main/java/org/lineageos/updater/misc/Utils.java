@@ -11,9 +11,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
-import android.net.Network;
-import android.net.NetworkCapabilities;
 import android.os.storage.StorageManager;
 import android.util.Log;
 
@@ -176,19 +173,6 @@ public class Utils {
         intent.setAction(UpdaterService.ACTION_INSTALL_UPDATE);
         intent.putExtra(UpdaterService.EXTRA_DOWNLOAD_ID, downloadId);
         context.startService(intent);
-    }
-
-    public static boolean isNetworkAvailable(Context context) {
-        ConnectivityManager cm = context.getSystemService(ConnectivityManager.class);
-        NetworkCapabilities networkCapabilities = cm.getNetworkCapabilities(cm.getActiveNetwork());
-        return networkCapabilities != null
-                && networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-                && networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED);
-    }
-
-    public static boolean isNetworkMetered(Context context) {
-        ConnectivityManager cm = context.getSystemService(ConnectivityManager.class);
-        return cm.isActiveNetworkMetered();
     }
 
     /**

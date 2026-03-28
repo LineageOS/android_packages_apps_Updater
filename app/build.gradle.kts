@@ -10,6 +10,7 @@ import org.lineageos.generatebp.models.Module
 
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.androidx.room)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.lineageos.generatebp)
 }
@@ -83,6 +84,10 @@ android {
     namespace = "org.lineageos.updater"
 }
 
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
 dependencies {
     compileOnly(fileTree(mapOf("dir" to "../system_libs", "include" to listOf("*.jar"))))
 
@@ -101,7 +106,10 @@ dependencies {
     implementation(libs.androidx.localbroadcastmanager)
     implementation(libs.androidx.preference)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.room.runtime)
     implementation(libs.material)
+
+    annotationProcessor(libs.androidx.room.compiler)
 }
 
 configure<GenerateBpPluginExtension> {

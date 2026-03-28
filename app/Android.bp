@@ -26,6 +26,14 @@ android_app {
         "SystemUpdater",
     ],
 
+    plugins: [
+        "androidx.room_room-compiler-plugin"
+    ],
+
+    javacflags: [
+        "-Aroom.schemaLocation=packages/apps/Updater/schemas"
+    ],
+
     static_libs: [
         // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.activity_activity-compose",
@@ -57,8 +65,11 @@ android_app {
         "androidx.localbroadcastmanager_localbroadcastmanager",
         "androidx.preference_preference",
         "androidx.recyclerview_recyclerview",
+        "androidx.room_room-runtime",
         "androidx.savedstate_savedstate",
         "androidx.savedstate_savedstate-compose",
+        "androidx.sqlite_sqlite",
+        "androidx.sqlite_sqlite-framework",
         "com.google.android.material_material",
         "kotlin-stdlib",
     ],

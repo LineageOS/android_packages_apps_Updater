@@ -17,6 +17,7 @@ localbroadcastmanager = "1.1.0"
 material = "1.14.0-alpha02"
 preference = "1.2.1"
 recyclerview = "1.4.0"
+room = "2.8.4"
 generateBp = "+"
 
 [libraries]
@@ -33,9 +34,12 @@ androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifec
 androidx-localbroadcastmanager = { group = "androidx.localbroadcastmanager", name = "localbroadcastmanager", version.ref = "localbroadcastmanager" }
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
+androidx-room = { id = "androidx.room", version.ref = "room" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 lineageos-generatebp = { id = "org.lineageos.generatebp", version.ref = "generateBp" }

@@ -49,9 +49,18 @@ it with the right key to update the one in the system partition. To do this:
 
  - Place this directory anywhere in the Android source tree
  - Generate a keystore and keystore.properties using `gen-keystore.sh`
- - Build the dependencies running `make UpdaterStudio` from the root of the
-   Android source tree. This command will add the needed libraries in
-   `system_libraries/`.
+ - Build the platform artifacts that provide the non-public classes used by
+   the app. At minimum, the jars copied by `pull-system-libs.sh` must exist
+   under `out/soong/.intermediates/`
+ - Run `./pull-system-libs.sh` from this directory. By default it reads from
+   `../../../out` relative to this repository path and will populate
+   `system_libs/` with the jars Gradle expects:
+   - `framework.jar`
+   - `SettingsLib.jar`
+   - `SpaLib.jar`
+ - If your build output lives somewhere else, pass it explicitly:
+   `./pull-system-libs.sh /path/to/out`
 
 You need to do the above once, unless Android Studio can't find some symbol.
-In this case, rebuild the system libraries with `make UpdaterStudio`.
+In that case, rebuild the relevant platform targets and rerun
+`./pull-system-libs.sh`.

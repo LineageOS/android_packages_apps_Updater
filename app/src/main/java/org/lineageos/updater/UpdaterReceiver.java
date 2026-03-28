@@ -4,32 +4,23 @@
  */
 package org.lineageos.updater;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.PowerManager;
 
-import androidx.core.app.NotificationCompat;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.updater.controller.UpdaterService;
+import org.lineageos.updater.notifications.NotificationHelper;
 import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
 import org.lineageos.updater.misc.Constants;
-import org.lineageos.updater.misc.StringGenerator;
-
-import java.text.DateFormat;
 
 public class UpdaterReceiver extends BroadcastReceiver {
 
     public static final String ACTION_INSTALL_REBOOT =
             "org.lineageos.updater.action.INSTALL_REBOOT";
-
-    private static final String INSTALL_ERROR_NOTIFICATION_CHANNEL =
-            "install_error_notification_channel";
 
     private static boolean isUpdateSuccessful(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -40,34 +31,6 @@ public class UpdaterReceiver extends BroadcastReceiver {
         boolean isReinstall = preferences.getBoolean(Constants.PREF_INSTALL_AGAIN, false);
 
         return isReinstall || buildTimestamp != lastBuildTimestamp;
-    }
-
-    private static void showUpdateFailedNotification(Context context) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String buildDate = StringGenerator.getDateLocalizedUTC(context,
-                DateFormat.MEDIUM, preferences.getLong(Constants.PREF_INSTALL_NEW_TIMESTAMP, 0));
-        String buildInfo = context.getString(R.string.list_build_version_date,
-                DeviceInfoUtils.getBuildVersion(), buildDate);
-
-        Intent notificationIntent = new Intent(context, UpdatesActivity.class);
-        PendingIntent intent = PendingIntent.getActivity(context, 0, notificationIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-
-        NotificationChannel notificationChannel = new NotificationChannel(
-                INSTALL_ERROR_NOTIFICATION_CHANNEL,
-                context.getString(R.string.update_failed_channel_title),
-                NotificationManager.IMPORTANCE_LOW);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
-                INSTALL_ERROR_NOTIFICATION_CHANNEL)
-                .setContentIntent(intent)
-                .setSmallIcon(R.drawable.ic_system_update)
-                .setContentTitle(context.getString(R.string.update_failed_notification))
-                .setStyle(new NotificationCompat.BigTextStyle().bigText(buildInfo))
-                .setContentText(buildInfo);
-
-        NotificationManager nm = context.getSystemService(NotificationManager.class);
-        nm.createNotificationChannel(notificationChannel);
-        nm.notify(0, builder.build());
     }
 
     @Override
@@ -90,7 +53,8 @@ public class UpdaterReceiver extends BroadcastReceiver {
             if (!pref.getBoolean(Constants.PREF_INSTALL_NOTIFIED, false)
                     && !isUpdateSuccessful(context)) {
                 pref.edit().putBoolean(Constants.PREF_INSTALL_NOTIFIED, true).apply();
-                showUpdateFailedNotification(context);
+                long installTimestamp = pref.getLong(Constants.PREF_INSTALL_NEW_TIMESTAMP, 0);
+                new NotificationHelper(context).showUpdateFailedNotification(installTimestamp);
             }
         }
     }

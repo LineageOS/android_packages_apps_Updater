@@ -39,6 +39,7 @@
     <string name="installation_suspended_notification">Installation suspended</string>
 
     <string name="new_updates_found_title">New updates</string>
+    <string name="new_updates_found_summary">Tap to view available updates</string>
 
     <string name="text_download_speed">%1$s, %2$s/s</string>
 

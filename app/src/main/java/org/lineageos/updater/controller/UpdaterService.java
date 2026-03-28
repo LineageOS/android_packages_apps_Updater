@@ -4,7 +4,6 @@
  */
 package org.lineageos.updater.controller;
 
-import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -32,6 +31,7 @@ import org.lineageos.updater.data.UpdateStatus;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.notifications.NotificationHelper;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -51,9 +51,6 @@ public class UpdaterService extends Service {
     public static final String ACTION_INSTALL_RESUME = "action_install_resume";
 
     public static final String ACTION_POST_REBOOT_CLEANUP = "action_post_reboot_cleanup";
-
-    private static final String ONGOING_NOTIFICATION_CHANNEL =
-            "ongoing_notification_channel";
 
     public static final int DOWNLOAD_RESUME = 0;
     public static final int DOWNLOAD_PAUSE = 1;
@@ -78,13 +75,8 @@ public class UpdaterService extends Service {
         mUpdaterController = UpdaterController.getInstance(this);
 
         mNotificationManager = getSystemService(NotificationManager.class);
-        NotificationChannel notificationChannel = new NotificationChannel(
-                ONGOING_NOTIFICATION_CHANNEL,
-                getString(R.string.ongoing_channel_title),
-                NotificationManager.IMPORTANCE_LOW);
-        mNotificationManager.createNotificationChannel(notificationChannel);
         mNotificationBuilder = new NotificationCompat.Builder(this,
-                ONGOING_NOTIFICATION_CHANNEL);
+                NotificationHelper.CHANNEL_ONGOING);
         mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
         mNotificationBuilder.setShowWhen(false);
         mNotificationStyle = new NotificationCompat.BigTextStyle();

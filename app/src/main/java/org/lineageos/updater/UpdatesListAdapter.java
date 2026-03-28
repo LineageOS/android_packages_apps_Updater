@@ -37,11 +37,11 @@ import com.google.android.material.snackbar.Snackbar;
 
 import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterService;
+import org.lineageos.updater.data.Update;
+import org.lineageos.updater.data.UpdateStatus;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
-import org.lineageos.updater.model.UpdateInfo;
-import org.lineageos.updater.model.UpdateStatus;
 import org.lineageos.updater.util.BatteryMonitor;
 import org.lineageos.updater.util.BatteryMonitor.BatteryState;
 import org.lineageos.updater.util.InstallUtils;
@@ -139,7 +139,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         notifyDataSetChanged();
     }
 
-    private void handleActiveStatus(ViewHolder viewHolder, UpdateInfo update) {
+    private void handleActiveStatus(ViewHolder viewHolder, Update update) {
         final String downloadId = update.getDownloadId();
         boolean isVerifying = mUpdaterController.isVerifyingUpdate(downloadId);
         boolean isInstalling = mUpdaterController.isInstallingUpdate(downloadId)
@@ -175,7 +175,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 setButtonAction(viewHolder.mAction, Action.CANCEL_INSTALLATION, downloadId, true);
             }
             viewHolder.mProgressText.setText(!isABUpdate ? R.string.dialog_prepare_zip_message :
-                    update.getFinalizing() ?
+                    update.isFinalizing() ?
                             R.string.finalizing_package :
                             R.string.preparing_ota_first_boot);
             String percentage = NumberFormat.getPercentInstance().format(
@@ -211,19 +211,19 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             viewHolder.mCancel.setVisibility(View.GONE);
         }
 
-        boolean canDelete = update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED;
+        boolean canDelete = update.getStatus() == UpdateStatus.VERIFIED;
         viewHolder.mMenu.setOnClickListener(getClickListener(update, canDelete, viewHolder.mMenu));
         viewHolder.mProgress.setVisibility(View.VISIBLE);
         viewHolder.mProgressText.setVisibility(View.VISIBLE);
         viewHolder.mBuildSize.setVisibility(View.INVISIBLE);
     }
 
-    private void handleNotActiveStatus(ViewHolder viewHolder, UpdateInfo update) {
+    private void handleNotActiveStatus(ViewHolder viewHolder, Update update) {
         final String downloadId = update.getDownloadId();
         if (mUpdaterController.isWaitingForReboot(downloadId)) {
             viewHolder.mMenu.setOnClickListener(getClickListener(update, false, viewHolder.mMenu));
             setButtonAction(viewHolder.mAction, Action.REBOOT, downloadId, true);
-        } else if (update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED) {
+        } else if (update.getStatus() == UpdateStatus.VERIFIED) {
             viewHolder.mMenu.setOnClickListener(getClickListener(update, true, viewHolder.mMenu));
             setButtonAction(viewHolder.mAction,
                     Utils.canInstall(update) ? Action.INSTALL : Action.DELETE,
@@ -255,7 +255,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         }
 
         final String downloadId = mDownloadIds.get(i);
-        UpdateInfo update = mUpdaterController.getUpdate(downloadId);
+        Update update = mUpdaterController.getUpdate(downloadId);
         if (update == null) {
             // The update was deleted
             viewHolder.mAction.setEnabled(false);
@@ -265,21 +265,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         viewHolder.itemView.setSelected(downloadId.equals(mSelectedDownload));
 
-        boolean activeLayout;
-        switch (update.getPersistentStatus()) {
-            case UpdateStatus.Persistent.UNKNOWN:
-                activeLayout = update.getStatus() == UpdateStatus.STARTING;
-                break;
-            case UpdateStatus.Persistent.VERIFIED:
-                activeLayout = update.getStatus() == UpdateStatus.INSTALLING
-                        || update.getStatus() == UpdateStatus.INSTALLATION_SUSPENDED;
-                break;
-            case UpdateStatus.Persistent.INCOMPLETE:
-                activeLayout = true;
-                break;
-            default:
-                throw new RuntimeException("Unknown update status");
-        }
+        boolean activeLayout = update.getStatus().isInProgress();
 
         String buildDate = StringGenerator.getDateLocalizedUTC(mActivity,
                 DateFormat.LONG, update.getTimestamp());
@@ -383,7 +369,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             case RESUME: {
                 button.setText(R.string.action_resume);
                 button.setEnabled(enabled);
-                UpdateInfo update = mUpdaterController.getUpdate(downloadId);
+                Update update = mUpdaterController.getUpdate(downloadId);
                 final boolean canInstall = Utils.canInstall(update) ||
                         update.getFile().length() == update.getFileSize();
                 clickListener = enabled ? view -> {
@@ -399,7 +385,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             case INSTALL: {
                 button.setText(R.string.action_install);
                 button.setEnabled(enabled);
-                UpdateInfo update = mUpdaterController.getUpdate(downloadId);
+                Update update = mUpdaterController.getUpdate(downloadId);
                 final boolean canInstall = Utils.canInstall(update);
                 clickListener = enabled ? view -> {
                     if (canInstall) {
@@ -506,7 +492,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .setNegativeButton(android.R.string.cancel, null);
     }
 
-    private View.OnClickListener getClickListener(final UpdateInfo update,
+    private View.OnClickListener getClickListener(final Update update,
             final boolean canDelete, View anchor) {
         return view -> startActionMode(update, canDelete, anchor);
     }
@@ -527,7 +513,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     .setMessage(R.string.dialog_scratch_mounted_message)
                     .setPositiveButton(android.R.string.ok, null);
         }
-        UpdateInfo update = mUpdaterController.getUpdate(downloadId);
+        Update update = mUpdaterController.getUpdate(downloadId);
         int resId;
         try {
             if (Utils.isABUpdate(update.getFile())) {
@@ -584,7 +570,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .show();
     }
 
-    private void startActionMode(final UpdateInfo update, final boolean canDelete, View anchor) {
+    private void startActionMode(final Update update, final boolean canDelete, View anchor) {
         mSelectedDownload = update.getDownloadId();
         notifyItemChanged(update.getDownloadId());
 
@@ -595,13 +581,13 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         popupMenu.inflate(R.menu.menu_action_mode);
 
         boolean shouldShowDelete = canDelete;
-        boolean isVerified = update.getPersistentStatus() == UpdateStatus.Persistent.VERIFIED;
-        if (isVerified && !Utils.canInstall(update) && !update.getAvailableOnline()) {
+        boolean isVerified = update.getStatus() == UpdateStatus.VERIFIED;
+        if (isVerified && !Utils.canInstall(update) && !update.isAvailableOnline()) {
             shouldShowDelete = false;
         }
         MenuBuilder menu = (MenuBuilder) popupMenu.getMenu();
         menu.findItem(R.id.menu_delete_action).setVisible(shouldShowDelete);
-        menu.findItem(R.id.menu_copy_url).setVisible(update.getAvailableOnline());
+        menu.findItem(R.id.menu_copy_url).setVisible(update.isAvailableOnline());
         menu.findItem(R.id.menu_export_update).setVisible(isVerified);
 
         popupMenu.setOnMenuItemClickListener(item -> {

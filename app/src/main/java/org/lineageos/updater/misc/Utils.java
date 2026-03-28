@@ -22,10 +22,8 @@ import org.json.JSONObject;
 import org.lineageos.updater.R;
 import org.lineageos.updater.UpdatesDbHelper;
 import org.lineageos.updater.controller.UpdaterService;
+import org.lineageos.updater.data.Update;
 import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
-import org.lineageos.updater.model.Update;
-import org.lineageos.updater.model.UpdateBaseInfo;
-import org.lineageos.updater.model.UpdateInfo;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -55,21 +53,19 @@ public class Utils {
         return new File(context.getCacheDir(), "updates.json");
     }
 
-    // This should really return an UpdateBaseInfo object, but currently this only
-    // used to initialize UpdateInfo objects
-    private static UpdateInfo parseJsonUpdate(JSONObject object) throws JSONException {
-        Update update = new Update();
-        update.setTimestamp(object.getLong("datetime"));
-        update.setName(object.getString("filename"));
-        update.setDownloadId(object.getString("id"));
-        update.setType(object.getString("romtype"));
-        update.setFileSize(object.getLong("size"));
-        update.setDownloadUrl(object.getString("url"));
-        update.setVersion(object.getString("version"));
-        return update;
+    private static Update parseJsonUpdate(JSONObject object) throws JSONException {
+        return new Update.Builder()
+            .setTimestamp(object.getLong("datetime"))
+            .setName(object.getString("filename"))
+            .setDownloadId(object.getString("id"))
+            .setType(object.getString("romtype"))
+            .setFileSize(object.getLong("size"))
+            .setDownloadUrl(object.getString("url"))
+            .setVersion(object.getString("version"))
+            .build();
     }
 
-    public static boolean isCompatible(UpdateBaseInfo update) {
+    public static boolean isCompatible(Update update) {
         if (update.getVersion().compareTo(DeviceInfoUtils.getBuildVersion()) < 0) {
             Log.d(TAG, update.getName() + " is older than current Android version");
             return false;
@@ -102,7 +98,7 @@ public class Utils {
         }
     }
 
-    public static boolean canInstall(UpdateBaseInfo update) {
+    public static boolean canInstall(Update update) {
         boolean allowMajorUpgrades = DeviceInfoUtils.isMajorUpdateAllowed();
 
         return (DeviceInfoUtils.isDowngradingAllowed() ||
@@ -113,9 +109,9 @@ public class Utils {
                         allowMajorUpgrades);
     }
 
-    public static List<UpdateInfo> parseJson(File file, boolean compatibleOnly)
+    public static List<Update> parseJson(File file, boolean compatibleOnly)
             throws IOException, JSONException {
-        List<UpdateInfo> updates = new ArrayList<>();
+        List<Update> updates = new ArrayList<>();
 
         StringBuilder json = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -131,7 +127,7 @@ public class Utils {
                 continue;
             }
             try {
-                UpdateInfo update = parseJsonUpdate(updatesList.getJSONObject(i));
+                Update update = parseJsonUpdate(updatesList.getJSONObject(i));
                 if (!compatibleOnly || isCompatible(update)) {
                     updates.add(update);
                 } else {
@@ -184,15 +180,15 @@ public class Utils {
      */
     public static boolean checkForNewUpdates(File oldJson, File newJson)
             throws IOException, JSONException {
-        List<UpdateInfo> oldList = parseJson(oldJson, true);
-        List<UpdateInfo> newList = parseJson(newJson, true);
+        List<Update> oldList = parseJson(oldJson, true);
+        List<Update> newList = parseJson(newJson, true);
         Set<String> oldIds = new HashSet<>();
-        for (UpdateInfo update : oldList) {
+        for (Update update : oldList) {
             oldIds.add(update.getDownloadId());
         }
         // In case of no new updates, the old list should
         // have all (if not more) the updates
-        for (UpdateInfo update : newList) {
+        for (Update update : newList) {
             if (!oldIds.contains(update.getDownloadId())) {
                 return true;
             }
@@ -287,7 +283,7 @@ public class Utils {
         // Ideally the database is empty when we get here
         List<String> knownPaths = new ArrayList<>();
         try (UpdatesDbHelper dbHelper = new UpdatesDbHelper(context)) {
-            for (UpdateInfo update : dbHelper.getUpdates()) {
+            for (Update update : dbHelper.getUpdates()) {
                 knownPaths.add(update.getFile().getAbsolutePath());
             }
         }

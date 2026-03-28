@@ -54,14 +54,12 @@ import com.google.android.material.snackbar.Snackbar;
 import org.json.JSONException;
 import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterService;
+import org.lineageos.updater.data.Update;
 import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
 import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
-import org.lineageos.updater.model.Update;
-import org.lineageos.updater.model.UpdateInfo;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -81,7 +79,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
     private boolean mIsTV;
 
-    private UpdateInfo mToBeExported = null;
+    private Update mToBeExported = null;
     private final ActivityResultLauncher<Intent> mExportUpdate = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
@@ -131,7 +129,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 } else if (UpdaterController.ACTION_UPDATE_REMOVED.equals(intent.getAction())) {
                     String downloadId = intent.getStringExtra(UpdaterController.EXTRA_DOWNLOAD_ID);
                     mAdapter.removeItem(downloadId);
-                    List<UpdateInfo> sortedUpdates =
+                    List<Update> sortedUpdates =
                             mUpdaterService.getUpdaterController().getUpdates();
                     if (sortedUpdates.isEmpty()) {
                         findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
@@ -373,9 +371,9 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         UpdaterController controller = mUpdaterService.getUpdaterController();
         boolean newUpdates = false;
 
-        List<UpdateInfo> updates = Utils.parseJson(jsonFile, true);
+        List<Update> updates = Utils.parseJson(jsonFile, true);
         List<String> updatesOnline = new ArrayList<>();
-        for (UpdateInfo update : updates) {
+        for (Update update : updates) {
             newUpdates |= controller.addUpdate(update);
             updatesOnline.add(update.getDownloadId());
         }
@@ -388,7 +386,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         }
 
         List<String> updateIds = new ArrayList<>();
-        List<UpdateInfo> sortedUpdates = controller.getUpdates();
+        List<Update> sortedUpdates = controller.getUpdates();
         if (sortedUpdates.isEmpty()) {
             findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
             findViewById(R.id.recycler_view).setVisibility(View.GONE);
@@ -396,7 +394,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             findViewById(R.id.no_new_updates_view).setVisibility(View.GONE);
             findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
             sortedUpdates.sort((u1, u2) -> Long.compare(u2.getTimestamp(), u1.getTimestamp()));
-            for (UpdateInfo update : sortedUpdates) {
+            for (Update update : sortedUpdates) {
                 updateIds.add(update.getDownloadId());
             }
             mAdapter.setData(updateIds);
@@ -504,7 +502,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             return;
         }
 
-        UpdateInfo update = mUpdaterService.getUpdaterController().getUpdate(downloadId);
+        Update update = mUpdaterService.getUpdaterController().getUpdate(downloadId);
         switch (update.getStatus()) {
             case PAUSED_ERROR:
                 showSnackbar(R.string.snack_download_failed, Snackbar.LENGTH_LONG);
@@ -519,7 +517,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     }
 
     @Override
-    public void exportUpdate(UpdateInfo update) {
+    public void exportUpdate(Update update) {
         mToBeExported = update;
 
         Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);

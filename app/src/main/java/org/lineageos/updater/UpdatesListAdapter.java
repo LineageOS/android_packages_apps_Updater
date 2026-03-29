@@ -7,6 +7,7 @@ package org.lineageos.updater;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.content.SharedPreferences;
 import android.os.PowerManager;
 import android.text.SpannableString;
@@ -15,6 +16,7 @@ import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -569,7 +571,10 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             shouldShowDelete = false;
         }
         popupMenu.getMenu().findItem(R.id.menu_delete_action).setVisible(shouldShowDelete);
-        popupMenu.getMenu().findItem(R.id.menu_copy_url).setVisible(update.isAvailableOnline());
+        MenuItem viewDownloadsItem = popupMenu.getMenu().findItem(R.id.menu_view_downloads);
+        viewDownloadsItem.setTitle(mActivity.getString(R.string.menu_view_downloads,
+                mActivity.getString(R.string.brand_name)));
+        viewDownloadsItem.setVisible(update.isAvailableOnline());
         popupMenu.getMenu().findItem(R.id.menu_export_update).setVisible(isVerified);
 
         popupMenu.setOnMenuItemClickListener(item -> {
@@ -577,10 +582,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             if (itemId == R.id.menu_delete_action) {
                 getDeleteDialog(update.getDownloadId()).show();
                 return true;
-            } else if (itemId == R.id.menu_copy_url) {
-                Utils.addToClipboard(mActivity,
-                        mActivity.getString(R.string.label_download_url),
-                        update.getDownloadUrl());
+            } else if (itemId == R.id.menu_view_downloads) {
+                mActivity.startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse(Utils.getDownloadsURL(mActivity))));
                 return true;
             } else if (itemId == R.id.menu_export_update) {
                 if (mActivity != null) {

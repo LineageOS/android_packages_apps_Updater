@@ -4,8 +4,6 @@
  */
 package org.lineageos.updater.misc;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -70,6 +68,10 @@ public class Utils {
 
     public static String getUpgradeBlockedURL(Context context) {
         return context.getString(R.string.blocked_update_info_url, DeviceInfoUtils.getDevice());
+    }
+
+    public static String getDownloadsURL(Context context) {
+        return context.getString(R.string.menu_downloads_url, DeviceInfoUtils.getDevice());
     }
 
     public static void triggerUpdate(Context context, String downloadId) {
@@ -213,13 +215,6 @@ public class Utils {
         boolean isAB = isABUpdate(zipFile);
         zipFile.close();
         return isAB;
-    }
-
-    public static void addToClipboard(Context context, String label, String text) {
-        ClipboardManager clipboard = (ClipboardManager) context.getSystemService(
-                Context.CLIPBOARD_SERVICE);
-        ClipData clip = ClipData.newPlainText(label, text);
-        clipboard.setPrimaryClip(clip);
     }
 
     public static boolean isEncrypted(Context context, File file) {

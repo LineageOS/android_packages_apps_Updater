@@ -11,6 +11,6 @@
         android:id="@+id/menu_delete_action"
         android:title="@string/menu_delete_update" />
     <item
-        android:id="@+id/menu_copy_url"
-        android:title="@android:string/copyUrl" />
+        android:id="@+id/menu_view_downloads"
+        android:title="@string/menu_view_downloads" />
 </menu>

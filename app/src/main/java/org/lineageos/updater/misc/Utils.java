@@ -9,15 +9,11 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.storage.StorageManager;
 import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.lineageos.updater.R;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.data.UserPreferencesRepository;
@@ -26,16 +22,11 @@ import org.lineageos.updater.data.source.local.UpdatesLocalDataSource;
 import org.lineageos.updater.data.source.local.UpdatesDatabase;
 import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
-import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -48,39 +39,6 @@ public class Utils {
 
     public static File getDownloadPath(Context context) {
         return new File(context.getString(R.string.download_path));
-    }
-
-    public static File getCachedUpdateList(Context context) {
-        return new File(context.getCacheDir(), "updates.json");
-    }
-
-    private static Update parseJsonUpdate(JSONObject object) throws JSONException {
-        return new Update.Builder()
-            .setTimestamp(object.getLong("datetime"))
-            .setName(object.getString("filename"))
-            .setDownloadId(object.getString("id"))
-            .setType(object.getString("romtype"))
-            .setFileSize(object.getLong("size"))
-            .setDownloadUrl(object.getString("url"))
-            .setVersion(object.getString("version"))
-            .build();
-    }
-
-    public static boolean isCompatible(Update update) {
-        if (update.getVersion().compareTo(DeviceInfoUtils.getBuildVersion()) < 0) {
-            Log.d(TAG, update.getName() + " is older than current Android version");
-            return false;
-        }
-        if (!DeviceInfoUtils.isDowngradingAllowed() &&
-                update.getTimestamp() <= DeviceInfoUtils.getBuildDateTimestamp()) {
-            Log.d(TAG, update.getName() + " is older than/equal to the current build");
-            return false;
-        }
-        if (!update.getType().equalsIgnoreCase(DeviceInfoUtils.getReleaseType())) {
-            Log.d(TAG, update.getName() + " has type " + update.getType());
-            return false;
-        }
-        return true;
     }
 
     public static boolean compareVersions(String a, String b, boolean allowMajorUpgrades) {
@@ -110,53 +68,6 @@ public class Utils {
                         allowMajorUpgrades);
     }
 
-    public static List<Update> parseJson(File file, boolean compatibleOnly)
-            throws IOException, JSONException {
-        List<Update> updates = new ArrayList<>();
-
-        StringBuilder json = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            for (String line; (line = br.readLine()) != null;) {
-                json.append(line);
-            }
-        }
-
-        JSONObject obj = new JSONObject(json.toString());
-        JSONArray updatesList = obj.getJSONArray("response");
-        for (int i = 0; i < updatesList.length(); i++) {
-            if (updatesList.isNull(i)) {
-                continue;
-            }
-            try {
-                Update update = parseJsonUpdate(updatesList.getJSONObject(i));
-                if (!compatibleOnly || isCompatible(update)) {
-                    updates.add(update);
-                } else {
-                    Log.d(TAG, "Ignoring incompatible update " + update.getName());
-                }
-            } catch (JSONException e) {
-                Log.e(TAG, "Could not parse update object, index=" + i, e);
-            }
-        }
-
-        return updates;
-    }
-
-    public static String getServerURL(Context context) {
-        String incrementalVersion = DeviceInfoUtils.getBuildVersionIncremental();
-        String device = DeviceInfoUtils.getDevice();
-        String type = DeviceInfoUtils.getReleaseType().toLowerCase(Locale.ROOT);
-
-        String serverUrl = DeviceInfoUtils.getUpdaterUri();
-        if (serverUrl.trim().isEmpty()) {
-            serverUrl = context.getString(R.string.updater_server_url);
-        }
-
-        return serverUrl.replace("{device}", device)
-                .replace("{type}", type)
-                .replace("{incr}", incrementalVersion);
-    }
-
     public static String getUpgradeBlockedURL(Context context) {
         return context.getString(R.string.blocked_update_info_url, DeviceInfoUtils.getDevice());
     }
@@ -170,31 +81,6 @@ public class Utils {
         intent.setAction(UpdaterService.ACTION_INSTALL_UPDATE);
         intent.putExtra(UpdaterService.EXTRA_DOWNLOAD_ID, downloadId);
         context.startService(intent);
-    }
-
-    /**
-     * Compares two json formatted updates list files
-     *
-     * @param oldJson old update list
-     * @param newJson new update list
-     * @return true if newJson has at least a compatible update not available in oldJson
-     */
-    public static boolean checkForNewUpdates(File oldJson, File newJson)
-            throws IOException, JSONException {
-        List<Update> oldList = parseJson(oldJson, true);
-        List<Update> newList = parseJson(newJson, true);
-        Set<String> oldIds = new HashSet<>();
-        for (Update update : oldList) {
-            oldIds.add(update.getDownloadId());
-        }
-        // In case of no new updates, the old list should
-        // have all (if not more) the updates
-        for (Update update : newList) {
-            if (!oldIds.contains(update.getDownloadId())) {
-                return true;
-            }
-        }
-        return false;
     }
 
     /**
@@ -333,10 +219,6 @@ public class Utils {
         boolean isAB = isABUpdate(zipFile);
         zipFile.close();
         return isAB;
-    }
-
-    public static boolean hasTouchscreen(Context context) {
-        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN);
     }
 
     public static void addToClipboard(Context context, String label, String text) {

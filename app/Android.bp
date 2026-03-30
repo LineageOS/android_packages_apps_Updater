@@ -47,6 +47,8 @@ android_app {
         "androidx.compose.animation_animation-core",
         "androidx.compose.foundation_foundation",
         "androidx.compose.foundation_foundation-layout",
+        "androidx.compose.material_material-icons-core",
+        "androidx.compose.material_material-icons-extended",
         "androidx.compose.material_material-ripple",
         "androidx.compose.material3_material3",
         "androidx.compose.runtime_runtime",

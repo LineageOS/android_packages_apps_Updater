@@ -6,7 +6,6 @@ package org.lineageos.updater.controller;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.SystemClock;
 import android.util.Log;
 
 import androidx.preference.PreferenceManager;
@@ -15,7 +14,7 @@ import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.UpdateStatus;
 import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
 import org.lineageos.updater.misc.Constants;
-import org.lineageos.updater.misc.FileUtils;
+import org.lineageos.updater.util.FileUtils;
 import org.lineageos.updater.misc.Utils;
 
 import java.io.File;
@@ -104,27 +103,11 @@ class UpdateInstaller {
         File uncryptFile = new File(uncryptFilePath);
 
         Runnable copyUpdateRunnable = new Runnable() {
-            private long mLastUpdate = -1;
-
-            final FileUtils.ProgressCallBack mProgressCallBack = new FileUtils.ProgressCallBack() {
-                @Override
-                public void update(int progress) {
-                    long now = SystemClock.elapsedRealtime();
-                    if (mLastUpdate < 0 || now - mLastUpdate > 500) {
-                        mUpdaterController.setUpdate(update.getDownloadId(),
-                                mUpdaterController.getUpdate(update.getDownloadId())
-                                .withInstallProgress(progress));
-                        mUpdaterController.notifyInstallProgress(update.getDownloadId());
-                        mLastUpdate = now;
-                    }
-                }
-            };
-
             @Override
             public void run() {
                 try {
                     mCanCancel = true;
-                    FileUtils.copyFile(update.getFile(), uncryptFile, mProgressCallBack);
+                    FileUtils.copyFile(update.getFile(), uncryptFile);
                     try {
                         Set<PosixFilePermission> perms = new HashSet<>();
                         perms.add(PosixFilePermission.OWNER_READ);

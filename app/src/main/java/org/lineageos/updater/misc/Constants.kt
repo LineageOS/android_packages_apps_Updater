@@ -28,5 +28,4 @@ object Constants {
      * Miscellaneous - Legacy
      */
     const val UNCRYPT_FILE_EXT = ".uncrypt"
-    const val UPDATE_RECOVERY_EXEC = "/vendor/bin/install-recovery.sh"
 }

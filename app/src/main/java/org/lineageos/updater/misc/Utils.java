@@ -66,14 +66,6 @@ public class Utils {
                         allowMajorUpgrades);
     }
 
-    public static String getUpgradeBlockedURL(Context context) {
-        return context.getString(R.string.blocked_update_info_url, DeviceInfoUtils.getDevice());
-    }
-
-    public static String getDownloadsURL(Context context) {
-        return context.getString(R.string.menu_downloads_url, DeviceInfoUtils.getDevice());
-    }
-
     public static void triggerUpdate(Context context, String downloadId) {
         final Intent intent = new Intent(context, UpdaterService.class);
         intent.setAction(UpdaterService.ACTION_INSTALL_UPDATE);
@@ -220,9 +212,5 @@ public class Utils {
     public static boolean isEncrypted(Context context, File file) {
         StorageManager sm = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
         return sm.isEncrypted(file);
-    }
-
-    public static boolean isRecoveryUpdateExecPresent() {
-        return new File(Constants.UPDATE_RECOVERY_EXEC).exists();
     }
 }

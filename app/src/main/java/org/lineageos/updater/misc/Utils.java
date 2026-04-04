@@ -136,8 +136,6 @@ public class Utils {
         File downloadPath = getDownloadPath(context);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
-        removeUncryptFiles(downloadPath);
-
         long buildTimestamp = DeviceInfoUtils.getBuildDateTimestamp();
         long prevTimestamp = preferences.getLong(Constants.PREF_INSTALL_OLD_TIMESTAMP, 0);
         String lastUpdatePath = preferences.getString(Constants.PREF_INSTALL_PACKAGE_PATH, null);

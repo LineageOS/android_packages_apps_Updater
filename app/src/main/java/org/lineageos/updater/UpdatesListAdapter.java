@@ -34,6 +34,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.settingslib.spa.framework.theme.SettingsOpacity;
 
 import org.lineageos.updater.controller.UpdaterController;
+import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.UpdateStatus;
@@ -584,7 +585,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 return true;
             } else if (itemId == R.id.menu_view_downloads) {
                 mActivity.startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(Utils.getDownloadsURL(mActivity))));
+                        Uri.parse(mActivity.getString(
+                                R.string.menu_downloads_url, DeviceInfoUtils.getDevice()))));
                 return true;
             } else if (itemId == R.id.menu_export_update) {
                 if (mActivity != null) {
@@ -599,8 +601,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private void showInfoDialog() {
-        String messageString = mActivity.getString(R.string.blocked_update_dialog_message,
-                Utils.getUpgradeBlockedURL(mActivity));
+        String messageString = String.format(StringUtil.getCurrentLocale(mActivity),
+                mActivity.getString(R.string.blocked_update_dialog_message),
+                mActivity.getString(R.string.blocked_update_info_url, DeviceInfoUtils.getDevice()));
         SpannableString message = new SpannableString(messageString);
         Linkify.addLinks(message, Linkify.WEB_URLS);
         if (infoDialog != null) {

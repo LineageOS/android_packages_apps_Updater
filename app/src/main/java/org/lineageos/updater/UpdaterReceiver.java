@@ -16,6 +16,7 @@ import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.notifications.NotificationHelper;
 import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
 import org.lineageos.updater.misc.Constants;
+import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.updatescheck.UpdatesCheckWorker;
 
 public class UpdaterReceiver extends BroadcastReceiver {
@@ -40,6 +41,7 @@ public class UpdaterReceiver extends BroadcastReceiver {
             PowerManager pm = context.getSystemService(PowerManager.class);
             pm.reboot(null);
         } else if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+            Utils.removeUncryptFiles(Utils.getDownloadPath(context));
             UpdatesCheckWorker.schedulePeriodicCheck(context);
 
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);

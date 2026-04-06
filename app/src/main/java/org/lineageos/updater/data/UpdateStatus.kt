@@ -73,7 +73,13 @@ enum class UpdateStatus(val persistentStatus: Int) {
         VERIFIED,
         INSTALLATION_FAILED,
         INSTALLATION_CANCELLED -> true
+        else -> false
+    }
 
+    fun isInstalling() = when (this) {
+        INSTALLING,
+        INSTALLATION_SUSPENDED,
+        UPDATED_NEED_REBOOT -> true
         else -> false
     }
 

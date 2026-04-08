@@ -25,6 +25,9 @@ public class HttpURLConnectionClient implements DownloadClient {
 
     private final static String TAG = "HttpURLConnectionClient";
 
+    // Ref: mozilla-mobile/firefox-android AbstractFetchDownloadService.CHUNK_SIZE
+    private static final int CHUNK_SIZE = 32 * 1024;
+
     private HttpURLConnection mClient;
 
     private final File mDestination;
@@ -272,7 +275,7 @@ public class HttpURLConnectionClient implements DownloadClient {
                         OutputStream outputStream = new FileOutputStream(mDestination, mResume)
                 ) {
                     mTotalBytes = mClient.getContentLengthLong() + mTotalBytesRead;
-                    byte[] b = new byte[8192];
+                    byte[] b = new byte[CHUNK_SIZE];
                     int count;
                     while (!isInterrupted() && (count = inputStream.read(b)) > 0) {
                         outputStream.write(b, 0, count);

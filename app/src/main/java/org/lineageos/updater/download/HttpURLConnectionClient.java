@@ -219,7 +219,7 @@ public class HttpURLConnectionClient implements DownloadClient {
 
                     // https://tools.ietf.org/html/rfc6249
                     // https://tools.ietf.org/html/rfc5988#section-5
-                    String regex = "(?i)<(.+)>\\s*;\\s*rel=duplicate(?:.*pri=([0-9]+).*|.*)?";
+                    String regex = "(?i)<([^>]+)>\\s*;\\s*rel=duplicate(?:.*pri=([0-9]+).*|.*)?";
                     Pattern pattern = Pattern.compile(regex);
                     for (String field : entry.getValue()) {
                         Matcher matcher = pattern.matcher(field);

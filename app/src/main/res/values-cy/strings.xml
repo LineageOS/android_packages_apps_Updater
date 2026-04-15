@@ -18,7 +18,7 @@
     <string name="app_name">Diweddarydd</string>
     <string name="display_name">Diweddarydd</string>
     <string name="verification_failed_notification">Methodd y dilysiad</string>
-    <string name="verifying_download_notification">Yn dilysu\'r diweddariad</string>
+    <string name="verifying_download_notification">Yn gwireddu\'r diweddariad</string>
     <string name="downloading_notification">Yn lawrlwytho</string>
     <string name="download_paused_notification">Lawrlwytho wedi seibio</string>
     <string name="download_paused_error_notification">Gwall lawrlwytho</string>
@@ -69,7 +69,7 @@
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> o <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> o <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
-    <string name="list_verifying_update">Yn dilysu\'r diweddariad</string>
+    <string name="list_verifying_update">Yn gwireddu\'r diweddariad</string>
     <string name="list_no_updates">Ni chanfuwyd diweddariadau newydd. I wirio am ddiweddariadau newydd dy hun, defnyddia\'r botwm ail-lwytho.</string>
     <string name="action_download">Lawrlwytho</string>
     <string name="action_pause">Seibio</string>

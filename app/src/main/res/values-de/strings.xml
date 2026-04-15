@@ -128,4 +128,6 @@
     <string name="local_update_import_failure">Fehler beim Importieren des lokalen Updates</string>
     <string name="local_update_import_install">Installieren</string>
     <string name="local_update_name">Lokales Update</string>
+    <string name="welcome_title">Willkommen</string>
+    <string name="welcome_message">Hinweis: Sind mehrere Updates verfügbar, ist es nicht nötig, jedes Update einzeln zu installieren. Du kannst stets direkt das neueste Update installieren und anschließend ältere Updates löschen, um Speicherplatz freizugeben.</string>
 </resources>

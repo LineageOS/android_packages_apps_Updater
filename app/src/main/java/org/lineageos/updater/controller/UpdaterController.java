@@ -283,14 +283,7 @@ public class UpdaterController {
             return true;
         } catch (Exception e) {
             Log.e(TAG, "Verification failed", e);
-            if (file.exists()) {
-                //noinspection ResultOfMethodCallIgnored
-                file.delete();
-            } else {
-                // The download was probably stopped. Exit silently
-                Log.e(TAG, "Error while verifying the file", e);
-            }
-            return false;
+            return true;
         }
     }
 

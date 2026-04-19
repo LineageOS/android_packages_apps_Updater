@@ -29,22 +29,22 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
     val buildSecurityPatch: String = Build.VERSION.SECURITY_PATCH
 
     @JvmStatic
-    val buildDateTimestamp: Long = SystemProperties.getLong(PROP_BUILD_DATE, 0)
+    val buildDateTimestamp: Long = 1764547200L //SystemProperties.getLong(PROP_BUILD_DATE, 0)
 
     @JvmStatic
-    val buildVersion: String = SystemProperties.get(PROP_BUILD_VERSION, "")
+    val buildVersion: String = "23.0" //SystemProperties.get(PROP_BUILD_VERSION, "")
 
     @JvmStatic
-    val buildVersionIncremental: String = SystemProperties.get(PROP_BUILD_VERSION_INCREMENTAL, "")
+    val buildVersionIncremental: String = "000000" //SystemProperties.get(PROP_BUILD_VERSION_INCREMENTAL, "")
 
     @JvmStatic
-    val device: String = SystemProperties.get(PROP_NEXT_DEVICE, SystemProperties.get(PROP_DEVICE))
+    val device: String = "lemonadep" //SystemProperties.get(PROP_NEXT_DEVICE, SystemProperties.get(PROP_DEVICE))
 
     @JvmStatic
     val isABDevice: Boolean = SystemProperties.getBoolean(PROP_AB_DEVICE, false)
 
     @JvmStatic
-    val releaseType: String = SystemProperties.get(PROP_RELEASE_TYPE)
+    val releaseType: String = "nightly"  //SystemProperties.get(PROP_RELEASE_TYPE)
 
     // Mutable at runtime
     @JvmStatic

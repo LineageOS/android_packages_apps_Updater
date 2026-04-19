@@ -12,57 +12,6 @@
     android:padding="16dp"
     android:weightSum="2">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp">
-
-        <TextView
-            android:id="@+id/header_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:paddingBottom="16dp"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="56sp"
-            tools:text="LineageOS\n23.2" />
-
-        <TextView
-            android:id="@+id/header_build_version"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="14sp"
-            tools:text="Android 16" />
-
-        <TextView
-            android:id="@+id/header_build_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="14sp"
-            tools:text="1970-01-01" />
-
-        <TextView
-            android:id="@+id/header_security_patch_level"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="12sp"
-            tools:text="Android security update: December 1, 2025" />
-
-        <TextView
-            android:id="@+id/header_last_check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="14sp"
-            tools:text="Last checked: 1970-01-01" />
-    </LinearLayout>
-
     <FrameLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"

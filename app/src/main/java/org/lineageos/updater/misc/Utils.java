@@ -55,17 +55,6 @@ public class Utils {
         }
     }
 
-    public static boolean canInstall(Update update) {
-        boolean allowMajorUpgrades = DeviceInfoUtils.isMajorUpdateAllowed();
-
-        return (DeviceInfoUtils.isDowngradingAllowed() ||
-                update.getTimestamp() > DeviceInfoUtils.getBuildDateTimestamp()) &&
-                compareVersions(
-                        update.getVersion(),
-                        DeviceInfoUtils.getBuildVersion(),
-                        allowMajorUpgrades);
-    }
-
     public static void triggerUpdate(Context context, String downloadId) {
         final Intent intent = new Intent(context, UpdaterService.class);
         intent.setAction(UpdaterService.ACTION_INSTALL_UPDATE);

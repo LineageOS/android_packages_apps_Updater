@@ -232,9 +232,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         } else if (update.getStatus().hasVerifiedPackage()) {
             viewHolder.mMenu.setOnClickListener(getClickListener(update, true, viewHolder.mMenu));
             setButtonAction(viewHolder.mAction,
-                    Utils.canInstall(update) ? Action.INSTALL : Action.DELETE,
+                    InstallUtils.canInstall(update) ? Action.INSTALL : Action.DELETE,
                     downloadId, !isBusy());
-        } else if (!Utils.canInstall(update)) {
+        } else if (!InstallUtils.canInstall(update)) {
             viewHolder.mMenu.setOnClickListener(getClickListener(update, false, viewHolder.mMenu));
             setButtonAction(viewHolder.mAction, Action.INFO, downloadId, !isBusy());
         } else {
@@ -375,7 +375,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setText(R.string.action_resume);
                 button.setEnabled(enabled);
                 Update update = mUpdaterController.getUpdate(downloadId);
-                final boolean canInstall = Utils.canInstall(update) ||
+                final boolean canInstall = InstallUtils.canInstall(update) ||
                         update.getFile().length() == update.getFileSize();
                 clickListener = enabled ? view -> {
                     if (canInstall) {
@@ -391,7 +391,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 button.setText(R.string.action_install);
                 button.setEnabled(enabled);
                 Update update = mUpdaterController.getUpdate(downloadId);
-                final boolean canInstall = Utils.canInstall(update);
+                final boolean canInstall = InstallUtils.canInstall(update);
                 clickListener = enabled ? view -> {
                     if (canInstall) {
                         AlertDialog.Builder installDialog = getInstallDialog(downloadId);
@@ -568,7 +568,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         boolean shouldShowDelete = canDelete;
         boolean isVerified = update.getStatus().hasVerifiedPackage();
-        if (isVerified && !Utils.canInstall(update) && !update.isAvailableOnline()) {
+        if (isVerified && !InstallUtils.canInstall(update) && !update.isAvailableOnline()) {
             shouldShowDelete = false;
         }
         popupMenu.getMenu().findItem(R.id.menu_delete_action).setVisible(shouldShowDelete);

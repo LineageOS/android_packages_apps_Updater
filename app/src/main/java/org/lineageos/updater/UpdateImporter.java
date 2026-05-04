@@ -157,7 +157,7 @@ public class UpdateImporter {
 
     private void addUpdate(Update update) {
         UpdaterController controller = UpdaterController.getInstance(activity);
-        controller.addUpdate(update, false);
+        controller.addLocalUpdate(update);
     }
 
     private long getTimeStamp(File file) {

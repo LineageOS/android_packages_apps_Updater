@@ -31,8 +31,8 @@ fun UpdateList(
     if (items.isEmpty()) {
         ZeroStatePreference(
             icon = Icons.Outlined.Check,
-            text = stringResource(R.string.snack_no_updates_found),
-            description = stringResource(R.string.list_no_updates),
+            text = stringResource(R.string.updates_zero_state_title),
+            description = stringResource(R.string.updates_zero_state_description),
         )
         return
     }

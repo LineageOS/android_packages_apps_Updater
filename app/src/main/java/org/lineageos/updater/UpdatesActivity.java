@@ -20,7 +20,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.os.SystemProperties;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -55,8 +54,8 @@ import com.google.android.material.snackbar.Snackbar;
 import org.json.JSONException;
 import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterService;
+import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
 import org.lineageos.updater.download.DownloadClient;
-import org.lineageos.updater.misc.BuildInfoUtils;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
@@ -172,7 +171,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
         TextView headerTitle = findViewById(R.id.header_title);
         headerTitle.setText(getString(R.string.header_title_text,
-                BuildInfoUtils.getBuildVersion()));
+                DeviceInfoUtils.getBuildVersion()));
 
         updateLastCheckedString();
 
@@ -182,7 +181,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
         TextView headerBuildDate = findViewById(R.id.header_build_date);
         headerBuildDate.setText(StringGenerator.getDateLocalizedUTC(this,
-                DateFormat.LONG, BuildInfoUtils.getBuildDateTimestamp()));
+                DateFormat.LONG, DeviceInfoUtils.getBuildDateTimestamp()));
 
         if (!mIsTV) {
             // Switch between header title and appbar title minimizing overlaps
@@ -583,7 +582,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         SwitchCompat abPerfMode = view.findViewById(R.id.preferences_ab_perf_mode);
         SwitchCompat updateRecovery = view.findViewById(R.id.preferences_update_recovery);
 
-        if (!Utils.isABDevice()) {
+        if (!DeviceInfoUtils.isABDevice()) {
             abPerfMode.setVisibility(View.GONE);
         }
 
@@ -597,8 +596,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         if (Utils.isRecoveryUpdateExecPresent()) {
             updateRecovery.setVisibility(View.VISIBLE);
             // Obtain and apply the user preference from SetupWizard.
-            updateRecovery.setChecked(
-                    SystemProperties.getBoolean(Constants.UPDATE_RECOVERY_PROPERTY, false));
+            updateRecovery.setChecked(DeviceInfoUtils.isRecoveryUpdateEnabled());
         } // else: remains GONE (default from XML)
 
         new AlertDialog.Builder(this)
@@ -621,14 +619,13 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                         UpdatesCheckReceiver.cancelUpdatesCheck(this);
                     }
 
-                    if (Utils.isABDevice()) {
+                    if (DeviceInfoUtils.isABDevice()) {
                         boolean enableABPerfMode = abPerfMode.isChecked();
                         mUpdaterService.getUpdaterController().setPerformanceMode(enableABPerfMode);
                     }
                     if (Utils.isRecoveryUpdateExecPresent()) {
                         boolean enableRecoveryUpdate = updateRecovery.isChecked();
-                        SystemProperties.set(Constants.UPDATE_RECOVERY_PROPERTY,
-                                String.valueOf(enableRecoveryUpdate));
+                        DeviceInfoUtils.setRecoveryUpdateEnabled(enableRecoveryUpdate);
                     }
                 })
                 .show();
@@ -636,7 +633,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
     private void maybeShowWelcomeMessage() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean alreadySeen = preferences.getBoolean(Constants.HAS_SEEN_WELCOME_MESSAGE, false);
+        boolean alreadySeen = preferences.getBoolean(Constants.PREF_HAS_SEEN_WELCOME_MESSAGE, false);
         if (alreadySeen) {
             return;
         }
@@ -644,7 +641,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 .setTitle(R.string.welcome_title)
                 .setMessage(R.string.welcome_message)
                 .setPositiveButton(R.string.info_dialog_ok, (dialog, which) -> preferences.edit()
-                        .putBoolean(Constants.HAS_SEEN_WELCOME_MESSAGE, true)
+                        .putBoolean(Constants.PREF_HAS_SEEN_WELCOME_MESSAGE, true)
                         .apply())
                 .show();
     }

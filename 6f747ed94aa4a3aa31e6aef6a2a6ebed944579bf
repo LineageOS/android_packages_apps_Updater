@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b6b5930_14669d88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-09T12:17:00Z",
+      "side": 1,
+      "message": "Just dittos:",
+      "revId": "6f747ed94aa4a3aa31e6aef6a2a6ebed944579bf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd8b1add_9eaf57f8",
+        "filename": "app/src/main/java/org/lineageos/updater/util/InstallUtils.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-09T12:17:00Z",
+      "side": 1,
+      "message": "Remove newline here",
+      "revId": "6f747ed94aa4a3aa31e6aef6a2a6ebed944579bf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19e90d5b_fc459349",
+        "filename": "app/src/main/java/org/lineageos/updater/util/InstallUtils.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-09T12:17:00Z",
+      "side": 1,
+      "message": "```suggestion\n    fun isScratchMounted() \u003d runCatching {\n        File(\"/proc/mounts\").useLines { lines -\u003e\n            lines.any { it.split(\" \")[1] \u003d\u003d \"/mnt/scratch\" }\n        }\n    }.getOrDefault(false)\n```",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 5
+      },
+      "revId": "6f747ed94aa4a3aa31e6aef6a2a6ebed944579bf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

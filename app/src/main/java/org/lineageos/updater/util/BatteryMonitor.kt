@@ -11,7 +11,6 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.BatteryManager
 import android.os.UpdateEngine
-import androidx.preference.PreferenceManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -19,8 +18,9 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
-import org.lineageos.updater.misc.Constants
+import org.lineageos.updater.data.UserPreferencesRepository
 
 class BatteryMonitor(private val appContext: Context) {
     data class BatteryState(
@@ -39,12 +39,12 @@ class BatteryMonitor(private val appContext: Context) {
         }
     }
 
-    private val prefs = PreferenceManager.getDefaultSharedPreferences(appContext)
-
     val currentBatteryState: BatteryState
         get() = appContext.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
             ?.let { fromIntent(it) }
             ?: BATTERYLESS_STATE
+
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
 
     // Null on non-AB devices where update_engine is absent.
     private val updateEngine: UpdateEngine? = try {
@@ -52,6 +52,20 @@ class BatteryMonitor(private val appContext: Context) {
     } catch (_: Exception) {
         null
     }
+
+    private val abPerfMode = UserPreferencesRepository(appContext).abPerfModeFlow
+        .onEach {
+            try {
+                updateEngine?.setPerformanceMode(currentBatteryState.isAcCharging || it)
+            } catch (_: Throwable) {
+                // Ignored
+            }
+        }
+        .stateIn(
+            scope = scope,
+            started = SharingStarted.Eagerly,
+            initialValue = false,
+        )
 
     val batteryState: SharedFlow<BatteryState> = callbackFlow {
         var previousState = currentBatteryState
@@ -63,10 +77,7 @@ class BatteryMonitor(private val appContext: Context) {
                 // Guard on isAcCharging change to avoid redundant IPC on every battery level tick.
                 if (state.isAcCharging != previousState.isAcCharging) {
                     try {
-                        updateEngine?.setPerformanceMode(
-                            state.isAcCharging ||
-                                    prefs.getBoolean(Constants.PREF_AB_PERF_MODE, false)
-                        )
+                        updateEngine?.setPerformanceMode(state.isAcCharging || abPerfMode.value)
                     } catch (_: Throwable) {
                         // Ignored
                     }
@@ -84,7 +95,7 @@ class BatteryMonitor(private val appContext: Context) {
             appContext.unregisterReceiver(receiver)
         }
     }.stateIn(
-        scope = CoroutineScope(SupervisorJob() + Dispatchers.Default),
+        scope = scope,
         started = SharingStarted.WhileSubscribed(),
         initialValue = currentBatteryState
     )

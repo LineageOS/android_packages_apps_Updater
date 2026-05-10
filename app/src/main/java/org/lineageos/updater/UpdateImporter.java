@@ -13,9 +13,9 @@ import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
 import org.lineageos.updater.controller.UpdaterController;
+import org.lineageos.updater.data.Update;
+import org.lineageos.updater.data.UpdateStatus;
 import org.lineageos.updater.misc.Utils;
-import org.lineageos.updater.model.Update;
-import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -131,17 +131,14 @@ public class UpdateImporter {
     private Update buildLocalUpdate(File file) {
         final long timeStamp = getTimeStamp(file);
         final String name = activity.getString(R.string.local_update_name);
-        final Update update = new Update();
-        update.setAvailableOnline(false);
-        update.setName(name);
-        update.setFile(file);
-        update.setFileSize(file.length());
-        update.setDownloadId(Update.LOCAL_ID);
-        update.setTimestamp(timeStamp);
-        update.setStatus(UpdateStatus.VERIFIED);
-        update.setPersistentStatus(UpdateStatus.Persistent.VERIFIED);
-        update.setVersion(name);
-        return update;
+        return new Update.Builder()
+            .setName(name)
+            .setFile(file)
+            .setFileSize(file.length())
+            .setTimestamp(timeStamp)
+            .setStatus(UpdateStatus.VERIFIED)
+            .setVersion(name)
+            .build();
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")

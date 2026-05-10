@@ -11,7 +11,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
-import org.lineageos.updater.model.Update;
+import org.lineageos.updater.data.Update;
+import org.lineageos.updater.data.UpdateStatus;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -72,8 +73,9 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
     }
 
     private static void fillContentValues(Update update, ContentValues values) {
-        values.put(UpdateEntry.COLUMN_NAME_STATUS, update.getPersistentStatus());
-        values.put(UpdateEntry.COLUMN_NAME_PATH, update.getFile().getAbsolutePath());
+        values.put(UpdateEntry.COLUMN_NAME_STATUS, update.getStatus().getPersistentStatus());
+        File file = update.getFile();
+        values.put(UpdateEntry.COLUMN_NAME_PATH, file != null ? file.getAbsolutePath() : null);
         values.put(UpdateEntry.COLUMN_NAME_DOWNLOAD_ID, update.getDownloadId());
         values.put(UpdateEntry.COLUMN_NAME_TIMESTAMP, update.getTimestamp());
         values.put(UpdateEntry.COLUMN_NAME_TYPE, update.getType());
@@ -91,7 +93,7 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
     public void changeUpdateStatus(Update update) {
         String selection = UpdateEntry.COLUMN_NAME_DOWNLOAD_ID + " = ?";
         String[] selectionArgs = {update.getDownloadId()};
-        changeUpdateStatus(selection, selectionArgs, update.getPersistentStatus());
+        changeUpdateStatus(selection, selectionArgs, update.getStatus().getPersistentStatus());
     }
 
     private void changeUpdateStatus(String selection, String[] selectionArgs,
@@ -121,28 +123,31 @@ public class UpdatesDbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.query(UpdateEntry.TABLE_NAME, projection, selection, selectionArgs,
                 null, null, sort);
         List<Update> updates = new ArrayList<>();
-        if (cursor != null) {
-            while (cursor.moveToNext()) {
-                Update update = new Update();
-                int index = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_PATH);
-                update.setFile(new File(cursor.getString(index)));
-                update.setName(update.getFile().getName());
-                index = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_DOWNLOAD_ID);
-                update.setDownloadId(cursor.getString(index));
-                index = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_TIMESTAMP);
-                update.setTimestamp(cursor.getLong(index));
-                index = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_TYPE);
-                update.setType(cursor.getString(index));
-                index = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_VERSION);
-                update.setVersion(cursor.getString(index));
-                index = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_STATUS);
-                update.setPersistentStatus(cursor.getInt(index));
-                index = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_SIZE);
-                update.setFileSize(cursor.getLong(index));
-                updates.add(update);
+        while (cursor.moveToNext()) {
+            Update.Builder builder = new Update.Builder();
+            int idxPath = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_PATH);
+            String path = cursor.getString(idxPath);
+            if (path != null) {
+                File file = new File(path);
+                builder.setFile(file);
+                builder.setName(file.getName());
             }
-            cursor.close();
+            int idxDownloadId = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_DOWNLOAD_ID);
+            builder.setDownloadId(cursor.getString(idxDownloadId));
+            int idxTimestamp = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_TIMESTAMP);
+            builder.setTimestamp(cursor.getLong(idxTimestamp));
+            int idxType = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_TYPE);
+            builder.setType(cursor.getString(idxType));
+            int idxVersion = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_VERSION);
+            builder.setVersion(cursor.getString(idxVersion));
+            int idxStatus = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_STATUS);
+            int status = cursor.getInt(idxStatus);
+            builder.setStatus(UpdateStatus.fromPersistentStatus(status));
+            int idxSize = cursor.getColumnIndex(UpdateEntry.COLUMN_NAME_SIZE);
+            builder.setFileSize(cursor.getLong(idxSize));
+            updates.add(builder.build());
         }
+        cursor.close();
         return updates;
     }
 }

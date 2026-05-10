@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf25a444_d29dac60",
+        "filename": "app/src/main/java/org/lineageos/updater/util/NetworkMonitor.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-10T12:41:01Z",
+      "side": 1,
+      "message": "nit: We usually place companion objects at the end of the class declaration",
+      "revId": "9617476b773dc788400aa59ab41ca4b37ff6b1eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99b668f4_eedfb50d",

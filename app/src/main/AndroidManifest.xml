@@ -27,14 +27,13 @@
         android:label="@string/display_name"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/Theme.SpaLib"
         android:usesCleartextTraffic="false">
 
         <activity
             android:name=".UpdatesActivity"
             android:excludeFromRecents="true"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar"
             android:launchMode="singleTop">
             <intent-filter android:priority="2">
                 <action android:name="android.settings.SYSTEM_UPDATE_SETTINGS" />

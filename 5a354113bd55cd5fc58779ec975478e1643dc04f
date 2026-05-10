@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a7a16b8_0a98c134",
+        "filename": "app/src/main/java/org/lineageos/updater/util/NetworkMonitor.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-10T12:19:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2ac25b1_c36a6c46",
+      "revId": "5a354113bd55cd5fc58779ec975478e1643dc04f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33239492_4aad8b88",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-05-09T12:14:22Z",
       "side": 1,
       "message": "No, this leaks when the app is destroyed.\n\nMake `_networkState` a SharedFlow that uses `SharingStarted.WhileSubscribed()`, set initial value to `NetworkState(isOnline \u003d false, isMetered \u003d true)` and use `callbackFlow` to register/unregister the callback\n\nSee this as an example: https://github.com/LineageOS/android_packages_apps_Twelve/blob/lineage-23.2/app/src/main/java/org/lineageos/twelve/ext/StorageManager.kt",
+      "revId": "5a354113bd55cd5fc58779ec975478e1643dc04f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d8c6318_c0ffa35a",
+        "filename": "app/src/main/java/org/lineageos/updater/util/NetworkMonitor.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-10T12:19:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33239492_4aad8b88",
       "revId": "5a354113bd55cd5fc58779ec975478e1643dc04f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

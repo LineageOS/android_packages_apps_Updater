@@ -28,12 +28,14 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.WindowInsetsCompat;
@@ -47,7 +49,6 @@ import androidx.recyclerview.widget.SimpleItemAnimator;
 import com.android.settingslib.spa.framework.theme.SettingsOpacity;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.snackbar.Snackbar;
 
 import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterService;
@@ -60,7 +61,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class UpdatesActivity extends UpdatesListActivity implements UpdateImporter.Callbacks {
+public class UpdatesActivity extends AppCompatActivity implements UpdateImporter.Callbacks {
 
     private static final String TAG = "UpdatesActivity";
     private UpdaterService mUpdaterService;
@@ -98,7 +99,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         mIsTV = uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION;
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        mAdapter = new UpdatesListAdapter(this);
+        mAdapter = new UpdatesListAdapter(this, this::exportUpdate);
         recyclerView.setAdapter(mAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -210,14 +211,14 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             updateLastCheckedString(state.getLastCheckedTimestamp());
             setRefreshEnabled(!state.isCheckingForUpdates());
             if (!state.isCheckingForUpdates() && state.getErrorMessage() == null) {
-                showSnackbar(
+                showToast(
                         state.getUpdates().isEmpty()
                                 ? R.string.snack_no_updates_found
                                 : R.string.snack_updates_found,
-                        Snackbar.LENGTH_SHORT);
+                        Toast.LENGTH_SHORT);
             }
             if (state.getErrorMessage() != null) {
-                showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
+                showToast(R.string.snack_updates_check_failed, Toast.LENGTH_LONG);
                 mViewModel.errorMessageShown();
             }
             if (mUpdaterService != null) {
@@ -427,18 +428,17 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         Update update = mUpdaterService.getUpdaterController().getUpdate(downloadId);
         switch (update.getStatus()) {
             case PAUSED_ERROR:
-                showSnackbar(R.string.snack_download_failed, Snackbar.LENGTH_LONG);
+                showToast(R.string.snack_download_failed, Toast.LENGTH_LONG);
                 break;
             case VERIFICATION_FAILED:
-                showSnackbar(R.string.snack_download_verification_failed, Snackbar.LENGTH_LONG);
+                showToast(R.string.snack_download_verification_failed, Toast.LENGTH_LONG);
                 break;
             case VERIFIED:
-                showSnackbar(R.string.snack_download_verified, Snackbar.LENGTH_LONG);
+                showToast(R.string.snack_download_verified, Toast.LENGTH_LONG);
                 break;
         }
     }
 
-    @Override
     public void exportUpdate(Update update) {
         mToBeExported = update;
 
@@ -458,9 +458,8 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
         startService(intent);
     }
 
-    @Override
-    public void showSnackbar(int stringId, int duration) {
-        Snackbar.make(findViewById(R.id.main_container), stringId, duration).show();
+    public void showToast(int stringId, int duration) {
+        Toast.makeText(this, stringId, duration).show();
     }
 
     private void showPreferencesDialog() {

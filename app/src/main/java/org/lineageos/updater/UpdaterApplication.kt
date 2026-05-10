@@ -6,6 +6,9 @@
 package org.lineageos.updater
 
 import android.app.Application
+import com.android.settingslib.spa.framework.common.SettingsPageProviderRepository
+import com.android.settingslib.spa.framework.common.SpaEnvironment
+import com.android.settingslib.spa.framework.common.SpaEnvironmentFactory
 import org.lineageos.updater.notifications.NotificationHelper
 import org.lineageos.updater.util.BatteryMonitor
 import org.lineageos.updater.util.NetworkMonitor
@@ -16,6 +19,11 @@ class UpdaterApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        SpaEnvironmentFactory.reset(object : SpaEnvironment(applicationContext) {
+            override val pageProviderRepository = lazy {
+                SettingsPageProviderRepository(emptyList())
+            }
+        })
         NotificationHelper(this).setUpNotificationChannels()
     }
 }

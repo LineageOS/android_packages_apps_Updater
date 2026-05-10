@@ -44,16 +44,14 @@ import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
 import org.lineageos.updater.util.BatteryMonitor;
 import org.lineageos.updater.util.BatteryMonitor.BatteryState;
+import org.lineageos.updater.util.InstallUtils;
 import org.lineageos.updater.util.NetworkMonitor;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.ViewHolder> {
 
@@ -524,7 +522,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     .setMessage(message)
                     .setPositiveButton(android.R.string.ok, null);
         }
-        if (isScratchMounted()) {
+        if (InstallUtils.isScratchMounted()) {
             return new AlertDialog.Builder(mActivity)
                     .setTitle(R.string.dialog_scratch_mounted_title)
                     .setMessage(R.string.dialog_scratch_mounted_message)
@@ -647,14 +645,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         TextView textView = infoDialog.findViewById(android.R.id.message);
         if (textView != null) {
             textView.setMovementMethod(LinkMovementMethod.getInstance());
-        }
-    }
-
-    private static boolean isScratchMounted() {
-        try (Stream<String> lines = Files.lines(Path.of("/proc/mounts"))) {
-            return lines.anyMatch(x -> x.split(" ")[1].equals("/mnt/scratch"));
-        } catch (IOException e) {
-            return false;
         }
     }
 }

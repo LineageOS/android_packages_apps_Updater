@@ -16,6 +16,7 @@ import androidx.preference.PreferenceManager;
 
 import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.UpdateStatus;
+import org.lineageos.updater.data.UserPreferencesRepository;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.util.BatteryMonitor;
@@ -223,8 +224,7 @@ class ABUpdateInstaller {
             }
         }
 
-        applyPerformanceMode(PreferenceManager.getDefaultSharedPreferences(mContext)
-                .getBoolean(Constants.PREF_AB_PERF_MODE, false));
+        applyPerformanceMode(UserPreferencesRepository.getAbPerfModeBlocking(mContext));
 
         String zipFileUri = "file://" + file.getAbsolutePath();
         try {
@@ -272,8 +272,7 @@ class ABUpdateInstaller {
             return;
         }
 
-        applyPerformanceMode(PreferenceManager.getDefaultSharedPreferences(mContext)
-                .getBoolean(Constants.PREF_AB_PERF_MODE, false));
+        applyPerformanceMode(UserPreferencesRepository.getAbPerfModeBlocking(mContext));
     }
 
     private void installationDone(boolean needsReboot) {
@@ -303,10 +302,6 @@ class ABUpdateInstaller {
                 update.withStatus(UpdateStatus.INSTALLATION_CANCELLED));
         mUpdaterController.notifyUpdateChange(mDownloadId);
 
-    }
-
-    public void setPerformanceMode(boolean enable) {
-        applyPerformanceMode(enable);
     }
 
     public void suspend() {

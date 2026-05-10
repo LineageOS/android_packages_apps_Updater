@@ -8,19 +8,6 @@ package org.lineageos.updater.misc
 object Constants {
 
     /**
-     * User preferences
-     */
-    const val AUTO_UPDATES_CHECK_INTERVAL_NEVER = 0
-    const val AUTO_UPDATES_CHECK_INTERVAL_DAILY = 1
-    const val AUTO_UPDATES_CHECK_INTERVAL_WEEKLY = 2
-    const val AUTO_UPDATES_CHECK_INTERVAL_MONTHLY = 3
-
-    const val PREF_AB_PERF_MODE = "ab_perf_mode"
-    const val PREF_AUTO_DELETE_UPDATES = "auto_delete_updates"
-    const val PREF_AUTO_UPDATES_CHECK_INTERVAL = "auto_updates_check_interval"
-    const val PREF_METERED_NETWORK_WARNING = "pref_metered_network_warning"
-
-    /**
      * Internal preferences
      */
     const val PREF_HAS_SEEN_INFO_DIALOG = "has_seen_info_dialog"

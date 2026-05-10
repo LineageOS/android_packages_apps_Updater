@@ -74,10 +74,8 @@ android_app {
         "androidx.work_work-runtime-ktx",
         "com.google.android.material_material",
         "Updater_io.ktor_ktor-client-android",
-        "Updater_io.ktor_ktor-client-content-negotiation",
-        "Updater_io.ktor_ktor-client-core",
-        "Updater_io.ktor_ktor-serialization-kotlinx-json",
         "kotlin-stdlib",
+        "kotlinx_serialization_json",
     ],
 
     optimize: {

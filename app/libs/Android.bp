@@ -36,37 +36,6 @@ java_import {
 }
 
 java_library_static {
-    name: "Updater_io.ktor_ktor-client-content-negotiation",
-    sdk_version: "33",
-    min_sdk_version: "32",
-    apex_available: [
-        "//apex_available:platform",
-        "//apex_available:anyapex",
-    ],
-    static_libs: [
-        "Updater_io.ktor_ktor-client-content-negotiation-jvm",
-    ],
-}
-
-java_import {
-    name: "Updater_io.ktor_ktor-client-content-negotiation-jvm",
-    jars: ["io/ktor/ktor-client-content-negotiation-jvm/3.4.1/ktor-client-content-negotiation-jvm-3.4.1.jar"],
-    sdk_version: "33",
-    min_sdk_version: "32",
-    apex_available: [
-        "//apex_available:platform",
-        "//apex_available:anyapex",
-    ],
-    static_libs: [
-        "Updater_io.ktor_ktor-client-core",
-        "Updater_io.ktor_ktor-serialization",
-        "kotlin-stdlib",
-        "kotlinx-coroutines-core",
-        "Updater_org.slf4j_slf4j-api",
-    ],
-}
-
-java_library_static {
     name: "Updater_io.ktor_ktor-client-core",
     sdk_version: "33",
     min_sdk_version: "32",
@@ -96,6 +65,7 @@ java_import {
         "Updater_io.ktor_ktor-websocket-serialization",
         "kotlin-stdlib",
         "kotlinx-coroutines-core",
+        "Updater_org.jetbrains.kotlinx_kotlinx-coroutines-slf4j",
         "Updater_org.slf4j_slf4j-api",
     ],
 }
@@ -284,68 +254,6 @@ java_import {
 }
 
 java_library_static {
-    name: "Updater_io.ktor_ktor-serialization-kotlinx",
-    sdk_version: "33",
-    min_sdk_version: "32",
-    apex_available: [
-        "//apex_available:platform",
-        "//apex_available:anyapex",
-    ],
-    static_libs: [
-        "Updater_io.ktor_ktor-serialization-kotlinx-jvm",
-    ],
-}
-
-java_library_static {
-    name: "Updater_io.ktor_ktor-serialization-kotlinx-json",
-    sdk_version: "33",
-    min_sdk_version: "32",
-    apex_available: [
-        "//apex_available:platform",
-        "//apex_available:anyapex",
-    ],
-    static_libs: [
-        "Updater_io.ktor_ktor-serialization-kotlinx-json-jvm",
-    ],
-}
-
-java_import {
-    name: "Updater_io.ktor_ktor-serialization-kotlinx-json-jvm",
-    jars: ["io/ktor/ktor-serialization-kotlinx-json-jvm/3.4.1/ktor-serialization-kotlinx-json-jvm-3.4.1.jar"],
-    sdk_version: "33",
-    min_sdk_version: "32",
-    apex_available: [
-        "//apex_available:platform",
-        "//apex_available:anyapex",
-    ],
-    static_libs: [
-        "Updater_io.ktor_ktor-serialization-kotlinx",
-        "kotlin-stdlib",
-        "kotlinx-coroutines-core",
-        "kotlinx_serialization_json",
-        "Updater_org.slf4j_slf4j-api",
-    ],
-}
-
-java_import {
-    name: "Updater_io.ktor_ktor-serialization-kotlinx-jvm",
-    jars: ["io/ktor/ktor-serialization-kotlinx-jvm/3.4.1/ktor-serialization-kotlinx-jvm-3.4.1.jar"],
-    sdk_version: "33",
-    min_sdk_version: "32",
-    apex_available: [
-        "//apex_available:platform",
-        "//apex_available:anyapex",
-    ],
-    static_libs: [
-        "Updater_io.ktor_ktor-serialization",
-        "kotlin-stdlib",
-        "kotlinx-coroutines-core",
-        "kotlinx_serialization_core",
-        "Updater_org.slf4j_slf4j-api",
-    ],
-}
-
-java_library_static {
     name: "Updater_io.ktor_ktor-sse",
     sdk_version: "33",
     min_sdk_version: "32",
@@ -461,6 +369,22 @@ java_import {
     static_libs: [
         "Updater_io.ktor_ktor-http",
         "Updater_io.ktor_ktor-utils",
+        "kotlin-stdlib",
+        "kotlinx-coroutines-core",
+        "Updater_org.slf4j_slf4j-api",
+    ],
+}
+
+java_import {
+    name: "Updater_org.jetbrains.kotlinx_kotlinx-coroutines-slf4j",
+    jars: ["org/jetbrains/kotlinx/kotlinx-coroutines-slf4j/1.10.2/kotlinx-coroutines-slf4j-1.10.2.jar"],
+    sdk_version: "33",
+    min_sdk_version: "32",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    static_libs: [
         "kotlin-stdlib",
         "kotlinx-coroutines-core",
         "Updater_org.slf4j_slf4j-api",

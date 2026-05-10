@@ -10,12 +10,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:focusable="true"
-    android:foreground="?attr/selectableItemBackground"
+    android:foreground="?android:attr/selectableItemBackground"
     android:nextFocusRight="@+id/update_action"
     android:layout_marginTop="8dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp"
-    app:cardCornerRadius="16dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    app:cardCornerRadius="28dp"
+    app:cardBackgroundColor="@color/settingslib_materialColorSurfaceBright"
     app:contentPadding="16dp">
 
     <LinearLayout
@@ -35,10 +37,9 @@
                 android:id="@+id/build_version"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.87"
                 android:drawablePadding="8dp"
                 android:maxLines="1"
-                android:paddingBottom="8sp"
+                android:paddingBottom="8dp"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="16sp"
                 tools:text="LineageOS 20" />
@@ -49,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
                 tools:text="18 June 2023" />
 
             <RelativeLayout
@@ -68,7 +70,8 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:paddingTop="4sp"
+                        android:paddingTop="4dp"
+                        android:progressDrawable="@drawable/settingslib_progress_horizontal"
                         tools:progress="65" />
 
                     <TextView
@@ -77,6 +80,7 @@
                         android:layout_height="wrap_content"
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
+                        android:textColor="?android:attr/textColorSecondary"
                         tools:text="65%" />
                 </LinearLayout>
 
@@ -88,6 +92,7 @@
                     android:ellipsize="marquee"
                     android:singleLine="true"
                     android:visibility="invisible"
+                    android:textColor="?android:attr/textColorSecondary"
                     tools:text="162 of 1.1 GB (3 minutes left)"
                     tools:visibility="visible" />
 
@@ -95,8 +100,9 @@
                     android:id="@+id/build_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="8sp"
+                    android:paddingTop="8dp"
                     android:singleLine="true"
+                    android:textColor="?android:attr/textColorSecondary"
                     tools:text="1.1 GB"
                     tools:visibility="invisible" />
             </RelativeLayout>

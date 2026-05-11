@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78349c20_446ee08e",
+        "filename": "app/src/main/java/org/lineageos/updater/util/NetworkMonitor.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-11T02:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf25a444_d29dac60",
+      "revId": "9617476b773dc788400aa59ab41ca4b37ff6b1eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99b668f4_eedfb50d",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-05-10T12:39:43Z",
       "side": 1,
       "message": "Do not store context in static fields\n\nThis is how we handle application-scoped singletons: https://github.com/LineageOS/android_packages_apps_Twelve/blob/lineage-23.2/app/src/main/java/org/lineageos/twelve/TwelveApplication.kt#L26-L28",
+      "revId": "9617476b773dc788400aa59ab41ca4b37ff6b1eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7360c28_e8cb239c",
+        "filename": "app/src/main/java/org/lineageos/updater/util/NetworkMonitor.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-11T02:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99b668f4_eedfb50d",
       "revId": "9617476b773dc788400aa59ab41ca4b37ff6b1eb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

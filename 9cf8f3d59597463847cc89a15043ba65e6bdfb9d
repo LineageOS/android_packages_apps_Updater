@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ad9644d_401f62f0",
+        "filename": "app/src/main/java/org/lineageos/updater/data/UpdatesRepository.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-11T02:34:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "216abaa4_340189d3",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 21
+      },
+      "revId": "9cf8f3d59597463847cc89a15043ba65e6bdfb9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ee0ea39_7667bc89",
@@ -37,6 +61,30 @@
       "writtenOn": "2026-05-10T12:42:39Z",
       "side": 1,
       "message": "IOException",
+      "range": {
+        "startLine": 50,
+        "startChar": 15,
+        "endLine": 50,
+        "endChar": 34
+      },
+      "revId": "9cf8f3d59597463847cc89a15043ba65e6bdfb9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ad4398d_ae82b1ea",
+        "filename": "app/src/main/java/org/lineageos/updater/data/UpdatesRepository.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-11T02:34:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ee0ea39_7667bc89",
       "range": {
         "startLine": 50,
         "startChar": 15,

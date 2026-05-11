@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc74f774_39b4b5f3",
+        "filename": "app/src/main/java/org/lineageos/updater/util/BatteryMonitor.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-11T02:36:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "045741e6_733ae57f",
+      "revId": "ff18cf52d7ee529e7be4702c0f35d211c0cf1942",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "30ece1fe_328f41e7",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-05-10T12:40:18Z",
       "side": 1,
       "message": "100 chars",
+      "revId": "ff18cf52d7ee529e7be4702c0f35d211c0cf1942",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3991ca41_c5b900ce",
+        "filename": "app/src/main/java/org/lineageos/updater/util/BatteryMonitor.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-11T02:36:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30ece1fe_328f41e7",
       "revId": "ff18cf52d7ee529e7be4702c0f35d211c0cf1942",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

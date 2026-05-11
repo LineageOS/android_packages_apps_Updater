@@ -31,6 +31,10 @@
         android:usesCleartextTraffic="false">
 
         <activity
+            android:name=".preferences.PreferencesActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".UpdatesActivity"
             android:excludeFromRecents="true"
             android:exported="true"
@@ -63,12 +67,6 @@
         </service>
 
         <receiver android:name=".UpdaterReceiver" android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-            </intent-filter>
-        </receiver>
-
-        <receiver android:name=".UpdatesCheckReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>

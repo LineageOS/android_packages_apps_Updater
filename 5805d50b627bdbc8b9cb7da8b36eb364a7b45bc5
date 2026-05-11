@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "809855a3_d9d3b248",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdaterApplication.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-11T12:23:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b62d131_07efa842",
+      "revId": "5805d50b627bdbc8b9cb7da8b36eb364a7b45bc5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5f9213f_dfe384a8",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-05-11T11:46:02Z",
       "side": 1,
       "message": "Then pass it here",
+      "revId": "5805d50b627bdbc8b9cb7da8b36eb364a7b45bc5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a7145f4_320dc217",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdaterApplication.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-11T12:23:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5f9213f_dfe384a8",
       "revId": "5805d50b627bdbc8b9cb7da8b36eb364a7b45bc5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -52,6 +88,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "06ba8424_484d390e",
+        "filename": "app/src/main/java/org/lineageos/updater/util/NetworkMonitor.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-11T12:23:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "639393a4_1a1f8c5b",
+      "revId": "5805d50b627bdbc8b9cb7da8b36eb364a7b45bc5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e60129b2_34c7bdf7",
@@ -65,6 +119,24 @@
       "writtenOn": "2026-05-11T11:46:02Z",
       "side": 1,
       "message": "...then use the coroutine scope there",
+      "revId": "5805d50b627bdbc8b9cb7da8b36eb364a7b45bc5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35732868_c0cf69dd",
+        "filename": "app/src/main/java/org/lineageos/updater/util/NetworkMonitor.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-11T12:23:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e60129b2_34c7bdf7",
       "revId": "5805d50b627bdbc8b9cb7da8b36eb364a7b45bc5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

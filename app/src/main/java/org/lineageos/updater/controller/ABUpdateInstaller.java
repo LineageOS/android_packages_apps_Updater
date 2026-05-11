@@ -14,10 +14,12 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
+import org.lineageos.updater.UpdaterApplication;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.Update;
 import org.lineageos.updater.model.UpdateStatus;
+import org.lineageos.updater.util.BatteryMonitor;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -126,6 +128,20 @@ class ABUpdateInstaller {
         return TextUtils.equals(waitingId, downloadId);
     }
 
+    private boolean shouldEnablePerformanceMode(boolean userPreferenceEnabled) {
+        return ((UpdaterApplication) mContext).getBatteryMonitor()
+                .getCurrentBatteryState().isAcCharging()
+                || userPreferenceEnabled;
+    }
+
+    private void applyPerformanceMode(boolean userPreferenceEnabled) {
+        try {
+            mUpdateEngine.setPerformanceMode(shouldEnablePerformanceMode(userPreferenceEnabled));
+        } catch (Throwable e) {
+            Log.w(TAG, "Could not set performance mode", e);
+        }
+    }
+
     private ABUpdateInstaller(Context context, UpdaterController updaterController) {
         mUpdaterController = updaterController;
         mContext = context.getApplicationContext();
@@ -197,9 +213,8 @@ class ABUpdateInstaller {
             }
         }
 
-        boolean enableABPerfMode = PreferenceManager.getDefaultSharedPreferences(mContext)
-                .getBoolean(Constants.PREF_AB_PERF_MODE, false);
-        mUpdateEngine.setPerformanceMode(enableABPerfMode);
+        applyPerformanceMode(PreferenceManager.getDefaultSharedPreferences(mContext)
+                .getBoolean(Constants.PREF_AB_PERF_MODE, false));
 
         String zipFileUri = "file://" + file.getAbsolutePath();
         try {
@@ -240,8 +255,11 @@ class ABUpdateInstaller {
         mBound = mUpdateEngine.bind(mUpdateEngineCallback);
         if (!mBound) {
             Log.e(TAG, "Could not bind");
+            return;
         }
 
+        applyPerformanceMode(PreferenceManager.getDefaultSharedPreferences(mContext)
+                .getBoolean(Constants.PREF_AB_PERF_MODE, false));
     }
 
     private void installationDone(boolean needsReboot) {
@@ -273,7 +291,7 @@ class ABUpdateInstaller {
     }
 
     public void setPerformanceMode(boolean enable) {
-        mUpdateEngine.setPerformanceMode(enable);
+        applyPerformanceMode(enable);
     }
 
     public void suspend() {

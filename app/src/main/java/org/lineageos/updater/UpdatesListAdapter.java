@@ -5,10 +5,7 @@
 package org.lineageos.updater;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.os.BatteryManager;
 import android.os.PowerManager;
 import android.text.SpannableString;
 import android.text.format.Formatter;
@@ -45,6 +42,8 @@ import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.UpdateInfo;
 import org.lineageos.updater.model.UpdateStatus;
+import org.lineageos.updater.util.BatteryMonitor;
+import org.lineageos.updater.util.BatteryMonitor.BatteryState;
 import org.lineageos.updater.util.NetworkMonitor;
 
 import java.io.IOException;
@@ -60,16 +59,13 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     private static final String TAG = "UpdateListAdapter";
 
-    private static final int BATTERY_PLUGGED_ANY = BatteryManager.BATTERY_PLUGGED_AC
-            | BatteryManager.BATTERY_PLUGGED_USB
-            | BatteryManager.BATTERY_PLUGGED_WIRELESS;
-
     private List<String> mDownloadIds;
     private String mSelectedDownload;
     private UpdaterController mUpdaterController;
     private final UpdatesListActivity mActivity;
 
     private AlertDialog infoDialog;
+    private final BatteryMonitor mBatteryMonitor;
     private final NetworkMonitor mNetworkMonitor;
 
     private enum Action {
@@ -120,6 +116,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     public UpdatesListAdapter(UpdatesListActivity activity) {
         mActivity = activity;
         UpdaterApplication application = (UpdaterApplication) activity.getApplication();
+        mBatteryMonitor = application.getBatteryMonitor();
         mNetworkMonitor = application.getNetworkMonitor();
     }
 
@@ -518,11 +515,10 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private AlertDialog.Builder getInstallDialog(final String downloadId) {
-        if (!isBatteryLevelOk()) {
-            Resources resources = mActivity.getResources();
-            String message = resources.getString(R.string.dialog_battery_low_message_pct,
-                    resources.getInteger(R.integer.battery_ok_percentage_discharging),
-                    resources.getInteger(R.integer.battery_ok_percentage_charging));
+        if (!mBatteryMonitor.getCurrentBatteryState().isLevelOk()) {
+            String message = mActivity.getString(R.string.dialog_battery_low_message_pct,
+                    BatteryState.MIN_BATT_PCT_DISCHARGING,
+                    BatteryState.MIN_BATT_PCT_CHARGING);
             return new AlertDialog.Builder(mActivity)
                     .setTitle(R.string.dialog_battery_low_title)
                     .setMessage(message)
@@ -598,7 +594,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         ContextThemeWrapper wrapper = new ContextThemeWrapper(mActivity,
                 R.style.AppTheme_PopupMenuOverlapAnchor);
         PopupMenu popupMenu = new PopupMenu(wrapper, anchor, Gravity.NO_GRAVITY,
-                R.attr.actionOverflowMenuStyle, 0);
+                android.R.attr.actionOverflowMenuStyle, 0);
         popupMenu.inflate(R.menu.menu_action_mode);
 
         boolean shouldShowDelete = canDelete;
@@ -652,21 +648,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         if (textView != null) {
             textView.setMovementMethod(LinkMovementMethod.getInstance());
         }
-    }
-
-    private boolean isBatteryLevelOk() {
-        Intent intent = mActivity.registerReceiver(null,
-                new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-        if (intent == null || !intent.getBooleanExtra(BatteryManager.EXTRA_PRESENT, false)) {
-            return true;
-        }
-        int percent = Math.round(100.f * intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 100) /
-                intent.getIntExtra(BatteryManager.EXTRA_SCALE, 100));
-        int plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0);
-        int required = (plugged & BATTERY_PLUGGED_ANY) != 0 ?
-                mActivity.getResources().getInteger(R.integer.battery_ok_percentage_charging) :
-                mActivity.getResources().getInteger(R.integer.battery_ok_percentage_discharging);
-        return percent >= required;
     }
 
     private static boolean isScratchMounted() {

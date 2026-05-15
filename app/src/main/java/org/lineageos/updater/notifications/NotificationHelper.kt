@@ -66,7 +66,7 @@ class NotificationHelper(context: Context) {
             .setContentIntent(intent)
             .setContentTitle(appContext.getString(R.string.new_updates_found_title))
             .setContentText(appContext.getString(R.string.new_updates_found_summary))
-            .setSmallIcon(R.drawable.ic_system_update)
+            .setSmallIcon(R.drawable.ic_notification)
             .build()
         notificationManager.notify(ID_NEW_UPDATES, notification)
     }
@@ -93,7 +93,7 @@ class NotificationHelper(context: Context) {
                 .setCategory(Notification.CATEGORY_ERROR)
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .setContentIntent(intent)
-                .setSmallIcon(R.drawable.ic_system_update)
+                .setSmallIcon(R.drawable.ic_notification)
                 .setContentTitle(appContext.getString(R.string.update_failed_notification))
                 .setStyle(Notification.BigTextStyle().bigText(buildInfo))
                 .setContentText(buildInfo)

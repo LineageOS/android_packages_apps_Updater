@@ -113,7 +113,7 @@ public class ExportUpdateService extends Service {
         notificationStyle.setBigContentTitle(getString(R.string.dialog_export_title));
         notificationStyle.bigText(fileName);
         notificationBuilder.setStyle(notificationStyle);
-        notificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+        notificationBuilder.setSmallIcon(R.drawable.ic_notification);
 
         startForeground(NOTIFICATION_ID, notificationBuilder.build(),
                 ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);

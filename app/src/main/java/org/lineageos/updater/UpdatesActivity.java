@@ -15,7 +15,6 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.icu.text.DateFormat;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.widget.TextView;
@@ -100,22 +99,6 @@ public class UpdatesActivity extends UpdatesScaffoldActivity implements UpdateIm
             }
         };
 
-        TextView headerTitle = findViewById(R.id.header_title);
-        headerTitle.setText(getString(R.string.header_title_text,
-                DeviceInfoUtils.getBuildVersion()));
-
-        TextView headerBuildVersion = findViewById(R.id.header_build_version);
-        headerBuildVersion.setText(
-                getString(R.string.header_android_version, Build.VERSION.RELEASE));
-
-        TextView headerBuildDate = findViewById(R.id.header_build_date);
-        headerBuildDate.setText(StringGenerator.getDateLocalizedUTC(this,
-                DateFormat.LONG, DeviceInfoUtils.getBuildDateTimestamp()));
-
-        TextView headerSecurityPatch = findViewById(R.id.header_security_patch_level);
-        headerSecurityPatch.setText(getString(R.string.header_android_security_update,
-                DeviceInfoUtils.getSecurityPatch()));
-
         mViewModel = new ViewModelProvider(this, UpdatesViewModel.factory(getApplication()))
                 .get(UpdatesViewModel.class);
 
@@ -186,13 +169,6 @@ public class UpdatesActivity extends UpdatesScaffoldActivity implements UpdateIm
     @Override
     public void onLocalUpdateClick() {
         mUpdateImporter.openImportPicker();
-    }
-
-    @Override
-    public void onChangelogClick() {
-        Intent openUrl = new Intent(Intent.ACTION_VIEW,
-                Uri.parse(Utils.getChangelogURL(this)));
-        startActivity(openUrl);
     }
 
     @Override

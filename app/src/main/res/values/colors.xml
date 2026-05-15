@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Base background of the header card. -->
+    <color name="brand_primary">#167C80</color>
+
+    <!-- Tiled pattern overlay color for the header card. -->
+    <color name="brand_pattern">#48A0A3</color>
+
+    <!-- Content color on the header (text, icons, mark). Always white on teal. -->
+    <color name="on_brand_surface">#FFFFFF</color>
+
+    <!-- Sheen gradient color -->
+    <color name="brand_sheen">#EADDFF</color>
+</resources>

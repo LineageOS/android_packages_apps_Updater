@@ -5,6 +5,7 @@
 
 package org.lineageos.updater.deviceinfo
 
+import android.os.Build
 import android.os.SystemProperties
 import com.android.settingslib.DeviceInfoUtils as SettingsLibDeviceInfoUtils
 
@@ -22,7 +23,11 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
     private const val PROP_UPDATER_URI = "lineage.updater.uri"
     private const val PROP_UPDATE_RECOVERY = "persist.vendor.recovery_update"
 
-    // Read-only properties
+    // Read-only
+    val androidVersion: String = Build.VERSION.RELEASE
+
+    val buildSecurityPatch: String = Build.VERSION.SECURITY_PATCH
+
     @JvmStatic
     val buildDateTimestamp: Long = SystemProperties.getLong(PROP_BUILD_DATE, 0)
 

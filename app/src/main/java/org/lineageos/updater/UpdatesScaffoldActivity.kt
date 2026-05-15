@@ -13,6 +13,11 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.calculateEndPadding
+import androidx.compose.foundation.layout.calculateStartPadding
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -25,8 +30,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.android.settingslib.spa.framework.compose.LocalNavController
 import com.android.settingslib.spa.framework.compose.NavControllerWrapper
@@ -40,6 +49,7 @@ import org.lineageos.updater.data.UpdateStatus
 import org.lineageos.updater.deviceinfo.DeviceInfoBanner
 import org.lineageos.updater.preferences.PreferencesActivity
 import org.lineageos.updater.updatescheck.UpdatesCheck
+import org.lineageos.updater.updatescheck.UpdatesCheckModel
 
 abstract class UpdatesScaffoldActivity : ComponentActivity() {
 
@@ -65,43 +75,20 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
             CompositionLocalProvider(LocalNavController provides navController) {
                 SettingsTheme {
                     val uiState by viewModel.uiState.collectAsState()
-
-                    SettingsScaffold(
-                        title = getTitleForUpdateStatus(uiState.updates),
-                    ) { paddingValues ->
-                        Column(
-                            Modifier
-                                .fillMaxSize()
-                                .padding(paddingValues)
-                                .verticalScroll(rememberScrollState())
-                        ) {
-                            DeviceInfoBanner()
-
-                            UpdatesCheck(
-                                model = uiState.updatesCheckModel,
-                                onCheckClick = { onRefreshClick() },
+                    UpdatesScaffoldContent(
+                        uiState = uiState,
+                        legacyView = capturedView,
+                        onRefreshClick = { onRefreshClick() },
+                        onLocalUpdateClick = { onLocalUpdateClick() },
+                        onPreferencesClick = {
+                            startActivity(
+                                Intent(
+                                    this@UpdatesScaffoldActivity,
+                                    PreferencesActivity::class.java,
+                                )
                             )
-
-                            AndroidView(
-                                factory = { capturedView },
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .nestedScroll(rememberNestedScrollInteropConnection()),
-                            )
-
-                            UpdatesFooter(
-                                onLocalUpdateClick = { onLocalUpdateClick() },
-                                onPreferencesClick = {
-                                    startActivity(
-                                        Intent(
-                                            this@UpdatesScaffoldActivity,
-                                            PreferencesActivity::class.java,
-                                        )
-                                    )
-                                },
-                            )
-                        }
-                    }
+                        },
+                    )
                 }
             }
         }
@@ -112,6 +99,150 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
 
     open fun onRefreshClick() {}
     open fun onLocalUpdateClick() {}
+}
+
+@Composable
+private fun UpdatesScaffoldContent(
+    uiState: UpdatesUiState,
+    legacyView: View,
+    onRefreshClick: () -> Unit,
+    onLocalUpdateClick: () -> Unit,
+    onPreferencesClick: () -> Unit,
+) {
+    val title = getTitleForUpdateStatus(uiState.updates)
+
+    SettingsScaffold(title = title) { paddingValues ->
+        if (isWideScreen()) {
+            WideUpdatesScaffold(
+                paddingValues = paddingValues,
+                updatesCheckModel = uiState.updatesCheckModel,
+                legacyView = legacyView,
+                onRefreshClick = onRefreshClick,
+                onLocalUpdateClick = onLocalUpdateClick,
+                onPreferencesClick = onPreferencesClick,
+            )
+        } else {
+            UpdatesScaffold(
+                paddingValues = paddingValues,
+                updatesCheckModel = uiState.updatesCheckModel,
+                legacyView = legacyView,
+                onRefreshClick = onRefreshClick,
+                onLocalUpdateClick = onLocalUpdateClick,
+                onPreferencesClick = onPreferencesClick,
+            )
+        }
+    }
+}
+
+@Composable
+private fun WideUpdatesScaffold(
+    paddingValues: PaddingValues,
+    updatesCheckModel: UpdatesCheckModel,
+    legacyView: View,
+    onRefreshClick: () -> Unit,
+    onLocalUpdateClick: () -> Unit,
+    onPreferencesClick: () -> Unit,
+) {
+    val layoutDirection = LocalLayoutDirection.current
+
+    Row(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(
+                top = paddingValues.calculateTopPadding(),
+                start = paddingValues.calculateStartPadding(layoutDirection),
+                end = paddingValues.calculateEndPadding(layoutDirection),
+            )
+    ) {
+        UpdatesInformationPane(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight()
+                .verticalScroll(rememberScrollState())
+                .padding(bottom = paddingValues.calculateBottomPadding()),
+        )
+        UpdatesActionPane(
+            model = updatesCheckModel,
+            legacyView = legacyView,
+            onRefreshClick = onRefreshClick,
+            onLocalUpdateClick = onLocalUpdateClick,
+            onPreferencesClick = onPreferencesClick,
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight()
+                .verticalScroll(rememberScrollState())
+                .padding(bottom = paddingValues.calculateBottomPadding()),
+        )
+    }
+}
+
+@Composable
+private fun UpdatesScaffold(
+    paddingValues: PaddingValues,
+    updatesCheckModel: UpdatesCheckModel,
+    legacyView: View,
+    onRefreshClick: () -> Unit,
+    onLocalUpdateClick: () -> Unit,
+    onPreferencesClick: () -> Unit,
+) {
+    Column(
+        Modifier
+            .fillMaxSize()
+            .padding(paddingValues)
+            .verticalScroll(rememberScrollState())
+    ) {
+        UpdatesInformationPane()
+        UpdatesActionPane(
+            model = updatesCheckModel,
+            legacyView = legacyView,
+            onRefreshClick = onRefreshClick,
+            onLocalUpdateClick = onLocalUpdateClick,
+            onPreferencesClick = onPreferencesClick,
+        )
+    }
+}
+
+@Composable
+private fun UpdatesInformationPane(
+    modifier: Modifier = Modifier,
+) {
+    DeviceInfoBanner(modifier = modifier)
+}
+
+@Composable
+private fun UpdatesActionPane(
+    model: UpdatesCheckModel,
+    legacyView: View,
+    onRefreshClick: () -> Unit,
+    onLocalUpdateClick: () -> Unit,
+    onPreferencesClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Column(modifier = modifier) {
+        UpdatesCheck(
+            model = model,
+            onCheckClick = onRefreshClick,
+        )
+        AndroidView(
+            factory = { legacyView },
+            modifier = Modifier
+                .fillMaxWidth()
+                .nestedScroll(rememberNestedScrollInteropConnection()),
+        )
+        UpdatesFooter(
+            onLocalUpdateClick = onLocalUpdateClick,
+            onPreferencesClick = onPreferencesClick,
+        )
+    }
+}
+
+@Composable
+private fun isWideScreen(): Boolean {
+    val minWideScreenWidth = 600.dp
+    val density = LocalDensity.current
+    val windowSize = LocalWindowInfo.current.containerSize
+
+    return with(density) { windowSize.width.toDp() >= minWideScreenWidth }
 }
 
 @Composable

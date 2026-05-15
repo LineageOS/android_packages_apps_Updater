@@ -12,8 +12,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
@@ -31,8 +35,11 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.android.settingslib.spa.framework.compose.LocalNavController
 import com.android.settingslib.spa.framework.compose.NavControllerWrapper
 import com.android.settingslib.spa.framework.theme.SettingsTheme
+import com.android.settingslib.spa.widget.preference.Preference
+import com.android.settingslib.spa.widget.preference.PreferenceModel
 import com.android.settingslib.spa.widget.scaffold.MoreOptionsAction
 import com.android.settingslib.spa.widget.scaffold.SettingsScaffold
+import com.android.settingslib.spa.widget.ui.Category
 import org.lineageos.updater.data.Update
 import org.lineageos.updater.data.UpdateStatus
 import org.lineageos.updater.preferences.PreferencesActivity
@@ -83,30 +90,37 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
                             }
 
                             MoreOptionsAction {
-                                MenuItem(stringResource(R.string.local_update_import)) {
-                                    onLocalUpdateClick()
-                                }
-                                MenuItem(stringResource(R.string.menu_preferences)) {
-                                    startActivity(
-                                        Intent(
-                                            this@UpdatesScaffoldActivity,
-                                            PreferencesActivity::class.java,
-                                        )
-                                    )
-                                }
                                 MenuItem(stringResource(R.string.menu_show_changelog)) {
                                     onChangelogClick()
                                 }
                             }
                         },
                     ) { paddingValues ->
-                        AndroidView(
-                            factory = { capturedView },
-                            modifier = Modifier
+                        Column(
+                            Modifier
                                 .fillMaxSize()
                                 .padding(paddingValues)
-                                .nestedScroll(rememberNestedScrollInteropConnection()),
-                        )
+                                .verticalScroll(rememberScrollState())
+                        ) {
+                            AndroidView(
+                                factory = { capturedView },
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .nestedScroll(rememberNestedScrollInteropConnection()),
+                            )
+
+                            UpdatesFooter(
+                                onLocalUpdateClick = { onLocalUpdateClick() },
+                                onPreferencesClick = {
+                                    startActivity(
+                                        Intent(
+                                            this@UpdatesScaffoldActivity,
+                                            PreferencesActivity::class.java,
+                                        )
+                                    )
+                                },
+                            )
+                        }
                     }
                 }
             }
@@ -119,6 +133,28 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
     open fun onRefreshClick() {}
     open fun onLocalUpdateClick() {}
     open fun onChangelogClick() {}
+}
+
+@Composable
+private fun UpdatesFooter(
+    onLocalUpdateClick: () -> Unit,
+    onPreferencesClick: () -> Unit,
+) {
+    val localUpdateSummary = stringResource(R.string.local_update_import_summary)
+    val preferencesSummary = stringResource(R.string.preferences_summary)
+
+    Category {
+        Preference(object : PreferenceModel {
+            override val title = stringResource(R.string.local_update_import)
+            override val summary = { localUpdateSummary }
+            override val onClick = onLocalUpdateClick
+        })
+        Preference(object : PreferenceModel {
+            override val title = stringResource(R.string.menu_preferences)
+            override val summary = { preferencesSummary }
+            override val onClick = onPreferencesClick
+        })
+    }
 }
 
 @Composable

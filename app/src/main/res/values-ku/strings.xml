@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2017-2024 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">نوێکەرەوە</string>
+    <string name="display_name">نوێکەرەوە</string>
+    <string name="verification_failed_notification">پشکنین سەرکەوتوو نەبوو</string>
+    <string name="verifying_download_notification">پشکنین بۆ نوێکاری دەکرێت</string>
+    <string name="downloading_notification">داگرتن...</string>
+    <string name="download_paused_notification">داگرتن وەستێنراوە</string>
+    <string name="download_paused_error_notification">هەڵە لە داگرتندا</string>
+    <string name="download_completed_notification">داگرتن تەواو بوو</string>
+    <string name="download_starting_notification">دەستپێکردنی داگرتن</string>
+    <string name="update_failed_notification">نوێکردنەوە سەرکەوتوو نەبوو</string>
+    <string name="installation_suspended_notification">دامەزراندن هەڵپەسێردرا</string>
+    <string name="new_updates_found_title">نوێکارییە نوێیەکان</string>
+    <string name="text_download_speed">%1$s، %2$s/چرکە</string>
+    <string name="pause_button">وەستانی کاتی</string>
+    <string name="resume_button">دەستپێکردنەوە</string>
+    <string name="suspend_button">هەڵپەساردن</string>
+    <string name="installing_update">دامەزراندنی پاکێجی نوێکاری</string>
+    <string name="installing_update_error">هەڵە لە دامەزراندندا</string>
+    <string name="installing_update_finished">نوێکاری دامەزرا</string>
+    <string name="finalizing_package">کۆتاییهێنان بە دامەزراندنی پاکێج</string>
+    <string name="preparing_ota_first_boot">ئامادەکاری بۆ یەکەم کارپێکردنەوە</string>
+    <string name="dialog_prepare_zip_message">ئامادەکاری سەرەتایی بۆ نوێکردنەوە</string>
+    <string name="dialog_battery_low_title">باتری نزمە</string>
+    <string name="dialog_battery_low_message_pct">ئاستی باتری زۆر نزمە، پێویستت بە لانی کەم %1$d%% ی باتری هەیە بۆ بەردەوامبوون، یان %2$d%% ئەگەر لەسەر شەحن بێت.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        تکایە ئەم فرمانانەی خوارەوە جێبەجێ بکە و دووبارە هەوڵ بدەرەوە:\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
+    <string name="dialog_scratch_mounted_title">ناتوانرێت نوێکاری دابمەزرێنرێت کاتێک OverlayFS چاڵاکە</string>
+    <string name="reboot">دووبارە کارپێکردنەوە</string>
+    <string name="menu_refresh">نوێکردنەوە</string>
+    <string name="menu_preferences">هەڵبژاردنەکان</string>
+    <string name="menu_auto_updates_check">پشکنینی خۆکارانە بۆ نوێکاری</string>
+    <string name="menu_auto_updates_check_interval_daily">ڕۆژانە جارێک</string>
+    <string name="menu_auto_updates_check_interval_weekly">هەفتانە جارێک</string>
+    <string name="menu_auto_updates_check_interval_monthly">مانگانە جارێک</string>
+    <string name="menu_auto_updates_check_interval_never">هەرگیز</string>
+    <string name="menu_auto_delete_updates">سڕینەوەی نوێکارییەکان دوای دامەزراندن</string>
+    <string name="menu_delete_update">سڕینەوە</string>
+    <string name="menu_copy_url">کۆپیکردنی بەستەر (URL)</string>
+    <string name="menu_export_update">ناردنی نوێکاری (Export)</string>
+    <string name="menu_show_changelog">نیشاندانی گۆڕانکارییەکان</string>
+    <string name="menu_ab_perf_mode">پێشینەدان بە پڕۆسەی نوێکردنەوە</string>
+    <string name="menu_update_recovery">نوێکردنەوەی ڕیکۆڤەری (Recovery)</string>
+    <string name="toast_forced_update_recovery">ناتوانرێت نوێکردنەوەی Lineage Recovery لەم ئامێرەدا ناچالاک بکرێت.</string>
+    <string name="snack_updates_found">نوێکاری نوێ دۆزرایەوە</string>
+    <string name="snack_no_updates_found">هیچ نوێکارییەک نەدۆزرایەوە</string>
+    <string name="snack_updates_check_failed">پشکنینی نوێکاری سەرکەوتوو نەبوو. تکایە هێڵی ئینتەرنێتەکەت بپشکنە و دواتر هەوڵ بدەرەوە.</string>
+    <string name="snack_download_failed">داگرتن سەرکەوتوو نەبوو. تکایە هێڵی ئینتەرنێتەکەت بپشکنە و دواتر هەوڵ بدەرەوە.</string>
+    <string name="snack_download_verification_failed">پشکنینی نوێکاری سەرکەوتوو نەبوو.</string>
+    <string name="snack_download_verified">داگرتن تەواو بوو.</string>
+    <string name="snack_update_not_installable">ئەم نوێکارییە ناتوانرێت لەسەر ئەم وەشانەی ئێستا دابمەزرێنرێت.</string>
+    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">ئەندرۆید %1$s</string>
+    <string name="header_last_updates_check">دواین پشکنین: %1$s (%2$s)</string>
+    <string name="list_build_version">LineageOS %1$s</string>
+    <string name="list_build_version_date">LineageOS %1$s - %2$s</string>
+    <string name="list_download_progress_newer">%1$s لە %2$s</string>
+    <string name="list_download_progress_eta_newer">%1$s لە %2$s (%3$s ماوە)</string>
+    <string name="list_verifying_update">پشکنینی نوێکاری</string>
+    <string name="list_no_updates">هیچ نوێکارییەک نەدۆزرایەوە. بۆ پشکنینی دەستی، دوگمەی نوێکردنەوە (Refresh) بەکاربهێنە.</string>
+    <string name="action_download">داگرتن</string>
+    <string name="action_pause">وەستانی کاتی</string>
+    <string name="action_resume">دەستپێکردنەوە</string>
+    <string name="action_install">دامەزراندن</string>
+    <string name="action_info">زانیاری</string>
+    <string name="action_delete">سڕینەوە</string>
+    <string name="action_cancel">پاشگەزبوونەوە</string>
+    <string name="confirm_delete_dialog_title">سڕینەوەی فایل</string>
+    <string name="confirm_delete_dialog_message">ئایا دڵنیای لە سڕینەوەی فایلی نوێکاری هەڵبژێردراو؟</string>
+    <string name="apply_update_dialog_title">جێبەجێکردنی نوێکاری</string>
+    <string name="apply_update_dialog_message">تۆ خەریکی دامەزراندنی %1$s.\n\nئەگەر کرتە لە %2$s بکەیت، ئامێرەکە خۆکارانە دەچێتە باری ڕیکۆڤەری بۆ دامەزراندنی نوێکارییەکە.\n\nتێبینی: ئەمە پێویستی بە ڕیکۆڤەری گونجاو هەیە ئەگینا دەبێت بە دەستی دایبمەزرێنیت.</string>
+    <string name="apply_update_dialog_message_ab">تۆ خەریکی دامەزراندنی %1$s.\n\nئەگەر کرتە لە %2$s بکەیت، ئامێرەکە لە پاشبنەمادا دەست دەکات بە دامەزراندن.\n\nدوای تەواوبوون، داوات لێ دەکرێت ئامێرەکە دووبارە کار پێ بکەیتەوە.</string>
+    <string name="cancel_installation_dialog_message">پڕۆسەی دامەزراندن بوەستێنرێت؟</string>
+    <string name="label_download_url">بەستەری داگرتن</string>
+    <string name="toast_download_url_copied">بەستەرەکە کۆپی کرا</string>
+    <string name="dialog_export_title">ناردنی نوێکاری (Export)</string>
+    <string name="notification_export_success">نوێکارییەکە هەناردە کرا</string>
+    <string name="notification_export_fail">هەڵە لە هەناردەکردندا</string>
+    <string name="toast_already_exporting">پڕۆسەی هەناردەکردنی نوێکاری چالاکە</string>
+    <string name="toast_export_started">هەناردەکردن دەستی پێ کرد</string>
+    <plurals name="eta_seconds">
+        <item quantity="one">١ چرکە ماوە</item>
+        <item quantity="other">%d چرکە ماوە</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">١ خولەک ماوە</item>
+        <item quantity="other">%d خولەک ماوە</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">١ کاتژمێر ماوە</item>
+        <item quantity="other">%d کاتژمێر ماوە</item>
+    </plurals>
+    <string name="update_over_metered_network_title">ئاگاداری</string>
+    <string name="update_over_metered_network_message">تۆ خەریکی داگرتنی پاکێجێکی نوێکاریت لە ڕێگەی هێڵی ئینتەرنێتی سنووردار کە ڕەنگە تێچووی زۆری هەبێت. دەتەوێت بەردەوام بیت؟</string>
+    <string name="checkbox_metered_network_warning">دووبارە نیشان مەدرێتەوە</string>
+    <string name="menu_metered_network_warning">ئاگاداری هێڵی سنووردار</string>
+    <string name="blocked_update_dialog_title">نوێکاری بلۆک کرا</string>
+    <string name="blocked_update_dialog_message">ئەم نوێکارییە ناتوانرێت لە ڕێگەی ئەم ئەپەوە دابمەزرێنرێت. تکایە %1$s بخوێنەرەوە بۆ زانیاری زیاتر.</string>
+    <string name="export_channel_title">تەواوبوونی هەناردەکردن</string>
+    <string name="new_updates_channel_title">نوێکارییە نوێیەکان</string>
+    <string name="ongoing_channel_title">داگرتنە بەردەوامەکان</string>
+    <string name="update_failed_channel_title">نوێکردنەوە سەرکەوتوو نەبوو</string>
+    <string name="info_dialog_title">ئایا دەزانیت؟</string>
+    <string name="info_dialog_message">نوێکارییەکانی LineageOS پاکێجی تەواوی دامەزراندنن. ئەمە واتە دەتوانیت هەمیشە تەنها دواین نوێکاری دابمەزرێنیت، تەنانەت ئەگەر هەندێک نوێکاری پێشووت تێپەڕاندبێت!</string>
+    <string name="info_dialog_ok">سوپاس بۆ زانیارییەکە!</string>
+    <string name="local_update_import">نوێکاری ناوخۆیی</string>
+    <string name="local_update_import_progress">هێنانی نوێکاری ناوخۆیی\u2026</string>
+    <string name="local_update_import_success">%1$s هێنرایە ناوەوە. دەتەوێت دایبمەزرێنیت؟</string>
+    <string name="local_update_import_failure">هێنانی نوێکاری ناوخۆیی سەرکەوتوو نەبوو</string>
+    <string name="local_update_import_install">دامەزراندن</string>
+    <string name="local_update_name">نوێکاری ناوخۆیی</string>
+    <string name="welcome_title">بەخێربێیت</string>
+    <string name="welcome_message">تکایە ئاگاداربە کاتێک چەند نوێکارییەک بەردەستن، پێویست ناکات یەک بە یەک نوێکاری بکەیت؛ هەمیشە دەتوانیت نوێترین وەشان ڕاستەوخۆ دابمەزرێنیت و پاشان بە سەلامەتی نوێکارییە کۆنەکان بسڕیتەوە بۆ چۆڵکردنی شوێنی بیرگە.</string>
+</resources>

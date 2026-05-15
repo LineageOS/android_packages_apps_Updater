@@ -39,6 +39,11 @@
     <string name="dialog_prepare_zip_message">Persiapan awal pembaruan</string>
     <string name="dialog_battery_low_title">Baterai lemah</string>
     <string name="dialog_battery_low_message_pct">Tingkat baterai terlalu rendah, Anda memerlukan setidaknya <xliff:g id="percent_discharging">%1$d</xliff:g>%% baterai untuk melanjutkan, <xliff:g id="percent_charging">%2$d</xliff:g>%% jika saat pengisian.</string>
+    <string name="dialog_scratch_mounted_message"><![CDATA[        Jalankan perintah ini dan ulangi update:\n
+        • adb root\n
+        • adb enable-verity\n
+        • adb reboot
+        ]]></string>
     <string name="reboot">Mulai ulang</string>
     <string name="menu_refresh">Segarkan</string>
     <string name="menu_preferences">Preferensi</string>
@@ -119,4 +124,5 @@
     <string name="local_update_import_failure">Gagal mengimpor pembaruan lokal</string>
     <string name="local_update_import_install">Instal</string>
     <string name="local_update_name">Pembaruan lokal</string>
+    <string name="welcome_title">Selamat datang</string>
 </resources>

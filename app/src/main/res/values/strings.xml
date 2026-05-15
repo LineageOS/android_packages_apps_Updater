@@ -157,19 +157,6 @@
     <string name="toast_already_exporting">Already exporting an update</string>
     <string name="toast_export_started">Export started</string>
 
-    <plurals name="eta_seconds">
-        <item quantity="one">1 second left</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> seconds left</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">1 minute left</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> minutes left</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">1 hour left</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> hours left</item>
-    </plurals>
-
     <string name="update_over_metered_network_title">Warning</string>
     <string name="update_over_metered_network_message">You\'re about to download an update package over a metered network which is likely going to cause high data usage. Would you like to proceed?</string>
 

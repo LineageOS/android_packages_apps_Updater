@@ -7,7 +7,6 @@ package org.lineageos.updater
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -27,16 +26,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.LocalWindowInfo
-import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
 import com.android.settingslib.spa.framework.compose.LocalNavController
 import com.android.settingslib.spa.framework.compose.NavControllerWrapper
 import com.android.settingslib.spa.framework.theme.SettingsTheme
@@ -44,26 +42,31 @@ import com.android.settingslib.spa.widget.preference.Preference
 import com.android.settingslib.spa.widget.preference.PreferenceModel
 import com.android.settingslib.spa.widget.scaffold.SettingsScaffold
 import com.android.settingslib.spa.widget.ui.Category
+import org.lineageos.updater.controller.UpdaterController
 import org.lineageos.updater.data.Update
 import org.lineageos.updater.data.UpdateStatus
 import org.lineageos.updater.deviceinfo.DeviceInfoBanner
 import org.lineageos.updater.preferences.PreferencesActivity
+import org.lineageos.updater.updates.UpdateList
+import org.lineageos.updater.updates.action.AlertDialogState
+import org.lineageos.updater.updates.action.UpdateActionDialog
+import org.lineageos.updater.updates.action.UpdateActionHandler
+import org.lineageos.updater.updates.state.UpdateItemStateMapper
 import org.lineageos.updater.updatescheck.UpdatesCheck
 import org.lineageos.updater.updatescheck.UpdatesCheckModel
 
 abstract class UpdatesScaffoldActivity : ComponentActivity() {
 
-    private var legacyView: View? = null
     private val viewModel: UpdatesViewModel by viewModels { UpdatesViewModel.factory(application) }
+    private var activeUpdaterController: UpdaterController? by mutableStateOf(null)
+    private var controllerStateVersion: Int by mutableStateOf(0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
     }
 
-    override fun setContentView(layoutResID: Int) {
-        val capturedView = layoutInflater.inflate(layoutResID, null).also { legacyView = it }
-
+    protected fun setupCompose() {
         setContent {
             val navController = remember {
                 object : NavControllerWrapper {
@@ -77,7 +80,8 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
                     val uiState by viewModel.uiState.collectAsState()
                     UpdatesScaffoldContent(
                         uiState = uiState,
-                        legacyView = capturedView,
+                        updaterController = activeUpdaterController,
+                        controllerStateVersion = controllerStateVersion,
                         onRefreshClick = { onRefreshClick() },
                         onLocalUpdateClick = { onLocalUpdateClick() },
                         onPreferencesClick = {
@@ -88,35 +92,57 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
                                 )
                             )
                         },
+                        onControllerStateChanged = { notifyControllerStateChanged() },
                     )
                 }
             }
         }
     }
 
-    override fun <T : View> findViewById(id: Int): T? =
-        super.findViewById(id) ?: legacyView?.findViewById(id)
+    protected fun setUpdaterController(controller: UpdaterController?) {
+        activeUpdaterController = controller
+        notifyControllerStateChanged()
+    }
+
+    protected fun notifyControllerStateChanged() {
+        controllerStateVersion++
+    }
 
     open fun onRefreshClick() {}
     open fun onLocalUpdateClick() {}
+    open fun exportUpdate(update: Update) {}
 }
 
 @Composable
 private fun UpdatesScaffoldContent(
     uiState: UpdatesUiState,
-    legacyView: View,
+    updaterController: UpdaterController?,
+    controllerStateVersion: Int,
     onRefreshClick: () -> Unit,
     onLocalUpdateClick: () -> Unit,
     onPreferencesClick: () -> Unit,
+    onControllerStateChanged: () -> Unit,
 ) {
     val title = getTitleForUpdateStatus(uiState.updates)
+
+    var actionDialog by remember { mutableStateOf<AlertDialogState?>(null) }
+    actionDialog?.let { dialog ->
+        UpdateActionDialog(
+            dialog = dialog,
+            onDismiss = { actionDialog = null },
+        )
+    }
 
     SettingsScaffold(title = title) { paddingValues ->
         if (isWideScreen()) {
             WideUpdatesScaffold(
                 paddingValues = paddingValues,
                 updatesCheckModel = uiState.updatesCheckModel,
-                legacyView = legacyView,
+                updates = uiState.updates,
+                updaterController = updaterController,
+                controllerStateVersion = controllerStateVersion,
+                showDialog = { actionDialog = it },
+                onControllerStateChanged = onControllerStateChanged,
                 onRefreshClick = onRefreshClick,
                 onLocalUpdateClick = onLocalUpdateClick,
                 onPreferencesClick = onPreferencesClick,
@@ -125,7 +151,11 @@ private fun UpdatesScaffoldContent(
             UpdatesScaffold(
                 paddingValues = paddingValues,
                 updatesCheckModel = uiState.updatesCheckModel,
-                legacyView = legacyView,
+                updates = uiState.updates,
+                updaterController = updaterController,
+                controllerStateVersion = controllerStateVersion,
+                showDialog = { actionDialog = it },
+                onControllerStateChanged = onControllerStateChanged,
                 onRefreshClick = onRefreshClick,
                 onLocalUpdateClick = onLocalUpdateClick,
                 onPreferencesClick = onPreferencesClick,
@@ -138,7 +168,11 @@ private fun UpdatesScaffoldContent(
 private fun WideUpdatesScaffold(
     paddingValues: PaddingValues,
     updatesCheckModel: UpdatesCheckModel,
-    legacyView: View,
+    updates: List<Update>,
+    updaterController: UpdaterController?,
+    controllerStateVersion: Int,
+    showDialog: (AlertDialogState) -> Unit,
+    onControllerStateChanged: () -> Unit,
     onRefreshClick: () -> Unit,
     onLocalUpdateClick: () -> Unit,
     onPreferencesClick: () -> Unit,
@@ -163,7 +197,11 @@ private fun WideUpdatesScaffold(
         )
         UpdatesActionPane(
             model = updatesCheckModel,
-            legacyView = legacyView,
+            updates = updates,
+            updaterController = updaterController,
+            controllerStateVersion = controllerStateVersion,
+            showDialog = showDialog,
+            onControllerStateChanged = onControllerStateChanged,
             onRefreshClick = onRefreshClick,
             onLocalUpdateClick = onLocalUpdateClick,
             onPreferencesClick = onPreferencesClick,
@@ -180,7 +218,11 @@ private fun WideUpdatesScaffold(
 private fun UpdatesScaffold(
     paddingValues: PaddingValues,
     updatesCheckModel: UpdatesCheckModel,
-    legacyView: View,
+    updates: List<Update>,
+    updaterController: UpdaterController?,
+    controllerStateVersion: Int,
+    showDialog: (AlertDialogState) -> Unit,
+    onControllerStateChanged: () -> Unit,
     onRefreshClick: () -> Unit,
     onLocalUpdateClick: () -> Unit,
     onPreferencesClick: () -> Unit,
@@ -194,7 +236,11 @@ private fun UpdatesScaffold(
         UpdatesInformationPane()
         UpdatesActionPane(
             model = updatesCheckModel,
-            legacyView = legacyView,
+            updates = updates,
+            updaterController = updaterController,
+            controllerStateVersion = controllerStateVersion,
+            showDialog = showDialog,
+            onControllerStateChanged = onControllerStateChanged,
             onRefreshClick = onRefreshClick,
             onLocalUpdateClick = onLocalUpdateClick,
             onPreferencesClick = onPreferencesClick,
@@ -212,22 +258,62 @@ private fun UpdatesInformationPane(
 @Composable
 private fun UpdatesActionPane(
     model: UpdatesCheckModel,
-    legacyView: View,
+    updates: List<Update>,
+    updaterController: UpdaterController?,
+    controllerStateVersion: Int,
+    showDialog: (AlertDialogState) -> Unit,
+    onControllerStateChanged: () -> Unit,
     onRefreshClick: () -> Unit,
     onLocalUpdateClick: () -> Unit,
     onPreferencesClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val activity = context as UpdatesScaffoldActivity
+    val networkMonitor = remember { (context.applicationContext as UpdaterApplication).networkMonitor }
+    val networkState by networkMonitor.networkState.collectAsState(
+        initial = networkMonitor.currentNetworkState,
+    )
+
+    val updateItems = remember(
+        updates,
+        updaterController,
+        networkState,
+        controllerStateVersion,
+    ) {
+        val controller = updaterController ?: return@remember emptyList()
+        val mapper = UpdateItemStateMapper(context, controller)
+        updates.mapNotNull { update ->
+            controller.getUpdate(update.downloadId)?.let {
+                mapper.map(it, networkState)
+            }
+        }
+    }
+
+    val actionHandler = remember(updaterController) {
+        updaterController?.let { controller ->
+            UpdateActionHandler(
+                activity = activity,
+                updaterController = controller,
+                exportUpdate = { update -> activity.exportUpdate(update) },
+                showDialog = showDialog,
+            )
+        }
+    }
+
     Column(modifier = modifier) {
         UpdatesCheck(
             model = model,
             onCheckClick = onRefreshClick,
         )
-        AndroidView(
-            factory = { legacyView },
-            modifier = Modifier
-                .fillMaxWidth()
-                .nestedScroll(rememberNestedScrollInteropConnection()),
+        UpdateList(
+            items = updateItems,
+            onAction = { action, downloadId ->
+                val controller = updaterController ?: return@UpdateList
+                val update = controller.getUpdate(downloadId) ?: return@UpdateList
+                actionHandler?.perform(action, update)
+                onControllerStateChanged()
+            },
         )
         UpdatesFooter(
             onLocalUpdateClick = onLocalUpdateClick,

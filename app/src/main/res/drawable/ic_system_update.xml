@@ -5,12 +5,11 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
+    android:width="14dp"
+    android:height="22dp"
+    android:viewportWidth="14"
+    android:viewportHeight="22">
   <path
-      android:pathData="M7,1C5.8954,1 5,1.8954 5,3V21C5,22.1046 5.8954,23 7,23H17C18.1046,23 19,22.1046 19,21V3C19,1.8954 18.1046,1 17,1H16H8H7ZM8,1L12,1L16,1C16,3.2091 14.2091,5 12,5C9.7909,5 8,3.2091 8,1ZM12,10C13.6569,10 15,8.6568 15,7L12,7L9,7C9,8.6568 10.3431,10 12,10ZM14,12C14,13.1046 13.1046,14 12,14C10.8954,14 10,13.1046 10,12L12,12L14,12Z"
-      android:fillColor="#000000"
-      android:fillType="evenOdd"/>
+      android:pathData="M12,0C13.105,0 14,0.895 14,2V20C14,21.105 13.105,22 12,22H2C0.895,22 0,21.105 0,20V2C0,0.895 0.895,0 2,0H12ZM5,13C5,14.105 5.895,15 7,15C8.105,15 9,14.105 9,13H5ZM4,8C4,9.657 5.343,11 7,11C8.657,11 10,9.657 10,8H4ZM3,2C3,4.209 4.791,6 7,6C9.209,6 11,4.209 11,2H3Z"
+      android:fillColor="#000000"/>
 </vector>

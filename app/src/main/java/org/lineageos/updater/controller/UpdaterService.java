@@ -74,7 +74,7 @@ public class UpdaterService extends Service {
         mNotificationManager = getSystemService(NotificationManager.class);
         mNotificationBuilder = new NotificationCompat.Builder(this,
                 NotificationHelper.CHANNEL_ONGOING);
-        mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+        mNotificationBuilder.setSmallIcon(R.drawable.ic_notification);
         mNotificationBuilder.setShowWhen(false);
         mNotificationStyle = new NotificationCompat.BigTextStyle();
         mNotificationBuilder.setStyle(mNotificationStyle);
@@ -335,7 +335,7 @@ public class UpdaterService extends Service {
                 mNotificationBuilder.setProgress(0, 0, true);
                 mNotificationStyle.setSummaryText(null);
                 mNotificationBuilder.setStyle(mNotificationStyle);
-                mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+                mNotificationBuilder.setSmallIcon(R.drawable.ic_notification);
                 mNotificationBuilder.mActions.clear();
                 String text = getString(R.string.verifying_download_notification);
                 mNotificationStyle.bigText(text);
@@ -347,7 +347,7 @@ public class UpdaterService extends Service {
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationBuilder.mActions.clear();
                 mNotificationBuilder.setStyle(null);
-                mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+                mNotificationBuilder.setSmallIcon(R.drawable.ic_notification);
                 mNotificationBuilder.setProgress(0, 0, false);
                 String text = getString(R.string.download_completed_notification);
                 mNotificationBuilder.setContentText(text);
@@ -376,7 +376,7 @@ public class UpdaterService extends Service {
             case INSTALLING: {
                 mNotificationBuilder.mActions.clear();
                 mNotificationBuilder.setStyle(mNotificationStyle);
-                mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+                mNotificationBuilder.setSmallIcon(R.drawable.ic_notification);
                 mNotificationBuilder.setProgress(0, 0, false);
                 mNotificationStyle.setSummaryText(null);
                 String text = UpdateInstaller.isInstalling() ?
@@ -395,11 +395,11 @@ public class UpdaterService extends Service {
                 stopForeground(STOP_FOREGROUND_DETACH);
                 mNotificationBuilder.mActions.clear();
                 mNotificationBuilder.setStyle(null);
-                mNotificationBuilder.setSmallIcon(R.drawable.ic_system_update);
+                mNotificationBuilder.setSmallIcon(R.drawable.ic_notification);
                 mNotificationBuilder.setProgress(0, 0, false);
                 String text = getString(R.string.installing_update_finished);
                 mNotificationBuilder.setContentText(text);
-                mNotificationBuilder.addAction(R.drawable.ic_system_update,
+                mNotificationBuilder.addAction(R.drawable.ic_notification,
                         getString(R.string.reboot),
                         getRebootPendingIntent());
                 mNotificationBuilder.setTicker(text);

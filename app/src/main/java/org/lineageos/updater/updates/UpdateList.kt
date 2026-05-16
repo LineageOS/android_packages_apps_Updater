@@ -26,10 +26,15 @@ import org.lineageos.updater.updates.state.UpdateItemState
 @Composable
 fun UpdateList(
     items: List<UpdateItemState>,
+    isCheckingForUpdates: Boolean,
     onAction: (UpdateAction, String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     if (items.isEmpty()) {
+        if (isCheckingForUpdates) {
+            return
+        }
+
         ZeroStatePreference(
             icon = Icons.Outlined.Check,
             text = stringResource(R.string.updates_zero_state_title),

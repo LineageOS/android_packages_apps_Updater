@@ -5,6 +5,7 @@
 
 package org.lineageos.updater.updates
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Check
@@ -43,36 +44,42 @@ fun UpdateList(
     val collapsedVisibleItems =
         (listOf(items.first()) + activeItems).distinctBy { it.downloadId }
     val hiddenItemCount = items.size - collapsedVisibleItems.size
-    val visibleItems = if (expanded) items else collapsedVisibleItems
+    val visibleItemIds = if (expanded) {
+        items.map { it.downloadId }.toSet()
+    } else {
+        collapsedVisibleItems.map { it.downloadId }.toSet()
+    }
 
     Column(modifier = modifier) {
         Category {
-            visibleItems.forEach { item ->
-                val staysExpanded = item.progress != null
-                val itemExpanded = staysExpanded || (item.downloadId in expandedItemIds)
-                val onExpandToggle = if (staysExpanded) {
-                    null
-                } else {
-                    {
-                        expandedItemIds =
-                            if (item.downloadId in expandedItemIds) {
-                                expandedItemIds - item.downloadId
-                            } else {
-                                expandedItemIds + item.downloadId
-                            }
+            items.forEach { item ->
+                AnimatedVisibility(visible = item.downloadId in visibleItemIds) {
+                    val staysExpanded = item.progress != null
+                    val itemExpanded = staysExpanded || (item.downloadId in expandedItemIds)
+                    val onExpandToggle = if (staysExpanded) {
+                        null
+                    } else {
+                        {
+                            expandedItemIds =
+                                if (item.downloadId in expandedItemIds) {
+                                    expandedItemIds - item.downloadId
+                                } else {
+                                    expandedItemIds + item.downloadId
+                                }
+                        }
                     }
-                }
 
-                UpdateItem(
-                    state = item,
-                    expanded = itemExpanded,
-                    onExpandToggle = onExpandToggle,
-                    onAction = { action -> onAction(action, item.downloadId) },
-                )
+                    UpdateItem(
+                        state = item,
+                        expanded = itemExpanded,
+                        onExpandToggle = onExpandToggle,
+                        onAction = { action -> onAction(action, item.downloadId) },
+                    )
+                }
             }
         }
 
-        if (hiddenItemCount > 0) {
+        AnimatedVisibility(visible = hiddenItemCount > 0) {
             CollapseBar(
                 expanded = expanded,
                 hiddenItemCount = hiddenItemCount,

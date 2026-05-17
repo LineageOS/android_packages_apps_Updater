@@ -16,6 +16,57 @@
       "message": "Unsure whether or not the Java code requires that factory method, but will get killed when converted to kt anyway",
       "revId": "93e12b9dc8af3d189b19157207f18c2d20f92ce4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bc7fd48_ecf7f0ae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:17:23Z",
+      "side": 1,
+      "message": "Make the repository a singleton in the application class",
+      "revId": "93e12b9dc8af3d189b19157207f18c2d20f92ce4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7810c793_3f673216",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesViewModel.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:17:23Z",
+      "side": 1,
+      "message": "Remove this from the parameters, fetch it from the application object (see Twelve)",
+      "revId": "93e12b9dc8af3d189b19157207f18c2d20f92ce4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "766ef58a_53ec9084",
+        "filename": "app/src/main/java/org/lineageos/updater/data/UpdatesRepository.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:17:23Z",
+      "side": 1,
+      "message": "Build everything in the application object",
+      "revId": "93e12b9dc8af3d189b19157207f18c2d20f92ce4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

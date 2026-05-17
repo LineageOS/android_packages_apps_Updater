@@ -16,6 +16,24 @@
       "message": "This was solved already on 23.2?",
       "revId": "af8a25af793f7b600cf4df5b7f5347de0e1ac303",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8270f39d_87cba2c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T18:12:08Z",
+      "side": 1,
+      "message": "It still persists on 23.2",
+      "parentUuid": "cd94a3d0_cc9c1418",
+      "revId": "af8a25af793f7b600cf4df5b7f5347de0e1ac303",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

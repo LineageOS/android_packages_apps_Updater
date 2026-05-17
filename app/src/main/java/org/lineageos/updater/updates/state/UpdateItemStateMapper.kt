@@ -22,6 +22,7 @@ class UpdateItemStateMapper(
     private val context: Context,
     private val updaterController: UpdaterController,
 ) {
+    private val brandName = context.getString(R.string.brand_name)
 
     fun map(update: Update, networkState: NetworkState): UpdateItemState {
         val state = UpdateOperationState.from(updaterController, update)
@@ -158,6 +159,7 @@ class UpdateItemStateMapper(
             ),
             buildVersion = context.getString(
                 R.string.list_build_version,
+                brandName,
                 update.version,
             ),
             status = state.titleRes?.let { context.getString(it) } ?: "",

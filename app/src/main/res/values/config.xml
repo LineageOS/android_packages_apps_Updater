@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      SPDX-FileCopyrightText: The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Brand name. -->
+    <string name="brand_name" translatable="false">LineageOS</string>
+
     <!-- Base background of the header card. -->
     <color name="brand_primary">#167C80</color>
 
@@ -16,6 +18,44 @@
     <!-- Sheen gradient color -->
     <color name="brand_sheen">#EADDFF</color>
 
+    <!-- Directory where the update files will be downloaded and stored.
+         WARNING: The application can and will delete any unknown file. -->
+    <string name="download_path" translatable="false">/data/lineageos_updates/</string>
+
+    <!-- Directory where the downloads will be exported to.
+         The path is relative to the root of the external storage.-->
+    <string name="export_path" translatable="false">LineageOS updates/</string>
+
+    <!--
+        Update metadata endpoint template.
+        Optional placeholders replaced at runtime:
+          {device} - Device name
+          {type} - Build type
+          {incr} - Incremental version
+    -->
+    <string name="updater_server_url" translatable="false">https://download.lineageos.org/api/v1/{device}/{type}/{incr}</string>
+
+    <!-- URL template for opening the device-specific changelog page. -->
+    <string name="menu_changelog_url" translatable="false">https://download.lineageos.org/<xliff:g id="device_name">%1$s</xliff:g>/changes</string>
+
     <!-- URL template for opening the device-specific downloads page from the update menu. -->
     <string name="menu_downloads_url" translatable="false">https://download.lineageos.org/devices/<xliff:g id="device_name">%1$s</xliff:g>/builds</string>
+
+    <!-- URL for the project issue tracker. -->
+    <string name="report_issue_url" translatable="false">https://gitlab.com/LineageOS/issues/android</string>
+
+    <!-- Host name shown next to the review updates prompt. -->
+    <string name="header_download_url" translatable="false">download.lineageos.org</string>
+
+    <!-- Branded build version label shown in the header details. -->
+    <string name="header_build_version" translatable="false"><xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> <xliff:g id="version" example="23.2">%2$s</xliff:g></string>
+
+    <!-- Branded build version label shown in update rows and notifications. -->
+    <string name="list_build_version" translatable="false"><xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> <xliff:g id="version" example="23.2">%2$s</xliff:g></string>
+
+    <!-- Branded build version and date label shown in dialogs and notifications. -->
+    <string name="list_build_version_date" translatable="false"><xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> <xliff:g id="version" example="23.2">%2$s</xliff:g> - <xliff:g id="date" example="May 17, 2026">%3$s</xliff:g></string>
+
+    <!-- URL template for explaining why an update cannot be installed. -->
+    <string name="blocked_update_info_url" translatable="false">https://wiki.lineageos.org/devices/<xliff:g id="device_name">%1$s</xliff:g>/upgrade/</string>
 </resources>

@@ -78,7 +78,10 @@ class NotificationHelper(context: Context) {
             installTimestamp,
         )
         val buildInfo = appContext.getString(
-            R.string.list_build_version_date, DeviceInfoUtils.buildVersion, buildDate,
+            R.string.list_build_version_date,
+            appContext.getString(R.string.brand_name),
+            DeviceInfoUtils.buildVersion,
+            buildDate,
         )
         val intent = PendingIntent.getActivity(
             appContext, 0,

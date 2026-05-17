@@ -203,6 +203,7 @@ fun UpdaterCard(
     val onBrandColor = colorResource(R.color.on_brand_surface)
     val patternColor = colorResource(R.color.brand_pattern)
     val sheenColor = colorResource(R.color.brand_sheen)
+    val brandName = stringResource(R.string.brand_name)
 
     val density = LocalDensity.current
     val displayMedium = MaterialTheme.typography.displayMedium
@@ -249,7 +250,7 @@ fun UpdaterCard(
                 ) {
                     Image(
                         painter = painterResource(R.drawable.lineage_mark_tight),
-                        contentDescription = stringResource(R.string.brand_name),
+                        contentDescription = brandName,
                         modifier = Modifier
                             .width(markWidth)
                             .alignBy { it.measuredHeight },
@@ -279,7 +280,11 @@ fun UpdaterCard(
                     horizontalArrangement = Arrangement.spacedBy(SettingsDimension.paddingLarge),
                 ) {
                     InfoColumn(
-                        label = stringResource(R.string.header_build_version, buildVersion),
+                        label = stringResource(
+                            R.string.header_build_version,
+                            brandName,
+                            buildVersion,
+                        ),
                         value = stringResource(R.string.header_android_version, androidVersion),
                     )
                     InfoColumn(

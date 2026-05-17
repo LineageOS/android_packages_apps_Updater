@@ -35,6 +35,7 @@ class UpdateActionHandler(
 
     private val application = activity.application as UpdaterApplication
     private val batteryMonitor = application.batteryMonitor
+    private val brandName = activity.getString(R.string.brand_name)
     private val networkMonitor = application.networkMonitor
     private val userPreferencesRepository = application.userPreferencesRepository
 
@@ -111,6 +112,7 @@ class UpdateActionHandler(
                 )
                 val buildInfoText = activity.getString(
                     R.string.list_build_version_date,
+                    brandName,
                     update.version,
                     buildDate,
                 )

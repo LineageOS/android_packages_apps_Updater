@@ -16,6 +16,24 @@
       "message": "Hate storing these things in strings.xml, we should move them to config.xml imho",
       "revId": "49a61f7f91de2ecaabf24d26814e2d8b2ccd0131",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1e40ee7_9519aee6",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T18:58:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "592fea0f_fd182182",
+      "revId": "49a61f7f91de2ecaabf24d26814e2d8b2ccd0131",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

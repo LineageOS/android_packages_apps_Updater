@@ -16,6 +16,24 @@
       "message": "We usually avoid bodies w/o brackets, add {}",
       "revId": "0165c4c41c63c89444bb20bf86a8182448bdea07",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "955019e3_8d2e8e3d",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/UpdateList.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T19:05:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a79ce5b_135c395f",
+      "revId": "0165c4c41c63c89444bb20bf86a8182448bdea07",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

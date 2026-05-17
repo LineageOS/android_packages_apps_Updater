@@ -435,7 +435,7 @@ public class UpdaterController {
             notifyUpdateChange(downloadId);
             return;
         }
-        if (file.exists() && update.getFileSize() > 0 && file.length() >= update.getFileSize()) {
+        if (isFullyDownloaded(update)) {
             Log.d(TAG, "File already downloaded, starting verification");
             entry.mUpdate = entry.mUpdate.withStatus(UpdateStatus.VERIFYING);
             verifyUpdateAsync(downloadId);
@@ -607,6 +607,10 @@ public class UpdaterController {
                 ABUpdateInstaller.isInstallingUpdate(mContext, downloadId);
     }
 
+    public boolean isBusy() {
+        return hasActiveDownloads() || isVerifyingUpdate() || isInstallingUpdate();
+    }
+
     public boolean isInstallingABUpdate() {
         return ABUpdateInstaller.isInstallingUpdate(mContext);
     }
@@ -621,5 +625,12 @@ public class UpdaterController {
                 pauseDownload(entry.mUpdate.getDownloadId());
             }
         }
+    }
+    public boolean isFullyDownloaded(Update update) {
+        File file = update.getFile();
+        if (file == null) {
+            return false;
+        }
+        return file.exists() && update.getFileSize() > 0 && file.length() >= update.getFileSize();
     }
 }

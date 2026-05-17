@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba16d097_eabd9c21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:24:03Z",
+      "side": 1,
+      "message": "I kinda liked this extra info provided to the user, make sure the UX make it crystal clear that only the last update is enough, maybe greying the previous updates should be enough",
+      "revId": "4e62b62b543832ce2df96f6b2f6b57bee32fd6f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

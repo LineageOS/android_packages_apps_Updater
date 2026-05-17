@@ -22,6 +22,30 @@
       },
       "revId": "2bc8114541a0245d0f37eefb5779ebe6bb3f7874",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9abbcf04_6b8244c3",
+        "filename": "app/src/main/java/org/lineageos/updater/ui/CollapseBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T19:04:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "928173a2_63ada0c3",
+      "range": {
+        "startLine": 2,
+        "startChar": 3,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "2bc8114541a0245d0f37eefb5779ebe6bb3f7874",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

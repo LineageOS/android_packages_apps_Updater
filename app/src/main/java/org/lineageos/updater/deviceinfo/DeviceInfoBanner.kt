@@ -6,6 +6,8 @@
 package org.lineageos.updater.deviceinfo
 
 import android.content.res.Configuration
+import android.icu.text.DateFormat
+import android.icu.util.TimeZone
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -25,26 +27,28 @@ import com.android.settingslib.spa.framework.theme.SettingsShape.CornerExtraLarg
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import org.lineageos.updater.deviceinfo.actions.DeviceInfoActionButtons
 import org.lineageos.updater.deviceinfo.actions.DeviceInfoTvAction
-import org.lineageos.updater.misc.StringGenerator
-import java.time.Instant
+import org.lineageos.updater.util.StringUtil
 import java.time.LocalDate
 import java.time.ZoneOffset
-import java.time.format.DateTimeFormatter
+import java.util.Date
 
 @Composable
 fun DeviceInfoBanner(modifier: Modifier = Modifier) {
     val context = LocalContext.current
-    val locale = remember { StringGenerator.getCurrentLocale(context) }
-
+    val configuration = LocalConfiguration.current
+    val locale = remember(context, configuration.locales) { StringUtil.getCurrentLocale(context) }
     val buildVersion = remember { DeviceInfoUtils.buildVersion }
     val androidVersion = remember { DeviceInfoUtils.androidVersion }
-    val buildDate = remember {
-        val instant = Instant.ofEpochSecond(DeviceInfoUtils.buildDateTimestamp)
-        DateTimeFormatter.ofPattern("MMM d", locale).format(instant.atZone(ZoneOffset.UTC))
+    val buildDate = remember(locale) {
+        DateFormat.getInstanceForSkeleton("MMMd", locale)
+            .apply { timeZone = TimeZone.getTimeZone("UTC") }
+            .format(Date(DeviceInfoUtils.buildDateTimestamp * 1000L))
     }
-    val securityPatch = remember {
+    val securityPatch = remember(locale) {
         val patchDate = LocalDate.parse(DeviceInfoUtils.buildSecurityPatch)
-        DateTimeFormatter.ofPattern("MMM yyyy", locale).format(patchDate)
+        DateFormat.getInstanceForSkeleton("MMMy", locale)
+            .apply { timeZone = TimeZone.getTimeZone("UTC") }
+            .format(Date.from(patchDate.atStartOfDay(ZoneOffset.UTC).toInstant()))
     }
 
     DeviceInfoBanner(

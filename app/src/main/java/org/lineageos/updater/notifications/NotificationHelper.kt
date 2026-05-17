@@ -15,8 +15,8 @@ import androidx.core.content.getSystemService
 import org.lineageos.updater.R
 import org.lineageos.updater.UpdatesActivity
 import org.lineageos.updater.deviceinfo.DeviceInfoUtils
-import org.lineageos.updater.misc.StringGenerator
-import java.text.DateFormat
+import org.lineageos.updater.util.StringUtil
+import java.time.format.FormatStyle
 
 class NotificationHelper(context: Context) {
     private val appContext = context.applicationContext
@@ -72,9 +72,9 @@ class NotificationHelper(context: Context) {
     }
 
     fun showUpdateFailedNotification(installTimestamp: Long) {
-        val buildDate = StringGenerator.getDateLocalizedUTC(
+        val buildDate = StringUtil.getDateLocalizedUTC(
             appContext,
-            DateFormat.MEDIUM,
+            FormatStyle.MEDIUM,
             installTimestamp,
         )
         val buildInfo = appContext.getString(

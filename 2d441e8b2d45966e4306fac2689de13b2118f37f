@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c33020c_f2c84709",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdaterApplication.kt",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T19:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22899b73_840cb9e0",
+      "revId": "2d441e8b2d45966e4306fac2689de13b2118f37f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fce1b047_ab6d5882",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-05-17T18:57:20Z",
       "side": 1,
       "message": "Move this into UpdatesViewModel, and name it UiState (so this becomes UpdatesViewModel.UiState)",
+      "revId": "2d441e8b2d45966e4306fac2689de13b2118f37f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f143b79_a2306d11",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesViewModel.kt",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T19:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fce1b047_ab6d5882",
       "revId": "2d441e8b2d45966e4306fac2689de13b2118f37f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

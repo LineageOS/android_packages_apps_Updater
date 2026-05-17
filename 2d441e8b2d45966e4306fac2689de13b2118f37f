@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22899b73_840cb9e0",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdaterApplication.kt",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T18:56:22Z",
+      "side": 1,
+      "message": "This change should be done in the commit that introduces NotificationHelper",
+      "revId": "2d441e8b2d45966e4306fac2689de13b2118f37f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

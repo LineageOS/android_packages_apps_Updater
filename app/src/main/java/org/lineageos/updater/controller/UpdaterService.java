@@ -15,6 +15,7 @@ import android.content.pm.ServiceInfo;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.ServiceSpecificException;
 import android.text.format.Formatter;
 import android.util.Log;
 
@@ -201,7 +202,7 @@ public class UpdaterService extends Service {
                             mUpdaterController);
                     installer.install(downloadId);
                 }
-            } catch (IOException e) {
+            } catch (IOException | ServiceSpecificException e) {
                 Log.e(TAG, "Could not install update", e);
                 mUpdaterController.setUpdate(downloadId, mUpdaterController.getUpdate(downloadId)
                         .withStatus(UpdateStatus.INSTALLATION_FAILED));

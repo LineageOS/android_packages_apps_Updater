@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69eae610_05670d8e",
+        "filename": "app/src/main/java/org/lineageos/updater/preferences/PreferencesScreen.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:12:39Z",
+      "side": 1,
+      "message": "Are you sure you can\u0027t just set `selectedCheckInterval` to `checkInterval.ordinal` w/o this IntState thing? I think the compose compiler would properly handle this, at most it would be a `remember(checkInterval) { checkInterval.ordinal }`, not sure",
+      "revId": "dab3eb5b2ab6f545a57808b642e2b10b903b44d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ac5075f_8e63606a",
+        "filename": "app/src/main/java/org/lineageos/updater/preferences/PreferencesScreen.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:12:39Z",
+      "side": 1,
+      "message": "Google really wants you to create objects during recompositions??",
+      "revId": "dab3eb5b2ab6f545a57808b642e2b10b903b44d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

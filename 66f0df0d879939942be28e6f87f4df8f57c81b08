@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56132b8f_0c548aec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T18:55:23Z",
+      "side": 1,
+      "message": "Missed this, sry",
+      "revId": "66f0df0d879939942be28e6f87f4df8f57c81b08",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "356ca510_04bf1234",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdaterApplication.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T18:55:23Z",
+      "side": 1,
+      "message": "Store the object as a class field in this commit (aka, make it a singleton just like the other classes)",
+      "revId": "66f0df0d879939942be28e6f87f4df8f57c81b08",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

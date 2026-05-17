@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d173596b_1eca22e0",
+        "filename": "app/src/main/java/org/lineageos/updater/util/FileUtils.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:27:55Z",
+      "side": 1,
+      "message": "ditto as previous patch lol",
+      "revId": "5836556345d0163c2e3b3409eafdb51ca1ca5722",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "If you do whatever is suggested in the VM change, you can get rid of the factory method from Kotlin at least, since it auto-provides the application object! (see Twelve)",
       "revId": "de344846aa36e1eb59de70718283ec3f2cb40fd1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09181b60_d426725f",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesScaffoldActivity.kt",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T18:56:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31930742_b04334c1",
+      "revId": "de344846aa36e1eb59de70718283ec3f2cb40fd1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

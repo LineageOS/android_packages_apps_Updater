@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4158aa5_5913bca2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:03:41Z",
+      "side": 1,
+      "message": "Unsure whether or not the Java code requires that factory method, but will get killed when converted to kt anyway",
+      "revId": "93e12b9dc8af3d189b19157207f18c2d20f92ce4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

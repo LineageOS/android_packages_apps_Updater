@@ -6,6 +6,7 @@
 package org.lineageos.updater
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
@@ -18,6 +19,8 @@ import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.lineageos.updater.data.Update
+
+private const val TAG = "UpdatesViewModel"
 
 class UpdatesViewModel(
     application: Application,
@@ -35,9 +38,16 @@ class UpdatesViewModel(
 
     private val updaterApplication = getApplication<UpdaterApplication>()
     private val repository = updaterApplication.updatesRepository
+    private val appStateRepository = updaterApplication.appStateRepository
     private val networkMonitor = updaterApplication.networkMonitor
 
     init {
+        viewModelScope.launch {
+            appStateRepository.lastCheckedTimestampFlow.collect { ts ->
+                _uiState.update { it.copy(lastCheckedTimestamp = ts) }
+            }
+        }
+
         viewModelScope.launch {
             repository.observeLocalUpdates().collect { updates ->
                 _uiState.update { it.copy(updates = updates) }
@@ -58,8 +68,13 @@ class UpdatesViewModel(
         viewModelScope.launch {
             _uiState.update { it.copy(isCheckingForUpdates = true, errorMessage = null) }
             try {
+                val fetchedAt = repository.fetchUpdates()
+                fetchedAt?.let { fetchedAt ->
+                    appStateRepository.setLastCheckedTimestamp(fetchedAt)
+                }
                 _uiState.update { it.copy(isCheckingForUpdates = false) }
             } catch (e: Exception) {
+                Log.e(TAG, "Failed to fetch updates", e)
                 _uiState.update {
                     it.copy(
                         isCheckingForUpdates = false, errorMessage = e.message

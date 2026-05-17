@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0faf2f51_cc743099",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:35:08Z",
+      "side": 1,
+      "message": "Kinda surprised Kotlin let you inherit classes in data classes:\n\n```suggestion\nsealed interface ActionBarButton {\n```",
+      "range": {
+        "startLine": 89,
+        "startChar": 7,
+        "endLine": 89,
+        "endChar": 12
+      },
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49543e25_8a60c2eb",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:35:08Z",
+      "side": 1,
+      "message": "```suggestion\n    val enabled: Boolean\n```",
+      "range": {
+        "startLine": 90,
+        "startChar": 4,
+        "endLine": 90,
+        "endChar": 13
+      },
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e10e8699_205e286f",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:35:08Z",
+      "side": 1,
+      "message": "```suggestion\n    val onClick: () -\u003e Unit\n```",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 13
+      },
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55b05d18_1174b09b",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:35:08Z",
+      "side": 1,
+      "message": "```suggestion\n    ) : ActionBarButton\n```",
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c82aac32_8ff39f27",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:35:08Z",
+      "side": 1,
+      "message": "```suggestion\n    ) : ActionBarButton\n```",
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6283078_e91284f6",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:35:08Z",
+      "side": 1,
+      "message": "```suggestion\n    ) : ActionBarButton\n```",
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

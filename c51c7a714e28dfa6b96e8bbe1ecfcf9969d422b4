@@ -16,6 +16,24 @@
       "message": "Make sure those files are in .gitignore!",
       "revId": "c51c7a714e28dfa6b96e8bbe1ecfcf9969d422b4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e32b9e91_0c391bae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T18:09:57Z",
+      "side": 1,
+      "message": "/system_libs/*.jar - All of them are covered",
+      "parentUuid": "1bb6e64c_172227fc",
+      "revId": "c51c7a714e28dfa6b96e8bbe1ecfcf9969d422b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

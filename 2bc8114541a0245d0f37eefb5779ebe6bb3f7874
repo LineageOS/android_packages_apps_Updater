@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "928173a2_63ada0c3",
+        "filename": "app/src/main/java/org/lineageos/updater/ui/CollapseBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:33:01Z",
+      "side": 1,
+      "message": "IANAL but I believe you can replace this with SPDX-FileCopyrightText",
+      "range": {
+        "startLine": 2,
+        "startChar": 3,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "2bc8114541a0245d0f37eefb5779ebe6bb3f7874",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

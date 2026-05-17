@@ -10,6 +10,7 @@ import com.android.settingslib.spa.framework.common.SettingsPageProviderReposito
 import com.android.settingslib.spa.framework.common.SpaEnvironment
 import com.android.settingslib.spa.framework.common.SpaEnvironmentFactory
 import kotlinx.coroutines.MainScope
+import org.lineageos.updater.data.AppStateRepository
 import org.lineageos.updater.data.UpdatesRepository
 import org.lineageos.updater.data.source.local.UpdatesDatabase
 import org.lineageos.updater.data.source.local.UpdatesLocalDataSource
@@ -27,6 +28,7 @@ class UpdaterApplication : Application() {
     val batteryMonitor by lazy { BatteryMonitor(applicationContext, coroutineScope) }
     val networkMonitor by lazy { NetworkMonitor(applicationContext, coroutineScope) }
     val notificationHelper by lazy { NotificationHelper(applicationContext) }
+    val appStateRepository by lazy { AppStateRepository(applicationContext) }
     val updatesRepository by lazy {
         UpdatesRepository(
             networkMonitor = networkMonitor,
@@ -46,6 +48,5 @@ class UpdaterApplication : Application() {
 
             override val isSpaExpressiveEnabled = true
         })
-        NotificationHelper(this).setUpNotificationChannels()
     }
 }

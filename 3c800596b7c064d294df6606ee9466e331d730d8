@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a307048_ee3509cd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T08:39:30Z",
+      "side": 1,
+      "message": "Updater app moved to jetpack compose, hence this change is not relevant anymore.",
+      "revId": "3c800596b7c064d294df6606ee9466e331d730d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

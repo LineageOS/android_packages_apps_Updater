@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6dcb3eb_41ba5fb1",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesListAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:29:18Z",
+      "side": 1,
+      "message": "100 chars",
+      "revId": "da063562caa27ecf227f249d61de52a44a31fee3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe4f1075_25ca5828",
+        "filename": "app/src/main/java/org/lineageos/updater/preferences/PreferencesScreen.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:29:18Z",
+      "side": 1,
+      "message": "At least make it a private function in this file, but this as-is is horrible",
+      "revId": "da063562caa27ecf227f249d61de52a44a31fee3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

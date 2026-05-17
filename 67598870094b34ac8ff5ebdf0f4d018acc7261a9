@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2bdf893_ab770198",
+        "filename": "app/src/main/java/org/lineageos/updater/data/source/network/UpdatesNetworkDataSource.kt",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:01:21Z",
+      "side": 1,
+      "message": "This is horrible, we really should start thinking about moving the server URL to sysprops, AND also enforce our REST API scheme",
+      "revId": "67598870094b34ac8ff5ebdf0f4d018acc7261a9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b62242d_2597b5ff",
+        "filename": "app/src/main/java/org/lineageos/updater/data/source/network/UpdatesNetworkDataSource.kt",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:01:21Z",
+      "side": 1,
+      "message": "...so that we can get rid of this replace thingy, and just append our info",
+      "revId": "67598870094b34ac8ff5ebdf0f4d018acc7261a9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

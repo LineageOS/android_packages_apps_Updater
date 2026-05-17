@@ -77,7 +77,7 @@ android_app {
         "androidx.sqlite_sqlite",
         "androidx.sqlite_sqlite-framework",
         "androidx.work_work-runtime-ktx",
-        "Updater_io.ktor_ktor-client-android",
+        "Updater_com.squareup.okhttp3_okhttp",
         "kotlin-stdlib",
         "kotlinx_serialization_json",
     ],

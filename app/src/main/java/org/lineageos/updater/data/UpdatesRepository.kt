@@ -26,7 +26,7 @@ class UpdatesRepository(
     private val notificationHelper: NotificationHelper,
     private val networkDataSource: UpdatesNetworkDataSource,
     private val localDataSource: UpdatesLocalDataSource,
-) : AutoCloseable {
+) {
 
     fun observeLocalUpdates(): Flow<List<Update>> = localDataSource.observeUpdates()
 
@@ -46,8 +46,9 @@ class UpdatesRepository(
             localDataSource.getUpdates()
         }.associateBy { it.downloadId }
 
-        val networkUpdates =
+        val networkUpdates = withContext(Dispatchers.IO) {
             networkDataSource.fetchUpdates().map { it.toUpdate() }.filter { filterUpdates(it) }
+        }
 
         val networkIds = networkUpdates.map { it.downloadId }.toSet()
 
@@ -105,6 +106,4 @@ class UpdatesRepository(
         }
         return true
     }
-
-    override fun close() = networkDataSource.close()
 }

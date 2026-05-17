@@ -119,8 +119,8 @@ dependencies {
     implementation(libs.androidx.preference)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.ktor.client.android)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.okhttp)
 
     annotationProcessor(libs.androidx.room.compiler)
 }
@@ -133,16 +133,6 @@ configure<GenerateBpPluginExtension> {
     availableInAOSP.set { module: Module ->
         when {
             module.group.startsWith("androidx") -> true
-
-            // This module does not expose an Android Soong module.
-            // external/kotlinx.coroutines/integration/kotlinx-coroutines-slf4j
-            module.group == "org.jetbrains.kotlinx" &&
-                    module.name.startsWith("kotlinx-coroutines-slf4j") -> false
-
-            // These artifacts are not provided by the platform.
-            module.group == "org.jetbrains.kotlinx" &&
-                    module.name.startsWith("kotlinx-io") -> false
-
             module.group.startsWith("org.jetbrains") -> true
             module.group == "com.google.android.material" -> true
             module.group == "com.google.errorprone" -> true

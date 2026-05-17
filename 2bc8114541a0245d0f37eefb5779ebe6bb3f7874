@@ -46,6 +46,30 @@
       },
       "revId": "2bc8114541a0245d0f37eefb5779ebe6bb3f7874",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8efab9d_b336eaec",
+        "filename": "app/src/main/java/org/lineageos/updater/ui/CollapseBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T19:06:18Z",
+      "side": 1,
+      "message": "Uh, don\u0027t remove the original copyright string, just remove \"Copyright (C)\" with the SPDX header",
+      "parentUuid": "9abbcf04_6b8244c3",
+      "range": {
+        "startLine": 2,
+        "startChar": 3,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "2bc8114541a0245d0f37eefb5779ebe6bb3f7874",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

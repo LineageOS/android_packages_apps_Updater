@@ -33,6 +33,24 @@
       "message": "It felt convenient to not import, hence i just went along with it. Moreover R8/Proguard strips unused resources anyways.",
       "revId": "e72cbeb16fa844ffd7c0f755367d298a3ada4392",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "149d3044_e348e94d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T14:36:44Z",
+      "side": 1,
+      "message": "Sure, not a bloat issue, it\u0027s just regarding the fact that Material Icons vs Material Symbols, the latter are newer and better looking, and the lib is missing a lot of new icons",
+      "parentUuid": "d45d2a1d_80f8a6df",
+      "revId": "e72cbeb16fa844ffd7c0f755367d298a3ada4392",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

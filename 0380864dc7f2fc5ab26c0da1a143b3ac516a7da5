@@ -16,6 +16,24 @@
       "message": "...XML colors for Compose? Move to Kotlin constants OR, even better if you make them work, local Compose themes",
       "revId": "0380864dc7f2fc5ab26c0da1a143b3ac516a7da5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f92eea79_9b65f1c5",
+        "filename": "app/src/main/res/values/colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T18:57:26Z",
+      "side": 1,
+      "message": "I wanted the resource to be project configurable. Would this be acceptable ?",
+      "parentUuid": "fd9b8f8f_454f35c8",
+      "revId": "0380864dc7f2fc5ab26c0da1a143b3ac516a7da5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

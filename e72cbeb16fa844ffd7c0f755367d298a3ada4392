@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "795353d2_c0f1d8a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T02:59:07Z",
+      "side": 1,
+      "message": "Keep in mind this lib is more or less dead, Google is pushing for manually importing drawable resources from Material Symbols, to do later",
+      "revId": "e72cbeb16fa844ffd7c0f755367d298a3ada4392",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

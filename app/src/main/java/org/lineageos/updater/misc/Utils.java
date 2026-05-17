@@ -83,7 +83,7 @@ public class Utils {
         return true;
     }
 
-    private static boolean compareVersions(String a, String b, boolean allowMajorUpgrades) {
+    public static boolean compareVersions(String a, String b, boolean allowMajorUpgrades) {
         try {
             int majorA = Integer.parseInt(a.split("\\.")[0]);
             int minorA = Integer.parseInt(a.split("\\.")[1]);

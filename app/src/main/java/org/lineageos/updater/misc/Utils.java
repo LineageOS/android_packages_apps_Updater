@@ -4,7 +4,6 @@
  */
 package org.lineageos.updater.misc;
 
-import android.app.AlarmManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -21,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.lineageos.updater.R;
 import org.lineageos.updater.controller.UpdaterService;
+import org.lineageos.updater.data.UserPreferencesRepository;
 import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.source.local.UpdatesLocalDataSource;
 import org.lineageos.updater.data.source.local.UpdatesDatabase;
@@ -245,7 +245,8 @@ public class Utils {
      * the data of the application are wiped.
      *
      */
-    public static void cleanupDownloadsDir(Context context) {
+    public static void cleanupDownloadsDir(Context context,
+            UserPreferencesRepository userPreferencesRepository) {
         File downloadPath = getDownloadPath(context);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
@@ -255,7 +256,7 @@ public class Utils {
         long prevTimestamp = preferences.getLong(Constants.PREF_INSTALL_OLD_TIMESTAMP, 0);
         String lastUpdatePath = preferences.getString(Constants.PREF_INSTALL_PACKAGE_PATH, null);
         boolean reinstalling = preferences.getBoolean(Constants.PREF_INSTALL_AGAIN, false);
-        boolean deleteUpdates = preferences.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false);
+        boolean deleteUpdates = userPreferencesRepository.getAutoDeleteBlocking();
         if ((buildTimestamp != prevTimestamp || reinstalling) && deleteUpdates &&
                 lastUpdatePath != null) {
             File lastUpdate = new File(lastUpdatePath);
@@ -348,28 +349,6 @@ public class Utils {
     public static boolean isEncrypted(Context context, File file) {
         StorageManager sm = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
         return sm.isEncrypted(file);
-    }
-
-    public static int getUpdateCheckSetting(Context context) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return preferences.getInt(Constants.PREF_AUTO_UPDATES_CHECK_INTERVAL,
-                Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY);
-    }
-
-    public static boolean isUpdateCheckEnabled(Context context) {
-        return getUpdateCheckSetting(context) != Constants.AUTO_UPDATES_CHECK_INTERVAL_NEVER;
-    }
-
-    public static long getUpdateCheckInterval(Context context) {
-        switch (Utils.getUpdateCheckSetting(context)) {
-            case Constants.AUTO_UPDATES_CHECK_INTERVAL_DAILY:
-                return AlarmManager.INTERVAL_DAY;
-            case Constants.AUTO_UPDATES_CHECK_INTERVAL_WEEKLY:
-            default:
-                return AlarmManager.INTERVAL_DAY * 7;
-            case Constants.AUTO_UPDATES_CHECK_INTERVAL_MONTHLY:
-                return AlarmManager.INTERVAL_DAY * 30;
-        }
     }
 
     public static boolean isRecoveryUpdateExecPresent() {

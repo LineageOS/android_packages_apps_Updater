@@ -18,11 +18,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,7 +45,6 @@ import java.util.Objects;
 
 public class UpdatesActivity extends UpdatesScaffoldActivity implements UpdateImporter.Callbacks {
 
-    private static final String TAG = "UpdatesActivity";
     private UpdaterService mUpdaterService;
     private BroadcastReceiver mBroadcastReceiver;
 
@@ -208,11 +203,6 @@ public class UpdatesActivity extends UpdatesScaffoldActivity implements UpdateIm
     }
 
     @Override
-    public void onPreferencesClick() {
-        showPreferencesDialog();
-    }
-
-    @Override
     public void onChangelogClick() {
         Intent openUrl = new Intent(Intent.ACTION_VIEW,
                 Uri.parse(Utils.getChangelogURL(this)));
@@ -357,64 +347,6 @@ public class UpdatesActivity extends UpdatesScaffoldActivity implements UpdateIm
 
     public void showToast(int stringId, int duration) {
         Toast.makeText(this, stringId, duration).show();
-    }
-
-    private void showPreferencesDialog() {
-        View view = LayoutInflater.from(this).inflate(R.layout.preferences_dialog, null);
-        Spinner autoCheckInterval = view.findViewById(R.id.preferences_auto_updates_check_interval);
-        Switch autoDelete = view.findViewById(R.id.preferences_auto_delete_updates);
-        Switch meteredNetworkWarning = view.findViewById(
-                R.id.preferences_metered_network_warning);
-        Switch abPerfMode = view.findViewById(R.id.preferences_ab_perf_mode);
-        Switch updateRecovery = view.findViewById(R.id.preferences_update_recovery);
-
-        if (!DeviceInfoUtils.isABDevice()) {
-            abPerfMode.setVisibility(View.GONE);
-        }
-
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        autoCheckInterval.setSelection(Utils.getUpdateCheckSetting(this));
-        autoDelete.setChecked(prefs.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false));
-        meteredNetworkWarning.setChecked(prefs.getBoolean(Constants.PREF_METERED_NETWORK_WARNING, true));
-        abPerfMode.setChecked(prefs.getBoolean(Constants.PREF_AB_PERF_MODE, false));
-
-        // Only show update recovery option for non-AB devices with recovery update script
-        if (Utils.isRecoveryUpdateExecPresent()) {
-            updateRecovery.setVisibility(View.VISIBLE);
-            // Obtain and apply the user preference from SetupWizard.
-            updateRecovery.setChecked(DeviceInfoUtils.isRecoveryUpdateEnabled());
-        } // else: remains GONE (default from XML)
-
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.menu_preferences)
-                .setView(view)
-                .setOnDismissListener(dialogInterface -> {
-                    prefs.edit()
-                            .putInt(Constants.PREF_AUTO_UPDATES_CHECK_INTERVAL,
-                                    autoCheckInterval.getSelectedItemPosition())
-                            .putBoolean(Constants.PREF_AUTO_DELETE_UPDATES, autoDelete.isChecked())
-                            .putBoolean(Constants.PREF_METERED_NETWORK_WARNING,
-                                    meteredNetworkWarning.isChecked())
-                            .putBoolean(Constants.PREF_AB_PERF_MODE, abPerfMode.isChecked())
-                            .apply();
-
-                    if (Utils.isUpdateCheckEnabled(this)) {
-                        UpdatesCheckReceiver.scheduleRepeatingUpdatesCheck(this);
-                    } else {
-                        UpdatesCheckReceiver.cancelRepeatingUpdatesCheck(this);
-                        UpdatesCheckReceiver.cancelUpdatesCheck(this);
-                    }
-
-                    if (DeviceInfoUtils.isABDevice()) {
-                        boolean enableABPerfMode = abPerfMode.isChecked();
-                        mUpdaterService.getUpdaterController().setPerformanceMode(enableABPerfMode);
-                    }
-                    if (Utils.isRecoveryUpdateExecPresent()) {
-                        boolean enableRecoveryUpdate = updateRecovery.isChecked();
-                        DeviceInfoUtils.setRecoveryUpdateEnabled(enableRecoveryUpdate);
-                    }
-                })
-                .show();
     }
 
     private void maybeShowWelcomeMessage() {

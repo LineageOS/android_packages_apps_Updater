@@ -23,7 +23,6 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import org.lineageos.updater.UpdaterApplication
 import org.lineageos.updater.data.CheckInterval
-import org.lineageos.updater.data.UserPreferencesRepository
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.toJavaDuration
 
@@ -75,7 +74,8 @@ class UpdatesCheckWorker(
         @JvmStatic
         fun schedulePeriodicCheck(context: Context) {
             CoroutineScope(Dispatchers.IO + SupervisorJob()).launch {
-                val prefs = UserPreferencesRepository(context)
+                val prefs =
+                    (context.applicationContext as UpdaterApplication).userPreferencesRepository
                 if (prefs.getPeriodicCheckEnabled()) {
                     enqueuePeriodicCheck(
                         context,
@@ -89,7 +89,8 @@ class UpdatesCheckWorker(
         @JvmStatic
         fun reschedulePeriodicCheck(context: Context) {
             CoroutineScope(Dispatchers.IO + SupervisorJob()).launch {
-                val prefs = UserPreferencesRepository(context)
+                val prefs =
+                    (context.applicationContext as UpdaterApplication).userPreferencesRepository
                 if (!prefs.getPeriodicCheckEnabled()) {
                     cancelPeriodicCheck(context)
                 } else {

@@ -13,11 +13,12 @@ import android.util.Log;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import org.lineageos.updater.UpdaterApplication;
 import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.UpdateStatus;
+import org.lineageos.updater.data.UserPreferencesRepository;
 import org.lineageos.updater.data.source.local.UpdatesLocalDataSource;
 import org.lineageos.updater.data.source.local.UpdatesDatabase;
-import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
 import org.lineageos.updater.download.DownloadClient;
 import org.lineageos.updater.misc.Utils;
 
@@ -57,12 +58,15 @@ public class UpdaterController {
 
     public static synchronized UpdaterController getInstance(Context context) {
         if (sUpdaterController == null) {
-            sUpdaterController = new UpdaterController(context);
+            UserPreferencesRepository userPreferencesRepository =
+                    ((UpdaterApplication) context.getApplicationContext())
+                            .getUserPreferencesRepository();
+            sUpdaterController = new UpdaterController(context, userPreferencesRepository);
         }
         return sUpdaterController;
     }
 
-    private UpdaterController(Context context) {
+    private UpdaterController(Context context, UserPreferencesRepository userPreferencesRepository) {
         mBroadcastManager = LocalBroadcastManager.getInstance(context);
         mUpdatesLocalDataSource =
                 new UpdatesLocalDataSource(UpdatesDatabase.getInstance(context).updateDao());
@@ -73,7 +77,7 @@ public class UpdaterController {
         mContext = context.getApplicationContext();
 
         new Thread(() -> {
-            Utils.cleanupDownloadsDir(context);
+            Utils.cleanupDownloadsDir(context, userPreferencesRepository);
             for (Update update : mUpdatesLocalDataSource.getUpdates()) {
                 addUpdate(update, false);
             }
@@ -609,13 +613,6 @@ public class UpdaterController {
 
     public boolean isWaitingForReboot(String downloadId) {
         return ABUpdateInstaller.isWaitingForReboot(mContext, downloadId);
-    }
-
-    public void setPerformanceMode(boolean enable) {
-        if (!DeviceInfoUtils.isABDevice()) {
-            return;
-        }
-        ABUpdateInstaller.getInstance(mContext, this).setPerformanceMode(enable);
     }
 
     private void pauseActiveDownloads() {

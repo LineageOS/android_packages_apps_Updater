@@ -15,6 +15,7 @@ import androidx.preference.PreferenceManager;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
 import org.lineageos.updater.misc.Constants;
+import org.lineageos.updater.updatescheck.UpdatesCheckWorker;
 
 public class UpdaterReceiver extends BroadcastReceiver {
 
@@ -38,6 +39,8 @@ public class UpdaterReceiver extends BroadcastReceiver {
             PowerManager pm = context.getSystemService(PowerManager.class);
             pm.reboot(null);
         } else if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+            UpdatesCheckWorker.schedulePeriodicCheck(context);
+
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
             String downloadId = pref.getString(Constants.PREF_NEEDS_REBOOT_ID, null);
             pref.edit().remove(Constants.PREF_NEEDS_REBOOT_ID).apply();

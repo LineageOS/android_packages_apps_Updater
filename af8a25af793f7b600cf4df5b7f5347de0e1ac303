@@ -34,6 +34,24 @@
       "parentUuid": "cd94a3d0_cc9c1418",
       "revId": "af8a25af793f7b600cf4df5b7f5347de0e1ac303",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e533e306_50949ad5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T18:59:57Z",
+      "side": 1,
+      "message": "Weird, https://review.lineageos.org/c/LineageOS/android_packages_apps_Twelve/+/420982\n\nUsing any custom libs for serialization?",
+      "parentUuid": "8270f39d_87cba2c9",
+      "revId": "af8a25af793f7b600cf4df5b7f5347de0e1ac303",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ad9d5f2_a9405543",
+        "filename": "app/src/main/java/org/lineageos/updater/util/StringUtil.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:27:24Z",
+      "side": 1,
+      "message": "Once we get rid of Java these things will become extension functions, those util classes are getting annoying",
+      "revId": "7e5e2574975459c53fa70611fb4aa85ca12161d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

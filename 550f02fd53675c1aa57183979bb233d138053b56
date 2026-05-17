@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88117e1e_90b3a1d6",
+        "filename": "app/src/main/java/org/lineageos/updater/data/source/network/UpdatesNetworkDataSource.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T20:43:23Z",
+      "side": 1,
+      "message": "...body.string()?",
+      "revId": "550f02fd53675c1aa57183979bb233d138053b56",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

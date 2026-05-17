@@ -37,11 +37,11 @@ import com.android.settingslib.spa.framework.compose.NavControllerWrapper
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import com.android.settingslib.spa.widget.preference.Preference
 import com.android.settingslib.spa.widget.preference.PreferenceModel
-import com.android.settingslib.spa.widget.scaffold.MoreOptionsAction
 import com.android.settingslib.spa.widget.scaffold.SettingsScaffold
 import com.android.settingslib.spa.widget.ui.Category
 import org.lineageos.updater.data.Update
 import org.lineageos.updater.data.UpdateStatus
+import org.lineageos.updater.deviceinfo.DeviceInfoBanner
 import org.lineageos.updater.preferences.PreferencesActivity
 
 abstract class UpdatesScaffoldActivity : ComponentActivity() {
@@ -88,12 +88,6 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
                                     contentDescription = stringResource(R.string.menu_refresh),
                                 )
                             }
-
-                            MoreOptionsAction {
-                                MenuItem(stringResource(R.string.menu_show_changelog)) {
-                                    onChangelogClick()
-                                }
-                            }
                         },
                     ) { paddingValues ->
                         Column(
@@ -102,6 +96,8 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
                                 .padding(paddingValues)
                                 .verticalScroll(rememberScrollState())
                         ) {
+                            DeviceInfoBanner()
+
                             AndroidView(
                                 factory = { capturedView },
                                 modifier = Modifier
@@ -132,7 +128,6 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
 
     open fun onRefreshClick() {}
     open fun onLocalUpdateClick() {}
-    open fun onChangelogClick() {}
 }
 
 @Composable

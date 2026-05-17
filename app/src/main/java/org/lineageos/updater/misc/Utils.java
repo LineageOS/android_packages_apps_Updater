@@ -72,10 +72,6 @@ public class Utils {
         return context.getString(R.string.blocked_update_info_url, DeviceInfoUtils.getDevice());
     }
 
-    public static String getChangelogURL(Context context) {
-        return context.getString(R.string.menu_changelog_url, DeviceInfoUtils.getDevice());
-    }
-
     public static void triggerUpdate(Context context, String downloadId) {
         final Intent intent = new Intent(context, UpdaterService.class);
         intent.setAction(UpdaterService.ACTION_INSTALL_UPDATE);

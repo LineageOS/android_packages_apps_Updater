@@ -11,16 +11,20 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.BatteryManager
 import android.os.UpdateEngine
-import androidx.preference.PreferenceManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
-import org.lineageos.updater.misc.Constants
+import org.lineageos.updater.data.UserPreferencesRepository
 
-class BatteryMonitor(private val appContext: Context, coroutineScope: CoroutineScope) {
+class BatteryMonitor(
+    private val appContext: Context,
+    coroutineScope: CoroutineScope,
+    userPreferencesRepository: UserPreferencesRepository,
+) {
     data class BatteryState(
         val level: Int,
         val isAcCharging: Boolean,
@@ -37,8 +41,6 @@ class BatteryMonitor(private val appContext: Context, coroutineScope: CoroutineS
         }
     }
 
-    private val prefs = PreferenceManager.getDefaultSharedPreferences(appContext)
-
     val currentBatteryState: BatteryState
         get() = appContext.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
             ?.let { fromIntent(it) }
@@ -51,6 +53,20 @@ class BatteryMonitor(private val appContext: Context, coroutineScope: CoroutineS
         null
     }
 
+    private val abPerfMode = userPreferencesRepository.abPerfModeFlow
+        .onEach {
+            try {
+                updateEngine?.setPerformanceMode(currentBatteryState.isAcCharging || it)
+            } catch (_: Throwable) {
+                // Ignored
+            }
+        }
+        .stateIn(
+            scope = coroutineScope,
+            started = SharingStarted.Eagerly,
+            initialValue = false,
+        )
+
     val batteryState: SharedFlow<BatteryState> = callbackFlow {
         var previousState = currentBatteryState
 
@@ -61,10 +77,7 @@ class BatteryMonitor(private val appContext: Context, coroutineScope: CoroutineS
                 // Guard on isAcCharging change to avoid redundant IPC on every battery level tick.
                 if (state.isAcCharging != previousState.isAcCharging) {
                     try {
-                        updateEngine?.setPerformanceMode(
-                            state.isAcCharging ||
-                                    prefs.getBoolean(Constants.PREF_AB_PERF_MODE, false)
-                        )
+                        updateEngine?.setPerformanceMode(state.isAcCharging || abPerfMode.value)
                     } catch (_: Throwable) {
                         // Ignored
                     }

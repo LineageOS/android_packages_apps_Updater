@@ -24,30 +24,38 @@ import com.android.settingslib.spa.widget.scaffold.RegularScaffold
 import com.android.settingslib.spa.widget.ui.Category
 import kotlinx.coroutines.launch
 import org.lineageos.updater.R
+import org.lineageos.updater.UpdaterApplication
 import org.lineageos.updater.data.CheckInterval
 import org.lineageos.updater.data.UserPreferencesRepository
 import org.lineageos.updater.deviceinfo.DeviceInfoUtils
 import org.lineageos.updater.misc.Utils
+import org.lineageos.updater.util.BatteryMonitor
 
 @Composable
 fun PreferencesScreen() {
     val context = LocalContext.current
-    val repository = remember(context) { UserPreferencesRepository(context) }
+    val application = remember(context) { context.applicationContext as UpdaterApplication }
+    val repository = application.userPreferencesRepository
+    val batteryMonitor = application.batteryMonitor
     val isABDevice = remember { DeviceInfoUtils.isABDevice }
     val showRecoveryUpdate = remember { Utils.isRecoveryUpdateExecPresent() }
     RegularScaffold(title = stringResource(R.string.display_name)) {
-        PreferencesContent(repository, isABDevice, showRecoveryUpdate)
+        PreferencesContent(repository, batteryMonitor, isABDevice, showRecoveryUpdate)
     }
 }
 
 @Composable
 private fun PreferencesContent(
     repository: UserPreferencesRepository,
+    batteryMonitor: BatteryMonitor,
     isABDevice: Boolean,
     showRecoveryUpdate: Boolean,
 ) {
     val coroutineScope = rememberCoroutineScope()
     val abPerfMode by repository.abPerfModeFlow.collectAsStateWithLifecycle(false)
+    val batteryState by batteryMonitor.batteryState.collectAsStateWithLifecycle(
+        batteryMonitor.currentBatteryState
+    )
     val autoDelete by repository.autoDeleteFlow.collectAsStateWithLifecycle(true)
     val checkInterval by repository.checkIntervalFlow.collectAsStateWithLifecycle(CheckInterval.default)
     val meteredNetworkWarning by repository.meteredNetworkWarningFlow.collectAsStateWithLifecycle(
@@ -60,6 +68,7 @@ private fun PreferencesContent(
     val autoDeleteUpdatesSummary = stringResource(R.string.menu_auto_delete_updates_summary)
     val meteredNetworkWarningSummary = stringResource(R.string.menu_metered_network_warning_summary)
     val abPerfModeSummary = stringResource(R.string.menu_ab_perf_mode_summary)
+    val abPerfModeChargingSummary = stringResource(R.string.menu_ab_perf_mode_summary_charging)
     val updateRecoverySummary = stringResource(R.string.menu_update_recovery_summary)
     val selectedCheckInterval = remember(checkInterval) {
         object : IntState {
@@ -124,8 +133,15 @@ private fun PreferencesContent(
         if (isABDevice) {
             SwitchPreference(object : SwitchPreferenceModel {
                 override val title = stringResource(R.string.menu_ab_perf_mode)
-                override val summary = { abPerfModeSummary }
-                override val checked = { abPerfMode }
+                override val summary = {
+                    if (batteryState.isAcCharging) {
+                        abPerfModeChargingSummary
+                    } else {
+                        abPerfModeSummary
+                    }
+                }
+                override val changeable = { !batteryState.isAcCharging }
+                override val checked = { batteryState.isAcCharging || abPerfMode }
                 override val onCheckedChange: (Boolean) -> Unit = { value ->
                     coroutineScope.launch { repository.setAbPerfMode(value) }
                 }

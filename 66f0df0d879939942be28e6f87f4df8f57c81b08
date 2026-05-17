@@ -33,6 +33,24 @@
       "message": "Store the object as a class field in this commit (aka, make it a singleton just like the other classes)",
       "revId": "66f0df0d879939942be28e6f87f4df8f57c81b08",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bae68425_4c0553a0",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdaterApplication.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T19:40:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "356ca510_04bf1234",
+      "revId": "66f0df0d879939942be28e6f87f4df8f57c81b08",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

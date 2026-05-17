@@ -17,6 +17,7 @@ import androidx.preference.PreferenceManager;
 import org.lineageos.updater.UpdaterApplication;
 import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.UpdateStatus;
+import org.lineageos.updater.data.UserPreferencesRepository;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
 
@@ -40,6 +41,7 @@ class ABUpdateInstaller {
     private static ABUpdateInstaller sInstance = null;
 
     private final UpdaterController mUpdaterController;
+    private final UserPreferencesRepository mUserPreferencesRepository;
     private final Context mContext;
     private String mDownloadId;
 
@@ -150,16 +152,20 @@ class ABUpdateInstaller {
         }
     }
 
-    private ABUpdateInstaller(Context context, UpdaterController updaterController) {
+    private ABUpdateInstaller(Context context, UpdaterController updaterController,
+            UserPreferencesRepository userPreferencesRepository) {
         mUpdaterController = updaterController;
+        mUserPreferencesRepository = userPreferencesRepository;
         mContext = context.getApplicationContext();
         mUpdateEngine = new UpdateEngine();
     }
 
     static synchronized ABUpdateInstaller getInstance(Context context,
-            UpdaterController updaterController) {
+            UpdaterController updaterController,
+            UserPreferencesRepository userPreferencesRepository) {
         if (sInstance == null) {
-            sInstance = new ABUpdateInstaller(context, updaterController);
+            sInstance = new ABUpdateInstaller(context, updaterController,
+                    userPreferencesRepository);
         }
         return sInstance;
     }
@@ -224,8 +230,7 @@ class ABUpdateInstaller {
             }
         }
 
-        applyPerformanceMode(PreferenceManager.getDefaultSharedPreferences(mContext)
-                .getBoolean(Constants.PREF_AB_PERF_MODE, false));
+        applyPerformanceMode(mUserPreferencesRepository.getAbPerfModeBlocking());
 
         String zipFileUri = "file://" + file.getAbsolutePath();
         try {
@@ -273,8 +278,7 @@ class ABUpdateInstaller {
             return;
         }
 
-        applyPerformanceMode(PreferenceManager.getDefaultSharedPreferences(mContext)
-                .getBoolean(Constants.PREF_AB_PERF_MODE, false));
+        applyPerformanceMode(mUserPreferencesRepository.getAbPerfModeBlocking());
     }
 
     private void installationDone(boolean needsReboot) {
@@ -304,10 +308,6 @@ class ABUpdateInstaller {
                 update.withStatus(UpdateStatus.INSTALLATION_CANCELLED));
         mUpdaterController.notifyUpdateChange(mDownloadId);
 
-    }
-
-    public void setPerformanceMode(boolean enable) {
-        applyPerformanceMode(enable);
     }
 
     public void suspend() {

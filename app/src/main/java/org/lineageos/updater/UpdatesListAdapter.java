@@ -35,6 +35,7 @@ import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.UpdateStatus;
+import org.lineageos.updater.data.UserPreferencesRepository;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
@@ -63,6 +64,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private AlertDialog infoDialog;
     private final BatteryMonitor mBatteryMonitor;
     private final NetworkMonitor mNetworkMonitor;
+    private final UserPreferencesRepository mUserPreferencesRepository;
 
     private enum Action {
         DOWNLOAD,
@@ -114,6 +116,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         UpdaterApplication application = (UpdaterApplication) activity.getApplication();
         mBatteryMonitor = application.getBatteryMonitor();
         mNetworkMonitor = application.getNetworkMonitor();
+        mUserPreferencesRepository = application.getUserPreferencesRepository();
         mExportUpdateCallback = exportUpdateCallback;
     }
 
@@ -335,8 +338,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 ? () -> mUpdaterController.resumeDownload(downloadId)
                 : () -> mUpdaterController.startDownload(downloadId);
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mActivity);
-        boolean warn = preferences.getBoolean(Constants.PREF_METERED_NETWORK_WARNING, true);
+        boolean warn = mUserPreferencesRepository.getMeteredNetworkWarningBlocking();
         if (!(mNetworkMonitor.getCurrentNetworkState().isMetered() && warn)) {
             downloadAction.run();
             return;

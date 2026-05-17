@@ -53,6 +53,8 @@ class UserPreferencesRepository(context: Context) {
 
     suspend fun getAbPerfMode(): Boolean = abPerfModeFlow.first()
 
+    fun getAbPerfModeBlocking(): Boolean = runBlocking { getAbPerfMode() }
+
     suspend fun setAbPerfMode(value: Boolean) {
         userPreferences.edit { it[UserPreferencesKeys.AB_PERF_MODE] = value }
     }
@@ -63,6 +65,8 @@ class UserPreferencesRepository(context: Context) {
 
     suspend fun getAutoDelete(): Boolean = autoDeleteFlow.first()
 
+    fun getAutoDeleteBlocking(): Boolean = runBlocking { getAutoDelete() }
+
     suspend fun setAutoDelete(value: Boolean) {
         userPreferences.edit { it[UserPreferencesKeys.AUTO_DELETE] = value }
     }
@@ -72,6 +76,8 @@ class UserPreferencesRepository(context: Context) {
     }
 
     suspend fun getMeteredNetworkWarning(): Boolean = meteredNetworkWarningFlow.first()
+
+    fun getMeteredNetworkWarningBlocking(): Boolean = runBlocking { getMeteredNetworkWarning() }
 
     suspend fun setMeteredNetworkWarning(value: Boolean) {
         userPreferences.edit { it[UserPreferencesKeys.METERED_NETWORK_WARNING] = value }
@@ -109,22 +115,5 @@ class UserPreferencesRepository(context: Context) {
 
     fun setRecoveryUpdateEnabled(enabled: Boolean) {
         DeviceInfoUtils.isRecoveryUpdateEnabled = enabled
-    }
-
-    companion object {
-        @JvmStatic
-        fun getAbPerfModeBlocking(context: Context): Boolean = runBlocking {
-            UserPreferencesRepository(context).abPerfModeFlow.first()
-        }
-
-        @JvmStatic
-        fun getAutoDeleteBlocking(context: Context): Boolean = runBlocking {
-            UserPreferencesRepository(context).autoDeleteFlow.first()
-        }
-
-        @JvmStatic
-        fun getMeteredNetworkWarningBlocking(context: Context): Boolean = runBlocking {
-            UserPreferencesRepository(context).meteredNetworkWarningFlow.first()
-        }
     }
 }

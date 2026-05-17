@@ -11,7 +11,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.content.pm.ServiceInfo;
 import android.os.Binder;
 import android.os.Bundle;
@@ -21,14 +20,14 @@ import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import androidx.preference.PreferenceManager;
 
 import org.lineageos.updater.R;
+import org.lineageos.updater.UpdaterApplication;
 import org.lineageos.updater.UpdaterReceiver;
 import org.lineageos.updater.UpdatesActivity;
 import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.UpdateStatus;
-import org.lineageos.updater.misc.Constants;
+import org.lineageos.updater.data.UserPreferencesRepository;
 import org.lineageos.updater.misc.StringGenerator;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.notifications.NotificationHelper;
@@ -67,11 +66,14 @@ public class UpdaterService extends Service {
     private NotificationCompat.BigTextStyle mNotificationStyle;
 
     private UpdaterController mUpdaterController;
+    private UserPreferencesRepository mUserPreferencesRepository;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
+        UpdaterApplication application = (UpdaterApplication) getApplication();
+        mUserPreferencesRepository = application.getUserPreferencesRepository();
         mUpdaterController = UpdaterController.getInstance(this);
 
         mNotificationManager = getSystemService(NotificationManager.class);
@@ -161,7 +163,7 @@ public class UpdaterService extends Service {
             if (ABUpdateInstaller.isInstallingUpdate(this)) {
                 // The service is being restarted.
                 ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
-                        mUpdaterController);
+                        mUpdaterController, mUserPreferencesRepository);
                 installer.reconnect();
             }
         } else if (ACTION_POST_REBOOT_CLEANUP.equals(intent.getAction())) {
@@ -193,7 +195,7 @@ public class UpdaterService extends Service {
             try {
                 if (Utils.isABUpdate(update.getFile())) {
                     ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
-                            mUpdaterController);
+                            mUpdaterController, mUserPreferencesRepository);
                     installer.install(downloadId);
                 } else {
                     UpdateInstaller installer = UpdateInstaller.getInstance(this,
@@ -213,21 +215,21 @@ public class UpdaterService extends Service {
                 installer.cancel();
             } else if (ABUpdateInstaller.isInstallingUpdate(this)) {
                 ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
-                        mUpdaterController);
+                        mUpdaterController, mUserPreferencesRepository);
                 installer.reconnect();
                 installer.cancel();
             }
         } else if (ACTION_INSTALL_SUSPEND.equals(intent.getAction())) {
             if (ABUpdateInstaller.isInstallingUpdate(this)) {
                 ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
-                        mUpdaterController);
+                        mUpdaterController, mUserPreferencesRepository);
                 installer.reconnect();
                 installer.suspend();
             }
         } else if (ACTION_INSTALL_RESUME.equals(intent.getAction())) {
             if (ABUpdateInstaller.isInstallingUpdateSuspended(this)) {
                 ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
-                        mUpdaterController);
+                        mUpdaterController, mUserPreferencesRepository);
                 installer.reconnect();
                 installer.resume();
             }
@@ -552,8 +554,7 @@ public class UpdaterService extends Service {
 
         Log.d(TAG, "Post-reboot cleanup for: " + downloadId);
 
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean deleteUpdate = pref.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false);
+        boolean deleteUpdate = mUserPreferencesRepository.getAutoDeleteBlocking();
 
         // Always delete local updates
         boolean isLocal = Update.LOCAL_ID.equals(downloadId);

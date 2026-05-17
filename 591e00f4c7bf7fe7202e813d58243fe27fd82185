@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5f3a441_053e6ad2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:14:16Z",
+      "side": 1,
+      "message": "Please make the UserPreferencesRepository a singleton held by the application object, and pass it down the chain where needed",
+      "revId": "591e00f4c7bf7fe7202e813d58243fe27fd82185",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

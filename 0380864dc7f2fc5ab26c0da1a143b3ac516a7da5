@@ -34,6 +34,24 @@
       "parentUuid": "fd9b8f8f_454f35c8",
       "revId": "0380864dc7f2fc5ab26c0da1a143b3ac516a7da5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e35a8717_31d36c7d",
+        "filename": "app/src/main/res/values/colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T19:02:14Z",
+      "side": 1,
+      "message": "I guess...\n\nMaybe ask Vaz whether or not we can drop color branding and just use Monet color scheme? So that it follows the wallpaper color",
+      "parentUuid": "f92eea79_9b65f1c5",
+      "revId": "0380864dc7f2fc5ab26c0da1a143b3ac516a7da5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

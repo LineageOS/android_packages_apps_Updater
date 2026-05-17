@@ -27,12 +27,12 @@ import org.lineageos.updater.UpdatesActivity;
 import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.UpdateStatus;
 import org.lineageos.updater.data.UserPreferencesRepository;
-import org.lineageos.updater.misc.StringGenerator;
+import org.lineageos.updater.util.StringUtil;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.notifications.NotificationHelper;
 
 import java.io.IOException;
-import java.text.DateFormat;
+import java.time.format.FormatStyle;
 import java.text.NumberFormat;
 
 public class UpdaterService extends Service {
@@ -462,7 +462,7 @@ public class UpdaterService extends Service {
         setNotificationTitle(update);
 
         String speed = Formatter.formatFileSize(this, update.getSpeed());
-        CharSequence eta = StringGenerator.formatETA(this, update.getEta() * 1000);
+        CharSequence eta = StringUtil.formatETA(this, update.getEta() * 1000);
         mNotificationStyle.bigText(
                 getString(R.string.text_download_speed, eta, speed));
 
@@ -484,8 +484,8 @@ public class UpdaterService extends Service {
     }
 
     private void setNotificationTitle(Update update) {
-        String buildDate = StringGenerator.getDateLocalizedUTC(this,
-                DateFormat.MEDIUM, update.getTimestamp());
+        String buildDate = StringUtil.getDateLocalizedUTC(this,
+                FormatStyle.MEDIUM, update.getTimestamp());
         String buildInfo = getString(R.string.list_build_version_date,
                 update.getVersion(), buildDate);
         mNotificationStyle.setBigContentTitle(buildInfo);

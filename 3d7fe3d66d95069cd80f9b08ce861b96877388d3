@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d70bd131_d41d4371",
+        "filename": "app/libs/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-17T03:38:59Z",
+      "side": 1,
+      "message": "No, please squash this SDK version change with the min SDK bump",
+      "revId": "3d7fe3d66d95069cd80f9b08ce861b96877388d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

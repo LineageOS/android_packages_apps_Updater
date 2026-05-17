@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d8cc571_7f167bfd",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T18:07:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0faf2f51_cc743099",
+      "range": {
+        "startLine": 89,
+        "startChar": 7,
+        "endLine": 89,
+        "endChar": 12
+      },
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49543e25_8a60c2eb",
@@ -37,6 +61,30 @@
       "writtenOn": "2026-05-17T03:35:08Z",
       "side": 1,
       "message": "```suggestion\n    val enabled: Boolean\n```",
+      "range": {
+        "startLine": 90,
+        "startChar": 4,
+        "endLine": 90,
+        "endChar": 13
+      },
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfa9704e_e20b2085",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T18:07:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49543e25_8a60c2eb",
       "range": {
         "startLine": 90,
         "startChar": 4,
@@ -70,6 +118,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f7e9a16_74def125",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T18:07:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e10e8699_205e286f",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 13
+      },
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55b05d18_1174b09b",
@@ -83,6 +155,24 @@
       "writtenOn": "2026-05-17T03:35:08Z",
       "side": 1,
       "message": "```suggestion\n    ) : ActionBarButton\n```",
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afe708a7_f00f557f",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T18:07:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55b05d18_1174b09b",
       "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -104,6 +194,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9c27f8a_e369e0e4",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T18:07:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c82aac32_8ff39f27",
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d6283078_e91284f6",
@@ -117,6 +225,24 @@
       "writtenOn": "2026-05-17T03:35:08Z",
       "side": 1,
       "message": "```suggestion\n    ) : ActionBarButton\n```",
+      "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a13ffca0_c6986ef6",
+        "filename": "app/src/main/java/org/lineageos/updater/updates/button/ActionBar.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-17T18:07:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d6283078_e91284f6",
       "revId": "7f00eca31596e5f90cb9308930b97d8120a23378",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

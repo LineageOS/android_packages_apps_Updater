@@ -11,8 +11,6 @@ import android.os.PowerManager;
 import android.os.SystemClock;
 import android.util.Log;
 
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-
 import org.lineageos.updater.UpdaterApplication;
 import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.UpdateStatus;
@@ -46,7 +44,6 @@ public class UpdaterController {
     private static final int MAX_REPORT_INTERVAL_MS = 1000;
 
     private final Context mContext;
-    private final LocalBroadcastManager mBroadcastManager;
     private final UpdatesLocalDataSource mUpdatesLocalDataSource;
 
     private final PowerManager.WakeLock mWakeLock;
@@ -67,7 +64,6 @@ public class UpdaterController {
     }
 
     private UpdaterController(Context context, UserPreferencesRepository userPreferencesRepository) {
-        mBroadcastManager = LocalBroadcastManager.getInstance(context);
         mUpdatesLocalDataSource =
                 new UpdatesLocalDataSource(UpdatesDatabase.getInstance(context).updateDao());
         mDownloadRoot = Utils.getDownloadPath(context);
@@ -97,29 +93,33 @@ public class UpdaterController {
     void notifyUpdateChange(String downloadId) {
         Intent intent = new Intent();
         intent.setAction(ACTION_UPDATE_STATUS);
+        intent.setPackage(mContext.getPackageName());
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
-        mBroadcastManager.sendBroadcast(intent);
+        mContext.sendBroadcast(intent);
     }
 
     void notifyUpdateDelete(String downloadId) {
         Intent intent = new Intent();
         intent.setAction(ACTION_UPDATE_REMOVED);
+        intent.setPackage(mContext.getPackageName());
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
-        mBroadcastManager.sendBroadcast(intent);
+        mContext.sendBroadcast(intent);
     }
 
     void notifyDownloadProgress(String downloadId) {
         Intent intent = new Intent();
         intent.setAction(ACTION_DOWNLOAD_PROGRESS);
+        intent.setPackage(mContext.getPackageName());
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
-        mBroadcastManager.sendBroadcast(intent);
+        mContext.sendBroadcast(intent);
     }
 
     void notifyInstallProgress(String downloadId) {
         Intent intent = new Intent();
         intent.setAction(ACTION_INSTALL_PROGRESS);
+        intent.setPackage(mContext.getPackageName());
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
-        mBroadcastManager.sendBroadcast(intent);
+        mContext.sendBroadcast(intent);
     }
 
     private void tryReleaseWakelock() {

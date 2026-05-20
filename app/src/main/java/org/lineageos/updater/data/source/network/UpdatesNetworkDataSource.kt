@@ -64,9 +64,9 @@ class UpdatesNetworkDataSource(private val context: Context) : Closeable {
             throw IOException("Response body exceeds $MAX_BODY_SIZE_BYTES bytes")
         }
 
-        val updates = Json.decodeFromString<NetworkUpdateResponse>(
+        val updates = Json.decodeFromString<List<NetworkUpdate>>(
             bytes.decodeToString()
-        ).updates
+        )
 
         return updates
     }
@@ -78,9 +78,9 @@ class UpdatesNetworkDataSource(private val context: Context) : Closeable {
         private const val REQUEST_TIMEOUT_MS = 10_000L
         private const val SOCKET_TIMEOUT_MS = 15_000L
 
-        // At ~332 bytes per entry (measured against the live API), 4 KB comfortably fits
+        // At ~2661 bytes per entry (measured against the live API), 32 KB comfortably fits
         // ~12 entries. The server currently returns 4. A response this large arriving from
         // a metadata-only endpoint is already suspicious and warrants a hard stop.
-        private const val MAX_BODY_SIZE_BYTES = 4 * 1024
+        private const val MAX_BODY_SIZE_BYTES = 32 * 1024
     }
 }

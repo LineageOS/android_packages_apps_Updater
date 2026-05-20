@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "455f9375_d71f0367",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-20T10:38:49Z",
+      "side": 1,
+      "message": "...but why? We agreed that overlayable stuff is only for unofficial builders, just just the API server should be configured",
+      "revId": "c96c0e61622d12dd47ac75dfeaec415034723983",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

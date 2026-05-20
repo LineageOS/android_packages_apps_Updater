@@ -16,6 +16,24 @@
       "message": "Unrelated change, inline the return statement in the data source patch",
       "revId": "7dfb080da85a8d530c88c195e3d8f8e837c849ed",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efa145b8_86e117f8",
+        "filename": "app/src/main/java/org/lineageos/updater/data/source/network/UpdatesNetworkDataSource.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-05-20T13:09:04Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e3c4ed50_6fc4b3f5",
+      "revId": "7dfb080da85a8d530c88c195e3d8f8e837c849ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

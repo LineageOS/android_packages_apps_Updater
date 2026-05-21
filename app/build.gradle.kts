@@ -28,8 +28,8 @@ android {
 
     defaultConfig {
         applicationId = "org.lineageos.updater"
-        minSdk = 33
-        targetSdk = 33
+        minSdk = 34
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }

@@ -16,9 +16,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.lineageos.updater.data.Update
+import org.lineageos.updater.updatescheck.UpdatesCheckModel
+import org.lineageos.updater.updatescheck.UpdatesCheckState
 
 private const val TAG = "UpdatesViewModel"
 
@@ -28,9 +31,21 @@ class UpdatesViewModel(
     data class UiState(
         val updates: List<Update> = emptyList(),
         val isCheckingForUpdates: Boolean = false,
+        val isOnline: Boolean = true,
         val lastCheckedTimestamp: Long = 0L,
-        val errorMessage: String? = null,
-    )
+        val hasUpdateCheckFailed: Boolean = false,
+    ) {
+        val updatesCheckModel = UpdatesCheckModel(
+            state = when {
+                isCheckingForUpdates -> UpdatesCheckState.Checking
+                !isOnline -> UpdatesCheckState.NoInternet
+                hasUpdateCheckFailed -> UpdatesCheckState.Error
+                else -> UpdatesCheckState.Idle
+            },
+            lastCheckedTimestamp = lastCheckedTimestamp,
+            canCheckForUpdates = isOnline && !isCheckingForUpdates,
+        )
+    }
 
     private val _uiState = MutableStateFlow(UiState())
     val uiState: StateFlow<UiState> = _uiState.asStateFlow()
@@ -57,6 +72,9 @@ class UpdatesViewModel(
         viewModelScope.launch {
             networkMonitor.networkState
                 .distinctUntilChangedBy { it.isOnline }
+                .onEach { networkState ->
+                    _uiState.update { it.copy(isOnline = networkState.isOnline) }
+                }
                 .filter { it.isOnline }
                 .collect { fetchUpdates() }
         }
@@ -66,7 +84,12 @@ class UpdatesViewModel(
         if (_uiState.value.isCheckingForUpdates) return
 
         viewModelScope.launch {
-            _uiState.update { it.copy(isCheckingForUpdates = true, errorMessage = null) }
+            _uiState.update {
+                it.copy(
+                    isCheckingForUpdates = true,
+                    hasUpdateCheckFailed = false,
+                )
+            }
             try {
                 val fetchedAt = repository.fetchUpdates()
                 fetchedAt?.let { fetchedAt ->
@@ -77,14 +100,11 @@ class UpdatesViewModel(
                 Log.e(TAG, "Failed to fetch updates", e)
                 _uiState.update {
                     it.copy(
-                        isCheckingForUpdates = false, errorMessage = e.message
+                        isCheckingForUpdates = false,
+                        hasUpdateCheckFailed = true,
                     )
                 }
             }
         }
-    }
-
-    fun errorMessageShown() {
-        _uiState.update { it.copy(errorMessage = null) }
     }
 }

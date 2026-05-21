@@ -103,7 +103,6 @@ public class UpdatesActivity extends UpdatesScaffoldActivity implements UpdateIm
             }
         });
 
-        maybeShowWelcomeMessage();
     }
 
     @Override
@@ -279,20 +278,5 @@ public class UpdatesActivity extends UpdatesScaffoldActivity implements UpdateIm
 
     public void showToast(int stringId, int duration) {
         Toast.makeText(this, stringId, duration).show();
-    }
-
-    private void maybeShowWelcomeMessage() {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean alreadySeen = preferences.getBoolean(Constants.PREF_HAS_SEEN_WELCOME_MESSAGE, false);
-        if (alreadySeen) {
-            return;
-        }
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.welcome_title)
-                .setMessage(R.string.welcome_message)
-                .setPositiveButton(R.string.info_dialog_ok, (dialog, which) -> preferences.edit()
-                        .putBoolean(Constants.PREF_HAS_SEEN_WELCOME_MESSAGE, true)
-                        .apply())
-                .show();
     }
 }

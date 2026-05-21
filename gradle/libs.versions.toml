@@ -14,6 +14,7 @@ core = "1.17.0"
 kotlin = "2.2.0" # external/kotlinc/build.txt
 lifecycle = "2.10.0-alpha04"
 localbroadcastmanager = "1.1.0"
+okhttp = "4.12.0"
 material = "1.14.0-alpha02"
 preference = "1.2.1"
 recyclerview = "1.4.0"
@@ -40,6 +41,7 @@ androidx-room-compiler = { group = "androidx.room", name = "room-compiler", vers
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "work" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 
 [plugins]
 androidx-room = { id = "androidx.room", version.ref = "room" }

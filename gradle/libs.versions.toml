@@ -15,7 +15,6 @@ kotlin = "2.2.0" # external/kotlinc/build.txt
 kotlinx-serialization = "1.8.1"
 lifecycle = "2.10.0-alpha04"
 okhttp = "4.12.0"
-material = "1.14.0-alpha02"
 preference = "1.2.1"
 recyclerview = "1.4.0"
 room = "2.8.4"
@@ -41,7 +40,6 @@ androidx-room-compiler = { group = "androidx.room", name = "room-compiler", vers
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "work" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 
 [plugins]

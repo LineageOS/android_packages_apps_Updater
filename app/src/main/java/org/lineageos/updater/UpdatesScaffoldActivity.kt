@@ -18,18 +18,14 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.viewinterop.AndroidView
 import com.android.settingslib.spa.framework.compose.LocalNavController
@@ -43,16 +39,12 @@ import org.lineageos.updater.data.Update
 import org.lineageos.updater.data.UpdateStatus
 import org.lineageos.updater.deviceinfo.DeviceInfoBanner
 import org.lineageos.updater.preferences.PreferencesActivity
+import org.lineageos.updater.updatescheck.UpdatesCheck
 
 abstract class UpdatesScaffoldActivity : ComponentActivity() {
 
     private var legacyView: View? = null
-    private val refreshEnabled = mutableStateOf(true)
     private val viewModel by viewModels<UpdatesViewModel>()
-
-    protected fun setRefreshEnabled(enabled: Boolean) {
-        refreshEnabled.value = enabled
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,19 +68,6 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
 
                     SettingsScaffold(
                         title = getTitleForUpdateStatus(uiState.updates),
-                        actions = {
-                            val enabled by refreshEnabled
-
-                            IconButton(
-                                onClick = { onRefreshClick() },
-                                enabled = enabled,
-                            ) {
-                                Icon(
-                                    painter = painterResource(R.drawable.ic_menu_refresh),
-                                    contentDescription = stringResource(R.string.menu_refresh),
-                                )
-                            }
-                        },
                     ) { paddingValues ->
                         Column(
                             Modifier
@@ -97,6 +76,11 @@ abstract class UpdatesScaffoldActivity : ComponentActivity() {
                                 .verticalScroll(rememberScrollState())
                         ) {
                             DeviceInfoBanner()
+
+                            UpdatesCheck(
+                                model = uiState.updatesCheckModel,
+                                onCheckClick = { onRefreshClick() },
+                            )
 
                             AndroidView(
                                 factory = { capturedView },

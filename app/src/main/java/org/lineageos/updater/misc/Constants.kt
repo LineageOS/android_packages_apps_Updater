@@ -10,8 +10,6 @@ object Constants {
     /**
      * Internal preferences
      */
-    const val PREF_HAS_SEEN_INFO_DIALOG = "has_seen_info_dialog"
-    const val PREF_HAS_SEEN_WELCOME_MESSAGE = "has_seen_welcome_message"
     const val PREF_INSTALL_AGAIN = "install_again"
     const val PREF_INSTALL_NEW_TIMESTAMP = "install_new_timestamp"
     const val PREF_INSTALL_NOTIFIED = "install_notified"

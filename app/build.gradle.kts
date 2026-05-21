@@ -110,6 +110,7 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.material)
+    implementation(libs.okhttp)
 
     annotationProcessor(libs.androidx.room.compiler)
 }

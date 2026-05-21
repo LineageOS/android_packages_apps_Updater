@@ -112,7 +112,6 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.kotlinx.serialization.json)
-    implementation(libs.material)
     implementation(libs.okhttp)
 
     annotationProcessor(libs.androidx.room.compiler)

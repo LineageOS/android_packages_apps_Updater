@@ -14,8 +14,9 @@ import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import org.lineageos.updater.deviceinfo.DeviceInfoUtils
+import kotlin.time.Duration.Companion.seconds
 
 private const val APP_STATE_DATASTORE_NAME = "app_state"
 
@@ -34,10 +35,9 @@ class AppStateRepository(context: Context) {
     private val appState = context.applicationContext.appStatePreferencesDataStore
 
     val lastCheckedTimestampFlow: Flow<Long> = appState.data.map { preferences ->
-        preferences[AppStatePreferencesKeys.LAST_CHECKED_TIMESTAMP] ?: 0L
+        preferences[AppStatePreferencesKeys.LAST_CHECKED_TIMESTAMP]
+            ?: DeviceInfoUtils.buildDateTimestamp.seconds.inWholeMilliseconds
     }
-
-    suspend fun getLastCheckedTimestamp(): Long = lastCheckedTimestampFlow.first()
 
     suspend fun setLastCheckedTimestamp(timestamp: Long) {
         appState.edit { preferences ->

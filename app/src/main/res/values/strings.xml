@@ -63,9 +63,16 @@
 
     <string name="reboot">Reboot</string>
 
-    <string name="menu_refresh">Refresh</string>
     <string name="menu_preferences">System update preferences</string>
     <string name="preferences_summary">Sync, download and install</string>
+
+    <!-- Update check -->
+    <string name="check_for_updates">Check for updates</string>
+    <string name="checking_for_updates">Checking for updates</string>
+    <string name="check_your_internet_connection">Check your internet connection</string>
+    <string name="updates_check_failed">The update check failed. Try again later.</string>
+    <string name="header_last_updates_check_time">Last checked: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Last checked: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
 
     <!-- Background sync -->
     <string name="pref_category_background_sync">Background sync</string>
@@ -93,8 +100,6 @@
 
     <string name="snack_updates_found">New updates found</string>
     <string name="snack_no_updates_found">No new updates found</string>
-    <string name="snack_updates_check_failed">The update check failed. Please check your internet connection and try again later.</string>
-
     <string name="snack_download_failed">The download failed. Please check your internet connection and try again later.</string>
     <string name="snack_download_verification_failed">The update verification failed.</string>
     <string name="snack_download_verified">Download completed.</string>
@@ -102,7 +107,6 @@
     <string name="snack_update_not_installable">This update can\'t be installed on top of the current build.</string>
 
     <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Last checked: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
 
     <!-- Banner -->
     <string name="brand_name" translatable="false">LineageOS</string>

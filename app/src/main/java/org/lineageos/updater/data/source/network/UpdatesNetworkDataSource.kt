@@ -62,15 +62,15 @@ class UpdatesNetworkDataSource(private val context: Context) {
             source.buffer.readByteArray()
         }
 
-        return Json.decodeFromString<NetworkUpdateResponse>(
+        return Json.decodeFromString<List<NetworkUpdate>>(
             bytes.decodeToString()
-        ).updates
+        )
     }
 
     companion object {
-        // At ~332 bytes per entry (measured against the live API), 4 KB comfortably fits
+        // At ~2661 bytes per entry (measured against the live API), 32 KB comfortably fits
         // ~12 entries. The server currently returns 4. A response this large arriving from
         // a metadata-only endpoint is already suspicious and warrants a hard stop.
-        private const val MAX_BODY_SIZE_BYTES = 4 * 1024L
+        private const val MAX_BODY_SIZE_BYTES = 32 * 1024L
     }
 }

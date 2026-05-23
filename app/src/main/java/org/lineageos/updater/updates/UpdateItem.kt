@@ -30,6 +30,7 @@ import androidx.compose.runtime.key
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
 import com.android.settingslib.spa.debug.UiModePreviews
@@ -39,6 +40,7 @@ import com.android.settingslib.spa.framework.theme.SettingsTheme
 import com.android.settingslib.spa.widget.preference.Preference
 import com.android.settingslib.spa.widget.preference.PreferenceModel
 import com.android.settingslib.spa.widget.ui.LinearProgressBar
+import org.lineageos.updater.R
 import org.lineageos.updater.updates.action.UpdateAction
 import org.lineageos.updater.updates.action.UpdateActionType
 import org.lineageos.updater.updates.action.UpdateActions
@@ -144,7 +146,7 @@ fun UpdateItem(
                             }
 
                             null -> {
-                                Text(text = state.fileSize)
+                                Text(text = stringResource(R.string.list_update_size, state.fileSize))
                             }
                         }
                     }

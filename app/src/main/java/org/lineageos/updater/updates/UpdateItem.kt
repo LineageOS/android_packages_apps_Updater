@@ -18,6 +18,7 @@ import androidx.compose.material.icons.outlined.CloudDownload
 import androidx.compose.material.icons.outlined.Pause
 import androidx.compose.material.icons.outlined.PlayArrow
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.LocalContentColor
@@ -36,6 +37,7 @@ import androidx.compose.ui.text.withStyle
 import com.android.settingslib.spa.debug.UiModePreviews
 import com.android.settingslib.spa.framework.theme.SettingsDimension
 import com.android.settingslib.spa.framework.theme.SettingsShape
+import com.android.settingslib.spa.framework.theme.SettingsSpace
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import com.android.settingslib.spa.widget.preference.Preference
 import com.android.settingslib.spa.widget.preference.PreferenceModel
@@ -158,6 +160,16 @@ fun UpdateItem(
                                         )
                                     )
                                 }
+                                HorizontalDivider(
+                                    modifier = Modifier.padding(
+                                        top = SettingsSpace.small1,
+                                        bottom = SettingsSpace.extraSmall4,
+                                    )
+                                )
+                                Text(
+                                    text = stringResource(R.string.list_full_install),
+                                    style = MaterialTheme.typography.bodySmallEmphasized,
+                                )
                             }
                         }
                     }

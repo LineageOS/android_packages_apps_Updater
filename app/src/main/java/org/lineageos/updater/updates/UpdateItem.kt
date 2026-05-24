@@ -222,7 +222,7 @@ private fun UpdateItemIdleCollapsedPreview() {
         UpdateItem(
             state = UpdateItemState(
                 downloadId = "preview",
-                buildDate = "April 27, 2026",
+                buildDate = "Apr 27",
                 buildVersion = "LineageOS 23.2",
                 status = "",
                 isLocal = false,
@@ -253,7 +253,7 @@ private fun UpdateItemIdleExpandedPreview() {
         UpdateItem(
             state = UpdateItemState(
                 downloadId = "preview",
-                buildDate = "April 27, 2026",
+                buildDate = "Apr 27",
                 buildVersion = "LineageOS 23.2",
                 status = "",
                 isLocal = false,
@@ -284,7 +284,7 @@ private fun UpdateItemDownloadingPreview() {
         UpdateItem(
             state = UpdateItemState(
                 downloadId = "preview",
-                buildDate = "April 27, 2026",
+                buildDate = "Apr 27",
                 buildVersion = "LineageOS 23.2",
                 status = "Downloading",
                 isLocal = false,

@@ -6,11 +6,14 @@
 package org.lineageos.updater.util
 
 import android.content.Context
+import android.icu.text.DateFormat
+import android.icu.util.TimeZone
 import java.time.Instant
 import java.time.ZoneId
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
+import java.util.Date
 import java.util.Locale
 import com.android.settingslib.utils.StringUtil as SettingsLibStringUtil
 
@@ -29,6 +32,12 @@ object StringUtil {
             .localizedBy(getCurrentLocale(context)!!)
             .withZone(ZoneOffset.UTC)
             .format(Instant.ofEpochSecond(unixTimestamp))
+
+    @JvmStatic
+    fun formatBuildDate(context: Context, unixTimestamp: Long): String =
+        DateFormat.getInstanceForSkeleton("MMMd", getCurrentLocale(context))
+            .apply { timeZone = TimeZone.getTimeZone("UTC") }
+            .format(Date(unixTimestamp * 1000L))
 
     @JvmStatic
     fun formatETA(context: Context, millis: Long): CharSequence =

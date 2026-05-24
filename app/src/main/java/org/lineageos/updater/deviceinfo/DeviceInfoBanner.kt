@@ -40,9 +40,7 @@ fun DeviceInfoBanner(modifier: Modifier = Modifier) {
     val buildVersion = remember { DeviceInfoUtils.buildVersion }
     val androidVersion = remember { DeviceInfoUtils.androidVersion }
     val buildDate = remember(locale) {
-        DateFormat.getInstanceForSkeleton("MMMd", locale)
-            .apply { timeZone = TimeZone.getTimeZone("UTC") }
-            .format(Date(DeviceInfoUtils.buildDateTimestamp * 1000L))
+        StringUtil.formatBuildDate(context, DeviceInfoUtils.buildDateTimestamp)
     }
     val securityPatch = remember(locale) {
         val patchDate = LocalDate.parse(DeviceInfoUtils.buildSecurityPatch)

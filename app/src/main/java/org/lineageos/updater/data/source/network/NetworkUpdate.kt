@@ -20,8 +20,8 @@ data class NetworkUpdate(
     // @SerialName("date") val date: String,
     @SerialName("datetime") val datetime: Long,
     @SerialName("files") val files: List<NetworkUpdateFile>,
-    // @SerialName("os_patch_level") val osPatchLevel: String? = null,
-    // @SerialName("os_sdk_level") val osSdkLevel: Int? = null,
+    @SerialName("os_patch_level") val osPatchLevel: String? = null,
+    @SerialName("os_sdk_level") val osSdkLevel: Int? = null,
     @SerialName("type") val type: String,
     @SerialName("version") val version: String,
 )
@@ -34,8 +34,8 @@ data class NetworkUpdateFile(
     // @SerialName("datetime") val datetime: Long? = null,
     @SerialName("filename") val filename: String,
     // @SerialName("filepath") val filepath: String,
-    // @SerialName("os_patch_level") val osPatchLevel: String? = null,
-    // @SerialName("os_sdk_level") val osSdkLevel: Int? = null,
+    @SerialName("os_patch_level") val osPatchLevel: String? = null,
+    @SerialName("os_sdk_level") val osSdkLevel: Int? = null,
     // @SerialName("sha1") val sha1: String,
     @SerialName("sha256") val sha256: String,
     @SerialName("size") val size: Long,
@@ -52,6 +52,8 @@ fun NetworkUpdate.toUpdate(): Update {
         fileSize = files[0].size,
         downloadUrl = files[0].url,
         version = version,
+        osPatchLevel = osPatchLevel ?: files[0].osPatchLevel,
+        osSdkLevel = osSdkLevel ?: files[0].osSdkLevel,
         isAvailableOnline = true,
     )
 }

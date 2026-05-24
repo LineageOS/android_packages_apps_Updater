@@ -17,7 +17,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
  *
  * Use [UpdatesLocalDataSource] to interact with data.
  */
-@Database(entities = [UpdateEntity::class], version = 2, exportSchema = true)
+@Database(entities = [UpdateEntity::class], version = 3, exportSchema = true)
 abstract class UpdatesDatabase : RoomDatabase() {
     abstract fun updateDao(): UpdateDao
 
@@ -58,6 +58,13 @@ abstract class UpdatesDatabase : RoomDatabase() {
             }
         }
 
+        private val MIGRATION_2_3 = object : Migration(2, 3) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `updates` ADD COLUMN `os_sdk_level` INTEGER")
+                db.execSQL("ALTER TABLE `updates` ADD COLUMN `os_patch_level` TEXT")
+            }
+        }
+
         @JvmStatic
         fun getInstance(context: Context): UpdatesDatabase = instance ?: synchronized(this) {
             instance ?: Room.databaseBuilder(
@@ -65,7 +72,7 @@ abstract class UpdatesDatabase : RoomDatabase() {
                 UpdatesDatabase::class.java,
                 "updates.db"
             )
-                .addMigrations(MIGRATION_1_2)
+                .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
                 .build()
                 .also { instance = it }
         }

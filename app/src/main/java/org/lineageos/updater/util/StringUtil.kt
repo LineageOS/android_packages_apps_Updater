@@ -9,6 +9,7 @@ import android.content.Context
 import android.icu.text.DateFormat
 import android.icu.util.TimeZone
 import java.time.Instant
+import java.time.LocalDate
 import java.time.ZoneId
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
@@ -42,6 +43,14 @@ object StringUtil {
     @JvmStatic
     fun formatETA(context: Context, millis: Long): CharSequence =
         SettingsLibStringUtil.formatElapsedTime(context, millis.toDouble(), true, true)
+
+    @JvmStatic
+    fun formatSecurityPatch(context: Context, securityPatch: String): String {
+        val patchDate = LocalDate.parse(securityPatch)
+        return DateFormat.getInstanceForSkeleton("MMMy", getCurrentLocale(context))
+            .apply { timeZone = TimeZone.getTimeZone("UTC") }
+            .format(Date.from(patchDate.atStartOfDay(ZoneOffset.UTC).toInstant()))
+    }
 
     @JvmStatic
     fun getCurrentLocale(context: Context): Locale? =

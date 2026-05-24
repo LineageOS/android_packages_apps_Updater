@@ -16,7 +16,6 @@ import org.lineageos.updater.updates.action.UpdateActionType
 import org.lineageos.updater.updates.action.UpdateActions
 import org.lineageos.updater.util.NetworkMonitor.NetworkState
 import org.lineageos.updater.util.StringUtil
-import java.time.format.FormatStyle
 
 class UpdateItemStateMapper(
     private val context: Context,
@@ -151,11 +150,7 @@ class UpdateItemStateMapper(
         return UpdateItemState(
             downloadId = update.downloadId,
             isLocal = state.isFullyDownloaded,
-            buildDate = StringUtil.getDateLocalizedUTC(
-                context,
-                FormatStyle.LONG,
-                update.timestamp,
-            ),
+            buildDate = StringUtil.formatBuildDate(context, update.timestamp),
             buildVersion = context.getString(
                 R.string.list_build_version,
                 update.version,

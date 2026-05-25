@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b76ecf3_a573e611",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesViewModel.kt",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-25T16:38:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a721b37_de4ca773",
+      "revId": "64447ce62820ca6505fb25ed65b931efd23b17a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4e726251_013c30c2",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-05-20T10:41:09Z",
       "side": 1,
       "message": "```suggestion\n                fetchedAt?.let { fetchedAt -\u003e\n```",
+      "revId": "64447ce62820ca6505fb25ed65b931efd23b17a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52c6930a_9b305d6a",
+        "filename": "app/src/main/java/org/lineageos/updater/UpdatesViewModel.kt",
+        "patchSetId": 11
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-25T16:38:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e726251_013c30c2",
       "revId": "64447ce62820ca6505fb25ed65b931efd23b17a5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -66,6 +102,24 @@
       "side": 1,
       "message": "*newline",
       "parentUuid": "2544eef8_61e81b8e",
+      "revId": "64447ce62820ca6505fb25ed65b931efd23b17a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc7a0d64_5e79c80a",
+        "filename": "app/src/main/java/org/lineageos/updater/updatescheck/UpdatesCheckWorker.kt",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-05-25T16:38:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5036563b_124fdc8a",
       "revId": "64447ce62820ca6505fb25ed65b931efd23b17a5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

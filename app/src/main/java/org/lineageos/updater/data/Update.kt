@@ -17,6 +17,8 @@ data class Update(
     val isFinalizing: Boolean = false,
     val installProgress: Int = 0,
     val name: String = "",
+    val osPatchLevel: String? = null,
+    val osSdkLevel: Int? = null,
     val progress: Int = 0,
     val speed: Long = 0,
     val status: UpdateStatus = UpdateStatus.UNKNOWN,
@@ -33,6 +35,8 @@ data class Update(
     fun withFinalizing(v: Boolean) = copy(isFinalizing = v)
     fun withInstallProgress(v: Int) = copy(installProgress = v)
     fun withName(v: String) = copy(name = v)
+    fun withOsPatchLevel(v: String?) = copy(osPatchLevel = v)
+    fun withOsSdkLevel(v: Int?) = copy(osSdkLevel = v)
     fun withProgress(v: Int) = copy(progress = v)
     fun withSpeed(v: Long) = copy(speed = v)
     fun withStatus(v: UpdateStatus) = copy(status = v)
@@ -52,6 +56,8 @@ data class Update(
         private var isFinalizing: Boolean = false,
         private var installProgress: Int = 0,
         private var name: String = "",
+        private var osPatchLevel: String? = null,
+        private var osSdkLevel: Int? = null,
         private var progress: Int = 0,
         private var speed: Long = 0,
         private var status: UpdateStatus = UpdateStatus.UNKNOWN,
@@ -62,8 +68,9 @@ data class Update(
         constructor(update: Update) : this(
             update.isAvailableOnline, update.downloadId, update.downloadUrl,
             update.eta, update.file, update.fileSize, update.isFinalizing,
-            update.installProgress, update.name, update.progress, update.speed,
-            update.status, update.timestamp, update.type, update.version,
+            update.installProgress, update.name, update.osPatchLevel, update.osSdkLevel,
+            update.progress, update.speed, update.status, update.timestamp, update.type,
+            update.version,
         )
 
         fun setAvailableOnline(v: Boolean) = apply { isAvailableOnline = v }
@@ -75,6 +82,8 @@ data class Update(
         fun setFinalizing(v: Boolean) = apply { isFinalizing = v }
         fun setInstallProgress(v: Int) = apply { installProgress = v }
         fun setName(v: String) = apply { name = v }
+        fun setOsPatchLevel(v: String?) = apply { osPatchLevel = v }
+        fun setOsSdkLevel(v: Int?) = apply { osSdkLevel = v }
         fun setProgress(v: Int) = apply { progress = v }
         fun setSpeed(v: Long) = apply { speed = v }
         fun setStatus(v: UpdateStatus) = apply { status = v }
@@ -83,8 +92,8 @@ data class Update(
         fun setVersion(v: String) = apply { version = v }
         fun build() = Update(
             isAvailableOnline, downloadId, downloadUrl, eta, file, fileSize,
-            isFinalizing, installProgress, name, progress, speed, status,
-            timestamp, type, version,
+            isFinalizing, installProgress, name, osPatchLevel, osSdkLevel, progress, speed,
+            status, timestamp, type, version,
         )
     }
 

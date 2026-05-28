@@ -1,0 +1,86 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "982a5501e654ef694012dac7d4bee9cf",
+    "entities": [
+      {
+        "tableName": "updates",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`download_id` TEXT NOT NULL, `status` INTEGER NOT NULL, `path` TEXT, `timestamp` INTEGER NOT NULL, `type` TEXT, `version` TEXT NOT NULL, `size` INTEGER NOT NULL, `name` TEXT NOT NULL, `os_patch_level` TEXT, `os_sdk_level` INTEGER, `download_url` TEXT, PRIMARY KEY(`download_id`))",
+        "fields": [
+          {
+            "fieldPath": "downloadId",
+            "columnName": "download_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "path",
+            "columnName": "path",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "version",
+            "columnName": "version",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "size",
+            "columnName": "size",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "osPatchLevel",
+            "columnName": "os_patch_level",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "osSdkLevel",
+            "columnName": "os_sdk_level",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "downloadUrl",
+            "columnName": "download_url",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "download_id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '982a5501e654ef694012dac7d4bee9cf')"
+    ]
+  }
+}

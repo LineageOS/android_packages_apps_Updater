@@ -16,6 +16,8 @@ data class UpdateItemState(
     val status: String,
 
     val fileSize: String,
+    val androidUpdateInfo: String,
+    val securityUpdate: String,
 
     val progress: ProgressState?,
     val actions: UpdateActions,

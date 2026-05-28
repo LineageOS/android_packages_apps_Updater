@@ -336,6 +336,8 @@ public class UpdaterController {
                     entry.mUpdate = entry.mUpdate.toBuilder()
                             .setAvailableOnline(availableOnline && entry.mUpdate.isAvailableOnline())
                             .setDownloadUrl(updateInfo.getDownloadUrl())
+                            .setOsPatchLevel(updateInfo.getOsPatchLevel())
+                            .setOsSdkLevel(updateInfo.getOsSdkLevel())
                             .build();
                 }
             }

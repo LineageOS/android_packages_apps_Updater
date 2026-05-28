@@ -147,6 +147,17 @@ fun UpdateItem(
 
                             null -> {
                                 Text(text = stringResource(R.string.list_update_size, state.fileSize))
+                                if (state.androidUpdateInfo.isNotEmpty()) {
+                                    Text(text = state.androidUpdateInfo)
+                                }
+                                if (state.securityUpdate.isNotEmpty()) {
+                                    Text(
+                                        text = stringResource(
+                                            R.string.list_security_update,
+                                            state.securityUpdate,
+                                        )
+                                    )
+                                }
                             }
                         }
                     }
@@ -229,6 +240,8 @@ private fun UpdateItemIdleCollapsedPreview() {
                 status = "",
                 isLocal = false,
                 fileSize = "1.1 GB",
+                androidUpdateInfo = "Android 16",
+                securityUpdate = "Jan 2026",
                 progress = null,
                 actions = UpdateActions(
                     primary = UpdateAction(
@@ -260,6 +273,8 @@ private fun UpdateItemIdleExpandedPreview() {
                 status = "",
                 isLocal = false,
                 fileSize = "1.1 GB",
+                androidUpdateInfo = "Major Android upgrade",
+                securityUpdate = "Jan 2026",
                 progress = null,
                 actions = UpdateActions(
                     primary = UpdateAction(
@@ -291,6 +306,8 @@ private fun UpdateItemDownloadingPreview() {
                 status = "Downloading",
                 isLocal = false,
                 fileSize = "1.1 GB",
+                androidUpdateInfo = "Android 16",
+                securityUpdate = "Jan 2026",
                 progress = ProgressState.Determinate(
                     percent = 65f,
                     downloadedSize = "715 MB of 1.1 GB",

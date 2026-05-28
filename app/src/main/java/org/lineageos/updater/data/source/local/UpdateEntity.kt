@@ -45,6 +45,12 @@ data class UpdateEntity(
     @ColumnInfo(name = "name")
     val name: String,
 
+    @ColumnInfo(name = "os_patch_level")
+    val osPatchLevel: String?,
+
+    @ColumnInfo(name = "os_sdk_level")
+    val osSdkLevel: Int?,
+
     @ColumnInfo(name = "download_url")
     val downloadUrl: String?
 )
@@ -58,6 +64,8 @@ fun Update.toEntity() = UpdateEntity(
     version = version,
     size = fileSize,
     name = name,
+    osPatchLevel = osPatchLevel,
+    osSdkLevel = osSdkLevel,
     downloadUrl = downloadUrl
 )
 
@@ -70,5 +78,7 @@ fun UpdateEntity.toUpdate() = Update(
     version = version,
     fileSize = size,
     name = name,
+    osPatchLevel = osPatchLevel,
+    osSdkLevel = osSdkLevel,
     downloadUrl = downloadUrl
 )

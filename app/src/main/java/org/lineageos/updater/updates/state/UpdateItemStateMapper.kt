@@ -6,6 +6,7 @@
 package org.lineageos.updater.updates.state
 
 import android.content.Context
+import android.os.Build
 import android.text.format.Formatter
 import org.lineageos.updater.R
 import org.lineageos.updater.controller.UpdaterController
@@ -157,6 +158,20 @@ class UpdateItemStateMapper(
             ),
             status = state.titleRes?.let { context.getString(it) } ?: "",
             fileSize = Formatter.formatShortFileSize(context, update.fileSize),
+            androidUpdateInfo = when {
+                update.osSdkLevel == null -> ""
+                update.osSdkLevel > Build.VERSION.SDK_INT ->
+                    context.getString(R.string.list_major_android_upgrade)
+                update.osSdkLevel == Build.VERSION.SDK_INT ->
+                    context.getString(
+                        R.string.header_android_version,
+                        Build.VERSION.RELEASE_OR_PREVIEW_DISPLAY,
+                    )
+                else -> ""
+            },
+            securityUpdate = update.osPatchLevel?.let {
+                StringUtil.formatSecurityPatch(context, it)
+            } ?: "",
             progress = progress,
             actions = actions,
         )

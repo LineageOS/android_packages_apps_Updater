@@ -46,8 +46,6 @@ class UpdatesNetworkDataSource(private val context: Context) {
             response.body?.string() ?: throw IOException("Empty response body")
         }
 
-        return Json.decodeFromString<NetworkUpdateResponse>(
-            responseBody
-        ).updates
+        return Json.decodeFromString<List<NetworkUpdate>>(responseBody)
     }
 }

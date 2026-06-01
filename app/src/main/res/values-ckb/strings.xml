@@ -103,7 +103,7 @@
     <string name="checkbox_metered_network_warning">دووبارە نیشان مەدرێتەوە</string>
     <string name="menu_metered_network_warning">ئاگاداری هێڵی سنووردار</string>
     <string name="blocked_update_dialog_title">نوێکاری بلۆک کرا</string>
-    <string name="blocked_update_dialog_message">ئەم نوێکارییە ناتوانرێت لە ڕێگەی ئەم ئەپەوە دابمەزرێنرێت. تکایە %1$s بخوێنەرەوە بۆ زانیاری زیاتر.</string>
+    <string name="blocked_update_dialog_message">ئەم نوێکارییە ناتوانرێت لە ڕێگەی ئەم بەرنامەوە دابمەزرێنرێت. تکایە %1$s بخوێنەرەوە بۆ زانیاری زیاتر.</string>
     <string name="export_channel_title">تەواوبوونی هەناردەکردن</string>
     <string name="new_updates_channel_title">نوێکارییە نوێیەکان</string>
     <string name="ongoing_channel_title">داگرتنە بەردەوامەکان</string>

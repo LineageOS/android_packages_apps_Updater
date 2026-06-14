@@ -99,37 +99,16 @@ class UpdateActionHandler(
                     return
                 }
 
-                val messageRes = if (DeviceInfoUtils.isABDevice) {
-                    R.string.apply_update_dialog_message_ab
-                } else {
-                    R.string.apply_update_dialog_message
-                }
-                val buildDate = StringUtil.getDateLocalizedUTC(
-                    activity,
-                    FormatStyle.MEDIUM,
-                    update.timestamp,
-                )
-                val buildInfoText = activity.getString(
-                    R.string.list_build_version_date,
-                    update.version,
-                    buildDate,
-                )
-                showDialog(
-                    AlertDialogState(
-                        title = activity.getString(R.string.apply_update_dialog_title),
-                        text = AnnotatedString(
-                            activity.getString(
-                                messageRes,
-                                buildInfoText,
-                                activity.getString(android.R.string.ok),
-                            )
-                        ),
-                        onConfirm = {
-                            Utils.triggerUpdate(activity, update.downloadId)
-                        },
-                        showDismiss = true,
+                val confirmInstall = { showInstallConfirmation(update) }
+                if (InstallUtils.canStreamUpdate(
+                        update,
+                        userPreferencesRepository.getStreamUpdatesBlocking(),
                     )
-                )
+                ) {
+                    runDownloadWithMeteredWarning(confirmInstall)
+                } else {
+                    confirmInstall()
+                }
             }
 
             UpdateActionType.PAUSE_INSTALL -> startInstallService(
@@ -245,6 +224,38 @@ class UpdateActionHandler(
             title = activity.getString(R.string.update_over_metered_network_title),
             message = activity.getString(R.string.update_over_metered_network_message),
             onConfirm = downloadAction,
+        )
+    }
+
+    private fun showInstallConfirmation(update: Update) {
+        val messageRes = if (DeviceInfoUtils.isABDevice) {
+            R.string.apply_update_dialog_message_ab
+        } else {
+            R.string.apply_update_dialog_message
+        }
+        val buildDate = StringUtil.getDateLocalizedUTC(
+            activity,
+            FormatStyle.MEDIUM,
+            update.timestamp,
+        )
+        val buildInfoText = activity.getString(
+            R.string.list_build_version_date,
+            update.version,
+            buildDate,
+        )
+        showDialog(
+            AlertDialogState(
+                title = activity.getString(R.string.apply_update_dialog_title),
+                text = AnnotatedString(
+                    activity.getString(
+                        messageRes,
+                        buildInfoText,
+                        activity.getString(android.R.string.ok),
+                    )
+                ),
+                onConfirm = { Utils.triggerUpdate(activity, update.downloadId) },
+                showDismiss = true,
+            )
         )
     }
 

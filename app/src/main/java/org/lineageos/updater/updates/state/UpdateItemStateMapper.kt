@@ -15,16 +15,19 @@ import org.lineageos.updater.data.UpdateStatus
 import org.lineageos.updater.updates.action.UpdateAction
 import org.lineageos.updater.updates.action.UpdateActionType
 import org.lineageos.updater.updates.action.UpdateActions
+import org.lineageos.updater.util.InstallUtils
 import org.lineageos.updater.util.NetworkMonitor.NetworkState
 import org.lineageos.updater.util.StringUtil
 
 class UpdateItemStateMapper(
     private val context: Context,
     private val updaterController: UpdaterController,
+    private val streamUpdatesEnabled: Boolean,
 ) {
 
     fun map(update: Update, networkState: NetworkState): UpdateItemState {
         val state = UpdateOperationState.from(updaterController, update)
+        val canStreamUpdate = InstallUtils.canStreamUpdate(update, streamUpdatesEnabled)
 
         val progress = when {
             state.isDownloading -> {
@@ -119,13 +122,18 @@ class UpdateItemStateMapper(
             )
 
             else -> ActionButtons(
-                primary = if (!state.canInstall) {
-                    action(
+                primary = when {
+                    !state.canInstall -> action(
                         type = UpdateActionType.SHOW_INFO,
                         enabled = !state.isBusy,
                     )
-                } else {
-                    action(
+
+                    canStreamUpdate -> action(
+                        type = UpdateActionType.START_INSTALL,
+                        enabled = networkState.isOnline && !state.isBusy,
+                    )
+
+                    else -> action(
                         type = UpdateActionType.START_DOWNLOAD,
                         enabled = networkState.isOnline && update.downloadUrl != null,
                     )

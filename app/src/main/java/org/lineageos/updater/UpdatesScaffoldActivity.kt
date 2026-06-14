@@ -275,15 +275,21 @@ private fun UpdatesActionPane(
     val networkState by networkMonitor.networkState.collectAsState(
         initial = networkMonitor.currentNetworkState,
     )
+    val userPreferencesRepository =
+        remember { (context.applicationContext as UpdaterApplication).userPreferencesRepository }
+    val streamUpdatesEnabled by userPreferencesRepository.streamUpdatesFlow.collectAsState(
+        initial = true,
+    )
 
     val updateItems = remember(
         updates,
         updaterController,
         networkState,
+        streamUpdatesEnabled,
         controllerStateVersion,
     ) {
         val controller = updaterController ?: return@remember emptyList()
-        val mapper = UpdateItemStateMapper(context, controller)
+        val mapper = UpdateItemStateMapper(context, controller, streamUpdatesEnabled)
         updates.mapNotNull { update ->
             controller.getUpdate(update.downloadId)?.let {
                 mapper.map(it, networkState)

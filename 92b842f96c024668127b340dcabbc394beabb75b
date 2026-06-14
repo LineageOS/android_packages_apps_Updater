@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b834754c_134e1a79",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-06-14T03:37:44Z",
+      "side": 1,
+      "message": "I have removed the MAX_BODY_SIZE_BYTES as suggested, contentType validation along with connect and read timeouts (Just the default OkHttp timeouts were reasonable enough) - avoided overfitting things.",
+      "revId": "92b842f96c024668127b340dcabbc394beabb75b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -338,6 +338,12 @@ public class UpdaterController {
                             .setDownloadUrl(updateInfo.getDownloadUrl())
                             .setOsPatchLevel(updateInfo.getOsPatchLevel())
                             .setOsSdkLevel(updateInfo.getOsSdkLevel())
+                            .setPayloadMetadataOffset(updateInfo.getPayloadMetadataOffset())
+                            .setPayloadMetadataSize(updateInfo.getPayloadMetadataSize())
+                            .setPayloadOffset(updateInfo.getPayloadOffset())
+                            .setPayloadSize(updateInfo.getPayloadSize())
+                            .setPayloadPropertiesOffset(updateInfo.getPayloadPropertiesOffset())
+                            .setPayloadPropertiesSize(updateInfo.getPayloadPropertiesSize())
                             .build();
                 }
             }
@@ -496,7 +502,7 @@ public class UpdaterController {
     private void deleteUpdateAsync(final Update update) {
         new Thread(() -> {
             File file = update.getFile();
-            if (file.exists() && !file.delete()) {
+            if (file != null && file.exists() && !file.delete()) {
                 Log.e(TAG, "Could not delete " + file.getAbsolutePath());
             }
             mUpdatesLocalDataSource.removeUpdate(update.getDownloadId());
@@ -633,10 +639,6 @@ public class UpdaterController {
         }
     }
     public boolean isFullyDownloaded(Update update) {
-        File file = update.getFile();
-        if (file == null) {
-            return false;
-        }
-        return file.exists() && update.getFileSize() > 0 && file.length() >= update.getFileSize();
+        return update.hasFullyDownloadedPackage();
     }
 }

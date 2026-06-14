@@ -19,6 +19,12 @@ data class Update(
     val name: String = "",
     val osPatchLevel: String? = null,
     val osSdkLevel: Int? = null,
+    val payloadMetadataOffset: Long? = null,
+    val payloadMetadataSize: Long? = null,
+    val payloadOffset: Long? = null,
+    val payloadSize: Long? = null,
+    val payloadPropertiesOffset: Long? = null,
+    val payloadPropertiesSize: Long? = null,
     val progress: Int = 0,
     val speed: Long = 0,
     val status: UpdateStatus = UpdateStatus.UNKNOWN,
@@ -58,6 +64,12 @@ data class Update(
         private var name: String = "",
         private var osPatchLevel: String? = null,
         private var osSdkLevel: Int? = null,
+        private var payloadMetadataOffset: Long? = null,
+        private var payloadMetadataSize: Long? = null,
+        private var payloadOffset: Long? = null,
+        private var payloadSize: Long? = null,
+        private var payloadPropertiesOffset: Long? = null,
+        private var payloadPropertiesSize: Long? = null,
         private var progress: Int = 0,
         private var speed: Long = 0,
         private var status: UpdateStatus = UpdateStatus.UNKNOWN,
@@ -69,6 +81,8 @@ data class Update(
             update.isAvailableOnline, update.downloadId, update.downloadUrl,
             update.eta, update.file, update.fileSize, update.isFinalizing,
             update.installProgress, update.name, update.osPatchLevel, update.osSdkLevel,
+            update.payloadMetadataOffset, update.payloadMetadataSize, update.payloadOffset,
+            update.payloadSize, update.payloadPropertiesOffset, update.payloadPropertiesSize,
             update.progress, update.speed, update.status, update.timestamp, update.type,
             update.version,
         )
@@ -84,6 +98,12 @@ data class Update(
         fun setName(v: String) = apply { name = v }
         fun setOsPatchLevel(v: String?) = apply { osPatchLevel = v }
         fun setOsSdkLevel(v: Int?) = apply { osSdkLevel = v }
+        fun setPayloadMetadataOffset(v: Long?) = apply { payloadMetadataOffset = v }
+        fun setPayloadMetadataSize(v: Long?) = apply { payloadMetadataSize = v }
+        fun setPayloadOffset(v: Long?) = apply { payloadOffset = v }
+        fun setPayloadSize(v: Long?) = apply { payloadSize = v }
+        fun setPayloadPropertiesOffset(v: Long?) = apply { payloadPropertiesOffset = v }
+        fun setPayloadPropertiesSize(v: Long?) = apply { payloadPropertiesSize = v }
         fun setProgress(v: Int) = apply { progress = v }
         fun setSpeed(v: Long) = apply { speed = v }
         fun setStatus(v: UpdateStatus) = apply { status = v }
@@ -92,10 +112,21 @@ data class Update(
         fun setVersion(v: String) = apply { version = v }
         fun build() = Update(
             isAvailableOnline, downloadId, downloadUrl, eta, file, fileSize,
-            isFinalizing, installProgress, name, osPatchLevel, osSdkLevel, progress, speed,
-            status, timestamp, type, version,
+            isFinalizing, installProgress, name, osPatchLevel, osSdkLevel, payloadMetadataOffset,
+            payloadMetadataSize, payloadOffset, payloadSize, payloadPropertiesOffset,
+            payloadPropertiesSize, progress, speed, status, timestamp, type, version,
         )
     }
+
+    fun hasPayloadFileRanges(): Boolean =
+        payloadOffset != null && payloadSize != null &&
+            payloadPropertiesOffset != null && payloadPropertiesSize != null
+
+    fun hasFullyDownloadedPackage(): Boolean =
+        file?.let { it.exists() && fileSize > 0 && it.length() >= fileSize } == true
+
+    fun hasVerifiedPackage(): Boolean =
+        status.hasVerifiedPackage() && file?.exists() == true
 
     companion object {
         const val LOCAL_ID = "local"

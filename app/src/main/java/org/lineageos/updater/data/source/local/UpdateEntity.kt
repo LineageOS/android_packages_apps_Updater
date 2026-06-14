@@ -51,6 +51,24 @@ data class UpdateEntity(
     @ColumnInfo(name = "os_sdk_level")
     val osSdkLevel: Int?,
 
+    @ColumnInfo(name = "payload_metadata_offset")
+    val payloadMetadataOffset: Long?,
+
+    @ColumnInfo(name = "payload_metadata_size")
+    val payloadMetadataSize: Long?,
+
+    @ColumnInfo(name = "payload_offset")
+    val payloadOffset: Long?,
+
+    @ColumnInfo(name = "payload_size")
+    val payloadSize: Long?,
+
+    @ColumnInfo(name = "payload_properties_offset")
+    val payloadPropertiesOffset: Long?,
+
+    @ColumnInfo(name = "payload_properties_size")
+    val payloadPropertiesSize: Long?,
+
     @ColumnInfo(name = "download_url")
     val downloadUrl: String?
 )
@@ -66,6 +84,12 @@ fun Update.toEntity() = UpdateEntity(
     name = name,
     osPatchLevel = osPatchLevel,
     osSdkLevel = osSdkLevel,
+    payloadMetadataOffset = payloadMetadataOffset,
+    payloadMetadataSize = payloadMetadataSize,
+    payloadOffset = payloadOffset,
+    payloadSize = payloadSize,
+    payloadPropertiesOffset = payloadPropertiesOffset,
+    payloadPropertiesSize = payloadPropertiesSize,
     downloadUrl = downloadUrl
 )
 
@@ -80,5 +104,11 @@ fun UpdateEntity.toUpdate() = Update(
     name = name,
     osPatchLevel = osPatchLevel,
     osSdkLevel = osSdkLevel,
+    payloadMetadataOffset = payloadMetadataOffset,
+    payloadMetadataSize = payloadMetadataSize,
+    payloadOffset = payloadOffset,
+    payloadSize = payloadSize,
+    payloadPropertiesOffset = payloadPropertiesOffset,
+    payloadPropertiesSize = payloadPropertiesSize,
     downloadUrl = downloadUrl
 )

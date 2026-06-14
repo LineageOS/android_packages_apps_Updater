@@ -18,6 +18,7 @@ import org.lineageos.updater.UpdaterApplication;
 import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.UpdateStatus;
 import org.lineageos.updater.data.UserPreferencesRepository;
+import org.lineageos.updater.download.SingleRangeHttpFetcher;
 import org.lineageos.updater.misc.Constants;
 import org.lineageos.updater.misc.Utils;
 
@@ -26,6 +27,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -218,23 +220,62 @@ class ABUpdateInstaller {
             return;
         }
 
+        String zipFileUri = "file://" + file.getAbsolutePath();
+        applyUpdate(zipFileUri, offset, 0, headerKeyValuePairs);
+    }
+
+    public void installStreaming(String downloadId) {
+        if (isInstallingUpdate(mContext)) {
+            Log.e(TAG, "Already installing an update");
+            return;
+        }
+
+        mDownloadId = downloadId;
+
+        Update update = mUpdaterController.getUpdate(mDownloadId);
+        String downloadUrl = update.getDownloadUrl();
+
+        new Thread(() -> {
+            try {
+                String[] headerKeyValuePairs = fetchPayloadProperties(downloadUrl,
+                        update.getPayloadPropertiesOffset(),
+                        update.getPayloadPropertiesSize());
+                applyUpdate(downloadUrl, update.getPayloadOffset(),
+                        update.getPayloadSize(), headerKeyValuePairs);
+            } catch (IOException | ServiceSpecificException e) {
+                Log.e(TAG, "Could not prepare streaming update", e);
+                mUpdaterController.setUpdate(downloadId,
+                        update.withStatus(UpdateStatus.INSTALLATION_FAILED));
+                mUpdaterController.notifyUpdateChange(downloadId);
+            }
+        }, "UpdaterStreamingInstall").start();
+    }
+
+    private String[] fetchPayloadProperties(String downloadUrl, long offset, long size)
+            throws IOException {
+        SingleRangeHttpFetcher fetcher = new SingleRangeHttpFetcher(downloadUrl);
+        byte[] data = fetcher.download(offset, size);
+        return new String(data, StandardCharsets.UTF_8).split("\n");
+    }
+
+    private void applyUpdate(String url, long offset, long size,
+            String[] headerKeyValuePairs) {
         if (!mBound) {
             mBound = mUpdateEngine.bind(mUpdateEngineCallback);
             if (!mBound) {
                 Log.e(TAG, "Could not bind");
-                Update update = mUpdaterController.getUpdate(downloadId);
-                mUpdaterController.setUpdate(downloadId,
+                Update update = mUpdaterController.getUpdate(mDownloadId);
+                mUpdaterController.setUpdate(mDownloadId,
                         update.withStatus(UpdateStatus.INSTALLATION_FAILED));
-                mUpdaterController.notifyUpdateChange(downloadId);
+                mUpdaterController.notifyUpdateChange(mDownloadId);
                 return;
             }
         }
 
         applyPerformanceMode(mUserPreferencesRepository.getAbPerfModeBlocking());
 
-        String zipFileUri = "file://" + file.getAbsolutePath();
         try {
-            mUpdateEngine.applyPayload(zipFileUri, offset, 0, headerKeyValuePairs);
+            mUpdateEngine.applyPayload(url, offset, size, headerKeyValuePairs);
         } catch (ServiceSpecificException e) {
             if (e.errorCode == 66 /* kUpdateAlreadyInstalled */) {
                 installationDone(true);

@@ -12,6 +12,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonIgnoreUnknownKeys
 import org.lineageos.updater.data.Update
+import org.lineageos.updater.misc.Constants
 
 @Suppress("PROVIDED_RUNTIME_TOO_LOW")
 @Serializable
@@ -22,7 +23,6 @@ data class NetworkUpdate(
     @SerialName("files") val files: List<NetworkUpdateFile>,
     @SerialName("os_patch_level") val osPatchLevel: String? = null,
     @SerialName("os_sdk_level") val osSdkLevel: Int? = null,
-    // @SerialName("ota_property_files") val otaPropertyFiles: String? = null,
     @SerialName("type") val type: String,
     @SerialName("version") val version: String,
 )
@@ -37,7 +37,7 @@ data class NetworkUpdateFile(
     // @SerialName("filepath") val filepath: String,
     @SerialName("os_patch_level") val osPatchLevel: String? = null,
     @SerialName("os_sdk_level") val osSdkLevel: Int? = null,
-    // @SerialName("ota_property_files") val otaPropertyFiles: String? = null,
+    @SerialName("ota_property_files") val otaPropertyFiles: String? = null,
     // @SerialName("sha1") val sha1: String,
     @SerialName("sha256") val sha256: String,
     @SerialName("size") val size: Long,
@@ -45,17 +45,43 @@ data class NetworkUpdateFile(
     @SerialName("url") val url: String,
 )
 
+private data class PackageFileRange(
+    val offset: Long,
+    val size: Long,
+)
+
+private fun String.parsePackageFileRanges() =
+    split(",").associate { token ->
+        val parts = token.trim().split(":")
+        parts[0].trim() to PackageFileRange(
+            offset = parts[1].trim().toLong(),
+            size = parts[2].trim().toLong(),
+        )
+    }
+
 fun NetworkUpdate.toUpdate(): Update {
+    val file = files[0]
+    val packageFileRanges = file.otaPropertyFiles?.parsePackageFileRanges().orEmpty()
+    val payloadMetadataRange = packageFileRanges[Constants.AB_PAYLOAD_METADATA_PATH]
+    val payloadRange = packageFileRanges[Constants.AB_PAYLOAD_BIN_PATH]
+    val payloadPropertiesRange = packageFileRanges[Constants.AB_PAYLOAD_PROPERTIES_PATH]
+
     return Update(
-        downloadId = files[0].sha256,
-        name = files[0].filename,
+        downloadId = file.sha256,
+        name = file.filename,
         timestamp = datetime,
         type = type,
-        fileSize = files[0].size,
-        downloadUrl = files[0].url,
+        fileSize = file.size,
+        downloadUrl = file.url,
         version = version,
-        osPatchLevel = osPatchLevel ?: files[0].osPatchLevel,
-        osSdkLevel = osSdkLevel ?: files[0].osSdkLevel,
+        osPatchLevel = osPatchLevel ?: file.osPatchLevel,
+        osSdkLevel = osSdkLevel ?: file.osSdkLevel,
+        payloadMetadataOffset = payloadMetadataRange?.offset,
+        payloadMetadataSize = payloadMetadataRange?.size,
+        payloadOffset = payloadRange?.offset,
+        payloadSize = payloadRange?.size,
+        payloadPropertiesOffset = payloadPropertiesRange?.offset,
+        payloadPropertiesSize = payloadPropertiesRange?.size,
         isAvailableOnline = true,
     )
 }

@@ -1,0 +1,116 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 4,
+    "identityHash": "ce9876a3e5aea7f5d104d50f4b2400bc",
+    "entities": [
+      {
+        "tableName": "updates",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`download_id` TEXT NOT NULL, `status` INTEGER NOT NULL, `path` TEXT, `timestamp` INTEGER NOT NULL, `type` TEXT, `version` TEXT NOT NULL, `size` INTEGER NOT NULL, `name` TEXT NOT NULL, `os_patch_level` TEXT, `os_sdk_level` INTEGER, `payload_metadata_offset` INTEGER, `payload_metadata_size` INTEGER, `payload_offset` INTEGER, `payload_size` INTEGER, `payload_properties_offset` INTEGER, `payload_properties_size` INTEGER, `download_url` TEXT, PRIMARY KEY(`download_id`))",
+        "fields": [
+          {
+            "fieldPath": "downloadId",
+            "columnName": "download_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "path",
+            "columnName": "path",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "version",
+            "columnName": "version",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "size",
+            "columnName": "size",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "osPatchLevel",
+            "columnName": "os_patch_level",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "osSdkLevel",
+            "columnName": "os_sdk_level",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "payloadMetadataOffset",
+            "columnName": "payload_metadata_offset",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "payloadMetadataSize",
+            "columnName": "payload_metadata_size",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "payloadOffset",
+            "columnName": "payload_offset",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "payloadSize",
+            "columnName": "payload_size",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "payloadPropertiesOffset",
+            "columnName": "payload_properties_offset",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "payloadPropertiesSize",
+            "columnName": "payload_properties_size",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "downloadUrl",
+            "columnName": "download_url",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "download_id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ce9876a3e5aea7f5d104d50f4b2400bc')"
+    ]
+  }
+}

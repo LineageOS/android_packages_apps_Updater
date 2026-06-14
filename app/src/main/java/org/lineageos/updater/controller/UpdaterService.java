@@ -28,9 +28,10 @@ import org.lineageos.updater.UpdatesActivity;
 import org.lineageos.updater.data.Update;
 import org.lineageos.updater.data.UpdateStatus;
 import org.lineageos.updater.data.UserPreferencesRepository;
-import org.lineageos.updater.util.StringUtil;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.notifications.NotificationHelper;
+import org.lineageos.updater.util.InstallUtils;
+import org.lineageos.updater.util.StringUtil;
 
 import java.io.IOException;
 import java.time.format.FormatStyle;
@@ -187,14 +188,17 @@ public class UpdaterService extends Service {
                 Log.e(TAG, "Update not found: " + downloadId);
                 return START_NOT_STICKY;
             }
-            if (!update.getStatus().hasVerifiedPackage()) {
-                throw new IllegalArgumentException(update.getDownloadId() + " is not verified");
-            }
+            boolean canStreamUpdate = InstallUtils.canStreamUpdate(update,
+                    mUserPreferencesRepository.getStreamUpdatesBlocking());
             try {
-                if (Utils.isABUpdate(update.getFile())) {
+                if (canStreamUpdate || Utils.isABUpdate(update.getFile())) {
                     ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
                             mUpdaterController, mUserPreferencesRepository);
-                    installer.install(downloadId);
+                    if (canStreamUpdate) {
+                        installer.installStreaming(downloadId);
+                    } else {
+                        installer.install(downloadId);
+                    }
                 } else {
                     UpdateInstaller installer = UpdateInstaller.getInstance(this,
                             mUpdaterController);

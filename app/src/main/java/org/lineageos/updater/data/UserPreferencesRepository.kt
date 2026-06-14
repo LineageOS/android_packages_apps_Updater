@@ -38,6 +38,7 @@ private object UserPreferencesKeys {
     val CHECK_INTERVAL = stringPreferencesKey("check_interval")
     val METERED_NETWORK_WARNING = booleanPreferencesKey("metered_network_warning")
     val PERIODIC_CHECK_ENABLED = booleanPreferencesKey("periodic_check_enabled")
+    val STREAM_UPDATES = booleanPreferencesKey("stream_updates")
 }
 
 class UserPreferencesRepository(context: Context) {
@@ -109,6 +110,18 @@ class UserPreferencesRepository(context: Context) {
         } else {
             UpdatesCheckWorker.cancelPeriodicCheck(appContext)
         }
+    }
+
+    val streamUpdatesFlow: Flow<Boolean> = userPreferencesFlow.map { preferences ->
+        preferences[UserPreferencesKeys.STREAM_UPDATES] ?: true
+    }
+
+    suspend fun getStreamUpdates(): Boolean = streamUpdatesFlow.first()
+
+    fun getStreamUpdatesBlocking(): Boolean = runBlocking { getStreamUpdates() }
+
+    suspend fun setStreamUpdates(value: Boolean) {
+        userPreferences.edit { it[UserPreferencesKeys.STREAM_UPDATES] = value }
     }
 
     fun getRecoveryUpdateEnabled(): Boolean = DeviceInfoUtils.isRecoveryUpdateEnabled

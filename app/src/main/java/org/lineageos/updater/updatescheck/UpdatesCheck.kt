@@ -61,14 +61,25 @@ data class UpdatesCheckModel(
     val canCheckForUpdates: Boolean,
 )
 
+class UpdatesCheckUiState internal constructor(
+    internal val displayedState: UpdatesCheckState,
+) {
+    val isStatusVisible = when (displayedState) {
+        UpdatesCheckState.Idle -> false
+        UpdatesCheckState.Checking,
+        UpdatesCheckState.NoInternet,
+        UpdatesCheckState.Error -> true
+    }
+}
+
 @Composable
 fun UpdatesCheck(
     model: UpdatesCheckModel,
+    uiState: UpdatesCheckUiState,
     onCheckClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
-    val state = rememberStateWithMinimumCheckingDuration(model.state)
     val lastCheckedText = remember(model.lastCheckedTimestamp) {
         formatLastCheckedText(context, model.lastCheckedTimestamp)
     }
@@ -80,7 +91,7 @@ fun UpdatesCheck(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(SettingsDimension.itemPaddingVertical),
     ) {
-        when (state) {
+        when (uiState.displayedState) {
             UpdatesCheckState.Idle -> Unit
             UpdatesCheckState.Checking -> StatusContent(
                 R.raw.sysupdater_progress,
@@ -100,7 +111,7 @@ fun UpdatesCheck(
             )
         }
 
-        if (model.canCheckForUpdates && state !is UpdatesCheckState.Checking) {
+        if (model.canCheckForUpdates && uiState.displayedState !is UpdatesCheckState.Checking) {
             CheckForUpdatesButton(onClick = onCheckClick)
         }
 
@@ -183,6 +194,14 @@ private fun rememberStateWithMinimumCheckingDuration(
     }
 
     return displayedState
+}
+
+@Composable
+internal fun rememberUpdatesCheckUiState(
+    state: UpdatesCheckState,
+): UpdatesCheckUiState {
+    val displayedState = rememberStateWithMinimumCheckingDuration(state)
+    return remember(displayedState) { UpdatesCheckUiState(displayedState) }
 }
 
 /**

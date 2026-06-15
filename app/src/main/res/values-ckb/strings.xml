@@ -27,7 +27,7 @@
     <string name="preparing_ota_first_boot">ئامادەکاری بۆ یەکەم کارپێکردنەوە</string>
     <string name="dialog_prepare_zip_message">ئامادەکاری سەرەتایی بۆ نوێکردنەوە</string>
     <string name="dialog_battery_low_title">باتری نزمە</string>
-    <string name="dialog_battery_low_message_pct">ئاستی باتری زۆر نزمە، پێویستت بە لانی کەم %1$d%% ی باتری هەیە بۆ بەردەوامبوون، یان %2$d%% ئەگەر لەسەر شەحن بێت.</string>
+    <string name="dialog_battery_low_message_pct">ئاستی باتری زۆر نزمە، بۆ بەردەوامبوون لانیکەم پێویستت بە <xliff:g id="percent_discharging">%1$d</xliff:g>%%ـی باتری هەیە، یان <xliff:g id="percent_charging">%2$d</xliff:g>%% ئەگەر لە دۆخی بارگاویبووندا بێت.</string>
     <string name="dialog_scratch_mounted_message"><![CDATA[        تکایە ئەم فرمانانەی خوارەوە جێبەجێ بکە و دووبارە هەوڵ بدەرەوە:\n
         • adb root\n
         • adb enable-verity\n
@@ -45,10 +45,10 @@
     <string name="menu_auto_delete_updates">سڕینەوەی نوێکارییەکان دوای دامەزراندن</string>
     <string name="menu_delete_update">سڕینەوە</string>
     <string name="menu_copy_url">کۆپیکردنی بەستەر (URL)</string>
-    <string name="menu_export_update">ناردنی نوێکاری (Export)</string>
+    <string name="menu_export_update">هەناردەکردنی نوێکاری</string>
     <string name="menu_show_changelog">نیشاندانی گۆڕانکارییەکان</string>
     <string name="menu_ab_perf_mode">پێشینەدان بە پڕۆسەی نوێکردنەوە</string>
-    <string name="menu_update_recovery">نوێکردنەوەی ڕیکۆڤەری (Recovery)</string>
+    <string name="menu_update_recovery">نوێکردنەوەی Recovery (Recovery)</string>
     <string name="toast_forced_update_recovery">ناتوانرێت نوێکردنەوەی Lineage Recovery لەم ئامێرەدا ناچالاک بکرێت.</string>
     <string name="snack_updates_found">نوێکاری نوێ دۆزرایەوە</string>
     <string name="snack_no_updates_found">هیچ نوێکارییەک نەدۆزرایەوە</string>
@@ -76,26 +76,26 @@
     <string name="confirm_delete_dialog_title">سڕینەوەی فایل</string>
     <string name="confirm_delete_dialog_message">ئایا دڵنیای لە سڕینەوەی فایلی نوێکاری هەڵبژێردراو؟</string>
     <string name="apply_update_dialog_title">جێبەجێکردنی نوێکاری</string>
-    <string name="apply_update_dialog_message">تۆ خەریکی دامەزراندنی %1$s.\n\nئەگەر کرتە لە %2$s بکەیت، ئامێرەکە خۆکارانە دەچێتە باری ڕیکۆڤەری بۆ دامەزراندنی نوێکارییەکە.\n\nتێبینی: ئەمە پێویستی بە ڕیکۆڤەری گونجاو هەیە ئەگینا دەبێت بە دەستی دایبمەزرێنیت.</string>
+    <string name="apply_update_dialog_message">تۆ خەریکی دامەزراندنی %1$s.\n\nئەگەر کرتە لە %2$s بکەیت، ئامێرەکە خۆکارانە دەچێتە باری Recovery بۆ دامەزراندنی نوێکارییەکە.\n\nتێبینی: ئەمە پێویستی بە ڕیکۆڤەریی گونجاو هەیە ئەگینا دەبێت بە شێوازی دەستی دایبمەزرێنیت.</string>
     <string name="apply_update_dialog_message_ab">تۆ خەریکی دامەزراندنی %1$s.\n\nئەگەر کرتە لە %2$s بکەیت، ئامێرەکە لە پاشبنەمادا دەست دەکات بە دامەزراندن.\n\nدوای تەواوبوون، داوات لێ دەکرێت ئامێرەکە دووبارە کار پێ بکەیتەوە.</string>
     <string name="cancel_installation_dialog_message">پڕۆسەی دامەزراندن بوەستێنرێت؟</string>
     <string name="label_download_url">بەستەری داگرتن</string>
     <string name="toast_download_url_copied">بەستەرەکە کۆپی کرا</string>
-    <string name="dialog_export_title">ناردنی نوێکاری (Export)</string>
+    <string name="dialog_export_title">هەناردەکردنی نوێکاری</string>
     <string name="notification_export_success">نوێکارییەکە هەناردە کرا</string>
     <string name="notification_export_fail">هەڵە لە هەناردەکردندا</string>
     <string name="toast_already_exporting">پڕۆسەی هەناردەکردنی نوێکاری چالاکە</string>
     <string name="toast_export_started">هەناردەکردن دەستی پێ کرد</string>
     <plurals name="eta_seconds">
-        <item quantity="one">١ چرکە ماوە</item>
+        <item quantity="one">1 چرکە ماوە</item>
         <item quantity="other">%d چرکە ماوە</item>
     </plurals>
     <plurals name="eta_minutes">
-        <item quantity="one">١ خولەک ماوە</item>
+        <item quantity="one">1 خولەک ماوە</item>
         <item quantity="other">%d خولەک ماوە</item>
     </plurals>
     <plurals name="eta_hours">
-        <item quantity="one">١ کاتژمێر ماوە</item>
+        <item quantity="one">1 کاتژمێر ماوە</item>
         <item quantity="other">%d کاتژمێر ماوە</item>
     </plurals>
     <string name="update_over_metered_network_title">ئاگاداری</string>

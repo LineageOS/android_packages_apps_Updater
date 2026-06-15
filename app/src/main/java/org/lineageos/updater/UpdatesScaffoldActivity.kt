@@ -54,7 +54,7 @@ import org.lineageos.updater.updates.action.UpdateActionHandler
 import org.lineageos.updater.updates.state.UpdateItemStateMapper
 import org.lineageos.updater.updatescheck.UpdatesCheck
 import org.lineageos.updater.updatescheck.UpdatesCheckModel
-import org.lineageos.updater.updatescheck.UpdatesCheckState
+import org.lineageos.updater.updatescheck.rememberUpdatesCheckUiState
 
 abstract class UpdatesScaffoldActivity : ComponentActivity() {
     private val viewModel by viewModels<UpdatesViewModel>()
@@ -301,15 +301,17 @@ private fun UpdatesActionPane(
             )
         }
     }
+    val updatesCheckUiState = rememberUpdatesCheckUiState(model.state)
 
     Column(modifier = modifier) {
         UpdatesCheck(
             model = model,
+            uiState = updatesCheckUiState,
             onCheckClick = onRefreshClick,
         )
         UpdateList(
             items = updateItems,
-            isCheckingForUpdates = model.state is UpdatesCheckState.Checking,
+            isUpdatesCheckStatusVisible = updatesCheckUiState.isStatusVisible,
             onAction = { action, downloadId ->
                 val controller = updaterController ?: return@UpdateList
                 val update = controller.getUpdate(downloadId) ?: return@UpdateList

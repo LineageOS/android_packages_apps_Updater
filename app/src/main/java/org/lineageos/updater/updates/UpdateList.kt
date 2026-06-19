@@ -7,8 +7,6 @@ package org.lineageos.updater.updates
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Check
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -16,7 +14,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.android.settingslib.spa.widget.preference.ZeroStatePreference
 import com.android.settingslib.spa.widget.ui.Category
 import org.lineageos.updater.R
 import org.lineageos.updater.ui.CollapseBar
@@ -32,8 +29,7 @@ fun UpdateList(
 ) {
     if (items.isEmpty()) {
         if (!isUpdatesCheckStatusVisible) {
-            ZeroStatePreference(
-                icon = Icons.Outlined.Check,
+            UpdateZeroStatePreference(
                 text = stringResource(R.string.updates_zero_state_title),
                 description = stringResource(R.string.updates_zero_state_description),
             )

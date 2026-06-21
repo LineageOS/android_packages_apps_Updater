@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65db361b_25afd722",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-06-21T13:09:45Z",
+      "side": 1,
+      "message": "Tested the chain and it worked alright on my AB devices (Phones).",
+      "revId": "fabfce0cbe0683d17492b703edf56df30b7a2144",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

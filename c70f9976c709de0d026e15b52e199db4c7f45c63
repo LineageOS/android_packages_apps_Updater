@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "949738ae_46e3ab2c",
+        "filename": "app/src/main/java/org/lineageos/updater/updatescheck/UpdatesCheck.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-06-21T13:23:21Z",
+      "side": 1,
+      "message": "instead of the hack for the loop I\u0027d just use lottie directly\n\nimport com.airbnb.lottie.compose.LottieAnimation\nimport com.airbnb.lottie.compose.LottieCompositionSpec\nimport com.airbnb.lottie.compose.LottieConstants\nimport com.airbnb.lottie.compose.animateLottieCompositionAsState\nimport com.airbnb.lottie.compose.rememberLottieComposition\n\n@Composable\nfun Lottie(resId: Int, modifier: Modifier \u003d Modifier) {\n    Lottie(spec \u003d LottieCompositionSpec.RawRes(resId), modifier \u003d modifier)\n}\n\n@Composable\nfun Lottie(spec: LottieCompositionSpec, modifier: Modifier \u003d Modifier) {\n    Box(modifier \u003d modifier) { BaseLottie(spec) }\n}\n\n@Composable\nprivate fun BaseLottie(spec: LottieCompositionSpec) {\n    val composition by rememberLottieComposition(spec)\n    val progress by\n        animateLottieCompositionAsState(composition, iterations \u003d 1)\n    LottieAnimation(\n        composition \u003d composition,\n        dynamicProperties \u003d LottieColorUtils.getDefaultDynamicProperties(),\n        progress \u003d { progress },\n    )\n}",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 9
+      },
+      "revId": "c70f9976c709de0d026e15b52e199db4c7f45c63",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

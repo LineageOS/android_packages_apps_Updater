@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8451f7d3_8dd91c14",
+        "filename": "app/src/main/java/org/lineageos/updater/data/UserPreferencesRepository.kt",
+        "patchSetId": 6
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-06-22T15:41:03Z",
+      "side": 1,
+      "message": "I\u0027d prefer to keep it off _for a bit_ update_engine is a beast",
+      "range": {
+        "startLine": 116,
+        "startChar": 59,
+        "endLine": 116,
+        "endChar": 63
+      },
+      "revId": "a8b2edb20211d3e6cab18fcbaf8b91e82c3f3628",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

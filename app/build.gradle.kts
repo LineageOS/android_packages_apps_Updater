@@ -94,6 +94,7 @@ dependencies {
 
     debugImplementation(files("../system_libs/SettingsLib.jar", "../system_libs/SpaLib.jar"))
     debugImplementation(libs.androidx.compose.ui.tooling)
+    debugImplementation(libs.lottie.compose)
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.cardview)

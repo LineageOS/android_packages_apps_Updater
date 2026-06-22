@@ -6,8 +6,6 @@
 package org.lineageos.updater.deviceinfo
 
 import android.content.res.Configuration
-import android.icu.text.DateFormat
-import android.icu.util.TimeZone
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -28,9 +26,6 @@ import com.android.settingslib.spa.framework.theme.SettingsTheme
 import org.lineageos.updater.deviceinfo.actions.DeviceInfoActionButtons
 import org.lineageos.updater.deviceinfo.actions.DeviceInfoTvAction
 import org.lineageos.updater.util.StringUtil
-import java.time.LocalDate
-import java.time.ZoneOffset
-import java.util.Date
 
 @Composable
 fun DeviceInfoBanner(modifier: Modifier = Modifier) {
@@ -45,10 +40,7 @@ fun DeviceInfoBanner(modifier: Modifier = Modifier) {
             .format(Date(DeviceInfoUtils.buildDateTimestamp * 1000L))
     }
     val securityPatch = remember(locale) {
-        val patchDate = LocalDate.parse(DeviceInfoUtils.buildSecurityPatch)
-        DateFormat.getInstanceForSkeleton("MMMy", locale)
-            .apply { timeZone = TimeZone.getTimeZone("UTC") }
-            .format(Date.from(patchDate.atStartOfDay(ZoneOffset.UTC).toInstant()))
+        StringUtil.formatSecurityPatch(context, DeviceInfoUtils.buildSecurityPatch)
     }
 
     DeviceInfoBanner(

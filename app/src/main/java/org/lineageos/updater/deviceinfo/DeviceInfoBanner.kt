@@ -28,8 +28,6 @@ import com.android.settingslib.spa.framework.theme.SettingsTheme
 import org.lineageos.updater.deviceinfo.actions.DeviceInfoActionButtons
 import org.lineageos.updater.deviceinfo.actions.DeviceInfoTvAction
 import org.lineageos.updater.util.StringUtil
-import java.time.LocalDate
-import java.time.ZoneOffset
 import java.util.Date
 
 @Composable
@@ -45,10 +43,7 @@ fun DeviceInfoBanner(modifier: Modifier = Modifier) {
             .format(Date(DeviceInfoUtils.buildDateTimestamp * 1000L))
     }
     val securityPatch = remember(locale) {
-        val patchDate = LocalDate.parse(DeviceInfoUtils.buildSecurityPatch)
-        DateFormat.getInstanceForSkeleton("MMMy", locale)
-            .apply { timeZone = TimeZone.getTimeZone("UTC") }
-            .format(Date.from(patchDate.atStartOfDay(ZoneOffset.UTC).toInstant()))
+        StringUtil.formatSecurityPatch(context, DeviceInfoUtils.buildSecurityPatch)
     }
 
     DeviceInfoBanner(

@@ -22,6 +22,30 @@
       },
       "revId": "c70f9976c709de0d026e15b52e199db4c7f45c63",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "755e6ff5_03821a96",
+        "filename": "app/src/main/java/org/lineageos/updater/updatescheck/UpdatesCheck.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-06-22T15:32:52Z",
+      "side": 1,
+      "message": "```\ndiff --git a/app/src/main/java/org/lineageos/updater/updatescheck/UpdatesCheck.kt b/app/src/main/java/org/lineageos/updater/updatescheck/UpdatesCheck.kt\nindex 9af628d..448baf7 100644\n--- a/app/src/main/java/org/lineageos/updater/updatescheck/UpdatesCheck.kt\n+++ b/app/src/main/java/org/lineageos/updater/updatescheck/UpdatesCheck.kt\n@@ -11,6 +11,7 @@ import android.text.format.DateFormat\n import android.text.format.DateUtils\n import androidx.annotation.RawRes\n import androidx.annotation.StringRes\n+import androidx.compose.foundation.layout.Box\n import androidx.compose.foundation.layout.Arrangement\n import androidx.compose.foundation.layout.Column\n import androidx.compose.foundation.layout.fillMaxWidth\n@@ -35,8 +36,12 @@ import androidx.compose.ui.semantics.contentDescription\n import androidx.compose.ui.semantics.semantics\n import androidx.compose.ui.text.style.TextAlign\n import androidx.compose.ui.unit.dp\n+import com.airbnb.lottie.compose.LottieAnimation\n+import com.airbnb.lottie.compose.LottieCompositionSpec\n+import com.airbnb.lottie.compose.LottieConstants\n+import com.airbnb.lottie.compose.animateLottieCompositionAsState\n+import com.airbnb.lottie.compose.rememberLottieComposition\n import com.android.settingslib.spa.framework.theme.SettingsDimension\n-import com.android.settingslib.spa.widget.ui.Lottie\n import com.android.settingslib.spa.widget.ui.SettingsBody\n import kotlinx.coroutines.delay\n import org.lineageos.updater.R\n@@ -71,6 +76,27 @@ class UpdatesCheckUiState internal constructor(\n     }\n }\n \n+@Composable\n+fun Lottie(resId: Int, modifier: Modifier \u003d Modifier) {\n+    Lottie(spec \u003d LottieCompositionSpec.RawRes(resId), modifier \u003d modifier)\n+}\n+\n+@Composable\n+fun Lottie(spec: LottieCompositionSpec, modifier: Modifier \u003d Modifier) {\n+    Box(modifier \u003d modifier) { BaseLottie(spec) }\n+}\n+\n+@Composable\n+private fun BaseLottie(spec: LottieCompositionSpec) {\n+    val composition by rememberLottieComposition(spec)\n+    val progress by\n+        animateLottieCompositionAsState(composition, iterations \u003d LottieConstants.IterateForever)\n+    LottieAnimation(\n+        composition \u003d composition,\n+        progress \u003d { progress },\n+    )\n+}\n+\n @Composable\n fun UpdatesCheck(\n     model: UpdatesCheckModel,\n```\n\nour lottie animation don\u0027t use dynamic props, maybe make a little helper?",
+      "parentUuid": "949738ae_46e3ab2c",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 9
+      },
+      "revId": "c70f9976c709de0d026e15b52e199db4c7f45c63",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

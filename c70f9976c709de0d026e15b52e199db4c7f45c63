@@ -46,6 +46,30 @@
       },
       "revId": "c70f9976c709de0d026e15b52e199db4c7f45c63",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6863d15f_fd7254e7",
+        "filename": "app/src/main/java/org/lineageos/updater/updatescheck/UpdatesCheck.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 30416
+      },
+      "writtenOn": "2026-06-22T17:59:27Z",
+      "side": 1,
+      "message": "Done in change Iab766ad667253b8e76d37a7b538204c15aa4c2ab",
+      "parentUuid": "755e6ff5_03821a96",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 9
+      },
+      "revId": "c70f9976c709de0d026e15b52e199db4c7f45c63",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

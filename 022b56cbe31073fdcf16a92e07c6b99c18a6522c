@@ -16,6 +16,23 @@
       "message": "definitely would like someone else to take a look, but functional and code looks within reason.",
       "revId": "022b56cbe31073fdcf16a92e07c6b99c18a6522c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4811647_7d4a55d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-06-24T09:29:27Z",
+      "side": 1,
+      "message": "From a code point of view, if tested on a big enough matrix of devices ship as needed",
+      "revId": "022b56cbe31073fdcf16a92e07c6b99c18a6522c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

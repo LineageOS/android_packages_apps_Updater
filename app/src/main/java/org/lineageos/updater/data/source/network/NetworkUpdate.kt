@@ -14,6 +14,9 @@ import kotlinx.serialization.json.JsonIgnoreUnknownKeys
 import org.lineageos.updater.data.Update
 import org.lineageos.updater.misc.Constants
 
+// Commented out fields below are available in production, but not needed in runtime.
+// If you wish to uncomment any of them, please update the README.md to indicate that.
+
 @Suppress("PROVIDED_RUNTIME_TOO_LOW")
 @Serializable
 @JsonIgnoreUnknownKeys

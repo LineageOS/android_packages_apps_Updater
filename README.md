@@ -14,19 +14,25 @@ The app sends `GET` requests to the URL defined by the `updater_server_url`
 resource (or the `lineage.updater.uri` system property) and expects as response
 a JSON with the following structure:
 ```json
-{
-  "response": [
-    {
-      "datetime": 1230764400,
-      "filename": "ota-package.zip",
-      "id": "5eb63bbbe01eeed093cb22bb8f5acdc3",
-      "romtype": "nightly",
-      "size": 314572800,
-      "url": "https://example.com/ota-package.zip",
-      "version": "15.1"
-    }
-  ]
-}
+[
+  {
+    "datetime": 1781858358,
+    "files": [
+      {
+        "filename": "ota-package.zip",
+        "os_patch_level": "2026-06-01",
+        "os_sdk_level": 36,
+        "ota_property_files": "payload_metadata.bin:4662:187245,payload.bin:4662:1926274191,payload_properties.txt:1926278911:156,apex_info.pb:2220:1279,care_map.pb:3546:1069,metadata:69:683,metadata.pb:820:1352                        ",
+        "sha256": "11468fc263696b8bc0afd35861c35d62a562ba29722447a3972c39f0023deb7f",
+        "size": 1926282058,
+        "url": "https://example.com/full/ota-package.zip"
+      }
+    ],
+    "type": "nightly",
+    "version": "23.2"
+  }
+]
+
 ```
 
 The `datetime` attribute is the build date expressed as UNIX timestamp.  

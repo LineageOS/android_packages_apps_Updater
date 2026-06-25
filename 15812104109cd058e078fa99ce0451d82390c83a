@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "902654ca_d6092159",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2026-06-25T08:41:52Z",
+      "side": 1,
+      "message": "I removed these backend side and ensured that updater isn\u0027t broken.",
+      "revId": "15812104109cd058e078fa99ce0451d82390c83a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

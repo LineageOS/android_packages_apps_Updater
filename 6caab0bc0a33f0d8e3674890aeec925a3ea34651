@@ -16,6 +16,29 @@
       "message": "i removed all fields we don\u0027t strictly require in updater.",
       "revId": "6caab0bc0a33f0d8e3674890aeec925a3ea34651",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39983598_1e362172",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2026-06-25T08:21:12Z",
+      "side": 1,
+      "message": "also this needs to be updated.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 0
+      },
+      "revId": "6caab0bc0a33f0d8e3674890aeec925a3ea34651",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

@@ -118,7 +118,7 @@
     <string name="security_update">Security update</string>
     <string name="show_changelog">Recent changes</string>
     <string name="report_issues">Report issues</string>
-    <string name="report_issue_url" translatable="false">https://github.com/LineageOS/issues/issues</string>
+    <string name="report_issue_url" translatable="false">https://wiki.lineageos.org/how-to/bugreport/</string>
     <string name="header_review_updates">Review updates and recent changes on</string>
     <string name="header_download_url" translatable="false">download.lineageos.org</string>
     <string name="found_bug">Found a bug? Report it with our bug report guide:</string>

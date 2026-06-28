@@ -167,7 +167,14 @@ fun UpdateItem(
                                     )
                                 )
                                 Text(
-                                    text = stringResource(R.string.list_full_install),
+                                    text = if (state.installNote == R.string.list_major_upgrade_recovery_install) {
+                                        stringResource(
+                                            state.installNote,
+                                            stringResource(R.string.brand_name),
+                                        )
+                                    } else {
+                                        stringResource(state.installNote)
+                                    },
                                     style = MaterialTheme.typography.bodySmallEmphasized,
                                 )
                             }
@@ -254,6 +261,7 @@ private fun UpdateItemIdleCollapsedPreview() {
                 fileSize = "1.1 GB",
                 androidUpdateInfo = "Android 16",
                 securityUpdate = "Jan 2026",
+                installNote = R.string.list_full_install,
                 progress = null,
                 actions = UpdateActions(
                     primary = UpdateAction(
@@ -287,15 +295,11 @@ private fun UpdateItemIdleExpandedPreview() {
                 fileSize = "1.1 GB",
                 androidUpdateInfo = "Major Android upgrade",
                 securityUpdate = "Jan 2026",
+                installNote = R.string.list_major_upgrade_recovery_install,
                 progress = null,
                 actions = UpdateActions(
                     primary = UpdateAction(
-                        type = UpdateActionType.START_DOWNLOAD,
-                    ),
-                    overflow = listOf(
-                        UpdateAction(
-                            type = UpdateActionType.VIEW_DOWNLOADS,
-                        ),
+                        type = UpdateActionType.OPEN_GUIDE,
                     ),
                 ),
             ),
@@ -320,6 +324,7 @@ private fun UpdateItemDownloadingPreview() {
                 fileSize = "1.1 GB",
                 androidUpdateInfo = "Android 16",
                 securityUpdate = "Jan 2026",
+                installNote = R.string.list_full_install,
                 progress = ProgressState.Determinate(
                     percent = 65f,
                     downloadedSize = "715 MB of 1.1 GB",

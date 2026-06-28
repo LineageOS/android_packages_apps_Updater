@@ -95,7 +95,7 @@ class UpdatesRepository(
         if (!Utils.compareVersions(
                 update.version,
                 DeviceInfoUtils.buildVersion,
-                DeviceInfoUtils.isMajorUpdateAllowed,
+                true, /* DeviceInfoUtils.isMajorUpdateAllowed */
             )
         ) {
             Log.d(TAG, "${update.name} is older than current Android version")

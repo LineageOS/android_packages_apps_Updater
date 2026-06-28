@@ -22,6 +22,7 @@ enum class UpdateActionType(@param:StringRes val titleRes: Int) {
 
     REBOOT(R.string.reboot),
     SHOW_INFO(R.string.action_info),
+    OPEN_GUIDE(R.string.action_open_guide),
 
     DELETE(R.string.menu_delete_update),
     EXPORT(R.string.menu_export_update),

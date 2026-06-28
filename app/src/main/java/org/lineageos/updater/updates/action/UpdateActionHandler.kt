@@ -183,6 +183,17 @@ class UpdateActionHandler(
             )
 
             UpdateActionType.EXPORT -> exportUpdate(update)
+
+            UpdateActionType.OPEN_GUIDE -> activity.startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    activity.getString(
+                        R.string.blocked_update_info_url,
+                        DeviceInfoUtils.device,
+                    ).toUri(),
+                )
+            )
+
             UpdateActionType.VIEW_DOWNLOADS -> activity.startActivity(
                 Intent(
                     Intent.ACTION_VIEW,

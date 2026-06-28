@@ -85,6 +85,10 @@ class UpdateItemStateMapper(
 
             UpdateOperationPhase.VERIFIED -> ActionButtons(
                 primary = when {
+                    state.requiresManualInstall -> action(
+                        type = UpdateActionType.OPEN_GUIDE,
+                    )
+
                     state.canInstall -> action(
                         type = UpdateActionType.START_INSTALL,
                         enabled = !state.isBusy,
@@ -123,6 +127,10 @@ class UpdateItemStateMapper(
 
             else -> ActionButtons(
                 primary = when {
+                    state.requiresManualInstall -> action(
+                        type = UpdateActionType.OPEN_GUIDE,
+                    )
+
                     !state.canInstall -> action(
                         type = UpdateActionType.SHOW_INFO,
                         enabled = !state.isBusy,
@@ -180,6 +188,11 @@ class UpdateItemStateMapper(
             securityUpdate = update.osPatchLevel?.let {
                 StringUtil.formatSecurityPatch(context, it)
             } ?: "",
+            installNote = when (state.installBlockedReason) {
+                InstallUtils.BlockedReason.DOWNGRADE -> R.string.list_downgrade_blocked
+                InstallUtils.BlockedReason.VERSION_UNSUPPORTED -> R.string.list_major_upgrade_recovery_install
+                InstallUtils.BlockedReason.NONE -> R.string.list_full_install
+            },
             progress = progress,
             actions = actions,
         )

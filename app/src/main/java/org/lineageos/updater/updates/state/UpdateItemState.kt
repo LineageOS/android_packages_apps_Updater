@@ -5,6 +5,7 @@
 
 package org.lineageos.updater.updates.state
 
+import androidx.annotation.StringRes
 import org.lineageos.updater.updates.action.UpdateActions
 
 data class UpdateItemState(
@@ -18,6 +19,7 @@ data class UpdateItemState(
     val fileSize: String,
     val androidUpdateInfo: String,
     val securityUpdate: String,
+    @param:StringRes val installNote: Int,
 
     val progress: ProgressState?,
     val actions: UpdateActions,

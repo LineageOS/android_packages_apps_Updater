@@ -21,7 +21,6 @@ import org.lineageos.updater.data.source.local.UpdatesDatabase;
 import org.lineageos.updater.deviceinfo.DeviceInfoUtils;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -184,18 +183,6 @@ public class Utils {
             }
         }
         throw new IllegalStateException();
-    }
-
-    public static boolean isABUpdate(ZipFile zipFile) {
-        return zipFile.getEntry(Constants.AB_PAYLOAD_BIN_PATH) != null &&
-                zipFile.getEntry(Constants.AB_PAYLOAD_PROPERTIES_PATH) != null;
-    }
-
-    public static boolean isABUpdate(File file) throws IOException {
-        ZipFile zipFile = new ZipFile(file);
-        boolean isAB = isABUpdate(zipFile);
-        zipFile.close();
-        return isAB;
     }
 
     public static boolean isEncrypted(Context context, File file) {

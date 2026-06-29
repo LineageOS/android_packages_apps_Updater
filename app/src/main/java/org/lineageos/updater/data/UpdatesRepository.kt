@@ -70,7 +70,8 @@ class UpdatesRepository(
 
             // Delete temp files and DB entries for updates no longer advertised by the server.
             localUpdates.values.filter {
-                it.downloadId !in networkIds && it.downloadId != Update.LOCAL_ID
+                it.downloadId !in networkIds && it.downloadId != Update.LOCAL_ID &&
+                        it.downloadUrl?.isNotEmpty() == true
             }.forEach {
                 it.file?.delete()
                 localDataSource.removeUpdate(it.downloadId)

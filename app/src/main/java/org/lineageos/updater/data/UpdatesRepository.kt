@@ -41,15 +41,17 @@ class UpdatesRepository(
     suspend fun fetchUpdates(): Long? {
         if (!networkMonitor.currentNetworkState.isOnline) return null
 
-        val localUpdates = withContext(Dispatchers.IO) {
-            localDataSource.getUpdates()
-        }.associateBy { it.downloadId }
-
         val networkUpdates = withContext(Dispatchers.IO) {
             networkDataSource.fetchUpdates().map { it.toUpdate() }.filter { filterUpdates(it) }
         }
 
+        if (networkUpdates.isEmpty()) return System.currentTimeMillis()
+
         val networkIds = networkUpdates.map { it.downloadId }.toSet()
+
+        val localUpdates = withContext(Dispatchers.IO) {
+            localDataSource.getUpdates()
+        }.associateBy { it.downloadId }
 
         if (localUpdates.isNotEmpty() && networkUpdates.any { it.downloadId !in localUpdates }) {
             notificationHelper.showNewUpdatesNotification()

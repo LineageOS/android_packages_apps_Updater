@@ -31,6 +31,7 @@ import org.lineageos.updater.data.UserPreferencesRepository;
 import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.notifications.NotificationHelper;
 import org.lineageos.updater.util.InstallUtils;
+import org.lineageos.updater.util.OtaMetadataParser;
 import org.lineageos.updater.util.StringUtil;
 
 import java.io.IOException;
@@ -198,7 +199,7 @@ public class UpdaterService extends Service {
                 throw new IllegalArgumentException(update.getDownloadId() + " is not verified");
             }
             try {
-                if (canStreamUpdate || Utils.isABUpdate(update.getFile())) {
+                if (canStreamUpdate || new OtaMetadataParser(update.getFile()).isABUpdate()) {
                     ABUpdateInstaller installer = ABUpdateInstaller.getInstance(this,
                             mUpdaterController, mUserPreferencesRepository);
                     if (canStreamUpdate) {

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a06c725_602a1ede",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2026-06-29T18:45:00Z",
+      "side": 1,
+      "message": "also one funny thing i noticed is that our download api returns empty list for unsupported devices...",
+      "revId": "a904c4ae7c135b3f02ff7e1fa6947da41f2c7630",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

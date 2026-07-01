@@ -5,7 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Trình cập nhật</string>
-    <string name="display_name">Trình cập nhật</string>
+    <string name="display_name">Cập nhật hệ thống</string>
     <string name="verification_failed_notification">Xác minh thất bại</string>
     <string name="verifying_download_notification">Đang xác thực bản cập nhật</string>
     <string name="downloading_notification">Đang tải xuống</string>
@@ -13,16 +13,16 @@
     <string name="download_paused_error_notification">Lỗi tải xuống</string>
     <string name="download_completed_notification">Tải xuống hoàn tất</string>
     <string name="download_starting_notification">Đang bắt đầu tải xuống</string>
+    <string name="download_switch_confirm_title">Tạm dừng việc tải xuống hiện tại?</string>
+    <string name="download_switch_confirm_message">Một bản cập nhật khác hiện đang được tải xuống. Việc bắt đầu cập nhật này sẽ tạm dừng bản cập nhật kia.</string>
     <string name="update_failed_notification">Cập nhật thất bại</string>
     <string name="installation_suspended_notification">Cài đặt đã ngừng</string>
     <string name="new_updates_found_title">Bản cập nhật mới</string>
+    <string name="new_updates_found_summary">Nhấn để xem các bản cập nhật có sẵn</string>
     <string name="text_download_speed">%1$s, %2$s/giây</string>
-    <string name="pause_button">Tạm dừng</string>
-    <string name="resume_button">Tiếp tục</string>
-    <string name="suspend_button">Tạm dừng</string>
-    <string name="installing_update">Đang cài đặt gói cập nhật</string>
+    <string name="installing_update">Đang cài đặt bản cập nhật hệ thống</string>
     <string name="installing_update_error">Lỗi cài đặt</string>
-    <string name="installing_update_finished">Đã cài đặt bản cập nhật</string>
+    <string name="installing_update_finished">Đang chờ khởi động lại để cập nhật</string>
     <string name="finalizing_package">Đang hoàn tất gói cài đặt</string>
     <string name="preparing_ota_first_boot">Đang chuẩn bị cho lần khởi động đầu tiên</string>
     <string name="dialog_prepare_zip_message">Chuẩn bị cập nhật sơ bộ</string>
@@ -35,85 +35,98 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">Không thể cài đặt cập nhật khi OverlayFS được gắn kết</string>
     <string name="reboot">Khởi động lại</string>
-    <string name="menu_refresh">Làm mới</string>
-    <string name="menu_preferences">Tùy chỉnh</string>
-    <string name="menu_auto_updates_check">Tự động kiểm tra bản cập nhật</string>
-    <string name="menu_auto_updates_check_interval_daily">Mỗi ngày một lần</string>
-    <string name="menu_auto_updates_check_interval_weekly">Mỗi tuần một lần</string>
-    <string name="menu_auto_updates_check_interval_monthly">Mỗi tháng một lần</string>
-    <string name="menu_auto_updates_check_interval_never">Không bao giờ</string>
-    <string name="menu_auto_delete_updates">Xóa bản cập nhật khi cài đặt hoàn tất</string>
+    <string name="menu_preferences">Tùy chọn cập nhật hệ thống</string>
+    <string name="preferences_summary">Đồng bộ, tải về và cài đặt</string>
+    <string name="check_for_updates">Kiểm tra cập nhật</string>
+    <string name="checking_for_updates">Đang kiểm tra cập nhật</string>
+    <string name="check_your_internet_connection">Kiểm tra kết nối internet của bạn</string>
+    <string name="updates_check_failed">Kiểm tra cập nhật không thành công. Vui lòng thử lại sau.</string>
+    <string name="header_last_updates_check_time">Lần kiểm tra gần nhất: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Lần kiểm tra gần nhất: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="pref_category_background_sync">Đồng bộ trong nền</string>
+    <string name="menu_auto_updates_check">Tự động kiểm tra cập nhật</string>
+    <string name="menu_auto_updates_check_summary">Kiểm tra các bản cập nhật trong nền</string>
+    <string name="menu_auto_updates_check_interval">Kiểm tra mỗi</string>
+    <string name="time_unit_day">Ngày</string>
+    <string name="time_unit_week">Tuần</string>
+    <string name="time_unit_month">Tháng</string>
+    <string name="pref_category_download_install">Tải xuống và cài đặt</string>
+    <string name="menu_auto_delete_updates">Tự động xóa bản cập nhật</string>
+    <string name="menu_auto_delete_updates_summary">Xóa bỏ các bản cập nhật đã tải xuống sau khi cài đặt</string>
+    <string name="menu_stream_updates">Cập nhật trực tuyến</string>
+    <string name="menu_stream_updates_summary">Cài đặt các bản cập nhật trong khi tải xuống. Vô hiệu hóa để lưu các gói cập nhật để xuất.</string>
     <string name="menu_delete_update">Xóa</string>
-    <string name="menu_copy_url">Sao chép URL</string>
     <string name="menu_export_update">Xuất bản cập nhật</string>
-    <string name="menu_show_changelog">Hiển thị nhật ký thay đổi</string>
+    <string name="menu_view_downloads">Xem trên <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> Tải xuống</string>
+    <string name="menu_metered_network_warning">Cảnh báo mạng được đo lường</string>
+    <string name="menu_metered_network_warning_summary">Cảnh báo trước khi tải xuống qua dữ liệu di động</string>
     <string name="menu_ab_perf_mode">Ưu tiên quá trình cập nhật</string>
+    <string name="menu_ab_perf_mode_summary">Tăng tốc độ cập nhật nhưng làm giảm hiệu năng của thiết bị</string>
+    <string name="menu_ab_perf_mode_summary_charging">Tự động kích hoạt khi sạc bằng nguồn điện AC</string>
     <string name="menu_update_recovery">Cập nhật recovery</string>
-    <string name="toast_forced_update_recovery">Không thể tắt các bản cập nhật Lineage Recovery trên thiết bị này.</string>
+    <string name="menu_update_recovery_summary">Cập nhật phân vùng phục hồi cùng với hệ điều hành</string>
     <string name="snack_updates_found">Đã tìm thấy bản cập nhật mới</string>
     <string name="snack_no_updates_found">Không tìm thấy bản cập nhật mới</string>
-    <string name="snack_updates_check_failed">Kiểm tra bản cập nhật không thành công. Vui lòng kiểm tra kết nối internet của bạn và thử lại sau.</string>
     <string name="snack_download_failed">Tải xuống không thành công. Vui lòng kiểm tra kết nối internet của bạn và thử lại sau.</string>
     <string name="snack_download_verification_failed">Xác thực bản cập nhật thất bại.</string>
     <string name="snack_download_verified">Tải xuống hoàn tất.</string>
     <string name="snack_update_not_installable">Bản cập nhật này không thể được cài đặt lên trên của bản xây dựng hiện hành.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Lần kiểm tra cuối: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">Ngày dựng</string>
+    <string name="security_update">Cập nhật bảo mật</string>
+    <string name="show_changelog">Thay đổi gần đây</string>
+    <string name="report_issues">Báo cáo sự cố</string>
+    <string name="header_review_updates">Xem lại các bản cập nhật và thay đổi gần đây trên</string>
+    <string name="found_bug">Phát hiện lỗi? Hãy báo cáo lỗi bằng hướng dẫn báo cáo lỗi của chúng tôi:</string>
+    <string name="updates_zero_state_title">Không có bản cập nhật nào</string>
+    <string name="updates_zero_state_description">Các bản cập nhật mới cho thiết bị này sẽ xuất hiện ở đây khi có sẵn.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">Kích thước cập nhật: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">Cập nhật bảo mật: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Bản nâng cấp Android lớn</string>
+    <string name="list_full_install">Cài đặt đầy đủ: An toàn khi cài đè lên bản dựng trước đó</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> của <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> của <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Đang xác thực bản cập nhật</string>
-    <string name="list_no_updates">Không có bản cập nhật mới được tìm thấy. Để tự động kiểm tra các bản cập nhật mới, sử dụng nút Làm mới.</string>
+    <string name="see_more">Xem thêm %1$d</string>
+    <string name="see_less">Ẩn bớt</string>
     <string name="action_download">Tải xuống</string>
     <string name="action_pause">Tạm dừng</string>
     <string name="action_resume">Tiếp tục</string>
     <string name="action_install">Cài đặt</string>
     <string name="action_info">Thông tin</string>
     <string name="action_delete">Xóa</string>
-    <string name="action_cancel">Hủy</string>
+    <string name="confirm_cancel_dialog_title">Hủy bỏ tải xuống</string>
+    <string name="confirm_cancel_dialog_message">Hủy tải xuống và xóa tệp tin?</string>
     <string name="confirm_delete_dialog_title">Xoá tập tin</string>
     <string name="confirm_delete_dialog_message">Xóa các tập tin cập nhật được chọn?</string>
     <string name="apply_update_dialog_title">Áp dụng cập nhật</string>
     <string name="apply_update_dialog_message">Bạn sắp cài đặt <xliff:g id="update_name">%1$s</xliff:g>.\n\nNếu bạn nhấn <xliff:g id="ok">%2$s</xliff:g>, thiết bị sẽ tự khởi động lại ở chế độ khôi phục để cài đặt bản cập nhật.\n\nLưu ý: Tính năng này yêu cầu Trình phục hồi tương thích hoặc các bản cập nhật sẽ cần được cài đặt theo cách thủ công.</string>
     <string name="apply_update_dialog_message_ab">Bạn sắp cài đặt <xliff:g id="update_name">%1$s</xliff:g>.\n\nNếu bạn nhấn <xliff:g id="ok">%2$s</xliff:g>, thiết bị sẽ bắt đầu cài đặt trong nền.\n\nSau khi hoàn tất, bạn sẽ được nhắc khởi động lại.</string>
-    <string name="cancel_installation_dialog_message">Huỷ cài đặt?</string>
+    <string name="cancel_installation_dialog_title">Huỷ cài đặt</string>
+    <string name="cancel_installation_dialog_message">Hủy cập nhật hệ thống?</string>
     <string name="label_download_url">Tải xuống URL</string>
-    <string name="toast_download_url_copied">Đã sao chép URL</string>
     <string name="dialog_export_title">Đang xuất bản cập nhật</string>
     <string name="notification_export_success">Đã xuất bản cập nhật</string>
     <string name="notification_export_fail">Lỗi xuất</string>
     <string name="toast_already_exporting">Đã xuất một bản cập nhật</string>
     <string name="toast_export_started">Đã bắt đầu xuất</string>
-    <plurals name="eta_seconds">
-        <item quantity="other">Còn lại <xliff:g id="count">%d</xliff:g> giây</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="other">Còn lại <xliff:g id="count">%d</xliff:g> phút</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="other">Còn lại <xliff:g id="count">%d</xliff:g> giờ</item>
-    </plurals>
     <string name="update_over_metered_network_title">Cảnh báo</string>
     <string name="update_over_metered_network_message">Bạn sắp tải xuống gói cập nhật qua mạng được đo lường, điều này có thể sẽ gây ra việc sử dụng dữ liệu cao. Bạn có muốn tiếp tục không?</string>
-    <string name="checkbox_metered_network_warning">Không hiện lại</string>
-    <string name="menu_metered_network_warning">Cảnh báo mạng được đo lường</string>
     <string name="blocked_update_dialog_title">Cập nhật bị chặn</string>
     <string name="blocked_update_dialog_message">Bản cập nhật này không thể được cài đặt bằng ứng dụng trình cập nhật. Vui lòng đọc <xliff:g id="info_url">%1$s</xliff:g> để biết thêm thông tin.</string>
+    <string name="blocked_update_dialog_title_downgrade">Hạ cấp bị chặn</string>
+    <string name="blocked_update_dialog_message_downgrade">Bản cập nhật này cũ hơn bản cập nhật hệ thống hiện tại nên không thể cài đặt.</string>
     <string name="export_channel_title">Hoàn thành xuất</string>
     <string name="new_updates_channel_title">Bản cập nhật mới</string>
     <string name="ongoing_channel_title">Đang tải xuống</string>
     <string name="update_failed_channel_title">Cập nhật thất bại</string>
-    <string name="info_dialog_title">Bạn có biết?</string>
-    <string name="info_dialog_message">Bản cập nhật LineageOS là gói cài đặt đầy đủ. Điều đó có nghĩa là bạn luôn có thể chỉ cài đặt bản cập nhật mới nhất, ngay cả khi bạn đã bỏ qua một số bản cập nhật ở giữa!</string>
-    <string name="info_dialog_ok">Cảm ơn bạn đã thông tin!</string>
-    <string name="local_update_import">Cập nhật cục bộ</string>
+    <string name="local_update_import">Cài đặt bản cập nhật cục bộ</string>
+    <string name="local_update_import_summary">Chọn tệp cập nhật để cài đặt</string>
     <string name="local_update_import_progress">Đang nhập bản cập nhật cục bộ\u2026</string>
     <string name="local_update_import_success">%1$s đã được nhập. Bạn có muốn cài đặt nó không?</string>
     <string name="local_update_import_failure">Không nhập được bản cập nhật cục bộ</string>
     <string name="local_update_import_install">Cài đặt</string>
     <string name="local_update_name">Cập nhật cục bộ</string>
-    <string name="welcome_title">Chào mừng</string>
-    <string name="welcome_message">Xin lưu ý rằng khi có nhiều bản cập nhật khả dụng, bạn không cần phải cập nhật từng bản một. Bạn có thể cài đặt trực tiếp bản cập nhật mới nhất rồi xóa an toàn các bản cập nhật cũ hơn để giải phóng dung lượng lưu trữ.</string>
 </resources>

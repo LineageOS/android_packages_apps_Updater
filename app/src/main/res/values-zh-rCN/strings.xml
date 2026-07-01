@@ -13,16 +13,16 @@
     <string name="download_paused_error_notification">下载错误</string>
     <string name="download_completed_notification">下载完成</string>
     <string name="download_starting_notification">正在开始下载</string>
+    <string name="download_switch_confirm_title">暂停活跃的下载？</string>
+    <string name="download_switch_confirm_message">另一个更新正在下载中，启动此更新将会暂停另一个更新。</string>
     <string name="update_failed_notification">更新失败</string>
     <string name="installation_suspended_notification">安装已挂起</string>
     <string name="new_updates_found_title">新的更新</string>
+    <string name="new_updates_found_summary">点击查看可用更新</string>
     <string name="text_download_speed">%1$s, %2$s/秒</string>
-    <string name="pause_button">暂停</string>
-    <string name="resume_button">继续</string>
-    <string name="suspend_button">挂起</string>
-    <string name="installing_update">正在安装更新包</string>
+    <string name="installing_update">正在安装系统更新</string>
     <string name="installing_update_error">安装错误</string>
-    <string name="installing_update_finished">更新已安装</string>
+    <string name="installing_update_finished">更新待重启</string>
     <string name="finalizing_package">正在完成包安装</string>
     <string name="preparing_ota_first_boot">正在为第一次启动进行准备</string>
     <string name="dialog_prepare_zip_message">预备更新准备</string>
@@ -35,85 +35,98 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">无法在使用OverlayFS挂载的情况下安装更新</string>
     <string name="reboot">重新启动</string>
-    <string name="menu_refresh">刷新</string>
-    <string name="menu_preferences">首选项</string>
-    <string name="menu_auto_updates_check">自动检查更新</string>
-    <string name="menu_auto_updates_check_interval_daily">每天一次</string>
-    <string name="menu_auto_updates_check_interval_weekly">每周一次</string>
-    <string name="menu_auto_updates_check_interval_monthly">每月一次</string>
-    <string name="menu_auto_updates_check_interval_never">永不</string>
-    <string name="menu_auto_delete_updates">安装完毕后删除更新</string>
+    <string name="menu_preferences">系统更新首选项</string>
+    <string name="preferences_summary">同步、下载和安装</string>
+    <string name="check_for_updates">检查更新</string>
+    <string name="checking_for_updates">正在检查更新</string>
+    <string name="check_your_internet_connection">请检查您的网络连接</string>
+    <string name="updates_check_failed">更新检查失败，请稍后重试。</string>
+    <string name="header_last_updates_check_time">上次检查：<xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">上次检查：<xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="pref_category_background_sync">后台同步</string>
+    <string name="menu_auto_updates_check">定期检查更新</string>
+    <string name="menu_auto_updates_check_summary">在后台检查更新</string>
+    <string name="menu_auto_updates_check_interval">检查间隔</string>
+    <string name="time_unit_day">日</string>
+    <string name="time_unit_week">周</string>
+    <string name="time_unit_month">月</string>
+    <string name="pref_category_download_install">下载与安装</string>
+    <string name="menu_auto_delete_updates">自动删除更新</string>
+    <string name="menu_auto_delete_updates_summary">安装完成后删除已下载的更新</string>
+    <string name="menu_stream_updates">流式在线更新</string>
+    <string name="menu_stream_updates_summary">下载过程中自动安装更新。禁用此功能可保存更新包以供导出。</string>
     <string name="menu_delete_update">删除</string>
-    <string name="menu_copy_url">复制网址</string>
     <string name="menu_export_update">导出更新</string>
-    <string name="menu_show_changelog">显示更新日志</string>
+    <string name="menu_view_downloads">查看 <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> 的下载</string>
+    <string name="menu_metered_network_warning">按流量计费网络警告</string>
+    <string name="menu_metered_network_warning_summary">使用移动数据下载前请发出警告</string>
     <string name="menu_ab_perf_mode">更新进程优先</string>
+    <string name="menu_ab_perf_mode_summary">加快更新速度，但会降低设备性能</string>
+    <string name="menu_ab_perf_mode_summary_charging">使用交流电源充电时自动启用</string>
     <string name="menu_update_recovery">更新恢复模式</string>
-    <string name="toast_forced_update_recovery">在此设备上禁用 Lineage 恢复更新是不可能的。</string>
+    <string name="menu_update_recovery_summary">更新恢复分区以及操作系统</string>
     <string name="snack_updates_found">找到新更新</string>
     <string name="snack_no_updates_found">没有找到新的更新</string>
-    <string name="snack_updates_check_failed">检查更新失败。 请您检查您的网络连接并稍后重试。</string>
     <string name="snack_download_failed">下载更新失败。 请您检查您的网络连接并稍后重试。</string>
     <string name="snack_download_verification_failed">验证更新失败。</string>
     <string name="snack_download_verified">下载完毕。</string>
     <string name="snack_update_not_installable">在当前的版本上无法安装更新。</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">最后检查： <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">编译日期</string>
+    <string name="security_update">安全更新</string>
+    <string name="show_changelog">近期更新</string>
+    <string name="report_issues">报告问题</string>
+    <string name="header_review_updates">查看更新和近期变更</string>
+    <string name="found_bug">发现问题？请使用我们的漏洞报告指南进行报告：</string>
+    <string name="updates_zero_state_title">暂无可用更新</string>
+    <string name="updates_zero_state_description">此设备的新版本将在可用时在此处显示。</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">更新大小：<xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">安全更新：<xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">重大 Android 升级</string>
+    <string name="list_full_install">完整安装：可安全地覆盖安装到任何先前的版本</string>
     <string name="list_download_progress_newer">已下载 <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g>，共 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer">已下载 <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g>，共 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">正在验证更新</string>
-    <string name="list_no_updates">未找到更新。要手动检查更新，请使用刷新按钮。</string>
+    <string name="see_more">查看更多 %1$d</string>
+    <string name="see_less">查看更少</string>
     <string name="action_download">下载</string>
     <string name="action_pause">暂停</string>
     <string name="action_resume">继续</string>
     <string name="action_install">安装</string>
     <string name="action_info">详情</string>
     <string name="action_delete">删除</string>
-    <string name="action_cancel">取消</string>
+    <string name="confirm_cancel_dialog_title">取消下载</string>
+    <string name="confirm_cancel_dialog_message">取消下载并删除文件？</string>
     <string name="confirm_delete_dialog_title">删除文件</string>
     <string name="confirm_delete_dialog_message">您确定要删除选择的更新文件？</string>
     <string name="apply_update_dialog_title">应用更新</string>
     <string name="apply_update_dialog_message">您将要安装 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下<xliff:g id="ok">%2$s</xliff:g>，您的设备将会重启到恢复模式并安装更新。\n\n注意：此功能需要一个兼容的恢复程序，否则您将需要手动安装更新。</string>
     <string name="apply_update_dialog_message_ab">您将要安装 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下<xliff:g id="ok">%2$s</xliff:g>，设备将会在后台进行安装。\n\n当安装完毕后，将会提示您重新启动。</string>
-    <string name="cancel_installation_dialog_message">是否取消安装？</string>
+    <string name="cancel_installation_dialog_title">取消安装</string>
+    <string name="cancel_installation_dialog_message">取消系统更新？</string>
     <string name="label_download_url">下载地址</string>
-    <string name="toast_download_url_copied">地址已复制</string>
     <string name="dialog_export_title">正在导出更新</string>
     <string name="notification_export_success">更新已导出</string>
     <string name="notification_export_fail">导出错误</string>
     <string name="toast_already_exporting">已导出更新</string>
     <string name="toast_export_started">导出已开始</string>
-    <plurals name="eta_seconds">
-        <item quantity="other">剩余 <xliff:g id="count">%d</xliff:g> 秒</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="other">剩余 <xliff:g id="count">%d</xliff:g> 分</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="other">剩余 <xliff:g id="count">%d</xliff:g> 时</item>
-    </plurals>
     <string name="update_over_metered_network_title">警告</string>
     <string name="update_over_metered_network_message">您将要通过移动数据网络下载更新包，这将会使用较大的数据用量。您确定要继续吗？</string>
-    <string name="checkbox_metered_network_warning">不再显示</string>
-    <string name="menu_metered_network_warning">按流量计费网络警告</string>
     <string name="blocked_update_dialog_title">更新已被阻止</string>
     <string name="blocked_update_dialog_message">此更新无法经由此更新程序安装。请阅读 <xliff:g id="info_url">%1$s</xliff:g> 以了解更多信息。</string>
+    <string name="blocked_update_dialog_title_downgrade">降级已阻止</string>
+    <string name="blocked_update_dialog_message_downgrade">此更新版本低于当前系统版本，无法安装。</string>
     <string name="export_channel_title">导出已完成</string>
     <string name="new_updates_channel_title">新的更新</string>
     <string name="ongoing_channel_title">正在下载</string>
     <string name="update_failed_channel_title">更新失败</string>
-    <string name="info_dialog_title">您知道吗？</string>
-    <string name="info_dialog_message">LineageOS 更新包是完整的安装包。这意味着您总是可以跳过之前的系统更新，直接安装最新版本！</string>
-    <string name="info_dialog_ok">感谢您的反馈！</string>
-    <string name="local_update_import">本地更新</string>
+    <string name="local_update_import">安装本地更新</string>
+    <string name="local_update_import_summary">选择要安装的更新文件</string>
     <string name="local_update_import_progress">正在导入本地更新\u2026</string>
     <string name="local_update_import_success">%1$s 已经被导入，您想现在进行安装吗？</string>
     <string name="local_update_import_failure">导入本地更新失败</string>
     <string name="local_update_import_install">安装</string>
     <string name="local_update_name">本地更新</string>
-    <string name="welcome_title">欢迎</string>
-    <string name="welcome_message">请注意，当有多个更新可用时，无需逐个更新，可以直接安装最新的更新，然后安全地删除旧的更新以释放存储空间。</string>
 </resources>

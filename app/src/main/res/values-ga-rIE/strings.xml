@@ -5,7 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Nuashonróir</string>
-    <string name="display_name">Nuashonróir</string>
+    <string name="display_name">Nuashonruithe córais</string>
     <string name="verification_failed_notification">Theip ar an bhfíorú</string>
     <string name="verifying_download_notification">Nuashonrú á fhíorú</string>
     <string name="downloading_notification">Ag íosluchtú</string>
@@ -13,16 +13,16 @@
     <string name="download_paused_error_notification">Earráid íoslódáil</string>
     <string name="download_completed_notification">Íoslódáil críochnaithe</string>
     <string name="download_starting_notification">Ag tosú íoslódáil</string>
+    <string name="download_switch_confirm_title">An íoslódáil ghníomhach a chur ar sos?</string>
+    <string name="download_switch_confirm_message">Tá nuashonrú eile á íoslódáil faoi láthair. Má thosaíonn tú ar an gceann seo, cuirfear an ceann eile ar sos.</string>
     <string name="update_failed_notification">Theip ar an nuashonrú</string>
     <string name="installation_suspended_notification">Suiteáil ar fionraí</string>
     <string name="new_updates_found_title">Nuashonruithe nua</string>
+    <string name="new_updates_found_summary">Tapáil chun nuashonruithe atá ar fáil a fheiceáil</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">Sos</string>
-    <string name="resume_button">Tosaigh arís</string>
-    <string name="suspend_button">Fionraí</string>
-    <string name="installing_update">Ag suiteáil pacáiste nuashonraithe</string>
+    <string name="installing_update">Nuashonrú córais a shuiteáil</string>
     <string name="installing_update_error">Earráid a shuiteáil</string>
-    <string name="installing_update_finished">Nuashonrú suiteáilte</string>
+    <string name="installing_update_finished">Nuashonrú ar feitheamh atosaithe</string>
     <string name="finalizing_package">Ag suiteáil pacáiste a thabhairt chun críche</string>
     <string name="preparing_ota_first_boot">Ag ullmhú don chéad tosaithe</string>
     <string name="dialog_prepare_zip_message">Réamh-ullmhúchán nuashonraithe</string>
@@ -35,97 +35,98 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">Ní féidir an nuashonrú a shuiteáil le OverlayFS suite</string>
     <string name="reboot">Atosaigh</string>
-    <string name="menu_refresh">Athnuaigh</string>
-    <string name="menu_preferences">Roghanna</string>
-    <string name="menu_auto_updates_check">Seiceáil nuashonruithe uathoibríoch</string>
-    <string name="menu_auto_updates_check_interval_daily">Uair sa lá</string>
-    <string name="menu_auto_updates_check_interval_weekly">Uair sa tseachtain</string>
-    <string name="menu_auto_updates_check_interval_monthly">Uair sa mhí</string>
-    <string name="menu_auto_updates_check_interval_never">Riamh</string>
-    <string name="menu_auto_delete_updates">Scrios nuashonruithe nuair a shuiteáiltear iad</string>
+    <string name="menu_preferences">Roghanna nuashonraithe córais</string>
+    <string name="preferences_summary">Sioncrónaigh, íoslódáil agus suiteáil</string>
+    <string name="check_for_updates">Seiceáil le haghaidh nuashonruithe</string>
+    <string name="checking_for_updates">Ag seiceáil le haghaidh nuashonruithe</string>
+    <string name="check_your_internet_connection">Seiceáil do nasc idirlín</string>
+    <string name="updates_check_failed">Theip ar an seiceáil nuashonraithe. Déan iarracht arís ar ball.</string>
+    <string name="header_last_updates_check_time">Seiceáilte go deireanach: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Seiceáilte go deireanach: &lt;xliff:g id="date" example="Jan 12"&gt;%1$s&lt;/xliff:g&gt;%1$s&lt;/xliff:g&gt; (&lt;xliff:g id="time" example="01:23"&gt;%2$s&lt;/xliff:g&gt;)</string>
+    <string name="pref_category_background_sync">Sioncrónú cúlra</string>
+    <string name="menu_auto_updates_check">Seiceáil go tréimhsiúil le haghaidh nuashonruithe</string>
+    <string name="menu_auto_updates_check_summary">Seiceáil le haghaidh nuashonruithe sa chúlra</string>
+    <string name="menu_auto_updates_check_interval">Seiceáil gach</string>
+    <string name="time_unit_day">Lá</string>
+    <string name="time_unit_week">Seachtain</string>
+    <string name="time_unit_month">Mí</string>
+    <string name="pref_category_download_install">Íoslódáil agus suiteáil</string>
+    <string name="menu_auto_delete_updates">Nuashonruithe uathscriosta</string>
+    <string name="menu_auto_delete_updates_summary">Bain nuashonruithe íoslódáilte tar éis suiteála</string>
+    <string name="menu_stream_updates">Sruthlaigh nuashonruithe ar líne</string>
+    <string name="menu_stream_updates_summary">Suiteáil nuashonruithe agus iad á n-íoslódáil. Díchumasaigh chun pacáistí nuashonraithe a shábháil lena n-onnmhairiú.</string>
     <string name="menu_delete_update">Scrios</string>
-    <string name="menu_copy_url">Cóipeáil URL</string>
     <string name="menu_export_update">Easpórtáil nuashonrú</string>
-    <string name="menu_show_changelog">Taispeáin loga na n-athruithe</string>
+    <string name="menu_view_downloads">Féach ar Íoslódálacha <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g></string>
+    <string name="menu_metered_network_warning">Rabhadh líonra méadraithe</string>
+    <string name="menu_metered_network_warning_summary">Rabhadh roimh íoslódáil thar shonraí soghluaiste</string>
     <string name="menu_ab_perf_mode">Tabhair tosaíocht don phróiseas nuashonraithe</string>
+    <string name="menu_ab_perf_mode_summary">Luasghéarú a dhéanamh ar nuashonruithe ar chostas feidhmíochta na ngléasanna</string>
+    <string name="menu_ab_perf_mode_summary_charging">Cumasaithe go huathoibríoch agus muirearú ar chumhacht AC</string>
     <string name="menu_update_recovery">Nuashonraigh aisghabháil</string>
-    <string name="toast_forced_update_recovery">Tá sé dodhéanta nuashonruithe Lineage Recovery a dhíchumasú ar an ngléas seo.</string>
+    <string name="menu_update_recovery_summary">Nuashonraigh an deighilt aisghabhála mar aon leis an gcóras oibriúcháin</string>
     <string name="snack_updates_found">Nuashonruithe nua aimsithe</string>
     <string name="snack_no_updates_found">Níor aimsíodh aon nuashonruithe nua</string>
-    <string name="snack_updates_check_failed">Theip ar an tseiceáil nuashonraithe. Seiceáil do cheangal idirlín agus bain triail eile as ar ball.</string>
     <string name="snack_download_failed">Theip ar an íoslódáil. Seiceáil do cheangal idirlín agus bain triail eile as ar ball.</string>
     <string name="snack_download_verification_failed">Theip ar fhíorú an nuashonraithe.</string>
     <string name="snack_download_verified">Íoslódáil críochnaithe.</string>
     <string name="snack_update_not_installable">Ní féidir an nuashonrú seo a shuiteáil ar bharr an leagan reatha.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" sampla="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Seiceáladh seo caite: <xliff:g id="date" example="1 Eanáir 1970">%1$s</xliff:g> (<xliff:g id="time" sampla="01:23">%2$s</xliff:g>)</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">Dáta tógála</string>
+    <string name="security_update">Nuashonrú slándála</string>
+    <string name="show_changelog">Athruithe le déanaí</string>
+    <string name="report_issues">Tuairiscigh fadhbanna</string>
+    <string name="header_review_updates">Athbhreithnigh nuashonruithe agus athruithe le déanaí ar</string>
+    <string name="found_bug">An bhfuair tú fabht? Tuairiscigh é lenár dtreoir tuairiscithe fabht:</string>
+    <string name="updates_zero_state_title">Níl aon nuashonruithe ar fáil</string>
+    <string name="updates_zero_state_description">Beidh leaganacha nua den fheiste seo le feiceáil anseo nuair a bheidh siad ar fáil.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">Méid an nuashonraithe: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">Nuashonrú slándála: &lt;xliff:g id="date" example="Jan 2026"&gt;%1$s&lt;/xliff:g&gt;%1$s&lt;/xliff:g&gt;</string>
+    <string name="list_major_android_upgrade">Uasghrádú mór Android</string>
+    <string name="list_full_install">Suiteáil iomlán: Sábháilte le suiteáil thar aon tógáil roimhe seo</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Nuashonrú á fhíorú</string>
-    <string name="list_no_updates">Níor aimsíodh aon nuashonruithe nua. Chun seiceáil de láimh le haghaidh nuashonruithe nua, úsáid an cnaipe Athnuaigh.</string>
+    <string name="see_more">Féach %1$d eile</string>
+    <string name="see_less">Féach níos lú</string>
     <string name="action_download">Íosluchtaigh</string>
     <string name="action_pause">Sos</string>
     <string name="action_resume">Tosaigh arís</string>
     <string name="action_install">Suiteáil</string>
     <string name="action_info">Eolas</string>
     <string name="action_delete">Scrios</string>
-    <string name="action_cancel">Cealaigh</string>
+    <string name="confirm_cancel_dialog_title">Cealaigh an íoslódáil</string>
+    <string name="confirm_cancel_dialog_message">An bhfuil tú ag iarraidh an íoslódáil a chealú agus an comhad a scriosadh?</string>
     <string name="confirm_delete_dialog_title">Scrios an comhad</string>
     <string name="confirm_delete_dialog_message">Scrios comhad uasdátaigh ?</string>
     <string name="apply_update_dialog_title">Cuir nuashonrú</string>
     <string name="apply_update_dialog_message">Tá tú ar tí &lt;xliff:g id="update_name"&gt;%1$s&lt;/xliff:g&gt; a shuiteáil.\n\nMá bhrúíonn tú &lt;xliff:g id="ok"&gt;%2$s&lt;/xliff: g&gt;, atosóidh an gléas é féin sa mhodh athshlánaithe chun an nuashonrú a shuiteáil.\n\nNóta: Teastaíonn Aisghabháil comhoiriúnach don ghné seo nó beidh gá le nuashonruithe a shuiteáil de láimh.</string>
     <string name="apply_update_dialog_message_ab">Tá tú ar tí &lt;xliff:g id="update_name"&gt;%1$s&lt;/xliff:g&gt; a shuiteáil.\n\nMá bhrúíonn tú &lt;xliff:g id="ok"&gt;%2$s&lt;/xliff: g&gt;, cuirfear tús leis an ngléas a shuiteáil sa chúlra.\n\nNuair a bheidh sé críochnaithe, tabharfar leid duit é a atosú.</string>
-    <string name="cancel_installation_dialog_message">Cealaigh an tsuiteáil?</string>
+    <string name="cancel_installation_dialog_title">Cealaigh an suiteáil</string>
+    <string name="cancel_installation_dialog_message">An bhfuil tú ag iarraidh an nuashonrú córais a chealú?</string>
     <string name="label_download_url">Íoslódáil URL</string>
-    <string name="toast_download_url_copied">URL Chóipeáil</string>
     <string name="dialog_export_title">Nuashonrú easpórtála</string>
     <string name="notification_export_success">Easpórtáil an nuashonrú</string>
     <string name="notification_export_fail">Earráid easpórtála</string>
     <string name="toast_already_exporting">Ag easpórtáil nuashonrú cheana féin</string>
     <string name="toast_export_started">Thosaigh easpórtáil</string>
-    <plurals name="eta_seconds">
-        <item quantity="one">1 soicind fágtha</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> soicind fágtha</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> soicind fágtha</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> soicind fágtha</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> soicind fágtha</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">1 nóiméad fágtha</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> nóiméad fágtha</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> nóiméad fágtha</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> nóiméad fágtha</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> nóiméad fágtha</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">1 uair fágtha</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> uair fágtha</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> uair fágtha</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> uair fágtha</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> uair fágtha</item>
-    </plurals>
     <string name="update_over_metered_network_title">Rabhadh</string>
     <string name="update_over_metered_network_message">Tá tú ar tí pacáiste nuashonraithe a íoslódáil thar líonra méadraithe agus is dócha go mbeidh sé ina chúis le húsáid ard sonraí. Ar mhaith leat dul ar aghaidh?</string>
-    <string name="checkbox_metered_network_warning">Ná taispeáin arís</string>
-    <string name="menu_metered_network_warning">Rabhadh líonra méadraithe</string>
     <string name="blocked_update_dialog_title">Nuashonrú bactha</string>
     <string name="blocked_update_dialog_message">Ní féidir an nuashonrú seo a shuiteáil leis an aip nuashonraithe. Léigh <xliff:g id="info_url">%1$s</xliff:g> le haghaidh tuilleadh eolais.</string>
+    <string name="blocked_update_dialog_title_downgrade">Íosghrádú blocáilte</string>
+    <string name="blocked_update_dialog_message_downgrade">Tá an nuashonrú seo níos sine ná an córas reatha agus ní féidir é a shuiteáil.</string>
     <string name="export_channel_title">Críochnú onnmhairithe</string>
     <string name="new_updates_channel_title">Nuashonruithe nua</string>
     <string name="ongoing_channel_title">Íoslódálacha leanúnacha</string>
     <string name="update_failed_channel_title">Theip ar an nuashonrú</string>
-    <string name="info_dialog_title">An raibh a fhios agat?</string>
-    <string name="info_dialog_message">Is pacáistí suiteála iomlána iad nuashonruithe LineageOS. Ciallaíonn sé sin nach féidir leat ach an nuashonrú is déanaí a shuiteáil i gcónaí, fiú mura ndearna tú roinnt eatarthu!</string>
-    <string name="info_dialog_ok">Go raibh maith agat as an eolas!</string>
-    <string name="local_update_import">Nuashonrú áitiúil</string>
+    <string name="local_update_import">Suiteáil nuashonrú áitiúil</string>
+    <string name="local_update_import_summary">Roghnaigh comhad nuashonraithe le suiteáil</string>
     <string name="local_update_import_progress">Nuashonrú logánta á iompórtáil\u2026</string>
     <string name="local_update_import_success">Iompórtáladh %1$s. Ar mhaith leat é a shuiteáil?</string>
     <string name="local_update_import_failure">Theip ar iompórtáil an nuashonrú áitiúil</string>
     <string name="local_update_import_install">Suiteáil</string>
     <string name="local_update_name">Nuashonrú áitiúil</string>
-    <string name="welcome_title">Fáilte</string>
-    <string name="welcome_message">Tabhair faoi deara le do thoil, nuair a bhíonn nuashonruithe iolracha ar fáil, níl aon ghá le nuashonrú ar nuashonrú, is féidir leat an ceann is déanaí a shuiteáil go díreach i gcónaí, agus ansin sean-nuashonruithe a scriosadh go sábháilte chun spás stórála a shaoradh.</string>
 </resources>

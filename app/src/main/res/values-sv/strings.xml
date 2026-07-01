@@ -5,7 +5,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Uppdaterare</string>
-    <string name="display_name">Uppdaterare</string>
     <string name="verification_failed_notification">Verifieringen misslyckades</string>
     <string name="verifying_download_notification">Verifierar uppdateringen</string>
     <string name="downloading_notification">Laddar ner</string>
@@ -16,30 +15,15 @@
     <string name="update_failed_notification">Uppdateringen misslyckades</string>
     <string name="new_updates_found_title">Nya uppdateringar</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">Pausa</string>
-    <string name="resume_button">Återuppta</string>
-    <string name="installing_update">Installerar uppdateringspaketet</string>
     <string name="installing_update_error">Installationsfel</string>
-    <string name="installing_update_finished">Uppdateringen har installerats</string>
     <string name="dialog_battery_low_title">Låg batterinivå</string>
     <string name="reboot">Starta om</string>
-    <string name="menu_refresh">Uppdatera</string>
-    <string name="menu_preferences">Egenskaper</string>
-    <string name="menu_auto_updates_check">Sök efter uppdateringar automatiskt</string>
-    <string name="menu_auto_updates_check_interval_daily">En gång om dagen</string>
-    <string name="menu_auto_updates_check_interval_weekly">En gång i veckan</string>
-    <string name="menu_auto_updates_check_interval_monthly">En gång i månaden</string>
-    <string name="menu_auto_updates_check_interval_never">Aldrig</string>
     <string name="menu_delete_update">Ta bort</string>
-    <string name="menu_copy_url">Kopiera webbadress</string>
-    <string name="menu_show_changelog">Visa ändringslogg</string>
+    <string name="menu_metered_network_warning">Mobildatavarning</string>
     <string name="snack_updates_found">Nya uppdateringar hittades</string>
     <string name="snack_no_updates_found">Inga nya uppdateringar hittades</string>
     <string name="snack_download_verified">Nedladdningen är slutförd.</string>
     <string name="snack_update_not_installable">Uppdateringen kan inte installeras över den nuvarande versionen.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Senaste kontrollen utfördes: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> – <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> av <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
@@ -51,36 +35,17 @@
     <string name="action_install">Installera</string>
     <string name="action_info">Info</string>
     <string name="action_delete">Radera</string>
-    <string name="action_cancel">Avbryt</string>
     <string name="confirm_delete_dialog_title">Ta bort fil</string>
     <string name="apply_update_dialog_message">Du är på väg att uppdatera <xliff:g id="update_name">%1$s</xliff:g>.\n\nOm du trycker på <xliff:g id="ok">%2$s</xliff:g> så kommer enheten att starta om sig själv till återställningsläget för att installera uppdateringen.\n\nNotera: Den här funktionen kräver ett kompatibelt återställningsläge. Finns inte detta kommer du behöva installera uppdateringarna manuellt.</string>
     <string name="apply_update_dialog_message_ab">Du är på väg att uppdatera <xliff:g id="update_name">%1$s</xliff:g>.\n\nOm du trycker på <xliff:g id="ok">%2$s</xliff:g> så kommer enheten att påbörja installationen i bakgrunden.\n\nNär den är slutförd kommer du bli ombedd att starta om.</string>
     <string name="label_download_url">Nedladdningsadress</string>
-    <string name="toast_download_url_copied">Webbadressen har kopierats</string>
     <string name="notification_export_success">Uppdatering exporterad</string>
     <string name="notification_export_fail">Exporteringsfel</string>
     <string name="toast_export_started">Exportering startad</string>
-    <plurals name="eta_seconds">
-        <item quantity="one">1 sekund kvar</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> sekunder kvar</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">1 minut kvar</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> minuter kvar</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">1 timme kvar</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> timmar kvar</item>
-    </plurals>
     <string name="update_over_metered_network_title">Varning</string>
     <string name="update_over_metered_network_message">Du är på väg att ladda ner en uppdatering över mobilnätet vilket troligtvis kommer att orsaka hög dataanvändning. Vill du fortsätta?</string>
-    <string name="checkbox_metered_network_warning">Visa inte igen</string>
-    <string name="menu_metered_network_warning">Mobildatavarning</string>
     <string name="blocked_update_dialog_title">Uppdateringen blockerades</string>
     <string name="export_channel_title">Export slutförd</string>
     <string name="new_updates_channel_title">Nya uppdateringar</string>
     <string name="ongoing_channel_title">Pågående nedladdningar</string>
-    <string name="info_dialog_title">Visste du att?</string>
-    <string name="info_dialog_message">LineageOS-uppdateringar är kompletta installationspaket, vilket innebär att du alltid kan installera den senaste uppdateringen, även om du hoppade över några däremellan!</string>
-    <string name="info_dialog_ok">Tack för infon!</string>
 </resources>

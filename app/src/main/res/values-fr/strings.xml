@@ -5,7 +5,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Gestionnaire de mise à jour</string>
-    <string name="display_name">Gestionnaire de mise à jour</string>
     <string name="verification_failed_notification">Échec de la vérification</string>
     <string name="verifying_download_notification">Vérification de la mise à jour en cours</string>
     <string name="downloading_notification">Téléchargement en cours</string>
@@ -13,16 +12,14 @@
     <string name="download_paused_error_notification">Erreur de téléchargement</string>
     <string name="download_completed_notification">Téléchargement terminé</string>
     <string name="download_starting_notification">Début du téléchargement</string>
+    <string name="download_switch_confirm_message">Une autre mise à jour est en cours de téléchargement. Le démarrage de celle-ci mettra l\'autre en pause.</string>
     <string name="update_failed_notification">Échec de la mise à jour</string>
     <string name="installation_suspended_notification">Installation suspendue</string>
     <string name="new_updates_found_title">Nouvelles mises à jour</string>
+    <string name="new_updates_found_summary">Appuyer pour afficher les mises à jour disponibles</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">Pause</string>
-    <string name="resume_button">Reprendre</string>
-    <string name="suspend_button">Suspendre</string>
-    <string name="installing_update">Installation du paquet de mise à jour en cours</string>
+    <string name="installing_update">Installation d\'une mise à jour du système</string>
     <string name="installing_update_error">Erreur d\'installation</string>
-    <string name="installing_update_finished">Mise à jour installée</string>
     <string name="finalizing_package">Finalisation de l’installation du paquet</string>
     <string name="preparing_ota_first_boot">Préparation pour le premier démarrage</string>
     <string name="dialog_prepare_zip_message">Préparation de la mise à jour préliminaire</string>
@@ -35,88 +32,93 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">Impossible d\'installer la mise à jour avec OverlayFS monté</string>
     <string name="reboot">Redémarrer</string>
-    <string name="menu_refresh">Actualiser</string>
-    <string name="menu_preferences">Préférences</string>
-    <string name="menu_auto_updates_check">Vérification des mises à jour automatique</string>
-    <string name="menu_auto_updates_check_interval_daily">Une fois par jour</string>
-    <string name="menu_auto_updates_check_interval_weekly">Une fois par semaine</string>
-    <string name="menu_auto_updates_check_interval_monthly">Une fois par mois</string>
-    <string name="menu_auto_updates_check_interval_never">Jamais</string>
-    <string name="menu_auto_delete_updates">Supprimer les mises à jour une fois installées</string>
+    <string name="menu_preferences">Préférences de mise à jour du système</string>
+    <string name="check_for_updates">Rechercher des mises à jour</string>
+    <string name="checking_for_updates">Recherche de mises à jour</string>
+    <string name="check_your_internet_connection">Vérifiez votre connexion Internet</string>
+    <string name="updates_check_failed">La vérification de la mise à jour a échoué. Réessayez plus tard.</string>
+    <string name="header_last_updates_check_time">Dernière vérification : <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Dernière vérification : <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="menu_auto_updates_check">Vérifier périodiquement les mises à jour</string>
+    <string name="menu_auto_updates_check_summary">Vérifier les mises à jour en arrière-plan</string>
+    <string name="menu_auto_updates_check_interval">Vérifier chaque</string>
+    <string name="time_unit_day">Jour</string>
+    <string name="time_unit_week">Semaine</string>
+    <string name="time_unit_month">Mois</string>
+    <string name="pref_category_download_install">Téléchargement et installation</string>
+    <string name="menu_auto_delete_updates">Supprimer automatiquement les mises à jour</string>
+    <string name="menu_auto_delete_updates_summary">Supprimer les mises à jour téléchargées après l\'installation</string>
+    <string name="menu_stream_updates_summary">Installer les mises à jour pendant leur téléchargement. Désactiver cette option pour enregistrer les paquets de mise à jour en vue de leur exportation.</string>
     <string name="menu_delete_update">Supprimer</string>
-    <string name="menu_copy_url">Copier l\'URL</string>
     <string name="menu_export_update">Exporter la mise à jour</string>
-    <string name="menu_show_changelog">Afficher l\'historique des modifications</string>
+    <string name="menu_metered_network_warning">Avertissement de réseau forfaitaire</string>
+    <string name="menu_metered_network_warning_summary">Avertir avant de télécharger sur les données mobiles</string>
     <string name="menu_ab_perf_mode">Privilégier le processus de mise à jour</string>
+    <string name="menu_ab_perf_mode_summary">Accélérer les mises à jour au détriment des performances de l\'appareil</string>
     <string name="menu_update_recovery">Mettre à jour la récupération</string>
-    <string name="toast_forced_update_recovery">Il est impossible de désactiver les mises à jour de la récupération de Lineage sur cet appareil.</string>
+    <string name="menu_update_recovery_summary">Mettre à jour la partition de récupération en même temps que le système d\'exploitation</string>
     <string name="snack_updates_found">Nouvelles mises à jour disponibles</string>
     <string name="snack_no_updates_found">Aucune nouvelle mise à jour disponible</string>
-    <string name="snack_updates_check_failed">La vérification de nouvelles mises à jour a échoué. Vérifiez votre connexion internet et réessayez ultérieurement.</string>
     <string name="snack_download_failed">Le téléchargement a échoué. Vérifiez votre connexion internet et réessayez ultérieurement.</string>
     <string name="snack_download_verification_failed">La vérification de la mise à jour a échoué.</string>
     <string name="snack_download_verified">Téléchargement terminé.</string>
     <string name="snack_update_not_installable">Cette mise à jour ne peut pas être installée sur votre version actuelle.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Dernière vérification : <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">Date de compilation</string>
+    <string name="security_update">Mise à jour de sécurité</string>
+    <string name="show_changelog">Modifications récentes</string>
+    <string name="report_issues">Signaler les bugs</string>
+    <string name="header_review_updates">Vérifier les mises à jour et les modifications récentes sur</string>
+    <string name="found_bug">Vous avez trouvé un bug ? Signalez-le avec notre guide de rapport de bug :</string>
+    <string name="updates_zero_state_title">Aucune mise à jour disponible</string>
+    <string name="updates_zero_state_description">Les nouvelles versions pour cet appareil apparaîtront ici quand elles seront disponibles.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">Taille de la mise à jour : <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">Mise à jour de sécurité : <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Mise à jour majeure d\'Android</string>
+    <string name="list_full_install">Installation complète : peut être installée sans risque par-dessus n\'importe quelle version antérieure</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> sur <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> sur <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Vérification de la mise à jour en cours</string>
-    <string name="list_no_updates">Aucune nouvelle mise à jour trouvée. Pour vérifier manuellement la présence de mises à jour, utiliser le bouton Actualiser.</string>
+    <string name="see_more">Voir %1$d de plus</string>
+    <string name="see_less">Voir moins</string>
     <string name="action_download">Télécharger</string>
     <string name="action_pause">Mettre en pause</string>
     <string name="action_resume">Reprendre</string>
     <string name="action_install">Installer</string>
     <string name="action_info">Informations</string>
     <string name="action_delete">Supprimer</string>
-    <string name="action_cancel">Annuler</string>
+    <string name="confirm_cancel_dialog_title">Annuler le téléchargement</string>
+    <string name="confirm_cancel_dialog_message">Annuler le téléchargement et supprimer le fichier ?</string>
     <string name="confirm_delete_dialog_title">Supprimer le fichier</string>
     <string name="confirm_delete_dialog_message">Supprimer le fichier de mise à jour sélectionné ?</string>
     <string name="apply_update_dialog_title">Appliquer la mise à jour</string>
     <string name="apply_update_dialog_message">Vous êtes sur le point d\'installer <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi vous appuyez sur <xliff:g id="ok">%2$s</xliff:g>, votre appareil redémarrera automatiquement en mode récupération pour installer la mise à jour.\n\nRemarque : Cette opération nécessite un système de récupération compatible, sans quoi les mises à jour devront être installées manuellement.</string>
     <string name="apply_update_dialog_message_ab">Vous êtes sur le point d\'installer <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi vous appuyez sur <xliff:g id="ok">%2$s</xliff:g>, l’appareil commencera l\'installation en arrière-plan.\n\nUne fois celle-ci terminée, il vous sera demandé de redémarrer.</string>
-    <string name="cancel_installation_dialog_message">Annuler l\'installation ?</string>
+    <string name="cancel_installation_dialog_title">Annuler l\'installation</string>
+    <string name="cancel_installation_dialog_message">Annuler la mise à jour du système ?</string>
     <string name="label_download_url">URL de téléchargement</string>
-    <string name="toast_download_url_copied">URL copiée</string>
     <string name="dialog_export_title">Exportation de la mise à jour en cours</string>
     <string name="notification_export_success">Mise à jour exportée</string>
     <string name="notification_export_fail">Erreur lors de l\'exportation</string>
     <string name="toast_already_exporting">Une mise à jour est déjà en cours d\'export</string>
     <string name="toast_export_started">Export démarré</string>
-    <plurals name="eta_seconds">
-        <item quantity="one">temps restant : 1 seconde</item>
-        <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> secondes</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">temps restant : 1 minute</item>
-        <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> minutes</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">temps restant : 1 heure</item>
-        <item quantity="other">temps restant : <xliff:g id="count">%d</xliff:g> heures</item>
-    </plurals>
     <string name="update_over_metered_network_title">Avertissement</string>
     <string name="update_over_metered_network_message">Vous allez télécharger une mise à jour nécessitant un important volume de données en utilisant un réseau forfaitaire. Souhaitez-vous continuer ?</string>
-    <string name="checkbox_metered_network_warning">Ne plus afficher</string>
-    <string name="menu_metered_network_warning">Avertissement de réseau forfaitaire</string>
     <string name="blocked_update_dialog_title">Mise à jour bloquée</string>
     <string name="blocked_update_dialog_message">Cette mise à jour ne peut pas être installée en utilisant le gestionnaire de mise à jour.  Veuillez lire <xliff:g id="info_url">%1$s</xliff:g> pour plus d’information.</string>
+    <string name="blocked_update_dialog_title_downgrade">Rétrogradation bloquée</string>
+    <string name="blocked_update_dialog_message_downgrade">Cette mise à jour est plus ancienne que le système actuel et ne peut pas être installée.</string>
     <string name="export_channel_title">Fin de l\'exportation</string>
     <string name="new_updates_channel_title">Nouvelles mises à jour</string>
     <string name="ongoing_channel_title">Téléchargements en cours</string>
     <string name="update_failed_channel_title">Échec de la mise à jour</string>
-    <string name="info_dialog_title">Le saviez-vous ?</string>
-    <string name="info_dialog_message">Les mises à jour de LineageOS sont des paquets d\'installation complets. Cela signifie que vous ne pouvez installer que la dernière mise à jour, même si vous en avez ignorées entre temps !</string>
-    <string name="info_dialog_ok">Merci pour l\'information !</string>
-    <string name="local_update_import">Mise à jour locale</string>
+    <string name="local_update_import">Installer une mise à jour en local</string>
+    <string name="local_update_import_summary">Sélectionner le fichier de mise à jour à installer</string>
     <string name="local_update_import_progress">Importation de la mise à jour locale\u2026</string>
     <string name="local_update_import_success">%1$s a été importée. Voulez-vous l\'installer ?</string>
     <string name="local_update_import_failure">Impossible d\'importer la mise à jour locale</string>
     <string name="local_update_import_install">Installer</string>
     <string name="local_update_name">Mise à jour locale</string>
-    <string name="welcome_title">Bienvenue</string>
-    <string name="welcome_message">Veuillez noter que lorsqu\'il y a plusieurs mises à jour disponibles, il n\'est pas nécessaire de les installer une par une : vous pouvez toujours installer directement la plus récente, puis supprimer en toute sécurité les anciennes mises à jour pour libérer de l\'espace de stockage.</string>
 </resources>

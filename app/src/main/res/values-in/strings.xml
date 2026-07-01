@@ -5,7 +5,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Pembaruan</string>
-    <string name="display_name">Pembaruan</string>
     <string name="verification_failed_notification">Verifikasi gagal</string>
     <string name="verifying_download_notification">Memverifikasi pembaruan</string>
     <string name="downloading_notification">Mengunduh</string>
@@ -17,12 +16,7 @@
     <string name="installation_suspended_notification">Pemasangan ditunda</string>
     <string name="new_updates_found_title">Pembaruan baru</string>
     <string name="text_download_speed">%1$s, %2$s/d</string>
-    <string name="pause_button">Jeda</string>
-    <string name="resume_button">Lanjutkan</string>
-    <string name="suspend_button">Tunda</string>
-    <string name="installing_update">Memasang paket pembaruan</string>
     <string name="installing_update_error">Kesalahan pemasangan</string>
-    <string name="installing_update_finished">Pembaruan dipasang</string>
     <string name="finalizing_package">Menyelesaikan pemasangan paket</string>
     <string name="preparing_ota_first_boot">Mempersiapkan untuk boot pertama</string>
     <string name="dialog_prepare_zip_message">Persiapan awal pembaruan</string>
@@ -34,84 +28,50 @@
         • adb reboot
         ]]></string>
     <string name="reboot">Mulai ulang</string>
-    <string name="menu_refresh">Segarkan</string>
-    <string name="menu_preferences">Preferensi</string>
-    <string name="menu_auto_updates_check">Periksa pembaruan otomatis</string>
-    <string name="menu_auto_updates_check_interval_daily">Sehari sekali</string>
-    <string name="menu_auto_updates_check_interval_weekly">Seminggu sekali</string>
-    <string name="menu_auto_updates_check_interval_monthly">Sebulan sekali</string>
-    <string name="menu_auto_updates_check_interval_never">Jangan pernah</string>
-    <string name="menu_auto_delete_updates">Hapus pembaruan saat dipasang</string>
     <string name="menu_delete_update">Hapus</string>
-    <string name="menu_copy_url">Salin URL</string>
     <string name="menu_export_update">Ekspor pembaruan</string>
-    <string name="menu_show_changelog">Tampilkan catatan perubahan</string>
+    <string name="menu_metered_network_warning">Peringatan jaringan terukur</string>
     <string name="menu_ab_perf_mode">Prioritaskan proses pembaruan</string>
     <string name="menu_update_recovery">Perbarui Recovery</string>
-    <string name="toast_forced_update_recovery">Tidak mungkin untuk menonaktifkan pembaruan Lineage Recovery di perangkat ini.</string>
     <string name="snack_updates_found">Pembaruan baru ditemukan</string>
     <string name="snack_no_updates_found">Tidak ada pembaruan baru ditemukan</string>
-    <string name="snack_updates_check_failed">Pemeriksaan pembaruan gagal. Silakan periksa koneksi Internet Anda dan coba lagi nanti.</string>
     <string name="snack_download_failed">Unduhan gagal. Silakan periksa koneksi Internet Anda dan coba lagi nanti.</string>
     <string name="snack_download_verification_failed">Verifikasi pembaruan gagal.</string>
     <string name="snack_download_verified">Unduhan selesai.</string>
     <string name="snack_update_not_installable">Pembaruan ini tidak dapat dipasang di atas pembuatan saat ini.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s </xliff:g></string>
-    <string name="header_last_updates_check">Terakhir diperiksa: <xliff:g id="date" example="1 January 1970">%1$s </xliff:g> (<xliff:g id="time" example="01:23">%2$s </xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> dari <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Memverifikasi pembaruan</string>
-    <string name="list_no_updates">Pembaruan tidak ditemukan. Untuk memeriksa pembaruan secara manual, gunakan tombol Segarkan.</string>
     <string name="action_download">Unduh</string>
     <string name="action_pause">Jeda</string>
     <string name="action_resume">Lanjutkan</string>
     <string name="action_install">Pasang</string>
     <string name="action_info">Info</string>
     <string name="action_delete">Hapus</string>
-    <string name="action_cancel">Batal</string>
     <string name="confirm_delete_dialog_title">Hapus berkas</string>
     <string name="confirm_delete_dialog_message">Hapus berkas pembaruan yang terpilih?</string>
     <string name="apply_update_dialog_title">Terapkan pembaruan</string>
     <string name="apply_update_dialog_message">Anda akan memasang <xliff:g id="update_name">%1$s</xliff:g>.\n\nJika Anda menekan <xliff:g id="ok">%2$s</xliff:g>, perangkat akan mulai ulang sendiri dalam mode recovery untuk memasang pembaruan.\n\nPerhatian: Fitur ini memerlukan Recovery yang kompatibel atau pembaruan perlu dipasang secara manual.</string>
     <string name="apply_update_dialog_message_ab">Anda akan memasang <xliff:g id="update_name">%1$s</xliff:g>.\n\nJika Anda menekan <xliff:g id="ok">%2$s</xliff:g>, perangkat akan mulai memasang di latar belakang.\n\nSetelah selesai, Anda akan diminta untuk memulai ulang perangkat.</string>
-    <string name="cancel_installation_dialog_message">Batalkan pemasangan?</string>
     <string name="label_download_url">URL Unduh</string>
-    <string name="toast_download_url_copied">URL disalin</string>
     <string name="dialog_export_title">Mengekspor pembaruan</string>
     <string name="notification_export_success">Pembaruan diekspor</string>
     <string name="notification_export_fail">Kesalahan saat mengekspor</string>
     <string name="toast_already_exporting">Sudah mengekspor pembaruan</string>
     <string name="toast_export_started">Ekspor dimulai</string>
-    <plurals name="eta_seconds">
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> detik tersisa</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> menit tersisa</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> jam tersisa</item>
-    </plurals>
     <string name="update_over_metered_network_title">Peringatan</string>
     <string name="update_over_metered_network_message">Anda akan mengunduh paket pembaruan melalui jaringan terukur yang kemungkinan besar akan menyebabkan penggunaan data yang tinggi. Apakah Anda ingin melanjutkan?</string>
-    <string name="checkbox_metered_network_warning">Jangan tampilkan lagi</string>
-    <string name="menu_metered_network_warning">Peringatan jaringan terukur</string>
     <string name="blocked_update_dialog_title">Pembaruan diblokir</string>
     <string name="blocked_update_dialog_message">Pembaruan ini tidak dapat dipasang menggunakan aplikasi pembaruan. Baca <xliff:g id="info_url">%1$s</xliff:g> untuk informasi lebih lanjut.</string>
     <string name="export_channel_title">Penyelesaian ekspor</string>
     <string name="new_updates_channel_title">Pembaruan baru</string>
     <string name="ongoing_channel_title">Unduhan sedang berlangsung</string>
     <string name="update_failed_channel_title">Pembaruan gagal</string>
-    <string name="info_dialog_title">Tahukah Anda?</string>
-    <string name="info_dialog_message">Pembaruan LineageOS adalah paket instalasi lengkap. Itu berarti Anda selalu dapat menginstal hanya pembaruan terbaru, bahkan jika Anda melewatkan beberapa di antaranya!</string>
-    <string name="info_dialog_ok">Terima kasih atas infonya!</string>
-    <string name="local_update_import">Pembaruan lokal</string>
     <string name="local_update_import_progress">Mengimpor pembaruan lokal\u2026</string>
     <string name="local_update_import_success">%1$s telah diimpor. Apakah Anda ingin menginstalnya?</string>
     <string name="local_update_import_failure">Gagal mengimpor pembaruan lokal</string>
     <string name="local_update_import_install">Instal</string>
     <string name="local_update_name">Pembaruan lokal</string>
-    <string name="welcome_title">Selamat datang</string>
 </resources>

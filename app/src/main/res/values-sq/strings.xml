@@ -5,7 +5,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Përditësuesi</string>
-    <string name="display_name">Përditësuesi</string>
     <string name="verification_failed_notification">Verifikimi dështoi</string>
     <string name="verifying_download_notification">Duke verifikuar përditësimin</string>
     <string name="downloading_notification">Duke u shkarkuar</string>
@@ -17,12 +16,7 @@
     <string name="installation_suspended_notification">Instalimi u pezullua</string>
     <string name="new_updates_found_title">Përditësime të reja</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">Ndalo</string>
-    <string name="resume_button">Rinis</string>
-    <string name="suspend_button">Pezullu</string>
-    <string name="installing_update">Duke instaluar paketën e përditësimit</string>
     <string name="installing_update_error">Gabim në instalim</string>
-    <string name="installing_update_finished">Përditesimi u instalua</string>
     <string name="finalizing_package">Në perfundim të instalimit të paketës</string>
     <string name="preparing_ota_first_boot">Po përgatitet për ndezjen e parë</string>
     <string name="dialog_prepare_zip_message">Parapërgatitje për përditësimin</string>
@@ -34,89 +28,52 @@
          • rindezje adb]]></string>
     <string name="dialog_scratch_mounted_title">Përditësimi nuk mund të instalohet me OverlayFS të montuar</string>
     <string name="reboot">Rindiz</string>
-    <string name="menu_refresh">Rifresko</string>
-    <string name="menu_preferences">Preferencat</string>
-    <string name="menu_auto_updates_check">Kontroll automatik të përditësimeve</string>
-    <string name="menu_auto_updates_check_interval_daily">Njëherë në ditë</string>
-    <string name="menu_auto_updates_check_interval_weekly">Njëherë në javë</string>
-    <string name="menu_auto_updates_check_interval_monthly">Njëherë në muaj</string>
-    <string name="menu_auto_updates_check_interval_never">Asnjëherë</string>
-    <string name="menu_auto_delete_updates">Fshi përditësimet pas instalimit</string>
     <string name="menu_delete_update">Fshije</string>
-    <string name="menu_copy_url">Kopjo URL</string>
     <string name="menu_export_update">Eksporto përditësimin</string>
-    <string name="menu_show_changelog">Shfaq ndryshimet</string>
+    <string name="menu_metered_network_warning">Paralajmërim i rrjetit celular</string>
     <string name="menu_ab_perf_mode">Jepi përparësi përditësimit</string>
     <string name="menu_update_recovery">Përditëso rikuperimin</string>
-    <string name="toast_forced_update_recovery">Është e pamundur të çaktivizoni përditësimet e rikuperimit të Lineages në këtë pajisje.</string>
     <string name="snack_updates_found">Ka përditësime të reja</string>
     <string name="snack_no_updates_found">Nuk u gjet asnjë përditësim i ri</string>
-    <string name="snack_updates_check_failed">Kontrolli për përditësim dështoi. Ju lutem kontrolloni për lidhjen me internet e më pas provoni sërish.</string>
     <string name="snack_download_failed">Shkarkimi dështoi. Ju lutem kontrolloni për lidhjen me internetin dhe provoni sërish.</string>
     <string name="snack_download_verification_failed">Verifikim i përditësimit dështoi.</string>
     <string name="snack_download_verified">Shkarkimi përfundoi.</string>
     <string name="snack_update_not_installable">Ky përditësim nuk mund të instalohet mbi këtë version aktual.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Kontrolli i fundit: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> nga <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> nga <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Duke verifikuar përditësimin</string>
-    <string name="list_no_updates">Nuk ka përditësime të reja. Për të kërkuar manualisht për përditësime të reja, përdor butonin Rifresko.</string>
     <string name="action_download">Shkarko</string>
     <string name="action_pause">Pezullo</string>
     <string name="action_resume">Rinis</string>
     <string name="action_install">Instalo</string>
     <string name="action_info">Informacion</string>
     <string name="action_delete">Fshi</string>
-    <string name="action_cancel">Anullo</string>
     <string name="confirm_delete_dialog_title">Fshi skedarin</string>
     <string name="confirm_delete_dialog_message">Dëshiron të fshish skedarin e zgjedhur të përditësimit?</string>
     <string name="apply_update_dialog_title">Apliko përditësimin</string>
     <string name="apply_update_dialog_message">Jeni gati të instaloni <xliff:g id="update_name">%1$s</xliff:g>.\n\nNëse shtypni <xliff:g id="ok">%2$s</xliff:g>, pajisja do të riniset vetë në modalitetin e rikuperimit për të instaluar përditësimin.\n\nShënim: Ky funksion kërkon një Rikuperim të pajtueshëm ose përditësimet do të duhet të instalohen manualisht.</string>
     <string name="apply_update_dialog_message_ab">Jeni gati të instaloni <xliff:g id="update_name">%1$s</xliff:g>.\n\nNëse shtypni <xliff:g id="ok">%2$s</xliff:g>, pajisja do të fillojë të instalohet në sfond.\n\nPasi të keni përfunduar, do t\'ju kërkohet të rindizni.</string>
-    <string name="cancel_installation_dialog_message">Anullo instalimin?</string>
     <string name="label_download_url">Shkarko URL</string>
-    <string name="toast_download_url_copied">URL u kopjua</string>
     <string name="dialog_export_title">Duke exportuar përditësimin</string>
     <string name="notification_export_success">Përditësimi u eksportua</string>
     <string name="notification_export_fail">Problem në exportim</string>
     <string name="toast_already_exporting">Aktualisht po exporton një përditësim</string>
     <string name="toast_export_started">Eksporti filloi</string>
-    <plurals name="eta_seconds">
-        <item quantity="one">1 sekondë e mbetur</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> sekonda të mbetura</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">1 minutë e mbetur</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> minuta të mbetura</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">1 orë e mbetur</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> orë të mbetura</item>
-    </plurals>
     <string name="update_over_metered_network_title">Paralajmërim</string>
     <string name="update_over_metered_network_message">Jeni gati të shkarkoni një paketë përditësimi përmes një rrjeti celular, i cili ka të ngjarë të shkaktojë përdorim të lartë të të dhënave.
 
 Dëshironi të vazhdoni?</string>
-    <string name="checkbox_metered_network_warning">Mos e shfaq përsëri</string>
-    <string name="menu_metered_network_warning">Paralajmërim i rrjetit celular</string>
     <string name="blocked_update_dialog_title">Përditësimi është bllokuar</string>
     <string name="blocked_update_dialog_message">Ky përditësim nuk mund të instalohet me app e përditësuesit. Për më shumë informacion ju lutem lexoni <xliff:g id="info_url">%1$s</xliff:g>.</string>
     <string name="export_channel_title">Eksporto përfundimin</string>
     <string name="new_updates_channel_title">Përditësime të reja</string>
     <string name="ongoing_channel_title">Shkarkimet në proces</string>
     <string name="update_failed_channel_title">Përditësimi dështoi</string>
-    <string name="info_dialog_title">A e dinit?</string>
-    <string name="info_dialog_message">Përditësimet e LineageOS janë paketa të plota instalimi. Kjo do të thotë që gjithmonë mund të instaloni vetëm përditësimin më të fundit, edhe nëse keni anashkaluar disa në mes!</string>
-    <string name="info_dialog_ok">Faleminderit për informacionin!</string>
-    <string name="local_update_import">Përditësim lokal</string>
     <string name="local_update_import_progress">Përditësimi lokal po importohet\u2026</string>
     <string name="local_update_import_success">%1$s është importuar. Dëshiron ta instalosh?</string>
     <string name="local_update_import_failure">Importimi i përditësimit lokal dështoi</string>
     <string name="local_update_import_install">Instalo</string>
     <string name="local_update_name">Përditësim lokal</string>
-    <string name="welcome_title">Mirësevini</string>
 </resources>

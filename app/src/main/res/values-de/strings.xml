@@ -5,7 +5,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Updater</string>
-    <string name="display_name">Updater</string>
     <string name="verification_failed_notification">Überprüfung fehlgeschlagen</string>
     <string name="verifying_download_notification">Update wird geprüft</string>
     <string name="downloading_notification">Wird heruntergeladen</string>
@@ -17,12 +16,7 @@
     <string name="installation_suspended_notification">Installation unterbrechen</string>
     <string name="new_updates_found_title">Neue Updates</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">Pause</string>
-    <string name="resume_button">Fortsetzen</string>
-    <string name="suspend_button">Unterbrechen</string>
-    <string name="installing_update">Update-Paket wird installiert</string>
     <string name="installing_update_error">Installationsfehler</string>
-    <string name="installing_update_finished">Update installiert</string>
     <string name="finalizing_package">Die Paketinstallation wird abgeschlossen</string>
     <string name="preparing_ota_first_boot">Erster Start wird vorbereitet</string>
     <string name="dialog_prepare_zip_message">Update wird vorbereitet</string>
@@ -35,88 +29,50 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">Update kann nicht installiert werden, wenn OverlayFS eingebunden ist</string>
     <string name="reboot">Neustart</string>
-    <string name="menu_refresh">Aktualisieren</string>
-    <string name="menu_preferences">Einstellungen</string>
-    <string name="menu_auto_updates_check">Automatisch nach Updates suchen</string>
-    <string name="menu_auto_updates_check_interval_daily">Einmal am Tag</string>
-    <string name="menu_auto_updates_check_interval_weekly">Einmal pro Woche</string>
-    <string name="menu_auto_updates_check_interval_monthly">Einmal pro Monat</string>
-    <string name="menu_auto_updates_check_interval_never">Niemals</string>
-    <string name="menu_auto_delete_updates">Updates nach Installation löschen</string>
     <string name="menu_delete_update">Löschen</string>
-    <string name="menu_copy_url">URL in Zwischenablage kopieren</string>
     <string name="menu_export_update">Update exportieren</string>
-    <string name="menu_show_changelog">Changelog anzeigen</string>
+    <string name="menu_metered_network_warning">Warnen bei getakteter Verbindung</string>
     <string name="menu_ab_perf_mode">Updateprozess priorisieren</string>
     <string name="menu_update_recovery">Recovery aktualisieren</string>
-    <string name="toast_forced_update_recovery">Es ist nicht möglich, die Updates vom Lineage-Recovery auf diesem Gerät zu deaktivieren.</string>
     <string name="snack_updates_found">Neue Updates gefunden</string>
     <string name="snack_no_updates_found">Keine neuen Updates gefunden</string>
-    <string name="snack_updates_check_failed">Die Suche nach Updates ist fehlgeschlagen. Bitte überprüfe die Internetverbindung und versuche es später erneut.</string>
     <string name="snack_download_failed">Das Herunterladen ist fehlgeschlagen. Bitte überpüfe die Internetverbindung und versuche es später erneut.</string>
     <string name="snack_download_verification_failed">Die Update-Überprüfung ist fehlgeschlagen.</string>
     <string name="snack_download_verified">Herunterladen abgeschlossen.</string>
     <string name="snack_update_not_installable">Dieses Update kann nicht auf die bestehende Installation angewendet werden.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Zuletzt geprüft: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> von <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> von <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Update wird geprüft</string>
-    <string name="list_no_updates">Keine neuen Updates gefunden. Um manuell nach neuen Updates zu suchen, verwende die Schaltfläche \"Aktualisieren\".</string>
     <string name="action_download">Herunterladen</string>
     <string name="action_pause">Anhalten</string>
     <string name="action_resume">Fortsetzen</string>
     <string name="action_install">Installieren</string>
     <string name="action_info">Information</string>
     <string name="action_delete">Löschen</string>
-    <string name="action_cancel">Abbrechen</string>
     <string name="confirm_delete_dialog_title">Datei löschen</string>
     <string name="confirm_delete_dialog_message">Soll die ausgewählte Update-Datei gelöscht werden?</string>
     <string name="apply_update_dialog_title">Update installieren</string>
     <string name="apply_update_dialog_message">Bereit zur Installation von <xliff:g id="update_name">%1$s</xliff:g>\n\nWenn du <xliff:g id="ok">%2$s</xliff:g> drückst, wird das Gerät im Recovery-Modus gestartet, um das Update durchzuführen.\n\nHinweis: Diese Funktion erfordert ein kompatibles Recovery-System, anderenfalls muss das Update manuell installiert werden.</string>
     <string name="apply_update_dialog_message_ab">Bereit zur Installation von <xliff:g id="update_name">%1$s</xliff:g>\n\nWenn du <xliff:g id="ok">%2$s drückst</xliff:g>, beginnt das Gerät im Hintergrund mit der Installation.\n\nSobald diese abgeschlossen ist, wirst du zum Neustart aufgefordert.</string>
-    <string name="cancel_installation_dialog_message">Installation abbrechen?</string>
     <string name="label_download_url">Download URL</string>
-    <string name="toast_download_url_copied">URL wurde kopiert</string>
     <string name="dialog_export_title">Update wird exportiert</string>
     <string name="notification_export_success">Update wurde exportiert</string>
     <string name="notification_export_fail">Fehler beim Export</string>
     <string name="toast_already_exporting">Update wird bereits exportiert</string>
     <string name="toast_export_started">Export gestartet</string>
-    <plurals name="eta_seconds">
-        <item quantity="one">noch 1 Sekunde</item>
-        <item quantity="other">noch <xliff:g id="count">%d</xliff:g> Sekunden</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">noch 1 Minute</item>
-        <item quantity="other">noch <xliff:g id="count">%d</xliff:g> Minuten</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">noch 1 Stunde</item>
-        <item quantity="other">noch <xliff:g id="count">%d</xliff:g> Stunden</item>
-    </plurals>
     <string name="update_over_metered_network_title">Achtung</string>
     <string name="update_over_metered_network_message">Du bist dabei ein Software-Update über ein getaktetes Netzwerk herunterzuladen, was zu einem hohen Datenverbrauch führen kann. Möchtest du fortfahren?</string>
-    <string name="checkbox_metered_network_warning">Nicht wieder anzeigen</string>
-    <string name="menu_metered_network_warning">Warnen bei getakteter Verbindung</string>
     <string name="blocked_update_dialog_title">Update blockiert</string>
     <string name="blocked_update_dialog_message">Dieses Update kann mit der Updater-App nicht installiert werden. Für weitere Informationen lies bitte <xliff:g id="info_url">%1$s </xliff:g>.</string>
     <string name="export_channel_title">Export abgeschlossen</string>
     <string name="new_updates_channel_title">Neue Updates</string>
     <string name="ongoing_channel_title">Laufende Downloads</string>
     <string name="update_failed_channel_title">Update fehlgeschlagen</string>
-    <string name="info_dialog_title">Schon gewusst?</string>
-    <string name="info_dialog_message">LineageOS-Updates sind vollständige Installationspakete. Das bedeutet, dass du immer nur das neueste Update installieren zu brauchst, auch wenn du zwischendurch welche übersprungen hast!</string>
-    <string name="info_dialog_ok">Danke für die Information!</string>
-    <string name="local_update_import">Lokales Update</string>
     <string name="local_update_import_progress">Lokales Update wird importiert\u2026</string>
     <string name="local_update_import_success">%1$s wurde importiert. Möchtest du es installieren?</string>
     <string name="local_update_import_failure">Fehler beim Importieren des lokalen Updates</string>
     <string name="local_update_import_install">Installieren</string>
     <string name="local_update_name">Lokales Update</string>
-    <string name="welcome_title">Willkommen</string>
-    <string name="welcome_message">Hinweis: Sind mehrere Updates verfügbar, ist es nicht nötig, jedes Update einzeln zu installieren. Du kannst stets direkt das neueste Update installieren und anschließend ältere Updates löschen, um Speicherplatz freizugeben.</string>
 </resources>

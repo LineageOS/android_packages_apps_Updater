@@ -5,7 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">يېڭىلىغۇچ</string>
-    <string name="display_name">يېڭىلىغۇچ</string>
+    <string name="display_name">سىستېما يېڭىلاش</string>
     <string name="verification_failed_notification">دەلىللىيەلمىدى</string>
     <string name="verifying_download_notification">يېڭىلاشنى دەلىللەۋاتىدۇ</string>
     <string name="downloading_notification">چۈشۈرۈۋاتىدۇ</string>
@@ -13,16 +13,16 @@
     <string name="download_paused_error_notification">چۈشۈرۈش خاتالىقى</string>
     <string name="download_completed_notification">چۈشۈرۈش تامام</string>
     <string name="download_starting_notification">چۈشۈرۈشنى باشلاۋاتىدۇ</string>
+    <string name="download_switch_confirm_title">چۈشۈرۈۋاتقانننى ۋاقىتلىق توختىتامدۇ؟</string>
+    <string name="download_switch_confirm_message">نۆۋەتتە يەنە بىر يېڭىلانما چۈشۈرۈلۈۋاتىدۇ. بۇ باشلانسا يەنە بىرى ۋاقىتلىق توختايدۇ.</string>
     <string name="update_failed_notification">يېڭىلىيالمىدى</string>
     <string name="installation_suspended_notification">ئورنىتىش كېچىكتۈرۈلدى</string>
     <string name="new_updates_found_title">يېڭى نەشرى</string>
+    <string name="new_updates_found_summary">چېكىلسە يېڭىلانمىنى كۆرسىتىدۇ</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">ۋاقىتلىق توختا</string>
-    <string name="resume_button">داۋاملاشتۇر</string>
-    <string name="suspend_button">كېچىكتۈر</string>
-    <string name="installing_update">يېڭىلاش بولىقىنى ئورنىتىۋاتىدۇ</string>
+    <string name="installing_update">سىستېما يېڭىلانمىسىنى ئورنىتىۋاتىدۇ</string>
     <string name="installing_update_error">ئورنىتىش خاتالىقى</string>
-    <string name="installing_update_finished">يېڭىلاش ئورنىتىلدى</string>
+    <string name="installing_update_finished">يېڭىلاش قايتا قوزغىتىشنى كېچىكتۈرۈۋاتىدۇ</string>
     <string name="finalizing_package">بولاق ئورنىتىشنى ئاخىرلاشتۇرۇۋاتىدۇ</string>
     <string name="preparing_ota_first_boot">تۇنجى قوزغىتىشقا تەييارلاۋاتىدۇ</string>
     <string name="dialog_prepare_zip_message">دەسلەپكى يېڭىلاش تەييارلىقى</string>
@@ -35,88 +35,98 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">OverlayFS ئېگەرلەنگەندە يېڭىلاشنى ئورنىتالمايدۇ</string>
     <string name="reboot">قايتا قوزغات</string>
-    <string name="menu_refresh">يېڭىلا</string>
-    <string name="menu_preferences">مايىللىق</string>
-    <string name="menu_auto_updates_check">ئۆزلۈكىدىن يېڭىلاشنى تەكشۈرىدۇ</string>
-    <string name="menu_auto_updates_check_interval_daily">كۈندە بىر قېتىم</string>
-    <string name="menu_auto_updates_check_interval_weekly">ھەپتىدە بىر قېتىم</string>
-    <string name="menu_auto_updates_check_interval_monthly">ئايدا بىر قېتىم</string>
-    <string name="menu_auto_updates_check_interval_never">ھەرگىز</string>
-    <string name="menu_auto_delete_updates">ئورنىتىلغاندىن كېيىن يېڭىلانمىنى ئۆچۈرىدۇ</string>
+    <string name="menu_preferences">سىستېما يېڭىلاش مايىللىقى</string>
+    <string name="preferences_summary">قەدەمداش، چۈشۈرۈش ۋە ئورنىتىش</string>
+    <string name="check_for_updates">يېڭىلاشنى تەكشۈر</string>
+    <string name="checking_for_updates">يېڭىلانمىنى تەكشۈرۈۋاتىدۇ</string>
+    <string name="check_your_internet_connection">ئىنتېرنېت باغلىنىشىنى تەكشۈرۈڭ</string>
+    <string name="updates_check_failed">يېڭىلانمىنى تەكشۈرەلمىدى. سەل تۇرۇپ قايتا سىناڭ.</string>
+    <string name="header_last_updates_check_time">ئاخىرقى تەكشۈرگەن ۋاقىت: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">ئاخىرقى تەكشۈرگەن ۋاقىت: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="pref_category_background_sync">ئارقا سۇپىدا قەدەمداشلاش</string>
+    <string name="menu_auto_updates_check">قەرەللىك يېڭىلانما تەكشۈرۈش</string>
+    <string name="menu_auto_updates_check_summary">ئارقا سۇپىدا يېڭىلانما تەكشۈرىدۇ</string>
+    <string name="menu_auto_updates_check_interval">تەكشۈرۈشى ھەر</string>
+    <string name="time_unit_day">كۈن</string>
+    <string name="time_unit_week">ھەپتە</string>
+    <string name="time_unit_month">ئاي</string>
+    <string name="pref_category_download_install">چۈشۈرۈش ۋە ئورنىتىش</string>
+    <string name="menu_auto_delete_updates">يېڭىلانمىنى ئۆزلۈكىدىن ئۆچۈر</string>
+    <string name="menu_auto_delete_updates_summary">يېڭىلانمىنى ئورناتقاندىن كېيىن چۈشۈرگەننى چىقىرىۋېتىدۇ</string>
+    <string name="menu_stream_updates">توردا ئېقىم تارقىتىپ يېڭىلا</string>
+    <string name="menu_stream_updates_summary">يېڭىلانمىنى چۈشۈرۈۋاتقاندا ئورنىتىدۇ. يېڭىلانما بوغچىسىنى چىقىرىش ئۈچۈن ساقلاشنى چەكلەيدۇ.</string>
     <string name="menu_delete_update">ئۆچۈر</string>
-    <string name="menu_copy_url">تور ئادرېس كۆچۈر</string>
     <string name="menu_export_update">يېڭىلاشنى چىقار</string>
-    <string name="menu_show_changelog">ئۆزگىرىش خاتىرىسىنى كۆرسەت</string>
+    <string name="menu_view_downloads"><xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> دا چۈشۈرۈشنى كۆرسەت</string>
+    <string name="menu_metered_network_warning">ئېقىم ھېسابلىنىدىغان تور ئاگاھلاندۇرۇشى</string>
+    <string name="menu_metered_network_warning_summary">كۆچمە سانلىق مەلۇمات ئىشلىتىۋاتقاندا چۈشۈرۈشتىن ئىلگىرى ئاگاھلاندۇرىدۇ</string>
     <string name="menu_ab_perf_mode">يېڭىلاش جەريانىنى ئەلالاشتۇرىدۇ</string>
+    <string name="menu_ab_perf_mode_summary">يېڭىلانما تېزلىتىلسە ئۈسكۈنە ئىقتىدارى ئاستىلىشى مۇمكىن</string>
+    <string name="menu_ab_perf_mode_summary_charging">ئۆزگىرىشچان توكتا توكلاۋاتقاندا ئۆزلۈكىدىن قوزغىتىدۇ</string>
     <string name="menu_update_recovery">ئەسلىگە كەلتۈرگۈچنى يېڭىلايدۇ</string>
-    <string name="toast_forced_update_recovery">بۇ ئۈسكۈنىدە Lineage ئەسلىگە كەلتۈرگۈچ يېڭىلانمىسىنى چەكلەش مۇمكىن ئەمەس.</string>
+    <string name="menu_update_recovery_summary">ئەسلىگە كەلتۈرۈش رايونىنى مەشغۇلات سىستېمىسى بىلەن بىللە يېڭىلايدۇ</string>
     <string name="snack_updates_found">يېڭى نەشرى تېپىلدى</string>
     <string name="snack_no_updates_found">يېڭى نەشرى تېپىلمىدى</string>
-    <string name="snack_updates_check_failed">يېڭىلانمىنى تەكشۈرەلمىدى. ئىنتېرنېت باغلىنىشىنى تەكشۈرۈپ، ئاندىن قايتا سىناڭ.</string>
     <string name="snack_download_failed">چۈشۈرەلمىدى. ئىنتېرنېت باغلىنىشىنى تەكشۈرۈپ، ئاندىن قايتا سىناڭ.</string>
     <string name="snack_download_verification_failed">يېڭىلاشنى دەلىللىيەلمىدى.</string>
     <string name="snack_download_verified">چۈشۈرۈش تامام.</string>
     <string name="snack_update_not_installable">بۇ يېڭىلاشنى نۆۋەتتىكى نەشرىنىڭ ئۈستىگە ئورناتقىلى بولمايدۇ.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">ئاخىرقى تەكشۈرۈش: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">ھاسىللىغان چېسلا</string>
+    <string name="security_update">بىخەتەرلىك يېڭىلانمىسى</string>
+    <string name="show_changelog">يېقىنقى ئۆزگىرىش</string>
+    <string name="report_issues">مەسىلە مەلۇم قىل</string>
+    <string name="header_review_updates">يېڭىلانما ۋە يېقىنقى ئۆزگىرىشنى تەكشۈرىدۇ</string>
+    <string name="found_bug">كەمتۈك بايقالدىمۇ؟ ئۇنى كەمتۈك مەلۇم قىلىش يېتەكچىسىگە مەلۇم قىلىڭ:</string>
+    <string name="updates_zero_state_title">ھېچقانداق يېڭىلانما يوق</string>
+    <string name="updates_zero_state_description">ئۈسكۈنىڭىز ئۈچۈن يېڭى تارقىتىلمىنى ئىشلەتكىلى بولسا بۇ جايدا كۆرۈنىدۇ.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">يېڭىلانما چوڭلۇقى: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">بىخەتەرلىك يېڭىلانما: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Android نىڭ چوڭ يۈكسىلىشى</string>
+    <string name="list_full_install">تولۇق ئورنىتىش: خالىغان ئالدىنقى نەشرىنىڭ ئۈستىگە بىخەتەر ئورناتقىلى بولىدۇ</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">يېڭىلاشنى دەلىللەۋاتىدۇ</string>
-    <string name="list_no_updates">يېڭى نەشرى تېپىلمىدى. يېڭى يېڭىلاشلارنى قولدا تەكشۈرۈش ئۈچۈن يېڭىلا توپچىنى چېكىڭ.</string>
+    <string name="see_more">يەنە %1$d نى كۆرسەت</string>
+    <string name="see_less">ئاز كۆرسەت</string>
     <string name="action_download">چۈشۈر</string>
     <string name="action_pause">ۋاقىتلىق توختا</string>
     <string name="action_resume">داۋاملاشتۇر</string>
     <string name="action_install">ئورنات</string>
     <string name="action_info">ئۇچۇر</string>
     <string name="action_delete">ئۆچۈر</string>
-    <string name="action_cancel">ۋاز كەچ</string>
+    <string name="confirm_cancel_dialog_title">چۈشۈرۈشتىن ۋاز كەچ</string>
+    <string name="confirm_cancel_dialog_message">چۈشۈرۈشتىن ۋاز كېچىپ ۋە ھۆججەتنى ئۆچۈرەمدۇ؟</string>
     <string name="confirm_delete_dialog_title">ھۆججەت ئۆچۈر</string>
     <string name="confirm_delete_dialog_message">تاللانغان يېڭىلاش ھۆججىتىنى ئۆچۈرەمدۇ؟</string>
     <string name="apply_update_dialog_title">يېڭىلاشنى قوللان</string>
     <string name="apply_update_dialog_message">سىز <xliff:g id="update_name">%1$s</xliff:g> نى ئورناتماقچى بولۇۋاتىسىز.\n\nئەگەر<xliff:g id="ok">%2$s</xliff:g> نى باسسىڭىز، ئۈسكۈنە ئۆزلۈكىدىن قايتا قوزغىلىپ ئەسلىگە كەلتۈرۈش ھالىتىگە كىرىپ يېڭىلاشنى ئورنىتىدۇ.\n \nدىققەت: بۇ ئىقتىدار ئۈچۈن ماسلىشىدىغان ئەسلىگە كەلتۈرگۈچ بولۇشى كېرەك ياكى يېڭىلاشنى قولدا ئورنىتىش كېرەك.</string>
     <string name="apply_update_dialog_message_ab">سىز <xliff:g id="update_name">%1$s</xliff:g> نى ئورناتماقچى بولۇۋاتىسىز.\n\nئەگەر<xliff:g id="ok">%2$s</xliff:g> نى باسسىڭىز، ئۈسكۈنە زاپاستىكىنى ئورنىتىشقا باشلايدۇ.\n \nتاماملانغاندا، سىزگە قايتا قوزغىتىشنى ئەسكەرتىدۇ.</string>
-    <string name="cancel_installation_dialog_message">ئورنىتىشتىن ۋاز كېچەمدۇ؟</string>
+    <string name="cancel_installation_dialog_title">ئورنىتىشتىن ۋاز كەچ</string>
+    <string name="cancel_installation_dialog_message">سىستېما يېڭىلاشتىن ۋاز كېچەمدۇ؟</string>
     <string name="label_download_url">چۈشۈرۈش تور ئادرېسى</string>
-    <string name="toast_download_url_copied">تور ئادرېسى كۆچۈرۈلدى</string>
     <string name="dialog_export_title">يېڭىلاشنى چىقار</string>
     <string name="notification_export_success">يېڭىلاش چىقىرىلدى</string>
     <string name="notification_export_fail">چىقىرىش خاتالىقى</string>
     <string name="toast_already_exporting">يېڭىلاشنى چىقاردى</string>
     <string name="toast_export_started">چىقىرىش باشلاندى</string>
-    <plurals name="eta_seconds">
-        <item quantity="one">1 سېكۇنت قالدى</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> سېكۇنت قالدى</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">1 مىنۇت قالدى</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> مىنۇت قالدى</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">1 سائەت قالدى</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> سائەت قالدى</item>
-    </plurals>
     <string name="update_over_metered_network_title">ئاگاھلاندۇرۇش</string>
     <string name="update_over_metered_network_message">كۆچمە سانلىق مەلۇمات تورىنىڭ ئېقىمىنى ئىشلىتىپ يېڭىلاشنى چۈشۈرمەكچى بولۇۋاتىسىز، بۇنىڭغا كۆپ سانلىق مەلۇمات ئېقىمى سەرپ بولۇشى مۇمكىن. داۋاملاشتۇرامسىز؟</string>
-    <string name="checkbox_metered_network_warning">قايتا كۆرسەتمە</string>
-    <string name="menu_metered_network_warning">ئېقىم ھېسابلىنىدىغان تور ئاگاھلاندۇرۇشى</string>
     <string name="blocked_update_dialog_title">يېڭىلانما توسۇلدى</string>
     <string name="blocked_update_dialog_message">يېڭىلاش ئەپى بىلەن بۇ يېڭىلاشنى ئورنىتالمايدۇ.  تەپسىلاتىنى <xliff:g id="info_url">%1$s</xliff:g> دىن ئوقۇڭ.</string>
+    <string name="blocked_update_dialog_title_downgrade">نەشر تۆۋەنلىتىش توسۇلغان</string>
+    <string name="blocked_update_dialog_message_downgrade">بۇ يېڭىلانما نۆۋەتتىكى سىستېمىدىن كونا، ئورناتقىلى بولمايدۇ.</string>
     <string name="export_channel_title">چىقىرىش تاماملاندى</string>
     <string name="new_updates_channel_title">يېڭى نەشرى</string>
     <string name="ongoing_channel_title">داۋاملىشىۋاتقان چۈشۈرۈش</string>
     <string name="update_failed_channel_title">يېڭىلىيالمىدى</string>
-    <string name="info_dialog_title">بىلەمسىز؟</string>
-    <string name="info_dialog_message">LineageOS يېڭىلاش تولۇق ئورنىتىش بولىقى. دېمەك، ئەگەر ئارىلىقتا بىرەر نەشرىدىن ئاتلاپ كەتسىڭىزمۇ، پەقەت ئاخىرقى يېڭىلاشنىلا ئورنىتالايسىز!</string>
-    <string name="info_dialog_ok">ئۇچۇر ئۈچۈن رەھمەت!</string>
-    <string name="local_update_import">يەرلىك يېڭىلاش</string>
+    <string name="local_update_import">يەرلىك يېڭىلاشنى ئورنات</string>
+    <string name="local_update_import_summary">ئورنىتىدىغان يېڭىلاش ھۆججىتى تاللىنىدۇ</string>
     <string name="local_update_import_progress">يەرلىك يېڭىلاشنى ئەكىرىۋاتىدۇ\u2026</string>
     <string name="local_update_import_success">%1$s ئەكىرىلگەن. ئۇنى ئورنىتامسىز؟</string>
     <string name="local_update_import_failure">يەرلىك يېڭىلاشنى ئەكىرەلمىدى</string>
     <string name="local_update_import_install">ئورنات</string>
     <string name="local_update_name">يەرلىك يېڭىلاش</string>
-    <string name="welcome_title">مەرھابا</string>
-    <string name="welcome_message">دىققەت كۆپلىگەن يېڭىلىنىش بولسا، بىرمۇ-بىر يېڭىلاش ھاجەتسىز، ھەمىشە ئاخىرقى نەشرىنى بىۋاسىتە يېڭىلاپ، كونا يېڭىلاشنى بىخەتەر ئۆچۈرۈپ دىسكا بوشلۇقىنى بىكارلىسىڭىز بولىدۇ.</string>
 </resources>

@@ -5,7 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Posodobilnik</string>
-    <string name="display_name">Posodobilnik</string>
+    <string name="display_name">Sistemske posodobitve</string>
     <string name="verification_failed_notification">Preverjanje je spodletelo</string>
     <string name="verifying_download_notification">Preverjanje posodobitve</string>
     <string name="downloading_notification">Prenašanje</string>
@@ -13,16 +13,16 @@
     <string name="download_paused_error_notification">Napaka pri prenosu</string>
     <string name="download_completed_notification">Prenos končan</string>
     <string name="download_starting_notification">Začetek prenosa</string>
+    <string name="download_switch_confirm_title">Začasno ustavi aktivni prenos?</string>
+    <string name="download_switch_confirm_message">Druga posodobitev se trenutno prenaša. Začetek te bo začasno ustavila drugo.</string>
     <string name="update_failed_notification">Posodobitev je spodletela</string>
     <string name="installation_suspended_notification">Namestitev začasno ustavljena</string>
     <string name="new_updates_found_title">Nove posodobitve</string>
+    <string name="new_updates_found_summary">Tapnite za ogled razpoložljivih posodobitev</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">Premor</string>
-    <string name="resume_button">Nadaljuj</string>
-    <string name="suspend_button">Začasno ustavi</string>
-    <string name="installing_update">Nameščanje posodobitvenega paketa</string>
+    <string name="installing_update">Nameščanje sistemske posodobitve</string>
     <string name="installing_update_error">Napaka pri namestitvi</string>
-    <string name="installing_update_finished">Posodobitev nameščena</string>
+    <string name="installing_update_finished">Posodobitev čaka na vnovičen zagon</string>
     <string name="finalizing_package">Zaključevanje namestitve paketa</string>
     <string name="preparing_ota_first_boot">Priprava na prvi zagon</string>
     <string name="dialog_prepare_zip_message">Predhodna priprava posodobitve</string>
@@ -35,94 +35,98 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">Posodobitve ni mogoče namestiti s priklopljenim OverlayFS</string>
     <string name="reboot">Vnovično zaženi</string>
-    <string name="menu_refresh">Osveži</string>
-    <string name="menu_preferences">Nastavitve</string>
-    <string name="menu_auto_updates_check">Samodejno preverjanje za posodobitve</string>
-    <string name="menu_auto_updates_check_interval_daily">Enkrat na dan</string>
-    <string name="menu_auto_updates_check_interval_weekly">Enkrat na teden</string>
-    <string name="menu_auto_updates_check_interval_monthly">Enkrat na mesec</string>
-    <string name="menu_auto_updates_check_interval_never">Nikoli</string>
-    <string name="menu_auto_delete_updates">Izbriši posodobitve po namestitvi</string>
+    <string name="menu_preferences">Nastavitve sistemskih posodobitev</string>
+    <string name="preferences_summary">Sinhronizacija, prenos in namestitev</string>
+    <string name="check_for_updates">Preveri za posodobitve</string>
+    <string name="checking_for_updates">Preverjanje za posodobitve</string>
+    <string name="check_your_internet_connection">Preverite internetno povezavo</string>
+    <string name="updates_check_failed">Preverjanje za posodobitev je spodletela. Poskusite znova kasneje.</string>
+    <string name="header_last_updates_check_time">Zadnje preverjanje:  <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Zadnje preverjanje: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="pref_category_background_sync">Sinhronizacija v ozadju</string>
+    <string name="menu_auto_updates_check">Občasno preveri za posodobitve</string>
+    <string name="menu_auto_updates_check_summary">Preveri za posodobitve v ozadju</string>
+    <string name="menu_auto_updates_check_interval">Preveri vsak</string>
+    <string name="time_unit_day">Dan</string>
+    <string name="time_unit_week">Teden</string>
+    <string name="time_unit_month">Mesec</string>
+    <string name="pref_category_download_install">Prenos in namestitev</string>
+    <string name="menu_auto_delete_updates">Samodejno izbriši posodobitve</string>
+    <string name="menu_auto_delete_updates_summary">Odstrani prenesene posodobitve po namestitvi</string>
+    <string name="menu_stream_updates">Pretakaj spletne posodobitve</string>
+    <string name="menu_stream_updates_summary">Nameščaj posodobitve med prenašanjem. Onemogočite, da shranite posodobitveni paket za izvoz.</string>
     <string name="menu_delete_update">Izbriši</string>
-    <string name="menu_copy_url">Kopiraj URL</string>
     <string name="menu_export_update">Izvozi posodobitev</string>
-    <string name="menu_show_changelog">Prikaži dnevnik sprememb</string>
+    <string name="menu_view_downloads">Poglej na <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> prenosih</string>
+    <string name="menu_metered_network_warning">Opozorilo merjenega omrežja</string>
+    <string name="menu_metered_network_warning_summary">Opozori pred prenašanjem prek mobilnih podatkov</string>
     <string name="menu_ab_perf_mode">Daj prednost posodobitvenemu postopku</string>
+    <string name="menu_ab_perf_mode_summary">Pospeši posodobitve na račun zmogljivosti naprave</string>
+    <string name="menu_ab_perf_mode_summary_charging">Omogoči samodejno med polnjenjem iz omrežnega polnilnika</string>
     <string name="menu_update_recovery">Posodobi obnovitev</string>
-    <string name="toast_forced_update_recovery">Ni mogoče onemogočiti posodobitev obnovitve Lineage na tej napravi.</string>
+    <string name="menu_update_recovery_summary">Posodobi obnovitev skupaj z OS</string>
     <string name="snack_updates_found">Najdene nove posodobitve</string>
     <string name="snack_no_updates_found">Ni najdenih novih posodobitev</string>
-    <string name="snack_updates_check_failed">Preverjanje za posodobitve je spodletelo. Preverite svojo internetno povezavo in poskusite znova kasneje.</string>
     <string name="snack_download_failed">Prenos je spodletel. Preverite svojo internetno povezavo in poskusite znova kasneje.</string>
     <string name="snack_download_verification_failed">Preverjanje posodobitve je spodletelo.</string>
     <string name="snack_download_verified">Prenos končan.</string>
     <string name="snack_update_not_installable">Te posodobitve ni mogoče namestiti preko trenutne izgradnje.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Zadnje preverjanje: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">Datum izgradnje</string>
+    <string name="security_update">Varnostna posodobitev</string>
+    <string name="show_changelog">Nedavne spremembe</string>
+    <string name="report_issues">Prijavi težave</string>
+    <string name="header_review_updates">Preglej posodobitve in nedavne spremembe na</string>
+    <string name="found_bug">Najdena napaka? Prijavite jo z našim vodičem za prijavo napake:</string>
+    <string name="updates_zero_state_title">Ni razpoložljivih posodobitev</string>
+    <string name="updates_zero_state_description">Nove izgradnje za to napravo se bodo pojavile tukaj, ko bodo na voljo.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">Velikost posodobitve: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">Varnostna posodobitev: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Večja Android posodobitev</string>
+    <string name="list_full_install">Polna namestitev: Varno za namestitev prek katere koli izgradnje</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Preverjanje posodobitve</string>
-    <string name="list_no_updates">Ni najdenih novih posodobitev. Za ročno preverjanje novih posodobitev, uporabite gumb Osveži.</string>
+    <string name="see_more">Poglej %1$d več</string>
+    <string name="see_less">Poglej manj</string>
     <string name="action_download">Prenesi</string>
     <string name="action_pause">Premor</string>
     <string name="action_resume">Nadaljuj</string>
     <string name="action_install">Namesti</string>
     <string name="action_info">Podatki</string>
     <string name="action_delete">Izbriši</string>
-    <string name="action_cancel">Prekliči</string>
+    <string name="confirm_cancel_dialog_title">Prekliči prenos</string>
+    <string name="confirm_cancel_dialog_message">Prekliči prenos in izbriši datoteko?</string>
     <string name="confirm_delete_dialog_title">Izbriši datoteko</string>
     <string name="confirm_delete_dialog_message">Izbriši izbrano posodobitveno datoteko?</string>
     <string name="apply_update_dialog_title">Uveljavi posodobitev</string>
     <string name="apply_update_dialog_message">Ste pred namestitvijo <xliff:g id="update_name">%1$s</xliff:g>.\n\nČe pritisnete <xliff:g id="ok">%2$s</xliff:g>, se bo naprava vnovično zagnala v obnovitveni način, da namesti posodobitev.\n\nOpomba: Ta funkcija zahteva združljivo Obnovitev ali pa bodo morale posodobitve biti nameščene ročno.</string>
     <string name="apply_update_dialog_message_ab">Ste pred namestitvijo <xliff:g id="update_name">%1$s</xliff:g>.\n\nČe pritisnete <xliff:g id="ok">%2$s</xliff:g>, bo naprava začela nameščanje v ozadju.\n\nOb zaključku boste pozvani k vnovičnemu zagonu.</string>
-    <string name="cancel_installation_dialog_message">Prekliči nameščanje?</string>
+    <string name="cancel_installation_dialog_title">Prekliči namestitev</string>
+    <string name="cancel_installation_dialog_message">Prekliči sistemsko posodobitev?</string>
     <string name="label_download_url">URL prenosa</string>
-    <string name="toast_download_url_copied">URL kopiran</string>
     <string name="dialog_export_title">Izvažanje posodobitve</string>
     <string name="notification_export_success">Posodobitev izvožena</string>
     <string name="notification_export_fail">Napaka pri izvozu</string>
     <string name="toast_already_exporting">Posodobitev se že izvaža</string>
     <string name="toast_export_started">Začetek izvoza</string>
-    <plurals name="eta_seconds">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> sekunda preostala</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> sekundi preostali</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> sekunde preostale</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> sekund preostalo</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> minuta preostala</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> minuti preostali</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> minute preostale</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> minut preostalo</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> ura preostala</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> uri preostali</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> ure preostale</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> ur preostalo</item>
-    </plurals>
     <string name="update_over_metered_network_title">Opozorilo</string>
     <string name="update_over_metered_network_message">Ste pred prenosom posodobitvenega paketa prek merjenega omrežja, kar bo verjetno povzročilo visoko porabo podatkov. Ali želite nadaljevati?</string>
-    <string name="checkbox_metered_network_warning">Ne prikaži ponovno</string>
-    <string name="menu_metered_network_warning">Opozorilo merjenega omrežja</string>
     <string name="blocked_update_dialog_title">Posodobitev blokirana</string>
     <string name="blocked_update_dialog_message">Te posodobitve ni mogoče namestiti z uporabo aplikacije za posodabljanje. Za več informacij preberite <xliff:g id="info_url">%1$s</xliff:g>.</string>
+    <string name="blocked_update_dialog_title_downgrade">Nižanje izgradnje blokirano</string>
+    <string name="blocked_update_dialog_message_downgrade">Ta posodobitev je starejša od trenutnega sistema in je ni mogoče namestiti.</string>
     <string name="export_channel_title">Zaključek izvoza</string>
     <string name="new_updates_channel_title">Nove posodobitve</string>
     <string name="ongoing_channel_title">Prenosi v teku</string>
     <string name="update_failed_channel_title">Posodobitev je spodletela</string>
-    <string name="info_dialog_title">Ali ste vedeli?</string>
-    <string name="info_dialog_message">LineageOS posodobitve so polni namestitveni paketi. To pomeni, da lahko vedno namestite samo zadnjo posodobitev tudi, če ste jih vmes nekaj preskočili!</string>
-    <string name="info_dialog_ok">Hvala za informacije!</string>
-    <string name="local_update_import">Lokalna posodobitev</string>
+    <string name="local_update_import">Namesti lokalno posodobitev</string>
+    <string name="local_update_import_summary">Izberite posodobitveno datoteko za namestitev</string>
     <string name="local_update_import_progress">Uvažanje lokalne posodobitve \u2026</string>
     <string name="local_update_import_success">%1$s je bila uvožena. Ali jo želite namestiti?</string>
     <string name="local_update_import_failure">Uvoz lokalne posodobitve je spodletel</string>
     <string name="local_update_import_install">Namesti</string>
     <string name="local_update_name">Lokalna posodobitev</string>
-    <string name="welcome_title">Dobrodošli</string>
-    <string name="welcome_message">Vedite, da, ko je na voljo več posodobitev, ni potrebno namestiti vsake, vedno lahko neposredno namestite zadnjo in nato varno izbrišete stare posodobitve, da sprostite prostor na pomnilniku.</string>
 </resources>

@@ -5,5 +5,4 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="menu_update_recovery">পুনৰুদ্ধাৰ আপডেট কৰক</string>
-    <string name="toast_forced_update_recovery">এই ডিভাইচত Lineage পুনৰুদ্ধাৰ আপডেটসমূহ নিষ্ক্ৰিয় কৰাটো অসম্ভৱ।</string>
 </resources>

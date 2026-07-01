@@ -5,32 +5,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Uuendaja</string>
-    <string name="display_name">Uuendaja</string>
     <string name="installation_suspended_notification">Installimine peatati</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="suspend_button">Peata</string>
     <string name="dialog_battery_low_title">Madal akutase</string>
     <string name="dialog_battery_low_message_pct">Akutase on liiga madal, jätkamiseks on vaja akut vähemalt <xliff:g id="percent_discharging">%1$d</xliff:g>%%, laadimise korral <xliff:g id="percent_charging">%2$d</xliff:g>%%.</string>
-    <string name="menu_auto_updates_check_interval_daily">Kord päevas</string>
-    <string name="menu_auto_updates_check_interval_weekly">Kord nädalas</string>
-    <string name="menu_auto_updates_check_interval_monthly">Kord kuus</string>
-    <string name="menu_auto_updates_check_interval_never">Mitte kunagi</string>
-    <string name="menu_show_changelog">Näita muutuste nimekirja</string>
     <string name="menu_ab_perf_mode">Eelista uuendusprotsessi</string>
     <string name="menu_update_recovery">Uuenda taastust</string>
-    <string name="toast_forced_update_recovery">Lineage Recovery taastevärskendusi pole selles seadmes võimalik keelata.</string>
-    <plurals name="eta_seconds">
-        <item quantity="one">1 sekund jäänud</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> sekundit jäänud</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">1 minut jäänud</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> minutit jäänud</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">1 tund jäänud</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> tundi jäänud</item>
-    </plurals>
     <string name="export_channel_title">Ekspordi lõpuleviimine</string>
     <string name="ongoing_channel_title">Käimasolevad allalaadimised</string>
 </resources>

@@ -5,7 +5,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Aktualizace</string>
-    <string name="display_name">Aktualizace</string>
     <string name="verification_failed_notification">Ověření selhalo</string>
     <string name="verifying_download_notification">Ověření aktualizace</string>
     <string name="downloading_notification">Stahování</string>
@@ -17,12 +16,7 @@
     <string name="installation_suspended_notification">Instalace odložena</string>
     <string name="new_updates_found_title">Nové aktualizace</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">Pozastavit</string>
-    <string name="resume_button">Obnovit</string>
-    <string name="suspend_button">Pozastavit</string>
-    <string name="installing_update">Instalace balíčku aktualizace</string>
     <string name="installing_update_error">Chyba instalace</string>
-    <string name="installing_update_finished">Aktualizace byla nainstalována</string>
     <string name="finalizing_package">Dokončování instalace balíčku</string>
     <string name="preparing_ota_first_boot">Příprava na první spuštění</string>
     <string name="dialog_prepare_zip_message">Příprava předběžné aktualizace</string>
@@ -35,94 +29,50 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">Nelze nainstalovat aktualizaci s připojeným OverlayFS</string>
     <string name="reboot">Reboot</string>
-    <string name="menu_refresh">Obnovit</string>
-    <string name="menu_preferences">Předvolby</string>
-    <string name="menu_auto_updates_check">Automatická kontrola aktualizací</string>
-    <string name="menu_auto_updates_check_interval_daily">Jednou denně</string>
-    <string name="menu_auto_updates_check_interval_weekly">Jednou týdně</string>
-    <string name="menu_auto_updates_check_interval_monthly">Jednou měsíčně</string>
-    <string name="menu_auto_updates_check_interval_never">Nikdy</string>
-    <string name="menu_auto_delete_updates">Odstranit aktualizace po instalaci</string>
     <string name="menu_delete_update">Odstranit</string>
-    <string name="menu_copy_url">Kopírovat URL</string>
     <string name="menu_export_update">Export aktualizace</string>
-    <string name="menu_show_changelog">Zobrazit seznam změn</string>
+    <string name="menu_metered_network_warning">Upozornění na měřenou síť</string>
     <string name="menu_ab_perf_mode">Upřednostňovat proces aktualizace</string>
     <string name="menu_update_recovery">Aktualizovat recovery oddíl</string>
-    <string name="toast_forced_update_recovery">Na tomto zařízení není možné zakázat aktualizace oddílu Lineage recovery</string>
     <string name="snack_updates_found">Nalezeny nové aktualizace</string>
     <string name="snack_no_updates_found">Nové aktualizace nenalezeny</string>
-    <string name="snack_updates_check_failed">Zjištění nové verze selhalo. Prosím zkontrolujte připojení k internetu a pokus opakujte.</string>
     <string name="snack_download_failed">Stahování selhalo. Prosím zkontrolujte připojení k internetu a pokus opakujte.</string>
     <string name="snack_download_verification_failed">Ověření aktualizace se nezdařilo.</string>
     <string name="snack_download_verified">Stahování úspěšné.</string>
     <string name="snack_update_not_installable">Tuto aktualizaci nelze nainstalovat přes aktuální sestavení.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Poslední kontrola: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z(e) <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z(e) <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Ověření aktualizace</string>
-    <string name="list_no_updates">Nebyly nalezeny žádné nové aktualizace. Chcete-li ručně vyhledat nové aktualizace, použijte tlačítko „Obnovit“.</string>
     <string name="action_download">Stáhnout</string>
     <string name="action_pause">Pozastavit</string>
     <string name="action_resume">Pokračovat</string>
     <string name="action_install">Instalovat</string>
     <string name="action_info">Informace</string>
     <string name="action_delete">Odstranit</string>
-    <string name="action_cancel">Zrušit</string>
     <string name="confirm_delete_dialog_title">Smazat soubor</string>
     <string name="confirm_delete_dialog_message">Smazat zvolený soubor aktualizace?</string>
     <string name="apply_update_dialog_title">Použít aktualizaci</string>
     <string name="apply_update_dialog_message">Chystáte se instalovat <xliff:g id="update_name">%1$s</xliff:g>.\n\nPokud stisknete <xliff:g id="ok">%2$s</xliff:g>, telefon se restartuje do režimu Recovery, kde budete pokračovat v instalaci aktualizace.\n\nPoznámka: tato funkce vyžaduje nainstalovaný kompatibilní režim Recovery nebo je nutné instalaci provést ručně.</string>
     <string name="apply_update_dialog_message_ab">Chystáte se instalovat <xliff:g id="update_name">%1$s</xliff:g>.\n\nPokud stisknete <xliff:g id="ok">%2$s</xliff:g>, spustí se instalace na pozadí.\n\nPo dokončení budete vyzváni k restartu.</string>
-    <string name="cancel_installation_dialog_message">Zrušit instalaci?</string>
     <string name="label_download_url">URL stažení</string>
-    <string name="toast_download_url_copied">URL zkopírována</string>
     <string name="dialog_export_title">Export aktualizace</string>
     <string name="notification_export_success">Aktualizace exportována</string>
     <string name="notification_export_fail">Chyba exportu</string>
     <string name="toast_already_exporting">Aktualizace se již exportuje</string>
     <string name="toast_export_started">Export byl zahájen</string>
-    <plurals name="eta_seconds">
-        <item quantity="one">Zbývá 1 sekunda</item>
-        <item quantity="few">Zbývají <xliff:g id="count">%d</xliff:g> sekundy</item>
-        <item quantity="many">Zbývá <xliff:g id="count">%d</xliff:g> sekund</item>
-        <item quantity="other">Zbývá <xliff:g id="count">%d</xliff:g> sekund</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">Zbývá 1 minuta</item>
-        <item quantity="few">Zbývají <xliff:g id="count">%d</xliff:g> minuty</item>
-        <item quantity="many">Zbývá <xliff:g id="count">%d</xliff:g> minut</item>
-        <item quantity="other">Zbývá <xliff:g id="count">%d</xliff:g> minut</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">Zbývá 1 hodina</item>
-        <item quantity="few">Zbývají <xliff:g id="count">%d</xliff:g> hodiny</item>
-        <item quantity="many">Zbývá <xliff:g id="count">%d</xliff:g> hodin</item>
-        <item quantity="other">Zbývá <xliff:g id="count">%d</xliff:g> hodin</item>
-    </plurals>
     <string name="update_over_metered_network_title">Varování</string>
     <string name="update_over_metered_network_message">Chystáte se stáhnout aktualizaci skrze měřenou síť, což pravděpodobně zapříčiní vysoké využití dat. Chcete pokračovat?</string>
-    <string name="checkbox_metered_network_warning">Znovu nezobrazovat</string>
-    <string name="menu_metered_network_warning">Upozornění na měřenou síť</string>
     <string name="blocked_update_dialog_title">Aktualizace zablokována</string>
     <string name="blocked_update_dialog_message">Tuto aktualizaci nelze nainstalovat pomocí aplikace aktualizace.  Přečtěte si <xliff:g id="info_url">%1$s </xliff:g> pro další informace.</string>
     <string name="export_channel_title">Dokončení exportu</string>
     <string name="new_updates_channel_title">Nové aktualizace</string>
     <string name="ongoing_channel_title">Probíhající stahování</string>
     <string name="update_failed_channel_title">Aktualizace se nezdařila</string>
-    <string name="info_dialog_title">Věděli jste, že…</string>
-    <string name="info_dialog_message">Aktualizace LineageOS jsou plné instalační balíčky. To znamená, že můžete vždy nainstalovat pouze nejnovější aktualizaci, a\u00a0je možné některé z\u00a0nich zcela přeskočit!</string>
-    <string name="info_dialog_ok">Děkujeme za informace!</string>
-    <string name="local_update_import">Místní aktualizace</string>
     <string name="local_update_import_progress">Probíhá import místní aktualizace\u2026</string>
     <string name="local_update_import_success">%1$s byla importována. Chcete ji nainstalovat?</string>
     <string name="local_update_import_failure">Nepodařilo se importovat místní aktualizaci</string>
     <string name="local_update_import_install">Instalovat</string>
     <string name="local_update_name">Místní aktualizace</string>
-    <string name="welcome_title">Vítejte</string>
-    <string name="welcome_message">Vezměte prosím na vědomí, že pokud je k dispozici více aktualizací, není třeba pokračovat v aktualizaci po aktualizaci, můžete vždy instalovat přímo poslední a pak bezpečně odstranit staré aktualizace a uvolnit úložný prostor.</string>
 </resources>

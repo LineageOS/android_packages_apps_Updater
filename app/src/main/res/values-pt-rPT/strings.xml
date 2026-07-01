@@ -5,7 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Atualizador</string>
-    <string name="display_name">Atualizador</string>
+    <string name="display_name">Atualizações do sistema</string>
     <string name="verification_failed_notification">Verificação falhou</string>
     <string name="verifying_download_notification">A verificar atualização</string>
     <string name="downloading_notification">A transferir</string>
@@ -13,16 +13,16 @@
     <string name="download_paused_error_notification">Erro na transferência</string>
     <string name="download_completed_notification">Transferência concluída</string>
     <string name="download_starting_notification">A iniciar a transferência</string>
+    <string name="download_switch_confirm_title">Pausar o download ativo?</string>
+    <string name="download_switch_confirm_message">Outra atualização está atualmente a ser transferida. Começar esta irá pausar a outra.</string>
     <string name="update_failed_notification">A atualização falhou</string>
     <string name="installation_suspended_notification">Instalação suspensa</string>
     <string name="new_updates_found_title">Novas atualizações</string>
+    <string name="new_updates_found_summary">Toque para ver as atualizações disponíveis</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">Pausar</string>
-    <string name="resume_button">Continuar</string>
-    <string name="suspend_button">Suspender</string>
-    <string name="installing_update">A instalar o pacote de atualização</string>
+    <string name="installing_update">A instalar atualização do sistema…</string>
     <string name="installing_update_error">Erro de instalação</string>
-    <string name="installing_update_finished">Atualização instalada</string>
+    <string name="installing_update_finished">Reinício pendente para atualização</string>
     <string name="finalizing_package">A finalizar a instalação do pacote</string>
     <string name="preparing_ota_first_boot">A preparar para a primeira inicialização</string>
     <string name="dialog_prepare_zip_message">Preparação preliminar de atualização</string>
@@ -35,88 +35,98 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">Não é possível instalar a atualização com OverlayFS montado</string>
     <string name="reboot">Reiniciar</string>
-    <string name="menu_refresh">Atualizar</string>
-    <string name="menu_preferences">Preferências</string>
-    <string name="menu_auto_updates_check">Verificação automática de atualizações</string>
-    <string name="menu_auto_updates_check_interval_daily">Uma vez por dia</string>
-    <string name="menu_auto_updates_check_interval_weekly">Uma vez por semana</string>
-    <string name="menu_auto_updates_check_interval_monthly">Uma vez por mês</string>
-    <string name="menu_auto_updates_check_interval_never">Nunca</string>
-    <string name="menu_auto_delete_updates">Apagar atualizações depois de instaladas</string>
+    <string name="menu_preferences">Preferências de atualização do sistema</string>
+    <string name="preferences_summary">Sincronizar, transferir e instalar</string>
+    <string name="check_for_updates">Procurar atualizações</string>
+    <string name="checking_for_updates">A procurar atualizações</string>
+    <string name="check_your_internet_connection">Verifique a sua ligação à internet</string>
+    <string name="updates_check_failed">Falha ao procurar por atualizações. Tente novamente mais tarde.</string>
+    <string name="header_last_updates_check_time">Última verificação: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Última verificação: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="pref_category_background_sync">Sincronização em segundo plano</string>
+    <string name="menu_auto_updates_check">Verificar automaticamente se há actualizações</string>
+    <string name="menu_auto_updates_check_summary">Verificar se há atualizações em segundo plano</string>
+    <string name="menu_auto_updates_check_interval">Verificar a cada</string>
+    <string name="time_unit_day">Dia</string>
+    <string name="time_unit_week">Semana</string>
+    <string name="time_unit_month">Mês</string>
+    <string name="pref_category_download_install">Transferência e instalação</string>
+    <string name="menu_auto_delete_updates">Apagar atualizações automaticamente</string>
+    <string name="menu_auto_delete_updates_summary">Remover atualizações transferidas após a instalação</string>
+    <string name="menu_stream_updates">Instalar enquanto transfere</string>
+    <string name="menu_stream_updates_summary">Instalar as atualizações enquanto são transferidas. Desative para poder guardar e exportar o ficheiro de instalação.</string>
     <string name="menu_delete_update">Apagar</string>
-    <string name="menu_copy_url">Copiar URL</string>
     <string name="menu_export_update">Exportar atualização</string>
-    <string name="menu_show_changelog">Mostrar registo de alterações</string>
+    <string name="menu_view_downloads">Ver em Transferências <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g></string>
+    <string name="menu_metered_network_warning">Aviso de rede de acesso limitado</string>
+    <string name="menu_metered_network_warning_summary">Avisar antes de transferir por dados móveis</string>
     <string name="menu_ab_perf_mode">Priorizar o processo de atualização</string>
+    <string name="menu_ab_perf_mode_summary">Acelerar atualizações ao custo de desempenho do dispositivo</string>
+    <string name="menu_ab_perf_mode_summary_charging">Ativado automaticamente enquanto carrega</string>
     <string name="menu_update_recovery">Atualizar recuperação</string>
-    <string name="toast_forced_update_recovery">Não é possível desativar as atualizações da recuperação Lineage neste dispositivo.</string>
+    <string name="menu_update_recovery_summary">Atualizar partição de recuperação juntamente com o SO</string>
     <string name="snack_updates_found">Não foram encontradas atualizações</string>
     <string name="snack_no_updates_found">Não foram encontradas novas atualizações</string>
-    <string name="snack_updates_check_failed">A verificação de atualizações falhou. Por favor, verifique a sua ligação à internet e tente novamente.</string>
     <string name="snack_download_failed">A transferência falhou. Por favor, verifique a sua ligação à internet e tente novamente.</string>
     <string name="snack_download_verification_failed">A verificação da atualização falhou.</string>
     <string name="snack_download_verified">Transferência concluída.</string>
     <string name="snack_update_not_installable">Esta atualização não pode ser instalada por cima da compilação atual.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Última verificação: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">Data de compilação</string>
+    <string name="security_update">Atualização de segurança</string>
+    <string name="show_changelog">Alterações recentes</string>
+    <string name="report_issues">Reportar problemas</string>
+    <string name="header_review_updates">Rever atualizações e alterações recentes em</string>
+    <string name="found_bug">Encontrou um erro? Reporte com o nosso guia de relatórios de erro:</string>
+    <string name="updates_zero_state_title">Sem atualizações disponíveis</string>
+    <string name="updates_zero_state_description">Novas compilações para este dispositivo aparecerão aqui, quando disponíveis.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">Tamanho da atualização: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">Atualização de segurança: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Atualização principal do Android</string>
+    <string name="list_full_install">Instalação completa: Segura para instalar sobre qualquer compilação anterior</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">A verificar atualização</string>
-    <string name="list_no_updates">Não foram encontradas novas atualizações. Para verificar novas atualizações manualmente, use o botão Atualizar.</string>
+    <string name="see_more">Ver mais %1$d</string>
+    <string name="see_less">Ver menos</string>
     <string name="action_download">Transferir</string>
     <string name="action_pause">Pausar</string>
     <string name="action_resume">Retomar</string>
     <string name="action_install">Instalar</string>
     <string name="action_info">Informações</string>
     <string name="action_delete">Eliminar</string>
-    <string name="action_cancel">Cancelar</string>
+    <string name="confirm_cancel_dialog_title">Cancelar transferência</string>
+    <string name="confirm_cancel_dialog_message">Cancelar a transferência e eliminar o ficheiro?</string>
     <string name="confirm_delete_dialog_title">Eliminar ficheiro</string>
     <string name="confirm_delete_dialog_message">Deseja eliminar o ficheiro de atualizações selecionado?</string>
     <string name="apply_update_dialog_title">Aplicar atualização</string>
     <string name="apply_update_dialog_message">Está prestes a atualizar para <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe carregar em<xliff:g id="ok">%2$s</xliff:g>, o dispositivo irá reiniciar no modo de recuperação para instalar a atualização.\n\nNota: É necessária uma Recuperação compatível, caso contrário as atualizações terão de ser instaladas manualmente.</string>
     <string name="apply_update_dialog_message_ab">Está prestes a atualizar para <xliff:g id="update_name">%1$s</xliff:g>.\n\nSe selecionar <xliff:g id="ok">%2$s</xliff:g>, o dispositivo irá iniciar a instalação em segundo plano.\n\nUma vez concluída, ser-lhe-á pedido que reinicie o dispositivo.</string>
-    <string name="cancel_installation_dialog_message">Cancelar a instalação?</string>
+    <string name="cancel_installation_dialog_title">Cancelar instalação</string>
+    <string name="cancel_installation_dialog_message">Cancelar a atualização do sistema?</string>
     <string name="label_download_url">URL de transferência</string>
-    <string name="toast_download_url_copied">URL copiado</string>
     <string name="dialog_export_title">A exportar a atualização</string>
     <string name="notification_export_success">Atualização exportada</string>
     <string name="notification_export_fail">Erro de exportação</string>
     <string name="toast_already_exporting">Já está a exportar uma atualização</string>
     <string name="toast_export_started">Exportação iniciada</string>
-    <plurals name="eta_seconds">
-        <item quantity="one">1 segundo restante</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> segundos restantes</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">1 minuto restante</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> minutos restantes</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">1 hora restante</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> horas restantes</item>
-    </plurals>
     <string name="update_over_metered_network_title">Aviso</string>
     <string name="update_over_metered_network_message">Está prestes a transferir uma atualização através de uma rede de acesso limitado, o que provavelmente irá resultar num elevado consumo de dados. Pretende continuar?</string>
-    <string name="checkbox_metered_network_warning">Não mostrar novamente</string>
-    <string name="menu_metered_network_warning">Aviso de rede de acesso limitado</string>
     <string name="blocked_update_dialog_title">Atualização bloqueada</string>
     <string name="blocked_update_dialog_message">Esta atualização não pode ser instalada usando a aplicação do atualizador.  Por favor, leia <xliff:g id="info_url">%1$s </xliff:g> para mais informações.</string>
+    <string name="blocked_update_dialog_title_downgrade">Reversão bloqueada</string>
+    <string name="blocked_update_dialog_message_downgrade">Esta atualização é mais antiga do que o sistema atual e não pode ser instalada.</string>
     <string name="export_channel_title">Conclusão da exportação</string>
     <string name="new_updates_channel_title">Novas atualizações</string>
     <string name="ongoing_channel_title">Transferências em curso</string>
     <string name="update_failed_channel_title">A atualização falhou</string>
-    <string name="info_dialog_title">Sabias que?</string>
-    <string name="info_dialog_message">As atualizações do LineageOS são pacotes de instalação completa. Isso significa que podes  instalar apenas a última atualização, mesmo que tenhas ignorado alguns deles!</string>
-    <string name="info_dialog_ok">Obrigado pela informação!</string>
-    <string name="local_update_import">Atualização local</string>
+    <string name="local_update_import">Instalar atualização local</string>
+    <string name="local_update_import_summary">Selecione o ficheiro de atualização a instalar</string>
     <string name="local_update_import_progress">A importar a atualização local\u2026</string>
     <string name="local_update_import_success">%1$s foi importada. Pretende instalar?</string>
     <string name="local_update_import_failure">Falha ao importar a atualização local</string>
     <string name="local_update_import_install">Instalar</string>
     <string name="local_update_name">Atualização local</string>
-    <string name="welcome_title">Bem-vindo</string>
-    <string name="welcome_message">Note que, quando há várias atualizações disponíveis, não há necessidade de instalá-las uma a uma. Pode sempre instalar a mais recente e eliminar as atualizações antigas para libertar espaço de armazenamento.</string>
 </resources>

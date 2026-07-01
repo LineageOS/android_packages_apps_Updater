@@ -5,7 +5,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Updater</string>
-    <string name="display_name">Updater</string>
     <string name="verification_failed_notification">Verificatie mislukt</string>
     <string name="verifying_download_notification">Update verifiëren</string>
     <string name="downloading_notification">Downloaden</string>
@@ -17,12 +16,7 @@
     <string name="installation_suspended_notification">Installatie onderbroken</string>
     <string name="new_updates_found_title">Nieuwe updates</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
-    <string name="pause_button">Pauzeren</string>
-    <string name="resume_button">Hervatten</string>
-    <string name="suspend_button">Onderbreken</string>
-    <string name="installing_update">Update installeren</string>
     <string name="installing_update_error">Installatiefout</string>
-    <string name="installing_update_finished">Update geïnstalleerd</string>
     <string name="finalizing_package">Installatie van het pakket afronden</string>
     <string name="preparing_ota_first_boot">Eerste start voorbereiden</string>
     <string name="dialog_prepare_zip_message">Update voorbereiden</string>
@@ -34,83 +28,47 @@
 • adb reboot]]></string>
     <string name="dialog_scratch_mounted_title">Kan update niet installeren met OverlayFS gekoppeld</string>
     <string name="reboot">Herstarten</string>
-    <string name="menu_refresh">Vernieuwen</string>
-    <string name="menu_preferences">Instellingen</string>
-    <string name="menu_auto_updates_check">Automatisch controleren op updates</string>
-    <string name="menu_auto_updates_check_interval_daily">Een keer per dag</string>
-    <string name="menu_auto_updates_check_interval_weekly">Een keer per week</string>
-    <string name="menu_auto_updates_check_interval_monthly">Een keer per maand</string>
-    <string name="menu_auto_updates_check_interval_never">Nooit</string>
-    <string name="menu_auto_delete_updates">Updates verwijderen nadat ze geïnstalleerd zijn</string>
     <string name="menu_delete_update">Verwijderen</string>
-    <string name="menu_copy_url">URL kopiëren</string>
     <string name="menu_export_update">Update exporteren</string>
-    <string name="menu_show_changelog">Changelog weergeven</string>
+    <string name="menu_metered_network_warning">Waarschuwing gemeten netwerk</string>
     <string name="menu_ab_perf_mode">Geef prioriteit aan het updateproces</string>
     <string name="menu_update_recovery">Recovery bijwerken</string>
-    <string name="toast_forced_update_recovery">Het is onmogelijk om Lineage Recovery updates op dit apparaat uit te schakelen.</string>
     <string name="snack_updates_found">Nieuwe updates gevonden</string>
     <string name="snack_no_updates_found">Geen nieuwe updates gevonden</string>
-    <string name="snack_updates_check_failed">Kan niet controleren op updates. Controleer uw internetverbinding en probeer het later opnieuw.</string>
     <string name="snack_download_failed">Downloaden mislukt. Controleer uw internetverbinding en probeer het later opnieuw.</string>
     <string name="snack_download_verification_failed">Verificatie van de update mislukt.</string>
     <string name="snack_download_verified">Downloaden voltooid.</string>
     <string name="snack_update_not_installable">Deze update kan niet worden geïnstalleerd bovenop de huidige versie.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
-    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Laatst gecontroleerd: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> van <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> van <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Update verifiëren</string>
-    <string name="list_no_updates">Geen nieuwe updates gevonden. Gebruik de knop Vernieuwen om handmatig te controleren op nieuwe updates.</string>
     <string name="action_download">Downloaden</string>
     <string name="action_pause">Pauzeren</string>
     <string name="action_resume">Hervatten</string>
     <string name="action_install">Installeren</string>
     <string name="action_info">Informatie</string>
     <string name="action_delete">Verwijderen</string>
-    <string name="action_cancel">Annuleren</string>
     <string name="confirm_delete_dialog_title">Bestand verwijderen</string>
     <string name="confirm_delete_dialog_message">Geselecteerde update-bestand verwijderen?</string>
     <string name="apply_update_dialog_title">Update toepassen</string>
     <string name="apply_update_dialog_message">U staat op het punt uw systeem bij te werken naar <xliff:g id="update_name">%1$s</xliff:g>.\n\nAls u op <xliff:g id="ok">%2$s</xliff:g> tikt, zal het apparaat herstarten naar recovery om de update te installeren.\n\nLet op: een compatibele recovery is vereist, anders moet de update handmatig worden geïnstalleerd.</string>
     <string name="apply_update_dialog_message_ab">U staat op het punt om uw toestel bij te werken naar <xliff:g id="update_name">%1$s</xliff:g>.\n\nAls u op <xliff:g id="ok">%2$s</xliff:g> tikt, zal het apparaat de update op de achtergrond uitvoeren.\n\nZodra de installatie voltooid is, zal gevraagd worden om het apparaat te herstarten.</string>
-    <string name="cancel_installation_dialog_message">Installatie annuleren?</string>
     <string name="label_download_url">Download-URL</string>
-    <string name="toast_download_url_copied">URL gekopieerd</string>
     <string name="dialog_export_title">Update exporteren</string>
     <string name="notification_export_success">Update geëxporteerd</string>
     <string name="notification_export_fail">Fout bij exporteren</string>
     <string name="toast_already_exporting">Er wordt al een update geëxporteerd</string>
     <string name="toast_export_started">Exporteren is begonnen</string>
-    <plurals name="eta_seconds">
-        <item quantity="one">1 seconde resterend</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> seconden resterend</item>
-    </plurals>
-    <plurals name="eta_minutes">
-        <item quantity="one">1 minuut resterend</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> minuten resterend</item>
-    </plurals>
-    <plurals name="eta_hours">
-        <item quantity="one">1 uur resterend</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> uur resterend</item>
-    </plurals>
     <string name="update_over_metered_network_title">Let op</string>
     <string name="update_over_metered_network_message">U staat op het punt om een updatepakket te downloaden via een netwerk met datalimiet, wat waarschijnlijk een hoog gegevensgebruik zal veroorzaken. Wilt u doorgaan?</string>
-    <string name="checkbox_metered_network_warning">Niet opnieuw tonen</string>
-    <string name="menu_metered_network_warning">Waarschuwing gemeten netwerk</string>
     <string name="blocked_update_dialog_title">Update geblokkeerd</string>
     <string name="blocked_update_dialog_message">Deze update kan niet worden geïnstalleerd met behulp van de updater-app. Lees <xliff:g id="info_url">%1$s</xliff:g> voor meer informatie.</string>
     <string name="export_channel_title">Exporteren voltooid</string>
     <string name="new_updates_channel_title">Nieuwe updates</string>
     <string name="ongoing_channel_title">Huidige downloads</string>
     <string name="update_failed_channel_title">Update mislukt</string>
-    <string name="info_dialog_title">Wist u dat?</string>
-    <string name="info_dialog_message">LineageOS updates zijn volledige installatiepakketten. Dat betekent dat u altijd alleen de nieuwste update hoeft te installeren, zelfs als u een paar updates overslaat!</string>
-    <string name="info_dialog_ok">Bedankt voor de informatie!</string>
-    <string name="local_update_import">Lokale update</string>
     <string name="local_update_import_progress">Importeer lokale update\u2026</string>
     <string name="local_update_import_success">%1$s is geïmporteerd. Wilt u het installeren?</string>
     <string name="local_update_import_failure">Importeren van lokale update is mislukt</string>

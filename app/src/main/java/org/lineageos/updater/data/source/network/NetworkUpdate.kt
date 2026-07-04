@@ -76,7 +76,7 @@ fun NetworkUpdate.toUpdate(): Update {
         downloadUrl = file.url,
         version = version,
         osPatchLevel = file.osPatchLevel,
-        osSdkLevel = file.osSdkLevel,
+        osSdkLevel = file.osSdkLevel ?: 0,
         payloadMetadataOffset = payloadMetadataRange?.offset,
         payloadMetadataSize = payloadMetadataRange?.size,
         payloadOffset = payloadRange?.offset,

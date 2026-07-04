@@ -28,6 +28,8 @@ object DeviceInfoUtils : SettingsLibDeviceInfoUtils() {
 
     val buildSecurityPatch: String = Build.VERSION.SECURITY_PATCH
 
+    val sdkLevel: Int = Build.VERSION.SDK_INT
+
     @JvmStatic
     val buildDateTimestamp: Long = SystemProperties.getLong(PROP_BUILD_DATE, 0)
 

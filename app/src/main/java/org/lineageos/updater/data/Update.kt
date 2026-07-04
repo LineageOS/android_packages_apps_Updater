@@ -18,7 +18,7 @@ data class Update(
     val installProgress: Int = 0,
     val name: String = "",
     val osPatchLevel: String? = null,
-    val osSdkLevel: Int? = null,
+    val osSdkLevel: Int,
     val payloadMetadataOffset: Long? = null,
     val payloadMetadataSize: Long? = null,
     val payloadOffset: Long? = null,
@@ -42,7 +42,7 @@ data class Update(
     fun withInstallProgress(v: Int) = copy(installProgress = v)
     fun withName(v: String) = copy(name = v)
     fun withOsPatchLevel(v: String?) = copy(osPatchLevel = v)
-    fun withOsSdkLevel(v: Int?) = copy(osSdkLevel = v)
+    fun withOsSdkLevel(v: Int) = copy(osSdkLevel = v)
     fun withProgress(v: Int) = copy(progress = v)
     fun withSpeed(v: Long) = copy(speed = v)
     fun withStatus(v: UpdateStatus) = copy(status = v)
@@ -63,7 +63,7 @@ data class Update(
         private var installProgress: Int = 0,
         private var name: String = "",
         private var osPatchLevel: String? = null,
-        private var osSdkLevel: Int? = null,
+        private var osSdkLevel: Int = 0,
         private var payloadMetadataOffset: Long? = null,
         private var payloadMetadataSize: Long? = null,
         private var payloadOffset: Long? = null,
@@ -97,7 +97,7 @@ data class Update(
         fun setInstallProgress(v: Int) = apply { installProgress = v }
         fun setName(v: String) = apply { name = v }
         fun setOsPatchLevel(v: String?) = apply { osPatchLevel = v }
-        fun setOsSdkLevel(v: Int?) = apply { osSdkLevel = v }
+        fun setOsSdkLevel(v: Int) = apply { osSdkLevel = v }
         fun setPayloadMetadataOffset(v: Long?) = apply { payloadMetadataOffset = v }
         fun setPayloadMetadataSize(v: Long?) = apply { payloadMetadataSize = v }
         fun setPayloadOffset(v: Long?) = apply { payloadOffset = v }

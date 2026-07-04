@@ -14,7 +14,6 @@ import org.lineageos.updater.data.source.local.UpdatesLocalDataSource
 import org.lineageos.updater.data.source.network.UpdatesNetworkDataSource
 import org.lineageos.updater.data.source.network.toUpdate
 import org.lineageos.updater.deviceinfo.DeviceInfoUtils
-import org.lineageos.updater.misc.Utils
 import org.lineageos.updater.notifications.NotificationHelper
 import org.lineageos.updater.util.NetworkMonitor
 import java.io.IOException
@@ -92,12 +91,7 @@ class UpdatesRepository(
             return false
         }
 
-        if (!Utils.compareVersions(
-                update.version,
-                DeviceInfoUtils.buildVersion,
-                true, /* DeviceInfoUtils.isMajorUpdateAllowed */
-            )
-        ) {
+        if (update.osSdkLevel < DeviceInfoUtils.sdkLevel) {
             Log.d(TAG, "${update.name} is older than current Android version")
             return false
         }

@@ -38,22 +38,6 @@ public class Utils {
         return new File(context.getString(R.string.download_path));
     }
 
-    public static boolean compareVersions(String a, String b, boolean allowMajorUpgrades) {
-        try {
-            int majorA = Integer.parseInt(a.split("\\.")[0]);
-            int minorA = Integer.parseInt(a.split("\\.")[1]);
-
-            int majorB = Integer.parseInt(b.split("\\.")[0]);
-            int minorB = Integer.parseInt(b.split("\\.")[1]);
-
-            // Return early and allow if we allow major version upgrades
-            return (allowMajorUpgrades && majorA > majorB)
-                    || (majorA == majorB && minorA >= minorB);
-        } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
-            return false;
-        }
-    }
-
     public static void triggerUpdate(Context context, String downloadId) {
         final Intent intent = new Intent(context, UpdaterService.class);
         intent.setAction(UpdaterService.ACTION_INSTALL_UPDATE);

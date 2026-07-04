@@ -12,6 +12,7 @@ import org.lineageos.updater.R
 import org.lineageos.updater.controller.UpdaterController
 import org.lineageos.updater.data.Update
 import org.lineageos.updater.data.UpdateStatus
+import org.lineageos.updater.deviceinfo.DeviceInfoUtils
 import org.lineageos.updater.updates.action.UpdateAction
 import org.lineageos.updater.updates.action.UpdateActionType
 import org.lineageos.updater.updates.action.UpdateActions
@@ -175,10 +176,9 @@ class UpdateItemStateMapper(
             status = state.titleRes?.let { context.getString(it) } ?: "",
             fileSize = Formatter.formatShortFileSize(context, update.fileSize),
             androidUpdateInfo = when {
-                update.osSdkLevel == null -> ""
-                update.osSdkLevel > Build.VERSION.SDK_INT ->
+                update.osSdkLevel > DeviceInfoUtils.sdkLevel ->
                     context.getString(R.string.list_major_android_upgrade)
-                update.osSdkLevel == Build.VERSION.SDK_INT ->
+                update.osSdkLevel == DeviceInfoUtils.sdkLevel ->
                     context.getString(
                         R.string.header_android_version,
                         Build.VERSION.RELEASE_OR_PREVIEW_DISPLAY,

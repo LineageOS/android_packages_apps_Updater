@@ -25,7 +25,7 @@ import androidx.lifecycle.ViewModelProvider;
 import org.lineageos.updater.controller.UpdaterController;
 import org.lineageos.updater.controller.UpdaterService;
 import org.lineageos.updater.data.Update;
-import org.lineageos.updater.misc.Utils;
+import org.lineageos.updater.util.StringUtil;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -164,17 +164,12 @@ public class UpdatesActivity extends UpdatesScaffoldActivity implements UpdateIm
             return;
         }
 
-        final Runnable deleteUpdate = () -> UpdaterController.getInstance(this)
-                .deleteUpdate(update.getDownloadId());
-
         new AlertDialog.Builder(this)
-                .setTitle(R.string.local_update_import)
-                .setMessage(getString(R.string.local_update_import_success, update.getVersion()))
-                .setPositiveButton(R.string.local_update_import_install, (dialog, which) -> {
-                    Utils.triggerUpdate(this, update.getDownloadId());
-                })
-                .setNegativeButton(android.R.string.cancel, (dialog, which) -> deleteUpdate.run())
-                .setOnCancelListener((dialog) -> deleteUpdate.run())
+                .setTitle(R.string.local_update_import_success_title)
+                .setMessage(getString(
+                        R.string.local_update_import_success_message,
+                        StringUtil.formatBuildDate(this, update.getTimestamp())))
+                .setPositiveButton(android.R.string.ok, null)
                 .show();
     }
 

@@ -184,8 +184,8 @@
     <string name="local_update_import">Install local update</string>
     <string name="local_update_import_summary">Select update file to install</string>
     <string name="local_update_import_progress">Importing local update\u2026</string>
-    <string name="local_update_import_success">%1$s has been imported. Do you want to install it?</string>
+    <string name="local_update_import_success_title">Update imported</string>
+    <string name="local_update_import_success_message">Build date: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nTap the imported update to view available actions.</string>
     <string name="local_update_import_failure">Failed to import local update</string>
-    <string name="local_update_import_install">Install</string>
     <string name="local_update_name">Local update</string>
 </resources>

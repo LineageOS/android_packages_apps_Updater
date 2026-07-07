@@ -65,7 +65,7 @@ class UpdateActionHandler(
             )
 
             UpdateActionType.START_INSTALL -> {
-                if (update.downloadId != Update.LOCAL_ID && !InstallUtils.canInstall(update)) {
+                if (!InstallUtils.canInstall(update)) {
                     return
                 }
 

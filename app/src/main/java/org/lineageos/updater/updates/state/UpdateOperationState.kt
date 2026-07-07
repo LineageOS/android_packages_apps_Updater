@@ -103,7 +103,7 @@ data class UpdateOperationState(
                 phase = phase,
                 isBusy = controller.isBusy,
                 isFullyDownloaded = isLocal || isFullyDownloaded,
-                canInstall = InstallUtils.canInstall(update) || isLocal,
+                canInstall = InstallUtils.canInstall(update),
                 canExport = phase == UpdateOperationPhase.VERIFIED && !isLocal,
                 canDelete = canDelete,
 

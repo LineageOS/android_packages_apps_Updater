@@ -188,6 +188,10 @@ public class UpdaterService extends Service {
                 Log.e(TAG, "Update not found: " + downloadId);
                 return START_NOT_STICKY;
             }
+            if (!InstallUtils.canInstall(update)) {
+                Log.e(TAG, "Update blocked: " + downloadId);
+                return START_NOT_STICKY;
+            }
             boolean canStreamUpdate = InstallUtils.canStreamUpdate(update,
                     mUserPreferencesRepository.getStreamUpdatesBlocking());
             if (!canStreamUpdate && !update.getStatus().hasVerifiedPackage()) {

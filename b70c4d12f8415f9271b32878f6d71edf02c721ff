@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ad86168_0a9a3edd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-07-08T18:26:58Z",
+      "side": 1,
+      "message": "doesn\u0027t this remove the ability entirely?\n\nMany downstreams or self builders ship GMS or don\u0027t support GMS at all - so they /can/ do major upgrades - doesn\u0027t this remove the logic for that check?",
+      "revId": "b70c4d12f8415f9271b32878f6d71edf02c721ff",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

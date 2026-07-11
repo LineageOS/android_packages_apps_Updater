@@ -52,6 +52,23 @@
       "parentUuid": "3c5c9dcb_66762489",
       "revId": "b70c4d12f8415f9271b32878f6d71edf02c721ff",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c660968_effa3bb1",
+        "filename": "app/src/main/java/org/lineageos/updater/data/UpdatesRepository.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2026-07-11T15:49:40Z",
+      "side": 1,
+      "message": "was this intended?",
+      "revId": "b70c4d12f8415f9271b32878f6d71edf02c721ff",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

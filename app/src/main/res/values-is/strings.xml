@@ -61,7 +61,7 @@
     <string name="snack_download_failed">Niðurhal mistókst. Athugaðu internettenginguna og reyndu aftur síðar.</string>
     <string name="snack_download_verification_failed">Sannvottun uppfærslu mistókst.</string>
     <string name="snack_download_verified">Niðurhali er lokið.</string>
-    <string name="snack_update_not_installable">Þessa uppfærslu er ekki gægt að setja upp á þessari byggingarútgáfu.</string>
+    <string name="snack_update_not_installable">Þessa uppfærslu er ekki gægt að setja upp á þessari samsetningu.</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
     <string name="header_last_updates_check">Síðast kannað: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>

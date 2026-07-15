@@ -39,7 +39,8 @@
     <string name="dialog_prepare_zip_message">Preparazione preliminare dell\'aggiornamento</string>
     <string name="dialog_battery_low_title">Batteria scarica</string>
     <string name="dialog_battery_low_message_pct">Il livello della batteria è troppo basso, è necessario almeno il <xliff:g id="percent_discharging">%1$d</xliff:g>%% di batteria per continuare, oppure il <xliff:g id="percent_charging">%2$d</xliff:g>%% se il dispositivo è in carica.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Esegui i seguenti comandi e ritenta l\'aggiornamento:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Esegui i seguenti comandi e ritenta l\'aggiornamento:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot

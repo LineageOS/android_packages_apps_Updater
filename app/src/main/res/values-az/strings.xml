@@ -39,7 +39,8 @@
     <string name="dialog_prepare_zip_message">Güncəlləməyə ilkin hazırlıq</string>
     <string name="dialog_battery_low_title">Zəif batareya</string>
     <string name="dialog_battery_low_message_pct">Batareya səviyyəsi çox aşağıdır, davam etmək üçün ən az <xliff:g id="percent_discharging">%1$d</xliff:g>%% olmalıdır, <xliff:g id="percent_charging">%2$d</xliff:g>%% dolur.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Lütfən aşağıdakı əmrləri işə salın və yenidən güncəlləməyə çalışın:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Lütfən aşağıdakı əmrləri işə salın və yenidən güncəlləməyə çalışın:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot

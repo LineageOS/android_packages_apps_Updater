@@ -39,7 +39,8 @@
     <string name="dialog_prepare_zip_message">Gjer klart for oppdatering</string>
     <string name="dialog_battery_low_title">Lite straum på batteriet</string>
     <string name="dialog_battery_low_message_pct">Batterinivået er for lågt. Du treng minst <xliff:g id="percent_discharging">%1$d</xliff:g> %% batteri for å halda fram, eller <xliff:g id="percent_charging">%2$d</xliff:g> %% om du ladar.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Køyr desse kommandoane og prøv oppdateringa på nytt:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Køyr desse kommandoane og prøv oppdateringa på nytt:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot

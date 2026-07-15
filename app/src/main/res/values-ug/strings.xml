@@ -39,7 +39,8 @@
     <string name="dialog_prepare_zip_message">دەسلەپكى يېڭىلاش تەييارلىقى</string>
     <string name="dialog_battery_low_title">توكدان توكى تۆۋەن</string>
     <string name="dialog_battery_low_message_pct">توكدان توكى بەك ئاز، كەم دېگەندە %% <xliff:g id="percent_discharging">%1$d</xliff:g> توكى بولسا ئاندىن داۋاملاشتۇرالايسىز، ئۇنداق بولمىسا <xliff:g id="percent_charging">%2$d</xliff:g> توكى بولسا ئاندىن داۋاملاشتۇرالايسىز.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        تۆۋەندىكى بۇيرۇقنى ئىجرا قىلىپ يېڭىلانمىنى قايتا ئورنىتىڭ:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        تۆۋەندىكى بۇيرۇقنى ئىجرا قىلىپ يېڭىلانمىنى قايتا ئورنىتىڭ:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot

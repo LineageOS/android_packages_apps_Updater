@@ -39,7 +39,8 @@
     <string name="dialog_prepare_zip_message">Przygotowanie wstępne aktualizacji</string>
     <string name="dialog_battery_low_title">Niskim poziom baterii</string>
     <string name="dialog_battery_low_message_pct">Poziom naładowania baterii jest zbyt niski, musisz mieć co najmniej <xliff:g id="percent_discharging">%1$d</xliff:g>%% baterii lub <xliff:g id="percent_charging">%2$d</xliff:g>%% w trakcie ładowania.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Uruchom następujące polecenia i dokonaj ponownej aktualizacji:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Uruchom następujące polecenia i dokonaj ponownej aktualizacji:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot

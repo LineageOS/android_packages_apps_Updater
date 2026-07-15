@@ -39,7 +39,8 @@
     <string name="dialog_prepare_zip_message">Подготовка обновления</string>
     <string name="dialog_battery_low_title">Низкий заряд батареи</string>
     <string name="dialog_battery_low_message_pct">Заряд батареи слишком мал. Для продолжения требуется не менее <xliff:g id="percent_discharging">%1$d</xliff:g>%% или более <xliff:g id="percent_charging">%2$d</xliff:g>%% при подключенном зарядном устройстве.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Выполните следующие команды и повторите попытку обновления:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Выполните следующие команды и повторите попытку обновления:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot

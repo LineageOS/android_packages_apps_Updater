@@ -71,8 +71,6 @@
     <string name="ongoing_channel_title">Laufende Downloads</string>
     <string name="update_failed_channel_title">Update fehlgeschlagen</string>
     <string name="local_update_import_progress">Lokales Update wird importiert\u2026</string>
-    <string name="local_update_import_success">%1$s wurde importiert. Möchtest du es installieren?</string>
     <string name="local_update_import_failure">Fehler beim Importieren des lokalen Updates</string>
-    <string name="local_update_import_install">Installieren</string>
     <string name="local_update_name">Lokales Update</string>
 </resources>

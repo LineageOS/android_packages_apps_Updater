@@ -71,8 +71,6 @@
     <string name="ongoing_channel_title">داگرتنە بەردەوامەکان</string>
     <string name="update_failed_channel_title">نوێکردنەوە سەرکەوتوو نەبوو</string>
     <string name="local_update_import_progress">هێنانی نوێکاری ناوخۆیی\u2026</string>
-    <string name="local_update_import_success">%1$s هێنرایە ناوەوە. دەتەوێت دایبمەزرێنیت؟</string>
     <string name="local_update_import_failure">هێنانی نوێکاری ناوخۆیی سەرکەوتوو نەبوو</string>
-    <string name="local_update_import_install">دامەزراندن</string>
     <string name="local_update_name">نوێکاری ناوخۆیی</string>
 </resources>

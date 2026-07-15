@@ -22,7 +22,8 @@
     <string name="dialog_prepare_zip_message">예비 업데이트 준비</string>
     <string name="dialog_battery_low_title">배터리 부족</string>
     <string name="dialog_battery_low_message_pct">배터리 수준이 너무 낮습니다. 계속하려면 방전 중일 경우 <xliff:g id="percent_discharging">%1$d</xliff:g>%% 이상, 충전 중일 경우 <xliff:g id="percent_charging">%2$d</xliff:g>%% 이상의 배터리 수준이 필요합니다.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        다음 명령어를 실행한 뒤 업데이트를 다시 시도해 주세요:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        다음 명령어를 실행한 뒤 업데이트를 다시 시도해 주세요:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -71,8 +72,6 @@
     <string name="ongoing_channel_title">진행 중인 다운로드</string>
     <string name="update_failed_channel_title">업데이트 실패</string>
     <string name="local_update_import_progress">로컬 업데이트 가져오는 중\u2026</string>
-    <string name="local_update_import_success">%1$s 업데이트를 가져왔습니다. 설치하시겠습니까?</string>
     <string name="local_update_import_failure">로컬 업데이트를 가져오지 못했습니다.</string>
-    <string name="local_update_import_install">설치</string>
     <string name="local_update_name">로컬 업데이트</string>
 </resources>

@@ -28,7 +28,8 @@
     <string name="dialog_prepare_zip_message">Preparação preliminar de atualização</string>
     <string name="dialog_battery_low_title">Bateria fraca</string>
     <string name="dialog_battery_low_message_pct">O nível da bateria está muito baixo, é preciso de pelo menos <xliff:g id="percent_discharging">%1$d</xliff:g>%% de bateria para continuar, ou <xliff:g id="percent_charging">%2$d</xliff:g>%% se estiver carregando.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Execute os seguintes comandos e tente atualizar novamente:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Execute os seguintes comandos e tente atualizar novamente:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -125,8 +126,6 @@
     <string name="local_update_import">Instalar atualização local</string>
     <string name="local_update_import_summary">Selecione um arquivo de atualização para instalar</string>
     <string name="local_update_import_progress">Importando atualização local\u2026</string>
-    <string name="local_update_import_success">%1$s foi importado. Você quer instalá-lo?</string>
     <string name="local_update_import_failure">Falha ao importar a atualização local</string>
-    <string name="local_update_import_install">Instalar</string>
     <string name="local_update_name">Atualização local</string>
 </resources>

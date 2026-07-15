@@ -85,6 +85,8 @@
     <string name="list_security_update">עדכון אבטחה: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
     <string name="list_major_android_upgrade">שדרוג אנדרואיד משמעותי</string>
     <string name="list_full_install">התקנה מלאה: בטוח להתקין על כל התקנה קודמת</string>
+    <string name="list_major_upgrade_recovery_install">עדכוני גרסה משמעותיים של <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> מחייבים התקנה ידנית. נא לעיין במדריך המיועד למכשירך בשביל להמשיך.</string>
+    <string name="list_downgrade_blocked">גרסת בנייה זו ישנה יותר מהגרסה המותקנת ולא ניתן לעבור אליה.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> מתוך <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> מתוך <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">מאמת עדכון</string>
@@ -95,6 +97,7 @@
     <string name="action_resume">המשך</string>
     <string name="action_install">התקנה</string>
     <string name="action_info">מידע</string>
+    <string name="action_open_guide">פתיחת המדריך</string>
     <string name="action_delete">מחיקה</string>
     <string name="confirm_cancel_dialog_title">ביטול הורדה</string>
     <string name="confirm_cancel_dialog_message"> לבטל את ההורדה ולמחוק את הקובץ?</string>
@@ -124,8 +127,8 @@
     <string name="local_update_import">התקנת עדכון מקומי</string>
     <string name="local_update_import_summary">בחירת קובץ עדכון להתקנה</string>
     <string name="local_update_import_progress">ייבוא עדכון מקומי\u2026</string>
-    <string name="local_update_import_success">ייבוא %1$s הושלם. האם ברצונך להתקין אותו?</string>
+    <string name="local_update_import_success_title">העדכון יובא</string>
+    <string name="local_update_import_success_message">תאריך גרסת הבנייה: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nהקשה על העדכון שיובא תציג את הפעולות הזמינות.</string>
     <string name="local_update_import_failure">ייבוא עדכון מקומי נכשל</string>
-    <string name="local_update_import_install">התקנה</string>
     <string name="local_update_name">עדכון מקומי</string>
 </resources>

@@ -72,8 +72,6 @@ illetve, ha éppen tölt, akkor még <xliff:g id="percent_charging">%2$d</xliff:
     <string name="ongoing_channel_title">Folyamatban lévő letöltések</string>
     <string name="update_failed_channel_title">A frissítés sikertelen</string>
     <string name="local_update_import_progress">Helyi frissítés importálása\u2026</string>
-    <string name="local_update_import_success">%1$s importálva lett. Kívánja telepíteni?</string>
     <string name="local_update_import_failure">Nem sikerült importálni a helyi frissítést</string>
-    <string name="local_update_import_install">Telepítés</string>
     <string name="local_update_name">Helyi frissítés</string>
 </resources>

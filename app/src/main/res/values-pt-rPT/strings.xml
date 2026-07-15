@@ -28,7 +28,8 @@
     <string name="dialog_prepare_zip_message">Preparação preliminar de atualização</string>
     <string name="dialog_battery_low_title">Bateria fraca</string>
     <string name="dialog_battery_low_message_pct">O nível da bateria está demasiado baixo. Precisa de, pelo menos, <xliff:g id="percent_discharging">%1$d</xliff:g>%% de bateria para continuar, <xliff:g id="percent_charging">%2$d</xliff:g>%% se estiver a carregar.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Por favor, execute os seguintes comandos e tente novamente a atualização:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Por favor, execute os seguintes comandos e tente novamente a atualização:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -86,6 +87,8 @@
     <string name="list_security_update">Atualização de segurança: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
     <string name="list_major_android_upgrade">Atualização principal do Android</string>
     <string name="list_full_install">Instalação completa: Segura para instalar sobre qualquer compilação anterior</string>
+    <string name="list_major_upgrade_recovery_install">As atualizações principais de <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> devem ser instaladas manualmente. Consulte o guia do seu dispositivo para continuar.</string>
+    <string name="list_downgrade_blocked">Esta compilação é mais antiga do que o sistema instalado e não pode ser aplicada.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">A verificar atualização</string>
@@ -96,6 +99,7 @@
     <string name="action_resume">Retomar</string>
     <string name="action_install">Instalar</string>
     <string name="action_info">Informações</string>
+    <string name="action_open_guide">Abrir o guia</string>
     <string name="action_delete">Eliminar</string>
     <string name="confirm_cancel_dialog_title">Cancelar transferência</string>
     <string name="confirm_cancel_dialog_message">Cancelar a transferência e eliminar o ficheiro?</string>
@@ -125,8 +129,8 @@
     <string name="local_update_import">Instalar atualização local</string>
     <string name="local_update_import_summary">Selecione o ficheiro de atualização a instalar</string>
     <string name="local_update_import_progress">A importar a atualização local\u2026</string>
-    <string name="local_update_import_success">%1$s foi importada. Pretende instalar?</string>
+    <string name="local_update_import_success_title">Atualização importada</string>
+    <string name="local_update_import_success_message">Data de compilação: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nToque na atualização importada para ver as ações disponíveis.</string>
     <string name="local_update_import_failure">Falha ao importar a atualização local</string>
-    <string name="local_update_import_install">Instalar</string>
     <string name="local_update_name">Atualização local</string>
 </resources>

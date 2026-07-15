@@ -5,6 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">இற்றையம்</string>
+    <string name="display_name">முறைமையிற்றை</string>
     <string name="verification_failed_notification">இற்றைத்தேறாமை</string>
     <string name="verifying_download_notification">இற்றைத்தேர்கிறது</string>
     <string name="downloading_notification">இறங்குகிறது</string>
@@ -12,11 +13,16 @@
     <string name="download_paused_error_notification">இறக்கப்பிழை</string>
     <string name="download_completed_notification">இறக்கமுற்று</string>
     <string name="download_starting_notification">இறக்கத்தொடக்கம்</string>
+    <string name="download_switch_confirm_title">நடைபெறுபதிவிறக்கத்தை நிறுத்தவா?</string>
+    <string name="download_switch_confirm_message">பிறிது இற்றை பதிவிறக்கமாகிறது, இது தொடங்கின் அதுநிற்கும்.</string>
     <string name="update_failed_notification">இற்றைத்தோல்வி</string>
     <string name="installation_suspended_notification">நிறுவலொடுக்கம்</string>
     <string name="new_updates_found_title">புதுஇற்றை</string>
+    <string name="new_updates_found_summary">கிடைக்கும் இற்றை காணத்தட்டுக</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="installing_update">முறைமையிற்றை நிறுவப்படுகிறது</string>
     <string name="installing_update_error">நிறுவற்பிழை</string>
+    <string name="installing_update_finished">இற்றை மீட்டியக்கநிலுவை</string>
     <string name="finalizing_package">நிறுவல்முடித்தல்</string>
     <string name="preparing_ota_first_boot">முதலியக்கவமைப்பு</string>
     <string name="dialog_prepare_zip_message">முன்னியக்கஇற்றை</string>
@@ -29,6 +35,12 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">OverlayFS ஏற்றத்திலெனின் இற்றை நிறுவவியலாது</string>
     <string name="reboot">மறுதொடக்கம்</string>
+    <string name="menu_preferences">முறைமையிற்றை விருப்பம்</string>
+    <string name="preferences_summary">ஒத்திசைத்துப் பதிவிறக்கிநிறுவு</string>
+    <string name="check_for_updates">இற்றை சரிபார்</string>
+    <string name="checking_for_updates">இற்றை சரிபார்த்தல்</string>
+    <string name="check_your_internet_connection">வலைத்தொடர்பு நோக்குக</string>
+    <string name="updates_check_failed">இற்றைச்சரிபார்ப்புத் தோற்றது, பின்மீட்டியக்குக.</string>
     <string name="menu_delete_update">நீக்கு</string>
     <string name="menu_export_update">இற்றையேற்று</string>
     <string name="menu_metered_network_warning">அளவிடப்பட்ட பிணைய எச்சரிக்கை</string>
@@ -71,8 +83,6 @@
     <string name="ongoing_channel_title">நடைபெறும் பதிவிறக்கங்கள்</string>
     <string name="update_failed_channel_title">இற்றை தோல்வியுற்றது</string>
     <string name="local_update_import_progress">உள்ளக இற்றை இறக்குமதி செய்யப்படுகிறது\u2026</string>
-    <string name="local_update_import_success">%1$s இறக்குமதி செய்யப்பட்டது. அதனை நிறுவ வேண்டுமா?</string>
     <string name="local_update_import_failure">உள்ளக இற்றை இறக்குமதி தோல்வியுற்றது</string>
-    <string name="local_update_import_install">நிறுவுக</string>
     <string name="local_update_name">உள்ளக இற்றை</string>
 </resources>

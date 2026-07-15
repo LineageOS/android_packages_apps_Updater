@@ -72,8 +72,6 @@ Dëshironi të vazhdoni?</string>
     <string name="ongoing_channel_title">Shkarkimet në proces</string>
     <string name="update_failed_channel_title">Përditësimi dështoi</string>
     <string name="local_update_import_progress">Përditësimi lokal po importohet\u2026</string>
-    <string name="local_update_import_success">%1$s është importuar. Dëshiron ta instalosh?</string>
     <string name="local_update_import_failure">Importimi i përditësimit lokal dështoi</string>
-    <string name="local_update_import_install">Instalo</string>
     <string name="local_update_name">Përditësim lokal</string>
 </resources>

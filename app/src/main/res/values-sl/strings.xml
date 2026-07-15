@@ -6,7 +6,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Posodobilnik</string>
     <string name="display_name">Sistemske posodobitve</string>
-    <string name="verification_failed_notification">Preverjanje je spodletelo</string>
+    <string name="verification_failed_notification">Preverjanje ni uspelo</string>
     <string name="verifying_download_notification">Preverjanje posodobitve</string>
     <string name="downloading_notification">Prenašanje</string>
     <string name="download_paused_notification">Prenos v premoru</string>
@@ -15,7 +15,7 @@
     <string name="download_starting_notification">Začetek prenosa</string>
     <string name="download_switch_confirm_title">Začasno ustavi aktivni prenos?</string>
     <string name="download_switch_confirm_message">Druga posodobitev se trenutno prenaša. Začetek te bo začasno ustavila drugo.</string>
-    <string name="update_failed_notification">Posodobitev je spodletela</string>
+    <string name="update_failed_notification">Posodobitev ni uspela</string>
     <string name="installation_suspended_notification">Namestitev začasno ustavljena</string>
     <string name="new_updates_found_title">Nove posodobitve</string>
     <string name="new_updates_found_summary">Tapnite za ogled razpoložljivih posodobitev</string>
@@ -40,7 +40,7 @@
     <string name="check_for_updates">Preveri za posodobitve</string>
     <string name="checking_for_updates">Preverjanje za posodobitve</string>
     <string name="check_your_internet_connection">Preverite internetno povezavo</string>
-    <string name="updates_check_failed">Preverjanje za posodobitev je spodletela. Poskusite znova kasneje.</string>
+    <string name="updates_check_failed">Preverjanje za posodobitev ni uspelo. Poskusite znova kasneje.</string>
     <string name="header_last_updates_check_time">Zadnje preverjanje:  <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
     <string name="header_last_updates_check">Zadnje preverjanje: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="pref_category_background_sync">Sinhronizacija v ozadju</string>
@@ -64,11 +64,11 @@
     <string name="menu_ab_perf_mode_summary">Pospeši posodobitve na račun zmogljivosti naprave</string>
     <string name="menu_ab_perf_mode_summary_charging">Omogoči samodejno med polnjenjem iz omrežnega polnilnika</string>
     <string name="menu_update_recovery">Posodobi obnovitev</string>
-    <string name="menu_update_recovery_summary">Posodobi obnovitev skupaj z OS</string>
+    <string name="menu_update_recovery_summary">Posodobi obnovitev skupaj z OS-om</string>
     <string name="snack_updates_found">Najdene nove posodobitve</string>
     <string name="snack_no_updates_found">Ni najdenih novih posodobitev</string>
-    <string name="snack_download_failed">Prenos je spodletel. Preverite svojo internetno povezavo in poskusite znova kasneje.</string>
-    <string name="snack_download_verification_failed">Preverjanje posodobitve je spodletelo.</string>
+    <string name="snack_download_failed">Prenos ni uspel. Preverite svojo internetno povezavo in poskusite znova kasneje.</string>
+    <string name="snack_download_verification_failed">Preverjanje posodobitve ni uspelo.</string>
     <string name="snack_download_verified">Prenos končan.</string>
     <string name="snack_update_not_installable">Te posodobitve ni mogoče namestiti preko trenutne izgradnje.</string>
     <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
@@ -86,6 +86,8 @@
     <string name="list_security_update">Varnostna posodobitev: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
     <string name="list_major_android_upgrade">Večja Android posodobitev</string>
     <string name="list_full_install">Polna namestitev: Varno za namestitev prek katere koli izgradnje</string>
+    <string name="list_major_upgrade_recovery_install">Večje  <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> nadgradnje različice morajo biti nameščene ročno. Obrnite se na vodič za vašo napravo za nadaljevanje.</string>
+    <string name="list_downgrade_blocked">Ta izgradnja je starejša od nameščenega sistema in je ni mogoče uveljaviti.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> od <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Preverjanje posodobitve</string>
@@ -95,7 +97,8 @@
     <string name="action_pause">Premor</string>
     <string name="action_resume">Nadaljuj</string>
     <string name="action_install">Namesti</string>
-    <string name="action_info">Podatki</string>
+    <string name="action_info">Informacije</string>
+    <string name="action_open_guide">Odpri vodič</string>
     <string name="action_delete">Izbriši</string>
     <string name="confirm_cancel_dialog_title">Prekliči prenos</string>
     <string name="confirm_cancel_dialog_message">Prekliči prenos in izbriši datoteko?</string>
@@ -121,12 +124,12 @@
     <string name="export_channel_title">Zaključek izvoza</string>
     <string name="new_updates_channel_title">Nove posodobitve</string>
     <string name="ongoing_channel_title">Prenosi v teku</string>
-    <string name="update_failed_channel_title">Posodobitev je spodletela</string>
+    <string name="update_failed_channel_title">Posodobitev ni uspela</string>
     <string name="local_update_import">Namesti lokalno posodobitev</string>
     <string name="local_update_import_summary">Izberite posodobitveno datoteko za namestitev</string>
     <string name="local_update_import_progress">Uvažanje lokalne posodobitve \u2026</string>
-    <string name="local_update_import_success">%1$s je bila uvožena. Ali jo želite namestiti?</string>
-    <string name="local_update_import_failure">Uvoz lokalne posodobitve je spodletel</string>
-    <string name="local_update_import_install">Namesti</string>
+    <string name="local_update_import_success_title">Posodobitev uvožena</string>
+    <string name="local_update_import_success_message">Datum izgradnje: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nTapnite uvoženo posodobitev za ogled razpoložljivih dejanj.</string>
+    <string name="local_update_import_failure">Uvoz lokalne posodobitve ni uspel</string>
     <string name="local_update_name">Lokalna posodobitev</string>
 </resources>

@@ -70,8 +70,6 @@
     <string name="ongoing_channel_title">Huidige downloads</string>
     <string name="update_failed_channel_title">Update mislukt</string>
     <string name="local_update_import_progress">Importeer lokale update\u2026</string>
-    <string name="local_update_import_success">%1$s is geïmporteerd. Wilt u het installeren?</string>
     <string name="local_update_import_failure">Importeren van lokale update is mislukt</string>
-    <string name="local_update_import_install">Installeer</string>
     <string name="local_update_name">Lokale update</string>
 </resources>

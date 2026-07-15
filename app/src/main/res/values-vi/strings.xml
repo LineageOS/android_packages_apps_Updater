@@ -84,8 +84,10 @@
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_update_size">Kích thước cập nhật: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
     <string name="list_security_update">Cập nhật bảo mật: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
-    <string name="list_major_android_upgrade">Bản nâng cấp Android lớn</string>
+    <string name="list_major_android_upgrade">Bản nâng cấp Android chính</string>
     <string name="list_full_install">Cài đặt đầy đủ: An toàn khi cài đè lên bản dựng trước đó</string>
+    <string name="list_major_upgrade_recovery_install">Việc nâng cấp phiên bản chính <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> phải được cài đặt thủ công. Vui lòng tham khảo hướng dẫn sử dụng thiết bị của bạn để tiếp tục.</string>
+    <string name="list_downgrade_blocked">Phiên bản này cũ hơn hệ thống đã cài đặt và không thể được áp dụng.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> của <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> của <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Đang xác thực bản cập nhật</string>
@@ -96,6 +98,7 @@
     <string name="action_resume">Tiếp tục</string>
     <string name="action_install">Cài đặt</string>
     <string name="action_info">Thông tin</string>
+    <string name="action_open_guide">Mở hướng dẫn</string>
     <string name="action_delete">Xóa</string>
     <string name="confirm_cancel_dialog_title">Hủy bỏ tải xuống</string>
     <string name="confirm_cancel_dialog_message">Hủy tải xuống và xóa tệp tin?</string>
@@ -125,8 +128,8 @@
     <string name="local_update_import">Cài đặt bản cập nhật cục bộ</string>
     <string name="local_update_import_summary">Chọn tệp cập nhật để cài đặt</string>
     <string name="local_update_import_progress">Đang nhập bản cập nhật cục bộ\u2026</string>
-    <string name="local_update_import_success">%1$s đã được nhập. Bạn có muốn cài đặt nó không?</string>
+    <string name="local_update_import_success_title">Đã nhập bản cập nhật</string>
+    <string name="local_update_import_success_message">Ngày dựng: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nNhấn vào bản cập nhật đã nhập để xem các hành động có sẵn.</string>
     <string name="local_update_import_failure">Không nhập được bản cập nhật cục bộ</string>
-    <string name="local_update_import_install">Cài đặt</string>
     <string name="local_update_name">Cập nhật cục bộ</string>
 </resources>

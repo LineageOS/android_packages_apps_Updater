@@ -28,7 +28,8 @@
     <string name="dialog_prepare_zip_message">دەسلەپكى يېڭىلاش تەييارلىقى</string>
     <string name="dialog_battery_low_title">توكدان توكى تۆۋەن</string>
     <string name="dialog_battery_low_message_pct">توكدان توكى بەك ئاز، كەم دېگەندە %% <xliff:g id="percent_discharging">%1$d</xliff:g> توكى بولسا ئاندىن داۋاملاشتۇرالايسىز، ئۇنداق بولمىسا <xliff:g id="percent_charging">%2$d</xliff:g> توكى بولسا ئاندىن داۋاملاشتۇرالايسىز.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        تۆۋەندىكى بۇيرۇقنى ئىجرا قىلىپ يېڭىلانمىنى قايتا ئورنىتىڭ:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        تۆۋەندىكى بۇيرۇقنى ئىجرا قىلىپ يېڭىلانمىنى قايتا ئورنىتىڭ:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -86,6 +87,8 @@
     <string name="list_security_update">بىخەتەرلىك يېڭىلانما: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
     <string name="list_major_android_upgrade">Android نىڭ چوڭ يۈكسىلىشى</string>
     <string name="list_full_install">تولۇق ئورنىتىش: خالىغان ئالدىنقى نەشرىنىڭ ئۈستىگە بىخەتەر ئورناتقىلى بولىدۇ</string>
+    <string name="list_major_upgrade_recovery_install"><xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> نىڭ ئاساسىي يۈكسەلدۈرۈش نەشرىنى چوقۇم قولدا ئورنىتىش كېرەك. ئۈسكۈنىڭىزنىڭ يېتەكچىسىدىن پايدىلىنىپ داۋاملاشتۇرۇڭ.</string>
+    <string name="list_downgrade_blocked">بۇ نەشرى ئورنىتىلغان سىستېمىدىن كونا، قوللانغىلى بولمايدۇ.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">يېڭىلاشنى دەلىللەۋاتىدۇ</string>
@@ -96,6 +99,7 @@
     <string name="action_resume">داۋاملاشتۇر</string>
     <string name="action_install">ئورنات</string>
     <string name="action_info">ئۇچۇر</string>
+    <string name="action_open_guide">يېتەكچىنى ئاچ</string>
     <string name="action_delete">ئۆچۈر</string>
     <string name="confirm_cancel_dialog_title">چۈشۈرۈشتىن ۋاز كەچ</string>
     <string name="confirm_cancel_dialog_message">چۈشۈرۈشتىن ۋاز كېچىپ ۋە ھۆججەتنى ئۆچۈرەمدۇ؟</string>
@@ -125,8 +129,8 @@
     <string name="local_update_import">يەرلىك يېڭىلاشنى ئورنات</string>
     <string name="local_update_import_summary">ئورنىتىدىغان يېڭىلاش ھۆججىتى تاللىنىدۇ</string>
     <string name="local_update_import_progress">يەرلىك يېڭىلاشنى ئەكىرىۋاتىدۇ\u2026</string>
-    <string name="local_update_import_success">%1$s ئەكىرىلگەن. ئۇنى ئورنىتامسىز؟</string>
+    <string name="local_update_import_success_title">يېڭىلاشنى ئەكىردى</string>
+    <string name="local_update_import_success_message">ھاسىللىغان چېسلا: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nئەكىرگەن يېڭىلاش چېكىلسە ئىشلەتكىلى بولىدىغان مەشغۇلاتنى كۆرگىلى بولىدۇ.</string>
     <string name="local_update_import_failure">يەرلىك يېڭىلاشنى ئەكىرەلمىدى</string>
-    <string name="local_update_import_install">ئورنات</string>
     <string name="local_update_name">يەرلىك يېڭىلاش</string>
 </resources>

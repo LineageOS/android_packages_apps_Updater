@@ -86,6 +86,8 @@
     <string name="list_security_update">Nuashonrú slándála: &lt;xliff:g id="date" example="Jan 2026"&gt;%1$s&lt;/xliff:g&gt;%1$s&lt;/xliff:g&gt;</string>
     <string name="list_major_android_upgrade">Uasghrádú mór Android</string>
     <string name="list_full_install">Suiteáil iomlán: Sábháilte le suiteáil thar aon tógáil roimhe seo</string>
+    <string name="list_major_upgrade_recovery_install">Ní mór uasghráduithe móra ar leaganacha <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> a shuiteáil de láimh. Féach ar threoir do ghléis le leanúint ar aghaidh.</string>
+    <string name="list_downgrade_blocked">Tá an tógáil seo níos sine ná an córas suiteáilte agus ní féidir é a chur i bhfeidhm.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Nuashonrú á fhíorú</string>
@@ -96,6 +98,7 @@
     <string name="action_resume">Tosaigh arís</string>
     <string name="action_install">Suiteáil</string>
     <string name="action_info">Eolas</string>
+    <string name="action_open_guide">Oscail an treoir</string>
     <string name="action_delete">Scrios</string>
     <string name="confirm_cancel_dialog_title">Cealaigh an íoslódáil</string>
     <string name="confirm_cancel_dialog_message">An bhfuil tú ag iarraidh an íoslódáil a chealú agus an comhad a scriosadh?</string>
@@ -125,8 +128,8 @@
     <string name="local_update_import">Suiteáil nuashonrú áitiúil</string>
     <string name="local_update_import_summary">Roghnaigh comhad nuashonraithe le suiteáil</string>
     <string name="local_update_import_progress">Nuashonrú logánta á iompórtáil\u2026</string>
-    <string name="local_update_import_success">Iompórtáladh %1$s. Ar mhaith leat é a shuiteáil?</string>
+    <string name="local_update_import_success_title">Nuashonrú allmhairithe</string>
+    <string name="local_update_import_success_message">Dáta tógála:<xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nTapáil an nuashonrú allmhairithe chun na gníomhartha atá ar fáil a fheiceáil.</string>
     <string name="local_update_import_failure">Theip ar iompórtáil an nuashonrú áitiúil</string>
-    <string name="local_update_import_install">Suiteáil</string>
     <string name="local_update_name">Nuashonrú áitiúil</string>
 </resources>

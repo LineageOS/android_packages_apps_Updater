@@ -57,16 +57,16 @@
     <string name="snack_download_failed">Niðurhal mistókst. Athugaðu internettenginguna og reyndu aftur síðar.</string>
     <string name="snack_download_verification_failed">Sannvottun uppfærslu mistókst.</string>
     <string name="snack_download_verified">Niðurhali er lokið.</string>
-    <string name="snack_update_not_installable">Þessa uppfærslu er ekki gægt að setja upp á þessari byggingarútgáfu.</string>
+    <string name="snack_update_not_installable">Þessa uppfærslu er ekki gægt að setja upp á þessari samsetningu.</string>
     <string name="show_changelog">Nýlegar breytingar</string>
     <string name="header_review_updates">Yfirfara uppfærslur og nýlegar breytingar á</string>
     <string name="found_bug">Fannstu galla? Tilkynntu hann með leiðarvísi villutilkynninga:</string>
     <string name="updates_zero_state_title">Engar uppfærslur tiltækar</string>
-    <string name="updates_zero_state_description">Nýjar byggingarútgáfur fyrir þetta tæki munu birtast hér þegar þær verða tiltækar.</string>
+    <string name="updates_zero_state_description">Nýjar samsetningar fyrir þetta tæki munu birtast hér þegar þær verða tiltækar.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_major_android_upgrade">Stóruppfærsla Android</string>
-    <string name="list_full_install">Full uppsetning: Öruggt að setja upp yfir allar fyrri útgáfur</string>
+    <string name="list_full_install">Full uppsetning: Öruggt að setja upp yfir allar fyrri samsetningar</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> of <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Yfirfer uppfærslu</string>
@@ -104,7 +104,6 @@
     <string name="local_update_import">Setja inn uppfærslu af tæki</string>
     <string name="local_update_import_summary">Veldu uppfærsluskrá til að setja upp</string>
     <string name="local_update_import_progress">Flyt inn staðbundna uppfærslu\u2026</string>
-    <string name="local_update_import_success">%1$s hefur verið flutt inn. Viltu setja hana upp?</string>
     <string name="local_update_import_failure">Mistókst að flytja inn staðbundna uppfærslu</string>
     <string name="local_update_name">Staðbundin uppfærsla</string>
 </resources>

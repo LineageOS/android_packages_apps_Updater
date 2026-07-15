@@ -71,8 +71,6 @@
     <string name="ongoing_channel_title">Текущи изтегляния</string>
     <string name="update_failed_channel_title">Актуализацията прекратена</string>
     <string name="local_update_import_progress">Импортиране на локална актуализация</string>
-    <string name="local_update_import_success">%1$s беше импортирано. Искате ли да продължите с инсталацията?</string>
     <string name="local_update_import_failure">Неуспешно импортиране на локална актуализация</string>
-    <string name="local_update_import_install">Инсталирай</string>
     <string name="local_update_name">Локална актуализация</string>
 </resources>

@@ -86,6 +86,8 @@
     <string name="list_security_update">Actualizare de securitate: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
     <string name="list_major_android_upgrade">Îmbunătățire majoră Android</string>
     <string name="list_full_install">Instalare completă: Sigur de instalat peste orice versiune anterioară</string>
+    <string name="list_major_upgrade_recovery_install">Upgrade-urile majore <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> trebuie instalate manual. Consultați ghidul dispozitivului pentru a continua.</string>
+    <string name="list_downgrade_blocked">Această versiune este mai veche decât sistemul instalat și nu poate fi aplicată.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> din <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> din <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verificare actualizare</string>
@@ -96,6 +98,7 @@
     <string name="action_resume">Reluaţi</string>
     <string name="action_install">Instalați</string>
     <string name="action_info">Info</string>
+    <string name="action_open_guide">Deschide ghidul</string>
     <string name="action_delete">Ștergeți</string>
     <string name="confirm_cancel_dialog_title">Anulare descărcare</string>
     <string name="confirm_cancel_dialog_message">Anulați descărcarea și ștergeți fișierul?</string>
@@ -125,8 +128,8 @@
     <string name="local_update_import">Instalare actualizare locală</string>
     <string name="local_update_import_summary">Selectați fișierul de actualizare pentru a-l instala</string>
     <string name="local_update_import_progress">Importare actualizare locală\u2026</string>
-    <string name="local_update_import_success">%1$s a fost importată. Doriți să o instalați?</string>
+    <string name="local_update_import_success_title">Actualizare importată</string>
+    <string name="local_update_import_success_message">Data compilării: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nAtinge actualizarea importată pentru a vedea acţiunile disponibile.</string>
     <string name="local_update_import_failure">Eroare la importarea actualizării locale</string>
-    <string name="local_update_import_install">Instalați</string>
     <string name="local_update_name">Actualizare locală</string>
 </resources>

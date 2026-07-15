@@ -28,7 +28,8 @@
     <string name="dialog_prepare_zip_message">Подготовка обновления</string>
     <string name="dialog_battery_low_title">Низкий заряд батареи</string>
     <string name="dialog_battery_low_message_pct">Заряд батареи слишком мал. Для продолжения требуется не менее <xliff:g id="percent_discharging">%1$d</xliff:g>%% или более <xliff:g id="percent_charging">%2$d</xliff:g>%% при подключенном зарядном устройстве.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Выполните следующие команды и повторите попытку обновления:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Выполните следующие команды и повторите попытку обновления:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -83,20 +84,30 @@
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_update_size">Размер обновления: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">Обновление безопасности: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Большое обновление Android</string>
+    <string name="list_full_install">Полная установка: можно безопасно устанавливать поверх любой предыдущей сборки</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> из <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Проверка обновлений</string>
+    <string name="see_more">Развернуть %1$d</string>
+    <string name="see_less">Свернуть</string>
     <string name="action_download">Скачать</string>
     <string name="action_pause">Приостановить</string>
     <string name="action_resume">Возобновить</string>
     <string name="action_install">Установить</string>
     <string name="action_info">Информация</string>
+    <string name="action_open_guide">Открыть руководство</string>
     <string name="action_delete">Удалить</string>
+    <string name="confirm_cancel_dialog_title">Отменить загрузку</string>
+    <string name="confirm_cancel_dialog_message">Отменить загрузку и удалить файл?</string>
     <string name="confirm_delete_dialog_title">Удалить файл</string>
     <string name="confirm_delete_dialog_message">Удалить выбранный файл обновления?</string>
     <string name="apply_update_dialog_title">Применить обновление</string>
     <string name="apply_update_dialog_message">Будет выполнена установка <xliff:g id="update_name">%1$s</xliff:g>.\n\nПри нажатии кнопки <xliff:g id="ok">%2$s</xliff:g> устройство будет перезапущено в режиме Recovery для установки новой версии.\n\nПримечание: для использования данной возможности необходим совместимый Recovery. При возникновении ошибки обновление потребуется установить вручную.</string>
     <string name="apply_update_dialog_message_ab">Будет выполнена установка <xliff:g id="update_name">%1$s</xliff:g>.\n\nПри нажатии кнопки <xliff:g id="ok">%2$s</xliff:g> будет начата установка в фоновом режиме.\n\nПо завершении вам будет предложено перезапустить устройство.</string>
+    <string name="cancel_installation_dialog_title">Отменить установку</string>
+    <string name="cancel_installation_dialog_message">Отменить обновление системы?</string>
     <string name="label_download_url">Ссылка для скачивания</string>
     <string name="dialog_export_title">Экспорт обновлений</string>
     <string name="notification_export_success">Обновление экспортировано</string>
@@ -107,13 +118,16 @@
     <string name="update_over_metered_network_message">Вы собираетесь загрузить пакет обновления через мобильную сеть, что, вероятно, приведет к значительному расходу данных. Продолжить?</string>
     <string name="blocked_update_dialog_title">Обновление заблокировано</string>
     <string name="blocked_update_dialog_message">Эту сборку нельзя установить с помощью встроенной системы обновления. Для получения дополнительной информации ознакомьтесь с <xliff:g id="info_url">%1$s</xliff:g>.</string>
+    <string name="blocked_update_dialog_title_downgrade">Понижение версии заблокировано</string>
+    <string name="blocked_update_dialog_message_downgrade">Это обновление старше текущей версии системы и не может быть установлено.</string>
     <string name="export_channel_title">Экспорт завершен</string>
     <string name="new_updates_channel_title">Доступны обновления</string>
     <string name="ongoing_channel_title">Текущие загрузки</string>
     <string name="update_failed_channel_title">Сбой обновления</string>
+    <string name="local_update_import">Установить локальное обновление</string>
+    <string name="local_update_import_summary">Выберите файл обновления для установки</string>
     <string name="local_update_import_progress">Импорт локального обновления\u2026</string>
-    <string name="local_update_import_success">Обновление %1$s было импортировано. Установить его?</string>
+    <string name="local_update_import_success_title">Обновление импортировано</string>
     <string name="local_update_import_failure">Не удалось импортировать локальное обновление</string>
-    <string name="local_update_import_install">Установить</string>
     <string name="local_update_name">Локальное обновление</string>
 </resources>

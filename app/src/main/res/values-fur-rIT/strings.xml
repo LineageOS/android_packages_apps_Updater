@@ -22,7 +22,8 @@
     <string name="dialog_prepare_zip_message">Preparazion dal inzornament preliminâr</string>
     <string name="dialog_battery_low_title">Batarie basse</string>
     <string name="dialog_battery_low_message_pct">Il nivel de batarie al è masse bas, tu scugnis vê almancul il <xliff:g id="percent_discharging">%1$d</xliff:g>%% par continuâ, <xliff:g id="percent_charging">%2$d</xliff:g>%% se e je in cjame.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Eseguìs chescj comants e torne prove l\'inzornament:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Eseguìs chescj comants e torne prove l\'inzornament:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -71,8 +72,6 @@
     <string name="ongoing_channel_title">Discjariaments in vore</string>
     <string name="update_failed_channel_title">Inzornament falît</string>
     <string name="local_update_import_progress">Daûr a impuartâ l\'inzornament locâl\u2026</string>
-    <string name="local_update_import_success">%1$s al è stât impuartât. Desideristu instalâlu?</string>
     <string name="local_update_import_failure">Importazion inzornament locâl falide</string>
-    <string name="local_update_import_install">Instale</string>
     <string name="local_update_name">Inzornament locâl</string>
 </resources>

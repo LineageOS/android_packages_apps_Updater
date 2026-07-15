@@ -65,8 +65,6 @@
     <string name="ongoing_channel_title">Igangværende Downloads</string>
     <string name="update_failed_channel_title">Opdatering fejlede</string>
     <string name="local_update_import_progress">Importerer lokal opdatering\u2026</string>
-    <string name="local_update_import_success">%1$s er blevet importeret. Vil du installere det?</string>
     <string name="local_update_import_failure">Import af lokal opdatering mislykkedes</string>
-    <string name="local_update_import_install">Installér</string>
     <string name="local_update_name">Lokal opdatering</string>
 </resources>

@@ -22,7 +22,8 @@
     <string name="dialog_prepare_zip_message">Preparatzione preliminare de s\'atualizatzione</string>
     <string name="dialog_battery_low_title">Bateria bassa</string>
     <string name="dialog_battery_low_message_pct">Su livellu de bateria est tropu bassu, ti serbit a su mìnimu <xliff:g id="percent_discharging">%1$d</xliff:g>%% de sa bateria pro sighire, <xliff:g id="percent_charging">%2$d</xliff:g>%% si su dispositivu est in càrriga.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Esecuta is cumandos imbenientes e torra a atualizare:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Esecuta is cumandos imbenientes e torra a atualizare:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -69,8 +70,6 @@
     <string name="ongoing_channel_title">Iscarrigamentos in cursu</string>
     <string name="update_failed_channel_title">Agiornamentu fallidu</string>
     <string name="local_update_import_progress">Importatzione de s\'atualizatzione locale in cursu\u2026</string>
-    <string name="local_update_import_success">%1$s importadu. Ddu boles installare?</string>
     <string name="local_update_import_failure">Errore in s\'importatzione de s\'atualizatzione locale</string>
-    <string name="local_update_import_install">Installa</string>
     <string name="local_update_name">Atualizatzione locale</string>
 </resources>

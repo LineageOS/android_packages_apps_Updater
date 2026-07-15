@@ -65,8 +65,6 @@
     <string name="ongoing_channel_title">Llwythi sy\'n parhau</string>
     <string name="update_failed_channel_title">Methodd y diweddariad</string>
     <string name="local_update_import_progress">Yn mewnforio diweddariad lleol\u2026</string>
-    <string name="local_update_import_success">%1$s wedi ei fewnforio. Wyt ti am ei osod?</string>
     <string name="local_update_import_failure">Methwyd â mewnforio diweddariad lleol</string>
-    <string name="local_update_import_install">Gosod</string>
     <string name="local_update_name">Diweddariad lleol</string>
 </resources>

@@ -28,7 +28,8 @@
     <string name="dialog_prepare_zip_message">Przygotowanie wstępne aktualizacji</string>
     <string name="dialog_battery_low_title">Niskim poziom baterii</string>
     <string name="dialog_battery_low_message_pct">Poziom naładowania baterii jest zbyt niski, musisz mieć co najmniej <xliff:g id="percent_discharging">%1$d</xliff:g>%% baterii lub <xliff:g id="percent_charging">%2$d</xliff:g>%% w trakcie ładowania.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Uruchom następujące polecenia i dokonaj ponownej aktualizacji:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Uruchom następujące polecenia i dokonaj ponownej aktualizacji:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -86,6 +87,8 @@
     <string name="list_security_update">Aktualizacje bezpieczeństwa: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
     <string name="list_major_android_upgrade">Znacząca aktualizacja systemu Android</string>
     <string name="list_full_install">Pełna instalacja: Bezpieczna instalacja nadpisująca poprzednie wydania</string>
+    <string name="list_major_upgrade_recovery_install">Główne aktualizacje wersji <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> muszą być zainstalowane ręcznie. Aby kontynuować, zapoznaj się z instrukcjami urządzenia.</string>
+    <string name="list_downgrade_blocked">Ta wersja kompilacji jest starsza niż zainstalowany system i nie może być zastosowana.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> z <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Sprawdzanie aktualizacji</string>
@@ -96,6 +99,7 @@
     <string name="action_resume">Wznów</string>
     <string name="action_install">Zainstaluj</string>
     <string name="action_info">Informacje</string>
+    <string name="action_open_guide">Otwórz poradnik</string>
     <string name="action_delete">Usuń</string>
     <string name="confirm_cancel_dialog_title">Anuluj pobieranie</string>
     <string name="confirm_cancel_dialog_message">Czy anulować pobieranie i usunąć plik?</string>
@@ -125,8 +129,8 @@
     <string name="local_update_import">Zainstaluj aktualizację z pliku</string>
     <string name="local_update_import_summary">Wybierz plik aktualizacji do zainstalowania</string>
     <string name="local_update_import_progress">Importowanie aktualizacji lokalnej\u2026</string>
-    <string name="local_update_import_success">Zaimportowano %1$s. Czy chcesz to zainstalować?</string>
+    <string name="local_update_import_success_title">Aktualizacja zaimportowana</string>
+    <string name="local_update_import_success_message">Data kompilacji: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nDotknij importowanej aktualizacji, aby wyświetlić dostępne możliwości.</string>
     <string name="local_update_import_failure">Nie udało się zaimportować aktualizacji lokalnej</string>
-    <string name="local_update_import_install">Zainstaluj</string>
     <string name="local_update_name">Aktualizacja lokalna</string>
 </resources>

@@ -22,7 +22,8 @@
     <string name="dialog_prepare_zip_message">Tresnáu preliminar del anovamientu</string>
     <string name="dialog_battery_low_title">Queda poca batería</string>
     <string name="dialog_battery_low_message_pct">El nivel de batería ye perbaxu, tien d\'haber polo menos un <xliff:g id="percent_discharging">%1$d</xliff:g>%% de batería pa siguir, <xliff:g id="percent_charging">%2$d</xliff:g>%% si ta en carga.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Executa los comandos siguientes y volvi probar l\'anovamientu:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Executa los comandos siguientes y volvi probar l\'anovamientu:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -71,8 +72,6 @@
     <string name="ongoing_channel_title">Descargues en cursu</string>
     <string name="update_failed_channel_title">Anovamientu fallíu</string>
     <string name="local_update_import_progress">Importando l\'anovamientu llocal\u2026</string>
-    <string name="local_update_import_success">Importóse «%1$s». ¿Quies instalar l\'anovamientu?</string>
     <string name="local_update_import_failure">Hebo un fallu al importar l\'anovamientu llocal</string>
-    <string name="local_update_import_install">Instalar</string>
     <string name="local_update_name">Anovamientu llocal</string>
 </resources>

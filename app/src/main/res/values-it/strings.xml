@@ -28,7 +28,8 @@
     <string name="dialog_prepare_zip_message">Preparazione preliminare dell\'aggiornamento</string>
     <string name="dialog_battery_low_title">Batteria scarica</string>
     <string name="dialog_battery_low_message_pct">Il livello della batteria è troppo basso, è necessario almeno il <xliff:g id="percent_discharging">%1$d</xliff:g>%% di batteria per continuare, oppure il <xliff:g id="percent_charging">%2$d</xliff:g>%% se il dispositivo è in carica.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Esegui i seguenti comandi e ritenta l\'aggiornamento:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Esegui i seguenti comandi e ritenta l\'aggiornamento:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -65,6 +66,8 @@
     <string name="snack_update_not_installable">Questo aggiornamento non può essere installato sopra la versione corrente.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="Luglio 11, 2017">%2$s</xliff:g></string>
+    <string name="list_major_upgrade_recovery_install">Gli aggiornamenti della versione <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> devono essere installati manualmente. Consultare la guida del dispositivo per continuare.</string>
+    <string name="list_downgrade_blocked">Questo aggiornamento è più vecchio del sistema attualmente installato e non può essere applicato.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> di <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verifica aggiornamento</string>
@@ -73,6 +76,7 @@
     <string name="action_resume">Riprendi</string>
     <string name="action_install">Installa</string>
     <string name="action_info">Info</string>
+    <string name="action_open_guide">Apri guida</string>
     <string name="action_delete">Elimina</string>
     <string name="confirm_delete_dialog_title">Elimina file</string>
     <string name="confirm_delete_dialog_message">Eliminare il file di aggiornamento selezionato?</string>
@@ -94,8 +98,8 @@
     <string name="ongoing_channel_title">Download in corso</string>
     <string name="update_failed_channel_title">Aggiornamento fallito</string>
     <string name="local_update_import_progress">Importazione aggiornamento locale\u2026</string>
-    <string name="local_update_import_success">%1$s è stato importato. Vuoi installarlo?</string>
+    <string name="local_update_import_success_title">Aggiornamento importato</string>
+    <string name="local_update_import_success_message">Data della build: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nTocca l\'aggiornamento importato per visualizzare le azioni disponibili.</string>
     <string name="local_update_import_failure">Importazione aggiornamento locale fallita</string>
-    <string name="local_update_import_install">Installa</string>
     <string name="local_update_name">Aggiornamento locale</string>
 </resources>

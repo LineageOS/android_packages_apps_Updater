@@ -58,8 +58,6 @@
     <string name="ongoing_channel_title">Käynnissä olevat lataukset</string>
     <string name="update_failed_channel_title">Päivitys epäonnistui</string>
     <string name="local_update_import_progress">Tuodaan paikallista päivitystä\u2026</string>
-    <string name="local_update_import_success">%1$s on tuotu. Haluatko asentaa sen?</string>
     <string name="local_update_import_failure">Paikallisen päivityksen tuonti epäonnistui</string>
-    <string name="local_update_import_install">Asenna</string>
     <string name="local_update_name">Paikallinen päivitys</string>
 </resources>

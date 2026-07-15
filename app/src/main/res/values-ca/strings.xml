@@ -28,7 +28,8 @@
     <string name="dialog_prepare_zip_message">Preparació preliminar de l\'actualització</string>
     <string name="dialog_battery_low_title">Bateria baixa</string>
     <string name="dialog_battery_low_message_pct">El nivell de la bateria és massa baix, necessiteu com a mínim <xliff:g id="percent_discharging">%1$d</xliff:g>%% de bateria per continuar, <xliff:g id="percent_charging">%2$d</xliff:g>%% si el dispositiu s\'està carregant.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Executeu les ordres següents i torneu a provar l\'actualització:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Executeu les ordres següents i torneu a provar l\'actualització:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -51,41 +52,65 @@
     <string name="time_unit_week">Setmana</string>
     <string name="time_unit_month">Mes</string>
     <string name="pref_category_download_install">Baixada i instal·lació</string>
-    <string name="menu_auto_delete_updates">Elimina automàticament les actualitzacions</string>
+    <string name="menu_auto_delete_updates">Elimina automàticament les actualitzacions
+</string>
     <string name="menu_auto_delete_updates_summary">Elimina les actualitzacions baixades després de la instal·lació</string>
     <string name="menu_stream_updates">Actualitzacions en línia</string>
     <string name="menu_stream_updates_summary">Instal·la les actualitzacions durant la baixada. Desactiveu aquesta opció per desar els paquets d\'actualització per a la seva exportació.</string>
     <string name="menu_delete_update">Elimina</string>
     <string name="menu_export_update">Exporta l\'actualització</string>
+    <string name="menu_view_downloads">Mostra-ho a les baixades del <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g></string>
     <string name="menu_metered_network_warning">Avís de xarxa mesurada</string>
+    <string name="menu_metered_network_warning_summary">Avisa abans de baixar fent servir dades mòbils</string>
     <string name="menu_ab_perf_mode">Prioritza el procés d\'actualització</string>
+    <string name="menu_ab_perf_mode_summary">Accelera les actualitzacions a costa del rendiment del dispositiu</string>
+    <string name="menu_ab_perf_mode_summary_charging">S\'activa automàticament durant la càrrega amb carregador</string>
     <string name="menu_update_recovery">Actualitza el recuperador</string>
+    <string name="menu_update_recovery_summary">Actualitza la partició de recuperació juntament amb el sistema operatiu</string>
     <string name="snack_updates_found">No s\'han trobat noves actualitzacions</string>
     <string name="snack_no_updates_found">No s\'han trobat noves actualitzacions</string>
     <string name="snack_download_failed">Ha fallat la la baixada. Verifiqueu la connexió a Internet i torneu-ho a provar més tard.</string>
     <string name="snack_download_verification_failed">Ha fallat la verificació de l\'actualització.</string>
     <string name="snack_download_verified">Baixada completada.</string>
     <string name="snack_update_not_installable">Aquesta actualització no es pot instal·lar a sobre de la compilació actual.</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
     <string name="build_date">Data de compilació</string>
     <string name="security_update">Actualització de seguretat</string>
     <string name="show_changelog">Canvis recents</string>
     <string name="report_issues">Informa d\'un problema</string>
+    <string name="header_review_updates">Reviseu les actualitzacions i els canvis recents a</string>
+    <string name="found_bug">Heu trobat cap error? Informeu-ne amb la nostra guia d\'informes d\'errors:</string>
+    <string name="updates_zero_state_title">No hi ha actualitzacions disponibles</string>
+    <string name="updates_zero_state_description">Les noves compilacions per a aquest dispositiu apareixeran aquí quan estiguin disponibles.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">Mida de l\'actualització: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">Actualització de seguretat: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Actualització important d\'Android</string>
+    <string name="list_full_install">Instal·lació completa: instal·lació segura sobre qualsevol compilació anterior</string>
+    <string name="list_major_upgrade_recovery_install">Les actualitzacions importants de <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> s\'han d\'instal·lar manualment. Consulteu la guia del dispositiu per continuar.</string>
+    <string name="list_downgrade_blocked">Aquesta compilació és anterior al sistema instal·lat i no es pot aplicar.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">S\'està verificant l\'actualització</string>
+    <string name="see_more">Mostra %1$d més</string>
+    <string name="see_less">Mostra\'n menys</string>
     <string name="action_download">Baixa</string>
     <string name="action_pause">Pausa</string>
     <string name="action_resume">Reprèn</string>
     <string name="action_install">Instal·la</string>
     <string name="action_info">Informació</string>
+    <string name="action_open_guide">Obre la guia</string>
     <string name="action_delete">Suprimeix</string>
+    <string name="confirm_cancel_dialog_title">Cancel·la la baixada</string>
+    <string name="confirm_cancel_dialog_message">Voleu cancel·lar la baixada i suprimir el fitxer?</string>
     <string name="confirm_delete_dialog_title">Esborra el fitxer</string>
     <string name="confirm_delete_dialog_message">Vols esborrar el fitxer d\'actualització seleccionat?</string>
     <string name="apply_update_dialog_title">Aplica l\'actualització</string>
     <string name="apply_update_dialog_message">Esteu a punt d\'instal·lar <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi premeu <xliff:g id="ok">%2$s</xliff:g>, el dispositiu es reiniciarà en el mode recuperació per a instal·lar l\'actualització.\n\nNota: Aquesta funció requereix un Recuperador compatible o les actualitzacions hauran de ser instal·lades manualment.</string>
     <string name="apply_update_dialog_message_ab">Esteu a punt d\'instal·lar <xliff:g id="update_name">%1$s</xliff:g>.\n\nSi premeu <xliff:g id="ok">%2$s</xliff:g>, el dispositiu començarà a instal·lar-ho en segon pla.\n\nUna vegada completat, se us demanarà que el reinicieu.</string>
+    <string name="cancel_installation_dialog_title">Cancel·la la instal·lació</string>
+    <string name="cancel_installation_dialog_message">Voleu cancel·lar l\'actualització del sistema?</string>
     <string name="label_download_url">URL de baixada</string>
     <string name="dialog_export_title">S\'està exportant l\'actualització</string>
     <string name="notification_export_success">Actualització exportada</string>
@@ -96,13 +121,17 @@
     <string name="update_over_metered_network_message">Esteu a punt de baixar un paquet d\'actualització a través d\'una xarxa mesurada que és probable que provoqui un ús elevat de dades. Voleu continuar?</string>
     <string name="blocked_update_dialog_title">Actualització bloquejada</string>
     <string name="blocked_update_dialog_message">Aquesta actualització no es pot instal·lar mitjançant l\'aplicació actualitzador. Per obtenir més informació, llegiu <xliff:g id="info_url">%1$s</xliff:g>.</string>
+    <string name="blocked_update_dialog_title_downgrade">Baixada de versió bloquejada</string>
+    <string name="blocked_update_dialog_message_downgrade">Aquesta actualització és més antiga que el sistema actual i no es pot instal·lar.</string>
     <string name="export_channel_title">Exportació completada</string>
     <string name="new_updates_channel_title">Noves actualitzacions</string>
     <string name="ongoing_channel_title">Baixades en curs</string>
     <string name="update_failed_channel_title">Actualització fallida</string>
+    <string name="local_update_import">Instal·la l\'actualització local</string>
+    <string name="local_update_import_summary">Seleccioneu el fitxer d\'actualització per instal·lar-lo</string>
     <string name="local_update_import_progress">S\'està important l\'actualització local\u2026</string>
-    <string name="local_update_import_success">S\'ha importat %1$s. Ho voleu instal·lar?</string>
+    <string name="local_update_import_success_title">Actualització importada</string>
+    <string name="local_update_import_success_message">Data de compilació: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nToqueu l\'actualització importada per veure les accions disponibles.</string>
     <string name="local_update_import_failure">No s\'ha pogut importar l\'actualització local</string>
-    <string name="local_update_import_install">Instal·la</string>
     <string name="local_update_name">Actualització local</string>
 </resources>

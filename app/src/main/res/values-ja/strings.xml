@@ -28,7 +28,8 @@
     <string name="dialog_prepare_zip_message">予備のアップデート準備</string>
     <string name="dialog_battery_low_title">バッテリー残量少</string>
     <string name="dialog_battery_low_message_pct">バッテリー残量が不足しています。続行するには<xliff:g id="percent_discharging">%1$d</xliff:g>%%、充電時は<xliff:g id="percent_charging">%2$d</xliff:g>%%のバッテリー残量が必要です。</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        以下のコマンドを実行し、アップデートを再試行してください:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        以下のコマンドを実行し、アップデートを再試行してください:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -86,6 +87,8 @@
     <string name="list_security_update">セキュリティアップデート: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
     <string name="list_major_android_upgrade">メジャー Android アップグレード</string>
     <string name="list_full_install">フルインストール：以前のビルドにも安全にインストールできます</string>
+    <string name="list_major_upgrade_recovery_install">メジャー <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> バージョンアップグレードは手動でインストールする必要があります。続行するにはデバイスのガイドを参照してください。</string>
+    <string name="list_downgrade_blocked">このビルドはインストールされているシステムよりも古いため適用できません。</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">アップデートを確認</string>
@@ -95,6 +98,7 @@
     <string name="action_resume">再開</string>
     <string name="action_install">インストール</string>
     <string name="action_info">情報</string>
+    <string name="action_open_guide">ガイドを開く</string>
     <string name="action_delete">削除</string>
     <string name="confirm_cancel_dialog_title">ダウンロードをキャンセル</string>
     <string name="confirm_cancel_dialog_message">ダウンロードをキャンセルし、ファイルを削除しますか？</string>
@@ -122,8 +126,8 @@
     <string name="ongoing_channel_title">ダウンロード中</string>
     <string name="update_failed_channel_title">更新に失敗しました</string>
     <string name="local_update_import_progress">ローカルアップデートをインポート中\u2026</string>
-    <string name="local_update_import_success">%1$s をインポートしました。インストールしますか？</string>
+    <string name="local_update_import_success_title">アップデートをインポートしました</string>
+    <string name="local_update_import_success_message">ビルド日: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nインポートされたアップデートをタップすると、利用可能なアクションを表示します。</string>
     <string name="local_update_import_failure">ローカルアップデートのインポートに失敗しました</string>
-    <string name="local_update_import_install">インストール</string>
     <string name="local_update_name">ローカルアップデート</string>
 </resources>

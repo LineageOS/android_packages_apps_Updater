@@ -5,6 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Güncəlləyici</string>
+    <string name="display_name">Sistem güncəlləmələri</string>
     <string name="verification_failed_notification">Doğrulama uğursuz oldu</string>
     <string name="verifying_download_notification">Güncəlləmə doğrulanır</string>
     <string name="downloading_notification">Endirilir</string>
@@ -12,50 +13,100 @@
     <string name="download_paused_error_notification">Endirmə xətası</string>
     <string name="download_completed_notification">Endirmə tamamlandı</string>
     <string name="download_starting_notification">Endirmə başladılır</string>
+    <string name="download_switch_confirm_title">Aktiv endirməyə fasilə verilsin?</string>
+    <string name="download_switch_confirm_message">Hazırda başqa bir güncəlləmə endirilir. Bunu başlatsanız, digərinə fasilə veriləcək.</string>
     <string name="update_failed_notification">Güncəlləmə uğursuz oldu</string>
     <string name="installation_suspended_notification">Quraşdırma dayandırıldı</string>
     <string name="new_updates_found_title">Yeni güncəlləmələr</string>
+    <string name="new_updates_found_summary">Mövcud güncəlləmələrə baxmaq üçün toxunun</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="installing_update">Sistem güncəlləməsi quraşdırılır</string>
     <string name="installing_update_error">Quraşdırma xətası</string>
+    <string name="installing_update_finished">Güncəlləmə, yenidən başlatmanı gözləyir</string>
     <string name="finalizing_package">Paket quraşdırma tamamlanır</string>
     <string name="preparing_ota_first_boot">İlk yükləmə üçün hazırlanır</string>
     <string name="dialog_prepare_zip_message">Güncəlləməyə ilkin hazırlıq</string>
     <string name="dialog_battery_low_title">Zəif batareya</string>
     <string name="dialog_battery_low_message_pct">Batareya səviyyəsi çox aşağıdır, davam etmək üçün ən az <xliff:g id="percent_discharging">%1$d</xliff:g>%% olmalıdır, <xliff:g id="percent_charging">%2$d</xliff:g>%% dolur.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        Lütfən aşağıdakı əmrləri işə salın və yenidən güncəlləməyə çalışın:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        Lütfən aşağıdakı əmrləri işə salın və yenidən güncəlləməyə çalışın:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
         ]]></string>
     <string name="dialog_scratch_mounted_title">OverlayFS taxılı ikən güncəlləmə quraşdırıla bilmir</string>
     <string name="reboot">Yenidən başlat</string>
+    <string name="menu_preferences">Sistem güncəlləməsi tərcihləri</string>
+    <string name="preferences_summary">Sinxron et, endir və quraşdır</string>
+    <string name="check_for_updates">Güncəlləmələri yoxla</string>
+    <string name="checking_for_updates">Güncəlləmələr yoxlanılır</string>
+    <string name="check_your_internet_connection">İnternet bağlantınızı yoxlayın</string>
+    <string name="updates_check_failed">Güncəlləmə yoxlanışı uğursuz oldu. Daha sonra yenidən sınayın.</string>
+    <string name="header_last_updates_check_time">Son yoxlanış: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Son yoxlanış: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="pref_category_background_sync">Arxaplanda sinxronlaşdırma</string>
+    <string name="menu_auto_updates_check">Güncəlləmələri davamlı yoxla</string>
+    <string name="menu_auto_updates_check_summary">Güncəlləmələri arxaplanda yoxla</string>
+    <string name="menu_auto_updates_check_interval">Hər müddətdə yoxla</string>
+    <string name="time_unit_day">Gün</string>
+    <string name="time_unit_week">Həftə</string>
+    <string name="time_unit_month">Ay</string>
+    <string name="pref_category_download_install">Endir və quraşdır</string>
+    <string name="menu_auto_delete_updates">Güncəlləmələri avto-sil</string>
+    <string name="menu_auto_delete_updates_summary">Quraşdırıldıqdan sonra endirilən güncəlləmələri sil</string>
+    <string name="menu_stream_updates">Onlayn güncəlləmə köçürmə</string>
+    <string name="menu_stream_updates_summary">Güncəlləmələri endirərkən quraşdır. Güncəlləmə paketlərini xaricə köçürmək üçün saxlanılmasını sıradan çıxardın.</string>
     <string name="menu_delete_update">Sil</string>
     <string name="menu_export_update">Güncəlləməni xaricə köçür</string>
+    <string name="menu_view_downloads"><xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> Endirilənlərdə bax</string>
     <string name="menu_metered_network_warning">Ölçülən şəbəkə xəbərdarlığı</string>
+    <string name="menu_metered_network_warning_summary">Mobil veri ilə endirərkən xəbərdarlıq et</string>
     <string name="menu_ab_perf_mode">Üstünlüyü güncəlləmə prosesinə ver</string>
+    <string name="menu_ab_perf_mode_summary">Güncəlləmələri sürətləndirmək cihazın performansına təsir edir</string>
+    <string name="menu_ab_perf_mode_summary_charging">Enerjisini doldurarkən avtomatik fəallaşır</string>
     <string name="menu_update_recovery">Geri qaytarma rejimini güncəllə</string>
+    <string name="menu_update_recovery_summary">Recovery bölməsini də güncəllə</string>
     <string name="snack_updates_found">Yeni güncəlləmə tapıldı</string>
     <string name="snack_no_updates_found">Yeni güncəlləmə tapılmadı</string>
     <string name="snack_download_failed">Endirmə uğursuz oldu. Lütfən internet bağlantınızı yoxlayıb yenidən sınayın.</string>
     <string name="snack_download_verification_failed">Güncəlləmə doğrulaması uğursuz oldu.</string>
     <string name="snack_download_verified">Endirmə tamamlandı.</string>
     <string name="snack_update_not_installable">Bu güncəlləmə hazırkı quruluşun üzərinə quraşdırıla bilməz.</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">Quruluş tarixi</string>
+    <string name="security_update">Təhlükəsizlik güncəlləməsi</string>
+    <string name="show_changelog">Son dəyişikliklər</string>
+    <string name="report_issues">Problemi bildir</string>
+    <string name="header_review_updates">Güncəlləmələri və son dəyişiklikləri incələ</string>
+    <string name="found_bug">Xəta tapmısınız? Xəta hesabatı bələdçimizlə bildirin:</string>
+    <string name="updates_zero_state_title">Güncəlləmə yoxdur</string>
+    <string name="updates_zero_state_description">Bu cihaz üçün yeni versiyalar mövcud olduğu zaman burada görünəcək.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">Güncəlləmə ölçüsü: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">Təhlükəsizlik güncəlləmələri: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Əsas Android yüksəltməsi</string>
+    <string name="list_full_install">Tam quraşdırma: Bütün əvvəlki versiyaların üzərinə quraşdırmaq güvənlidir</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Güncəlləmə doğrulanır</string>
+    <string name="see_more">Daha %1$d dənəsinə bax</string>
+    <string name="see_less">Daha azına bax</string>
     <string name="action_download">Endir</string>
     <string name="action_pause">Fasilə ver</string>
     <string name="action_resume">Davam etdir</string>
     <string name="action_install">Quraşdır</string>
     <string name="action_info">Məlumat</string>
     <string name="action_delete">Sil</string>
+    <string name="confirm_cancel_dialog_title">Endirməni ləğv et</string>
+    <string name="confirm_cancel_dialog_message">Endirmə ləğv edilib fayl silinsin?</string>
     <string name="confirm_delete_dialog_title">Faylı sil</string>
     <string name="confirm_delete_dialog_message">Seçilmiş güncəlləmə faylı silinsin?</string>
     <string name="apply_update_dialog_title">Güncəlləməni tətbiq et</string>
     <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> quraşdırırsınız.\n\n<xliff:g id="ok">%2$s</xliff:g> bassanız, cihaz güncəlləməni quraşdırmaq üçün geri qaytarma rejimində yenidən başlayacaq.\n\nQeyd: Bu özəlliyin uyumlu bir Geri qaytarma mühitinə ehtiyacı var və ya güncəlləmələr əllə quraşdırılmalıdır.</string>
     <string name="apply_update_dialog_message_ab"><xliff:g id="update_name">%1$s</xliff:g> quraşdırırsınız.\n\n<xliff:g id="ok">%2$s</xliff:g> düyməsinə bassanız, cihaz arxaplanda quraşdırılmağa başlıyacaq.\n\nƏməliyyat bitəndə, yenidən başladılmalıdır.</string>
+    <string name="cancel_installation_dialog_title">Quraşdırmanı ləğv et</string>
+    <string name="cancel_installation_dialog_message">Sistem güncəlləməsi ləğv edilsin?</string>
     <string name="label_download_url">Endirmə bağlantısı</string>
     <string name="dialog_export_title">Güncəlləmə xaricə köçürülür</string>
     <string name="notification_export_success">Güncəlləmə xaricə köçürüldü</string>
@@ -66,13 +117,15 @@
     <string name="update_over_metered_network_message">Ölçülən bir şəbəkə üzərindən böyük ehtimalla yüksək veri istifadəsinə səbəb olacaq bir güncəlləmə paketi endirmək üzrəsiniz. Davam etmək istəyirsiniz?</string>
     <string name="blocked_update_dialog_title">Güncəlləmə əngəlləndi</string>
     <string name="blocked_update_dialog_message">Bu güncəlləmə, tətbiq güncəlləyici istifadə edilərək quraşdırıla bilməz. Ətraflı məlumat üçün lütfən <xliff:g id="info_url">%1$s</xliff:g> ünvanını oxuyun.</string>
+    <string name="blocked_update_dialog_title_downgrade">Alt versiyaya keçmə əngəlləndi</string>
+    <string name="blocked_update_dialog_message_downgrade">Bu güncəlləmə, hazırkı sistemin köhnə versiyasıdır və quraşdırıla bilməz.</string>
     <string name="export_channel_title">Köçürmə tamamlandı</string>
     <string name="new_updates_channel_title">Yeni güncəlləmələr</string>
     <string name="ongoing_channel_title">Davam edən endirmələr</string>
     <string name="update_failed_channel_title">Güncəlləmə uğursuz oldu</string>
+    <string name="local_update_import">Daxili güncəlləməni quraşdır</string>
+    <string name="local_update_import_summary">Quraşdırmaq üçün güncəlləmə faylını seç</string>
     <string name="local_update_import_progress">Yerli güncəlləmə daxilə köçürülür\u2026</string>
-    <string name="local_update_import_success">%1$s daxilə köçürüldü. Quraşdırmaq istəyirsiniz?</string>
     <string name="local_update_import_failure">Yerli güncəlləmə daxilə köçürülmədi</string>
-    <string name="local_update_import_install">Quraşdır</string>
     <string name="local_update_name">Yerli güncəlləmə</string>
 </resources>

@@ -22,7 +22,8 @@
     <string name="dialog_prepare_zip_message">آماده‌سازی اولیه به روز رسانی</string>
     <string name="dialog_battery_low_title">باتری کم</string>
     <string name="dialog_battery_low_message_pct">سطح باتری بسیار کم است، شما نیاز به حداقل <xliff:g id="percent_discharging">%1$d</xliff:g>%% باتری برای ادامه دارید و <xliff:g id="percent_charging">%2$d</xliff:g>%% اگر در حال شارژ است.</string>
-    <string name="dialog_scratch_mounted_message"><![CDATA[        لطفاً دستورات زیر را اجرا کنید و دوباره به‌روز رسانی را امتحان کنید:\n
+    <string name="dialog_scratch_mounted_message"><![CDATA[
+        لطفاً دستورات زیر را اجرا کنید و دوباره به‌روز رسانی را امتحان کنید:\n
         • adb root\n
         • adb enable-verity\n
         • adb reboot
@@ -75,8 +76,6 @@
     <string name="ongoing_channel_title">بارگیری های جاری</string>
     <string name="update_failed_channel_title">به‌روز رسانی شکست خورد</string>
     <string name="local_update_import_progress">وارد کردن به‌روزرسانی محلی\u2026</string>
-    <string name="local_update_import_success">%1$s وارد شد. آیا مایل به نصب هستید؟</string>
     <string name="local_update_import_failure">به‌روزرسانی داخلی با شکست مواجه شد</string>
-    <string name="local_update_import_install">نصب</string>
     <string name="local_update_name">به‌روزرسانی داخلی</string>
 </resources>

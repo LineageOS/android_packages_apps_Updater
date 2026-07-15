@@ -50,6 +50,8 @@ id=`echo "$zip_name" | sha1sum | cut -d' ' -f1`
 version=`echo "$zip_name" | cut -d'-' -f2`
 type=`echo "$zip_name" | cut -d'-' -f4`
 timestamp=`unzip -p "$zip_path" META-INF/com/android/metadata | grep post-timestamp | cut -d'=' -f2`
+os_patch_level=`unzip -p "$zip_path" META-INF/com/android/metadata | grep post-security-patch-level | cut -d'=' -f2`
+os_sdk_level=`unzip -p "$zip_path" META-INF/com/android/metadata | grep post-sdk-level | cut -d'=' -f2`
 if [ "`uname`" = "Darwin" ]; then
     size=`stat -f%z "$zip_path"`
 else
@@ -63,8 +65,8 @@ $ADB shell chmod 664 "$zip_path_device"
 # Kill the app before updating the database
 $ADB shell "killall org.lineageos.updater 2>/dev/null"
 $ADB shell "sqlite3 /data/data/org.lineageos.updater/databases/updates.db" \
-    "\"INSERT INTO updates (status, path, download_id, timestamp, type, version, size, name)" \
-    "  VALUES ($status, '$zip_path_device', '$id', $timestamp, '$type', '$version', $size, '$zip_name')\""
+    "\"INSERT INTO updates (status, path, download_id, timestamp, type, version, size, name, os_patch_level, os_sdk_level)" \
+    "  VALUES ($status, '$zip_path_device', '$id', $timestamp, '$type', '$version', $size, '$zip_name', '$os_patch_level', $os_sdk_level)\""
 
 # Exit root mode
 $ADB unroot

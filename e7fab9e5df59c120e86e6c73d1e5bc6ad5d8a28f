@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ce66f22_08739b20",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2644
+      },
+      "writtenOn": "2026-07-16T15:01:02Z",
+      "side": 1,
+      "message": "Fixes local build flashing on bluejay and troika.",
+      "revId": "e7fab9e5df59c120e86e6c73d1e5bc6ad5d8a28f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

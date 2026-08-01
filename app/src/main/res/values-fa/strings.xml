@@ -5,6 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">به‌روز کننده</string>
+    <string name="display_name">به‌روز‌رسانی‌های سیستم</string>
     <string name="verification_failed_notification">تایید با خطا مواجه شد</string>
     <string name="verifying_download_notification">در حال تایید به‌روزرسانی</string>
     <string name="downloading_notification">در حال بارگیری</string>
@@ -12,11 +13,16 @@
     <string name="download_paused_error_notification">خطای بارگیری</string>
     <string name="download_completed_notification">بارگیری کامل شد</string>
     <string name="download_starting_notification">در حال آغاز بارگیری</string>
+    <string name="download_switch_confirm_title">دانلود فعال را متوقف کنم؟</string>
+    <string name="download_switch_confirm_message">به‌روزرسانی دیگری در حال دانلود است. شروع این به‌روزرسانی، دیگری را متوقف می‌کند.</string>
     <string name="update_failed_notification">به‌روز رسانی شکست خورد</string>
     <string name="installation_suspended_notification">فرآیند نصب متوقف شد</string>
     <string name="new_updates_found_title">به‌روز رسانی جدید</string>
+    <string name="new_updates_found_summary">برای مشاهده به‌روزرسانی‌های موجود، ضربه بزنید</string>
     <string name="text_download_speed">%1$s، %2$s/ث</string>
+    <string name="installing_update">نصب به‌روزرسانی سیستم</string>
     <string name="installing_update_error">خطا در نصب</string>
+    <string name="installing_update_finished">به‌روزرسانی در انتظار راه‌اندازی مجدد</string>
     <string name="finalizing_package">در حال نهایی شدن نصب بسته</string>
     <string name="preparing_ota_first_boot">آماده‌سازی برای روشن شدن اولیه</string>
     <string name="dialog_prepare_zip_message">آماده‌سازی اولیه به روز رسانی</string>
@@ -30,37 +36,80 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">با نصب OverlayFS نمی توان به‌روز رسانی را نصب کرد</string>
     <string name="reboot">راه‌اندازی مجدد</string>
+    <string name="menu_preferences">تنظیمات برگزیده به‌روزرسانی سیستم</string>
+    <string name="preferences_summary">همگام‌سازی، دانلود و نصب</string>
+    <string name="check_for_updates">بررسی برای به‌روزرسانی</string>
+    <string name="checking_for_updates">در حال بررسی نسخه به روز</string>
+    <string name="check_your_internet_connection">اتصال اینترنت خود را بررسی کنید</string>
+    <string name="updates_check_failed">بررسی به‌روزرسانی ناموفق بود. بعداً دوباره امتحان کنید.</string>
+    <string name="header_last_updates_check_time">آخرین بررسی: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">آخرین بررسی: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="pref_category_background_sync">همگامسازی پس زمینه</string>
+    <string name="menu_auto_updates_check">به صورت دوره‌ای به‌روزرسانی‌ها را بررسی کنید</string>
+    <string name="menu_auto_updates_check_summary">بررسی به‌روزرسانی‌ها در پس‌زمینه</string>
+    <string name="menu_auto_updates_check_interval">هر مورد را بررسی کنید</string>
+    <string name="time_unit_day">روز</string>
+    <string name="time_unit_week">هفته</string>
+    <string name="time_unit_month">ماه</string>
+    <string name="pref_category_download_install">دانلود و نصب</string>
+    <string name="menu_auto_delete_updates">حذف خودکار به‌روزرسانی‌ها</string>
+    <string name="menu_auto_delete_updates_summary">حذف به‌روزرسانی‌های دانلود شده پس از نصب</string>
+    <string name="menu_stream_updates">پخش به‌روزرسانی‌های آنلاین</string>
+    <string name="menu_stream_updates_summary">نصب به‌روزرسانی‌ها هنگام دانلود. غیرفعال کردن ذخیره بسته‌های به‌روزرسانی برای خروجی گرفتن.</string>
     <string name="menu_delete_update">حذف</string>
     <string name="menu_export_update">صادر کردن نسخه‌ی بروز</string>
+    <string name="menu_view_downloads">مشاهده در <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> دانلودها</string>
     <string name="menu_metered_network_warning">هشدار شبکه محدود شده</string>
+    <string name="menu_metered_network_warning_summary">قبل از دانلود از طریق داده تلفن همراه هشدار دهید</string>
     <string name="menu_ab_perf_mode">به روز رسانی با اولویت بالا</string>
+    <string name="menu_ab_perf_mode_summary">افزایش سرعت به‌روزرسانی‌ها به قیمت کاهش عملکرد دستگاه</string>
+    <string name="menu_ab_perf_mode_summary_charging">هنگام شارژ با برق مستقیم، به طور خودکار فعال می‌شود</string>
     <string name="menu_update_recovery">به‌روز رسانی ریکاوری</string>
+    <string name="menu_update_recovery_summary">پارتیشن ریکاوری را به همراه سیستم عامل به‌روزرسانی کنید</string>
     <string name="snack_updates_found">نسخه های جدید یافت شد</string>
     <string name="snack_no_updates_found">به‌روزرسانی جدیدی یافت نشد</string>
     <string name="snack_download_failed">بارگیری انجام نشد. اتصال اینترنت خود را بررسی و دوباره تلاش کنید.</string>
     <string name="snack_download_verification_failed">تأیید به‌روزرسانی با خطا روبه‌رو شد.</string>
     <string name="snack_download_verified">بارگیری کامل شد.</string>
     <string name="snack_update_not_installable">این نسخه جدید را نمی توان بر روی نسخه کنونی نصب کرد.</string>
+    <string name="header_android_version">اندروید <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">تاریخ ساخت</string>
+    <string name="security_update">به‌روزرسانی امنیتی</string>
+    <string name="show_changelog">تغییرات اخیر</string>
     <string name="report_issues">گزارش مشکل</string>
+    <string name="header_review_updates">بررسی به‌روزرسانی‌ها و تغییرات اخیر</string>
+    <string name="found_bug">باگی پیدا کردید؟ آن را با راهنمای گزارش اشکال ما گزارش دهید:</string>
+    <string name="updates_zero_state_title">به‌روزرسانی موجود نيست</string>
+    <string name="updates_zero_state_description">نسخه‌های جدید این دستگاه به محض انتشار، اینجا نمایش داده خواهند شد.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">حجم به‌روزرسانی: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">به‌روزرسانی امنیتی: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">ارتقاء عمده اندروید</string>
+    <string name="list_full_install">نصب کامل: نصب ایمن روی هر نسخه قبلی</string>
+    <string name="list_major_upgrade_recovery_install">ارتقاء نسخه‌های اصلی <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> باید به صورت دستی نصب شوند. برای ادامه به راهنمای دستگاه خود مراجعه کنید.</string>
+    <string name="list_downgrade_blocked">این نسخه قدیمی‌تر از نسخه نصب‌شده است و قابل اجرا نیست.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> از <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> از <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">در حال تایید به‌روزرسانی</string>
+    <string name="see_more">%1$d بیشتر ببینید</string>
     <string name="see_less">مشاهده کمتر</string>
     <string name="action_download">بارگیری</string>
     <string name="action_pause">مکث</string>
     <string name="action_resume">ادامه</string>
     <string name="action_install">نصب</string>
     <string name="action_info">اطلاعات</string>
+    <string name="action_open_guide">بازکردن راهنما</string>
     <string name="action_delete">حذف</string>
     <string name="confirm_cancel_dialog_title">لغو بارگیری</string>
+    <string name="confirm_cancel_dialog_message">دانلود لغو و پرونده حذف شود؟</string>
     <string name="confirm_delete_dialog_title">حذف فایل</string>
     <string name="confirm_delete_dialog_message">آیا فایل نسخه به روز حذف شود؟</string>
     <string name="apply_update_dialog_title">انجام به‌روزرسانی</string>
     <string name="apply_update_dialog_message">شما در حال نصب &lt;xliff:g id="update_name"&gt;%1$s&lt;/xliff:g&gt; هستید.\n\nاگر &lt;xliff:g id="ok"&gt;%2$s&lt;/xliff را فشار دهید: g&gt;، دستگاه برای نصب به‌روزرسانی، خود را در حالت بازیابی مجدد راه‌اندازی می‌کند.\n\nتوجه: این ویژگی به یک بازیابی سازگار نیاز دارد یا به‌روزرسانی‌ها باید به صورت دستی نصب شوند.</string>
     <string name="apply_update_dialog_message_ab">شما در حال نصب &lt;xliff:g id="update_name"&gt;%1$s&lt;/xliff:g&gt; هستید.\n\nاگر &lt;xliff:g id="ok"&gt;%2$s&lt;/xliff را فشار دهید: g&gt;، دستگاه شروع به نصب در پس‌زمینه می‌کند.\n\nپس از تکمیل، از شما خواسته می‌شود راه‌اندازی مجدد کنید.</string>
     <string name="cancel_installation_dialog_title">لغو نصب</string>
+    <string name="cancel_installation_dialog_message">به‌روزرسانی سیستم لغو شود؟</string>
     <string name="label_download_url">نشانی بارگیری</string>
     <string name="dialog_export_title">صادر کردن نسخه به‌روز</string>
     <string name="notification_export_success">نسخه به‌روز صادر شد</string>
@@ -71,11 +120,17 @@
     <string name="update_over_metered_network_message">شما در حال بارگیری یک بسته بروز رسانی بر روی یک شبکه محدود شده یا سیم کارت هستید که احتمالا ممکن است باعث مصرف داده زیاد می شود. آیا می خواهید ادامه بدهید؟</string>
     <string name="blocked_update_dialog_title">بروز رسانی مسدود شد</string>
     <string name="blocked_update_dialog_message">این به‌روزرسانی با استفاده از برنامه بروز کننده قابل نصب نیست. لطفاً برای اطلاعات بیشتر <xliff:g id="info_url">%1$s</xliff:g> را بخوانید.</string>
+    <string name="blocked_update_dialog_title_downgrade">بازگشت مسدود شد</string>
+    <string name="blocked_update_dialog_message_downgrade">این به‌روزرسانی قدیمی‌تر از سیستم فعلی است و قابل نصب نیست.</string>
     <string name="export_channel_title">تکمیل صادرات</string>
     <string name="new_updates_channel_title">به‌‎روزرسانی‎‌های تازه</string>
     <string name="ongoing_channel_title">بارگیری های جاری</string>
     <string name="update_failed_channel_title">به‌روز رسانی شکست خورد</string>
+    <string name="local_update_import">نصب به‌روزرسانی محلی</string>
+    <string name="local_update_import_summary">فایل به‌روزرسانی را برای نصب انتخاب کنید</string>
     <string name="local_update_import_progress">وارد کردن به‌روزرسانی محلی\u2026</string>
+    <string name="local_update_import_success_title">به‌روزرسانی وارد شده</string>
+    <string name="local_update_import_success_message">تاریخ ساخت: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nبرای مشاهده اقدامات موجود، روی به‌روزرسانی وارد شده ضربه بزنید.</string>
     <string name="local_update_import_failure">به‌روزرسانی داخلی با شکست مواجه شد</string>
     <string name="local_update_name">به‌روزرسانی داخلی</string>
 </resources>

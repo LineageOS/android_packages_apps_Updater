@@ -87,6 +87,8 @@
     <string name="list_security_update">Atualização de segurança: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
     <string name="list_major_android_upgrade">Atualização maior do Android</string>
     <string name="list_full_install">Instalação completa: É seguro instalar sobre qualquer compilação anterior</string>
+    <string name="list_major_upgrade_recovery_install">As atualizações grandes do <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> devem ser instaladas manualmente. Consulte o guia do seu dispositivo para continuar.</string>
+    <string name="list_downgrade_blocked">Essa compilação é mais antiga do que o sistema instalado e não pode ser aplicada.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verificando atualização</string>
@@ -97,6 +99,7 @@
     <string name="action_resume">Retomar</string>
     <string name="action_install">Instalar</string>
     <string name="action_info">Informações</string>
+    <string name="action_open_guide">Abrir guia</string>
     <string name="action_delete">Apagar</string>
     <string name="confirm_cancel_dialog_title">Cancelar download</string>
     <string name="confirm_cancel_dialog_message">Cancelar o download e apagar o arquivo?</string>
@@ -126,6 +129,8 @@
     <string name="local_update_import">Instalar atualização local</string>
     <string name="local_update_import_summary">Selecione um arquivo de atualização para instalar</string>
     <string name="local_update_import_progress">Importando atualização local\u2026</string>
+    <string name="local_update_import_success_title">Atualização importada</string>
+    <string name="local_update_import_success_message">Data de compilação: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nToque na atualização importada para ver as ações disponíveis.</string>
     <string name="local_update_import_failure">Falha ao importar a atualização local</string>
     <string name="local_update_name">Atualização local</string>
 </resources>

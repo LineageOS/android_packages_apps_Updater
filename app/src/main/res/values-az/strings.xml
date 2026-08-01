@@ -87,6 +87,8 @@
     <string name="list_security_update">Təhlükəsizlik güncəlləmələri: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
     <string name="list_major_android_upgrade">Əsas Android yüksəltməsi</string>
     <string name="list_full_install">Tam quraşdırma: Bütün əvvəlki versiyaların üzərinə quraşdırmaq güvənlidir</string>
+    <string name="list_major_upgrade_recovery_install">Böyük <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> versiya yüksəltməsi manual quraşdırılmalıdır. Davam etmək üçün cihazınızın bələdçisinə baxın.</string>
+    <string name="list_downgrade_blocked">Bu versiya, quraşdırılmış sistemə köhnə olduğu üçün tətbiq oluna bilmir.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Güncəlləmə doğrulanır</string>
@@ -97,6 +99,7 @@
     <string name="action_resume">Davam etdir</string>
     <string name="action_install">Quraşdır</string>
     <string name="action_info">Məlumat</string>
+    <string name="action_open_guide">Bələdçini aç</string>
     <string name="action_delete">Sil</string>
     <string name="confirm_cancel_dialog_title">Endirməni ləğv et</string>
     <string name="confirm_cancel_dialog_message">Endirmə ləğv edilib fayl silinsin?</string>
@@ -126,6 +129,8 @@
     <string name="local_update_import">Daxili güncəlləməni quraşdır</string>
     <string name="local_update_import_summary">Quraşdırmaq üçün güncəlləmə faylını seç</string>
     <string name="local_update_import_progress">Yerli güncəlləmə daxilə köçürülür\u2026</string>
+    <string name="local_update_import_success_title">Güncəlləmə daxilə köçürüldü</string>
+    <string name="local_update_import_success_message">Quruluş tariix: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nMövcud fəaliyyətləri görmək üçün daxilə köçürülən güncəlləməyə toxunun.</string>
     <string name="local_update_import_failure">Yerli güncəlləmə daxilə köçürülmədi</string>
     <string name="local_update_name">Yerli güncəlləmə</string>
 </resources>

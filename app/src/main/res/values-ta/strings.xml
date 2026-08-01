@@ -70,23 +70,23 @@
     <string name="snack_update_not_installable">இப்பதிப்பின்மேல் இவ்விற்றை நிறுவவியலாது.</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
     <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">சரிபார்க்கப்பட்டது: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="header_last_updates_check">முற்சரிபார்த்தது: <xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> இல் <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> இல் <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
-    <string name="list_verifying_update">இற்றையைச் சரிபார்க்கிறது</string>
-    <string name="list_no_updates">புதிய இற்றைகள் ஏதுமில்லை; கைமுறையாகச் சரிபார்க்க, \'புதுப்பி\' பொத்தானைப் பயன்படுத்துக.</string>
-    <string name="action_download">பதிவிறக்குக</string>
-    <string name="action_pause">நிறுத்துக</string>
-    <string name="action_resume">தொடர்க</string>
-    <string name="action_install">நிறுவுக</string>
-    <string name="action_info">விவரம்</string>
-    <string name="action_delete">நீக்குக</string>
-    <string name="action_cancel">தவிர்க்க</string>
-    <string name="confirm_delete_dialog_title">கோப்பினை நீக்குக</string>
-    <string name="confirm_delete_dialog_message">தேர்ந்தெடுக்கப்பட்ட இற்றைக் கோப்பினை நீக்கவா?</string>
-    <string name="apply_update_dialog_title">இற்றையை நிறுவுக</string>
+    <string name="list_verifying_update">இற்றைச்சரிபார்ப்பு</string>
+    <string name="list_no_updates">புதிய இற்றையில்லை. கைமுறையில் நோக்கப் புதுப்பிப்பில் சாற்றுக.</string>
+    <string name="action_download">பதிவிறக்கு</string>
+    <string name="action_pause">நிறுத்து</string>
+    <string name="action_resume">தொடர்</string>
+    <string name="action_install">நிறுவு</string>
+    <string name="action_info">தகவல்</string>
+    <string name="action_delete">நீக்கு</string>
+    <string name="action_cancel">தவிர்</string>
+    <string name="confirm_delete_dialog_title">கோப்பு நீக்கு</string>
+    <string name="confirm_delete_dialog_message">தேர்ந்தெடுத்த இற்றைக்கோப்பு நீக்கவா?</string>
+    <string name="apply_update_dialog_title">இற்றைபொருத்து</string>
     <string name="apply_update_dialog_message">நீங்கள் <xliff:g id="update_name">%1$s</xliff:g> என்பதை நிறுவ உள்ளீர்.\n\nநீங்கள் <xliff:g id="ok">%2$s</xliff:g> என்பதை அழுத்தினால், இற்றையை நிறுவுவதற்காகக் கருவி மீட்புப் பயன்முறையில் தானாகவே மீண்டும் தொடங்கும்.\n\nகுறிப்பு: இதற்குப் பொருத்தமான மீட்பு மென்பொருள் தேவை. இல்லையெனில், இற்றையை நீங்களே நேரடியாக நிறுவ வேண்டியிருக்கும்.</string>
     <string name="apply_update_dialog_message_ab">நீங்கள் <xliff:g id="update_name">%1$s</xliff:g> என்பதை நிறுவ உள்ளீர்.\n\nநீங்கள் <xliff:g id="ok">%2$s</xliff:g> என்பதை அழுத்தினால், இற்றை நிறுவல் பின்னணியில் தொடங்கும்.\n\nநிறுவல் முடிந்ததும், கருவியை மீண்டும் தொடங்க உங்களுக்கு அறிவிக்கப்படும்.</string>
     <string name="cancel_installation_dialog_message">நிறுவலைத் தவிர்க்கவா?</string>
@@ -126,6 +126,6 @@
     <string name="local_update_import_progress">உள்ளக இற்றை இறக்குமதி செய்யப்படுகிறது\u2026</string>
     <string name="local_update_import_success">%1$s இறக்குமதி செய்யப்பட்டது. அதனை நிறுவ வேண்டுமா?</string>
     <string name="local_update_import_failure">உள்ளக இற்றை இறக்குமதி தோல்வியுற்றது</string>
-    <string name="local_update_import_install">நிறுவுக</string>
+    <string name="local_update_import_install">நிறுவு</string>
     <string name="local_update_name">உள்ளக இற்றை</string>
 </resources>

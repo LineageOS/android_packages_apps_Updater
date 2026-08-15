@@ -14,9 +14,11 @@
     <string name="download_completed_notification">Descarga completada</string>
     <string name="download_starting_notification">Iniciando descarga</string>
     <string name="download_switch_confirm_title">¿Pausar la descarga en curso?</string>
+    <string name="download_switch_confirm_message">Se está descargando otra actualización. Si inicias esta, se pausará la otra.</string>
     <string name="update_failed_notification">Se produjo un error en la actualización</string>
     <string name="installation_suspended_notification">Instalación suspendida</string>
     <string name="new_updates_found_title">Nuevas actualizaciones</string>
+    <string name="new_updates_found_summary">Toca para ver las actualizaciones disponibles</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
     <string name="installing_update">Instalando actualización del sistema</string>
     <string name="installing_update_error">Error de instalación</string>
@@ -35,6 +37,10 @@
     <string name="reboot">Reiniciar</string>
     <string name="menu_preferences">Preferencias de actualización del sistema</string>
     <string name="preferences_summary">Sincronizar, descargar e instalar</string>
+    <string name="check_for_updates">Buscar actualizaciones</string>
+    <string name="checking_for_updates">Buscando actualizaciones</string>
+    <string name="check_your_internet_connection">Comprueba tu conexión a Internet</string>
+    <string name="updates_check_failed">La comprobación ha fallado. Inténtalo de nuevo más tarde.</string>
     <string name="header_last_updates_check_time">Última comprobación: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
     <string name="pref_category_background_sync">Sincronización en segundo plano</string>
     <string name="menu_auto_updates_check">Comprobar actualizaciones periódicamente</string>
@@ -47,6 +53,7 @@
     <string name="menu_auto_delete_updates">Borrado automático de actualizaciones</string>
     <string name="menu_auto_delete_updates_summary">Eliminar actualizaciones descargadas después de la instalación</string>
     <string name="menu_stream_updates">Actualizaciones en línea</string>
+    <string name="menu_stream_updates_summary">Instala actualizaciones durante la descarga. Desactiva esta opción para guardar los paquetes de actualización para su exportación.</string>
     <string name="menu_delete_update">Borrar</string>
     <string name="menu_export_update">Exportar actualización</string>
     <string name="menu_view_downloads">Ver en <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> Descargas</string>
@@ -67,13 +74,17 @@
     <string name="build_date">Fecha de compilación</string>
     <string name="security_update">Actualización de seguridad</string>
     <string name="show_changelog">Cambios recientes</string>
+    <string name="report_issues">Informar de problemas</string>
     <string name="header_review_updates">Revisar actualizaciones y cambios recientes en</string>
+    <string name="found_bug">¿Has encontrado un error? Notifícalo según nuestra guía para informar de errores:</string>
     <string name="updates_zero_state_title">No hay actualizaciones disponibles</string>
     <string name="updates_zero_state_description">Las nuevas compilaciones para este dispositivo aparecerán aquí cuando estén disponibles.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">Tamaño de la actualización: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
     <string name="list_security_update">Actualización de seguridad: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
     <string name="list_major_android_upgrade">Actualización importante de Android</string>
+    <string name="list_full_install">Instalación completa: puede instalarse sin problemas sobre cualquier versión anterior</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verificando actualización</string>
@@ -110,6 +121,8 @@
     <string name="new_updates_channel_title">Nuevas actualizaciones</string>
     <string name="ongoing_channel_title">Descargas en curso</string>
     <string name="update_failed_channel_title">Se produjo un error en la actualización</string>
+    <string name="local_update_import">Instalar actualización local</string>
+    <string name="local_update_import_summary">Selecciona el archivo de actualización para instalar</string>
     <string name="local_update_import_progress">Importando actualización local\u2026</string>
     <string name="local_update_import_failure">Error al importar actualización local</string>
     <string name="local_update_name">Actualización local</string>

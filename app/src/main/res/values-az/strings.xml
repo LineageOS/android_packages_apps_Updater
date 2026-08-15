@@ -130,5 +130,5 @@
     <string name="local_update_import_install">Quraşdır</string>
     <string name="local_update_name">Yerli güncəlləmə</string>
     <string name="welcome_title">Xoş gəlmisiniz</string>
-    <string name="welcome_message">Lütfən yadda saxlayın ki, bir neçə güncəlləmə mövcud olduqda, bunları tək-tək güncəlləməyə ehtiyac yoxdur. Həmişə birbaşa ən son versiyanı quraşdıra, daha sonra anbar sahəsini boşaltmaq üçün köhnə güncəlləmələri əminliklə silə bilərsiniz.</string>
+    <string name="welcome_message">Lütfən yadda saxlayın ki, bir neçə güncəlləmə mövcud olduqda, bunları tək-tək güncəlləməyə ehtiyac yoxdur. Həmişə birbaşa ən son versiyanı quraşdıra, daha sonra depolama sahəsini boşaltmaq üçün köhnə güncəlləmələri əminliklə silə bilərsiniz.</string>
 </resources>

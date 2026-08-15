@@ -87,7 +87,7 @@
     <string name="confirm_delete_dialog_title">கோப்பு நீக்கு</string>
     <string name="confirm_delete_dialog_message">தேர்ந்தெடுத்த இற்றைக்கோப்பு நீக்கவா?</string>
     <string name="apply_update_dialog_title">இற்றைபொருத்து</string>
-    <string name="apply_update_dialog_message">நீங்கள் <xliff:g id="update_name">%1$s</xliff:g> என்பதை நிறுவ உள்ளீர்.\n\nநீங்கள் <xliff:g id="ok">%2$s</xliff:g> என்பதை அழுத்தினால், இற்றையை நிறுவுவதற்காகக் கருவி மீட்புப் பயன்முறையில் தானாகவே மீண்டும் தொடங்கும்.\n\nகுறிப்பு: இதற்குப் பொருத்தமான மீட்பு மென்பொருள் தேவை. இல்லையெனில், இற்றையை நீங்களே நேரடியாக நிறுவ வேண்டியிருக்கும்.</string>
+    <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> என்பதை நிறுவவுள்ளீர்.\n\n <xliff:g id="ok">%2$s</xliff:g> என்பதை அழுத்தினால், இற்றை நிறுவக்கருவி மீட்பு முறையில் மறுதொடக்கமாகும்.\n\nகுறிப்பு: இதற்கேற்ற மீட்புமுறை தேவை; இல்லையெனில் கைமுறையாக நிறுவ வேண்டும்.</string>
     <string name="apply_update_dialog_message_ab">நீங்கள் <xliff:g id="update_name">%1$s</xliff:g> என்பதை நிறுவ உள்ளீர்.\n\nநீங்கள் <xliff:g id="ok">%2$s</xliff:g> என்பதை அழுத்தினால், இற்றை நிறுவல் பின்னணியில் தொடங்கும்.\n\nநிறுவல் முடிந்ததும், கருவியை மீண்டும் தொடங்க உங்களுக்கு அறிவிக்கப்படும்.</string>
     <string name="cancel_installation_dialog_message">நிறுவலைத் தவிர்க்கவா?</string>
     <string name="label_download_url">பதிவிறக்க முகவரி</string>

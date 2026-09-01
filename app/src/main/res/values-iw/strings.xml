@@ -38,7 +38,7 @@
     <string name="preparing_ota_first_boot">מתכונן להפעלה ראשונה</string>
     <string name="dialog_prepare_zip_message">מתכונן להתקנת העדכון</string>
     <string name="dialog_battery_low_title">סוללה חלשה</string>
-    <string name="dialog_battery_low_message_pct">רמת הסוללה נמוכה מדי, נדרשים <xliff:g id="percent_discharging">%1$d</xliff:g>%% לפחות כדי להמשיך, או <xliff:g id="percent_charging">%2$d</xliff:g>%% אם ההתקן בטעינה.</string>
+    <string name="dialog_battery_low_message_pct">רמת הסוללה נמוכה מדי, נדרשים <xliff:g id="percent_discharging">%1$d</xliff:g>%% לפחות כדי להמשיך, או <xliff:g id="percent_charging">%2$d</xliff:g>%% אם המכשיר בטעינה.</string>
     <string name="dialog_scratch_mounted_message"><![CDATA[        נא להריץ את הפקודות הבאות, ולנסות שוב לעדכן:\n
         • adb root\n
         • adb enable-verity\n
@@ -59,7 +59,7 @@
     <string name="menu_show_changelog">הצגת רשימת שינויים</string>
     <string name="menu_ab_perf_mode">תיעדוף תהליכי עדכון</string>
     <string name="menu_update_recovery">עדכון ה-Recovery</string>
-    <string name="toast_forced_update_recovery">לא ניתן לבטל את יכולת השחזור של Lineage בהתקן זה.</string>
+    <string name="toast_forced_update_recovery">לא ניתן לבטל את יכולת השחזור של Lineage במכשיר זה.</string>
     <string name="snack_updates_found">נמצאו עדכונים חדשים</string>
     <string name="snack_no_updates_found">לא נמצאו עדכונים חדשים</string>
     <string name="snack_updates_check_failed">בדיקת העדכונים נכשלה. בדוק את החיבור שלך לאינטרנט ונסה שוב מאוחר יותר.</string>
@@ -86,8 +86,8 @@
     <string name="confirm_delete_dialog_title">מחיקת קובץ</string>
     <string name="confirm_delete_dialog_message">למחוק את קבצי העדכון שנבחרו?</string>
     <string name="apply_update_dialog_title">החלת עדכון</string>
-    <string name="apply_update_dialog_message">תכף תחל התקנת <xliff:g id="update_name">%1$s</xliff:g>.\n\nבלחיצה על <xliff:g id="ok">%2$s</xliff:g>, ההתקן יופעל מחדש אל מצב התאוששות (Recovery) לצורך התקנת העדכון.\n\nהערה: תכונה זו דורשת Recovery תואם או שיהיה צורך להתקין עדכונים ידנית.</string>
-    <string name="apply_update_dialog_message_ab">תכף תחל התקנת <xliff:g id="update_name">%1$s</xliff:g>.\n\nבלחיצה על <xliff:g id="ok">%2$s</xliff:g>, ההתקן יחל להתקין ברקע.\n\nלאחר השלמת הפעולה יידרש לאתחל את ההתקן.</string>
+    <string name="apply_update_dialog_message">תכף תחל התקנת <xliff:g id="update_name">%1$s</xliff:g>.\n\nבלחיצה על <xliff:g id="ok">%2$s</xliff:g>, המכשיר יופעל מחדש למצב Recovery לצורך התקנת העדכון.\n\nהערה: תכונה זו דורשת Recovery תואם אחרת יידרש להתקין עדכונים באופן ידני.</string>
+    <string name="apply_update_dialog_message_ab">תכף תחל התקנת <xliff:g id="update_name">%1$s</xliff:g>.\n\nבלחיצה על <xliff:g id="ok">%2$s</xliff:g>, המכשיר יתחיל להתקין ברקע.\n\nלאחר השלמת הפעולה יידרש לאתחל את המכשיר.</string>
     <string name="cancel_installation_dialog_message">לבטל את ההתקנה?</string>
     <string name="label_download_url">כתובת ההורדה</string>
     <string name="toast_download_url_copied">הכתובת הועתקה</string>
@@ -99,19 +99,16 @@
     <plurals name="eta_seconds">
         <item quantity="one">שניה אחת נותרה</item>
         <item quantity="two"><xliff:g id="count">%d</xliff:g> שניות נותרו</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> שניות נותרו</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> שניות נותרו</item>
     </plurals>
     <plurals name="eta_minutes">
         <item quantity="one">דקה אחת נותרה</item>
         <item quantity="two"><xliff:g id="count">%d</xliff:g> דקות נותרו</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> דקות נותרו</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> דקות נותרו</item>
     </plurals>
     <plurals name="eta_hours">
         <item quantity="one">שעה אחת נותרה</item>
         <item quantity="two"><xliff:g id="count">%d</xliff:g> שעות נותרו</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> שעות נותרו</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> שעות נותרו</item>
     </plurals>
     <string name="update_over_metered_network_title">אזהרה</string>

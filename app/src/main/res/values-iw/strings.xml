@@ -27,7 +27,7 @@
     <string name="preparing_ota_first_boot">מתכונן להפעלה ראשונה</string>
     <string name="dialog_prepare_zip_message">מתכונן להתקנת העדכון</string>
     <string name="dialog_battery_low_title">סוללה חלשה</string>
-    <string name="dialog_battery_low_message_pct">רמת הסוללה נמוכה מדי, נדרשים <xliff:g id="percent_discharging">%1$d</xliff:g>%% לפחות כדי להמשיך, או <xliff:g id="percent_charging">%2$d</xliff:g>%% אם ההתקן בטעינה.</string>
+    <string name="dialog_battery_low_message_pct">רמת הסוללה נמוכה מדי, נדרשים <xliff:g id="percent_discharging">%1$d</xliff:g>%% לפחות כדי להמשיך, או <xliff:g id="percent_charging">%2$d</xliff:g>%% אם המכשיר בטעינה.</string>
     <string name="dialog_scratch_mounted_message"><![CDATA[        נא להריץ את הפקודות הבאות, ולנסות שוב לעדכן:\n
         • adb root\n
         • adb enable-verity\n
@@ -60,7 +60,7 @@
     <string name="menu_metered_network_warning">אזהרת רשת מדודה</string>
     <string name="menu_metered_network_warning_summary"> התרע לפני הורדה באמצעות נתוני סלולר</string>
     <string name="menu_ab_perf_mode">תיעדוף תהליכי עדכון</string>
-    <string name="menu_ab_perf_mode_summary">האצת העדכונים על חשבון ביצועי ההתקן</string>
+    <string name="menu_ab_perf_mode_summary">האצת העדכונים על חשבון ביצועי המכשיר</string>
     <string name="menu_ab_perf_mode_summary_charging">מופעל אוטומטית בעת טעינה מזרם חילופין</string>
     <string name="menu_update_recovery">עדכון ה-Recovery</string>
     <string name="menu_update_recovery_summary">עדכון מחיצת השחזור יחד עם מערכת ההפעלה</string>
@@ -78,7 +78,7 @@
     <string name="header_review_updates">סקירת עדכונים ושינויים אחרונים ב</string>
     <string name="found_bug">מצאת תקלה? כדאי לדווח עליו לפי מדריך הדיווח שלנו:</string>
     <string name="updates_zero_state_title">אין עדכונים זמינים</string>
-    <string name="updates_zero_state_description">גרסאות חדשות עבור התקן זה יופיעו כאן כאשר יהיו זמינות.</string>
+    <string name="updates_zero_state_description">גרסאות חדשות עבור מכשיר זה יופיעו כאן כאשר יהיו זמינות.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_update_size">גודל העדכון: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
@@ -104,8 +104,8 @@
     <string name="confirm_delete_dialog_title">מחיקת קובץ</string>
     <string name="confirm_delete_dialog_message">למחוק את קבצי העדכון שנבחרו?</string>
     <string name="apply_update_dialog_title">החלת עדכון</string>
-    <string name="apply_update_dialog_message">תכף תחל התקנת <xliff:g id="update_name">%1$s</xliff:g>.\n\nבלחיצה על <xliff:g id="ok">%2$s</xliff:g>, ההתקן יופעל מחדש אל מצב התאוששות (Recovery) לצורך התקנת העדכון.\n\nהערה: תכונה זו דורשת Recovery תואם או שיהיה צורך להתקין עדכונים ידנית.</string>
-    <string name="apply_update_dialog_message_ab">תכף תחל התקנת <xliff:g id="update_name">%1$s</xliff:g>.\n\nבלחיצה על <xliff:g id="ok">%2$s</xliff:g>, ההתקן יחל להתקין ברקע.\n\nלאחר השלמת הפעולה יידרש לאתחל את ההתקן.</string>
+    <string name="apply_update_dialog_message">תכף תחל התקנת <xliff:g id="update_name">%1$s</xliff:g>.\n\nבלחיצה על <xliff:g id="ok">%2$s</xliff:g>, המכשיר יופעל מחדש למצב Recovery לצורך התקנת העדכון.\n\nהערה: תכונה זו דורשת Recovery תואם אחרת יידרש להתקין עדכונים באופן ידני.</string>
+    <string name="apply_update_dialog_message_ab">תכף תחל התקנת <xliff:g id="update_name">%1$s</xliff:g>.\n\nבלחיצה על <xliff:g id="ok">%2$s</xliff:g>, המכשיר יתחיל להתקין ברקע.\n\nלאחר השלמת הפעולה יידרש לאתחל את המכשיר.</string>
     <string name="cancel_installation_dialog_title">ביטול ההתקנה</string>
     <string name="cancel_installation_dialog_message">לבטל את עדכון המערכת?</string>
     <string name="label_download_url">כתובת ההורדה</string>

@@ -5,6 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Oppdatering</string>
+    <string name="display_name">Systemoppdateringar</string>
     <string name="verification_failed_notification">Klarte ikkje stadfesta</string>
     <string name="verifying_download_notification">Stadfestar oppdatering</string>
     <string name="downloading_notification">Lastar ned</string>
@@ -12,11 +13,16 @@
     <string name="download_paused_error_notification">Feil ved nedlasting</string>
     <string name="download_completed_notification">Nedlastinga er ferdig</string>
     <string name="download_starting_notification">Startar nedlasting</string>
+    <string name="download_switch_confirm_title">Set den aktive nedlastinga på pause?</string>
+    <string name="download_switch_confirm_message">Ei anna oppdatering blir lasta ned. Viss du startar denne, vil den andre bli sett på pause.</string>
     <string name="update_failed_notification">Klarte ikkje oppdatera</string>
     <string name="installation_suspended_notification">Installasjonen er stansa</string>
     <string name="new_updates_found_title">Nye oppdateringar</string>
+    <string name="new_updates_found_summary">Trykk for å sjå tilgjengelege oppdateringar</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="installing_update">Installerer systemoppdateringa</string>
     <string name="installing_update_error">Klarte ikkje å installera</string>
+    <string name="installing_update_finished">Oppdateringa ventar på omstart</string>
     <string name="finalizing_package">Fullfører installasjonen</string>
     <string name="preparing_ota_first_boot">Førebur fyrste oppstart</string>
     <string name="dialog_prepare_zip_message">Gjer klart for oppdatering</string>
@@ -30,33 +36,80 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">Kan ikkje installera oppdatering når OverlayFS er montert</string>
     <string name="reboot">Start på nytt</string>
+    <string name="menu_preferences">Innstillingar for systemoppdatering</string>
+    <string name="preferences_summary">Synkroniser, last ned og installer</string>
+    <string name="check_for_updates">Sjå etter oppdateringar</string>
+    <string name="checking_for_updates">Sjekkar etter oppdateringar</string>
+    <string name="check_your_internet_connection">Sjekk internettilkoplinga di</string>
+    <string name="updates_check_failed">Klarte ikkje å sjå etter oppdateringar. Prøv på nytt seinare.</string>
+    <string name="header_last_updates_check_time">Sist sjekka: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Sist sjekka: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="pref_category_background_sync">Synkronisering i bakgrunnen</string>
+    <string name="menu_auto_updates_check">Sjå etter oppdateringar jamleg</string>
+    <string name="menu_auto_updates_check_summary">Sjå etter oppdateringar i bakgrunnen</string>
+    <string name="menu_auto_updates_check_interval">Sjå etter kvar</string>
+    <string name="time_unit_day">Dag</string>
+    <string name="time_unit_week">Veke</string>
+    <string name="time_unit_month">Månad</string>
+    <string name="pref_category_download_install">Nedlasting og installering</string>
+    <string name="menu_auto_delete_updates">Slett oppdateringar automatisk</string>
+    <string name="menu_auto_delete_updates_summary">Fjern nedlasta oppdateringar etter installering</string>
+    <string name="menu_stream_updates">Strøym oppdateringar over nett</string>
+    <string name="menu_stream_updates_summary">Installer oppdateringar medan dei blir lasta ned. Slå av for å lagra oppdateringspakkar til eksport.</string>
     <string name="menu_delete_update">Slett</string>
     <string name="menu_export_update">Eksporter oppdatering</string>
+    <string name="menu_view_downloads">Sjå på <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g>-nedlastingar</string>
     <string name="menu_metered_network_warning">Åtvaring om nettverk med datagrense</string>
+    <string name="menu_metered_network_warning_summary">Åtvar før nedlasting med mobildata</string>
     <string name="menu_ab_perf_mode">Prioriter oppdateringsprosessen</string>
+    <string name="menu_ab_perf_mode_summary">Gjer oppdateringar raskare på kostnad av einings-ytinga</string>
+    <string name="menu_ab_perf_mode_summary_charging">Blir slått på automatisk når du ladar</string>
     <string name="menu_update_recovery">Oppdater gjenoppretting</string>
+    <string name="menu_update_recovery_summary">Oppdater gjenopprettingspartisjonen saman med operativsystemet</string>
     <string name="snack_updates_found">Fann nye oppdateringar</string>
     <string name="snack_no_updates_found">Fann ingen nye oppdateringar</string>
     <string name="snack_download_failed">Klarte ikkje å lasta ned. Kontroller internettsambandet og prøv på nytt seinare.</string>
     <string name="snack_download_verification_failed">Klarte ikkje å stadfesta oppdateringa.</string>
     <string name="snack_download_verified">Nedlastinga er ferdig.</string>
     <string name="snack_update_not_installable">Denne oppdateringa kan ikkje installerast oppå den noverande versjonen.</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">Byggjedato</string>
+    <string name="security_update">Tryggingsoppdatering</string>
+    <string name="show_changelog">Nylege endringar</string>
+    <string name="report_issues">Meld frå om feil</string>
+    <string name="header_review_updates">Sjå oppdateringar og nylege endringar på</string>
+    <string name="found_bug">Fann du ein feil? Meld frå med feilmeldingsrettleiaren vår:</string>
+    <string name="updates_zero_state_title">Ingen oppdateringar tilgjengelege</string>
+    <string name="updates_zero_state_description">Nye versjonar for denne eininga kjem til syne her når dei er klare.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">Storleik på oppdatering: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">Tryggingsoppdatering: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Større Android-oppgradering</string>
+    <string name="list_full_install">Full installasjon: Trygt å installera over alle tidlegare versjonar</string>
+    <string name="list_major_upgrade_recovery_install">Større <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g>-oppgraderingar må installerast manuelt. Sjå rettleiaren for eininga di for å halda fram.</string>
+    <string name="list_downgrade_blocked">Denne versjonen er eldre enn det installerte systemet og kan ikkje installerast.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> av <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> av <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Stadfestar oppdatering</string>
+    <string name="see_more">Sjå %1$d til</string>
+    <string name="see_less">Sjå mindre</string>
     <string name="action_download">Last ned</string>
     <string name="action_pause">Pause</string>
     <string name="action_resume">Hald fram</string>
     <string name="action_install">Installer</string>
     <string name="action_info">Info</string>
+    <string name="action_open_guide">Opna rettleiaren</string>
     <string name="action_delete">Slett</string>
+    <string name="confirm_cancel_dialog_title">Avbryt nedlasting</string>
+    <string name="confirm_cancel_dialog_message">Vil du avbryta nedlastinga og sletta fila?</string>
     <string name="confirm_delete_dialog_title">Slett fil</string>
     <string name="confirm_delete_dialog_message">Vil du sletta den valde oppdateringsfila?</string>
     <string name="apply_update_dialog_title">Installer oppdatering</string>
     <string name="apply_update_dialog_message">Du er i ferd med å installera <xliff:g id="update_name">%1$s</xliff:g>.\n\nOm du trykkjer på <xliff:g id="ok">%2$s</xliff:g>, vil eininga starta på nytt i gjenopprettingsmodus for å installera oppdateringa.\n\nMerk: Denne funksjonen krev ein kompatibel gjenopprettingsmodus, elles må oppdateringar installerast manuelt.</string>
     <string name="apply_update_dialog_message_ab">Du er i ferd med å installera <xliff:g id="update_name">%1$s</xliff:g>.\n\nOm du trykkjer på <xliff:g id="ok">%2$s</xliff:g>, vil eininga byrja å installera i bakgrunnen.\n\nNår installasjonen er ferdig, får du varsel om å starta på nytt.</string>
+    <string name="cancel_installation_dialog_title">Avbryt installering</string>
+    <string name="cancel_installation_dialog_message">Vil du avbryta systemoppdateringa?</string>
     <string name="label_download_url">URL for nedlasting</string>
     <string name="dialog_export_title">Eksporterer oppdatering</string>
     <string name="notification_export_success">Oppdateringa er eksportert</string>
@@ -67,11 +120,17 @@
     <string name="update_over_metered_network_message">Du er i ferd med å lasta ned ei oppdatering over eit nettverk med datagrense. Dette kan bruka mykje data. Vil du halda fram?</string>
     <string name="blocked_update_dialog_title">Oppdateringa er sperra</string>
     <string name="blocked_update_dialog_message">Denne oppdateringa kan ikkje installerast med denne appen. Les <xliff:g id="info_url">%1$s</xliff:g> for meir informasjon.</string>
+    <string name="blocked_update_dialog_title_downgrade">Nedgradering er sperra</string>
+    <string name="blocked_update_dialog_message_downgrade">Denne oppdateringa er eldre enn det noverande systemet og kan ikkje installerast.</string>
     <string name="export_channel_title">Fullføring av eksport</string>
     <string name="new_updates_channel_title">Nye oppdateringar</string>
     <string name="ongoing_channel_title">Pågåande nedlastingar</string>
     <string name="update_failed_channel_title">Klarte ikkje å oppdatera</string>
+    <string name="local_update_import">Installer lokal oppdatering</string>
+    <string name="local_update_import_summary">Vel oppdateringsfil som skal installerast</string>
     <string name="local_update_import_progress">Importerer lokal oppdatering\u2026</string>
+    <string name="local_update_import_success_title">Oppdateringa er importert</string>
+    <string name="local_update_import_success_message">Byggjedato: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nTrykk på den importerte oppdateringa for å sjå kva du kan gjera.</string>
     <string name="local_update_import_failure">Klarte ikkje å importera lokal oppdatering</string>
     <string name="local_update_name">Lokal oppdatering</string>
 </resources>

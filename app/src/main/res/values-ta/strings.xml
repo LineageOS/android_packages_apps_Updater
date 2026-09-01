@@ -24,7 +24,7 @@
     <string name="installing_update_error">நிறுவற்பிழை</string>
     <string name="installing_update_finished">இற்றை மீட்டியக்கநிலுவை</string>
     <string name="finalizing_package">நிறுவல்முடித்தல்</string>
-    <string name="preparing_ota_first_boot">முதலியக்கவமைப்பு</string>
+    <string name="preparing_ota_first_boot">முதல் இயக்க ஆயத்தம்</string>
     <string name="dialog_prepare_zip_message">முன்னியக்கஇற்றை</string>
     <string name="dialog_battery_low_title">மின்கலக்குறைவு</string>
     <string name="dialog_battery_low_message_pct">மின்கலக்குறைவு! தொடர  <xliff:g id="percent_discharging">%1$d</xliff:g>%% மின் தேவை. மின்னேற்றத்தில் இருப்பின், <xliff:g id="percent_charging">%2$d</xliff:g>%% தேவை.</string>

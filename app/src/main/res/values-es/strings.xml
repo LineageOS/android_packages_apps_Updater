@@ -42,6 +42,7 @@
     <string name="check_your_internet_connection">Comprueba tu conexión a Internet</string>
     <string name="updates_check_failed">La comprobación ha fallado. Inténtalo de nuevo más tarde.</string>
     <string name="header_last_updates_check_time">Última comprobación: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Última comprobación: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="pref_category_background_sync">Sincronización en segundo plano</string>
     <string name="menu_auto_updates_check">Comprobar actualizaciones periódicamente</string>
     <string name="menu_auto_updates_check_summary">Comprobar actualizaciones en segundo plano</string>
@@ -86,6 +87,7 @@
     <string name="list_major_android_upgrade">Actualización importante de Android</string>
     <string name="list_full_install">Instalación completa: puede instalarse sin problemas sobre cualquier versión anterior</string>
     <string name="list_major_upgrade_recovery_install">Las actualizaciones de versión principales de <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> deben instalarse manualmente. Consulta la guía de tu dispositivo para continuar.</string>
+    <string name="list_downgrade_blocked">Esta versión es anterior a la instalada en el sistema y no se puede aplicar.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> de <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Verificando actualización</string>

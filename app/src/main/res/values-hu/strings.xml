@@ -5,6 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Frissítés</string>
+    <string name="display_name">Rendszerfrissítések</string>
     <string name="verification_failed_notification">Az ellenőrzés sikertelen</string>
     <string name="verifying_download_notification">Frissítésellenőrzés</string>
     <string name="downloading_notification">Letöltés</string>
@@ -12,11 +13,16 @@
     <string name="download_paused_error_notification">Letöltési hiba</string>
     <string name="download_completed_notification">A letöltés befejeződött</string>
     <string name="download_starting_notification">A letöltés indítása</string>
+    <string name="download_switch_confirm_title">Szünetelteti az aktív letöltést?</string>
+    <string name="download_switch_confirm_message">Egy másik frissítés letöltése már folyamatban van. Ennek az elindítása szüneteltetni fogja a másikat.</string>
     <string name="update_failed_notification">A frissítés sikertelen</string>
     <string name="installation_suspended_notification">A telepítés felfüggesztve</string>
     <string name="new_updates_found_title">Új frissítések</string>
+    <string name="new_updates_found_summary">Érintse meg az elérhető frissítések megtekintéséhez</string>
     <string name="text_download_speed">%1$s, %2$s/s</string>
+    <string name="installing_update">A Rendszerfrissítés telepítése</string>
     <string name="installing_update_error">Telepítési hiba</string>
+    <string name="installing_update_finished">A frissítés újraindításra vár</string>
     <string name="finalizing_package">A csomagtelepítés véglegesítése</string>
     <string name="preparing_ota_first_boot">Felkészülés az első indításra</string>
     <string name="dialog_prepare_zip_message">A frissítés előzetes előkészítése</string>
@@ -30,33 +36,80 @@ illetve, ha éppen tölt, akkor még <xliff:g id="percent_charging">%2$d</xliff:
         ]]></string>
     <string name="dialog_scratch_mounted_title">Nem telepíthet frissítést a felcsatlakoztatott OverlayFS miatt</string>
     <string name="reboot">Újraindítás</string>
+    <string name="menu_preferences">Rendszerfrissítési beállítások</string>
+    <string name="preferences_summary">Szinkronizálás, letöltés és telepítés</string>
+    <string name="check_for_updates">Frissítések keresése</string>
+    <string name="checking_for_updates">Frissítések keresése</string>
+    <string name="check_your_internet_connection">Ellenőrizze az internetkapcsolatát</string>
+    <string name="updates_check_failed">A frissítéskeresés sikertelen. Próbálja meg később.</string>
+    <string name="header_last_updates_check_time">Legutóbbi keresés: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Legutóbbi keresés: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="pref_category_background_sync">Szinkronizálás a háttérben</string>
+    <string name="menu_auto_updates_check">Frissítések időszakos keresése</string>
+    <string name="menu_auto_updates_check_summary">Frissítések keresése a háttérben</string>
+    <string name="menu_auto_updates_check_interval">Frissítési gyakoriság</string>
+    <string name="time_unit_day">Napi</string>
+    <string name="time_unit_week">Heti</string>
+    <string name="time_unit_month">Havi</string>
+    <string name="pref_category_download_install">Letöltés és telepítés</string>
+    <string name="menu_auto_delete_updates">Frissítések automatikus törlése</string>
+    <string name="menu_auto_delete_updates_summary">A letöltött frissítések törlése telepítés után</string>
+    <string name="menu_stream_updates">Frissítés online adatfolyamként</string>
+    <string name="menu_stream_updates_summary">Frissítések mentés nélküli telepítése letöltés közben. Kapcsolja ki, ha menteni szeretné a frissítési csomagokat exportáláshoz.</string>
     <string name="menu_delete_update">Törlés</string>
     <string name="menu_export_update">A frissítés exportálása</string>
+    <string name="menu_view_downloads">Megtekintés itt: <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> Letöltések</string>
     <string name="menu_metered_network_warning">Mobiladat-költség figyelmeztetés</string>
+    <string name="menu_metered_network_warning_summary">Figyelmeztetés mobilinterneten keresztül történő letöltés előtt</string>
     <string name="menu_ab_perf_mode">Állítsa fontossági sorrendbe a frissítési folyamatot</string>
+    <string name="menu_ab_perf_mode_summary">Frissítések felgyorsítása a készülék-teljesítmény rovására</string>
+    <string name="menu_ab_perf_mode_summary_charging">Automatikusan engedélyezve hálózatról történő töltés közben</string>
     <string name="menu_update_recovery">Recovery-frissítés</string>
+    <string name="menu_update_recovery_summary">Recovery partíció frissítése az operációs rendszerrel együtt</string>
     <string name="snack_updates_found">Új frissítés érhető el</string>
     <string name="snack_no_updates_found">Nem található új frissítés</string>
     <string name="snack_download_failed">A letöltés meghiúsult. Ellenőrizze az internetkapcsolatát, majd próbálja újra.</string>
     <string name="snack_download_verification_failed">A frissítés ellenőrzése sikertelen.</string>
     <string name="snack_download_verified">A letöltés befejeződött.</string>
     <string name="snack_update_not_installable">Ez a frissítés nem telepíthető a jelenlegi verzióra.</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">A kiadás dátuma</string>
+    <string name="security_update">Biztonsági frissítés</string>
+    <string name="show_changelog">Legutóbbi változások</string>
+    <string name="report_issues">Probléma jelentése</string>
+    <string name="header_review_updates">Frissítések és legutóbbi változások áttekintése</string>
+    <string name="found_bug">Hibát talált? Kövesse a hibabejelentési útmutatót:</string>
+    <string name="updates_zero_state_title">Nincs elérhető frissítés</string>
+    <string name="updates_zero_state_description">A készülékhez készülő új kiadások itt fognak megjelenni, amikor elérhetővé válnak.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">Frissítés mérete: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">Biztonsági frissítés: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Fő Android-frissítés</string>
+    <string name="list_full_install">Teljes telepítés: Biztonságosan telepíthető bármely korábbi verzióra</string>
+    <string name="list_major_upgrade_recovery_install">Ezt a fő verziófrissítést: <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> manuálisan kell elvégezni. A folytatáshoz olvassa el készüléke útmutatóját.</string>
+    <string name="list_downgrade_blocked">Ez a verzió régebbi, mint a telepített rendszer, ezért nem alkalmazható.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> / <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Frissítésellenőrzés</string>
+    <string name="see_more">További %1$d megjelenítése</string>
+    <string name="see_less">Kevesebb megjelenítése</string>
     <string name="action_download">Letöltés</string>
     <string name="action_pause">Szüneteltetés</string>
     <string name="action_resume">Folytatás</string>
     <string name="action_install">Telepítés</string>
     <string name="action_info">Információ</string>
+    <string name="action_open_guide">Útmutató megnyitása</string>
     <string name="action_delete">Törlés</string>
+    <string name="confirm_cancel_dialog_title">A letöltés leállítása</string>
+    <string name="confirm_cancel_dialog_message">Leállítja a letöltést és törli a fájlt?</string>
     <string name="confirm_delete_dialog_title">Fájltörlés</string>
     <string name="confirm_delete_dialog_message">Biztosan törölni szeretné a letöltött frissítőfájlt?</string>
     <string name="apply_update_dialog_title">A frissítés telepítése</string>
     <string name="apply_update_dialog_message">Ön a következőt kívánja telepiteni: <xliff:g id="update_name">%1$s</xliff:g>\n\nAmennyiben megnyomja az <xliff:g id="ok">%2$s</xliff:g> gombot, a készülék újraindul recovery-módban és telepíti a frissítést.\n\nFigyelmeztetés: a telepítéshez a készülékkel kompatibilis Recovery szükséges</string>
     <string name="apply_update_dialog_message_ab">A következő telepítésre készül: <xliff:g id="update_name">%1$s</xliff:g>.\n\nAmennyiben megnyomja az <xliff:g id="ok">%2$s</xliff:g> gombot, a készülék elkezdi a telepítést a háttérben.\n\nAmint kész, újraindításra lesz szükség.</string>
+    <string name="cancel_installation_dialog_title">Telepítés leállítása</string>
+    <string name="cancel_installation_dialog_message">Leállítja a Rendszerfrissítést?</string>
     <string name="label_download_url">Az URL letöltése</string>
     <string name="dialog_export_title">A frissítés exportálása</string>
     <string name="notification_export_success">A frissítés exportálva</string>
@@ -67,11 +120,17 @@ illetve, ha éppen tölt, akkor még <xliff:g id="percent_charging">%2$d</xliff:
     <string name="update_over_metered_network_message">Úgy tűnik mobiladat-forgalmat használva kíván letölteni egy nagyméretű frissítési csomagot, ami nagy költséggel járhat. Biztos benne hogy engedélyezi ezt?</string>
     <string name="blocked_update_dialog_title">A frissítés blokkolva</string>
     <string name="blocked_update_dialog_message">Ez a frissítés nem telepíthető a Frissítés alkalmazással. További információért olvassa el a következőt: <xliff:g id="info_url">%1$s</xliff:g></string>
+    <string name="blocked_update_dialog_title_downgrade">Korábbi verzióra váltás blokkolva</string>
+    <string name="blocked_update_dialog_message_downgrade">Ez a frissítés a jelenlegi rendszernél régebbi és nem lehet telepíteni.</string>
     <string name="export_channel_title">Exportálás-véglegesítés</string>
     <string name="new_updates_channel_title">Új frissítések</string>
     <string name="ongoing_channel_title">Folyamatban lévő letöltések</string>
     <string name="update_failed_channel_title">A frissítés sikertelen</string>
+    <string name="local_update_import">Helyi frissítés telepítése</string>
+    <string name="local_update_import_summary">Frissítési fájl kiválasztása telepítésre</string>
     <string name="local_update_import_progress">Helyi frissítés importálása\u2026</string>
+    <string name="local_update_import_success_title">Frissítés importálva</string>
+    <string name="local_update_import_success_message">Kiadás dátuma: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nKoppintson az importált frissítésre az elérhető műveletek megtekintéséhez.</string>
     <string name="local_update_import_failure">Nem sikerült importálni a helyi frissítést</string>
     <string name="local_update_name">Helyi frissítés</string>
 </resources>

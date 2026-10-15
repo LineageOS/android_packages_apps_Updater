@@ -54,6 +54,7 @@
     <string name="snack_download_verification_failed">Verifikasi pembaruan gagal.</string>
     <string name="snack_download_verified">Unduhan selesai.</string>
     <string name="snack_update_not_installable">Pembaruan ini tidak dapat dipasang di atas pembuatan saat ini.</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
     <string name="report_issues">Laporkan masalah</string>
     <string name="updates_zero_state_title">Tidak ada pembaruan yang tersedia</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>

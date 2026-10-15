@@ -29,6 +29,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ShaderBrush
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.layer.CompositingStrategy
+import androidx.compose.ui.graphics.layer.drawLayer
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
@@ -318,8 +320,13 @@ private fun Modifier.updaterHeaderPattern(
     }
     val brush = ShaderBrush(shader)
 
+    val patternLayer = obtainGraphicsLayer().apply {
+        compositingStrategy = CompositingStrategy.Offscreen
+        record { drawRect(brush) }
+    }
+
     onDrawBehind {
-        drawRect(brush)
+        drawLayer(patternLayer)
     }
 }
 

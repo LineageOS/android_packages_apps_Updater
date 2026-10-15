@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aee22516_5abe7f7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 38336
+      },
+      "writtenOn": "2026-10-15T10:43:11Z",
+      "side": 1,
+      "message": "Tested on gold (Redmi Note 13 5G), lineage-24.0: scrolling the main screen drops about 1% of frames (median 12-13 ms), down from 92-98% (median 81 ms).",
+      "revId": "bce3a2dd2de5e847b234b652d47fc880cdcf92d1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

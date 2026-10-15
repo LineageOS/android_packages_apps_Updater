@@ -5,6 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">نوێکەرەوە</string>
+    <string name="display_name">نوێکردنەوەکانی سیستم</string>
     <string name="verification_failed_notification">پشکنین سەرکەوتوو نەبوو</string>
     <string name="verifying_download_notification">پشکنین بۆ نوێکاری دەکرێت</string>
     <string name="downloading_notification">داگرتن...</string>
@@ -12,11 +13,16 @@
     <string name="download_paused_error_notification">هەڵە لە داگرتندا</string>
     <string name="download_completed_notification">داگرتن تەواو بوو</string>
     <string name="download_starting_notification">دەستپێکردنی داگرتن</string>
+    <string name="download_switch_confirm_title">وەستانی کاتیی داگرتنی چالاک؟</string>
+    <string name="download_switch_confirm_message">نوێکارییەکی تر لە ئێستادا دادەگیرێت. دەستپێکردنی ئەمە دەبێتە هۆی وەستانی کاتیی ئەوی تر.</string>
     <string name="update_failed_notification">نوێکردنەوە سەرکەوتوو نەبوو</string>
     <string name="installation_suspended_notification">دامەزراندن هەڵپەسێردرا</string>
     <string name="new_updates_found_title">نوێکارییە نوێیەکان</string>
+    <string name="new_updates_found_summary">دەست لێ بدە بۆ بینینی نوێکارییە بەردەستەکان</string>
     <string name="text_download_speed">%1$s، %2$s/چرکە</string>
+    <string name="installing_update">دامەزراندنی نوێکاریی سیستم</string>
     <string name="installing_update_error">هەڵە لە دامەزراندندا</string>
+    <string name="installing_update_finished">نوێکاری لە چاوەڕوانیی پێکردنەوەدایە</string>
     <string name="finalizing_package">کۆتاییهێنان بە دامەزراندنی پاکێج</string>
     <string name="preparing_ota_first_boot">ئامادەکاری بۆ یەکەم کارپێکردنەوە</string>
     <string name="dialog_prepare_zip_message">ئامادەکاری سەرەتایی بۆ نوێکردنەوە</string>
@@ -29,33 +35,80 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">ناتوانرێت نوێکاری دابمەزرێنرێت کاتێک OverlayFS چاڵاکە</string>
     <string name="reboot">دووبارە کارپێکردنەوە</string>
+    <string name="menu_preferences">هەڵبژاردەکانی نوێکردنەوەی سیستم</string>
+    <string name="preferences_summary">هاوکاتکردن، داگرتن و دامەزراندن</string>
+    <string name="check_for_updates">پشکنین بۆ نوێکارییەکان</string>
+    <string name="checking_for_updates">پشکنین بۆ نوێکارییەکان دەکرێت</string>
+    <string name="check_your_internet_connection">پشکنین بۆ هێڵی ئینتەرنێتەکەت بکە</string>
+    <string name="updates_check_failed">پشکنینی نوێکاری سەرکەوتوو نەبوو. دواتر هەوڵ بدەرەوە.</string>
+    <string name="header_last_updates_check_time">دواین پشکنین: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">دواین پشکنین: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="pref_category_background_sync">هاوکاتکردنی پاشبنەما</string>
+    <string name="menu_auto_updates_check">پشکنینی کاتی بۆ نوێکارییەکان</string>
+    <string name="menu_auto_updates_check_summary">پشکنین بۆ نوێکارییەکان لە پاشبنەمادا</string>
+    <string name="menu_auto_updates_check_interval">پشکنین لە هەر</string>
+    <string name="time_unit_day">ڕۆژ</string>
+    <string name="time_unit_week">هەفتە</string>
+    <string name="time_unit_month">مانگ</string>
+    <string name="pref_category_download_install">داگرتن و دامەزراندن</string>
+    <string name="menu_auto_delete_updates">سڕینەوەی خۆکاری نوێکارییەکان</string>
+    <string name="menu_auto_delete_updates_summary">سڕینەوەی نوێکارییە داگیراوەکان دوای دامەزراندن</string>
+    <string name="menu_stream_updates">پەخشکردنی ڕاستەوخۆی نوێکارییەکان</string>
+    <string name="menu_stream_updates_summary">دامەزراندنی نوێکارییەکان هاوکات لەگەڵ داگرتندا. ناچالاکی بکە بۆ پاشەکەوتکردنی پەڕگەکانی نوێکاری بە مەبەستی هەناردەکردن.</string>
     <string name="menu_delete_update">سڕینەوە</string>
     <string name="menu_export_update">هەناردەکردنی نوێکاری</string>
+    <string name="menu_view_downloads">بینین لە داگرتنەکانی <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g></string>
     <string name="menu_metered_network_warning">ئاگاداری هێڵی سنووردار</string>
+    <string name="menu_metered_network_warning_summary">ئاگادارکردنەوە پێش داگرتن لەسەر هێڵی مۆبایل</string>
     <string name="menu_ab_perf_mode">پێشینەدان بە پڕۆسەی نوێکردنەوە</string>
+    <string name="menu_ab_perf_mode_summary">خێراکردنی نوێکارییەکان لەسەر حیسابی توانستی ئامێر</string>
+    <string name="menu_ab_perf_mode_summary_charging">خۆکارانە چالاک دەبێت لە کاتی بارگاویکردنەوە لە کارەبادا</string>
     <string name="menu_update_recovery">نوێکردنەوەی Recovery (Recovery)</string>
+    <string name="menu_update_recovery_summary">نوێکردنەوەی بەشی Recovery هاوکات لەگەڵ سیستمدا</string>
     <string name="snack_updates_found">نوێکاری نوێ دۆزرایەوە</string>
     <string name="snack_no_updates_found">هیچ نوێکارییەک نەدۆزرایەوە</string>
     <string name="snack_download_failed">داگرتن سەرکەوتوو نەبوو. تکایە هێڵی ئینتەرنێتەکەت بپشکنە و دواتر هەوڵ بدەرەوە.</string>
     <string name="snack_download_verification_failed">پشکنینی نوێکاری سەرکەوتوو نەبوو.</string>
     <string name="snack_download_verified">داگرتن تەواو بوو.</string>
     <string name="snack_update_not_installable">ئەم نوێکارییە ناتوانرێت لەسەر ئەم وەشانەی ئێستا دابمەزرێنرێت.</string>
+    <string name="header_android_version">ئەندرۆید <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">بەرواری دروستکردن</string>
+    <string name="security_update">نوێکاریی ئاسایش</string>
+    <string name="show_changelog">گۆڕانکارییە نوێیەکان</string>
+    <string name="report_issues">ڕاپۆرتکردنی کێشەکان</string>
+    <string name="header_review_updates">پێداچوونەوە بە نوێکارییەکان و گۆڕانکارییە نوێیەکان لەسەر</string>
+    <string name="found_bug">کێشەت دۆزیوەتەوە؟ بەپێی ڕێبەری ڕاپۆرتکردنی کێشەکان ڕاپۆرتی بکە:</string>
+    <string name="updates_zero_state_title">هیچ نوێکارییەک بەردەست نییە</string>
+    <string name="updates_zero_state_description">وەشانە نوێیەکان بۆ ئەم ئامێرە لێرە دەردەکەون کاتێک بەردەست دەبن.</string>
     <string name="list_build_version">LineageOS %1$s</string>
     <string name="list_build_version_date">LineageOS %1$s - %2$s</string>
+    <string name="list_update_size">قەبارەی نوێکاری: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">نوێکاریی ئاسایش: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">نوێکاریی سەرەکیی ئەندرۆید</string>
+    <string name="list_full_install">دامەزراندنی تەواو: پارێزراوە بۆ دامەزراندن لەسەر هەر وەشانێکی پێشوو</string>
+    <string name="list_major_upgrade_recovery_install">نوێکارییە سەرەکییەکانی وەشانی <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> دەبێت بە دەست دابمەزرێنرێن. سەردانی ڕێبەری ئامێرەکەت بکە بۆ بەردەوامبوون.</string>
+    <string name="list_downgrade_blocked">ئەم وەشانە کۆنترە لە سیستمی دامەزراو و ناتوانرێت جێبەجێ بکرێت.</string>
     <string name="list_download_progress_newer">%1$s لە %2$s</string>
     <string name="list_download_progress_eta_newer">%1$s لە %2$s (%3$s ماوە)</string>
     <string name="list_verifying_update">پشکنینی نوێکاری</string>
+    <string name="see_more">بینینی %1$dـی تر</string>
+    <string name="see_less">کەمتر پیشان بدە</string>
     <string name="action_download">داگرتن</string>
     <string name="action_pause">وەستانی کاتی</string>
     <string name="action_resume">دەستپێکردنەوە</string>
     <string name="action_install">دامەزراندن</string>
     <string name="action_info">زانیاری</string>
+    <string name="action_open_guide">کردنەوەی ڕێبەر</string>
     <string name="action_delete">سڕینەوە</string>
+    <string name="confirm_cancel_dialog_title">هەڵوەشاندنەوەی داگرتن</string>
+    <string name="confirm_cancel_dialog_message">داگرتنەکە هەڵدەوەشێنیتەوە و پەڕگەکە دەسڕیتەوە؟</string>
     <string name="confirm_delete_dialog_title">سڕینەوەی فایل</string>
     <string name="confirm_delete_dialog_message">ئایا دڵنیای لە سڕینەوەی فایلی نوێکاری هەڵبژێردراو؟</string>
     <string name="apply_update_dialog_title">جێبەجێکردنی نوێکاری</string>
     <string name="apply_update_dialog_message">تۆ خەریکی دامەزراندنی %1$s.\n\nئەگەر کرتە لە %2$s بکەیت، ئامێرەکە خۆکارانە دەچێتە باری Recovery بۆ دامەزراندنی نوێکارییەکە.\n\nتێبینی: ئەمە پێویستی بە ڕیکۆڤەریی گونجاو هەیە ئەگینا دەبێت بە شێوازی دەستی دایبمەزرێنیت.</string>
     <string name="apply_update_dialog_message_ab">تۆ خەریکی دامەزراندنی %1$s.\n\nئەگەر کرتە لە %2$s بکەیت، ئامێرەکە لە پاشبنەمادا دەست دەکات بە دامەزراندن.\n\nدوای تەواوبوون، داوات لێ دەکرێت ئامێرەکە دووبارە کار پێ بکەیتەوە.</string>
+    <string name="cancel_installation_dialog_title">هەڵوەشاندنەوەی دامەزراندن</string>
+    <string name="cancel_installation_dialog_message">نوێکردنەوەی سیستم هەڵدەوەشێنیتەوە؟</string>
     <string name="label_download_url">بەستەری داگرتن</string>
     <string name="dialog_export_title">هەناردەکردنی نوێکاری</string>
     <string name="notification_export_success">نوێکارییەکە هەناردە کرا</string>
@@ -66,11 +119,19 @@
     <string name="update_over_metered_network_message">تۆ خەریکی داگرتنی پاکێجێکی نوێکاریت لە ڕێگەی هێڵی ئینتەرنێتی سنووردار کە ڕەنگە تێچووی زۆری هەبێت. دەتەوێت بەردەوام بیت؟</string>
     <string name="blocked_update_dialog_title">نوێکاری بلۆک کرا</string>
     <string name="blocked_update_dialog_message">ئەم نوێکارییە ناتوانرێت لە ڕێگەی ئەم بەرنامەوە دابمەزرێنرێت. تکایە %1$s بخوێنەرەوە بۆ زانیاری زیاتر.</string>
+    <string name="blocked_update_dialog_title_downgrade">دابەزاندنی وەشان ڕاگیراوە</string>
+    <string name="blocked_update_dialog_message_downgrade">ئەم نوێکارییە کۆنترە لە سیستمی ئێستا و ناتوانرێت دابمەزرێت.</string>
     <string name="export_channel_title">تەواوبوونی هەناردەکردن</string>
     <string name="new_updates_channel_title">نوێکارییە نوێیەکان</string>
     <string name="ongoing_channel_title">داگرتنە بەردەوامەکان</string>
     <string name="update_failed_channel_title">نوێکردنەوە سەرکەوتوو نەبوو</string>
-    <string name="local_update_import_progress">هێنانی نوێکاری ناوخۆیی\u2026</string>
-    <string name="local_update_import_failure">هێنانی نوێکاری ناوخۆیی سەرکەوتوو نەبوو</string>
-    <string name="local_update_name">نوێکاری ناوخۆیی</string>
+    <string name="local_update_import">دامەزراندنی نوێکاریی ناوخۆیی</string>
+    <string name="local_update_import_summary">پەڕگەی نوێکاری هەڵبژێرە بۆ دامەزراندن</string>
+    <string name="local_update_import_progress">هێنانی نوێکاریی ناوخۆیی\u2026</string>
+    <string name="local_update_import_success_title">نوێکاری هاوردە کرا</string>
+    <string name="local_update_import_success_message">بەرواری دروستکردن: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>
+
+دەست لە نوێکارییە هاوردەکراوەکە بدە بۆ بینینی کردارە بەردەستەکان.</string>
+    <string name="local_update_import_failure">هێنانی نوێکاریی ناوخۆیی سەرکەوتوو نەبوو</string>
+    <string name="local_update_name">نوێکاریی ناوخۆیی</string>
 </resources>

@@ -5,6 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Ενημερώσεις</string>
+    <string name="display_name">Ενημερώσεις συστήματος</string>
     <string name="verification_failed_notification">Αποτυχία επαλήθευσης</string>
     <string name="verifying_download_notification">Επαλήθευση ενημέρωσης</string>
     <string name="downloading_notification">Λήψη</string>
@@ -12,11 +13,16 @@
     <string name="download_paused_error_notification">Σφάλμα λήψης</string>
     <string name="download_completed_notification">Η λήψη ολοκληρώθηκε</string>
     <string name="download_starting_notification">Έναρξη λήψης</string>
+    <string name="download_switch_confirm_title">Παύση ενεργής λήψης;</string>
+    <string name="download_switch_confirm_message">Η λήψη μιας άλλης ενημέρωση βρίσκεται σε εξέλιξη. Η εκκίνηση αυτής θα διακόψει την άλλη.</string>
     <string name="update_failed_notification">Η ενημέρωση απέτυχε</string>
     <string name="installation_suspended_notification">Η εγκατάσταση έχει ανασταλεί</string>
     <string name="new_updates_found_title">Νέες ενημερώσεις</string>
+    <string name="new_updates_found_summary">Πατήστε για να δείτε τις διαθέσιμες ενημερώσεις</string>
     <string name="text_download_speed">%1$s, %2$s/δ</string>
+    <string name="installing_update">Εγκατάσταση ενημέρωσης συστήματος</string>
     <string name="installing_update_error">Σφάλμα εγκατάστασης</string>
+    <string name="installing_update_finished">Αναμένεται επανεκκίνηση για ενημέρωση</string>
     <string name="finalizing_package">Ολοκλήρωση της εγκατάστασης του πακέτου</string>
     <string name="preparing_ota_first_boot">Προετοιμασία για την πρώτη εκκίνηση</string>
     <string name="dialog_prepare_zip_message">Προκαταρκτική προετοιμασία ενημέρωσης</string>
@@ -30,33 +36,80 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">Αδυναμία εγκατάστασης ενημέρωσης με το OverlayFS προσαρτημένο</string>
     <string name="reboot">Επανεκκίνηση</string>
+    <string name="menu_preferences">Προτιμήσεις ενημέρωσης συστήματος</string>
+    <string name="preferences_summary">Συγχρονισμός, λήψη και εγκατάσταση</string>
+    <string name="check_for_updates">Έλεγχος για ενημερώσεις</string>
+    <string name="checking_for_updates">Έλεγχος για ενημερώσεις</string>
+    <string name="check_your_internet_connection">Ελέγξτε τη σύνδεσή σας στο διαδίκτυο</string>
+    <string name="updates_check_failed">Ο έλεγχος ενημερώσεων απέτυχε. Προσπαθήστε ξανά αργότερα.</string>
+    <string name="header_last_updates_check_time">Τελευταίος έλεγχος: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">Τελευταίος έλεγχος: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="pref_category_background_sync">Συγχρονισμός στο παρασκήνιο</string>
+    <string name="menu_auto_updates_check">Περιοδικός έλεγχος ενημερώσεων</string>
+    <string name="menu_auto_updates_check_summary">Έλεγχος για ενημερώσεις στο παρασκήνιο</string>
+    <string name="menu_auto_updates_check_interval">Έλεγχος κάθε</string>
+    <string name="time_unit_day">Μέρα</string>
+    <string name="time_unit_week">Εβδομάδα</string>
+    <string name="time_unit_month">Μήνα</string>
+    <string name="pref_category_download_install">Λήψη και εγκατάσταση</string>
+    <string name="menu_auto_delete_updates">Αυτόματη διαγραφή ενημερώσεων</string>
+    <string name="menu_auto_delete_updates_summary">Διαγραφή ληφθέντων ενημερώσεων μετά την εγκατάσταση</string>
+    <string name="menu_stream_updates">Διαδικτυακές ενημερώσεις</string>
+    <string name="menu_stream_updates_summary">Εγκατάσταση ενημερώσεων κατά τη λήψη. Απενεργοποιήστε για αποθήκευση του πακέτου ενημέρωσης για εξαγωγή.</string>
     <string name="menu_delete_update">Διαγραφή</string>
     <string name="menu_export_update">Εξαγωγή ενημέρωσης</string>
+    <string name="menu_view_downloads">Προβολή στις Λήψεις <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g></string>
     <string name="menu_metered_network_warning">Προειδοποίηση ογκοχρέωσης δικτύου</string>
+    <string name="menu_metered_network_warning_summary">Προειδοποίηση πριν από τη λήψη μέσω δεδομένων κινητής τηλεφωνίας</string>
     <string name="menu_ab_perf_mode">Επιτάχυνση διαδικασίας ενημέρωσης</string>
+    <string name="menu_ab_perf_mode_summary">Επιτάχυνση ενημερώσεων εις βάρος των επιδόσεων της συσκευής</string>
+    <string name="menu_ab_perf_mode_summary_charging">Ενεργοποιείται αυτόματα κατά τη φόρτιση με τροφοδοσία AC</string>
     <string name="menu_update_recovery">Ενημέρωση recovery</string>
+    <string name="menu_update_recovery_summary">Ενημέρωση του recovery partition μαζί με το λειτουργικό σύστημα</string>
     <string name="snack_updates_found">Βρέθηκαν νέες ενημερώσεις</string>
     <string name="snack_no_updates_found">Δεν βρέθηκαν νέες ενημερώσεις</string>
     <string name="snack_download_failed">Η λήψη απέτυχε. Παρακαλούμε ελέγξτε την σύνδεση σας στο διαδίκτυο και προσπαθήστε αργότερα.</string>
     <string name="snack_download_verification_failed">Αποτυχία επαλήθευσης της ενημέρωσης.</string>
     <string name="snack_download_verified">Η λήψη ολοκληρώθηκε.</string>
     <string name="snack_update_not_installable">Αυτή η ενημέρωση δεν μπορεί να εγκατασταθεί πάνω από την τρέχουσα έκδοση.</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">Ημερομηνία έκδοσης</string>
+    <string name="security_update">Ενημέρωση ασφάλειας</string>
+    <string name="show_changelog">Πρόσφατες αλλαγές</string>
+    <string name="report_issues">Αναφορά προβλημάτων</string>
+    <string name="header_review_updates">Επισκόπηση ενημερώσεων και πρόσφατων αλλαγών στο</string>
+    <string name="found_bug">Βρήκατε πρόβλημα; Αναφέρετέ το με τον βοηθό αναφοράς σφαλμάτων:</string>
+    <string name="updates_zero_state_title">Δεν υπάρχουν διαθέσιμες ενημερώσεις</string>
+    <string name="updates_zero_state_description">Νέες εκδόσεις για αυτήν τη συσκευή θα εμφανιστούν εδώ όταν είναι διαθέσιμες.</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_update_size">Μέγεθος ενημέρωσης: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
+    <string name="list_security_update">Ενημέρωση ασφάλειας: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Σημαντική αναβάθμιση Android</string>
+    <string name="list_full_install">Πλήρης εγκατάσταση: Ασφαλές για εγκατάσταση πάνω από οποιαδήποτε προηγούμενη έκδοση</string>
+    <string name="list_major_upgrade_recovery_install">Οι μεγάλες αναβαθμίσεις του <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> πρέπει να εγκατασταθούν χειροκίνητα. Ανατρέξτε στον οδηγό της συσκευής σας για να συνεχίσετε.</string>
+    <string name="list_downgrade_blocked">Αυτή η έκδοση είναι παλαιότερη από το τρέχον σύστημα και δεν μπορεί να εγκατασταθεί.</string>
     <string name="list_download_progress_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer"><xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> από <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">Επαλήθευση ενημέρωσης</string>
+    <string name="see_more">Προβολή %1$d επιπλέον</string>
+    <string name="see_less">Προβολή λιγότερων</string>
     <string name="action_download">Λήψη</string>
     <string name="action_pause">Παύση</string>
     <string name="action_resume">Συνέχιση</string>
     <string name="action_install">Εγκατάσταση</string>
     <string name="action_info">Πληροφορίες</string>
+    <string name="action_open_guide">Άνοιγμα οδηγού</string>
     <string name="action_delete">Διαγραφή</string>
+    <string name="confirm_cancel_dialog_title">Ακύρωση λήψης</string>
+    <string name="confirm_cancel_dialog_message">Ακύρωση λήψης και διαγραφή αρχείου;</string>
     <string name="confirm_delete_dialog_title">Διαγραφή αρχείου</string>
     <string name="confirm_delete_dialog_message">Διαγραφή του επιλεγμένου αρχείου ενημέρωσης;</string>
     <string name="apply_update_dialog_title">Εφαρμογή ενημέρωσης</string>
     <string name="apply_update_dialog_message">Πρόκειται να εγκαταστήσετε το <xliff:g id="update_name">%1$s</xliff:g>.\n\nΑν πατήσετε <xliff:g id="ok">%2$s</xliff:g>, η συσκευή θα κάνει επανεκκίνηση σε λειτουργία recovery για να εγκατασταθεί η ενημέρωση.\n\nΣημείωση: Αυτή η λειτουργία απαιτεί μια συμβατή recovery αλλιώς η ενημέρωση θα πρέπει να εγκατασταθεί χειροκίνητα.</string>
     <string name="apply_update_dialog_message_ab">Πρόκειται να εγκαταστήσετε το <xliff:g id="update_name">%1$s</xliff:g>.\n\nΕάν πατήσετε <xliff:g id="ok">%2$s</xliff:g>, η συσκευή θα ξεκινήσει την εγκατάσταση στο παρασκήνιο.\n\nΌταν ολοκληρωθεί, θα σας ζητηθεί να κάνετε επανεκκίνηση.</string>
+    <string name="cancel_installation_dialog_title">Ακύρωση εγκατάστασης</string>
+    <string name="cancel_installation_dialog_message">Ακύρωση της ενημέρωσης συστήματος;</string>
     <string name="label_download_url">Λήψη συνδέσμου</string>
     <string name="dialog_export_title">Εξαγωγή ενημέρωσης</string>
     <string name="notification_export_success">Η ενημέρωση εξάχθηκε</string>
@@ -67,11 +120,17 @@
     <string name="update_over_metered_network_message">Είστε έτοιμοι να κατεβάσετε ένα πακέτο ενημέρωσης χρησιμοποιώντας ένα δίκτυο με ογκοχρέωση δεδομένων το οποίο είναι πιθανό να προκαλέσει υψηλή χρήση δεδομένων. Θα θέλατε να συνεχίσετε;</string>
     <string name="blocked_update_dialog_title">Η ενημέρωση μπλοκαρίστηκε</string>
     <string name="blocked_update_dialog_message">Αυτή η ενημέρωση δεν μπορεί να εγκατασταθεί χρησιμοποιώντας την εφαρμογή ενημέρωσης.  Παρακαλούμε διαβάστε το <xliff:g id="info_url">%1$s </xliff:g> για περισσότερες πληροφορίες.</string>
+    <string name="blocked_update_dialog_title_downgrade">Η υποβάθμιση αποκλείστηκε</string>
+    <string name="blocked_update_dialog_message_downgrade">Αυτή η ενημέρωση είναι παλαιότερη από το τρέχον σύστημα και δεν μπορεί να εγκατασταθεί.</string>
     <string name="export_channel_title">Ολοκλήρωση εξαγωγής</string>
     <string name="new_updates_channel_title">Νέες ενημερώσεις</string>
     <string name="ongoing_channel_title">Λήψεις σε εξέλιξη</string>
     <string name="update_failed_channel_title">Η ενημέρωση απέτυχε</string>
+    <string name="local_update_import">Εγκατάσταση τοπικής ενημέρωσης</string>
+    <string name="local_update_import_summary">Επιλέξτε αρχείο ενημέρωσης για εγκατάσταση</string>
     <string name="local_update_import_progress">Εισαγωγή τοπικής ενημέρωσης\u2026</string>
+    <string name="local_update_import_success_title">Η ενημέρωση εισήχθη</string>
+    <string name="local_update_import_success_message">Ημερομηνία έκδοσης: <xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\nΠατήστε την εισηγμένη ενημέρωση για να δείτε τις διαθέσιμες ενέργειες.</string>
     <string name="local_update_import_failure">Αποτυχία εισαγωγής τοπικής ενημέρωσης</string>
     <string name="local_update_name">Τοπική ενημέρωση</string>
 </resources>

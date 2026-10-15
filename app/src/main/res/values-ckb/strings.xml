@@ -122,12 +122,12 @@
     <string name="info_dialog_title">ئایا دەزانیت؟</string>
     <string name="info_dialog_message">نوێکارییەکانی LineageOS پاکێجی تەواوی دامەزراندنن. ئەمە واتە دەتوانیت هەمیشە تەنها دواین نوێکاری دابمەزرێنیت، تەنانەت ئەگەر هەندێک نوێکاری پێشووت تێپەڕاندبێت!</string>
     <string name="info_dialog_ok">سوپاس بۆ زانیارییەکە!</string>
-    <string name="local_update_import">نوێکاری ناوخۆیی</string>
-    <string name="local_update_import_progress">هێنانی نوێکاری ناوخۆیی\u2026</string>
+    <string name="local_update_import">نوێکاریی ناوخۆیی</string>
+    <string name="local_update_import_progress">هێنانی نوێکاریی ناوخۆیی\u2026</string>
     <string name="local_update_import_success">%1$s هێنرایە ناوەوە. دەتەوێت دایبمەزرێنیت؟</string>
-    <string name="local_update_import_failure">هێنانی نوێکاری ناوخۆیی سەرکەوتوو نەبوو</string>
+    <string name="local_update_import_failure">هێنانی نوێکاریی ناوخۆیی سەرکەوتوو نەبوو</string>
     <string name="local_update_import_install">دامەزراندن</string>
-    <string name="local_update_name">نوێکاری ناوخۆیی</string>
+    <string name="local_update_name">نوێکاریی ناوخۆیی</string>
     <string name="welcome_title">بەخێربێیت</string>
     <string name="welcome_message">تکایە ئاگاداربە کاتێک چەند نوێکارییەک بەردەستن، پێویست ناکات یەک بە یەک نوێکاری بکەیت؛ هەمیشە دەتوانیت نوێترین وەشان ڕاستەوخۆ دابمەزرێنیت و پاشان بە سەلامەتی نوێکارییە کۆنەکان بسڕیتەوە بۆ چۆڵکردنی شوێنی بیرگە.</string>
 </resources>

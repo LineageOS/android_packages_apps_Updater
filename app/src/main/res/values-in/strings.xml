@@ -126,4 +126,5 @@
     <string name="local_update_import_install">Instal</string>
     <string name="local_update_name">Pembaruan lokal</string>
     <string name="welcome_title">Selamat datang</string>
+    <string name="welcome_message">Harap diperhatikan bahwa ketika beberapa pembaruan tersedia, Anda tidak perlu memperbarui satu per satu. Anda selalu dapat menginstal pembaruan terbaru secara langsung, dan kemudian menghapus pembaruan lama dengan aman untuk mengosongkan ruang penyimpanan.</string>
 </resources>

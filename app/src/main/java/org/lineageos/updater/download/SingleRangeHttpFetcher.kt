@@ -24,6 +24,7 @@ class SingleRangeHttpFetcher(private val url: String) {
         val request = Request.Builder()
             .url(url)
             .header("Range", "bytes=$offset-$endOffset")
+            .header("User-Agent", System.getProperty("http.agent")!!)
             .build()
 
         client.newCall(request).execute().use { response ->

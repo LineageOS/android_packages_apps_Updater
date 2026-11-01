@@ -111,10 +111,10 @@
         <item quantity="other">осталось <xliff:g id="count">%d</xliff:g> минут</item>
     </plurals>
     <plurals name="eta_hours">
-        <item quantity="one">остался <xliff:g id="count">%d</xliff:g> час</item>
-        <item quantity="few">осталось <xliff:g id="count">%d</xliff:g> часа</item>
-        <item quantity="many">осталось <xliff:g id="count">%d</xliff:g> часов</item>
-        <item quantity="other">осталось <xliff:g id="count">%d</xliff:g> часов</item>
+        <item quantity="one">Остался 1 час</item>
+        <item quantity="few">Осталось <xliff:g id="count">%d</xliff:g> час.</item>
+        <item quantity="many">Осталось <xliff:g id="count">%d</xliff:g> час.</item>
+        <item quantity="other">Осталось <xliff:g id="count">%d</xliff:g> час.</item>
     </plurals>
     <string name="update_over_metered_network_title">Предупреждение</string>
     <string name="update_over_metered_network_message">Вы собираетесь загрузить пакет обновления через мобильную сеть, что, вероятно, приведет к значительному расходу данных. Продолжить?</string>

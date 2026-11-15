@@ -98,7 +98,7 @@
     <string name="action_pause">Fasilə ver</string>
     <string name="action_resume">Davam etdir</string>
     <string name="action_install">Quraşdır</string>
-    <string name="action_info">Məlumat</string>
+    <string name="action_info">Bilgi</string>
     <string name="action_open_guide">Bələdçini aç</string>
     <string name="action_delete">Sil</string>
     <string name="confirm_cancel_dialog_title">Endirməni ləğv et</string>
@@ -119,7 +119,7 @@
     <string name="update_over_metered_network_title">Xəbərdarlıq</string>
     <string name="update_over_metered_network_message">Ölçülən bir şəbəkə üzərindən böyük ehtimalla yüksək veri istifadəsinə səbəb olacaq bir güncəlləmə paketi endirmək üzrəsiniz. Davam etmək istəyirsiniz?</string>
     <string name="blocked_update_dialog_title">Güncəlləmə əngəlləndi</string>
-    <string name="blocked_update_dialog_message">Bu güncəlləmə, tətbiq güncəlləyici istifadə edilərək quraşdırıla bilməz. Ətraflı məlumat üçün lütfən <xliff:g id="info_url">%1$s</xliff:g> ünvanını oxuyun.</string>
+    <string name="blocked_update_dialog_message">Bu güncəlləmə, tətbiq güncəlləyici istifadə edilərək quraşdırıla bilməz. Daha çox bilgi üçün lütfən <xliff:g id="info_url">%1$s</xliff:g> ünvanını oxuyun.</string>
     <string name="blocked_update_dialog_title_downgrade">Alt versiyaya keçmə əngəlləndi</string>
     <string name="blocked_update_dialog_message_downgrade">Bu güncəlləmə, hazırkı sistemin köhnə versiyasıdır və quraşdırıla bilməz.</string>
     <string name="export_channel_title">Köçürmə tamamlandı</string>

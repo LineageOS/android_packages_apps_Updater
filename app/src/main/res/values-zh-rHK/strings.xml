@@ -4,6 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">系統更新</string>
     <string name="verification_failed_notification">驗證失敗</string>
     <string name="verifying_download_notification">正在驗證更新</string>
     <string name="downloading_notification">正在下載</string>
@@ -28,32 +29,56 @@
         ]]></string>
     <string name="dialog_scratch_mounted_title">已掛載 OverlayFS 時無法安裝更新</string>
     <string name="reboot">重新啟動</string>
-    <string name="menu_delete_update">删除</string>
+    <string name="pref_category_download_install">下載及安裝</string>
+    <string name="menu_delete_update">刪除</string>
     <string name="menu_export_update">匯出更新</string>
+    <string name="menu_view_downloads">前往「 <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> 」查看</string>
+    <string name="menu_metered_network_warning">流動網絡數據用量警告</string>
+    <string name="menu_metered_network_warning_summary">使用流動數據下載前發出警告</string>
     <string name="menu_ab_perf_mode">優先處理更新</string>
+    <string name="menu_ab_perf_mode_summary">犧牲裝置效能以加快更新速度</string>
+    <string name="menu_ab_perf_mode_summary_charging">使用交流電源充電時自動啟用</string>
     <string name="menu_update_recovery">更新 Recovery</string>
+    <string name="menu_update_recovery_summary">更新作業系統時一併更新 Recovery 分區</string>
     <string name="snack_updates_found">找到新更新</string>
     <string name="snack_no_updates_found">沒有找到新的更新</string>
     <string name="snack_download_failed">下載更新失敗。請檢查您的網路連線並稍後重試。</string>
     <string name="snack_download_verification_failed">更新驗證失敗。</string>
     <string name="snack_download_verified">已完成下載。</string>
     <string name="snack_update_not_installable">當前版本無法安裝此更新。</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="16">%1$s</xliff:g></string>
+    <string name="build_date">編譯日期</string>
+    <string name="security_update">安全性更新</string>
+    <string name="show_changelog">近期變更</string>
+    <string name="report_issues">回報問題</string>
+    <string name="header_review_updates">查看更新及近期變更</string>
+    <string name="found_bug">發現錯誤？請按照我們的錯誤回報指南回報：</string>
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g>-<xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_security_update">安全性更新：<xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
+    <string name="list_major_android_upgrade">Android 主要版本升級</string>
+    <string name="list_full_install">完整安裝: 可在任何先前版本安全安裝</string>
+    <string name="list_major_upgrade_recovery_install"><xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> 的主要版本升級必須手動安裝。請參閱你的裝置指南以繼續。</string>
+    <string name="list_downgrade_blocked">此版本比已安裝的系統更舊，無法套用。</string>
     <string name="list_download_progress_newer">已下載 <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g>，共 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
     <string name="list_download_progress_eta_newer">已下載 <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g>，共 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
     <string name="list_verifying_update">正在驗證更新</string>
+    <string name="see_more">顯示其餘 %1$d個</string>
+    <string name="see_less">顯示較少</string>
     <string name="action_download">下載</string>
     <string name="action_pause">暫停</string>
-    <string name="action_resume">恢復</string>
+    <string name="action_resume">繼續</string>
     <string name="action_install">安裝</string>
     <string name="action_info">詳情</string>
+    <string name="action_open_guide">開啟指南</string>
     <string name="action_delete">刪除</string>
+    <string name="confirm_cancel_dialog_title">取消下載</string>
     <string name="confirm_delete_dialog_title">刪除檔案</string>
     <string name="confirm_delete_dialog_message">刪除已選擇的更新檔？</string>
     <string name="apply_update_dialog_title">套用更新</string>
     <string name="apply_update_dialog_message">您將要安裝 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下「<xliff:g id="ok">%2$s</xliff:g>」，裝置將會重新啟動到 Recovery 模式並安裝更新。\n\n注意：此功能需要相容的 Recovery，否則你將需要手動安裝更新。</string>
     <string name="apply_update_dialog_message_ab">您將要安裝 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下「<xliff:g id="ok">%2$s</xliff:g>」，裝置將會在背景進行安裝。\n\n如安裝完成，將會提示重新啟動。</string>
+    <string name="cancel_installation_dialog_title">取消安裝</string>
     <string name="label_download_url">下載網址</string>
     <string name="dialog_export_title">正在匯出更新</string>
     <string name="notification_export_success">已匯出更新</string>
@@ -61,7 +86,17 @@
     <string name="toast_already_exporting">已匯出更新</string>
     <string name="toast_export_started">已開始匯出</string>
     <string name="update_over_metered_network_title">警告</string>
+    <string name="update_over_metered_network_message">透過流動網絡下載更新檔可能會使用大量流動數據，您要繼續嗎？</string>
+    <string name="blocked_update_dialog_title">已阻止更新</string>
+    <string name="blocked_update_dialog_message">無法使用更新應用程式安裝此更新。 請閱讀 <xliff:g id="info_url">%1$s</xliff:g> 以了解更多資訊。</string>
+    <string name="export_channel_title">匯出完成</string>
+    <string name="new_updates_channel_title">有新的更新</string>
+    <string name="ongoing_channel_title">正在下載</string>
+    <string name="update_failed_channel_title">更新失敗</string>
+    <string name="local_update_import">安裝本地更新</string>
     <string name="local_update_import_progress">正在匯入本機更新檔 \u2026</string>
+    <string name="local_update_import_success_title">已匯入更新</string>
+    <string name="local_update_import_success_message">編譯日期：<xliff:g id="build_date" example="Apr 27">%1$s</xliff:g>\n\n輕觸已匯入的更新以查看可用操作。</string>
     <string name="local_update_import_failure">匯入本機更新檔失敗</string>
     <string name="local_update_name">本機更新</string>
 </resources>

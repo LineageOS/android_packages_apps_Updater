@@ -15,6 +15,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">系統更新</string>
+    <string name="display_name">系統更新</string>
     <string name="verification_failed_notification">驗證失敗</string>
     <string name="verifying_download_notification">正在驗證更新</string>
     <string name="downloading_notification">正在下載</string>
@@ -27,11 +29,14 @@
     <string name="new_updates_found_title">有新的更新</string>
     <string name="text_download_speed">%1$s, %2$s/秒</string>
     <string name="pause_button">暫停</string>
+    <string name="resume_button">繼續</string>
+    <string name="suspend_button">暫停</string>
     <string name="installing_update">正在安裝更新套件</string>
     <string name="installing_update_error">安裝錯誤</string>
     <string name="installing_update_finished">已安裝更新</string>
     <string name="finalizing_package">正在完成套件安裝</string>
     <string name="preparing_ota_first_boot">正在準備第一次啟動</string>
+    <string name="dialog_prepare_zip_message">正在準備更新</string>
     <string name="dialog_battery_low_title">電量不足</string>
     <string name="dialog_battery_low_message_pct">電池電量過低，您需要至少 <xliff:g id="percent_discharging">%1$d</xliff:g>%% 的電量才能繼續；如果正在充電，則需要 <xliff:g id="percent_charging">%2$d</xliff:g>%% 的電量才能繼續。</string>
     <string name="dialog_scratch_mounted_message"><![CDATA[        請執行以下指令，然後重試更新：\n
@@ -39,6 +44,7 @@
         • adb enable-verity\n
         • adb reboot
         ]]></string>
+    <string name="dialog_scratch_mounted_title">已掛載 OverlayFS 時無法安裝更新</string>
     <string name="reboot">重新啟動</string>
     <string name="menu_refresh">重新整理</string>
     <string name="menu_preferences">偏好設定</string>
@@ -48,21 +54,71 @@
     <string name="menu_auto_updates_check_interval_monthly">每月一次</string>
     <string name="menu_auto_updates_check_interval_never">永不</string>
     <string name="menu_auto_delete_updates">安裝後刪除更新檔</string>
-    <string name="menu_delete_update">删除</string>
+    <string name="menu_delete_update">刪除</string>
     <string name="menu_copy_url">複製網址</string>
     <string name="menu_export_update">匯出更新</string>
     <string name="menu_show_changelog">顯示更新日誌</string>
     <string name="menu_ab_perf_mode">優先處理更新</string>
     <string name="menu_update_recovery">更新 Recovery</string>
+    <string name="toast_forced_update_recovery">無法停用此裝置上的 Lineage Recovery 更新。</string>
     <string name="snack_updates_found">找到新更新</string>
+    <string name="snack_no_updates_found">沒有找到新的更新</string>
     <string name="snack_updates_check_failed">更新檢查失敗。請檢查您的網路連線並稍後重試。</string>
     <string name="snack_download_failed">下載更新失敗。請檢查您的網路連線並稍後重試。</string>
     <string name="snack_download_verification_failed">更新驗證失敗。</string>
     <string name="snack_download_verified">已完成下載。</string>
     <string name="snack_update_not_installable">當前版本無法安裝此更新。</string>
     <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_android_version">Android <xliff:g id="version" example="7.1.2">%1$s</xliff:g></string>
+    <string name="header_last_updates_check">上次檢查：<xliff:g id="date" example="1 January 1970">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
+    <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
+    <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g>-<xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
+    <string name="list_download_progress_newer">已下載 <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g>，共 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g></string>
+    <string name="list_download_progress_eta_newer">已下載 <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g>，共 <xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>)</string>
+    <string name="list_verifying_update">正在驗證更新</string>
+    <string name="list_no_updates">找不到新的更新。如要手動檢查新的更新，請使用「重新整理」按鈕。</string>
+    <string name="action_download">下載</string>
+    <string name="action_pause">暫停</string>
+    <string name="action_resume">繼續</string>
+    <string name="action_install">安裝</string>
+    <string name="action_info">詳情</string>
+    <string name="action_delete">刪除</string>
+    <string name="action_cancel">取消</string>
+    <string name="confirm_delete_dialog_title">刪除檔案</string>
+    <string name="confirm_delete_dialog_message">刪除已選擇的更新檔？</string>
+    <string name="apply_update_dialog_title">套用更新</string>
+    <string name="apply_update_dialog_message">您將要安裝 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下「<xliff:g id="ok">%2$s</xliff:g>」，裝置將會重新啟動到 Recovery 模式並安裝更新。\n\n注意：此功能需要相容的 Recovery，否則你將需要手動安裝更新。</string>
+    <string name="apply_update_dialog_message_ab">您將要安裝 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下「<xliff:g id="ok">%2$s</xliff:g>」，裝置將會在背景進行安裝。\n\n如安裝完成，將會提示重新啟動。</string>
+    <string name="cancel_installation_dialog_message">取消安裝？</string>
+    <string name="label_download_url">下載網址</string>
+    <string name="toast_download_url_copied">已複製網址</string>
+    <string name="dialog_export_title">正在匯出更新</string>
+    <string name="notification_export_success">已匯出更新</string>
+    <string name="notification_export_fail">匯出錯誤</string>
+    <string name="toast_already_exporting">已匯出更新</string>
+    <string name="toast_export_started">已開始匯出</string>
+    <plurals name="eta_seconds">
+        <item quantity="other">剩餘 <xliff:g id="count">%d</xliff:g> 秒</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="other">剩餘 <xliff:g id="count">%d</xliff:g> 分鐘</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="other">剩餘 <xliff:g id="count">%d</xliff:g> 小時</item>
+    </plurals>
+    <string name="update_over_metered_network_title">警告</string>
+    <string name="update_over_metered_network_message">透過流動網絡下載更新檔可能會使用大量流動數據，您要繼續嗎？</string>
+    <string name="checkbox_metered_network_warning">不再顯示</string>
+    <string name="menu_metered_network_warning">流動網絡數據用量警告</string>
+    <string name="blocked_update_dialog_title">已阻止更新</string>
+    <string name="blocked_update_dialog_message">無法使用更新應用程式安裝此更新。 請閱讀 <xliff:g id="info_url">%1$s</xliff:g> 以了解更多資訊。</string>
+    <string name="export_channel_title">匯出完成</string>
+    <string name="new_updates_channel_title">有新的更新</string>
+    <string name="ongoing_channel_title">正在下載</string>
+    <string name="update_failed_channel_title">更新失敗</string>
+    <string name="info_dialog_title">您知道嗎？</string>
     <string name="info_dialog_message">LineageOS 的更新檔為完整的安裝套件。您可以在跳過先前系統更新的情況下，直接安裝最新的版本!</string>
-    <string name="info_dialog_ok">謝謝您提供資訊
+    <string name="info_dialog_ok">感謝提供資訊！
 </string>
     <string name="local_update_import">本機更新</string>
     <string name="local_update_import_progress">正在匯入本機更新檔 \u2026</string>

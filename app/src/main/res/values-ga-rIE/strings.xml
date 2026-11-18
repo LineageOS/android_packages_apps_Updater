@@ -42,7 +42,7 @@
     <string name="check_your_internet_connection">Seiceáil do nasc idirlín</string>
     <string name="updates_check_failed">Theip ar an seiceáil nuashonraithe. Déan iarracht arís ar ball.</string>
     <string name="header_last_updates_check_time">Seiceáilte go deireanach: <xliff:g id="time" example="01:23">%1$s</xliff:g></string>
-    <string name="header_last_updates_check">Seiceáilte go deireanach: &lt;xliff:g id="date" example="Jan 12"&gt;%1$s&lt;/xliff:g&gt;%1$s&lt;/xliff:g&gt; (&lt;xliff:g id="time" example="01:23"&gt;%2$s&lt;/xliff:g&gt;)</string>
+    <string name="header_last_updates_check">Seiceáilte go deireanach: <xliff:g id="date" example="Jan 12">%1$s</xliff:g> (<xliff:g id="time" example="01:23">%2$s</xliff:g>)</string>
     <string name="pref_category_background_sync">Sioncrónú cúlra</string>
     <string name="menu_auto_updates_check">Seiceáil go tréimhsiúil le haghaidh nuashonruithe</string>
     <string name="menu_auto_updates_check_summary">Seiceáil le haghaidh nuashonruithe sa chúlra</string>
@@ -83,7 +83,7 @@
     <string name="list_build_version">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g></string>
     <string name="list_build_version_date">LineageOS <xliff:g id="version" example="14.1">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
     <string name="list_update_size">Méid an nuashonraithe: <xliff:g id="size" example="1.34 GB">%1$s</xliff:g></string>
-    <string name="list_security_update">Nuashonrú slándála: &lt;xliff:g id="date" example="Jan 2026"&gt;%1$s&lt;/xliff:g&gt;%1$s&lt;/xliff:g&gt;</string>
+    <string name="list_security_update">Nuashonrú slándála: <xliff:g id="date" example="Jan 2026">%1$s</xliff:g></string>
     <string name="list_major_android_upgrade">Uasghrádú mór Android</string>
     <string name="list_full_install">Suiteáil iomlán: Sábháilte le suiteáil thar aon tógáil roimhe seo</string>
     <string name="list_major_upgrade_recovery_install">Ní mór uasghráduithe móra ar leaganacha <xliff:g id="brand_name" example="LineageOS">%1$s</xliff:g> a shuiteáil de láimh. Féach ar threoir do ghléis le leanúint ar aghaidh.</string>

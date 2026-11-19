@@ -24,6 +24,24 @@ val keystoreProperties = Properties().apply {
     }
 }
 
+// Prioritize framework.jar over android.jar for Java sources.
+gradle.projectsEvaluated {
+    val frameworkJar = rootProject.file("system_libs/framework.jar").absolutePath
+    tasks.withType<JavaCompile>().configureEach {
+        options.compilerArgs.addAll(
+            listOf(
+                "-Xbootclasspath/p:$frameworkJar"
+            )
+        )
+    }
+}
+
+// Prioritize framework.jar over android.jar for Kotlin sources.
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    val frameworkJar = rootProject.file("system_libs/framework.jar")
+    libraries.setFrom(files(frameworkJar, libraries))
+}
+
 android {
     compileSdk = 37
 

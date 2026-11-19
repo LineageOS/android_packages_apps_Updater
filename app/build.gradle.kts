@@ -14,6 +14,7 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.lineageos.generatebp)
+    alias(libs.plugins.ksp)
 }
 
 val keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -60,12 +61,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
 
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_21)
-        }
-    }
-
     signingConfigs {
         create("release") {
             (keystoreProperties["keyAlias"] as String?)?.let {
@@ -83,6 +78,12 @@ android {
         }
     }
     namespace = "org.lineageos.updater"
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
+    }
 }
 
 room {
@@ -112,7 +113,7 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.okhttp)
 
-    annotationProcessor(libs.androidx.room.compiler)
+    ksp(libs.androidx.room.compiler)
 }
 
 configure<GenerateBpPluginExtension> {

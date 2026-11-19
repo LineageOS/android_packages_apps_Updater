@@ -19,6 +19,7 @@ preference = "1.2.1"
 room = "2.8.4"
 work = "2.11.1"
 generateBp = "+"
+ksp = "2.3.6"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
@@ -46,3 +47,4 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 lineageos-generatebp = { id = "org.lineageos.generatebp", version.ref = "generateBp" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

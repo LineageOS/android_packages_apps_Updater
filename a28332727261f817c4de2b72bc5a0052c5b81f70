@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d3a07de_66e0146a",
+        "filename": "app/build.gradle.kts",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-11-19T23:06:06Z",
+      "side": 1,
+      "message": "Shouldn\u0027t targetSdk also get bumped at some point to match what inline build uses?",
+      "revId": "a28332727261f817c4de2b72bc5a0052c5b81f70",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -25,7 +25,7 @@ val keystoreProperties = Properties().apply {
 }
 
 android {
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "org.lineageos.updater"

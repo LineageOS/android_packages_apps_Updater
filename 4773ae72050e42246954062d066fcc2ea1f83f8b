@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56aa2da4_85999ae8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2026-11-19T21:25:39Z",
+      "side": 1,
+      "message": "Not sure if required.\n\nWithout this change sometimes it worked for me, sometimes it didn\u0027t.\nWith this change it always worked.\n\nI can\u0027t rule out that my environment itself is to blame.",
+      "revId": "4773ae72050e42246954062d066fcc2ea1f83f8b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
